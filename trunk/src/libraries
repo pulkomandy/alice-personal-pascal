@@ -1,0 +1,140 @@
+
+
+N_LIBRARY node has 4 kids
+
+1st - a real kid, is the comment on the library
+2nd - a hidden kid, is the list of declarations
+3rd - is an ESString, the filename of the library
+4th - a pointer, points to the memory block allocated for the library.
+      In the case of machine code libraries, this will be where the
+      machine code and extra information are kept.  In the case of
+      AP libraries, we may not need any extra info, so this may be
+      NIL.  If we do need extra info, allocate it here.
+
+loading a library
+
+define the function library_load( np, loadf )
+nodep np; /* the N_LIBRARY node, kids not yet filled in */
+FILE *loadf; /* the current load file, where you can extract the filename */
+{
+	first, load in the file name with get_string.
+	create an extra segment string for it, just like N_CON_STRING
+	and other such guys.  Except it goes in kid3, not kid1 of the
+	node.
+
+	now attempt to read in the library file.
+
+	Examine the first two bytes.  If it is 'AP' then we have an
+	honest save file.  Start loading in this file.
+
+	You may have to duplicate some of the code in load.c or shove
+	some code into subroutines.
+
+	You will get to the symbol table for the PROGRAM node of this
+	file, and you will be given the size of this symbol table.
+
+	You must allocate a symbol_table the way alloc_sym_ptrs does,
+	but you must save the old memory to restore it when done.
+	the sym_ptrs array will temporarily point to the new memory.
+
+	You must then load in the program symbol table.  For each entry
+	in the program symbol table, you will actually have to look up
+	that entry in the real main program's symbol table.  In theory,
+	you will find a T_UNDEF entry there.  Change that T_UNDEF entry
+	into the entry you are loading from the library main symbol table.
+
+	Change the entry in the library sym_ptrs array to point to this
+	symbol, as library references need to be made to point here.
+	the original sym_ptrs array will already contain a pointer to
+	the T_UNDEF you changed.
+
+	If the symbol is not found, that means the program never used
+	it  (perhaps it is new).  You will have to add it to the end of
+	the main program symbol table, but it doesn't get an entry in
+	the original sym_ptrs array (there is no reference to it).
+	It does get an entry in the library sym_ptrs array, of course.
+
+	If it exists, but is not a T_UNDEF, we have a duplication.
+	You must add the symbol to the main program symbol table, but
+	mark the user symbol (not the library symbol) as a duplicate symbol
+	the same way the code in alsym.c does.   You must do the user symbol
+	since they never get the chance to edit the library symbols, and
+	library symbols are not re-looked up.
+
+	If the library symbol is a T_UNDEF, then:
+		If there is a T_UNDEF in the program symbol table then
+		copy on top of it just like above.  As always, change
+		the library sym_ptrs array entry.
+
+		If there is a defined symbol in the program symbol table,
+		then throw away the undef and change the library sym_ptrs
+		array to point at the defined symbol.
+
+		If there is nothing in the program symbol table, than
+		add the undef to the program symbol table.
+
+		As before, slookup with a 'symtouse' argument does all
+		this.
+
+	After you have done this merging of the symbol tables, you then
+	go over the declaration list of the library's N_PROGRAM node.
+	You load in each declaration with regular loading stuff.
+	This includes the procedures and functions.
+
+	With a little work, it should be possible for a library to
+	contain another library.  That sub-library gets the same
+	treatment.  Remember that while it needs a private sym_ptrs array,
+	it still needs access to the original, main program symbol table
+	which it must add to.  Use recursion to store the sym_ptrs arrays.
+	Remember they must be freed when the library is finished loading.
+
+	ELSE if the file does not contain 'AP' at the front, but is rather
+	something like 'PL' (pascal library, not Peter Lawrence) then it
+	is a machine code library.  Machine code libraries will have the
+	same symbol table merging requirements, but some (possibly not all)
+	of the procedures and functions loaded in will not be regular.
+
+	You will be able to tell this by the fact that their symbol type is
+	something like T_LFUNC or T_LPROC.  While the node will be the same,
+	the internal declarations, comment and code blocks will be null.
+	Instead, the symbol node will have as sym_value an offset to jump
+	to within the machine code block.  You must add this offset to the
+	start of the machine code block, as you allocated it, and store this
+	back into the sym_value field.
+
+	You can load the machine code block before or after the declarations,
+	but I suspect before is better so you know the address and can allocate
+	the general memory block.
+
+	In the 'memory block' for binary libraries you can store things
+	like the address of init and wrapup routines.  non-binary libraries
+	probably will not have such concepts.
+
+
+In a .AP library, you throw away any main block code that may be present.
+It could be defined as the 'init' code, but that's messy and not worth it.
+
+
+
+Code must be placed in workspace.c in the node copying section
+to handle a copied library.   Copy filename, comment, declaration block
+and probably the code block too.  What a waste of memory.  (otherwise we
+need access counts etc. on the code block)  Part of this code is already
+in.
+
+Code in save.c must be done to match your N_LIBRARY save format
+The suggested save format is simply the filename string followed by
+the comment node.  I have done part of this.
+
+code for treefree must be arranged to free a library, including the
+binary code block.  I have done most of this.
+
+Since other strings like the filename are kept in the extra segment
+in the segmented versions of alice, keep this there too.
+(this avoids creating a new print code)
+
+(you still must worry about extra segment issues.  The non-binary part
+of libraries should be portable over all versions of Alice, and even
+most of the binary library stuff)
+
+Add "LIBRARY" to the node list in the template program.

@@ -1,0 +1,1 @@
+kermit -s lib.c load.c workspace.c save.c mem.c cmds2.c typecheck.c alsym.c scan_decl.c command.c stload.c kids.c dump.c setup.c common.c run2.c

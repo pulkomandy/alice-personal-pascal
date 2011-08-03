@@ -1,0 +1,1021 @@
+AbandonRestOfLibrary	load.c	?^AbandonRestOfLibrary()$?
+AllocMem	dd/segalloc.c	?^AllocMem(size)$?
+BLKALIGN	dd/segalloc.c	?^#define	BLKALIGN(x)	(BlkP)(((unsigned)x + 3) & ~3)?
+Basetype	/u/alice/h/macros.h	?^#define Basetype(tname)	((nodep )&tname)$?
+ByToPa	dd/segalloc.c	?^#define	ByToPa(bytes)	(((bytes) + 15) / 16)	/* byt?
+CAST	/u/alice/h/alice.h	?^#define CAST(ctp)  (ctp)$?
+CAST	builtin.c	?^			&ndcursor, CAST(nodep )&BT_integer, 0, sizeof(r?
+CLIST	/u/alice/h/class.h	?^#define CLIST(arg) arg+64$?
+CLIST	command.c	?^#define CLIST(x)	64+x$?
+CNTL	/u/alice/h/alice.h	?^#define CNTL(x)	(x & 037)$?
+CTRL	/u/alice/h/scan.h	?^#define CTRL(c) (c & 037)$?
+CUerror	runtime.c	?^CUerror()$?
+ConvKey	pop.c	?^ConvKey( cmd )$?
+Dumpload	load.c	?^#define Dumpload(a,b,c)$?
+EDEBUG	/u/alice/h/interp.h	?^#define EDEBUG(level,string,ar1,ar2) if(level<=ed_?
+ER	/u/alice/h/macros.h	?^# define ER(num,str)	num$?
+ESL	/u/alice/h/esbuilt.h	?^#define ESL(type,index) STAR((type far *)tfarptr(i?
+FLOATNUM	/u/alice/h/altypes.h	?^# define FLOATNUM(x)	x$?
+FP_SEG	functions.c	?^		FP_SEG(ret) = ((long)&ret) >> 16;$?
+FreeAllocedMem	dd/segalloc.c	?^FreeAllocedMem(seg)$?
+GetScanChar	scan.c	?^GetScanChar()$?
+GrowMem	main.c	?^GrowMem()$?
+HashIndexName	helpfile.c	?^HashIndexName( fname )$?
+IBMF	/u/alice/h/keyibm.h	?^#define IBMF(x)		128+x$?
+ISID	/u/alice/h/ole.h	?^#define ISID(fl) ((fl&(OLE_TOP|OLE_EXP|OLE_STR)) =?
+KEY_CF	/u/alice/h/keyibm.h	?^#define KEY_CF(n)	(128+93+n)$?
+KEY_F	/u/alice/h/keyibm.h	?^#define KEY_F(n)	(128+58+n)$?
+KEY_SHF	/u/alice/h/keyibm.h	?^#define KEY_SHF(n)	(128+83+n)$?
+LoadLibrary	load.c	?^LoadLibrary(name)$?
+LoadNodes	load_nodes.c	?^LoadNodes(fname)$?
+LoadRestOfLibrary	load.c	?^LoadRestOfLibrary()$?
+Main	/u/alice/h/interp.h	?^#define  Main(anode)	anode$?
+Mhelpfile	helpfile.c	?^main( )$?
+Mmain	main.c	?^main(argc, argv)$?
+ModAllocedMem	dd/segalloc.c	?^ModAllocedMem(seg, size)$?
+NNC	builtin.c	?^# define NNC(arg) (char*)0$?
+NodeName	/u/alice/h/macros.h	?^#define NodeName(typ)	Node_Strings+Node_Names[typ]?
+OLE_Accept	oledit.c	?^static OLE_Accept(fl, tc, xcmd)$?
+OLE_CanEdit	ole.c	?^OLE_CanEdit( curs )$?
+OLE_ChopUpText	ole.c	?^OLE_ChopUpText( curs, in_text )$?
+OLE_Done	oledit.c	?^static OLE_Done(fl, addspace)$?
+OLE_Edit	ole.c	?^OLE_Edit( curs, flags, termch, row, column )$?
+OLE_InitEdit	ole.c	?^OLE_InitEdit( curs )$?
+OLE_Replace	ole.c	?^OLE_Replace( curs )$?
+PCP	/u/alice/h/macros.h	?^#define PCP(cp)		cp$?
+PTS	/u/alice/h/macros.h	?^#define PTS(arg,fld,typ) arg->fld$?
+PaToBy	dd/segalloc.c	?^#define	PaToBy(paras)	((paras) * 16)		/* paragraph?
+PrintBufEl	ole.c	?^PrintBufEl( ptr )$?
+PushBack	scan.c	?^PushBack( num )$?
+RD	builtin.c	?^#define RD(x) NCAST &x$?
+RHS	expparse.c	?^#define RHS(n) (parsestack[bot+n])$?
+RStat	dd/segalloc.c	?^#  define RStat()$?
+ReadInTree	helpfile.c	?^ReadInTree( fname )$?
+RemoveNL	helpfile.c	?^RemoveNL( str )$?
+SEG	dd/segalloc.c	?^#define	SEG(segno)	segs_array[segno]$?
+STAR	/u/alice/h/macros.h	?^#define STAR(x) *(x)$?
+Safep	subr.c	?^Safep( str )$?
+Tinyi	cfunc.c	?^#define Tinyi(x) (ptrfunc)0$?
+Tinyp	cfunc.c	?^#define Tinyp(x) (pointer)0$?
+Tptr	/u/alice/h/macros.h	?^#define Tptr(tname)	&tname$?
+WB_ADJUST	/u/alice/h/interp.h	?^#define WB_ADJUST(size)	(size == 1)$?
+WORDALIGN	dd/segalloc.c	?^#define	WORDALIGN(x)	(((unsigned)x + 1) & ~1)$?
+__exp_list	history.c	?^__exp_list?
+_a_get	run2.c	?^_a_get( xwhfile, realget )$?
+_chng_ntype	history.c	?^_chng_ntype(np, type)$?
+_del_list	history.c	?^_del_list(_lp, kn)$?
+_exp_list	history.c	?^_exp_list(lp, kn, kid)$?
+_load	load.c	?^_load()$?
+_swap	history.c	?^_swap(from, to)$?
+_treefree	mem.c	?^_treefree(_np)$?
+_write_it	runfile.c	?^_write_it(_type, width, prec, filedesc, str)$?
+abfush	main.c	?^abfush(sn)$?
+abscon	actrout2.c	?^abscon(tn)$?
+act_size	run2.c	?^act_size( xblock )$?
+acthelp	help.c	?^acthelp( selected, menu )$?
+actionname	history.c	?^# define	actionname(i)	(i < 1 || i > H_CHG_FLAGS? ?
+actrout	actrout.c	?^actrout(arn, xtn, xfoundnode)$?
+addOptExt	filename.c	?^static addOptExt(name, optExt)$?
+add_decl	alsym.c	?^add_decl(_decl)$?
+add_hmenu_item	menu.c	?^add_hmenu_item( name, hname )$?
+add_menu_item	menu.c	?^add_menu_item( str )$?
+addlist	treesubr.c	?^addlist?
+addslot	trace.c	?^addslot( tr_position )$?
+alexit	main.c	?^alexit(val)$?
+allocESString	/u/alice/h/macros.h	?^#define allocESString(str)	allocstring(str)$?
+allocESString	dd/segalloc.c	?^allocESString(str)$?
+alloc_sym_ptrs	load.c	?^alloc_sym_ptrs()$?
+allocnstring	mem.c	?^allocnstring(str, n)$?
+allocstring	mem.c	?^allocstring(str)$?
+aload	load.c	?^aload(merge, file_args)$?
+anyDirtyWS	workspace.c	?^anyDirtyWS()$?
+arg_error	subr.c	?^arg_error( str, val ) $?
+arg_indtype	runtime.c	?^arg_indtype?
+argcheck_func	typecheck.c	?^argcheck_func( thedecl, parm_no, type_parent, xpli?
+argcopy	trace.c	?^argcopy(argc, getargs, argdest)$?
+argmap	trace.c	?^argmap( thedecl, so_far, type_parent, argv )$?
+argp_call	scan_decl.c	?^argp_call( plist, thenode )$?
+argp_func	treeprint.c	?^argp_func(xthedecl, parm_no, xtype_parent, plist )?
+asg_attr	treeprint.c	?^#define asg_attr(attr)	chmask = attr$?
+asg_code	typecheck.c	?^asg_code( atype )$?
+assig_compat	typecheck.c	?^assig_compat( treelhs, _typelhs, treerhs, _typerhs?
+astandout	treeprint.c	?^#define astandout() chmask |= _STANDOUT$?
+attach	history.c	?^attach(parent, kn, kid)$?
+b_spop	/u/alice/h/interp.h	?^#define b_spop()	(*sp.st_byte++)$?
+b_spush	/u/alice/h/interp.h	?^#define b_spush(val)	(*--sp.st_byte = (val))$?
+badint	common.c	?^badint( str, givew )$?
+barglist	/u/alice/h/macros.h	?^#define barglist(list,index,subel)	((bargs *)(list?
+becpy	oledit.c	?^becpy(dest, src)$?
+bfptr	/u/alice/h/bfuncs.h	?^#define bfptr(s)  (*builtins[((realrout_np)tfarptr?
+bfread	helpfile.c	?^bfread( loc, itemsize, count, desc )$?
+bi_command	command.c	?^bi_command(cmd, args)$?
+bind_strength	/u/alice/h/macros.h	?^#define bind_strength(typ)	((typ>=FIRST_EXPRESSION?
+bld_range	cmds2.c	?^bld_range( p1, p2 )$?
+blk_move	common.c	?^blk_move( to, from, bytes )$?
+block_cr	actrout2.c	?^block_cr(xlinenode, whichkid )$?
+block_typecheck	common.c	?^block_typecheck( block )$?
+bot_cdown	outfuncs.c	?^bot_cdown(xwin )$?
+breakkey	interp.c	?^breakkey()$?
+bscan	scan.c	?^bscan()$?
+bufadd	treeprint.c	?^bufadd( xstr )$?
+bufaddc	treeprint.c	?^#define bufaddc( ch ) *lb_cursor++ = ch | chmask$?
+bug	subr.c	?^bug(msg, p1, p2, p3, p4)$?
+buildFileMenu	filename.c	?^buildFileMenu(mp, filesInMenu)$?
+buildin	alsym.c	?^buildin()$?
+bump_stack	/u/alice/h/interp.h	?^#define bump_stack(val)	(sp.st_stackloc -= val)$?
+c_at_root	treesubr.c	?^c_at_root(cp)$?
+c_comp_decls	setup.c	?^c_comp_decls( scope, loc, interactive )$?
+c_lsib	treesubr.c	?^c_lsib(xcp)$?
+c_nextpos	treesubr.c	?^c_nextpos(xcp)$?
+c_prevpos	treesubr.c	?^c_prevpos(xcp)$?
+c_rightpos	treesubr.c	?^c_rightpos(xcp)$?
+c_rsib	treesubr.c	?^c_rsib(xcp)$?
+c_typecheck	typecheck.c	?^c_typecheck?
+calc_indent	outfuncs.c	?^calc_indent(anode )$?
+calc_main_indent	display.c	?^calc_main_indent( ind_level, scr_width )$?
+calc_size	types.c	?^calc_size( typetree, runtime )$?
+callcheck	typecheck.c	?^callcheck( xtree )$?
+callscan	oledit.c	?^callscan( text )$?
+canGoToZero	history.c	?^canGoToZero(stubp)$?
+case_equal	alsym.c	?^case_equal( xstr1, xstr2 )$?
+catchsigs	main.c	?^catchsigs()$?
+ccheck_func	setup.c	?^ccheck_func( theconst, dummy, thecase, xswtype )$?
+center	main.c	?^center( line, string )$?
+ch_real_coerce	typecheck.c	?^ch_real_c?
+changeDir	filename.c	?^changeDir(dir)$?
+changeFlags	history.c	?^changeFlags(np, set, clr)$?
+change_ntype	history.c	?^change_ntype(np, newtype)$?
+charToBE	oledit.c	?^charToBE(charp, bep, xattr)$?
+check_curgone	display.c	?^check_curgone(going, newtop)$?
+check_format	load.c	?^check_format(okay, where)$?
+check_numeric	typecheck.c	?^check_n?
+check_setop	typecheck.c	?^check_set?
+check_topgone	display.c	?^check_topgone( going, newtop )$?
+check_undef	/u/alice/h/macros.h	?^# define check_undef(l,b) CU(l)$?
+checkalloc	helpfile.c	?^checkalloc( size )$?
+checkalloc	load_nodes.c	?^#define checkalloc(x)	malloc(x)$?
+checkrhs	expparse.c	?^#define checkrhs(num) if (rhssize() != num) { if (?
+checksum	subr.c	?^checksum(whence)$?
+checksvar	functions.c	?^checksvar( sttype, badarg )$?
+chg_decid	history.c	?^chg_decid(cp, newid)$?
+choosealloc	dd/segalloc.c	?^choosealloc( size )$?
+choosefree	dd/segalloc.c	?^choosefree( object, size )$?
+chprune	history.c	?^chprune(what)$?
+chr_output	keyboard.c	?^chr_output( ch )$?
+classname	/u/alice/h/macros.h	?^#define classname(ctyp)		Class_Names[(ctyp)&63]$?
+classtypes	/u/alice/h/macros.h	?^#define classtypes(ctyp)	Class_Types[ctyp]$?
+clean_curws	common.c	?^clean_curws()$?
+clean_curws	workspace.c	?^clean_curws()$?
+cleanup	load.c	?^cleanup(err)$?
+clear_break	/u/alice/h/break.h	?^#define clear_break() Exc_pending &= ~EXC_BREAK; E?
+clear_em	subr.c	?^clear_em(redo)$?
+clear_resume	run2.c	?^clear_resume()$?
+clear_ws	workspace.c	?^clear_ws(args)$?
+clearla	/u/alice/h/scan.h	?^037)$?
+cless_comp	alsym.c	?^cless_comp( xstr, xprefix, len )$?
+close_help	helpfile.c	?^close_help()$?
+closeall	runfile.c	?^closeall(allofthem, lowbound, upbound)$?
+clr_2flag	/u/alice/h/macros.h	?^#define clr_2flag(NdP,val)	((NdP)->flags2 &= ~(val?
+clr_attr	treeprint.c	?^#define clr_attr(attr) chmask &= ~(attr)$?
+clr_node_flag	/u/alice/h/macros.h	?^#define clr_node_flag(NdP,val)	(NdP)->flags1 &= ~(?
+clr_oldlines	display.c	?^clr_oldlines() {$?
+clr_point	cmds2.c	?^clr_point()$?
+clr_sym_mflags	/u/alice/h/macros.h	?^#define clr_sym_mflags(sNdP, val)	((sNdP)->s_mflag?
+cls	help.c	?^cls()$?
+com_menu	menu.c	?^com_menu( mname, retstat )$?
+comhelp	menu.c	?^comhelp( selection, menu )$?
+comload	cfunc.c	?^comload( fname )$?
+comma_expand	actrout2.c	?^comma_expand(np)$?
+comp_decls	setup.c	?^comp_decls( scope, xblock, isdirty, inter, ishide ?
+comp_type	types.c	?^comp_type?
+complete	oledit.c	?^complete()$?
+conclist	treesubr.c	?^conclist?
+cond_comp	setup.c	?^cond_comp( thedecl, so_far, type_parent )$?
+contok	actrout2.c	?^contok(tn)$?
+copy_graft	workspace.c	?^copy_graft?
+copy_mask	/u/alice/h/interp.h	?^#define copy_mask(a,b,c) /* */$?
+copy_mask	runtime.c	?^copy_mask( to, from, bytes )$?
+countParams	scan_decl.c	?^countParams(foo1, runningTotal, foo2, foo3)$?
+cp_to_ws	workspace.c	?^cp_to_ws(wsname)$?
+cscheck	dump.c	?^cscheck()$?
+csuminit	dump.c	?^csuminit(){$?
+ctext	search.c	?^ctext(p)$?
+cu_parent	/u/alice/h/macros.h	?^#define cu_parent(cp) (cp)->n_parent	/* faster tha?
+d_com_menu	menu.c	?^d_com_menu( m, retstat )$?
+dbout	interp.c	?^dbout()$?
+deb_menu	menu.c	?^deb_menu()$?
+dec_block	actrout.c	?^dec_block(xblocknode)$?
+decl_it	actrout.c	?^decl_it(dtype)$?
+decl_typetree	types.c	?^decl_typetree?
+del_decl	alsym.c	?^del_decl(_decl)$?
+del_list	history.c	?^del_list(_lp, kn)$?
+del_r_window	window.c	?^del_r_window()$?
+del_range	history.c	?^del_range(leave)$?
+delchars	oledit.c	?^delchars(n)$?
+demo_pause	keyboard.c	?^demo_pause( time )$?
+demoget	keyboard.c	?^demoget()$?
+descend_init	setup.c	?^descend_init( inittree, typetree, ptradr )$?
+destroy_ws	load.c	?^destroy_ws()$?
+detach	history.c	?^detach(parent, kn, kid)$?
+dgetc	keyboard.c	?^dgetc()$?
+dirty_curws	workspace.c	?^dirty_curws()$?
+disp_lines	output.c	?^disp_lines(xwin, physline, nlines, startnode, pcod?
+displ	oledit.c	?^displ()$?
+display	display.c	?^display(redo)$?
+do_1call	run2.c	?^do_1call( xeloc )$?
+do_a_goto	run2.c	?^do_a_goto()$?
+do_abs	functions.c	?^do_abs(argc, xargv )$?
+do_action	action.c	?^do_action(act,toknum,foundnode)$?
+do_address	functions.c	?^do_address( argc, argv )$?
+do_allign	types.c	?^do_allign( offset, objsize )$?
+do_append	runfile.c	?^do_append( argc, argv )$?
+do_arctan	functions.c	?^do_arctan( argc, x )$?
+do_artostr	fullfuncs.c	?^do_artostr(argc, argv)$?
+do_assign	runfile.c	?^do_assign( argc, argv )$?
+do_blkmov	functions.c	?^do_blkmov( argc, argv, dir )$?
+do_blockio	fullfuncs.c	?^do_blockio(argc,argv,symp)$?
+do_cfunc	cfunc.c	?^do_cfunc( argc, argv  )$?
+do_charwait	runfile.c	?^do_charwait(argc, argv)$?
+do_chr	functions.c	?^do_chr( argc, argv )$?
+do_cintfunc	cfunc.c	?^do_cintfunc( argc, argv )$?
+do_clongfunc	cfunc.c	?^do_clongfunc( argc, argv )$?
+do_cloption	main.c	?^do_cloption( argline, mustmalloc )$?
+do_close	runfile.c	?^do_close(argc, argv)$?
+do_clreol	functions.c	?^do_clreol()$?
+do_command	command.c	?^do_command(cmd)$?
+do_comout	cmds2.c	?^do_comout() {$?
+do_const	actrout2.c	?^do_const(cntype)$?
+do_copy	functions.c	?^do_copy(argc, argv )$?
+do_cos	functions.c	?^do_cos( argc, x )$?
+do_cproc	cfunc.c	?^do_cproc( argc, argv )$?
+do_cptrfunc	cfunc.c	?^do_cptrfunc( argc, argv )$?
+do_cr	actrout2.c	?^do_cr( linenode )$?
+do_cursorto	runfile.c	?^do_cursorto( argc, argv, bsym )$?
+do_decl	actrout.c	?^do_decl( nodetype, decltype )$?
+do_del_line	outfuncs.c	?^do_del_line(xwin, line_no, xlastline )$?
+do_delay	functions.c	?^do_delay(argc,argv)$?
+do_delete	cmds2.c	?^do_delete(arg)$?
+do_dirfunc	fullfuncs.c	?^do_dirfunc(argc,argv,symp)$?
+do_dispose	functions.c	?^do_dispose( argc, argv, sym )$?
+do_elsemap	cmds2.c	?^do_elsemap( ifnode )$?
+do_eof	runfile.c	?^do_eof( argc, argv )$?
+do_eoln	runfile.c	?^do_eoln( argc, argv )$?
+do_errhelp	cmds2.c	?^do_errhelp(args)$?
+do_exit	functions.c	?^do_exit()$?
+do_exp	functions.c	?^do_exp( argc, x )$?
+do_exp_prod	action.c	?^do_exp_prod(nt,intype)	/* this does the actual exp?
+do_fdid	actrout2.c	?^do_fdid()$?
+do_filefunc	fullfuncs.c	?^do_filefunc(argc,argv,symp)$?
+do_fillch	fullfuncs.c	?^do_fillch(argc,argv)$?
+do_flpart	functions.c	?^do_flpart(argc, argv, sym)$?
+do_get	runfile.c	?^do_get( argc, argv )$?
+do_getch	runfile.c	?^do_getch(argc, argv)$?
+do_getdir	fullfuncs.c	?^do_getdir(argc,argv)$?
+do_getptr	cfunc.c	?^do_getptr(argc, argv )$?
+do_halt	functions.c	?^do_halt(argc,argv)$?
+do_hilo	fullfuncs.c	?^do_hilo(argc,argv,symp)$?
+do_immediate	cmds2.c	?^do_immediate()$?
+do_indent	dump.c	?^do_indent()$?
+do_initrandom	functions.c	?^do_initrandom( argc, argv )$?
+do_insdel	functions.c	?^do_insdel(argc, argv, bsym)$?
+do_intr	functions.c	?^do_intr( argc, argv )$?
+do_iocheck	runfile.c	?^do_iocheck( )$?
+do_ioresult	runfile.c	?^do_ioresult( argc, argv )$?
+do_ln	functions.c	?^do_ln( argc, x )$?
+do_lnread	runfile.c	?^do_lnread(args, type, enode, filedesc)$?
+do_lnwrite	runfile.c	?^do_lnwrite(args, type, enode, filedesc)$?
+do_longseek	fullfuncs.c	?^do_longseek(argc,argv)$?
+do_lower	cmds2.c	?^do_lower( prepared )$?
+do_makeptr	functions.c	?^do_makeptr( argc, argv )$?
+do_markrel	fullfuncs.c	?^do_markrel(argc,argv,symp)$?
+do_mcall	actrout2.c	?^do_mcall(xassig)$?
+do_memfunc	functions.c	?^do_memfunc( argc, argv, sym )$?
+do_memtovar	functions.c	?^do_memtovar( argc, argv )$?
+do_move	fullfuncs.c	?^do_move(argc,argv)$?
+do_new	functions.c	?^do_new( argc, argv, sym )$?
+do_nop	cfunc.c	?^pint do_nop(){}$?
+do_odd	functions.c	?^do_odd( argc, argv )$?
+do_opendir	fullfuncs.c	?^do_opendir( argc, argv )$?
+do_ord	functions.c	?^do_ord( argc, argv )$?
+do_pack	fullfuncs.c	?^do_pack(argc, argv)$?
+do_pack	functions.c	?^do_pack(argc, argv)$?
+do_page	runfile.c	?^do_page( argc, argv )$?
+do_parcnt	fullfuncs.c	?^do_parcnt(argc,argv)$?
+do_parstr	fullfuncs.c	?^do_parstr(argc,argv)$?
+do_pause	functions.c	?^do_pause( argc, argv )$?
+do_peek	functions.c	?^do_peek( argc, argv )$?
+do_point	functions.c	?^do_point( argc, argv )$?
+do_poke	functions.c	?^do_poke( argc, argv )$?
+do_pred	functions.c	?^do_pred( argc, xargv )$?
+do_ptr	fullfuncs.c	?^do_ptr(argc,argv,symp)$?
+do_pushing	runtime.c	?^do_pushing( address, bytes, type )$?
+do_put	runfile.c	?^do_put( argc, argv )$?
+do_raise	cmds2.c	?^do_raise()$?
+do_random	functions.c	?^do_random( argc, argv )$?
+do_read	runfile.c	?^do_read(args, type, enode, filedesc)$?
+do_readdir	fullfuncs.c	?^do_readdir( argc, argv )$?
+do_recid	actrout.c	?^do_recid()$?
+do_rename	fullfuncs.c	?^do_rename(argc,argv,symp)$?
+do_reset	runfile.c	?^do_reset( argc, argv )$?
+do_rewrite	runfile.c	?^do_rewrite( argc, argv )$?
+do_rndomize	fullfuncs.c	?^do_rndomize(argc,argv,symp)$?
+do_round	functions.c	?^do_round( argc, argv )$?
+do_run_prog	cmds2.c	?^do_run_prog( loc, steptype )$?
+do_scrfunc	runfile.c	?^do_scrfunc( argc, argv )$?
+do_segoff	fullfuncs.c	?^do_segoff(argc,argv,symp)$?
+do_select	cmds2.c	?^do_select()$?
+do_setattr	functions.c	?^do_setattr(argc, argv )$?
+do_setnext	runfile.c	?^do_setnext( argc, argv, sym )$?
+do_shell	cmds2.c	?^do_shell(args, exec)$?
+do_sin	functions.c	?^do_sin( argc, x )$?
+do_sizeof	functions.c	?^do_sizeof( argc, argv )$?
+do_sound	functions.c	?^do_sound(argc,argv)$?
+do_sqr	functions.c	?^do_sqr( argc, xargv )$?
+do_sqrt	functions.c	?^do_sqrt( argc, x )$?
+do_str	runfile.c	?^do_str( argc, argv )$?
+do_strcat	functions.c	?^do_strcat( argc, argv )$?
+do_strdelete	functions.c	?^do_strdelete( argc, xargv, sym )$?
+do_strinsert	functions.c	?^do_strinsert( argc, xargv, sym )$?
+do_strlen	functions.c	?^do_strlen( argc, argv, sym )$?
+do_strscan	functions.c	?^do_strscan( argc, argv, sym )$?
+do_strtoar	fullfuncs.c	?^do_strtoar(argc,argv)$?
+do_stsize	functions.c	?^do_stsize( argc, argv )$?
+do_stubcr	cmds2.c	?^do_stubcr(xendstub)$?
+do_substr	functions.c	?^do_substr( argc, xargv )$?
+do_succ	functions.c	?^do_succ( argc, xargv )$?
+do_superstep	runtime.c	?^do_superstep( )$?
+do_suspend	runtime.c	?^do_suspend( new, caller, type )$?
+do_sym_swap	alsym.c	?^do_sym_swap(xsnode )$?
+do_sysfunc	functions.c	?^do_sysfunc(argc, argv)$?
+do_sysproc	functions.c	?^do_sysproc(argc, argv)$?
+do_tplib	trace.c	?^do_tplib( argc, argv, sym )$?
+do_transmog	cmds2.c	?^do_transmog()$?
+do_trunc	functions.c	?^do_trunc( argc, argv )$?
+do_undef	/u/alice/h/interp.h	?^#define do_undef(a,b,c) /* */$?
+do_undef	runtime.c	?^do_undef(loc, op, len)$?
+do_unpack	fullfuncs.c	?^do_unpack(argc, argv)$?
+do_upcase	functions.c	?^do_upcase(argc, argv)$?
+do_update	runfile.c	?^do_update( argc, argv )$?
+do_val	functions.c	?^do_val(argc, argv)$?
+do_vartomem	functions.c	?^do_vartomem( argc, argv )$?
+do_where	fullfuncs.c	?^do_where(argc,argv,symp)$?
+do_write	runfile.c	?^do_write(args, type, enode, filedesc)$?
+docmd	oledit.c	?^docmd(cmd)$?
+domask	runtime.c	?^domask( byte, mask, setit )$?
+done	main.c	?^done(args)$?
+dos_blk	subr.c	?^dos_blk( destoff, destseg, srcoff, srcseg, bytes )?
+down_and_right	treesubr.c	?^down_and_right(xcp)$?
+draw_menu	pop.c	?^draw_menu( w, menu, sel, base, nrow)$?
+draw_more	pop.c	?^draw_more( w, line )$?
+dump	dump.c	?^dump(loc)$?
+dumpFreeList	dd/segalloc.c	?^dumpFreeList(segNo)$?
+efputc	common.c	?^efputc(c, fp)$?
+efputc	save.c	?^efputc(a, f)$?
+eolcheck	runfile.c	?^eolcheck( whfile )$?
+erase_more	pop.c	?^erase_more( w, line )$?
+err_return	/u/alice/h/jump.h	?^#define err_return() longjmp( err_buf, 1 )$?
+error	load_nodes.c	?^#define	error(x)	printf( "%s\\n", x )$?
+error	subr.c	?^error(msg, p1, p2, p3, p4)$?
+errset	/u/alice/h/jump.h	?^#define errset() !setjmp( err_buf )$?
+esbufadd	treeprint.c	?^esbufadd( str )$?
+eset_push	/u/alice/h/interp.h	?^#define eset_push()	(--sp.st_set, zero( sp.st_gene?
+esoff	/u/alice/h/interp.h	?^#define esoff(off, typ)	(ex_stack[off].typ)$?
+espop	/u/alice/h/interp.h	?^#define espop(typ)	((*ex_stack++).typ)$?
+espush	/u/alice/h/interp.h	?^#define espush(val,typ)	(*--ex_stack).typ = (val)$?
+estop	/u/alice/h/interp.h	?^#define estop(typ)	((*ex_stack).typ)$?
+eval_const	types.c	?^eval_const(xcontree, xrealcon )$?
+ex_alloc	dd/segalloc.c	?^ex_alloc(size)$?
+ex_class	subr.c	?^ex_class(xcp )$?
+ex_free	dd/segalloc.c	?^ex_free(p, size)$?
+ex_immediate	run2.c	?^ex_immediate( loc, stepmode )$?
+exec_ws	cfunc.c	?^exec_ws( args )$?
+expCall	actrout2.c	?^expCall(sp, ctype)$?
+exp_list	history.c	?^exp_list(dir)$?
+exp_prod	action.c	?^exp_prod(nt)	/* first routine expands and skips */?
+expbegchar	text.c	?^expbegchar(ch)$?
+expid	actrout2.c	?^expid()$?
+expmap	expparse.c	?^expmap(tt, pt)$?
+expscan	expparse.c	?^expscan(str, ta, tbuf)$?
+f_spop	/u/alice/h/interp.h	?^#define f_spop() 	(*sp.st_float++)$?
+f_spush	/u/alice/h/interp.h	?^#define f_spush(val)	(*--sp.st_float = (val))$?
+farcheck	setup.c	?^farcheck(filename, line)$?
+fartonear	dd/segalloc.c	?^fartonear( dest, src )$?
+fd_func	types.c	?^fd_func(xthedecl, so_far, xtype_parent )$?
+fgetbinstr	helpfile.c	?^fgetbinstr( line, fp )$?
+fgetc	common.c	?^fgetc(fp)$?
+file_setup	runfile.c	?^file_setup( argc, argv, flags, opargs, procname )$?
+filename	filename.c	?^filename(buf, name, force, optExt, filesInMenu)$?
+fileout	runfile.c	?^fileout( filedesc, string )$?
+filevarname	run2.c	?^filevarname(whfile)$?
+fillchar	runtime.c	?^fillchar( loc, fillbyte, bytes )$?
+findFirst	filename.c	?^findFirst(pat, attr)$?
+findNext	filename.c	?^findNext()$?
+find_active	run2.c	?^find_active( rout )$?
+find_alice_cursor	display.c	?^find_alice_cursor(xwin, row, column )$?
+find_case	runtime.c	?^find_case( value, caselist, start )$?
+find_class	cmds2.c	?^find_class(toknum, childclass)$?
+find_line_number	display.c	?^find_line_number(xwin, curs, rpc_index, fullrange ?
+find_phys_cursor	outfuncs.c	?^find_phys_cursor(xwin, xcurs, anywhere )$?
+find_r_symtab	alsym.c	?^find_r_symtab?
+find_realtype	types.c	?^find_realtype?
+find_true_parent	common.c	?^find_true?
+find_type	cmds2.c	?^find_type(toknum, nodetype, upkid, pcode, menuadd)?
+firstFreeBlock	dd/segalloc.c	?^firstFreeBlock(segNo, freeOff)$?
+fixNames	workspace.c	?^fixNames(_np, pass)$?
+fixquote	text2.c	?^fixquote(xcp)$?
+fl_kid	/u/alice/h/macros.h	?^#define fl_kid(NdP)		(*(rfloat *)&((NdP)->n_kids[1?
+fld_symref	alsym.c	?^fld_symref?
+flush_scr	runtime.c	?^flush_scr(filedesc)$?
+flushla	keyboard.c	?^flushla()$?
+flusht	/u/alice/h/printt.h	?^# define flusht()	(tracing? fflush(trace) :0)$?
+fnfunc	cfunc.c	?^int fnfunc( stream )$?
+forcelist	treesubr.c	?^listp $?
+form_put	runfile.c	?^form_put( type, enode, filedesc, str )$?
+found_column	display.c	?^found_column() {$?
+fp_error	subr.c	?^fp_error()$?
+fpmake	/u/alice/h/macros.h	?^#define fpmake( off,seg )	&(((char far *)(((long)s?
+freeESString	dd/segalloc.c	?^freeESString(str)$?
+freeFileMenu	filename.c	?^freeFileMenu(xmp)$?
+free_ancient_hist	history.c	?^free_ancient_hist()$?
+free_builtin_ptrs	load.c	?^free_builtin_ptrs()$?
+free_sym_ptrs	load.c	?^free_sym_ptrs()$?
+free_undone_hist	history.c	?^free_undone_hist()$?
+freerror	dd/segalloc.c	?^freerror( segNo, pOff )$?
+fresh	/u/alice/h/macros.h	?^#define fresh(type)		(type *)talloc( sizeof(type) ?
+fresh_stub	action.c	?^fresh_stub( xnnode, i )$?
+full_kids	/u/alice/h/macros.h	?^#define full_kids(typ)		lt_full_kids[typ]$?
+fullinit	fullfuncs.c	?^fullinit()$?
+getCDir	filename.c	?^getCDir(s, drive)$?
+getDTA	filename.c	?^getDTA()$?
+getDisk	filename.c	?^getDisk()$?
+getERRstr	/u/alice/h/macros.h	?^# define getERRstr(erm)	erm$?
+getERRstr	dd/segalloc.c	?^getERRstr(errno)$?
+getESString	/u/alice/h/macros.h	?^#define getESString(str)	str$?
+getESString	dd/segalloc.c	?^getESString(where)$?
+getHelp	menu.c	?^getHelp(sel)$?
+getIfNull	text2.c	?^getIfNull(str, prompt, buf, buflen)$?
+getKeyPrompt	text2.c	?^getKeyPrompt(prompt)$?
+getMarkIndex	mark.c	?^getMarkIndex(args)$?
+getPattern	search.c	?^getPattern(args)$?
+getSegString	/u/alice/h/macros.h	?^#define getSegString(str,seg)	str$?
+getSegString	dd/segalloc.c	?^getSegString(where,seg)$?
+get_action	cmds2.c	?^get_action(toknum, actloc, startloc)$?
+get_bufch	run2.c	?^get_bufch()$?
+get_damn_exp_type	types.c	?^get_damn_exp_type(etree)$?
+get_fpointers	run2.c	?^get_fpointers( aframe )$?
+get_lookahead	keyboard.c	?^get_lookahead()$?
+get_nws	workspace.c	?^get_nws(prename, cflag, getwhat)$?
+get_routine	run2.c	?^get_routine( cnode, cdisp )$?
+get_safe_exp_type	types.c	?^get_safe_exp_type(etree)$?
+get_sblock	runtime.c	?^get_sblock?
+get_string	load.c	?^get_string(buf, f)$?
+get_stsize	typecheck.c	?^get_stsize( strtype, thestr )$?
+get_workspace	workspace.c	?^get_workspace( wsname, create )$?
+getbotline	text2.c	?^getbotline()$?
+getbyte	load.c	?^getbyte(fp)$?
+getfilename	filename.c	?^getfilename(name, filesInMenu)$?
+getint	common.c	?^getint( str )$?
+getprline	text2.c	?^getprline(prompt, retbuf, maxlen)$?
+getread	run2.c	?^getread( xfiledesc, loc )$?
+getuid	subr.c	?^getuid()$?
+getword	load.c	?^getword(fp)$?
+gexp_type	types.c	?^gexp_type?
+givename	runfile.c	?^givename( whfile, name )$?
+go	mark.c	?^go(args)$?
+goTo	mark.c	?^goTo(where)$?
+go_declare	actrout2.c	?^go_declare(tok, blocknode )$?
+go_to_next	outfuncs.c	?^go_to_next(xline, how_many, last_printed )$?
+go_to_prev	outfuncs.c	?^go_to_prev(xline )$?
+go_to_workspace	workspace.c	?^go_to_workspace( wsname )$?
+gotHere	main.c	?^gotHere(file, line)$?
+got_break	/u/alice/h/break.h	?^#define got_break() (Exc_pending & EXC_BREAK)$?
+grab_range	cmds2.c	?^grab_range(selflag)$?
+graft	history.c	?^graft(what, where)$?
+graft_ws	workspace.c	?^graft_ws( wsname, xloc )$?
+growBlock	dd/segalloc.c	?^growBlock(delta)$?
+growSeg	dd/segalloc.c	?^growSeg(segNo, need)$?
+growlist	treesubr.c	?^listp $?
+gtbuf	help.c	?^gtbuf() {$?
+hash	alsym.c	?^hash( xname )$?
+hclose	helpfile.c	?^hclose( fp )$?
+help_gets	helpfile.c	?^help_gets?
+help_open	helpfile.c	?^help_open( fname )$?
+helpbox	help.c	?^helpbox( win, bc1, bc2, height )$?
+helpfile	help.c	?^helpfile( hdir, subject )$?
+helpwaddstr	help.c	?^helpwaddstr( win, row, col, str, pad )$?
+helpwin	help.c	?^helpwin( height, width, startrow, startcol )$?
+helpwrefresh	help.c	?^#define helpwrefresh(win)$?
+hf_getword	helpfile.c	?^hf_getword( fp )$?
+hfgets	helpfile.c	?^hfgets( buf, size, desc )$?
+hidebound	common.c	?^hidebound?
+highType	alsym.c	?^highType(type)$?
+hist_add	history.c	?^hist_add(action, from, to, kid)$?
+hist_dump	history.c	?^hist_dump()$?
+hist_mark	history.c	?^hist_mark()$?
+hist_refs_list	history.c	?^hist_refs_list(_oldlp, newlp)$?
+hist_room	history.c	?^hist_room( size )$?
+hopen	helpfile.c	?^hopen( hdir, sub )$?
+ib_spop	/u/alice/h/interp.h	?^#define ib_spop()	((bits8)*(rint *)sp.st_pint++)$?
+ib_spush	/u/alice/h/interp.h	?^#define ib_spush(val)	(*(rint *)(--sp.st_pint) = (?
+if	outfuncs.c	?^	if( line->sub_line != MAX_LINES && line->sub_line?
+if_sym_call	alsym.c	?^if_sym_call(_np, funcp)$?
+imm_abort	cmds2.c	?^imm_abort()$?
+imm_ws	workspace.c	?^imm_ws()$?
+inUse	alsym.c	?^inUse(name)$?
+in_token	cmds2.c	?^in_token(toknum,stloc)$?
+infix_descend	treesubr.c	?^infix_descend(xcp)$?
+initSegAlloc	dd/segalloc.c	?^initSegAlloc()$?
+initWindows	window.c	?^initWindows()$?
+init_demo	keyboard.c	?^init_demo()$?
+init_help	helpfile.c	?^init_help()$?
+init_interp	setup.c	?^init_interp()$?
+init_pwork	workspace.c	?^init_pwork(xws)$?
+init_ws	workspace.c	?^init_ws()$?
+inp_char	run2.c	?^inp_char( filedesc, dtget )$?
+input_pending	action.c	?^input_pending()$?
+ins_node	cmds2.c	?^ins_node( place, newtype, whatkid )$?
+inschar	oledit.c	?^inschar(ch)$?
+int_kid	/u/alice/h/macros.h	?^#define int_kid(num,NdP)	((int)(NdP)->n_kids[num])?
+int_spop	/u/alice/h/interp.h	?^#define int_spop()	(*(rint *)(sp.st_pint++))$?
+int_spush	/u/alice/h/interp.h	?^#define int_spush(val)	(*(rint *)(--sp.st_pint) = ?
+interp	interp.c	?^interp(loc,restart, setstep)$?
+intlong	fullfuncs.c	?^intlong(loc)$?
+isBlock	alsym.c	?^isBlock(np)$?
+isRecord	alsym.c	?^isRecord(np)$?
+isValidID	text2.c	?^isValidID(str)$?
+is_a_comment	/u/alice/h/macros.h	?^#define is_a_comment(NdP)	(*((bits8 *)NdP) == N_ST?
+is_a_file	/u/alice/h/macros.h	?^#define is_a_file(NdP)	(*((bits8 *)(NdP)) == N_TYP?
+is_a_hide	/u/alice/h/macros.h	?^#define is_a_hide(NdP)	(*((bits8 *)NdP)==N_HIDE||*?
+is_a_list	/u/alice/h/macros.h	?^#define is_a_list(NdP)	(*((bits8 *)NdP)==N_LIST)$?
+is_a_stub	/u/alice/h/macros.h	?^#define is_a_stub(NdP)	(*((bits8 *)NdP) == N_STUB)?
+is_a_subscope	/u/alice/h/macros.h	?^#define is_a_subscope(NdP)	(*((bits8 *)NdP) == N_T?
+is_a_symbol	/u/alice/h/macros.h	?^#define is_a_symbol(NdP)	(*((bits8 *)NdP) == N_DEC?
+is_ancestor	action.c	?^is_ancestor( ancestor, _childnode )$?
+is_boolean	/u/alice/h/interp.h	?^#define is_boolean(typ)	(typ == Basetype(BT_boolea?
+is_char	/u/alice/h/interp.h	?^#define is_char(typ)	(typ == Basetype(BT_char))$?
+is_const	text2.c	?^is_const( t )$?
+is_descend	/u/alice/h/macros.h	?^#define is_descend(strin)	(strin[0] == '!' && stri?
+is_integer	/u/alice/h/interp.h	?^#define is_integer(typ)	(typ == Basetype(BT_intege?
+is_line_class	outfuncs.c	?^is_line_class( stclass )$?
+is_not_root	/u/alice/h/macros.h	?^#define is_not_root(NdP)		((NdP)->n_parent)$?
+is_ordinal	typecheck.c	?^is_ordinal( ttree )$?
+is_real	/u/alice/h/interp.h	?^#define is_real(typ)	(typ == Basetype(BT_real))$?
+is_root	/u/alice/h/macros.h	?^#define is_root(NdP)		(!(NdP)->n_parent)$?
+is_set_type	typecheck.c	?^is_set_type( atype )$?
+is_standard	/u/alice/h/macros.h	?^#define is_standard(NdP)	(*((bits8 *)NdP)<=LAST_ST?
+is_stringtype	typecheck.c	?^is_stringtype( _atype )$?
+is_stub_class	/u/alice/h/macros.h	?^#define is_stub_class(NdP,cl)	(*((bits8 *)NdP) == ?
+is_undid	actrout2.c	?^is_undid(loc )$?
+isalnum	/u/alice/h/alctype.h	?^#define isalnum(c) (isalpha(c)||isdigit(c))$?
+isascii	/u/alice/h/alctype.h	?^#define isascii(c) (((c) & 0377) < 0177)$?
+iscomclass	text.c	?^iscomclass(cl)$?
+iscomtype	text.c	?^iscomtype(ty)$?
+isexptok	oledit.c	?^isexptok(tok)$?
+isgraph	/u/alice/h/alctype.h	?^#define isgraph(c) ((c) > ' ' && (c) <= '~')$?
+isleaftok	search.c	?^isleaftok(tn)$?
+isolechar	oledit.c	?^isolechar(cmd)$?
+isprint	/u/alice/h/alctype.h	?^#define isprint(c) ((c) >= ' ' && (c) <= '~')$?
+isterm	oledit.c	?^isterm(ntok, ta)$?
+kcget	outfuncs.c	?^kcget( kid_index, lnode )$?
+key_token	scan.c	?^key_token()$?
+keyget	keyboard.c	?^keyget()$?
+kid1	/u/alice/h/macros.h	?^#define kid1(NdP)		((NdP)->n_kids[0])$?
+kid1adr	/u/alice/h/macros.h	?^#define kid1adr(NdP)		(&(NdP)->n_kids[0])$?
+kid2	/u/alice/h/macros.h	?^#define kid2(NdP)		((NdP)->n_kids[1])$?
+kid3	/u/alice/h/macros.h	?^#define kid3(NdP)		((NdP)->n_kids[2])$?
+kid4	/u/alice/h/macros.h	?^#define kid4(NdP)		((NdP)->n_kids[3])$?
+kid5	/u/alice/h/macros.h	?^#define kid5(NdP)		((NdP)->n_kids[4])$?
+kid6	/u/alice/h/macros.h	?^#define kid6(NdP)		((NdP)->n_kids[5])$?
+kid7	/u/alice/h/macros.h	?^#define kid7(NdP)		((NdP)->n_kids[6])$?
+kid8	/u/alice/h/macros.h	?^#define kid8(NdP)		((NdP)->n_kids[7])$?
+kid_class	/u/alice/h/macros.h	?^#define	kid_class(typ,kid)	(lt_class_val[lt_K_Clas?
+kid_codes	/u/alice/h/macros.h	?^#define kid_codes(typ)		node_table[typ]->kidcodes$?
+kid_count	/u/alice/h/macros.h	?^#define kid_count(typ)		lt_kid_count[typ]$?
+kid_descend	/u/alice/h/macros.h	?^#define kid_descend(typ)	node_table[typ]->ni_desce?
+kid_id	/u/alice/h/macros.h	?^#define kid_id(NdP)		((symptr)(NdP->n_kids[0]))$?
+kid_type	typecheck.c	?^#define kid_type(num) kt_array[num-1]$?
+kids	/u/alice/h/macros.h	?^#define kids(NdP)		(NdP)->n_kids$?
+l_hcalc	display.c	?^l_hcalc?
+l_lower	cmds2.c	?^l_lower?
+lblst	actrout2.c	?^lblst()$?
+leng_check	treeprint.c	?^leng_check( slen )$?
+line_headnode	/u/alice/h/macros.h	?^#define line_headnode(scl)	l_hcalc( &(scl) )$?
+line_refs_list	display.c	?^line_refs_list(_oldlp, newlp)$?
+linkup	treesubr.c	?^linkup( parent, kidnum, kidnode )$?
+list_parent	/u/alice/h/macros.h	?^#define list_parent(listp)	(listp)->n_parent$?
+list_range	cmds2.c	?^listp $?
+listacount	/u/alice/h/macros.h	?^#define listacount(listp)	(listp)->flags2$?
+listcount	/u/alice/h/macros.h	?^#define listcount(listp)	(listp)->flags1$?
+loadBuiltin	dd/segalloc.c	?^loadBuiltin(f)$?
+loadErrors	dd/segalloc.c	?^loadErrors()$?
+loadFiles	dd/segalloc.c	?^loadFiles()$?
+loadLib	dd/segalloc.c	?^loadLib(sufile)$?
+loadStrings	dd/segalloc.c	?^loadStrings(f)$?
+load_file	load.c	?^load_file(top)$?
+load_misc	load.c	?^load_misc()$?
+load_syms	load.c	?^load_syms(symtab_node, parent)$?
+load_tree	load.c	?^load_tree?
+logoff	command.c	?^logoff()$?
+logon	command.c	?^logon(args)$?
+longop	cfunc.c	?^static longop( lfunc, l1, l2, res )$?
+look_cmd	command.c	?^look_cmd(str)$?
+look_kw	scan.c	?^look_kw(str)$?
+look_multi	display.c	?^look_multi?
+lookupFor	alsym.c	?^nodep $?
+loopset	display.c	?^loopset( win, bound1, bound2 )$?
+m_token_add	help.c	?^m_token_add( token, m )$?
+macdef	keyboard.c	?^macdef(args)$?
+macpush	keyboard.c	?^macpush(str)$?
+macroize	main.c	?^macroize( str )$?
+madd_table	alsym.c	?^madd_table( symtab, oclass, prefix, len, loc )$?
+make_frame	runtime.c	?^make_frame( scope, varsize, caller, block, calldis?
+make_std_windows	window.c	?^make_std_windows() $?
+make_stub	/u/alice/h/macros.h	?^#define make_stub(clsno)	tree( N_STUB, NCAST (clsn?
+malloc_left	dd/segalloc.c	?^malloc_left()$?
+malloc_left	setup.c	?^# define malloc_left() (malloc_total-MemUsed)$?
+mark	mark.c	?^mark(args)$?
+markMoved	mark.c	?^markMoved(_from, _to)$?
+markPopBack	mark.c	?^markPopBack(np)$?
+mark_change	display.c	?^mark_change( whatsnew, whatsold, guy_on_screen, im?
+mark_line	display.c	?^mark_line( anode, thechange )$?
+marksGoing	mark.c	?^marksGoing(subtree)$?
+matchPattern	search.c	?^matchPattern(line, startCol)$?
+max	common.c	?^max(x, y)$?
+memerr	mem.c	?^memerr()$?
+meminit	dd/segalloc.c	?^meminit(){$?
+meminit	main.c	?^#define meminit()$?
+menu_getkey	pop.c	?^menu_getkey()$?
+menuact	cmds2.c	?^menuact( hdir, menucom )$?
+merge_file	load.c	?^merge_file(top)$?
+message	subr.c	?^message( msg, p1, p2, p3, p4 )$?
+mfree	mem.c	?^mfree(p, file, line)$?
+min	common.c	?^min(x, y)$?
+mlstring	dd/segalloc.c	?^mlstring(buf)$?
+mmalloc	mem.c	?^mmalloc(size)$?
+moveSeg	dd/segalloc.c	?^moveSeg(segNo, amt)$?
+msdoscursor	subr.c	?^msdoscursor( on )$?
+myWS	treesubr.c	?^myWS(_np)$?
+my_block	treesubr.c	?^my_block?
+my_scope	treesubr.c	?^my_scope(_np)$?
+my_symtab	alsym.c	?^my_symtab?
+namestring	/u/alice/h/macros.h	?^#define	namestring(x)		x$?
+neartofarstrcpy	dd/segalloc.c	?^neartofarstrcpy( farptr, nearptr )$?
+newAlloc	dd/segalloc.c	?^newAlloc(size)$?
+newAlloc	runtime.c	?^pointer newAlloc(size)$?
+newClear	dd/segalloc.c	?^newClear()$?
+newClear	runtime.c	?^newClear()$?
+newFree	dd/segalloc.c	?^newFree(p, size)$?
+newFree	runtime.c	?^newFree( obj, size )$?
+newSize	dd/segalloc.c	?^newSize( bigblock )$?
+new_menu	menu.c	?^new_menu( xmenu, mname )$?
+new_phys	cmds2.c	?^new_phys(code)$?
+new_tk_menu	help.c	?^new_tk_menu( m )$?
+newlist	treesubr.c	?^treesubr?
+newname	filename.c	?^newname(name)$?
+newrange	display.c	?^newrange(redisp)$?
+next_symtab	alsym.c	?^next_symtab?
+node_2flag	/u/alice/h/macros.h	?^#define node_2flag(NdP)		((NdP)->flags2)$?
+node_actions	/u/alice/h/macros.h	?^#define node_actions(typ)	N_Actions[typ]$?
+node_flag	/u/alice/h/macros.h	?^#define node_flag(NdP)	((NdP)->flags1)$?
+node_kid	/u/alice/h/macros.h	?^#define node_kid(NdP,knum)	((NdP)->n_kids[knum])$?
+node_parent	/u/alice/h/macros.h	?^#define node_parent(NdP)	((NdP)->n_parent)$?
+nojunk	filename.c	?^nojunk(str)$?
+nonum_message	subr.c	?^nonum_message(xmsg, p1, p2, p3, p4)$?
+not_a_list	/u/alice/h/macros.h	?^#define not_a_list(NdP)	(*((bits8 *)NdP) != N_LIST?
+not_a_stub	/u/alice/h/macros.h	?^#define not_a_stub(NdP)	(*((bits8 *)NdP) != N_STUB?
+not_stop_here	command.c	?^not_stop_here(cur,savcur)$?
+not_variable	common.c	?^not_variable( tree )$?
+ntopcmd	text.c	?^ntopcmd( row, scol, ncols, ocursnode )$?
+ntype	/u/alice/h/macros.h	?^#define ntype(NdP)		*( (bits8 *) NdP )$?
+ntype_info	/u/alice/h/macros.h	?^#define ntype_info(typ)		lt_node_flags[typ]$?
+ok_sym	common.c	?^ok_sym( sym, class, loc )$?
+ole_indent	oledit.c	?^ole_indent( off, line )$?
+ole_outln	oledit.c	?^ole_outln()$?
+ole_update	oledit.c	?^ole_update()$?
+oledit	oledit.c	?^oledit(aedwin, asline, aflags, aprectext, oedtext,?
+op_insert	actrout2.c	?^op_insert( where, type, tok )$?
+open_list	history.c	?^open_list(_lp)$?
+opname	expparse.c	?^opname(n)$?
+or_2flag	/u/alice/h/macros.h	?^#define or_2flag(NdP,val)	((NdP)->flags2 |= (val))?
+or_node_flag	/u/alice/h/macros.h	?^#define or_node_flag(NdP,val)	(NdP)->flags1 |= (va?
+or_sym_mflags	/u/alice/h/macros.h	?^#define or_sym_mflags(sNdP, val)	((sNdP)->s_mflags?
+ordname	run2.c	?^ordname( xtyp, ord )$?
+out_line	output.c	?^out_line(xline, xwin, code, stopline )$?
+overror	interp.c	?^overror( code )$?
+ovflow	interp.c	?^ovflow()$?
+p_spop	/u/alice/h/interp.h	?^#define p_spop() 	(*sp.st_pointer++)$?
+p_spush	/u/alice/h/interp.h	?^#define p_spush(val)	(*--sp.st_pointer = (val))$?
+page_down	display.c	?^page_down()$?
+page_up	display.c	?^page_up(){$?
+paramStubs	scan_decl.c	?^paramStubs?
+parse_comline	fullfuncs.c	?^parse_comline()$?
+pas_help	help.c	?^pas_help(args)$?
+pauseget	keyboard.c	?^pauseget( mustret )$?
+pcod_adjust	output.c	?^pcod_adjust( line )$?
+percentize	dd/segalloc.c	?^percentize( num, denom, init )$?
+pfkeyslabel	subr.c	?^pfkeyslabel()$?
+pop	expparse.c	?^#define pop(num) { np = num-1; stacktop -= (num-1)?
+popAllSusp	workspace.c	?^popAllSusp()$?
+popBack	mark.c	?^popBack()$?
+pop_menu	pop.c	?^pop_menu(xwindow, xmenu, helpfunc)$?
+pop_susp	run2.c	?^pop_susp()$?
+pop_token	text.c	?^pop_token()$?
+prep_r_window	window.c	?^prep_r_window()$?
+prep_stacks	runtime.c	?^prep_stacks(do_estack)$?
+prep_to_run	window.c	?^prep_to_run()$?
+prg_output	runtime.c	?^prg_output( type, str )$?
+print_codes	/u/alice/h/macros.h	?^#define print_codes(typ)	node_table[typ]->printcod?
+printline	output.c	?^printline(xwin, indent_level, line_no, xline )$?
+printt0	/u/alice/h/printt.h	?^# define printt0(f) (tracing? fprintf(trace, f) :0?
+printt1	/u/alice/h/printt.h	?^# define printt1(fmt,a) (tracing? fprintf(trace, f?
+printt2	/u/alice/h/printt.h	?^# define printt2(fmt,a,b) (tracing? fprintf(trace,?
+printt3	/u/alice/h/printt.h	?^# define printt3(fmt,a,b,c) (tracing? fprintf(trac?
+printt4	/u/alice/h/printt.h	?^# define printt4(fmt,a,b,c,d) (tracing? fprintf(tr?
+printt5	/u/alice/h/printt.h	?^# define printt5(fmt,a,b,c,d,e) (tracing? fprintf(?
+printt6	/u/alice/h/printt.h	?^# define printt6(fmt,a,b,c,d,e,f) (tracing? fprint?
+printt8	/u/alice/h/printt.h	?^# define printt8(fmt,a,b,c,d,e,f,g,h) (tracing? fp?
+prnull	/u/alice/h/macros.h	?^#define prnull(str)	((str) ? (str) : "(null)")$?
+promptBot	text2.c	?^promptBot(str)$?
+prp_pfile	runfile.c	?^prp_pfile( argv, filedesc )$?
+prune	history.c	?^prune(what)$?
+ptrmap	/u/alice/h/interp.h	?^#define ptrmap(new,x)	new = (((long)x & 0xffff) + ?
+pure_message	subr.c	?^pure_message( msg )$?
+push	expparse.c	?^#define push(t) { stacktop += 1; parsestack[stackt?
+pushtoken	oledit.c	?^pushtoken(t)$?
+putout	runfile.c	?^putout( whfile, where, style )$?
+putword	save.c	?^putword(word, fp)$?
+qfopen	filename.c	?^qfopen( fname, opargs )$?
+range_check	types.c	?^range_check(xtree, lower )$?
+raw_transmog	cmds2.c	?^raw_transmog( oldnode, wharray, newtype )$?
+rawcall	cfunc.c	?^rawcall( off, seg, ar1, ar2, ar3, ar4,ar5,ar6,ar7,?
+rd_check	typecheck.c	?^rd_check( arglist, isread )$?
+re_return	subr.c	?^re_return(){$?
+readkey	keyboard.c	?^readkey()$?
+realcp	actrout2.c	?^realcp(xcp)$?
+rec_check	outfuncs.c	?^rec_check( xline )$?
+recheck	typecheck.c	?^recheck(tree, idnode, rtype )$?
+redo	history.c	?^redo()$?
+redraw_errline	subr.c	?^redraw_errline()$?
+redrw_screen	window.c	?^redrw_screen( recreate )$?
+reduce	expparse.c	?^reduce()$?
+reexpand	actrout.c	?^reexpand(_np)$?
+refresh_scr	window.c	?^refresh_scr()$?
+regtty	common.c	?^regtty( doit, pause )$?
+rem_points	cmds2.c	?^rem_points( nod )$?
+repeat_err	subr.c	?^repeat_err(){$?
+res_check	runtime.c	?^res_check(restore)$?
+reset	/u/alice/h/jump.h	?^#define reset() longjmp( exit_buf, 1 )$?
+restore_ws	load.c	?^restore_ws()$?
+resume	runtime.c	?^resume( stepping )$?
+reswflags	common.c	?^reswflags( win, newflgs )$?
+return	outfuncs.c	?^	return( go_to_prev( line ) );$?
+reuse	text2.c	?^reuse(xcp, t, xnewstr)$?
+rhssize	expparse.c	?^#define rhssize() (stacktop-bot-1)	/* number of el?
+rscheck	alsym.c	?^rscheck?
+rst_attr	treeprint.c	?^#define rst_attr(saveit) chmask = saveit;$?
+rstackov	runtime.c	?^rstackov( needed )$?
+run_error	runtime.c	?^run_error( str, a1, a2, a3, a4, a5 )$?
+run_prog	runtime.c	?^run_prog(loc,setstep)$?
+rvbufadd	treeprint.c	?^rvbufadd( str, xthenode, kidnum )$?
+s_2flag	/u/alice/h/macros.h	?^#define s_2flag(NdP,val)	(NdP)->flags2 = (val)$?
+s_conval	common.c	?^s_conval(xloc, cntype, str )$?
+s_cu_parent	/u/alice/h/macros.h	?^#define s_cu_parent(cp, val) cp->n_parent = (val)$?
+s_declare	alsym.c	?^s_declare(lname, symtype, symtab)$?
+s_expparse	expparse.c	?^s_expparse(string, rtree)$?
+s_fl_kid	/u/alice/h/macros.h	?^#define s_fl_kid(NdP,val)	(*(rfloat *)&((NdP)->n_k?
+s_int_kid	/u/alice/h/macros.h	?^#define s_int_kid(num,NdP,val) s_node_kid(NdP,num,?
+s_kid1	/u/alice/h/macros.h	?^#define s_kid1(NdP,val)	s_node_kid(NdP,0,val)$?
+s_kid2	/u/alice/h/macros.h	?^#define s_kid2(NdP,val)	s_node_kid(NdP,1,val)$?
+s_kid3	/u/alice/h/macros.h	?^#define s_kid3(NdP,val)	s_node_kid(NdP,2,val)$?
+s_kid4	/u/alice/h/macros.h	?^#define s_kid4(NdP,val)	s_node_kid(NdP,3,val)$?
+s_kid5	/u/alice/h/macros.h	?^#define s_kid5(NdP,val)	s_node_kid(NdP,4,val)$?
+s_kid6	/u/alice/h/macros.h	?^#define s_kid6(NdP,val)	s_node_kid(NdP,5,val)$?
+s_kid7	/u/alice/h/macros.h	?^#define s_kid7(NdP,val)	s_node_kid(NdP,6,val)$?
+s_kid8	/u/alice/h/macros.h	?^#define s_kid8(NdP,val)	s_node_kid(NdP,7,val)$?
+s_kid_id	/u/alice/h/macros.h	?^#define s_kid_id(NdP,val)	(NdP->n_kids[0] = (nodep?
+s_listacount	/u/alice/h/macros.h	?^#define s_listacount(listp,val)	(listp)->flags2 = ?
+s_listcount	/u/alice/h/macros.h	?^#define s_listcount(listp,val)	(listp)->flags1 = (?
+s_listparent	/u/alice/h/macros.h	?^#define s_listparent(listp, val)	((listp)->n_paren?
+s_node_flag	/u/alice/h/macros.h	?^#define s_node_flag(NdP,val)	(NdP)->flags1 = (val)?
+s_node_kid	/u/alice/h/macros.h	?^#define s_node_kid(NdP,knum,val)	(NdP)->n_kids[knu?
+s_node_parent	/u/alice/h/macros.h	?^#define s_node_parent(NdP,val) (NdP->n_parent = (v?
+s_ntype	/u/alice/h/macros.h	?^#define s_ntype(NdP,val)	*(bits8 *)(NdP) = (val)$?
+s_str_kid	/u/alice/h/macros.h	?^#define s_str_kid(num,NdP,val)	(*(char **)&((NdP)-?
+s_sym_declaration	/u/alice/h/macros.h	?^#define s_sym_declaration(sNdP,val)	((sNdP)->n_par?
+s_sym_dtype	/u/alice/h/macros.h	?^#define s_sym_dtype(sNdP,val)		(sNdP)->s_decl_type?
+s_sym_framesize	/u/alice/h/macros.h	?^#define s_sym_framesize(sNdP,val)	(sNdP)->s_value ?
+s_sym_ivalue	/u/alice/h/macros.h	?^#define s_sym_ivalue(sNdP,val)		(sNdP)->s_value = ?
+s_sym_mflags	/u/alice/h/macros.h	?^#define s_sym_mflags(sNdP, val)	((sNdP)->s_mflags ?
+s_sym_name	/u/alice/h/macros.h	?^#define s_sym_name(sNdP, val)		((sNdP)->s_name = (?
+s_sym_next	/u/alice/h/macros.h	?^#define s_sym_next(sNdP, val)	((sNdP)->s_next = (v?
+s_sym_nhash	/u/alice/h/macros.h	?^#define	s_sym_nhash(sNdP, val)	((sNdP)->s_namhash ?
+s_sym_offset	/u/alice/h/macros.h	?^#define s_sym_offset(sNdP,val)	(sNdP)->s_value = (?
+s_sym_saveid	/u/alice/h/macros.h	?^#define s_sym_saveid(sNdP,val)	(sNdP)->s_saveid = ?
+s_sym_scope	/u/alice/h/macros.h	?^#define s_sym_scope(sNdP,val)		(sNdP)->s_scope = (?
+s_sym_size	/u/alice/h/macros.h	?^#define s_sym_size(sNdP,val)		(sNdP)->s_size = (va?
+s_sym_type	/u/alice/h/macros.h	?^#define s_sym_type(sNdP, val)	((sNdP)->s_type = (v?
+s_sym_value	/u/alice/h/macros.h	?^#define s_sym_value(sNdP,val)		(sNdP)->s_value = (?
+s_tparent	/u/alice/h/macros.h	?^#define s_tparent(listornode,val)	((nodep )listorn?
+s_work_fname	/u/alice/h/workspace.h	?^#define	s_work_fname(ws, fname)	((wsptr(ws) BPTS w?
+safeprint	action.c	?^safeprint( txbuf )$?
+safeshell	common.c	?^safeshell( str, pause, exec )$?
+sai_err	runfile.c	?^sai_err( str )$?
+saneptr	/u/alice/h/macros.h	?^#define saneptr(p)	(((long)p) > 0x1000 && ((long)p?
+sav_attr	treeprint.c	?^#define sav_attr(saveit) saveit = chmask;$?
+save	save.c	?^save(flags, safetest)$?
+saveMisc	save.c	?^saveMisc(flags)$?
+saveSyms	save.c	?^saveSyms(_symtab_node)$?
+save_ctext	text2.c	?^save_ctext(xcp)$?
+save_ftext	text2.c	?^save_ftext(xcp)$?
+save_indent	text2.c	?^save_indent(indent)$?
+save_ptext	text2.c	?^save_ptext(bp, xcp)$?
+scan_decl	scan_decl.c	?^scan_decl( dlist, procfun, total, stub_ignore, fer?
+scan_trace	trace.c	?^scan_trace( lower, size )$?
+scanerror	scan.c	?^#define scanerror(x)$?
+scanin	run2.c	?^scanin( buf, func, filedesc )$?
+scr_delete	outfuncs.c	?^scr_delete(xwin, line_no )$?
+scr_err	runfile.c	?^scr_err( i )$?
+scr_insert	outfuncs.c	?^scr_insert(xwin, line_no )$?
+scrl_copy	/u/alice/h/macros.h	?^#define scrl_copy(a1,a2)	a1 = a2$?
+search	search.c	?^search(dir)$?
+search_symtab	alsym.c	?^search_symtab(symtab, name, nhash, redecls)$?
+seeksize	runfile.c	?^seeksize(whfile)$?
+segAlloc	dd/segalloc.c	?^segAlloc(segNo, size)$?
+segFree	dd/segalloc.c	?^segFree(segNo, pOff, size)$?
+seg_fillchar	runtime.c	?^seg_fillchar( loc, fillbyte, bytes )$?
+selDisk	filename.c	?^selDisk(drive)$?
+set_assign	runtime.c	?^set_assign(dest, _src, eloc)$?
+set_attr	treeprint.c	?^#define set_attr(attr) qat = attr,chmask = ((chmas?
+set_base_type	typecheck.c	?^set_base_type( stype, stree )$?
+set_bpoint	cmds2.c	?^set_bpoint()$?
+set_descrip	runfile.c	?^set_descrip( fil, sfname, sfargs, mflags )$?
+set_eq	runtime.c	?^set_eq(_lhs, _rhs)$?
+set_ge	runtime.c	?^set_ge(_lhs, _rhs)$?
+set_in	runtime.c	?^set_in(_item, rhs)$?
+set_intersect	runtime.c	?^set_intersect(_lhs, _rhs)$?
+set_le	runtime.c	?^set_le(_lhs, _rhs)$?
+set_mtype	main.c	?^set_mtype( val )$?
+set_sc_fline	window.c	?^set_sc_fline( xwin, line ) $?
+set_spop	/u/alice/h/interp.h	?^#define set_spop()	(sp.st_set++)$?
+set_spush	/u/alice/h/interp.h	?^#define set_spush(adr)	(--sp.st_set, blk_move(sp.s?
+set_stacks	runtime.c	?^set_stacks()$?
+set_subtract	runtime.c	?^set_subtract(_lhs, _rhs)$?
+set_union	runtime.c	?^set_union(_lhs, _rhs)$?
+set_wscur	window.c	?^set_wscur( xalwin, newtop )$?
+setexit	/u/alice/h/jump.h	?^#define setexit() !setjmp( exit_buf )$?
+setfname	filename.c	?^setfname(name, force, optExt, filesInMenu)$?
+setlachar	keyboard.c	?^setlachar(ch)$?
+setmac	keyboard.c	?^setmac(xnewval)$?
+setscol	main.c	?^#define setscol(col)$?
+setup_builtin_ptrs	load.c	?^setup_builtin_ptrs()$?
+setwlines	window.c	?^setwlines( xalwin, nlines )$?
+show_item	pop.c	?^show_item(xw, menu, item, base, highlight )$?
+show_subtree	display.c	?^show_subtree(xthenode, mode, linemark )$?
+show_whole_doda	window.c	?^show_whole_doda()$?
+sigoccurred	main.c	?^sigoccurred(sn)$?
+sing_step	cmds2.c	?^sing_step(steptype)$?
+size_adjust	setup.c	?^size_adjust( size )$?
+size_in_lines	display.c	?^size_in_lines(xanode )$?
+sized_list	treesubr.c	?^sized_list?
+sizeof	runfile.c	?^int predef_number = sizeof(predef_files)/sizeof(fi?
+skip_down	action.c	?^skip_down()$?
+skip_to_next_stub	action.c	?^skip_to_next_stub()$?
+skip_type	/u/alice/h/interp.h	?^#define skip_type()	sp.st_pointer++$?
+slmessage	subr.c	?^slmessage( str, strarg )$?
+slookup	alsym.c	?^slookup(nam, create, table, moan, symtouse)$?
+space_strip	subr.c	?^space_strip( str )$?
+sr_ccheck	/u/alice/h/interp.h	?^#define sr_ccheck(a,b) /* */$?
+sr_ccheck	run2.c	?^sr_ccheck( xtnode, value )	/* check if subrange fi?
+sr_check	/u/alice/h/interp.h	?^#define sr_check(a,b) /* */$?
+sr_check	run2.c	?^sr_check( xtnode, value )$?
+srchAgain	search.c	?^srchAgain()$?
+srchBack	search.c	?^srchBack(args)$?
+srchDone	search.c	?^srchDone()$?
+srchFwd	search.c	?^srchFwd(args)$?
+stackcheck	/u/alice/h/macros.h	?^#  define stackcheck()$?
+stackdump	expparse.c	?^#define stackdump()	/* nothing */$?
+stackerr	alsym.c	?^stackerr()$?
+stackof	/u/alice/h/interp.h	?^#define stackof(type)	(sizeof(type)/sizeof(stacklo?
+start_call	runtime.c	?^start_call( where )$?
+state_push	/u/alice/h/interp.h	?^#define state_push(val) (*--ex_stack).e_state = (v?
+statusLine	subr.c	?^statusLine()$?
+stclose	runfile.c	?^stclose( fil )$?
+sterr	cmds2.c	?^sterr() {$?
+stid	actrout2.c	?^stid()$?
+stloc	/u/alice/h/interp.h	?^#define stloc(offset,typ) (*(typ *)(sp.st_stackloc?
+str_assign	runtime.c	?^str_assign( dest, src, dest_size )$?
+str_coerce	typecheck.c	?^str_coerce( atype, treenod )$?
+str_kid	/u/alice/h/macros.h	?^#define str_kid(num,NdP)	(*(char **)&((NdP)->n_kid?
+str_ret_push	functions.c	?^str_ret_push( argv, str, len )$?
+str_spop	/u/alice/h/interp.h	?^# define str_spop()	(*sp.st_pointer++)$?
+str_spop	run2.c	?^str_spop(){$?
+strc_alloc	mem.c	?^char *strc_alloc( str )$?
+string_add	run2.c	?^string_add()$?
+strncmp	subr.c	?^strncmp(_s1, _s2, n)$?
+strncpy	common.c	?^strncpy(dest, src, num)$?
+stru_assign	/u/alice/h/macros.h	?^#define stru_assign(a1,a2)	a1 = a2$?
+stub_for_prune	history.c	?^#define stub_for_prune(arg) make_stub(arg)$?
+sym_assign	alsym.c	?^sym_assign(xblock, oldid, newid )$?
+sym_complete	alsym.c	?^sym_complete( loc, prefix, len )$?
+sym_declaration	/u/alice/h/macros.h	?^#define sym_declaration(sNdP) (sNdP)->n_parent$?
+sym_dtype	/u/alice/h/macros.h	?^#define sym_dtype(sNdP)	(sNdP)->s_decl_type$?
+sym_dump	dump.c	?^sym_dump(table)$?
+sym_framesize	/u/alice/h/macros.h	?^#define sym_framesize(sNdP)	(sNdP)->s_value$?
+sym_ivalue	/u/alice/h/macros.h	?^#define sym_ivalue(sNdP)	((int)(sNdP)->s_value)$?
+sym_link	alsym.c	?^sym_link(_sp, symtab)$?
+sym_menu	alsym.c	?^sym_menu( loc )$?
+sym_mflags	/u/alice/h/macros.h	?^#define sym_mflags(sNdP)	((sNdP)->s_mflags)$?
+sym_name	/u/alice/h/macros.h	?^#define sym_name(sNdP)	(sNdP)->s_name$?
+sym_next	/u/alice/h/macros.h	?^#define sym_next(sNdP)	((sNdP)->s_next)$?
+sym_nhash	/u/alice/h/macros.h	?^#define	sym_nhash(sNdP)	(sNdP)->s_namhash$?
+sym_offset	/u/alice/h/macros.h	?^#define sym_offset(sNdP)	((int)(sNdP)->s_value)$?
+sym_saveid	/u/alice/h/macros.h	?^#define sym_saveid(sNdP)	(sNdP)->s_saveid$?
+sym_scope	/u/alice/h/macros.h	?^#define sym_scope(sNdP)	(sNdP)->s_scope$?
+sym_size	/u/alice/h/macros.h	?^#define sym_size(sNdP)	(sNdP)->s_size$?
+sym_type	/u/alice/h/macros.h	?^#define sym_type(sNdP)	((sNdP)->s_type)$?
+sym_unlink	alsym.c	?^sym_unlink(_decl, _sp)$?
+sym_value	/u/alice/h/macros.h	?^#define sym_value(sNdP)	((sNdP)->s_value)$?
+symhelp	alsym.c	?^symhelp( selected, menu )$?
+symref	alsym.c	?^symref?
+t_blk_move	subr.c	?^t_blk_move( _to, _from, bytes )$?
+t_expparse	expparse.c	?^t_expparse(ta, rtree)$?
+t_is_standard	/u/alice/h/macros.h	?^#define t_is_standard(type)	((type)<=LAST_STANDARD?
+t_up_to_line	outfuncs.c	?^t_up_to?
+tab_it	treeprint.c	?^tab_it(tsize)$?
+table_lookup	subr.c	?^table_lookup( table, key, size )$?
+talloc	/u/alice/h/macros.h	?^# define	talloc(sz)	checkalloc(sz)$?
+talloc	mem.c	?^talloc( size )$?
+tcopy	workspace.c	?^tcopy?
+terminated	runtime.c	?^terminated()$?
+textToAP	filename.c	?^textToAP(name, extp)$?
+text_out	output.c	?^text_out( cline )$?
+tfarptr	/u/alice/h/macros.h	?^#define tfarptr( off )		(off)$?
+tfree	/u/alice/h/macros.h	?^#define	tfree(p)	mfree(p)$?
+tlload	trace.c	?^tlload( fname )$?
+tok_to_node	expparse.c	?^tok_to_node(t, u)$?
+token_help	help.c	?^token_help()$?
+tokname	scan.c	?^tokname(tnum)$?
+top_cup	outfuncs.c	?^top_cup(xwin )$?
+topcmd	text.c	?^topcmd( row, scol, ncols, ocursnode )$?
+tp_error	/u/alice/h/interp.h	?^#define tp_error(ec,ret)	if( last_ioerr = ec,  io_?
+tparent	/u/alice/h/macros.h	?^#define tparent(listornode)	(((nodep )listornode)-?
+traceoff	trace.c	?^traceoff( allofthem, xlower, xupper )$?
+traceon	trace.c	?^traceon( loc, size )$?
+tracepop	run2.c	?^tracepop()$?
+transmog	cmds2.c	?^transmog?
+trealloc	mem.c	?^trealloc(old, oldsize, newsize)$?
+tree	treesubr.c	?^tree?
+treeCountSyms	save.c	?^treeCountSyms(_np)$?
+treeSave	save.c	?^treeSave(_np)$?
+treedump	dump.c	?^treedump(xthenode)$?
+treefree	mem.c	?^treefree(np)$?
+treeprint	treeprint.c	?^treeprint(xthenode, prcode_index, listcode, def, p?
+tryhide	cmds2.c	?^tryhide()$?
+tryreveal	cmds2.c	?^tryreveal( )$?
+tst_charwait	runfile.c	?^tst_charwait()$?
+typ_bound	types.c	?^typ_bound(typetree, lastflag )$?
+typd_comp	setup.c	?^typd_comp(thedecl, so_far, type_parent )$?
+type_error	typecheck.c	?^type_error( xtree, string, ar1, ar2 )$?
+typecheck	typecheck.c	?^typecheck?
+typematch	text2.c	?^typematch(nod, tok)$?
+typid	actrout2.c	?^typid()$?
+typsr	actrout2.c	?^typsr(tn)$?
+uc_nextpos	treesubr.c	?^uc_nextpos(xcp)$?
+uc_prevpos	treesubr.c	?^uc_prevpos(xcp)$?
+undo	history.c	?^undo(cleanup)$?
+unload_stack	/u/alice/h/interp.h	?^#define unload_stack(val) (sp.st_stackloc += val)$?
+up_frame	run2.c	?^up_frame( oldframe )$?
+up_to_line	outfuncs.c	?^up_to_line?
+updateTreePtrs	dd/segalloc.c	?^updateTreePtrs()$?
+ustrcmp	runtime.c	?^ustrcmp( str1, str2 )$?
+valid_node	/u/alice/h/macros.h	?^#define	valid_node(typ)		(typ >= 0 && typ < NodeCo?
+validdigs	run2.c	?^validdigs( xstr )$?
+validint	run2.c	?^validint( xstr )$?
+validreal	run2.c	?^validreal( xstr )$?
+vard_comp	setup.c	?^vard_comp( xthedecl, so_far, xtype_parent, scope )?
+vid_alter	display.c	?^vid_alter(onoff, which)$?
+waitForSpace	command.c	?^waitForSpace()$?
+wattroff	oledit.c	?^#define wattroff(win, at) wstandend(win)$?
+wattron	oledit.c	?^#define wattron(win, at) wstandout(win)$?
+whatChanged	history.c	?^whatChanged(np)$?
+word_allign	/u/alice/h/interp.h	?^# define word_allign(x)	(x)+((x)&1)$?
+work_cursor	/u/alice/h/workspace.h	?^#define work_cursor(ws)		wsptr(ws) BPTS ws_cursor$?
+work_dbwindow	/u/alice/h/workspace.h	?^#define work_dbwindow(ws)	wsptr(ws) BPTS ws_db_out?
+work_debug	/u/alice/h/workspace.h	?^#define work_debug(ws)		wsptr(ws) BPTS ws_debug$?
+work_dirty	/u/alice/h/workspace.h	?^#define work_dirty(ws)		(wsptr(ws) BPTS flags2 & W?
+work_fname	/u/alice/h/workspace.h	?^#define work_fname(ws)		wsptr(ws) BPTS ws_fname$?
+work_name	/u/alice/h/workspace.h	?^#define work_name(ws)		wsptr(ws) BPTS ws_name$?
+work_next	/u/alice/h/workspace.h	?^#define work_next(ws)		wsptr(ws) BPTS ws_next$?
+work_node	/u/alice/h/workspace.h	?^#define work_node(ws)		wsptr(ws) BPTS ws_node$?
+work_owindow	/u/alice/h/workspace.h	?^#define work_owindow(ws)	wsptr(ws) BPTS ws_r_outpu?
+work_prev	/u/alice/h/workspace.h	?^#define work_prev(ws)		wsptr(ws) BPTS ws_prev$?
+work_scursor	/u/alice/h/workspace.h	?^#define work_scursor(ws) 	wsptr(ws) BPTS ws_scurso?
+work_window	/u/alice/h/workspace.h	?^#define work_window(ws)		wsptr(ws) BPTS ws_window$?
+wrapupSegAlloc	dd/segalloc.c	?^wrapupSegAlloc()$?
+writeError	common.c	?^writeError(fp)$?
+writeError	save.c	?^writeError(fp)$?
+write_it	runfile.c	?^write_it(type, enode, filedesc)$?
+wrput	run2.c	?^wrput( type, xfiledesc )$?
+wsptr	/u/alice/h/workspace.h	?^#define wsptr(ws)	((realworkp)(tr_far + (unsigned)?
+zap_history	history.c	?^zap_history()$?
+zero	runtime.c	?^zero( loc, bytes )$?

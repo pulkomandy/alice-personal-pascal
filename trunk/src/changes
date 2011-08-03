@@ -1,0 +1,115 @@
+
+
+Changes since release 1.40 of Atari ST Alice Pascal.
+
+-------------------------------------ToDo-------------------------------------
+
+Done - Fix kbd device so that it returns alt-keycodes properly
+
+Done - look at memory allocation - don't allocate more than (MemAvail - safeamount)
+
+Much Better - Fix edit window sliders ! - Important !!!
+
+ToDo - Add option in mono for half-height chars
+
+Done - Fix debug mode problem
+
+STLibProc/STLibFunc questions, working with OSS, etc.
+
+New templates (uppercase only, etc)
+
+Hiding mouse after cursor positioning ?
+
+Long_Integer type ?
+
+Allow readln( win, "Hi there...", a, b, c, d );   etc
+
+When out of memory, see if help is loaded.  If it is, close the file and
+try the malloc again.
+
+When getting stuff from workspaces, and it is too complicated to undo,
+and you run out of memory - crash at f740 or f470 (Tim can't remember)
+(also in Basic)
+
+-------------------------------------Done-------------------------------------
+
+
+01/02/87	Changed _rchar() in stunix.c to return chars > 128 as
+		escape (27) followed by the char - 128.
+		ToDo: Change the update.doc to reflect that the kbd device
+		now works as documented.
+
+01/02/87	Changed mmalloc in mem.c to return 0L if (MemUsed + size) >
+		(MemAvail - SAFETY) where SAFETY is currently 5000L.
+
+01/02/87	Changed do_suspend to not call TopCurEdit() if in debug
+		mode.
+
+01/06/87	Added overflow checking to the 'square' function for
+		integers in file function.c  (called IntCheck( res, 'square'));
+
+01/06/87	Changed top_cup and bot_cdown to set a global flag 'MvSlider'
+		to indicate whether or not we scrolled a full line or not.
+		(see if the sub line differs by one).  Thus we will only
+		update the slider position when we scroll a whole line.
+
+01/08/87	Added calls to display(TRUE) in do_gbugon() and do_gbugoff()
+		in stevent.c since the screen was not being updated properly
+		(breakpoints (debug only) goop)
+
+01/11/87	Rewrote Mark Williams lsbrk function (in lsbrk.c) to check
+		the amount of system memory left, and if the lsbrk would
+		not leave enough memory in the system heap, to fail.
+
+01/12/87	Uploaded the new expparse.c from the AT, which has a fix
+		for entering negative signs after commas in the one-line-
+		editor
+
+01/16/87	Changed the 'stdisk.prg' program to write an EXECUTABLE
+		boot block, and added in code to verify copies.
+
+01/16/87	Added a call to MenuCtrl( TRUE ) at the top of the mainloop
+		to ensure that the mouse is always on when at command level.
+
+01/16/87	Added a call to suspendGraphics in run_error.
+		Mouse wasn't turned on properly when a run_error happened
+		and you were in immediate mode, not suspended
+
+01/16/87	Added a call to vswr_mode( REPLACE ) in resetVDI, file
+		stgraph.c so that the draw mode will always be REPLACE
+		when the editor is running.
+
+01/16/87	Changed the smallest edit window size in stwindow.c
+
+01/19/87	Added a close workstation call to GemTerm in stinit.c
+		May have been cause of 'new version' bug.
+
+01/19/87	Changed Display( TRUE ) || big_change to call count_lines
+		in GEM, so that the slider will be updated.  Removed
+		count_lines from page_up, etc in command.c
+
+01/21/87	Changed the command that is executed when 'delete' is
+		selected from the menu to 'delete it', instead of plain
+		delete.
+
+01/21/87	Changed the 'badcolour' help screen ref in stgraph.c to
+		'badcolor'
+
+03/09/87	Did backups.  Diffs logged in backup_14.
+
+03/10/87	Fixed bug in stgraph.c.  Calling RemoveEditWindows twice
+		while running program caused ALICE to hang.
+
+03/10/87	Changed the version number in the resource file to 1.4.3
+		ALICE_VERSION unchanged, as that would mean we have
+		to duplicate the supplemental disk as well (because of
+		the help file)
+
+03/11/87	Changed Error message 18 from 'bad transmogify...' to
+		'Type must be a named type or placeholder for abs'
+
+03/11/87	Changed the 'what can I type menu' to have the help button
+		disabled, since paction help is not available.
+
+03/11/87	Added Mediach checking for the help file so that the
+		user can pull out the help disk without disaster.
