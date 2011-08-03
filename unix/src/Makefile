@@ -52,14 +52,14 @@ SRCS= $(ASRCS) $(BSRCS)
 OBJS= $(EOBJS) $(IOBJS) $(COBJS)
 
 
-CFLAGS=	 -g -I../h 
+CFLAGS=	 -g -I../h -Dunix 
 
 LFLAGS= -g
 
 CPP = /lib/cpp -I../h -P -Dunix
 
 alice:	$(EOBJS) $(IOBJS) $(COBJS) unix.o Makefile
-	cc $(LFLAGS) $(EOBJS) $(IOBJS) $(COBJS) unix.o -o alice -lncurses -lm
+	cc $(LFLAGS) $(EOBJS) $(IOBJS) $(COBJS) unix.o -o alice -lncurses
 
 install: alice
 	cp ap.init ../tem/*.suf $(ALIB)

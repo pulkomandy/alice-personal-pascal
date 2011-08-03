@@ -31,7 +31,7 @@
 
 #ifdef unix
 # include <sys/types.h>
-# include <sys/dir.h>
+//# include <sys/dir.h>
 # include <sys/stat.h>
 #include <dirent.h>
 #endif unix

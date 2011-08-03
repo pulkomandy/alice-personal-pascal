@@ -13,6 +13,8 @@
 #include "extramem.h"
 #endif
 
+#include <errno.h>
+
 #ifdef DB_CFUNC
 # define PRINTT
 #else
@@ -446,7 +448,7 @@ static rint has_segments = FALSE;
 extern WINDOW *pg_out;
 extern funcptr builtins[];
 extern int step_flag;
-extern int errno;
+
 extern int does_flicker;
 extern int screen_mem_addr;
 extern int mono_adapter;
@@ -495,7 +497,7 @@ Tinyp((pointer)&sel_last),	/* 23 */
 (pointer)safe_reserve,		/* 24 */
 (pointer)&has_segments,		/* 25 */
 Tinyp((pointer)&cmd_preproc),	/* 26 */
-(pointer)&errno,	/* 27 */
+0 /*(pointer)&errno*/,	/* 27 */
 (pointer)open_array,	/* 28 */
 #ifdef TURBO
 (pointer)&last_ioerr,	/* 29 */
