@@ -1,0 +1,7 @@
+To make on a 68000 or other bigendian processor:
+
+
+You will need to define the symbol 'BIGENDIAN'
+
+You will need to run the template program with the -s option to indicate
+bytes must be swapped from the default little-endian order

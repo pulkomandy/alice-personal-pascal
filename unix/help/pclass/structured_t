@@ -1,0 +1,11 @@
+|11,72
+     A Structured-Type placeholder in a packed type may be filled in with
+an array, set, file, or record type.
+|mFor more, choose
+|iDo nothing,nop
+|iPacked types,Hpnode/packed_type
+|iArrays,Hpnode/array
+|iSets,Hpnode/set_type
+|iFiles,Hpnode/file_type
+|iRecords,Hpnode/record_type
+|p

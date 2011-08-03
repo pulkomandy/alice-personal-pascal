@@ -1,0 +1,20 @@
+|15,74
+     An ELSE case may be part of a CASE statement.  It is like a case
+instance but it has the special label "else".  ALICE will execute the
+statements that follow the "else" label if the case value doesn't match any
+of the other case instances.
+
+Else Case Examples:
+     case t mod 3 of
+         0: begin
+            writeln('Divisible by three');
+            end;
+         else begin
+             writeln('Not divisible by three');
+         end;
+     end;
+|mFor more, choose
+|iDo nothing,nop
+|iCASE statements,Hpnode/case
+|iCase Instances,Hpnode/case_instanc
+|p

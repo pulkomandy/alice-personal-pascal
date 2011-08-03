@@ -1,0 +1,11 @@
+|12,74
+Loading a Program That You Previously Saved:
+     If you want to start editing a program that was saved earlier, issue
+the LOAD command by pressing CTRL-L (hold down the CTRL key, then press L).
+ALICE will ask for the name of the file that contains the program.
+|mFor more, choose
+|iDo nothing,nop
+|iThe LOAD command,Hcommand/load
+|iSaving programs,Hmisc/save
+|iChanging file names,Hcommand/filename
+|p

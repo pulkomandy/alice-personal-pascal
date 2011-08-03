@@ -1,0 +1,11 @@
+|11,74
+     StrConcat "glues" (concatenates) one string onto the end of the other.
+It takes two strings as arguments.  The first argument must be a argument
+variable (a "var" argument).  The second can be either a variable or a
+constant.  The second string is put on the end of the first.
+
+StrConcat Examples:
+     str1 := 'Hi ';
+     StrConcat(str1,'there!');
+     writeln(str1);
+         {Will write "Hi there!"}

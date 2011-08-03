@@ -1,0 +1,7 @@
+|7,73
+The selected item must be a list of statements
+    You have selected (highlighted) a part of your program and then issued
+    a command.  However, the command you issued only works on a list of
+    statements, and you have selected something else (either a part of a
+    statement or some declarations).  Either issue a different command or
+    reselect the part of the program that you want to change.

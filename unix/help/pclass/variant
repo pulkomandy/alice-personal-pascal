@@ -1,0 +1,26 @@
+|23,72
+     A Variant placeholder stands for the variant part of a record.  To
+fill in a Variant placeholder, you should enter a constant that is one of
+the possible values of the variant tag field.  ALICE will lay out the
+template
+
+          C: (Field);
+
+where C is the constant you entered.  The field(s) inside the parentheses
+will be the fields that the record contains when the tag field has the
+value C.  For example, in a record holding information about books, we
+might have
+
+          case English : Boolean of
+          true : (Canadian : Boolean);
+          false : (language : packed array [1..20] of char;
+                   translator : packed array [1..40] of char);
+
+This has two Variants, labelled "true" and
+"false".  The "tag field" is a Boolean
+field named "English".
+|mFor more, choose
+|iDo nothing,nop
+|iRecords,Hpnode/record_type
+|iVariant cases,Hpnode/variant_case
+|p

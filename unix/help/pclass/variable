@@ -1,0 +1,15 @@
+|11,72
+     A Variable placeholder may be filled in with the name of a variable,
+or any of the following
+
+          arrayname[subscript]
+          recordname.fieldname
+          pointer^
+|mFor more, choose
+|iDo nothing,nop
+|iName,Hpclass/name
+|iVariable Declaration,Hpclass/variable_dec
+|iThe [] form,Hpnode/array_indexi
+|iThe . expression,Hpnode/field_use
+|iThe ^ expression,Hpnode/indirection
+|p

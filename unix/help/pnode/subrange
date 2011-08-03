@@ -1,0 +1,20 @@
+|16,73
+     A subrange stands for a sequence of values that all have a certain
+type.  For example, you can have a subrange of integers or a subrange of
+characters.  To specify a subrange, give the lowest value in the sequence
+and the highest, separated by "..".
+     Your program can have subranges of any scalar type: integers,
+characters, or user-defined scalar types.  A subrange is a type itself and
+can be filled in for Type placeholders.
+
+Valid Subrange Examples:
+     1..10    'c'..'f'    mon..fri
+     var
+         matrix : array[1..10] of real;
+         i : 1..100;
+Invalid Subrange Examples:
+     100..1    'c'..1    2.3..3.4
+|mFor more, choose
+|iDo nothing,nop
+|iScalar types,Hmisc/scalar
+|p

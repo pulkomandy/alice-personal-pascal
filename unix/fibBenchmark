@@ -1,0 +1,63 @@
+Relay-Version: version B 2.10.1 6/24/83; site looking.UUCP
+Posting-Version: version B 2.10 5/3/83; site utcsrgv.UUCP
+Path: looking!watmath!utzoo!utcsrgv!info-mac
+From: info-mac@utcsrgv.UUCP (info-mac)
+Newsgroups: ont.micro.mac
+Subject: MacPascal Benchmark
+Message-ID: <4748@utcsrgv.UUCP>
+Date: Wed, 4-Jul-84 01:14:38 EDT
+Date-Received: Wed, 4-Jul-84 04:18:47 EDT
+Sender: peterr@utcsrgv.UUCP
+Organization: CSRI, University of Toronto
+Lines: 52
+
+Date: Tue 3 Jul 84 19:09:25-PDT
+From: Stuart Reges <uw-beaver!REGES@SU-SCORE.ARPA>
+Subject: MacPascal Benchmark
+To: info-mac@SU-SCORE.ARPA
+Office: Margaret Jacks 210, 497-9798
+
+A simple Pascal benchmark is given by the recursive fibonnaci calculation:
+
+	program Fibonnaci (input, output);
+	var number: integer;
+
+	function fib (arg: integer): integer;
+	begin
+	    if arg <= 2 then fib := 1
+	    else fib := fib (arg - 1) + fib (arg - 2);
+	end;
+
+	begin
+	    repeat
+		write ('number (0 to stop) ---> ');
+		readln (number);
+		if number <> 0 then writeln ('answer = ', fib (number));
+	    until number = 0;
+	end.
+
+This benchmark involves addition and a lot of function calls.  The complexity
+of this calculation is (phi)^n where phi = golden ratio = (SQRT(5) + 1)/2.  A
+nice property of this benchmark is that every time you increase "n" by 5 you
+increase the complexity by a factor of about 11.
+
+Here are some figures I got from three different systems that will be used for
+instruction at Stanford next Fall:
+
+	"n"	Waterloo	MacPascal	MacPascal	DEC-20 Pascal
+		Interpretter	(integer)	(longint)	Compiled
+	-----------------------------------------------------------------------
+	15	 50 seconds	 6.7 seconds	  5.9 seconds	
+	20	540 seconds	70.5 seconds	 63.5 seconds	 0.2 seconds
+	25					702.0 seconds	 1.7 seconds
+	30							19.7 seconds
+
+The Waterloo Pascal Interpretter runs on an IBM/PC.  The MacPascal version
+using INTEGER could not calculate FIB (25) because it is greater then MAXINT.
+I don't know why the LONGINT version should be faster.  That is
+counter-intuitive for me.  The DEC-20 Pascal is Hedricks compiler from Rutgers.
+The time reported is actual CPU time.  Other calculations were done with a
+wrist-watch, but should be accurate to within a quarter second.
+
+This is using the Beta version of MacPascal released last week.
+-------

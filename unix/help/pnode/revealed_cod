@@ -1,0 +1,16 @@
+|16,72
+     Once a block of code has been hidden, ALICE considers the block and
+the
+
+           ... {Comment} ...
+
+at the head of the block to be a special sort of thing.  Even if the code
+is later revealed, ALICE still remembers that it was once hidden and
+considers it to be "revealed code".  The special comment is retained as a
+reminder of this.
+|mFor more, choose
+|iDo nothing,nop
+|iThe HIDE command,Hcommand/hide
+|iThe REVEAL command,Hcommand/reveal
+|iHidden code,Hpnode/hidden_code
+|p

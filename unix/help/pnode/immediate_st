@@ -1,0 +1,11 @@
+|10,73
+	ALICE allows you to execute statements in immediate mode.  You can
+create an immediate block of statements by choosing 'Immediate block' from
+the debug menu.  Statements within the immediate blocks are executed when
+a carriage return is entered.
+
+|mFor more, choose
+|iDo nothing,nop
+|iCreating an Immediate Block,Hcommand/immediate
+|iRunning your program,Hcommand/run
+|p

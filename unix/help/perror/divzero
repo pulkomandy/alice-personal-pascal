@@ -1,0 +1,4 @@
+|4,73
+Attempted to divide by zero
+    You attempted an integer division with the "div" operator and tried to
+    divide by zero.

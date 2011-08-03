@@ -1,0 +1,26 @@
+|20,74
+     The "succ" function is the partner of "pred".  "Succ" may be applied
+to any enumerated value, character, or integer.  If it is applied to an
+integer, the result is the integer plus 1.  If it is applied to a
+character, the result is the character that comes after the argument in the
+ASCII character set.
+     If it is applied to an enumerated value, the result is the value that
+comes after the argument in the list that set up the enumerated type.  If
+you try to apply "succ" to the last value in the list, you will receive an
+error, because nothing in the list comes after the value.
+
+Valid Succ Examples:
+     type
+         days = (sun,mon,tue,wed,thu,fri,sat);
+        ...
+     succ(mon) is equal to "tue"
+     succ('a') is equal to 'b'
+     succ(3) is equal to 4
+Invalid Succ Examples:
+     succ(sat)  {Nothing comes after "sat"}
+|mFor more, choose
+|iDo nothing,nop
+|iPred,Hpsymbol/pred
+|iChar,Hpsymbol/char
+|iEnumerated types,Hpnode/enumerated_t
+|p

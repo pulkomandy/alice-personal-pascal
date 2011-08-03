@@ -1,0 +1,71 @@
+SRCS 	=		\
+	action.c	\
+	actrout.c	\
+	actrout2.c	\
+	alsym.c		\
+	classes.c	\
+	cmds2.c		\
+	command.c	\
+	common.c	\
+	display.c	\
+	dump.c		\
+	esmem.c		\
+	expparse.c	\
+	filename.c	\
+	functions.c cfunc.c	\
+	help.c		\
+	helpfile.c	\
+	history.c	\
+	interp.c ilowstates.c mlowstat.c \
+	keyboard.c	\
+	kids.c		\
+	load.c		\
+	main.c		\
+	mainloop.c	\
+	mark.c		\
+	mem.c		\
+	menu.c		\
+	menudat.c	\
+	nodes.c		\
+	nodes2.c	\
+	ole.c		\
+	oledit.c	\
+	outfuncs.c	\
+	output.c	\
+	pop.c		\
+	run2.c		\
+	runfile.c	\
+	runtime.c	\
+	save.c		\
+	scan.c		\
+	scan_decl.c	\
+	search.c	\
+	setup.c		\
+	subr.c		\
+	text.c		\
+	text2.c		\
+	treeprint.c	\
+	treesubr.c	\
+	typecheck.c	\
+	types.c		\
+	window.c	\
+	trace.c		\
+	fullfuncs.c	\
+	load_nodes.c	\
+	icogr.c \
+	dummy.c spop.s workspace.c
+
+../LastIcon:  ../LastIconSend
+	cd /u/alice/h ; make -f IconHSend
+	touch ../LastIcon
+
+../LastIconSend .PRECIOUS: $(SRCS) 
+	-echo $? | tr ' ' '\012' >eofiles
+	isend `cat eofiles` eofiles
+	touch ../LastIconSend
+
+flopcop .PRECIOUS: $(SRCS)
+	/usr/src/arch/par $? >/dev/iflop
+	touch ../LastIconSend
+
+

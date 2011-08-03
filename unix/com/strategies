@@ -1,0 +1,70 @@
+
+Compiler Strategies:
+
+All compilers:
+	+ Fill out the ALICE product line, closing obvious gap.
+	+ Allow us to compete directly with Turbo Pascal.
+	+ Provide a ".OBJ" format compiler for Turbo Pascal programs,
+	  a market that many feel is good.
+
+1) Large, powerful, full blown Interpreter + Compiler system
+	+ All interactive, no swap
+	+ Fastest compiler environment for micros or mainframes
+	- Very large, limits memory available to user and size of eventual
+	  program.  This can be countered by using extra memory on AT or
+	  "above board" using PC.
+	- Extensive project, integration of a compiler and interpreter has
+	  been traditionally tough.
+	+ Could get away with higher price.
+
+2) Interpreter/Compiler overlay system
+	+ Powerful
+	+ Smaller than system with both in memory at all times, more memory
+	  for user
+	- Swapping.  Requires either an "interpret most of the time, compile
+	  rarely" or reverse strategy.
+	- Overlays are very bad on floppy systems.
+
+3) Compiler only strategy
+	+ Always works at full speed
+	+ Smaller, more suitable for floppy machine
+	- throws away Alice interpreter
+	+ No risk of incompatability between interpreter and compiler in
+	  the same system.  Risk still exists moving to older ALICE.
+	- Variable trace very difficult
+	- Extensive project implementing other debug features of ALICE
+	  interpreter in compiled code.
+	o No need for interpreter based ALICE product except for very special
+	  tracing applications
+
+4)  Traditional compiler
+	+ Simpler to do.
+	+ Less bug prone
+	+ No dynamic linking scheme to worry about with its inability to
+	  do dynamic loads of existing subroutine libraries.
+	- Slow, but doesn't need to be used a lot.
+	- Little advantage over competitors
+
+Questions to answer:
+
+	Is the "professional" Pascal programmer market big enough
+	to warrant lots of sales?
+
+	How many people use Turbo but want something to expand on its
+	limitations, such as the 64K program size limit and the inability
+	to use other C style library packages?
+
+	Is there room for a high-priced product meant only for professionals?
+	Is this worth the price of supporting multiple versions?
+
+	Is time better spent on C?
+		- Professionals mostly use C, what % use Pascal, exactly?
+		- Is the C market too saturated, with major players like
+		  Microsoft holding strong?  There are over 20 C compilers,
+		  and Microsoft, Lattice, Mark Williams, Manx, DeSmet, Wizard,
+		  can all be considered serious contenders.  In the Pascal
+		  market, only Borland and Microsoft are serious contenders.
+		  We can easily be #2.
+		- Is the C interpreter market saturated.  There are close
+		  to a dozen C interpreters being marketed.
+

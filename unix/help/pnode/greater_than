@@ -1,0 +1,16 @@
+|12,74
+     The > operator decides if one thing is greater than another.  The
+things being compared must have the same type.
+     The result of A>B is a Boolean (true/false) value.  It will be "true"
+if A really is greater than B, and "false" otherwise.  If you are comparing
+two enumerated types, A is greater than B if it comes later in the list
+that names all the values of the type.
+
+Greater Than Examples:
+     if a > b then begin ...
+     while (I div J) > 0 do begin ...
+     if (c < 'a') or (c > 'z') then begin ...
+|mFor more, choose
+|iDo nothing,nop
+|iBoolean data,Hpsymbol/boolean
+|p

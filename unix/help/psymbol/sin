@@ -1,0 +1,7 @@
+|7,73
+     The "sin" function returns the sine of its argument.  The argument is
+assumed to be in radians.  The argument may be real or integer, but the
+result is always real.
+
+sin Examples:
+     x := sin(3.14159);

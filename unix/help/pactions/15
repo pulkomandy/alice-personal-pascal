@@ -1,0 +1,4 @@
+|4,74
+     Selecting this lets you enter a constant (numeric or string) or the
+text of a comment.  What you enter will be filled into a placeholder of the
+appropriate type.

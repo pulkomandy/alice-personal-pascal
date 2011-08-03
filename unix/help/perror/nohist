@@ -1,0 +1,12 @@
+|12,72
+This operation is too involved to UNDO
+    ALICE keeps a region of memory to remember your editing operations so
+    that it may UNDO them.  The action you have just requested (probably
+    deleting, raising, enclosing or hiding a long list of statements)
+    would require more storage remembering UNDO information than you
+    have available.  You can either proceed with the action and be unable
+    to UNDO it, or do the action in smaller chunks.
+|mFor more, choose
+|iDo nothing,nop
+|iThe UNDO command,Hcommand/undo
+|p

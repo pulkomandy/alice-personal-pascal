@@ -1,0 +1,10 @@
+|11,74
+Workspace NAME does not exist
+    You attempted to GET something from a workspace, but the workspace you
+    named does not exist.  The most common cause of this error is
+    misspelling the name of the workspace that you actually wanted.  Simply
+    issue the GET command again, and type in the correct name.
+|mFor more, choose
+|iDo nothing,nop
+|iGET,Hcommand/get
+|p

@@ -1,0 +1,15 @@
+|16,74
+     Then we'll go on.  First, we'll cover some basics of writing programs
+with ALICE.
+     When you start creating a program with ALICE, it lays out a skeleton
+to get you started.  This skeleton is called a "template" and it shows you
+the general lay-out of a normal Pascal program.
+     Some parts of this skeleton are "placeholders".  These are like blanks
+that you'll be asked to fill in.  For example, there is a placeholder to
+show where you should fill in the name of the program, a placeholder where
+you fill in the instructions, and so on.  Placeholders are always
+underlined on the screen so that they're easy to spot.
+|mDo you want more?
+|iYes,Hmisc/intro4
+|iNo,Hmisc/intro_exit
+|p

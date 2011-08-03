@@ -1,0 +1,21 @@
+|21,74
+     A Value placeholder should be filled with a constant, a variable, or
+an expression.  Expressions are made up of variables, constants, and
+operators.  All expressions have results, and every result has a type.
+Results can be integer, real, Boolean, or some other type defined within
+the program.
+     There are many kinds of operators used in Pascal expressions.  The
+list below gives their names and the symbol that represents each operation.
+For a description of any of them, just enter the symbol at an Value
+placeholder and press HELP.
+
++       Addition                    >       Greater Than?
+-       Subtraction                 <       Less Than?
+*       Multiplication              >=      Greater Than or Equal?
+/       Real Number Division        <=      Less than or Equal?
+div     Integer Division            and     Boolean AND
+mod     Integer Remainder           or      Boolean OR
+=       Equal?                      not     Boolean NOT
+<>      Not Equal?                  in      Set Inclusion
+(       Grouping                    .       Record field
+[       Subscripting                ^       Indirection

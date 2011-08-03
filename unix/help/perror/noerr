@@ -1,0 +1,8 @@
+|9,74
+No previous error message
+    You tried to use the LASTERROR command to see your most recent error
+    message, but you hadn't received an error since you signed on to ALICE.
+|mFor more, choose
+|iDo nothing,nop
+|iThe LASTERROR command,Hcommand/lasterror
+|p

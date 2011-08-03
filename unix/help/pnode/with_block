@@ -1,0 +1,29 @@
+|24,72
+     The WITH statement lets you use a simple shorthand to refer to the
+fields in a record.  On the WITH statement itself, you give the name of a
+single record variable.  This must be filled in before you can use any
+field names inside the WITH statement.  Inside the BEGIN/END block that
+follows the WITH statement, you may refer to the fields of that record
+simply by their names; you don't have to give the name of the record
+variable itself.
+     If you make editing changes that change the type of the variable at
+the top of a WITH block, it is best to retype the insides of the WITH
+block, since ALICE sometimes has difficulties with this situation.
+
+with Examples:
+     var
+         book : record
+             title : packed array [1..40] of char;
+             fiction : Boolean; {Is it fiction?}
+     begin
+     with book do begin
+         title := 'War and Peace';
+         fiction := true;
+         end;
+     if book.fiction then begin ...
+         {Need "book." outside the WITH}
+|mFor more, choose
+|iDo nothing,nop
+|iRecords,Hpnode/record_type
+|iVariant parts,Hpnode/variant_reco
+|p

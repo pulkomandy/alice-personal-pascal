@@ -1,0 +1,7 @@
+|7,74
+     When you select this, the current list will be expanded by adding an
+empty placeholder immediately after the current node.  The placeholder will
+be the same type as the the current node.  For example, if the current node
+is a statement, the empty placeholder will be a Statement placeholder.  If
+the current node is a name in a variable declaration list, the placeholder
+will be another Name placeholder.

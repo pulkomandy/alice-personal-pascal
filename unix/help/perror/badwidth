@@ -1,0 +1,15 @@
+|15,73
+Field width must be integer
+    In a "write" or "writeln" function, you gave a field width, but it
+    wasn't an integer.  In other words, if you wrote
+
+          writeln(stuff:A);
+
+    the value A was not an integer.  Only an integer can be accepted for a
+    field width.
+|mFor more, choose
+|iDo nothing,nop
+|iField widths,Hpnode/field_width
+|iPrecisions,Hpnode/precision
+|iWriteln,Hpsymbol/writeln
+|p

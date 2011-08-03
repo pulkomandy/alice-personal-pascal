@@ -1,0 +1,21 @@
+|20,74
+     "StrEnd" is a special character that is used to mark the end of string
+constants.  It is an ASCII 000, i.e. ord(StrEnd) is 0.  In
+
+          var
+              str10 : packed array [1..10] of char;
+            ...
+          str10 := 'hello';
+
+we have
+
+          str10[1] = 'h'     str10[2] = 'e'    str10[3] = 'l'
+          str10[2] = 'l'     str10[5] = 'o'    str10[6] = StrEnd
+
+and all other elements are undefined.
+|mFor more, choose
+|iDo nothing,nop
+|iString constant,Hpnode/string_const
+|iOrd function,Hpsymbol/ord
+|iASCII,Hmisc/ascii
+|p

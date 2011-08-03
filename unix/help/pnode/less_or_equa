@@ -1,0 +1,16 @@
+|12,74
+     The <= operator decides if one thing is less than or equal to another.
+The things being compared must have the same type.
+     The result of A<=B is a Boolean (true/false) value.  It will be "true"
+if A really is less than or equal to B, and "false" otherwise.  If you are
+comparing two enumerated types, A is less than B if it comes earlier in the
+list that names all the values of the type.
+
+Less Than Or Equal Examples:
+     if a <= b then begin...
+     while func(x) <= 0.0 do begin...
+     if (c >= 'a') or (c <= 'z') then begin...
+|mFor more, choose
+|iDo nothing,nop
+|iBoolean data,Hpsymbol/boolean
+|p

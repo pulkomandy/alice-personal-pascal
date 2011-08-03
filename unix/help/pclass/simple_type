@@ -1,0 +1,12 @@
+|12,73
+     A Simple-Type placeholder in a set type may be filled in with the
+predefined types "integer" or "char", an enumerated type, or a subrange of
+any of these three types.
+|mFor more, choose
+|iDo nothing,nop
+|iInteger,Hpsymbol/integer
+|iChar,Hpsymbol/char
+|iBoolean,Hpsymbol/boolean
+|iEnumerated Types,Hpnode/enumerated_t
+|iSubranges,Hpnode/subrange
+|p

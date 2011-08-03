@@ -1,0 +1,11 @@
+|12,72
+Deleting a Section of Code:
+     Highlight the section of code you want to delete.  If you want to
+leave an empty placeholder behind in the place of the deleted code, press
+CTRL-DEL.  If you do not want an empty placeholder, press SHIFT-DEL.
+|mFor more, choose
+|iDo nothing,nop
+|iHighlighting code,Hmisc/codesel
+|iCLIP,Hcommand/clip
+|iDELETE,Hcommand/delete
+|p

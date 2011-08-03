@@ -1,0 +1,12 @@
+|12,74
+This isn't the right kind of symbol
+    You have tried to use a symbol in a way that doesn't fit with the way
+    that the symbol was declared.  For example, you may have tried to use a
+    procedure name as a variable, or a constant name in a function call.
+    Check the declaration for the symbol -- it may be in the wrong section.
+    Either change the declaration or change the symbol you use.
+
+          x := proc(a,b);  {Procedure used as function}
+          proc := 2;       {Procedure used as variable}
+          integer := 3;    {"integer" is a type, not a variable}
+          x := trunc + round; {"trunc" & "round" are subprograms}

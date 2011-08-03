@@ -1,0 +1,11 @@
+|11,74
+     Selecting this moves the cursor to an appropriate location in the
+current declaration or statement.  The location depends on the thing you're
+selecting.  For example, entering a ";" will go to whatever comes after the
+";" at the end of the declaration or statement.  Entering the token "to"
+will go to the Finish location in a FOR statement laid out as
+
+          for Variable := Start to Finish do begin
+
+Essentially the user can type in any token that makes sense in the current
+context, and ALICE will move the cursor to whatever follows that token.

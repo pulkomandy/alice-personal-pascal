@@ -1,0 +1,12 @@
+|12,73
+You can't put NAME nodes into a NAME placeholder
+(And variations of this message)
+    You tried to use GET to insert material from another workspace into a
+    placeholder in the current workspace.  However, the material you tried
+    to insert was not the same kind of thing as the placeholder.  For
+    example, you may have tried to insert declarations in a Statement
+    placeholder.
+|mFor more, choose
+|iDo nothing,nop
+|iGET,Hcommand/get
+|p

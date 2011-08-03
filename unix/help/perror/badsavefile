@@ -1,0 +1,7 @@
+|7,74
+Can't open save file "NAME"
+    You wanted to load a program from a file with a particular name, but
+    ALICE couldn't use that file for some reason.  The most common cause of
+    this problem is misspelling the file name.  The error also arises if
+    you do not have permission to use the file or if the syntax of the file
+    name was incorrect.

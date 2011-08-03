@@ -1,0 +1,8 @@
+|8,74
+You cannot output complex types with write
+    You tried to write an unusual type of argument.  ALICE cannot write out
+    things with "file" types, "set" types, or "array" types (although it
+    can write out array elements, of course).  There are several other
+    types of data that ALICE is not equipped to write, including most
+    enumerated types and pointers.  In most cases, you will have to create
+    your own writing subprogram for this kind of data.

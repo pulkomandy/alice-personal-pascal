@@ -1,0 +1,13 @@
+|9,74
+     The "round" function converts a real value or expression to an integer
+by rounding the number up or down.
+
+Round Examples:
+     round(3.4)  {is the integer 3}
+     round(3.7)  {is the integer 4}
+     round(-4.1) {is the integer -4}
+     round(-4.7) {is the integer -5}
+|mFor more, choose
+|iDo nothing,nop
+|iTrunc,Hpsymbol/trunc
+|p

@@ -1,0 +1,8 @@
+|8,73
+You must select at least a whole line for hiding
+    This happens when you have only highlighted part of a line and then
+    issue the HIDE command.  If you issued the HIDE command by accident,
+    don't worry about it.  If you really did want to hide that part of the
+    line, you should reconsider.  HIDE is only intended to save space when
+    displaying your program, and hiding part of a line will not save any
+    space at all.  If you want to save space, hide the whole line.

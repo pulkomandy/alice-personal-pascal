@@ -1,0 +1,19 @@
+|13,73
+     This procedure indicates that the next line written to a file of type
+"text" should begin at the top of a new page.  (In other words, it writes
+out an ASCII "formfeed" character, octal 014.)
+     "Page" can take one argument, a file variable that has the type
+"text".  If this argument is omitted, the standard "output" is used.  In
+this case, the terminal screen will be cleared.
+
+Page Examples:
+     var
+         t : text;
+       ...
+     page(t);
+|mFor more, choose
+|iDo nothing,nop
+|iText,Hpsymbol/text
+|iOutput,Hpsymbol/output
+|iFiles,Hpnode/file_type
+|p

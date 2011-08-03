@@ -1,0 +1,6 @@
+|6,74
+Bad file extension
+    You tried to save a program into a file with an inappropriate exten-
+    sion.  For example, you tried to save an ALICE-format program into a
+    file with the ".pas" extension or you tried to save a text program into
+    a file with the ".ap" extension.  ALICE will not permit this.

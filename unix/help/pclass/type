@@ -1,0 +1,20 @@
+|20,73
+     A Type placeholder should be filled in with one of the valid types of
+Pascal.  This can be one of the predefined types, an enumerated type, a
+record, an array, a set, a pointer, a subrange, a file, or a packed struc-
+ture.
+|mFor more, choose
+|iDo nothing,nop
+|iChar,Hpsymbol/char
+|iInteger,Hpsymbol/integer
+|iBoolean,Hpsymbol/boolean
+|iReal,Hpsymbol/real
+|iEnumerated Types,Hpnode/enumerated_t
+|iRecords,Hpnode/record_type
+|iArrays,Hpnode/array
+|iSets,Hpnode/set_type
+|iPointer,Hpnode/pointer_type
+|iSubrange,Hpnode/subrange
+|iFile,Hpnode/file_type
+|iPacked Structures,Hpnode/packed_type
+|p

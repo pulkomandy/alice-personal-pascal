@@ -1,0 +1,18 @@
+Usage:
+	apin [ options ] file.p file.ap
+
+	translates Pascal ASCII file (file.p) to Alice Pascal file (file.ap)
+
+Options:
+	i=file.p	input file
+	o=file.ap	output file
+	+s		Silent operation
+	l=library	Library to be loaded with program
+
+Debugging options:
+	t=file		trace file
+	f=file		trace file name
+	u=file		unbuffered trace file
+
+i= and o= may be given by positional parameters or keywords.
+i= or i=- means to read standard input.

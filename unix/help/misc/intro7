@@ -1,0 +1,14 @@
+|14,74
+     As you work with ALICE, you will find that you want to issue editing
+commands that perform various operations.  There are several ways to issue
+these commands.  Sometimes, all you have to do is press a special key
+combination, the way that CTRL-U performs the UNDO command.
+     Other times, you will choose a command from a menu.  If you press F11,
+the key beside F10, you will get a list of all the command menus of ALICE.
+Choose any selection from this list, and you will get the corresponding
+menu.  To find out what a command on the menu does, highlight the command,
+then press HELP.
+|mDo you want more?
+|iYes,Hmisc/intro8
+|iNo,Hmisc/intro_exit
+|p

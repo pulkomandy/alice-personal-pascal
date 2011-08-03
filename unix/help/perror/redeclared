@@ -1,0 +1,10 @@
+|10,74
+Symbol NAME is redeclared
+    You are trying to declare a name, but there is already a declaration
+    for this same name.  Either UNDO the declaration you are trying to make
+    and start again with a new name, or change the previous declaration for
+    this name.
+|mFor more, choose
+|iDo nothing,nop
+|iUNDO,Hcommand/undo
+|p

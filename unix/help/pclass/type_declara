@@ -1,0 +1,22 @@
+|23,74
+     A Type Declaration placeholder appears in the TYPE section of a Pascal
+program or subprogram.  To begin filling in the placeholder, enter a name
+that you want to associate with a data type.  For example, you might fill
+in "MONEY" because you want to create the declaration
+
+          type
+              MONEY = real; {Used for money sums}
+
+The name becomes a new type that can be used in declarations for variables,
+subprograms, and other types.
+     You can perform the same sort of operations on the named type that you
+could perform on the type associated with the name.  For example, you could
+perform the same operations on "money" that you could on "real" variables.
+However, "money" variables are a different type than "real" variables, and
+ALICE makes sure you don't intermix them illegally.
+|mFor more, choose
+|iDo nothing,nop
+|iName,Hpclass/name
+|iType,Hpclass/type
+|iForm of TYPE declarations,Hpnode/type_declara
+|p

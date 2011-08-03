@@ -1,0 +1,11 @@
+|12,74
+This argument is not compatible with the formal parameter
+    When you pass an argument to a subprogram, the type of the argument
+    must be compatible with the type that the subprogram declared for the
+    parameter.  The error message says that the type of argument you passed
+    was not the right type.  Either change the argument or change the
+    parameter declaration in the subprogram declaration.
+|mFor more, choose
+|iDo nothing,nop
+|iParameters,Hpnode/parameter
+|p

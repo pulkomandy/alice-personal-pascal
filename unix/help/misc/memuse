@@ -1,0 +1,23 @@
+|24,75
+ALICE Memory Allocation (Technical Discussion)
+      Regular Alice has two regions in which it allocates memory.  Each
+    can grow to up to 64K in size and each can run out of memory
+    independently of the other.
+      The first region is the main data segment, used for general data,
+    the runtime stack, your constant strings and identifier names.  Also
+    placed here are bitmap fonts and windows.
+    This is the first percentage shown on the status line.  This region
+    is always 64K no matter how much of it is currently in use.  This is
+    the region that Pascal pointers point into.
+      The other region of memory is used for program elements and comments.
+    The second percentage tells what is left here.  This region is allocated
+    to an amount appropriate for the memory left in your computer.  When you
+    issue the QNX "task +m" command, you should have at least 200K of free
+    memory left to run ALICE, if the gtask isn't running.
+
+      When ALICE starts up, it gives the sizes in kilobytes (K) instead of
+    percentages, because both percentages are 100%.
+|mFor more, choose
+|iDo nothing,nop
+|iThe RECOVER command,Hcommand/recover
+|p

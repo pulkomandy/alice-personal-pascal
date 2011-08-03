@@ -1,0 +1,30 @@
+|21,74
+     A constant declaration gives a name to a constant.  This sort of
+declaration appear in the CONST declaration section of a program or
+subprogram.  The name of a named constant may be used anywhere that the
+value of the constant would be legal.
+     Named constants are used to make your program easier to understand and
+easier to change.
+     Note: constants in constant expressions may only be single characters,
+integers, strings, or reals.  They may not be expressions, nor can they be
+function calls like "chr(13)".
+
+Constant Declaration Examples:
+     const
+         PI = 3.14159;
+         SIZE = 100;
+         DOLLAR = '$';
+     var
+         list : array [1..SIZE] of real;
+     begin
+     list[1] := 2 * PI;
+     writeln(DOLLAR,' is the dollar sign');
+|mFor more, choose
+|iDo nothing,nop
+|iNames,Hpclass/name
+|iComments,Hpnode/comment
+|iInteger constants,Hpnode/integer_cons
+|iReal constants,Hpnode/real_constan
+|iCharacter constants,Hpnode/character_co
+|iString constants,Hpnode/string_const
+|p

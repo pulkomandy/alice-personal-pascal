@@ -1,0 +1,14 @@
+|14,73
+Getting Information about Pascal:
+     To do this, press SHIFT-divide (hold down the SHIFT key and press the
+key with the divide symbol, on the keypad at the right of the ICON
+keyboard).  ALICE will list a menu of topics upon which it can offer help.
+There will be a selection for whatever Pascal construct the cursor
+currently rests on, whatever contains that construct, the container of the
+container, and so on.  If you choose any of these topics, you will get a
+description of that part of the Pascal language.
+|mFor more, choose
+|iDo nothing,nop
+|iPascal programs,Hpnode/pascal_progr
+|iThe PHELP command,Hcommand/phelp
+|p

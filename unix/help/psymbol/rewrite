@@ -1,0 +1,31 @@
+|24,74
+     The "rewrite" procedure sets up a file for writing.
+
+          rewrite(filevar,'filename');
+
+associates the file named 'filename' with the given file variable.
+Anything written to the file will be written over top of the file's current
+contents.  If the file does not exist already, it will be created.
+     If the file variable has already been associated with a file,
+
+          rewrite(filevar);
+
+will go back to the beginning of the file so you can start writing there
+again.  This is useful if you must go through a file several times in the
+same program.
+     If the "filename" argument is omitted, "rewrite" will use the name of
+the file variable as the file name.
+
+Rewrite Examples:
+     var
+         intfile : file of integer;
+     begin
+     rewrite(intfile,'filename');
+     write(intfile,i);
+|mFor more, choose
+|iDo nothing,nop
+|iReset,Hpsymbol/reset
+|iAppend,Hpsymbol/append
+|iWrite,Hpsymbol/write
+|iFiles,Hpnode/file_type
+|p

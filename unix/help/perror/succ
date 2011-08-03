@@ -1,0 +1,6 @@
+|6,74
+Cannot use succ on VALUE
+(And variations of this message)
+    The "succ" function can only be used on values that have "successors".
+    In particular, you cannot use "succ" on the last value in an enumerated
+    type list because nothing comes after that value on the list.

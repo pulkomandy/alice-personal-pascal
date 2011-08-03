@@ -1,0 +1,7 @@
+
+Give the command a unique number, place this in command.h.
+
+Add the command name (in sorted order) with number to the table in
+command.c
+
+Add a switch statement to handle the command in command.c

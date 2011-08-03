@@ -1,0 +1,12 @@
+|12,72
+     A Variable Declaration placeholder appears in the VAR section of a
+Pascal program or subprogram.  To begin filling in the placeholder, enter
+a name that you want to use as a variable.  After this, you will be asked
+to enter the Type of the variable and a comment describing what the
+variable will be used for.
+|mFor more, choose
+|iDo nothing,nop
+|iNames,Hpclass/name
+|iTypes,Hpclass/type
+|iForm of Variable Declarations,Hpnode/variable_dec
+|p

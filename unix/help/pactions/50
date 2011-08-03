@@ -1,0 +1,13 @@
+|13,74
+     Selecting this changes an assignment of the form
+
+          N := Value;
+
+into a procedure call of the form
+
+          N(Value);
+
+This is only used when the name "N" was an undeclared name typed in on a
+Statement placeholder.  When such an undeclared name is entered, ALICE
+normally gives you an assignment; but this action will give you a procedure
+call if you wish.

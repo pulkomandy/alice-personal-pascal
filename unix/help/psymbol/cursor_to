@@ -1,0 +1,18 @@
+|14,73
+     The "Cursor_To" procedure moves the cursor to a given row and column
+on the terminal screen.  The top row and leftmost column are both numbered
+0.
+     If the arguments passed to "Cursor_To" are out of range, the cursor
+will not move.
+
+Cursor_To Examples:
+     Cursor_To(0,0);
+     {Top left hand corner}
+     Cursor_To(12,40);
+     {Middle of screen}
+     Cursor_To(23,79);
+     {Bottom right}
+|mFor more, choose
+|iDo nothing,nop
+|iFinding the cursor,Hpsymbol/scrxy
+|p

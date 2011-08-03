@@ -1,0 +1,308 @@
+****** Please note:
+	some action specify operations at the cursor.  This means
+	that if the action was found by moving up the tree, the action
+	still takes place at the cursor.  Other actions take place at
+	the actual node in which the action map was found.
+	Many actions specify going to the next node.  This involves going
+	to the node where it says this and then doing a "next token" type
+	operation, moving the cursor to the object on the right (which
+	could be down) from that node.
+
+	These are subject to change and addition as users suggest things
+	they would like to do
+
+Node		 N_NULL 0 
+	All actions we desire to have general effect can be mapped
+	here at the top of the tree.
+
+Node		 N_T_COMMENT 1 
+
+Node		 N_PROGRAM 2 
+	( - move to third child (input,output) area
+	{ - move to first child the comments. begin one
+	begin - move to last child, the statements
+	var, const, type, label - move to appropriate declaration
+				  AND open up a new one.
+	; - to the declarations, making a new one
+Node		 N_DECL_LABEL 3 
+	, - expand list at cursor
+
+Node		 N_DECL_CONST 4 
+
+Node		 N_DECL_TYPE 5 
+
+Node		 N_DECL_VAR 6 
+
+Node		 N_DECL_PROC 7 
+	as per PROGRAM, except ( moves to parameters
+
+Node		 N_DECL_FUNC 8 
+	as per PROC, except : moves to the type
+
+Node		 N_LABEL_DECL 9 
+	, - expand at cursor
+
+Node		 N_CONST_DECL 10 
+	= - move to constant part
+	; { - move to comment part
+
+Node		 N_TYPE_DECL 11 
+	= - move to type tree part
+	; { - move to comment part
+
+Node		 N_VAR_DECL 12 
+	: - move to type part
+	; { - move to comment part
+
+Node		 N_CON_PLUS 13 
+	"-" - change sign of constant
+
+Node		 N_CON_MINUS 14 
+	"+" - change sign of constant
+
+Node		 N_CON_INT 15 
+	Constant - change constant
+	+/- - give a sign
+
+Node		 N_CON_REAL 16 
+	Constant - change constant
+	+/- - give a sign
+
+Node		 N_CON_CHAR 17 
+	Constant - change constant
+
+Node		 N_CON_STRING 18 
+	Constant - change constant
+
+Node		 N_TYP_ENUM 19 
+	, - expand at the cursor
+	) - move to next token
+
+Node		 N_TYP_SUBRANGE 20 
+	
+
+Node		 N_TYP_PACKED 21 
+	packed - go to this node
+
+Node		 N_TYP_ARRAY 22 
+	] - move to the subtype
+	[ - move to the index area
+	, - expand at the cursor
+
+Node		 N_TYP_SET 23 
+	set, of - go to subtree type
+
+Node		 N_TYP_FILE 24 
+	file, of - go to subtree type
+
+Node		 N_TYP_POINTER 25 
+
+Node		 N_TYP_RECORD 26 
+	end - go to next sibling of record
+
+Node		 N_FIELD_LIST
+	case - go to variant part, or create one
+	
+Node		 N_VARIANT
+	case - go to tag-type or tag-name if present
+	: - go to tag-type, create tag-name if not present
+	of - go to field list
+
+
+Node		 N_FIELD 27 
+	: - go to type id
+	, - expand at cursor if possible
+	; { - go to comment
+
+Node		 N_FORM_VALUE 28 
+	var - change to var parameter
+	, - expand at cursor
+	; - expand list or go to next if empty (aka CR)
+	: - go to type id
+	) - leave parameters and go to next node
+Node		 N_FORM_REF 29 
+	, - expand at cursor
+	; - expand list or go to next if empty (aka CR)
+	: - go to type id
+	) - leave parameters and go to next node
+
+Node		 N_FORM_FUNCTION 30 
+	, - expand at cursor
+	; - expand list or go to next if empty (aka CR)
+	: - go to type id
+	( - go to parameters of function
+	) - leave parameters and go to next node
+
+
+Node		 N_FORM_PROCEDURE 31 
+	, - expand at cursor
+	; - expand list or go to next if empty (aka CR)
+	( - go to parameters of function
+	) - leave parameters and go to next node
+
+Node		 N_ST_COMMENT 32 
+	} - leave comment, go to next node
+
+Node		 N_ST_LABEL 33 
+	: - leave, go to next node
+
+****** ALL STATEMENT NODES USE ";" to work just like CR *************
+
+Node		 N_ST_GOTO 34 
+
+Node		 N_ST_CALL 35 
+	) - leave call, go to next
+	, - expand list at cursor
+	( - go to parmaeters, creating them if need be
+
+Node		 N_ST_ASSIGN 36 
+	:= - go to the expression on the right
+
+Node		 N_ST_WRITE 37 
+	As per N_ST_CALL
+
+Node		 N_ST_IF 38 
+	if - move to condition
+	then - move to statments
+	begin - move to statements
+	end - go to next statement
+	else - change this if to and if-then-else
+
+Node		 N_ST_ELSE 39 
+	As per IF, except ELSE moves to the else part
+
+Node		 N_ST_FOR 40 
+	FOR - move to varible
+	:= - move to start
+	to - move to finish
+	do - move to statements
+	begin - move to statements
+	end - go to next statement
+	downto - change this into a downto
+
+Node		 N_ST_DOWNTO 41 
+	As per FOR, except reverse the roles of "to" and "downto"
+
+Node		 N_ST_WHILE 42 
+	while - move to condition
+	do - move to statements
+	begin - move to statements
+	end - go to next statement
+
+Node		 N_ST_REPEAT 43 
+	repeat - move to statements
+	until - move to condition
+
+Node		 N_ST_WITH 44 
+	do - move to statements
+	, - expand list at cursor
+	begin - move to statements
+	end - go to next statement
+
+Node		 N_ST_CASE 45 
+	case - move to switch variable
+	of - move to first case
+	end - go to next statement
+	else - move to the else clause, or make one
+
+Node		 N_ST_BLOCK 46 
+	begin - move to statements
+	end - go to next statement
+
+Node		 N_ST_COUT 47 
+	} - leave commented out code, go to next node
+
+Node		 N_ST_UNDEF 48 
+	:= - change into assignment
+	( - change into a call, with parameters
+	; - change into a call without parameters
+	EDIT - reinterpret after editing
+
+Node		 N_CASE 49 
+	: - move to case code
+	, - expand at cursor (constant list)
+	else - change this into an else, if there isn't one
+	begin - move to statements
+	end - go to next statement
+
+Node		 N_CASE_ELSE 50 
+	begin - move to statements
+	end - go to next statement
+
+Node		 N_OEXP_1 51 
+	: - map into an N_OEXP_2
+
+Node		 N_OEXP_2 52 
+	: - map into an N_OEXP_3
+
+Node		 N_OEXP_3 53 
+	: - go to the next child of the N_OEXP, or stay at third
+
+Node		 N_VAR_ARRAY 54 
+	, - expand at cursor
+	] - go to next node after array
+
+Node		 N_VAR_POINTER 55 
+
+Node		 N_VAR_FIELD 56 
+
+Node		 N_EXP_NIL 57 
+
+Node		 N_EXP_PAREN 58 
+	) - move to next node after N_EXP_PAREN
+
+Node		 N_EXP_ESET 59 
+	constant - change to a real set
+
+Node		 N_EXP_SET 60 
+	, - expand at cursor
+	] - leave set and go to next node
+
+Node		 N_EXP_NOT 61 
+
+Node		 N_EXP_FUNC 62 
+	, - expand at cursor
+	) leave function and go on
+	( - go to parameters
+
+
+Node		 N_EXP_UPLUS 63 
+
+Node		 N_EXP_UMINUS 64 
+
+Node		 N_EXP_PLUS 65 
+
+Node		 N_EXP_MINUS 66 
+
+Node		 N_EXP_OR 67 
+
+Node		 N_EXP_TIMES 68 
+
+Node		 N_EXP_SLASH 69 
+
+Node		 N_EXP_DIV 70 
+
+Node		 N_EXP_MOD 71 
+
+Node		 N_EXP_AND 72 
+
+Node		 N_EXP_EQ 73 
+
+Node		 N_EXP_NE 74 
+
+Node		 N_EXP_LT 75 
+
+Node		 N_EXP_LE 76 
+
+Node		 N_EXP_GT 77 
+
+Node		 N_EXP_GE 78 
+
+Node		 N_EXP_IN 79 
+
+Node		 N_SET_ELEMENT 80 
+
+Node		 N_SET_SUBRANGE 81 
+
+
+

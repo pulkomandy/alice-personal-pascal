@@ -1,0 +1,16 @@
+|11,74
+     The "or" operator joins two Boolean (true/false) values or expressions
+into a single Boolean expression.  The new expression is true if either or
+both of its parts are true.  The expression is only false if both parts are
+false.
+
+or Examples:
+     if (c <= 'a') or (c >= 'z') then begin
+         writeln(c,' is not a lower case letter.');
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iBoolean data,Hpsymbol/boolean
+|iand,Hpnode/and
+|inot,Hpnode/not
+|p

@@ -1,0 +1,92 @@
+action.c: *DESC: Handles 'actions' which are keyed by the typing of tokens on nodes
+action.c: *DESC: and placeholders.
+actrout.c: *DESC: More action routines, usually for complex actions that are more
+actrout.c: *DESC: than the expansion of a node at the placeholder
+actrout2.c: *DESC: More complex actions, as in actrout.c
+alsym.c: *DESC: General symbol table lookup and manipulation routines.  Also used
+alsym.c: *DESC: in the parser.  A lot of record related code is here, too.
+apdump.c: *DESC: A debugging file that allows dumps of the program tree to be printed
+apdump.c: *DESC: to the debug output.
+builtin.c: *DESC: The master file of initializers that defines the builtin symbol
+builtin.c: *DESC: table.  This is effectively one big symbol table chain with a lot
+builtin.c: *DESC: hanging off of it.
+cfunc.c: *DESC: This file contains routines associated with the CProc family of
+cfunc.c: *DESC: builtins.  Tables of system pointers, pointers to useful routines,
+cfunc.c: *DESC: and several special routines are here.
+cmds2.c: *DESC:  A second file with code to process command line commands.
+cmds2.c: *DESC:  (Such commands are usually triggered from macros)
+command.c: *DESC: The master command line interpreter.
+common.c: *DESC: A set of general routines used both by the editor and interpreter
+display.c: *DESC: display routines to look at the tree and put something on the screen.
+dload.c: *DESC: Routines to load programs and libraries
+dummy.c: *DESC: Some dummy definitions for versions missing graphics tools and other
+dummy.c: *DESC: runtime tools
+esmem.c: *DESC: extra segment storage management  (hybrid and QNX models)
+exmem.c: *DESC: extra segment storage management Hybrid model
+expparse.c: *DESC: Operator precedence expression parser used when the user is typing
+expparse.c: *DESC: in an expression in infix mode.
+expstate.c: *DESC: A file used to break the interpreter into smaller functions when
+expstate.c: *DESC: the compiler demands it.
+filename.c: *DESC: Handle file interfaces with the operating system -- directories,
+filename.c: *DESC: menus of files, file searching etc.
+fullfuncs.c: *DESC: Code to do built-in procs and funcs found in the full release of
+fullfuncs.c: *DESC: Alice, but not in the smaller releases.
+functions.c: *DESC: The main functions to handle built-in routines.
+help.c: *DESC: Help system code.  Generates help menus and prepares to find help
+help.c: *DESC: screens.
+helpfile.c: *DESC: Code to get help screens from compressed help files
+history.c: *DESC: This file contains routines that must be used for all changes to the
+history.c: *DESC: tree.  It supports a history mechanism to allow undo/redo
+ilowstates.c:	 *DESC:   SPECIAL FILE OF CASES FOR INFREQUENT INTERPRETER STATES
+ilowstates.c:	 *DESC:   for use with dumb compilers that can't handle really long
+ilowstates.c:	 *DESC:   functions
+interp.c: *DESC: The C version of the Alice interpreter
+keyboard.c: *DESC: Keyboard input routines, called by scanner and editor.  These routines
+keyboard.c: *DESC: handle keyboard macros, which do simple character substitution.
+kids.c: *DESC: Some general tree functions
+load.c: *DESC: Routines to load programs and libraries
+load_nodes.c: *DESC: Code to load the template definition file.
+main.c: *DESC: Main entry point for ALICE, option processing, initializing etc.
+mainloop.c: *DESC: Main token/command input loop
+mark.c: *DESC: pop back, mark and go -- remember and return to a node (if possible)
+mem.c: *DESC: Memory management routines.
+menu.c: *DESC: Menu code and code to create some of ALICE's dynamic menus
+menudat.c: *DESC: The data for the main static menus in ALICE
+mlowstat.c: *DESC: A split up portion of the interpter, for less common nodes
+msfilename.c: *DESC: File handling code for ms-dos
+msfilename.c: *DESC:
+newbuilt.c: *DESC: More of the builtin symbol table.  The latest entries.
+newbuilt.c: *DESC: Still all part of the big symbol chain.
+nullhelp.c: *DESC: A dummy file when the help system is missing.
+ole.c: *DESC: Control routines for the one line editor, used as the core of input
+oledit.c: *DESC: The one line editor.
+outfuncs.c: *DESC: Routines associated with the display of the program on the screen.
+output.c: *DESC: Routines to output a segment of the screen to a window
+pop.c: *DESC: Pop up Menu system
+run2.c: *DESC: Interpreter support of a general nature
+runfile.c: *DESC:  Built in routines of Pascal - for doing I/O
+runtime.c: *DESC: Main interpreter support
+save.c: *DESC: Write .ap files to the disk
+scan.c: *DESC: Scanner for tokens from keyboard input
+scan_decl.c: *DESC: General declaration traversing routine.  Performs a passed routine
+scan_decl.c: *DESC: on a tree of declarations.
+search.c: *DESC: Editor search support
+setup.c: *DESC: Interpreter init and declaration 'compile' and processing.
+subr.c: *DESC: General useful subroutines
+text.c: *DESC: Textual changes.  These routines are called when the user wants to
+text.c: *DESC: make a change textually, often to characters within a token (idents,
+text.c: *DESC: comments, strings) or within an expression.  These routines all call the
+text.c: *DESC: one line editor (oledit) under various circumstances.
+text2.c: *DESC: More general top level text input processing
+trace.c: *DESC: Runtime handling of the 'trace' (do..set) facility.
+trace.c: *DESC: Plus turbo pascal library handling.
+treeprint.c: *DESC: The master routine that turns a subtree into text
+treesubr.c: *DESC: General subroutines for tree creation an manipulation at the low
+treesubr.c: *DESC: level.  Moving around the tree is supported here, too
+turtbuilt.c: *DESC: More built in symbols, to support turtle graphics
+typecheck.c: *DESC: typecheck a subtree, and perhaps the whole program.
+types.c: *DESC: Routines to do type comparisons, checks and manipulations
+unix.c: *DESC: Routines that depend on Unix or the unix curses.  Loaded in for
+unix.c: *DESC: running on unix with unix curses.  Other files for other systems
+window.c: *DESC:  Routines to handle windows of various sorts for Alice
+workspace.c: *DESC:  Routines to deal with workspaces - special named subtrees

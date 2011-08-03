@@ -1,0 +1,21 @@
+|22,74
+I/O argument is not of the same type as given file
+    You attempted to use "read" or "readln" to read a value from a file
+    into a variable.  However, the type of the variable was not the same as
+    the type of the file.  For example,
+
+          var
+              intfile : file of integer;
+              c : char;
+           ...
+          read(intfile,c);
+
+    would receive this error message.  Check the declarations for both the
+    file and the variable.  If both are what they should be, you will have
+    to read the value into a different variable of the correct type.
+|mFor more, choose
+|iDo nothing,nop
+|iFile types,Hpnode/file_type
+|iRead,Hpsymbol/read
+|iReadln,Hpsymbol/readln
+|p

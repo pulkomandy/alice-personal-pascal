@@ -1,0 +1,10 @@
+|11,74
+     A function name is the name given to a function in a function declara-
+tion.  This name is used in all calls to the function.  The name should be
+different from all other names in the program (except possibly the program
+name).  The name follows all the usual rules for names.
+|mFor more, choose
+|iDo nothing,nop
+|iFunction Declarations,Hpnode/function
+|iNames,Hpclass/name
+|p

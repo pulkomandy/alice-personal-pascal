@@ -1,0 +1,18 @@
+|18,74
+The input is not valid here. It would be if you did a delete.
+    The thing you tried to type in couldn't legally be typed in the current
+    location of the cursor because there is something there already.  This
+    often happens when you have an error marked on the screen and you try
+    to correct simply by typing in something new.  You have to delete the
+    error first with CLIP (CTRL-DEL) or DELETE (SHIFT-DEL) and then you can
+    type in the correct material.
+         Note that the cursor may be on a very large block of code, e.g. a
+    WHILE loop that contains many statements.  In this case, you won't want
+    to delete the entire block.  You may want to make a Special Change to
+    change the WHILE into another type of statement.
+|mFor more, choose
+|iDo nothing,nop
+|iDeleting things,Hcommand/delete
+|iClipping things,Hcommand/clip
+|iSpecial Changes,Hcommand/specialties
+|p

@@ -1,0 +1,4 @@
+|4,73
+     This action is used on an empty Block Statement placeholder.  It has
+the same effect as typing in a brace bracket -- it comments out the state-
+ments inside the block.

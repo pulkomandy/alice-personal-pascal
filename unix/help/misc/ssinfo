@@ -1,0 +1,18 @@
+|18,73
+     While you are single-stepping through your program, you may want to
+obtain information about things in your program.  For example, after an
+assignment operation, you may want to check the value of the variable that
+was assigned a new value.  This lets you make sure that the assigned value
+was what you expected it to be.
+     To do this, press F7 to obtain the Miscellaneous Menu and choose the
+"Immediate mode block" selection from the menu.  This opens up an
+"immediate block" in your program.  Instructions typed into the immediate
+block will be carried out as soon as you press ENTER.
+     As a short form, you can just enter "?" to stand for "writeln".  For
+example, "?a" is the same as "writeln(a)".
+|mFor more, choose
+|iDo nothing,nop
+|iSingle-stepping,Hmisc/step
+|iImmediate mode,Hcommand/immediate
+|iWriteln,Hpsymbol/writeln
+|p

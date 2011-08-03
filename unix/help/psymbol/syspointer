@@ -1,0 +1,16 @@
+|16,74
+     The "SysPointer" function returns a Pointer type value pointing to a
+value used by the system.  The argument for SysPointer is an integer
+indicating which system value you want.  For example, SysPointer(3) returns
+the address of where the ALICE cursor is stored.  Through this pointer, you
+may find out the value or even change it.  SysPointer(8) returns the
+address of an integer indicating what kind of computer you are using: a 1
+indicates the IBM PC under DOS, a 2 indicates the Cemcorp ICON under QNX,
+and a 4 indicates the IBM PC under QNX.
+     Further details about this subprogram may be found in the ALICE
+Reference Manual.
+|mFor more, choose
+|iDo nothing,nop
+|iThe Pointer type,Hpsymbol/pointer
+|iThe RawPointer function,Hpsymbol/rawpointer
+|p

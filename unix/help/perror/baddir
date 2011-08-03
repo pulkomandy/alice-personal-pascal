@@ -1,0 +1,7 @@
+|7,74
+Bad directory
+(And variations of this message)
+    You used a File Menu feature to change to a new directory, but the
+    directory you specified does not exist or you do not have permission to
+    use it.  One of the most common causes of this error is misspelling the
+    directory name that you actually wanted.

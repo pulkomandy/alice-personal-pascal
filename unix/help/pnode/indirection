@@ -1,0 +1,29 @@
+|23,74
+     The indirection operation lets you use something that a pointer points
+to.  If P is a pointer, then P^ is the thing that the pointer points to.
+     The "new" procedure is used to create data objects that pointers may
+point to.  Once this has been done, the data objects may be used indirectly
+through the pointers.  For example,
+
+          P^ := 1;
+
+assigns the value 1 to whatever P points to.  In this case, P would have
+to be a pointer to an integer.
+     Indirection can also be used with file variables to obtain information
+from the file "buffer".  For example, "output^" refers to the character
+most recently written out.
+
+Indirection Examples:
+     var
+         pc1, pc2 := ^char;
+         ...
+     new(pc1);
+     pc1^ := 'A';
+     pc2 := pc1;
+     writeln(pc2^,' is the letter A.');
+|mFor more, choose
+|iDo nothing,nop
+|iPointers,Hpnode/pointer_type
+|iThe "Pointer" type,Hpsymbol/pointer
+|iFile variables,Hpnode/file_type
+|p

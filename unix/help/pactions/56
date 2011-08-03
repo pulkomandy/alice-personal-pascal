@@ -1,0 +1,5 @@
+|5,52
+     This builds a range inside a set constant, as in
+
+          ['a'..'z']
+

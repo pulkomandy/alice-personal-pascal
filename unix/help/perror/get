@@ -1,0 +1,10 @@
+|10,74
+You may only insert a code portion on a placeholder
+    When you use the GET command to get something from another workspace,
+    you must have an empty placeholder in the location where the material
+    should be deposited.  Create such a placeholder and try the GET command
+    again.
+|mFor more, choose
+|iDo nothing,nop
+|iGET,Hcommand/get
+|p

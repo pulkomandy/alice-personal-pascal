@@ -1,0 +1,6 @@
+|6,74
+chr: can't convert NUMBER to character
+    You attempted to use the "chr" function on an integer, but there was no
+    character corresponding to that integer.  The integer that you pass to
+    "chr" must be in the range 0..255.  Single-stepping through your
+    program may help you discover what is going wrong.

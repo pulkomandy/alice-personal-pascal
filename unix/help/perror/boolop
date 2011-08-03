@@ -1,0 +1,18 @@
+|19,73
+Operands of AND/OR must be Boolean
+    As the message says, you can only use the "and" and "or" operators on
+    Boolean (true/false) values.  The most common cause of this error is
+    leaving out parentheses around things that are being joined with "and"
+    or "or".  For example, this message is issued when you say
+
+          if c >= 'a' and c <= 'z' then begin ...
+
+    because you really need parentheses around the two comparisons.
+
+          if (c >= 'a') and (c <= 'z') then begin ...
+|mFor more, choose
+|iDo nothing,nop
+|iAND,Hpnode/and
+|iOR,Hpnode/or
+|iBoolean,Hpsymbol/boolean
+|p

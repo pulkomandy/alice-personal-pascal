@@ -1,0 +1,12 @@
+|12,72
+Adding a Statement in the Middle of Others:
+     Move the cursor to one of the statements on either side of the place
+where you want to put the statement.  If you are on the statement that
+comes BEFORE the one you want to add, press (e agout) (E with the French
+acute accent).  If you are on the statement that comes AFTER the one you
+want to add, press SHIFT-INS.
+|mFor more, choose
+|iDo nothing,nop
+|iExtending,Hcommand/extend
+|iInserting,Hcommand/insert
+|p

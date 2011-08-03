@@ -1,0 +1,12 @@
+|12,71
+Range is in the wrong order
+    A subrange had the form
+
+          A..B
+
+    but B was less than A.  You must write the subrange with the smaller
+    value first and the larger value second.
+|mFor more, choose
+|iDo nothing,nop
+|iSubranges,Hpnode/subrange
+|p

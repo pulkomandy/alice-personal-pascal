@@ -1,0 +1,19 @@
+|16,70
+     The StrSize function determines the maximum length of a string and
+returns this length as an integer.  For a string constant, this is the
+number of characters in the string.  For a string variable, this is the
+largest number of characters that the variable could hold.
+     StrSize is the same as the Sizeof function.
+
+StrSize Examples:
+     var
+         str : packed array [1..10] of char;
+     begin
+     str := 'abc';
+     writeln(StrSize(str));
+        {Will write out integer 10}
+     writeln('xxxx');
+        {Will write out integer 4}
+|mFor more, choose
+|iDo nothing,nop
+|iSizeof,Hpsymbol/sizeof

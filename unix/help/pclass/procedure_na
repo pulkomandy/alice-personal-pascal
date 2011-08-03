@@ -1,0 +1,10 @@
+|11,72
+     A procedure name is the name given to the procedure in the procedure
+declaration.  This name is used in all calls to the procedure.  The name
+should be different from all other names in the program (except possibly
+the program name).  The name follows all the usual rules for names.
+|mFor more, choose
+|iDo nothing,nop
+|iProcedure Declarations,Hpnode/procedure
+|iNames,Hpclass/name
+|p

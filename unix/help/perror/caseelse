@@ -1,0 +1,4 @@
+|4,74
+Too many elses in case
+    A CASE statement can only have one ELSE clause.  You just tried to put
+    another ELSE clause into a CASE statement.  One of the ELSEs has to go.

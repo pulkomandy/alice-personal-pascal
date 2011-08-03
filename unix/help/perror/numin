@@ -1,0 +1,7 @@
+|7,74
+Input Error - Number too long
+    You were attempting to read a number with "read" or "readln", but the
+    first number that ALICE found had too many digits for ALICE to accept.
+    For example, suppose the input line consisted of twenty digits.  This
+    is much too large to store in a normal integer, and ALICE will give you
+    this message.  (integers must fall in the range -32768 to 32767).

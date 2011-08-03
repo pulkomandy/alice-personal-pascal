@@ -1,0 +1,6 @@
+|6,74
+That mark hasn't been set.
+(And variations of this message)
+    You used the GO command to go to a mark, but the mark you specified had
+    not been set (or else it was set on a line that was later deleted).
+    Check to make sure you typed the right name for the mark.

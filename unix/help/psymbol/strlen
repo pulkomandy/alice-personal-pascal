@@ -1,0 +1,15 @@
+|15,74
+     The StrLen function determines the length of a string and returns this
+length as an integer.  For a string constant, this is the number of
+characters in the string.  For a string variable, this is the number of
+characters in the string that the variable currently holds.
+
+StrLen Examples:
+     var
+         str : packed array [1..10] of char;
+     begin
+     str := 'abc';
+     writeln(StrLen(str));
+        {Will write out integer 3}
+     writeln('xxxx');
+        {Will write out integer 4}

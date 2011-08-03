@@ -1,0 +1,15 @@
+|10,72
+     A DIV operation divides two integer numbers or expressions.  The
+result will be an integer.  Any remainder of the division is thrown away.
+
+Valid Integer Division Examples:
+     7 div 2   {=3}
+     -7 div 2  {=-3)
+     1 div 4   {=0}
+Invalid Integer Division Examples:
+     'a' div 4      3.4 div 1.2
+|mFor more, choose
+|iDo nothing,nop
+|iReal division,Hpnode/division
+|iRemainders from division,Hpnode/modulus
+|p

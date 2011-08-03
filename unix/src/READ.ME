@@ -1,0 +1,36 @@
+ALICE was a syntax directed editor based programimng environment for
+teaching and debugging Pascal back in 1985.  I've gathered up the
+source, in mostly working condition, and put it here.  It still needs
+work though.  I've made it run on Linux.   See the ALICE web pages
+at:
+		http://www.templetons.com/brad/alice.html
+
+For more details.
+
+This is the Main source directory.  Header files are in ../h
+
+This builds the main ALICE program but there are a few other programs
+here too, mostly for debug purposes.   See the various notes and
+history for full details.
+
+You might want to inspect tune.h to see if you need to change anything.
+
+ALICE IS NOT A FULLY PROFESSIONALLY PORTED PROGRAM.  It's very as-is.
+
+Type "make" to build alice.   You will also want to cd to "apin" and
+do a "make" there to build apin, the parser for ordinary pascal source.
+
+ALICE needs a variety of files to run, notably:
+
+		ap.init		Macro file and other options
+		aptempla.suf	Templates for how syntax trees are
+				displayed.  Other variants can be used
+				for different begin/end styles.
+		help		Directory of help files
+
+It will search a variety of places for these files, including the
+current directory, a ".alice" subdirectory  of the user's home directory,
+and a system directory which you can define in tune.h but defaults
+to /usr/local/lib/alice
+
+A "make install" copies those files there.

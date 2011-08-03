@@ -1,0 +1,13 @@
+|13,74
+Selected item must be an element in a list
+(And variations of this message)
+    You have selected (highlighted) a part of your program that was not a
+    list or an element of a list, and you have tried to execute an ALICE
+    command.  However, the command you tried to execute will only work on
+    lists.  Make sure the command you issued really was the command you
+    wanted.  Also make sure that you wanted to issue that command on the
+    region the you highlighted; perhaps you really wanted to select a
+    different region.
+         After the error message is issued, the code you selected will stay
+    selected (highlighted).  Either issue a command that doesn't need to
+    work on a list, or UNSELECT the list by pushing F10 again.

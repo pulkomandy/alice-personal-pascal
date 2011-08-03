@@ -1,0 +1,18 @@
+|18,74
+This parameter must be a variable
+    The argument that you passed to a subprogram must be a variable because
+    the subprogram has declared this to be a VAR argument.  Generally, this
+    means that the subprogram intends to assign a value to this variable.
+    As an example,
+
+          readln(4);
+
+    is incorrect.  "Readln" reads a value and tries to store that value in
+    its argument.  For this to be possible, the argument must be a
+    variable.  You must change the incorrect argument into something that
+    is a variable.
+|mFor more, choose
+|iDo nothing,nop
+|iReadln,Hpsymbol/readln
+|iVAR parameters,Hpnode/var_paramete
+|p

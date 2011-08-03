@@ -1,0 +1,1362 @@
+
+# Templates for alice pascal
+# Warning - edit this file at your own risk.  This means *you*.
+
+Node: NULL
+Name: "root"
+Template:  "!c" 
+Flags: LINE
+Infix: false
+NodeCount: 1, 1
+Class:  PROGRAM 
+
+
+Node: T_COMMENT
+Name: "comment"
+Template:  "!c!ag!1E"
+Flags: none
+Infix: false
+NodeCount: 0, 1
+# Hidden kid - pointer to comment
+Class: 0
+
+
+Node: PROGRAM
+Name: "pascal program"
+Template:  "!c!kprogram !(Program-Name)!1p!2P,;\n",
+				"!3l\n",
+				"!4l\n",
+				"!kbegin\n",
+				"!5l\n",
+				"!kend.\n"
+Flags: DECLARE LINE SYMBOL SCOPE
+Infix: false
+NodeCount: 5, 7
+# Hidden kids - pointer to symbol table, memory required for global vars
+Class: PNAME
+	list PNAME
+	list BLCOMMENT
+	list DECLARATIONS
+	list STATEMENT
+Actions:  "begin", any, chgoto 4,
+				"var",  any, GDECL,
+				"const", any, GDECL,
+				"type", any, GDECL,
+				"label", any, GDECL,
+				"procedure", any, GDECL,
+				"function", any, GDECL,
+				"(", upkid 0, REEXPAND,
+				"(", upkid 1, REEXPAND,
+				"(", pcode 0, REEXPAND,
+				")", upkid 1, chgoto 2,
+# changed from BLCR - goto declarations
+				";", upkid 0, chgoto 3,
+				";", upkid 1, chgoto 3,
+				"cr",pcode 3,blcr 2,
+				"cr",pcode 5,0,
+				"cr", any, BLCR 0,
+				",", upkid 1, C_EXPAND,
+				"program", any, chgoto 0
+
+
+Node: DECL_LABEL
+Name: "declarations"
+Template:   "!c!klabel !1,;\n"
+Flags: DECLARE  LINE
+Infix: false
+NodeCount: 1, 1
+Class:  list LABEL_DECL
+Actions:  ",", upkid 0, C_EXPAND,
+          "cr", any, CR,
+
+
+Node: DECL_CONST
+Name: "declarations"
+Template:   	"!c!kconst",
+				"!1l\n",
+				"",
+Flags: DECLARE  LINE  INDENT
+Infix: false
+NodeCount: 1, 1
+Class:  list CONST_DECL
+Actions:  "cr", pcode 2, CR,
+	"cr", any, BLCR,
+
+
+Node: DECL_TYPE
+Name: "declarations"
+Template:   	"!c!ktype",
+				"!1l\n",
+				""
+
+Flags: DECLARE  LINE  INDENT
+Infix: false
+NodeCount: 1, 1
+Class:  list TYPE_DECL
+Actions:  "cr", pcode 2, CR,
+				"cr", any, BLCR,
+
+
+Node: DECL_VAR
+Name: "declarations"
+Template:   	"!c!kvar",
+				"!1l\n",
+				""
+Flags: DECLARE  LINE  INDENT
+Infix: false
+NodeCount: 1, 1
+Class:  list VAR_DECL
+Actions:  "cr", pcode 2, CR,
+	"cr", any, BLCR,
+
+
+Node: DECL_PROC
+Name: "procedure"
+Template:   "!n!c!kprocedure !(proc-name)!1p!f!2P;!o;\n",
+		"!3l\n",
+		"!4l\n",
+		"!T!kbegin\n",
+		"!5l\n",
+		"!T!kend;\n" 
+Flags: LINE INDENT SYMBOL SCOPE
+Infix: false
+NodeCount: 5, 7
+# Hidden kids, pointer to symbol table, memory required for variables
+Class: HIDECL_ID, list FORMAL, list BLCOMMENT, list DECLARATIONS,
+ 	list STATEMENT
+Actions: "var", any, GDECL,
+	"const", any, GDECL,
+	"type", any, GDECL,
+	"label", any, GDECL,
+	"procedure", any, GDECL,
+	"function", any, GDECL,
+	"(", exact upkid 0, REEXPAND,
+	"begin", any, chgoto 4,
+	"end", any, CRIGHT,
+	"cr", pcode 3, blcr 2,
+	"cr", pcode 5, H_EXPAND,
+	"cr", any, BLCR,
+# changed from BLCR
+	";", upkid 0, chgoto 3, 
+	")", upkid 1, chgoto 0,
+
+
+Node: DECL_FUNC
+Name: "function"
+Template:   "!n!c!kfunction !(func-name)!1p!f!2P; : !3p!o;\n",
+	"!4l\n",
+	"!5l\n",
+	"!T!kbegin\n",
+	"!6l\n",
+	"!T!kend;\n" 
+Flags: LINE INDENT SYMBOL SCOPE
+Infix: false
+NodeCount: 6, 8
+# Hidden kids, pointer to symbol table, memory required for variables
+Class: HIDECL_ID, list FORMAL, TYPEID, list BLCOMMENT,
+	list DECLARATIONS, list STATEMENT
+Actions: 
+				"var", any, GDECL,
+				"const", any, GDECL,
+				"type", any, GDECL,
+				"label", any, GDECL,
+				"procedure", any, GDECL,
+				"function", any, GDECL,
+				"(", exact upkid 0, REEXPAND,
+				"begin", any, chgoto 5,
+				"end", any, CRIGHT,
+				"cr", pcode 3, blcr 2,
+				"cr", pcode 5, H_EXPAND,
+				"cr", any, BLCR,
+# ";", pcode 0, BLCR,
+				";", upkid 2, chgoto 4,
+				":", pcode 0, CHGOTO 2,
+				")", upkid 1, CHGOTO 2,
+
+
+Node: FORWARD
+Name: "Forward Declaration"
+Template:   "!c!kForward <!1p>;\n"
+Flags: LINE 
+Infix: false
+NodeCount: 1, 1
+Class:  ROUTNAME 
+Actions: "cr", any, H_EXPAND
+
+Node: CONST_INIT
+Name: "variable initializer"
+Template: "!1p !c!k: !2p = !3p;!4o!\t!4{!o\n"
+Flags: LINE DECLARE
+Infix: true
+NodeCount: 4, 4
+Class: DECL_ID, TYPEID, INIT, COMMENT
+Actions:		"=", any, chgoto 2,
+			";", any, chgoto 3,
+			":", any, chgoto 1,
+			"cr", any, CR,
+			"(", any, chgoto 2
+
+# room for absolute
+# what about a record absolute?  How can we display that!
+Node: VAR_ABSOLUTE
+Name: "absolute variable"
+Template:   "!1, !c!k: !2p !kabsolute !3p!R!4o!\t!4{!o\n"
+Flags: DECLARE  multi  LINE
+Infix: true
+NodeCount: 4, 4
+Class:  list DECL_ID, TYPEID, ABSID, COMMENT 
+Actions:  ":", any, CHGOTO 1,
+				";", any, CHGOTO 3,
+				",", upkid 0, C_EXPAND,
+				"absolute", any, CHGOTO 2,
+				"cr", any, CR,
+
+
+Node: CONST_DECL
+Name: "constant declaration"
+Template:   "!1p !c!k= !2p;!3o!\t!3{!o\n"
+Flags: DECLARE  LINE
+Infix: true
+NodeCount: 3, 4
+# Hidden kid - extra memory to map this to CONST_INIT in editor
+Class:  DECL_ID, CONSTANT, COMMENT 
+Actions:  "=", any, chgoto 1
+	";", any, chgoto 2,
+	"cr", any, CR,
+	":", any, TMINIT
+
+
+Node: TYPE_DECL
+Name: "type declaration"
+Template:   "!1p !c!k= !2p!R!3o!\t!3{!o\n"
+Flags: DECLARE  MULTI  LINE
+Infix: true
+NodeCount: 3, 3
+Class:  DECL_ID, TYPE, COMMENT 
+Actions:  "=", any, chgoto 1
+				";", any, CHGOTO 2,
+				"cr", any, CR
+
+Node: VAR_DECL
+Name: "variable declaration"
+Template:   "!1, !c!k: !2p!R!3o!\t!3{!o\n"
+Flags: DECLARE  multi  LINE
+Infix: true
+NodeCount: 3, 3
+Class:  list DECL_ID, TYPE, COMMENT 
+Actions:  ":", any, CHGOTO 1,
+				";", any, CHGOTO 2,
+				",", upkid 0, C_EXPAND,
+				"absolute", any, ABSMOG,
+				"cr", any, CR,
+
+Node: TYP_ENUM
+Name: "enumerated type"
+Template:   "!c!k(!1,)"
+Flags: DECLARE
+Infix: false
+NodeCount: 1, 1
+Class:  list DECL_ID
+Actions:  ",", upkid 0, C_EXPAND,
+	")", any, CRIGHT,
+
+
+Node: TYP_SUBRANGE
+Name: "subrange"
+Template:   "!(lower-bound)!1p!c!k..!(upper-bound)!2p"
+Flags: none
+Infix: true
+NodeCount: 2, 4
+# Hidden kids, first is number of bytes required to store subrange
+# second unused
+Class: OCONSTANT, OCONSTANT 
+Actions:  "..", any, chgoto 1,
+	".", any, chgoto 1,
+
+
+Node: TYP_PACKED
+Name: "packed type"
+Template:   "!c!kpacked !1p"
+Flags: DECLARE
+Infix: false
+NodeCount: 1, 1
+Class:  ST_TYPE 
+
+
+Node: TYP_ARRAY
+Name: "array"
+Template:   "!c!karray [!(range)!1p] of !2p"
+Flags: DECLARE
+Infix: false
+NodeCount: 2, 5
+# Hidden kids size of compenent type, lower bound, number of elements
+Class: SIM_TYPE, TYPE  
+Actions:  ",", upkid 0, AREXP, 
+				"[", any, CHGOTO 0,
+				"]", any, CHGOTO 1,
+				"of", any,	CHGOTO 1,
+
+Node: INIT_STRUCT
+Name: "structured constant"
+Template:			"!k!c(!1:)"
+Flags:
+Infix: false
+NodeCount: 1,2
+# Hidden kid, type of record or array being initialized
+Class: list INIT
+Actions:
+				")", any, PUTME,
+				",", upkid 0, CMMA_EXPAND,
+				";", upkid 0, CMMA_EXPAND,
+
+Node: TYP_STRING
+Name: "string"
+Template:			"!c!kstring [!(Max Length)!1p]"
+Flags: DECLARE
+Infix: false
+NodeCount: 1,2
+# hidden kid - size of string (the length)
+Class: OCONSTANT
+Actions:			
+				"[", any, CHGOTO 0,
+				"]", any, CRIGHT,
+
+Node: FLD_INIT
+Name: "field initializer"
+Template: "!1p!c:!2p"
+Flags: 
+Infix: true
+NodeCount: 2,2
+Class: FLD_NAME, INIT
+Actions:
+				":", any, chgoto 1
+
+
+Node: TYP_SET
+Name: "set type"
+Template:   "!c!kset of !1p"
+Flags: DECLARE
+Infix: false
+NodeCount: 1, 3
+# hidden kids ?
+Class: SIM_TYPE  
+Actions:  "of", any,	CHGOTO 0,
+
+
+Node: TYP_FILE
+Name: "file type"
+Template:   "!c!kfile of !(file-element-type)!1p"
+Flags: DECLARE
+Infix: false
+NodeCount: 1, 1
+Class:  TYPE  
+Actions:  "of", any,	CHGOTO 0,
+
+
+Node: TYP_POINTER
+Name: "pointer type"
+Template:   "!c!k^!1p"
+Flags: none
+Infix: false
+NodeCount: 1, 1
+Class:  TYPEID  
+
+
+
+
+Node: TYP_RECORD
+Name: "record type"
+Template:   "!c!krecord",
+				"!1l\n",
+				"!T!kend;\n"
+Flags: DECLARE  SYMBOL  INDENT
+Infix: false
+NodeCount: 1, 3
+# Hidden kid - symbol table, size of record
+Class: list FIELD  
+Actions: 
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, BLCR,
+				"end", any, CRIGHT
+
+
+
+Node: FIELD
+Name: "record field"
+Template:   "!(field-name)!1, !c!k: !2p!R!3o!\t!3{!o\n"
+Flags: DECLARE  multi  LINE
+Infix: true
+NodeCount: 3, 3
+Class:  list DECL_ID, TYPE, COMMENT  
+Actions: 
+				"cr", any, CR,
+				";", any, chgoto 2,
+				":", any, chgoto 1,
+				",", upkid 0, C_EXPAND,
+
+
+Node: VARIANT
+Name: "variant record"
+				
+Template:   "!c!kcase !1o!(tag-name)!1p : !o!(tag-type)!2p of\n",
+				"!3l\n",
+				"{end variant part}\n"
+Flags: DECLARE  LINE
+Infix: false
+NodeCount: 3, 4
+# Hidden kid ?
+Class:  DECL_ID, TYPEID, list VARIANT
+Actions: "cr", pcode 2, H_EXPAND,
+				"cr", any, BLCR,
+				":", upkid 0, chgoto 1,
+				"case", any, chgoto 0,
+
+
+Node: ST_VCASE
+Name: "variant case"
+Template:   "!1, !c!k: (\n",
+				"!2l\n",
+				"!T!k);\n",
+Flags: INDENT  DECLARE  LINE
+Infix: true
+NodeCount: 2, 2
+Class:  list CONSTANT, list FIELD 
+Actions: 
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, BLCR,
+				")", any, CRIGHT,
+				"(", exact upkid 0, chgoto 1,
+				":", upkid 0, chgoto 1,
+				",", upkid 0, C_EXPAND,
+
+
+Node: FORM_VALUE
+Name: "parameter"
+Template:   "!(parm-name)!1,!c!k: !2p"
+Flags: DECLARE
+Infix: true
+NodeCount: 2, 2
+Class: list DECL_ID, TYPEID  
+Actions: 
+				";", any, H_EXPAND,
+				",", upkid 0, C_EXPAND,
+				":", any, chgoto 1,
+				"var", any, TVAR,
+
+
+Node: FORM_REF
+Name: "var parameter"
+Template:   "!c!kvar !(parm-name)!1,!2o: !2p!o"
+Flags: DECLARE
+Infix: false
+NodeCount: 2, 2
+Class:  list DECL_ID, TYPEID  
+Actions: 
+				";", any, H_EXPAND,
+				",", upkid 0, C_EXPAND,
+				":", any, chgoto 1,
+
+
+
+Node: FORM_FUNCTION
+Name: "function parameter"
+Template:   "!c!kfunction !(func-name)!1p!2P; : !3p"
+Flags: SYMBOL  SCOPE
+Infix: false
+NodeCount: 3, 4
+# Hidden kid, symbol table
+Class:  DECL_ID, list FORMAL, TYPEID 
+Actions: 
+				";", any, H_EXPAND,
+				"(", exact upkid 0, REEXPAND,
+				",", upkid 1, C_EXPAND,
+
+
+Node: FORM_PROCEDURE
+Name: "procedure parameter"
+Template:   "!c!kprocedure !(proc-name)!1p!2P;"
+Flags: SYMBOL  SCOPE
+Infix: false
+NodeCount: 2, 3
+# Hidden kid, symbol table
+Class:  DECL_ID, list FORMAL
+Actions: 
+				";", any, H_EXPAND,
+				"(", exact upkid 0, REEXPAND,
+				",", upkid 1, C_EXPAND,
+
+
+Node: NOTDONE
+Name: "pass through comment"
+Template:   "!1p !c{non-ALICE}\n"
+Flags: LINE
+Infix: true
+NodeCount: 1, 1
+Class:  COMMENT  
+Actions: "cr", any, CR,
+
+
+Node: ST_COMMENT
+Name: "statement comment"
+Template:   "!c!1o!1{!o \n"
+Flags: LINE
+Infix: false
+NodeCount: 1, 1
+Class:  COMMENT  
+Actions: "cr", any, CR,
+
+Node: ST_TRACE
+Name: "trace block"
+Template:	"!c!k{+do if !1p set begin\n"
+			"!2l\n"
+			"!T!kend; };\n"
+Flags: LINE E1KID INDENT
+Infix: false
+NodeCount: 2,2
+Class: VAR, list STATEMENT
+Actions:	
+		"cr", pcode 2, H_EXPAND,
+		"begin", any, chgoto 1,
+		"if", any, chgoto 0,
+		"set", any, chgoto 1,
+		"end", any, CRIGHT,
+		"cr", any, BLCR,
+
+
+Node: ST_LABEL
+Name: "labeled statement"
+Template:   "!1p!c:\n"
+Flags: LINE
+Infix: true
+NodeCount: 1, 1
+Class:  LABEL  
+Actions: 
+				"cr", any, CR,
+				":", any, CR,
+
+
+
+Node: ST_GOTO
+Name: "goto"
+Template:   "!c!kgoto !(label)!1p;\n"
+Flags: LINE
+Infix: false
+NodeCount: 1, 1
+Class:  LABEL  
+Actions:  ";", any, H_EXPAND,
+				"cr", any, CR,
+
+
+Node: ST_CALL
+Name: "procedure call"
+Template:   "!1p!c!2P,;\n"
+Flags: LINE
+Infix: true
+NodeCount: 2, 2
+Class:  PROC_ID, list EXP
+Actions:  ";", any, H_EXPAND,
+				",", upkid 1, CMMA_EXPAND,
+				")", any, IGNORE,
+				"(", any, REEXPAND,
+				"cr", any, CR,
+
+Node: LIBRARY
+Name: "library"
+Template:   "{+!c!kLibrary \"!3E\" !1o!1p!o}\n"
+Flags: DECLARE  LINE
+Infix: false
+NodeCount: 1, 4
+# Hidden kids are declaration block, library filename, library memory block
+Class:  COMMENT, list declarations
+Actions: "cr", any, CR,
+	".", any, chgoto 0
+
+Node: ST_ASSIGN
+Name: "assignment statement"
+Template:   "!1p !c:= !2p;\n"
+Flags: E2KIDS  LINE
+Infix: true
+NodeCount: 2, 3
+# Hidden kid, assignment type code, see ASSIGN case in interpreter
+Class: VAR, EXP  
+Actions:  ";", any, H_EXPAND,
+				"cr", any, CR,
+				":=", exact upkid 0, chgoto 1,
+				":", any, asgcolon,
+				"=", exact upkid 0, chgoto 1,
+				"(", exact upkid 0, CALLMAKE,
+
+
+
+Node: IMM_BLOCK
+Name: "Immediate Statements"
+Template:   "!c{ -----Immediate Statement Block-----\n",
+				"!1l\n",
+				"begin\n",
+				"!2l\n",
+				"  -----End Immediate Statements-----}\n",
+Flags: SCOPE  LINE SYMBOL
+Infix: false
+NodeCount: 2, 4
+# Hidden kid symbol table, size of variables
+Class:  list DECLARATIONS, list STATEMENT 
+Actions: 
+				"var", any, GDECL,
+				"const", any, GDECL,
+				"type", any, GDECL,
+				"label", any, GDECL,
+				"procedure", any, GDECL,
+				"function", any, GDECL,
+				"begin", any, chgoto 0,
+				"end", any, CRIGHT,
+				"cr", pcode 2, blcr 1,
+				"cr", pcode 4, H_EXPAND,
+				"cr", any, BLCR,
+
+
+Node: ST_SPECIAL
+Name: "generic block"
+Template:			"!k!1p !cbegin\n",
+				"!2l\n",
+				"!T!kend;\n",
+Flags: LINE  INDENT
+Infix: true
+NodeCount: 2, 2
+Class:  SPECIAL, list STATEMENT
+Actions:			";", pcode 2, H_EXPAND,
+				"begin", exact upkid 0, chgoto 1,
+				"end", any, CRIGHT,
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, blcr 0,
+
+
+Node: ST_IF
+Name: "if-then"
+Template:   "!c!kif !(Condition)!1p then begin\n",
+				"!2l\n",
+				"!T!kend;\n"
+Flags: E1KID  LINE  INDENT
+Infix: false
+NodeCount: 2, 2
+Class:  EXP, list STATEMENT
+Actions:  ";", pcode 2, H_EXPAND,
+				"then", exact upkid 0, chgoto 1,
+				"begin", exact upkid 0, chgoto 1,
+				"end", any, CRIGHT,
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, blcr 0,
+				"else", any, DELSE,
+
+
+Node: ST_ELSE
+Name: "if-then-else"
+Template:   "!c!kif !(Condition)!1p then begin\n",
+				"!2l\n",
+				"!T!kend\n",
+				" !kelse begin\n",
+				"!3l\n",
+				"!T!kend;\n"
+Flags: E1KID  LINE  INDENT
+Infix: false
+ 
+NodeCount: 3, 3
+Class:  EXP, list STATEMENT, list STATEMENT
+Actions:  ";", pcode 2, H_EXPAND,
+				"else", any, chgoto 2,
+				"then", exact upkid 0, chgoto 1,
+				"begin", exact upkid 0, chgoto 1,
+				"end", any, CRIGHT,
+				"cr", pcode 2, blcr 1,
+				"cr", pcode 3, blcr 1,
+				"cr", pcode 5, H_EXPAND,
+				"cr", any, blcr 0
+
+Node: ST_FOR
+Name: "for loop"
+Template: "!c!kfor !(variable)!1p := !(start)!2p to !(finish)!3p do begin\n",
+				"!4l\n",
+				"!T!kend;\n"
+Flags: E2KIDS  LINE  INDENT
+Infix: false
+NodeCount: 4, 4
+Class:  VAR, EXP, EXP, list STATEMENT
+Actions:  ";", pcode 2, H_EXPAND,
+				"downto", any, MDOWNTO,
+				"begin", any, chgoto 3,
+				":=", exact upkid 0, chgoto 1,
+				"to", exact upkid 1, chgoto 2,
+				"to", upkid 0, chgoto 2,
+				":", exact upkid 0, asgcolon,
+				":", exact upkid 1, asgcolon,
+				"=", exact upkid 0, chgoto 1,
+				"do", any, chgoto 3,
+				"end", any, CRIGHT,
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, blcr 0,
+
+
+Node: ST_DOWNTO
+Name: "reverse for loop"
+				
+Template:
+   "!c!kfor !(variable)!1p := !(start)!2p downto !(final)!3p do begin\n",
+				"!4l\n",
+				"!T!kend;\n"
+Flags: E2KIDS  LINE  INDENT
+Infix: false
+NodeCount: 4, 4
+Class:  VAR, EXP, EXP, list STATEMENT
+Actions:  ";", pcode 2, H_EXPAND,
+				"to", any, MTO,
+				"begin", any, chgoto 3,
+				":=", exact upkid 0, chgoto 1,
+				"downto", exact upkid 1, chgoto 2,
+				"downto", upkid 0, chgoto 2,
+				":", exact upkid 0, asgcolon,
+				":", exact upkid 1, asgcolon,
+				"do", any, chgoto 3,
+				"=", exact upkid 0, chgoto 1,
+				"end", any, CRIGHT,
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, blcr 0,
+
+
+
+Node: ST_WHILE
+Name: "while loop"
+				
+Template:   "!c!kwhile !(Condition)!1p do begin\n",
+				"!2l\n",
+				"!T!kend;\n"
+Flags: LINE  INDENT
+Infix: false
+NodeCount: 2, 2
+Class:  EXP, list STATEMENT
+Actions:  ";", any, H_EXPAND,
+				"end", any, CRIGHT,
+				"begin", any, chgoto 1,
+				"do", any, chgoto 1,
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, blcr 0,
+
+
+Node: ST_REPEAT
+Name: "repeat loop"
+Template:   "!c!krepeat\n",
+				"!1l\n",
+				"!kuntil !(Condition)!2p;\n"
+Flags: LINE  INDENT
+Infix: false
+NodeCount: 2, 2
+Class:  list STATEMENT, EXP  
+Actions:  ";", any, H_EXPAND,
+				"begin", any, chgoto 0,
+				"until", any, chgoto 1,
+				"cr", upkid 1, H_EXPAND,
+				"cr", pcode 2, H_EXPAND,
+				"cr", pcode 0, blcr 0,
+
+Node: ST_WITH
+Name: "with block"
+Template:  "!c!kwith !(record-variable)!1p do begin\n",
+				"!2l\n",
+				"!T!kend;\n"
+Flags: E1KID  LINE  INDENT
+Infix: false
+NodeCount: 2, 3
+# Hidden kid value of with variable at runtime
+Class:  VAR, list STATEMENT
+Actions:  ";", any, H_EXPAND,
+				"end", any, CRIGHT,
+				"begin", any, chgoto 1,
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, blcr 0,
+
+
+Node: ST_CASE
+Name: "case"
+Template:  "!c!kcase !1p of\n",
+				"!2l\n",
+				"!T!kend;\n"
+Flags: E1KID  LINE  INDENT
+Infix: false
+NodeCount: 2, 2
+Class:  EXP, list CASE
+Actions:  ";", any, H_EXPAND,
+				"end", any, CRIGHT,
+				"of", any, chgoto 1,
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, blcr 0
+
+
+Node: ST_BLOCK
+Name: "compound statement"
+Template:   "!c!kbegin\n",
+				"!1l\n",
+				"!T!kend;\n"
+Flags: E1KID  LINE  INDENT
+Infix: false
+NodeCount: 1, 1
+Class:  list STATEMENT
+Actions:  ";", any, H_EXPAND,
+				"begin", any, chgoto 0,
+				"end", any, CRIGHT,
+				"cr", pcode 2, H_EXPAND,
+				"cr", any, blcr 0,
+
+
+Node: ST_COUT
+Name: "commented out code"
+Template:   "!c{\n",
+				"!1l\n",
+				"}\n" 
+Flags: LINE  INDENT
+Infix: false
+NodeCount: 1, 1
+Class:  list STATEMENT
+Actions:
+			"cr", pcode 0, blcr 0,
+			"cr", pcode 2, H_EXPAND
+
+
+Node: CASE
+Name: "case instance"
+Template:   "!1,!c: !kbegin\n",
+				"!2l\n",
+				"!T!kend;\n"
+Flags: LINE  INDENT
+Infix: true
+NodeCount: 2, 2
+Class:  list CASECONST, list STATEMENT
+Actions:  ";", any, H_EXPAND,
+				",", upkid 0, C_EXPAND,
+				":", exact upkid 0, chgoto 1,
+				"cr", pcode 2, H_EXPAND,
+				"begin", any, chgoto 0,
+				"cr", any, blcr 0,
+				"..", upkid 0, cdotdot,
+				".", upkid 0, cdotdot
+
+
+Node: CASE_ELSE
+Name: "case else"
+Template:			"!c!kelse begin\n",
+				"!1l\n",
+				"!T!kend;\n"
+
+Flags: LINE  INDENT
+Infix: false
+NodeCount: 1, 1
+Class:  list STATEMENT
+Actions:  "else", any, chgoto 0,
+				"begin", any, chgoto 0,
+				"cr", pcode 2, H_EXPAND,
+				# exact - by itself
+				"cr", 16 , BLCR,
+				
+
+
+Node: OEXP_2
+Name: "colon"
+Template:   "!1p!c:!2p"
+Flags: TYPE  E2KIDS
+Infix: true
+NodeCount: 2, 3
+# Hidden kid type, all nodes with TYPE flag
+Class:  EXP, EXP  
+
+
+
+Node: OEXP_3
+Name: "precision"
+Template:   "!1p!c:!2p:!3p"
+Flags: TYPE  E2KIDS
+Infix: true
+NodeCount: 3, 4
+# Hidden kid type
+Class:  EXP, EXP, EXP  
+
+
+Node: CON_PLUS
+Name: "signed constant"
+Template:   "!c+!1p"
+Flags: E1KID
+Infix: false
+NodeCount: 1, 1
+Class:  CONSTANT 
+
+
+
+Node: CON_MINUS
+Name: "negative constant"
+Template:   "!c-!1p"
+Flags: E1KID
+Infix: false
+NodeCount: 1, 1
+Class:  CONSTANT 
+
+
+Node: CON_INT
+Name: "integer constant"
+Template:   "!c!ai!1E"
+Flags: none
+Infix: false
+NodeCount: 0, 2
+# Hidden kid string of constant and integer value of it
+Class: 0
+
+
+Node: CON_REAL
+Name: "real constant"
+Template:   "!c!aj!1E"
+Flags: none
+Infix: false
+NodeCount: 0, 5 # 1+sizeof(rfloat)/sizeof(pointer)
+# string of constant and 4 kids holding floating point number
+Class: 0
+
+
+Node: CON_CHAR
+Name: "character constant"
+Template:   "!c!ah!1C"
+Flags: none
+Infix: false
+NodeCount: 0, 2
+# value of character, # 2 superflous?
+Class: 0
+
+
+Node: CON_STRING
+Name: "string constant"
+Template:   "!c!ak!1S"
+Flags: none
+Infix: false
+NodeCount: 0, 2
+# string of constant and length of string
+Class: 0
+
+Node: EXP_SHL
+Name: "shift left"
+Template:   "!1p !cshl !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 2
+Class:  EXP, EXP  
+Precedence: 5
+				
+Node: EXP_SHR
+Name: "shift right"
+Template:   "!1p !cshr !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 2
+Class:  EXP, EXP  
+Precedence: 5
+				
+
+Node: VAR_ARRAY
+Name: "array indexing"
+Template:   "!1p!c[!(Subscript)!2p]"
+Flags: TYPE  E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  VAR, EXP  
+Actions:  ",", upkid 1, INDEX, 
+				"]", any, PUTME,
+				"[", any, INDEX,
+				"^", any, INDIRECT,
+				".", any, FIELD,
+
+
+Node: VAR_POINTER
+Name: "indirection"
+Template:   "!1p!c^"
+Flags: TYPE  E1KID
+Infix: true
+NodeCount: 1, 2
+Class:  VAR  
+Actions: "[", any, INDEX,
+	"^", any, INDIRECT,
+	".", any, FIELD,
+
+
+Node: VAR_FIELD
+Name: "field use"
+Template:   "!1p!c.!2p"
+Flags: TYPE  E1KID
+Infix: true
+NodeCount: 2, 3
+Class:  VAR, FLD_NAME  
+Actions: "[", any, INDEX,
+	"^", any, INDIRECT,
+	".", any, FIELD,
+
+
+
+Node: VF_WITH
+Name: "implied field use"
+Template:   "!c!1I"
+Flags: none
+Infix: false
+NodeCount: 0, 2
+# pointer to field symbol entry and ?
+Class: 0
+Actions: 
+				"[", any, INDEX,
+				"^", any, INDIRECT,
+				".", any, FIELD,
+
+
+Node: EXP_NIL
+Name: "nil pointer"
+Template:   "!c!knil"
+Flags: none
+Infix: false
+NodeCount: 0, 0
+Class: 0 
+Precedence: 0
+				
+
+Node: EXP_PAREN
+Name: "parentheses"
+Template:   "!c(!1p)"
+Flags: E1KID
+Infix: false
+NodeCount: 1, 2
+# Hidden kid ?
+Class:  EXP  
+Actions:  ")", any, IGNORE,
+Precedence: 0
+				
+
+
+Node: EXP_SET
+Name: "set"
+Template:   "!c[!1,]"
+Flags: none
+Infix: false
+NodeCount: 1, 1
+Class:  list EXP
+Actions:  "[", any, REEXPAND,
+				"]", upkid 0, IGNORE,
+				",", upkid 0, C_EXPAND,
+Precedence: 0
+				
+
+Node: EXP_NOT
+Name: "not"
+Template:   "!c!knot !1p"
+Flags: TYPE E1KID
+Infix: false
+NodeCount: 1, 2
+Class:  EXP  
+Precedence: 1
+
+
+Node: EXP_FUNC
+Name: "function call"
+Template:   "!1p!c!2P,"
+Flags: none
+Infix: true
+NodeCount: 2, 2
+Class:  FUN_ID, list EXP
+Actions:  ",", upkid 1, CMMA_EXPAND,
+				")", any, PUTME,
+				"(", any, REEXPAND
+Precedence: 0
+
+
+Node: EXP_UPLUS
+Name: "unary plus"
+Template: "!c+!1p"
+Flags: E1KID
+Infix: false
+NodeCount: 1, 1
+Class:  EXP  
+Precedence: 3
+				
+
+
+Node: EXP_UMINUS
+Name: "unary minus"
+Template:   "!c-!1p"
+Flags: E1KID
+Infix: false
+NodeCount: 1, 1
+Class:  EXP  
+Precedence: 3
+				
+
+
+Node: EXP_PLUS
+Name: "addition"
+Template:   "!1p !c+ !2p"
+Flags: TYPE  E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 10
+				
+
+
+Node: EXP_MINUS
+Name: "subtraction"
+Template:   "!1p !c- !2p"
+Flags: TYPE  E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 10
+				
+
+
+Node: EXP_OR
+Name: "or"
+Template:   "!1p !c!kor !2p"
+Flags: TYPE E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 10
+				
+Node: EXP_XOR
+Name: "exclusive or"
+Template:   "!1p !c!kxor !2p"
+Flags: TYPE E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 10
+
+
+Node: EXP_TIMES
+Name: "multiplication"
+Template:   "!1p!c*!2p"
+Flags: TYPE  E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 5
+				
+
+
+Node: EXP_SLASH
+Name: "division"
+Template:   "!1p!c/!2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 2
+Class:  EXP, EXP  
+Precedence: 5
+				
+
+
+Node: EXP_DIV
+Name: "integer divide"
+Template:   "!1p !c!kdiv !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 2
+Class:  EXP, EXP  
+Precedence: 5
+				
+
+
+Node: EXP_MOD
+Name: "modulus"
+Template:   "!1p !c!kmod !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 2
+Class:  EXP, EXP  
+Precedence: 5
+				
+
+Node: EXP_AND
+Name: "and"
+Template:   "!1p !c!kand !2p"
+Flags: TYPE E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 5
+				
+Node: EXP_EQ
+Name: "equality"
+Template:   "!1p !c= !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 15
+				
+
+
+Node: EXP_NE
+Name: "not equal"
+Template:   "!1p !c<> !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 15
+				
+
+
+Node: EXP_LT
+Name: "less than"
+Template:   "!1p !c< !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 15
+				
+Node: EXP_LE
+Name: "less or equal"
+Template:   "!1p !c<= !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 15
+				
+
+
+Node: EXP_GT
+Name: "greater than"
+Template:   "!1p !c> !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 15
+				
+
+
+Node: EXP_GE
+Name: "greater or equal"
+Template:   "!1p !c>= !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Precedence: 15
+				
+Node: EXP_IN
+Name: "set membership"
+Template:   "!1p !c!kin !2p"
+Flags: E2KIDS
+Infix: true
+NodeCount: 2, 2
+Class:  EXP, EXP  
+Precedence: 15
+				
+
+
+Node: SET_SUBRANGE
+Name: "range set"
+Template:   "!1p!c..!2p"
+Flags: TYPE  E2KIDS
+Infix: true
+NodeCount: 2, 3
+Class:  EXP, EXP  
+Actions:  "..", any, chgoto 1,
+				".", any, chgoto 1,
+Precedence: 0
+				
+
+Node: EXP_ERROR
+Name: "bad expression"
+Template:   "!c!ac!1E"
+Flags: none
+Infix: false
+NodeCount: 0, 1
+# text of error
+Class:  0 
+
+
+Node: REVEAL
+Name: "revealed code"
+Template:   		"!c!k{+Revealed !1p}\n",
+				"!2l\n",
+				"!H",
+Flags: DECLARE  LINE
+Infix: false
+NodeCount: 2, 2
+Class:  COMMENT, list PASSUP
+Actions: "cr", pcode 2, H_EXPAND,
+	 "cr", any, blcr 0
+
+Node: HIDE
+Name: "hidden code"
+Template:   "!c!k... {!1p} ..."
+Flags: DECLARE  LINE
+Infix: false
+NodeCount: 1, 2
+# hidden code (special case subject to change)
+Class:  COMMENT, list PASSUP
+Actions: "cr", any, CR,
+	".", any, chgoto 0
+
+Node: STUB
+Name: "placeholder"
+Template:  "!c!s"
+Flags: none
+Infix: false
+NodeCount: 0, 1
+# class number of stub (int)
+Class: 0
+
+Node: ID
+Name: "Symbol"
+Template:   "!c!1I"
+Flags: none
+Infix: false
+NodeCount: 0, 1
+# pointer to symbol table entry
+Class: 0
+Actions: "[", any, INDEX,
+	"^", any, INDIRECT,
+	".", any, FIELD
+
+
+Node: NAME
+Name: "Unref Symbol"
+Template:   "!c!1N"
+Flags: none
+Infix: false
+NodeCount: 0, 1
+# string of id nam
+Class: 0
+Actions: "[", any, INDEX,
+	"^", any, INDIRECT,
+	".", any, FIELD
+
+Node: LIST
+Name: "List"
+Template:   "!c!L"
+Flags: DECLARE  NOSTOP
+Infix: false
+NodeCount: 0, 0
+# special node
+Class: 0  
+
+
+Node: SYMBOL_TABLE
+Name: "Symbol Table"
+Flags: NOSTOP
+Infix: false
+NodeCount: 0,1
+# pointer to first symbol in chain
+Class:  0 
+
+Node: DECL_ID
+Name: "name"
+Template:  "!c!D"
+Flags: none
+Infix: false
+NodeCount: 0, 0
+# special nod
+Class:  0 
+

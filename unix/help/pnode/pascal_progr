@@ -1,0 +1,28 @@
+|22,73
+     A Pascal program is a complete set of instructions that tell the
+computer how to perform a certain job.  The PROGRAM statement gives the
+program's name and lists the file variables the program will use.  The
+first comment describes what the program does.  The Declarations tell what
+names you are going to use in your program.  These names can be labels,
+constants, types, or variables, or they may be subprograms (procedures and
+functions).  The Statements are the actual instructions that tell the
+computer what to do.
+
+Program Examples:
+     program squares (input,output);
+     { Print First Ten Perfect Squares }
+     var
+         i : integer;
+     begin
+     for i := 1 to 10 do begin
+         writeln(i*i);
+         end;
+     end.
+|mFor more, choose
+|iDo nothing,nop
+|iComments,Hpnode/comment
+|iPossible kinds of declarations,Hpclass/declarations
+|iPossible kinds of statements,Hpclass/statement
+|iPreparing programs,Hmisc/intro
+|iEditing more than one program,Hcommand/ws
+|p

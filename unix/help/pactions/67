@@ -1,0 +1,7 @@
+|8,54
+     This turns a value parameter into a VAR parameter.
+|mFor more, choose
+|iDo nothing,nop
+|iValue parameters,Hpnode/parameter
+|iVAR parameters,Hpnode/var_paramete
+|p

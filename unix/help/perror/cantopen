@@ -1,0 +1,19 @@
+|19,74
+Can't open FILE, file not saved
+    You tried to save your program in a file named FILE, but for one reason
+    or another, ALICE couldn't use that file.  The most common reason for
+    this is that the file already exists and contains a different kind of
+    information than an ALICE program.  ALICE can only save programs in
+    files that have a particular format, and if the save file doesn't have
+    that format, ALICE won't write your program into that file.  Another
+    possible cause for this error is that you don't have permissions to
+    write into the file you named.
+         It's important to note that this error message means that your
+    program has NOT been saved.  You must save your program in a different
+    file before you quit.  Use the FILENAME command to specify a new save
+    file, then try the save command again.
+|mFor more, choose
+|iDo nothing,nop
+|iSetting new filenames,Hcommand/filename
+|iSaving files,Hcommand/save
+|p

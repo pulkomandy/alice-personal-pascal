@@ -1,0 +1,8 @@
+|9,67
+Workspace NAME is empty
+    You attempted to use GET to obtain source code from a workspace.
+    However, the workspace that you named does not contain anything.
+|mFor more, choose
+|iDo nothing,nop
+|iGET,Hcommand/get
+|p

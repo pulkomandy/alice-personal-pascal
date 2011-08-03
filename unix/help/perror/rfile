@@ -1,0 +1,10 @@
+|11,73
+This file was not initialized with "update"
+    You tried to use the "setnext" procedure on a file that was not opened
+    with the "update" procedure.  "Setnext" is only used for direct access
+    input/output and this sort of I/O can only be set up with "update".
+|mFor more, choose
+|iDo nothing,nop
+|iUpdate,Hpsymbol/update
+|iSetnext,Hpsymbol/setnext
+|p

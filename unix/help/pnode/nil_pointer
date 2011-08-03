@@ -1,0 +1,22 @@
+|17,74
+     The symbol "nil" is a predefined name that stands for the null
+pointer.  This is a pointer that doesn't point to anything.  The value
+"nil" may be assigned or compared to a pointer of any type.  If you attempt
+to use a null pointer, you will get an error.
+
+Valid Nil Examples:
+     var
+         pc : ^char;
+     begin
+     pc := nil;
+        ...
+     if pc = nil then begin ...
+Invalid Nil Examples:
+     pc := nil;
+     pc^ := 'A';
+       {"pc" doesn't point to anything}
+|mFor more, choose
+|iDo nothing,nop
+|iPointers,Hpnode/pointer_type
+|iThe Pointer type,Hpsymbol/pointer
+|p

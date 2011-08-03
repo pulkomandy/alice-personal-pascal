@@ -1,0 +1,26 @@
+|21,74
+     A constant can be a number, a character, or a string of characters.
+     Numbers can be "integer" or "real".  An integer is a number without a
+decimal point.  A real number has a decimal point.  There must be at least
+one digit before the decimal point.  This means that 0.5 is correct, while
+.5 is not.  Negative real and integer values have a leading minus sign.
+     Real numbers may have accompanying exponents.  An exponent comes
+immediately after the main part of the number and begins with the letter
+"E".  After the "E" can be a positive or negative integer.
+     Character constants are single characters surrounded by single quotes,
+as in 'a'.  String constants have one or more characters surrounded by
+single or double quotes, as in 'hi there' or "hello".  "" is a special
+string constant with zero characters.
+
+Valid Constant Examples:
+     1    1.2     'a'     -2E4
+Invalid Constant Examples:
+     -'a'     .3     -.3     bE10
+|mFor more, choose
+|iDo nothing,nop
+|iCharacter constants,Hpnode/character_co
+|iInteger constants,Hpnode/integer_cons
+|iReal constants,Hpnode/real_constan
+|iSet constants,Hpnode/set
+|iString constants,Hpnode/string_const
+|p

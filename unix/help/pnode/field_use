@@ -1,0 +1,31 @@
+|24,74
+     The expression "recname.fieldname" is used to refer to a field named
+"fieldname" in a record variable named "recname".  The record variable must
+be defined and valid before you can type in the field name; if not, ALICE
+will not recognize the name of the field.
+     If you change the record name, you should change the field name as
+well, even if the field name is the same in both records.  This is due to
+a technical detail in ALICE.
+                Field Use Examples:
+ type
+     person = record {Information about a person}
+         name : packed array [1..40] of char;
+         age : integer;
+         height : record
+             feet,inches : integer;
+             end;
+         end;
+ var
+     Fred, Nancy, George : person;
+ begin
+ Fred.name := 'Fred';
+ Fred.age := 16;
+ Fred.height.feet := 5;
+ Fred.height.inches := 10;
+|mFor more, choose
+|iDo nothing,nop
+|iRecord Declarations,Hpnode/record_type
+|iField Declarations,Hpnode/record_field
+|iWITH Statements,Hpnode/with_block
+|iImplied field use,Hpnode/implied_fiel
+|p

@@ -1,0 +1,15 @@
+|15,73
+     A compound statement in Pascal begins with the keyword BEGIN and ends
+with END.  This is also called a block.
+     Sometimes the word "block" is used more loosely to mean any chunk of
+source code.
+
+Block Examples:
+     begin
+         writeln('This is an example');
+         writeln('of two lines in a block.');
+         end;
+     if a > b then begin
+         writeln('This block is in');
+         writeln('an IF statement.');
+         end;

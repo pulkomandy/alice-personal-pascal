@@ -1,0 +1,6 @@
+|6,71
+Structure is too big -- shrink it.
+
+    ALICE arrays and structures must fit within 32K of memory.  You have
+tried to define a variable that will use more memory than this.  You
+must break your structure or array into smaller ones.

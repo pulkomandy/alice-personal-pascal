@@ -1,0 +1,21 @@
+|22,74
+     The "ord" function can be applied to characters or enumerated types.
+If its argument is a character, "ord" gives the integer whose bit
+representation is the same as the character's ASCII representation.  If its
+argument is an enumerated value, "ord" gives an integer that indicates the
+position that the value had in the list that gave all the values in the
+enumerated type.  The first value in the list is numbered 0, the next is
+1, and so on.
+
+Ord Examples:
+     type
+         days = (sun,mon,tue,wed,thu,fri,sat);
+     begin
+         writeln(ord(sun),' is the integer 0.');
+         writeln(ord(mon),' is the integer 1.');
+         writeln(ord('b')-ord('a'),' is the integer 1.');
+|mFor more, choose
+|iDo nothing,nop
+|iChr,Hpsymbol/chr
+|iChar,Hpsymbol/char
+|p

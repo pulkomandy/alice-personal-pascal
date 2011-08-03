@@ -1,0 +1,7 @@
+|7,72
+     Selecting this adds
+
+           . Field-Name
+
+on the end of a record variable (or pointer to a record variable) so that
+you can reference a field in the variable.

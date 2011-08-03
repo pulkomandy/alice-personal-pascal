@@ -1,0 +1,12 @@
+|12,71
+     The unary minus operation turns positive numbers into negative ones
+and negative numbers into positive ones.  It can be applied to either
+integers or real numbers.
+
+Unary Minus Examples:
+     a := -3.6;
+     writeln(-a);
+        {Will write real 3.6}
+     b := -2;
+     writeln(-b);
+         {Will write integer 2}

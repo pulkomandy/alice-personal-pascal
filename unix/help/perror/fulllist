@@ -1,0 +1,17 @@
+|18,74
+Can't expand list any further
+    You attempted to expand a list beyond the limits that ALICE can handle.
+    In ALICE, lists (such as lists of statements or declarations) can have
+    a maximum of 255 elements.  Lists of this length are unlikely to occur
+    in most programs.
+         If you have a list of more than 255 statements, you can get around
+    the problem by enclosing some of the statements with "begin" and "end".
+    This makes a block that counts as only one statement in the list.
+         If you have a list of more than 255 declarations, the easiest
+    solution is to hide some of the declarations.  A hidden block of
+    declarations only counts as one element in the list.
+|mFor more, choose
+|iDo nothing,nop
+|iHIDE,Hcommand/hide
+|iEnclosing statements,Hcommand/enclose
+|p

@@ -1,0 +1,431 @@
+Error: turning on trace, file 'atr'
+my_scope(34fa) returns 1
+mainloop: c_comp_decls(1, 34fa, 67)
+my_scope(34fa) returns 1
+CheckAt=0, cursor=0
+mainloop, cursor 35a6, ocursor 67, srch_row 0, srch_real 0, look.=4
+hist_mark(), hist_cur=0, cursor=35a6
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: merge menulib
+zap_history()
+free_undone_hist()
+History dump:
+hist_cur=0, hist_last=0
+slot	action		from	to	kid
+0	1 (mark)	35a6	0	0
+
+leaving free_undone_hist() with:
+History dump:
+hist_cur=0, hist_last=0
+slot	action		from	to	kid
+0	1 (mark)	35a6	0	0
+
+hist_mark(), hist_cur=0, cursor=35a6
+hist_add(1, 35a6, 67, 0)
+mmalloc(320) returns 673e2c
+mmalloc(80) returns 673f6e
+mmalloc(36) returns 673fc0
+New node, type 2(pascal program) at 3fc0, 7 kids, first 0
+mmalloc(12) returns 673fe6
+mmalloc(32) returns 6716a2
+mmalloc(2) returns 6716c4
+mmalloc(32) returns 6716c8
+mmalloc(4) returns 6716ea
+mmalloc(32) returns 6716f0
+mmalloc(2) returns 671712
+mmalloc(32) returns 671716
+mmalloc(5) returns 671738
+mmalloc(32) returns 671740
+mmalloc(10) returns 671762
+mmalloc(32) returns 67176e
+mmalloc(4) returns 671790
+mmalloc(32) returns 671796
+mmalloc(14) returns 6717b8
+mmalloc(32) returns 6717c8
+mmalloc(9) returns 6717ea
+mmalloc(32) returns 673ff4
+mmalloc(8) returns 674016
+mmalloc(32) returns 674020
+mmalloc(9) returns 674042
+mmalloc(32) returns 67404e
+mmalloc(3) returns 674070
+mmalloc(12) returns 674076
+New node, type 98(placeholder) at 4076, 1 kids, first 0
+mmalloc(16) returns 674084
+mmalloc(12) returns 674096
+New node, type 1(comment) at 4096, 1 kids, first 0
+mmalloc(6) returns 6740a4
+mmalloc(12) returns 6740ac
+New node, type 1(comment) at 40ac, 1 kids, first 0
+mmalloc(7) returns 6740ba
+mmalloc(12) returns 6740c4
+mmalloc(12) returns 6740d2
+New node, type 98(placeholder) at 40d2, 1 kids, first 0
+mmalloc(12) returns 6740e0
+mmalloc(16) returns 6740ee
+New node, type 97(hidden code) at 40ee, 2 kids, first 0
+mmalloc(12) returns 674100
+New node, type 1(comment) at 4100, 1 kids, first 0
+mmalloc(14) returns 67410e
+mmalloc(24) returns 67411e
+mmalloc(12) returns 674138
+New node, type 5(declarations) at 4138, 1 kids, first 0
+mmalloc(20) returns 674146
+mmalloc(20) returns 67415c
+New node, type 13(type declaration) at 415c, 3 kids, first 0
+mmalloc(12) returns 674172
+New node, type 17(packed type) at 4172, 1 kids, first 0
+mmalloc(28) returns 674180
+New node, type 18(array) at 4180, 5 kids, first 0
+mmalloc(24) returns 67419e
+New node, type 16(subrange) at 419e, 4 kids, first 0
+mmalloc(16) returns 6741b8
+New node, type 62(integer constant) at 41b8, 2 kids, first 0
+mmalloc(2) returns 6741ca
+mmalloc(16) returns 6741ce
+New node, type 62(integer constant) at 41ce, 2 kids, first 0
+mmalloc(3) returns 6741e0
+mmalloc(12) returns 6741e6
+New node, type 99(Symbol) at 41e6, 1 kids, first 493e
+mmalloc(12) returns 6741f4
+New node, type 98(placeholder) at 41f4, 1 kids, first 0
+mmalloc(20) returns 674202
+New node, type 13(type declaration) at 4202, 3 kids, first 0
+mmalloc(12) returns 674218
+New node, type 99(Symbol) at 4218, 1 kids, first 48d2
+mmalloc(12) returns 674226
+New node, type 98(placeholder) at 4226, 1 kids, first 0
+mmalloc(20) returns 674234
+New node, type 13(type declaration) at 4234, 3 kids, first 0
+mmalloc(20) returns 67424a
+New node, type 25(record type) at 424a, 3 kids, first 0
+mmalloc(12) returns 674260
+mmalloc(32) returns 67426e
+mmalloc(10) returns 674290
+mmalloc(32) returns 67429c
+mmalloc(10) returns 6742be
+mmalloc(32) returns 6742ca
+mmalloc(10) returns 6742ec
+mmalloc(32) returns 6742f8
+mmalloc(8) returns 67431a
+mmalloc(32) returns 674324
+mmalloc(7) returns 674346
+mmalloc(28) returns 674350
+mmalloc(20) returns 67436e
+New node, type 26(record field) at 436e, 3 kids, first 0
+mmalloc(12) returns 674384
+mmalloc(12) returns 674392
+New node, type 99(Symbol) at 4392, 1 kids, first 48b2
+mmalloc(12) returns 6743a0
+New node, type 98(placeholder) at 43a0, 1 kids, first 0
+mmalloc(20) returns 6743ae
+New node, type 26(record field) at 43ae, 3 kids, first 0
+mmalloc(12) returns 6743c4
+mmalloc(12) returns 6743d2
+New node, type 99(Symbol) at 43d2, 1 kids, first 48b2
+mmalloc(12) returns 6743e0
+New node, type 98(placeholder) at 43e0, 1 kids, first 0
+mmalloc(20) returns 6743ee
+New node, type 26(record field) at 43ee, 3 kids, first 0
+mmalloc(12) returns 674404
+mmalloc(12) returns 674412
+New node, type 99(Symbol) at 4412, 1 kids, first 48b2
+mmalloc(12) returns 674420
+New node, type 98(placeholder) at 4420, 1 kids, first 0
+mmalloc(20) returns 67442e
+New node, type 26(record field) at 442e, 3 kids, first 0
+mmalloc(12) returns 674444
+mmalloc(12) returns 674452
+New node, type 24(pointer type) at 4452, 1 kids, first 0
+mmalloc(12) returns 674460
+New node, type 99(Symbol) at 4460, 1 kids, first 176e
+mmalloc(12) returns 67446e
+New node, type 98(placeholder) at 446e, 1 kids, first 0
+mmalloc(20) returns 67447c
+New node, type 26(record field) at 447c, 3 kids, first 0
+mmalloc(12) returns 674492
+mmalloc(28) returns 6744a0
+New node, type 18(array) at 44a0, 5 kids, first 0
+mmalloc(24) returns 6744be
+New node, type 16(subrange) at 44be, 4 kids, first 0
+mmalloc(16) returns 6744d8
+New node, type 62(integer constant) at 44d8, 2 kids, first 0
+mmalloc(2) returns 6744ea
+mmalloc(16) returns 6744ee
+New node, type 62(integer constant) at 44ee, 2 kids, first 0
+mmalloc(3) returns 674500
+mmalloc(12) returns 674506
+New node, type 24(pointer type) at 4506, 1 kids, first 0
+mmalloc(12) returns 674514
+New node, type 99(Symbol) at 4514, 1 kids, first 176e
+mmalloc(12) returns 674522
+New node, type 98(placeholder) at 4522, 1 kids, first 0
+mmalloc(12) returns 674530
+New node, type 98(placeholder) at 4530, 1 kids, first 0
+mmalloc(36) returns 67453e
+New node, type 7(procedure) at 453e, 7 kids, first 0
+mmalloc(12) returns 674564
+mmalloc(32) returns 674572
+mmalloc(2) returns 674594
+mmalloc(32) returns 674598
+mmalloc(6) returns 6745ba
+mmalloc(16) returns 6745c2
+mmalloc(16) returns 6745d4
+New node, type 30(var parameter) at 45d4, 2 kids, first 0
+mmalloc(12) returns 6745e6
+mmalloc(12) returns 6745f4
+New node, type 99(Symbol) at 45f4, 1 kids, first 1716
+mmalloc(16) returns 674602
+New node, type 29(parameter) at 4602, 2 kids, first 0
+mmalloc(12) returns 674614
+mmalloc(12) returns 674622
+New node, type 99(Symbol) at 4622, 1 kids, first 1740
+mmalloc(12) returns 674630
+mmalloc(12) returns 67463e
+New node, type 34(statement comment) at 463e, 1 kids, first 0
+mmalloc(12) returns 67464c
+New node, type 1(comment) at 464c, 1 kids, first 0
+mmalloc(60) returns 67465a
+mmalloc(12) returns 674698
+mmalloc(12) returns 6746a6
+New node, type 98(placeholder) at 46a6, 1 kids, first 0
+mmalloc(12) returns 6746b4
+mmalloc(16) returns 6746c2
+New node, type 38(procedure call) at 46c2, 2 kids, first 0
+mmalloc(12) returns 6746d4
+New node, type 99(Symbol) at 46d4, 1 kids, first 58b6
+mmalloc(20) returns 6746e2
+mmalloc(16) returns 6746f8
+New node, type 62(integer constant) at 46f8, 2 kids, first 0
+mmalloc(2) returns 67470a
+mmalloc(12) returns 67470e
+New node, type 99(Symbol) at 470e, 1 kids, first 4572
+mmalloc(12) returns 67471c
+New node, type 99(Symbol) at 471c, 1 kids, first 4598
+mmalloc(40) returns 67472a
+New node, type 8(function) at 472a, 8 kids, first 0
+mmalloc(12) returns 674754
+mmalloc(32) returns 674762
+mmalloc(2) returns 674784
+mmalloc(12) returns 674788
+mmalloc(16) returns 674796
+New node, type 30(var parameter) at 4796, 2 kids, first 0
+mmalloc(12) returns 6747a8
+mmalloc(12) returns 6747b6
+New node, type 99(Symbol) at 47b6, 1 kids, first 1716
+mmalloc(12) returns 6747c4
+New node, type 99(Symbol) at 47c4, 1 kids, first 48b2
+mmalloc(16) returns 6747d2
+mmalloc(12) returns 6747e4
+New node, type 34(statement comment) at 47e4, 1 kids, first 0
+mmalloc(12) returns 6747f2
+New node, type 1(comment) at 47f2, 1 kids, first 0
+mmalloc(63) returns 674800
+mmalloc(12) returns 674842
+New node, type 34(statement comment) at 4842, 1 kids, first 0
+mmalloc(12) returns 674850
+New node, type 1(comment) at 4850, 1 kids, first 0
+mmalloc(49) returns 67485e
+mmalloc(12) returns 674892
+mmalloc(12) returns 6748a0
+New node, type 98(placeholder) at 48a0, 1 kids, first 0
+mmalloc(12) returns 6748ae
+mmalloc(20) returns 6748bc
+New node, type 41(assignment statement) at 48bc, 3 kids, first 0
+mmalloc(12) returns 6748d2
+New node, type 99(Symbol) at 48d2, 1 kids, first 17c8
+mmalloc(16) returns 6748e0
+New node, type 75(function call) at 48e0, 2 kids, first 0
+mmalloc(12) returns 6748f2
+New node, type 99(Symbol) at 48f2, 1 kids, first 5876
+mmalloc(24) returns 674900
+mmalloc(16) returns 67491a
+New node, type 62(integer constant) at 491a, 2 kids, first 0
+mmalloc(2) returns 67492c
+mmalloc(8) returns 674930
+New node, type 70(nil pointer) at 4930, 0 kids, first 0
+mmalloc(12) returns 67493a
+New node, type 99(Symbol) at 493a, 1 kids, first 4762
+mmalloc(8) returns 674948
+New node, type 70(nil pointer) at 4948, 0 kids, first 0
+mmalloc(36) returns 674952
+New node, type 7(procedure) at 4952, 7 kids, first 0
+mmalloc(12) returns 674978
+mmalloc(32) returns 674986
+mmalloc(3) returns 6749a8
+mmalloc(12) returns 6749ae
+mmalloc(16) returns 6749bc
+New node, type 29(parameter) at 49bc, 2 kids, first 0
+mmalloc(12) returns 6749ce
+mmalloc(12) returns 6749dc
+New node, type 99(Symbol) at 49dc, 1 kids, first 1740
+mmalloc(12) returns 6749ea
+mmalloc(12) returns 6749f8
+New node, type 34(statement comment) at 49f8, 1 kids, first 0
+mmalloc(12) returns 674a06
+New node, type 1(comment) at 4a06, 1 kids, first 0
+mmalloc(57) returns 674a14
+mmalloc(12) returns 674a50
+mmalloc(12) returns 674a5e
+New node, type 98(placeholder) at 4a5e, 1 kids, first 0
+mmalloc(12) returns 674a6c
+mmalloc(16) returns 674a7a
+New node, type 38(procedure call) at 4a7a, 2 kids, first 0
+mmalloc(12) returns 674a8c
+New node, type 99(Symbol) at 4a8c, 1 kids, first 58b6
+mmalloc(16) returns 674a9a
+mmalloc(16) returns 674aac
+New node, type 62(integer constant) at 4aac, 2 kids, first 0
+mmalloc(2) returns 674abe
+mmalloc(12) returns 674ac2
+New node, type 99(Symbol) at 4ac2, 1 kids, first 4986
+mmalloc(12) returns 674ad0
+mmalloc(12) returns 674ade
+New node, type 98(placeholder) at 4ade, 1 kids, first 0
+exp_list(before)
+mmalloc(12) returns 674aec
+New node, type 98(placeholder) at 4aec, 1 kids, first 1b
+_exp_list(3564, 103, 0)
+__exp_list(673564, 0, 674aec)
+growlist(3564), lcount=103, lacount=1
+growlist() returns 3564, lcount=103, lacount=2
+insertion_pt=67356c
+whatChanged(4aec) myWS(4aec) returns 67
+Checkat set to 4aec
+line=4aec, block=34fa, lineType=98(placeholder)
+code changed
+hist_add(3, 3564, 67, 19180)
+graft(4aec, 67)
+hist_add(2, 4aec, 67, 16594)
+_swap(4aec, 67)
+detach(3564, 103, 0)
+whatChanged(4aec) myWS(4aec) returns 67
+line=4aec, block=34fa, lineType=98(placeholder)
+code changed
+if_sym_call(4aec, 140b0067), ntype(np)=71
+attach(3564, 103, 0)
+if_sym_call(40d2, 11cd0067), ntype(np)=71
+whatChanged(40d2) myWS(40d2) returns 67
+Checkat set to 40d2
+line=40d2, block=34fa, lineType=98(placeholder)
+code changed
+exp_list(before)
+mmalloc(12) returns 674afa
+New node, type 98(placeholder) at 4afa, 1 kids, first 7
+_exp_list(358c, 103, 0)
+__exp_list(67358c, 0, 674afa)
+growlist(358c), lcount=103, lacount=1
+growlist() returns 358c, lcount=103, lacount=2
+insertion_pt=673594
+whatChanged(4afa) myWS(4afa) returns 67
+Checkat set to 4afa
+line=4afa, block=34fa, lineType=98(placeholder)
+code changed
+hist_add(3, 358c, 67, 19194)
+graft(4afa, 67)
+hist_add(2, 4afa, 67, 16622)
+_swap(4afa, 67)
+detach(358c, 103, 0)
+whatChanged(4afa) myWS(4afa) returns 67
+line=4afa, block=34fa, lineType=98(placeholder)
+code changed
+if_sym_call(4afa, 140b0067), ntype(np)=71
+attach(358c, 103, 0)
+if_sym_call(40ee, 11cd0067), ntype(np)=71
+if_sym_call(4100, 11cd0067), ntype(np)=71
+if_sym_call(411e, 11cd0067), ntype(np)=71
+if_sym_call(4138, 11cd0067), ntype(np)=71
+if_sym_call(4146, 11cd0067), ntype(np)=71
+if_sym_call(415c, 11cd0067), ntype(np)=71
+if_sym_call(176e, 11cd0067), ntype(np)=71
+add_decl(176e)
+my_symtab(176e), ntype=103
+next_symtab(415c)
+Found table at 34fa type pascal program
+slookup(str, nocreate, 35ce, nomoan, 0)
+search_symtab(35ce, str, 89, noredecls)
+returning NULL
+next_symtab(35ce)
+search_symtab(59a8, str, 89, noredecls)
+returning NULL
+next_symtab(59a8)
+old_decl=5988
+sym_link(176e, 67)
+empty symtab
+if_sym_call(4172, 11cd0067), ntype(np)=71
+if_sym_call(4180, 11cd0067), ntype(np)=71
+if_sym_call(419e, 11cd0067), ntype(np)=71
+if_sym_call(41e6, 11cd0067), ntype(np)=71
+if_sym_call(41f4, 11cd0067), ntype(np)=71
+if_sym_call(4202, 11cd0067), ntype(np)=71
+if_sym_call(1740, 11cd0067), ntype(np)=71
+add_decl(1740)
+my_symtab(1740), ntype=103
+next_symtab(4202)
+Found table at 34fa type pascal program
+slookup(anystring, nocreate, 35ce, nomoan, 0)
+search_symtab(35ce, anystring, 223, noredecls)
+returning NULL
+next_symtab(35ce)
+search_symtab(59a8, anystring, 223, noredecls)
+returning NULL
+next_symtab(59a8)
+old_decl=5988
+sym_link(1740, 67)
+added 1740 at end of symtab, pptr=67
+if_sym_call(4218, 11cd0067), ntype(np)=71
+if_sym_call(4226, 11cd0067), ntype(np)=71
+if_sym_call(4234, 11cd0067), ntype(np)=71
+if_sym_call(1716, 11cd0067), ntype(np)=71
+add_decl(1716)
+my_symtab(1716), ntype=103
+next_symtab(4234)
+Found table at 34fa type pascal program
+slookup(menu, nocreate, 35ce, nomoan, 0)
+search_symtab(35ce, menu, 181, noredecls)
+returning NULL
+next_symtab(35ce)
+search_symtab(59a8, menu, 181, noredecls)
+returning NULL
+next_symtab(59a8)
+old_decl=5988
+sym_link(1716, 67)
+added 1716 at end of symtab, pptr=67
+if_sym_call(424a, 11cd0067), ntype(np)=71
+if_sym_call(4350, 11cd0067), ntype(np)=71
+if_sym_call(436e, 11cd0067), ntype(np)=71
+if_sym_call(4384, 11cd0067), ntype(np)=71
+if_sym_call(426e, 11cd0067), ntype(np)=71
+add_decl(426e)
+my_symtab(426e), ntype=103
+field
+slookup(num_items, nocreate, 4260, nomoan, 0)
+search_symtab(4260, num_items, 241, noredecls)
+returning, ptr=426e(num_items)
+old_decl=426e
+Error: Internal error: del_decl: can't find symtab entry 426e to delete in 67
+
+dump of tree
+node=6734fa, type 2=pascal program: 
+67176e(str) - type 4 typetree 0, scope 0, size 0, offset/value 0, flags 20
+671740(anystring) - type 4 typetree 0, scope 0, size 0, offset/value 0, flags 20
+671716(menu) - type 4 typetree 0, scope 0, size 0, offset/value 0, flags 20
+flags 0, parent 575956, kids: #0: 673520, #1: 67353c, #2: 673564, #3: 67358c, #4: 6735b4, #5: 6735ce, #6: 0,
+  STUB at 673520 : Ignored Name
+  node=67353c, type 101=List: parent 6734fa
+      node=6735ea, type 1=comment: flags 0, parent 67353c, kids: #0: 6735f8,
+    comment text: input
+      node=673600, type 1=comment: flags 0, parent 67353c, kids: #0: 67360e,
+    comment text: output
+  node=673564, type 101=List: parent 6734fa
+      STUB at 6740d2 : {Comment that says what the routine does}
+      STUB at 673556 : {Comment that says what the routine does}
+  node=67358c, type 101=List: parent 6734fa
+      node=6740ee, type 97=hidden code: flags 0, parent 67358c, kids: #0: 674100, #1: 67411e,
+      node=674100, type 1=comment: flags 0, parent 6740ee, kids: #0: 67410e,
+      comment text: Menu Routines
+      STUB at 67357e : Declarations
+  node=6735b4, type 101=List: parent 6734fa
+      STUB at 6735a6 : Statement

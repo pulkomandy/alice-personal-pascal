@@ -1,0 +1,9 @@
+|9,73
+     "True" is one of the two possible Boolean values (the other is
+"False").  For example, "True" is the result of A>B if A really is greater
+than B.
+|mFor more, choose
+|iDo nothing,nop
+|iFalse,Hpsymbol/false
+|iBoolean,Hpsymbol/boolean
+|p

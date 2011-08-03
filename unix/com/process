@@ -1,0 +1,52 @@
+Compilation will take place on a routine by routine basis.
+Routines can exist in memory in source form, object form + declaration or
+both.
+
+Symbol table entries for routines will contain a jump address for the
+routine which is set whenever it is compiled or loaded.
+
+External variable declarations will contain offsets into the global data
+segment.  It may be necessary to maintain some sort of free list, or
+to garbage collect when allocated space gets too big.  The problem with
+garbage collecting is that all data references must now be corrected.
+The problem with a free list is that there is really no place to put it
+since the data segment is only allocated when needed.
+(The problem arises here if a user creates a large static array then frees
+it.  Otherwise a general increasing pool of offsets would work.)
+
+
+Compiled memory blocks will contain three things
+1) A table mapping local reference numbers to symbol table entries
+2) The generated code, compiled to run with the CS: pointing at the start
+3) Relocation tables that use the local reference numbers
+
+-----------
+Stack frames:
+It should be possible to have more than 64K of stack.  Note that globals
+are *not* on the stack.
+This means that if a routine grows past the 64K stack bound, it must
+alter the stack segment.  An interesting idea is to have a different stack
+segment for every stack frame, although this presents a problem as the
+arguments of a given routine would normally be in the caller's stack frame.
+If more than 64K of stack is a real pain, it can be given up but I would
+like to take a stab at it.  No C system has >64K of stack, but Pascal programs
+use the stack a great deal more than C programs.
+
+-----------
+Pointers:
+
+Pointers will be 32 bits if allocated with New or GetMem, and addresses
+used in VAR parameters will also be 32 bits.
+
+lvalue trees should be examined to see if they are local variables or
+globals, in which case the addresses will be 16 bits with either the SS
+or DS assumed.  Initialized variables will be in the DS like globals.
+This will give the efficiency of small model on typical data references,
+but the ability to have full size pointers.
+
+Non-local, non-global references are rare.  These must be done through
+the display.  If we allow more than 64K of stack, these variables might
+be in another stack segment.  Regardless, I have no qualms about making
+these references inefficient.
+
+Pointers to functions will of course be 32 bit.

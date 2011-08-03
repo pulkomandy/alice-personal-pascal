@@ -1,0 +1,12 @@
+|13,71
+     The ASCII character set is how your computer represents characters.
+Each character is represented by eight memory bits.
+     One important characteristic of the ASCII character set is that all
+the upper case letters are given in order, as are all the lower case
+letters.  This means that 'b' is one more than 'a', 'c' is one more than
+'b', and so on.  This is not true in some other character sets.
+|mFor more, choose
+|iDo nothing,nop
+|iCharacters,Hpsymbol/char
+|iCharacter constants,Hpnode/character_co
+|p

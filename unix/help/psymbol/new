@@ -1,0 +1,26 @@
+|21,72
+     The "new" procedure creates a new variable.  The first argument of
+"new" is a pointer and the type of variable created will be the type of
+variable that the pointer points to.  For example, if P is a pointer to
+integers,
+
+          new(P);
+
+creates an integer variable and points P towards that variable.  In
+traditional Pascal, if P points to a record type with a variant part, you
+can add tag field values to the arguments of "new", and "new" will create
+a record whose variant part is dictated by those tag field values.
+However, ALICE always allocates memory big enough to hold the largest
+variant.
+
+New Examples:
+     var
+         pc : ^char;
+     begin
+     new(pc);
+     pc^ := 'A';
+|mFor more, choose
+|iDo nothing,nop
+|iDispose,Hpsymbol/dispose
+|iThe "Pointer" type,Hpsymbol/pointer
+|p

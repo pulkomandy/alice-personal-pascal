@@ -1,0 +1,56 @@
+Symbol table entries for loadable code blocks
+
+1) External data:
+	Name, local code number, Expected size or 0
+2) External routine:
+	Name, local code number
+3) Exported data
+	Name, local code number, size, allignment
+	(local static allocations grouped here as one exported data block)
+4) Exported routine
+	Name, local code number, (entry point number?)
+
+
+
+format of memory block on disk
+
+1) symbol table entries
+
+2) CS:0
+	Entry points for all exported routines
+	Code for routine
+
+3) Relocation information for extrnal references
+
+----------
+How to load in a saved function block
+
+Read in symbol table.  Add each symbol to global table if necessary.
+New Exported functions get an entry in the function jump table.
+	(this may actually be in the symbol entry)
+New exported data get added on to the end of the data segment.
+
+Temporary table is built linking local code numbers to symbol table entries.
+Code is read into allocated block of memory.
+Relocation is done using temporary table to map local code numbers into
+symbol table entries, and from there to either jump table addresses or
+data segment addresses.
+
+
+------
+The "jump table" is not actually an array.  Each jump vector is contained
+as a field in the symbol table entry for the routine.  This entry must
+never move.  All routines when relocated or compiled in-ram are set to
+jump through this vector at its absolute location.
+
+The vector itself can be changed to point at whatever the current address
+of the code is.  If a routine is to be interpreted, the vector points at
+a special routine in the interpreter that grabs the caller's address off
+the call stack to figure out who it is that is being called.  The address
+in the indirect call instruction will be a field in the symbol table entry,
+so you can subtract the right amount to get the whole entry.
+
+From there the interpeter can take over.  When it calls a routine it can
+check to see if it is compiled or interpreted.  If it is a compiled routine
+being called, it sets up the proper segment registers etc. and jumps through
+the vector, possibly returning first to keep the stack in line.

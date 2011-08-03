@@ -1,0 +1,6 @@
+|6,74
+Stop!  There is an error here
+    While running a program, ALICE found a statement that contained an
+    error.  Sometimes the error will be one that was highlighted before you
+    tried to run the program; sometimes it will be one that wasn't
+    highlighted and was only caught during execution.

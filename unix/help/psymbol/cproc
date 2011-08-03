@@ -1,0 +1,10 @@
+|11,74
+     "CProc" calls a C function that does not return a pointer.  The first
+argument of CProc is an integer indicating the C function you want to call.
+The arguments that follow are the arguments for the C function.
+     For further information on CProc, see the ALICE Reference Manual.
+|mFor more, choose
+|iDo nothing,nop
+|iCIntFunc,Hpsymbol/cintfunc
+|iCPtrFunc,Hpsymbol/cptrfunc
+|p

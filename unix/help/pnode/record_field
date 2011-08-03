@@ -1,0 +1,27 @@
+|23,74
+     A field declaration is part of the declaration of a record.  Each
+field in a record has its own name and its own type.  The different fields
+in a record allow the record to hold many kinds of data.
+     When you want to use a field inside a record, you give the name of the
+record, then a dot (.), then the name of the field.
+
+Field Declaration Examples:
+     type
+         person = record {Information about a person}
+             name : packed array [1..40] of char;
+             age : integer;
+             height : record
+                 feet,inches : integer;
+                 end;
+             end;
+     var
+         Fred, Nancy, George : person;
+     begin
+     Fred.name := 'Fred';
+     Fred.age := 16;
+     Fred.height.feet := 5;
+     Fred.height.inches := 10;
+|mFor more, choose
+|iDo nothing,nop
+|iRecord Declarations,Hpnode/record_type
+|p

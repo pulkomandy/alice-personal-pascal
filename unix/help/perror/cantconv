@@ -1,0 +1,6 @@
+|6,74
+Floating value can't be converted to integer
+    You have tried to use "trunc" or "round" on a real value that is
+    outside the range -32768 to 32767.  This is the maximum range for
+    integers on your computer, and any real value outside this range cannot
+    be converted to an integer.

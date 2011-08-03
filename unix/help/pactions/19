@@ -1,0 +1,6 @@
+|6,72
+     Selecting this is the same as typing an identifier into a Value
+placeholder.  If the identifier is the name of a function, ALICE will lay
+down a template for the function call.  If the identifier is the name of
+a variable, ALICE will simply fill the variable into the placeholder.  If
+the identifier is anything else, ALICE will give an error.

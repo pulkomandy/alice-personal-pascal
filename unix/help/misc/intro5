@@ -1,0 +1,19 @@
+|19,74
+     When you are filling in a placeholder, it's always possible that
+you'll make a mistake.  No problem!  If you're still part way through
+things, you can just press the backspace key to back up.  As you back up
+over what you've typed, you'll see it disappear.  In this way, you can rub
+out your mistake and type things over again.
+     Of course, you may not notice your mistake until you've finished
+filling in the placeholder.  In fact, YOU may not notice the mistake at all
+-- it might be ALICE that tells you there's something wrong.  If ALICE
+finds that you've made a mistake, it'll light up the mistake and give you
+an error message describing what went wrong.
+     This is the point at which you might want to press CTRL-U.  To do
+this, you hold down the CTRL key, then press U.  This means UNDO, and it
+"undoes" what you just did.  The mistake goes away, and you can fix things
+up.
+|mDo you want more?
+|iYes,Hmisc/intro6
+|iNo,Hmisc/intro_exit
+|p

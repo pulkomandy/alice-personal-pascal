@@ -1,0 +1,10 @@
+|10,73
+Badly formed number NUMBER on input
+(And variations of this message) You were attempting to read a number with
+    "read" or "readln", but the first input item that ALICE found did not
+    have the right format for a number.  For example, you might have tried
+
+          readln(i);
+
+    to read an integer, but the input was the letter "A".  Since this is
+    not a proper number, ALICE will give you this error.

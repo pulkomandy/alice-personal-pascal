@@ -1,0 +1,18 @@
+|19,74
+     A character constant is written as a single character inside single
+quote marks, as in 'a'.  This sort of constant has the type char.
+     If you want a character constant that holds a single quote, you must
+type TWO single quotes inside the other quotes, for a total of four quotes.
+     To get a string constant that contains a single letter, use double
+quotes, as in "a".  Double quotes always give a string constant, never a
+character constant.
+
+Character Constant Examples:
+     c := 'A';
+     quote := '''';
+     writeln('The single quote character is ',quote);
+|mFor more, choose
+|iDo nothing,nop
+|iThe "char" type,Hpsymbol/char
+|iString constants,Hpnode/string_const
+|p

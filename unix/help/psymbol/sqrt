@@ -1,0 +1,9 @@
+|9,73
+     The "sqrt" function returns the positive square root of its argument.
+The argument may be real or integer, but the result will always be real.
+ALICE will give you an error message if you try to take the square root of
+a negative number.
+
+sqrt Examples:
+     sqrt(4)   {will be 2.0}
+     sqrt(4.0)  {will be 2.0}

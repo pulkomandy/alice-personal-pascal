@@ -1,0 +1,13 @@
+
+Things missing in Unix Version:
+
+	newAlloc/newFree - these just keep grabbing memory from the
+		stack region, it is never freed.  An allocator based
+		on our segAlloc should be used.
+
+	
+32K structure limitations in types.c
+
+keycurs.h curses key file
+
+<<stub>> bug in printout/parsing

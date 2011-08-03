@@ -1,0 +1,5 @@
+|5,72
+Constant is not of the right type
+    Inside the variant part of a record, you have given a case of the tag
+    field where a case label does not match the type given for the tag
+    field.  You must change the type of the tag field or the case label.

@@ -1,0 +1,18 @@
+|13,72
+     A statement label is used to label an instruction so that you can go
+to that instruction with the GOTO instruction.
+     As a general rule, you should try to avoid the use of GOTOs in your
+programs -- they tend to make the logic of your program harder to follow.
+Whenever you are tempted to use a GOTO, first ask yourself if there is a
+more elegant way to express what you want to do, using such statements as
+FOR or WHILE.
+
+Labelled Statement Examples:
+     goto 5;
+        ...
+     5: writeln('This is where the GOTO goes.');
+|mFor more, choose
+|iDo nothing,nop
+|iLabel declarations,Hpnode/labels
+|iThe GOTO statement,Hpnode/goto
+|p

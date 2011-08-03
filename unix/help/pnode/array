@@ -1,0 +1,25 @@
+|19,74
+     An array is an ordered collection of things that all have the same
+type.  The things in the collection are called the elements of the array.
+The elements may be of any legal type.
+     Individual elements are referenced by subscripts.  Subscripts can have
+any "scalar type", but most arrays are subscripted using a subrange of the
+integers.
+     An array declaration tells ALICE the name of the array, the type of
+elements in the array, and the subscripts you will use to reference
+individual elements.
+
+Array Declaration Examples:
+     type
+         scalar = (x,y,z);
+         sarray = array [scalar] of integer;
+     var
+         ivec : array [0..10] of integer;
+         table : array [char] of char;
+         Boolist : array [1..100] of Boolean;
+|mFor more, choose
+|iDo nothing,nop
+|iScalar types,Hmisc/scalar
+|iSubranges,Hpnode/subrange
+|iArray subscripting,Hpnode/array_indexi
+|p

@@ -1,0 +1,19 @@
+|19,72
+Types on := don't match
+    You attempted to assign a value to a variable, but the value had a
+    different type than the variable, as in
+
+          intvar := 3.4;  {Can't assign real to integer}
+          intvar := '1';  {'1' is char even though it looks integer}
+          charvar := 'hello';  {'hello' is packed array of char}
+
+    This is a fairly common error.  Check the type that has been declared
+    for the variable.  This must match the type of the value on the right
+    of the assignment.  Either change the value or change the variable
+    declaration.
+|mFor more, choose
+|iDo nothing,nop
+|iList of possible types,Hpclass/type
+|iPossible variable forms,Hpclass/variable
+|iAssignments,Hpnode/assignment_s
+|p

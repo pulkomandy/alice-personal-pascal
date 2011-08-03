@@ -1,0 +1,24 @@
+|23,74
+New - out of memory
+    You attempted to use the "new" procedure to obtain memory for
+    something, but there was not enough memory available to do this for
+    you.  This does not mean that you have used up all the memory in the
+    computer.  "New" obtains space from a limited area within ALICE called
+    the stack.  Too many calls to "new" will use up all this stack area and
+    you will get this error.
+         To avoid this problem, you must add a special option when you
+    start ALICE up.  You must say
+          alice s=N
+    where N is some large number.  The "s=" option tells ALICE how much
+    space should be set aside for the stack area.  ALICE starts out with a
+    stack space of 5000 bytes, so if you get this error message you should
+    say something like "s=6000" (giving you 1000 more bytes of stack
+    space).  If the problem still does not go away, make sure you aren't in
+    an infinite loop that keeps on using "new" forever.
+         Note that the "dispose" procedure does not free up stack space in
+    this version of ALICE -- this makes
+    life safer for beginning programmers.
+|mFor more, choose
+|iDo nothing,nop
+|iNew,Hpsymbol/new
+|p

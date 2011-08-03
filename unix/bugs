@@ -1,0 +1,20 @@
+
+	cursor right gets you out of one line editor at the end.  this
+	can get annoying and so perhaps you should have to hit it twice,
+	or perhaps you should plain have to hit escape to get out of this
+
+	continue does debug window setup even if you can't continue
+
+	whole immediate block is typechecked before executing statement.
+		(unsure how how to duplicate)
+
+	a goto inside a superstep goofs. 
+
+	no detection of number bigger than 32767 on entry.
+
+	reset(output) doesn't redirect output
+
+	if you accidentily type round brackets instead of square brackets
+	in an array subscript, >> crash.
+
+	type delta(expr) when delta is a variable and get an IOT trap

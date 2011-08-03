@@ -1,0 +1,20 @@
+|15,72
+     A label declaration lists the labels that are used in a program or
+subprogram.  Labels may be integers with no more than four digits.  The
+labels in the list are separated by commas.
+     Labels must be declared in the LABEL declaration section before they
+can be used by GOTO instructions.  Since GOTOs are a mark of bad
+programming, you should never need to have a LABEL declaration section.
+
+Label Declaration Examples:
+     label
+         100,200,300,400;
+     begin
+     400: writeln('This has a label.');
+      ...
+     goto 400;
+|mFor more, choose
+|iDo nothing,nop
+|iStatement labels,Hpnode/labeled_stat
+|iGOTO,Hpnode/goto
+|p

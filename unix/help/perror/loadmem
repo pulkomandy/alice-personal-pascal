@@ -1,0 +1,16 @@
+|16,75
+Not enough memory to load program
+    You tried to load a program, but ALICE didn't have enough memory space
+    to do this.  Instead, ALICE will give you an empty program template.
+         There are two ways this error could happen.  You could be trying
+    to edit several programs in several workspaces and just not have room
+    for another program; or you could be trying to load a very large
+    program.  In the first case, just get rid of workspaces you don't need
+    or quit ALICE and start again.  In the second case, it is best to quit,
+    restart ALICE and try the load again.  This will help some, but you will
+    immediately have to start shrinking the program somehow or you will
+    soon run out of memory again.
+|mFor more, choose
+|iDo nothing,nop
+|iThe RECOVER command,Hcommand/recover
+|p

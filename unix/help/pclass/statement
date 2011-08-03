@@ -1,0 +1,26 @@
+|23,73
+     A Statement placeholder may be filled with a symbol indicating any of
+the possible statements in Pascal.  Often you will fill it in with a
+keyword like WHILE or IF.  An assignment may be indicated by "=" or ":=",
+or by typing a variable name.  A procedure call may be indicated by typing
+the procedure's name.  A comment is created
+by typing "{".  Typing "?" creates a
+"writeln" instruction.  You may also put a
+statement label in the Statement placeholder.
+|mFor more, choose
+|iDo nothing,nop
+|iAssignment,Hpnode/assignment_s
+|iBEGIN,Hpnode/compound_sta
+|iCASE statement,Hpnode/case
+|iComment,Hpnode/comment
+|iDOWNTO FOR loop,Hpnode/reverse_for_
+|iFOR loop,Hpnode/for_loop
+|iGOTO,Hpnode/goto
+|iIF statement,Hpnode/if_then
+|iLabelled Statement,Hpnode/labeled_stat
+|iProcedure call,Hpnode/procedure_ca
+|iREPEAT loop,Hpnode/repeat_loop
+|iWHILE loop,Hpnode/while_loop
+|iWITH,Hpnode/with_block
+|iWriteln,Hpsymbol/writeln
+|p

@@ -1,0 +1,9 @@
+|9,74
+The input is not valid. Try the HELP key
+(And variations of this message.)
+    The thing you tried to type in couldn't legally be typed in the current
+    location of the cursor.  One of the most common causes of this error is
+    simply typing random letters in a place where ALICE doesn't expect
+    this.  It can also occur when you attempt to fill a number into a
+    placeholder that shouldn't contain a number.  Move the cursor or press
+    SHIFT-times to give you an idea of what IS legal.

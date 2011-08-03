@@ -1,0 +1,11 @@
+|11,74
+Undoing a Mistake:
+     You can undo anything you have just done by issuing the UNDO command.
+To do this, press CTRL-U (hold down the CTRL key and press U).  Issuing
+several UNDOs in a row will undo several things.  The REDO command (CTRL-R)
+will redo something that was just undone.
+|mFor more, choose
+|iDo nothing,nop
+|iUNDO,Hcommand/undo
+|iREDO,Hcommand/redo
+|p

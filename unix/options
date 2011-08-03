@@ -1,0 +1,123 @@
+Alice takes command line options.  It also has a config file it reads.
+In the config file you will find command line options.  Many options
+aren't easy to use and are intended only for the config file but
+this is a nice general system.  In particular all alice key bindings are
+set in the config file.   here are the options.
+
+p=#
+Sets the amount of memory to set aside for holder the user program.
+Hopefully this won't be needed in time but for now we do.  Default
+10,000.  
+
+C=filename
+Sets the name of the configuation file.  Default /config/alice.init
+this default may change to something like /alice/pas.init or something
+If students use this option to have their own config, they should stick
+C=/alice/pas.init to read the general init at the end.  they chain in
+this fashion.
+
+s=#
+Sets the size of the runtime stack, which is all the memory available
+at runtime for variables, recursion and pointer areas allocated by new.
+default 5,000 - some programs may need less or more.
+
+l=#
+Sets the size of the "location" stack which keeps track of the hierarchy
+of program calling.  It needs to be about 1/5 the size of the runtime stack
+and is currently at 1200
+
+c[letter]=#
+
+Sets a "colour" or text attribute for a particular pascal construct.
+The letter is a lowercase letter indicating which feature, and the
+number is the decimal representation of a word with attribute bits in the
+icon style.  They can add numbers to or in bits and combine attributes.
+default  a	- default colour for normal text
+stub  b	- stubs show up this way - default underline
+error  c	- errors show up this way - default reverse video
+keywords  d	
+variables  e
+named constants  f
+comments  g
+char constant  h
+integer constant  i
+real constant  j
+string constant  k
+routine names  l	- the user's own routines
+built in routines  m  - writeln and their ilk
+field names  n
+undefined symbols  o	- these are default reverse video
+labels  p
+one line edit q	 - these are normally underlined (this is the region edited)
+
+
+We are playing around with these attributes considering things like italics
+for stubs, bold for keywords, perhaps something special for comments like
+dotted underline or italics.  You might want to help with this...
+I'll get you the bit mappings shortly.  I do know that it is
+1 for underline, 2 for bold and 128 for reverse video.  I will get you
+what italics, and dotted underline are.  (there's also double width
+but it really can't be used)  Roman is of course 0.
+
+MACRO OPTION "m"
+
+This option can be done in three forms:
+
+m#=string	eg:	m7=controlg	define key by number
+
+m'x'=string	eg:	m'W'=while 	defines key by character
+
+m^x=string	eg	m^b=\cback\n	defines control key
+
+
+These all define a key to be a given string.  All alice keys are now
+defined in the main config file and can be changed there.  The string can
+contain escape sequences.  The most important ones are \c for the command
+key and \n for the newline.  This is what you need to define a macro.
+We also have \u \d \l and \r for the 4 cursor keys.
+
+Tell people that all alice key assignments, except the cursor keys, the
+symbol complete key and the one-line editor delete char key are set in
+the config file with m= options and can be changed.
+
++c
+
+on the ibm only, sets up for use on a colour monitor.  This option may
+be going away, since the user can tell dos what kind of monitor he has
+with the mode command anyway.
+
++u
+
+again ibm only, tells underline.  This will also go away
+-----------------
+Other installation guide notes:
+
+Tell them alice takes a directory /alice in which it keeps the help files
+and sample programs.  the installation script will worry about making this.
+
+To install alice they should sign on as root at with the alice floppy in
+the disk drive enter the command
+
+2:/alice/install
+
+Mention that alice needs lots of memory and that in general it is best if
+they do not run the "gtask" command as Alice doesn't use it unless graphics
+are being done.  Alice uses the window manager and will start it by itself.
+They should either take the "gtask" out of the workstation init file
+"/config/ws_sys.init" or they should issue the command "gtask_stop"
+before running Alice.
+
+If they want to take the speach admin or snap admin out of the init, that
+will give more memory too.  Tell them cemcorp is reducing the amount of
+memory they need.
+
+--------------
+Tell them how the help files work.  Point out the structure.  Mention that
+if they want to give any extra help on any topic they can do so just by
+editing the file, but they must take care that the line count and width at
+the top are correct after they change the file.
+
+Tell them how to add a cross reference to the popup menu at the bottom of
+the help file.  Suggest they add lines like "special help from Mr. Jones"
+or somesuch, and tell them how to put the name of their own helpfile there
+and finally how to build that helpfile.

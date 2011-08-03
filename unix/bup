@@ -1,0 +1,3 @@
+cd /u/alice
+find . /u/records /u/grant/company /u/321 /u/order /usr/src/dcur /u/manuals/new /u/brad/text /u/brad/etc ! -perm -111 ! -name '*.o' ! -name 'core' ! -name 'atr*' ! -name '*.exe' ! -name '*.map' -print >/tmp/albf
+touch /u/alice/lastbackup

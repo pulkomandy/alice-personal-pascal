@@ -1,0 +1,6 @@
+|6,73
+NAME is not a type name, you can't put it here
+    You attempted to fill in a Type placeholder with something that wasn't
+    the name of a type (e.g. you tried to use the name of a variable).
+    Either change the declaration of the name you tried or fill in a valid
+    type.

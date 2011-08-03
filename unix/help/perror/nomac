@@ -1,0 +1,8 @@
+|8,74
+Not enough key-macros defined.  Press ESC to quit.
+    When ALICE started up, it found that you had less than 10 key-macros
+    defined.  This usually means that ALICE couldn't find the standard
+    "init file" that defines all the default key bindings.
+         When this error occurs, ALICE automatically creates three key
+    bindings.  ESC is bound to the EXIT command, HELP is bound to HELP, and
+    CTRL-X is set up as the "command" key.

@@ -1,0 +1,13 @@
+|14,74
+     The "?" is called the wild card search character because it can stand
+for any character when using the SEARCH, RSEARCH, or AGAIN commands.
+     In all searching commands, ALICE asks you to enter the string you want
+to find.  When you enter this string, you can use "?" to stand for any
+character.  Thus if you ask ALICE to search for "i?t", the string could be
+found in words like "integer", "list", "dictionary", and so on.
+|mFor more, choose
+|iDo nothing,nop
+|iSEARCH,Hcommand/search
+|iRSEARCH,Hcommand/rsearch
+|iAGAIN,Hcommand/again
+|p

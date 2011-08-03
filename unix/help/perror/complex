@@ -1,0 +1,8 @@
+|8,73
+Nasty error - expression or program too complex
+    This should seldom happen.  It means that an expression or set of
+    statements was too complex for ALICE to handle in the memory space it
+    had.  You can usually correct the problem in expressions by breaking
+    the expression up over several statements.  If a set of statements is
+    too complex, you may be able to simplify things by putting some of the
+    statements into a subprogram.

@@ -1,0 +1,7 @@
+|7,73
+     The "arctan" function returns the inverse tangent (arctangent) of its
+argument.  The argument is assumed to be in radians.  The argument may be
+real or integer, but the result is always real.
+
+arctan Examples:
+     x := arctan(3.14159);

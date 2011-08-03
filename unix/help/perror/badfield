@@ -1,0 +1,16 @@
+|16,74
+NAME is not a valid field of that record
+    You tried to enter
+
+          recname . NAME
+
+    where "recname" was the name of a record.  However, the NAME you
+    entered was not the name of a field in that record type.  Check that
+    you entered the field name correctly; the Identifier Menu will list the
+    field names for you if you can't remember.  It might also be that you
+    forgot to enter this name in the list of fields when you declared the
+    record type.
+|mFor more, choose
+|iDo nothing,nop
+|iFields inside records,Hpnode/field_use
+|p

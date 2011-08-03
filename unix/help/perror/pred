@@ -1,0 +1,6 @@
+|6,73
+pred of ordinal value VALUE not allowed
+    The "pred" function can only be used on values that are preceded by
+    other values.  In particular, you cannot use "pred" on the first value
+    in an enumerated type list because nothing comes before that value on
+    the list.

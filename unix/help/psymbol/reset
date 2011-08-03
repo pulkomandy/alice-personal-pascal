@@ -1,0 +1,31 @@
+|24,74
+     The "reset" procedure sets up a file for reading.
+
+          reset(filevar,'filename');
+
+associates the file named 'filename' with the given file variable.  Reading
+will begin at the start of the file.  An error will be issued if the file
+is empty.
+     If the file variable has already been associated with a file,
+
+          reset(filevar);
+
+will go back to the beginning of the file so you can start reading it
+again.  This is useful if you must go through a file several times in the
+same program.
+     If the "filename" argument is omitted, "reset" will use the name of
+the file variable as the file name.
+
+Reset Examples:
+     var
+         intfile : file of integer;
+     begin
+     reset(intfile,'filename');
+     read(intfile,i);
+|mFor more, choose
+|iDo nothing,nop
+|iRewrite,Hpsymbol/rewrite
+|iAppend,Hpsymbol/append
+|iRead,Hpsymbol/read
+|iFiles,Hpnode/file_type
+|p

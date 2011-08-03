@@ -1,0 +1,11 @@
+|11,74
+This command can't be applied to a list
+    You have selected (highlighted) a list of things (for example, instruc-
+    tions or declarations) and then have tried to execute an ALICE command.
+    However, the command you tried to execute will not work on a list.
+    Make sure the command you issued really was the command you wanted.
+    Also make sure that you wanted to issue that command on a list of
+    things; perhaps you selected the list by accident.
+         After the error message is issued, the list will stay selected
+    (highlighted).  Either issue a command that CAN work on a list of
+    things, or UNSELECT the list by pushing F10 again.

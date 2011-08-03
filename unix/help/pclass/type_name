@@ -1,0 +1,12 @@
+|9,69
+     A Type-Name placeholder should be filled in with one of the valid
+named types of Pascal, or with the name of the user-defined type.
+     Predefined named types include integer, real, char, Boolean, and text
+plus ALICE's own Pointer, Generic and Byte.  Hit the End key on this
+placeholder for a list of available types, and use the HELP (F9) key on
+the builtin ones.
+|mFor more, choose
+|iDo nothing,nop
+|iStandard types,Hpclass/type
+|iUser-defined Types,Hpnode/type_declara
+|p

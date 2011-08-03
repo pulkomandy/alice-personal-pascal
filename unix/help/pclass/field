@@ -1,0 +1,15 @@
+|15,73
+     A Field or Field-Name placeholder should be filled with the name of a
+field in a record.  In a record declaration, the field name associates a
+name with one of the pieces of information in a record.  From this point
+onward, that information may be referred to by
+
+          recname . fieldname
+
+where "recname" is the name of the record that contains the field
+"fieldname".
+|mFor more, choose
+|iDo nothing,nop
+|iRecords,Hpnode/record_type
+|iNames,Hpclass/name
+|p

@@ -1,0 +1,13 @@
+|13,73
+Invalid subset range NUMBER to NUMBER
+(And variations on this message)
+    You used an invalid range inside a set constant.  This could mean that
+    the range was improperly formed (e.g. in the wrong order, as in 10..1)
+    or that the range given inside the set fell outside the limits for the
+    set.  It can also occur if the two limits of the range do not have the
+    same type (as in 1..'a').
+|mFor more, choose
+|iDo nothing,nop
+|iSet type,Hpnode/set_type
+|iSet constants,Hpnode/set
+|p

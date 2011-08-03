@@ -1,0 +1,7 @@
+|7,72
+     Selecting this has the same effect as pressing ENTER.  If you are on
+an empty Statement or Declaration placeholder, ALICE does nothing.
+Otherwise, ALICE will go down a line.  If this line contains an empty
+Statement or Declaration placeholder, ALICE does nothing else.  If it
+doesn't, ALICE will create a new Statement or Declaration placeholder, as
+appropriate.

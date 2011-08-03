@@ -1,0 +1,1728 @@
+About to do initscr
+About to open /local/lib/alice/aptempla.suf (r)
+Opened it successfully
+Pointer size = 2, version=132
+NodeCount=104
+Strings and node table = 1828 bytes
+mmalloc(1828) returns 8092e68
+Memory allocated at 8092e68
+have read in the data
+Node_Names array at 8093384
+Extra segment data:
+Length of data = 7017 bytes
+There are 103 nodes
+mmalloc(7017) returns 8093590
+Memory allocated at 8093590
+About to read in data
+Read in data successfully
+Now to do the relocation
+Finished relocation
+kid_count at 8093454, node_flags at 80934bc
+K_Classes at 8094f32, expr_prec at 80950d2
+N_Actions at 8094c70, node_table at 8094744
+Everything went fine
+Templates loaded...
+mmalloc(16) returns 8092db0
+New node, type 98(placeholder) at 8092db0, 1 kids, 0 bffff7d8
+Building in symbol trunc
+Building in symbol RawPointer
+Building in symbol Set_Attr
+Building in symbol ScrXY
+Building in symbol CLongFunc
+Building in symbol CProc
+Building in symbol CPtrFunc
+Building in symbol CIntFunc
+Building in symbol SysPointer
+Building in symbol SizeOf
+Building in symbol Cursor_To
+Building in symbol output
+Building in symbol input
+Building in symbol Char_Waiting
+Building in symbol Get_Char
+Building in symbol Null
+Building in symbol initrandom
+Building in symbol random
+Building in symbol Seek
+Building in symbol setnext
+Building in symbol update
+Building in symbol append
+Building in symbol rewrite
+Building in symbol reset
+Building in symbol odd
+Building in symbol chr
+Building in symbol round
+Building in symbol sqrt
+Building in symbol exp
+Building in symbol ln
+Building in symbol arctan
+Building in symbol cos
+Building in symbol sin
+Building in symbol unpack
+Building in symbol pack
+Building in symbol sqr
+Building in symbol abs
+Building in symbol ord
+Building in symbol pred
+Building in symbol succ
+Building in symbol true
+Building in symbol false
+Building in symbol ISysCall
+Building in symbol SysFunc
+Building in symbol SysProc
+Building in symbol StrSize
+Building in symbol Pos
+Building in symbol StrScan
+Building in symbol Length
+Building in symbol StrLen
+Building in symbol SubStr
+Building in symbol StrInsert
+Building in symbol StrDelete
+Building in symbol StrConcat
+Building in symbol Pi
+Building in symbol StrEnd
+Building in symbol Window
+Building in symbol TextBackground
+Building in symbol TextColor
+Building in symbol HiResColor
+Building in symbol GraphBackground
+Building in symbol Palette
+Building in symbol TextMode
+Building in symbol HiRes
+Building in symbol GraphColorMode
+Building in symbol GraphMode
+Building in symbol GraphWindow
+Building in symbol Plot
+Building in symbol Draw
+Building in symbol Intr
+Building in symbol UnknownSymbol
+Building in symbol Alice_Version
+Building in symbol poke
+Building in symbol peek
+Building in symbol pause
+Building in symbol MakePointer
+Building in symbol iochecking
+Building in symbol ioresult
+Building in symbol Kbd
+Building in symbol Copy
+Building in symbol Val
+Building in symbol Str
+Building in symbol Insert
+Building in symbol Delete
+Building in symbol Frac
+Building in symbol Int
+Building in symbol Assign
+Building in symbol KeyPressed
+Building in symbol DelLine
+Building in symbol InsLine
+Building in symbol ClrEol
+Building in symbol GotoXY
+Building in symbol ClrScr
+Building in symbol Sound
+Building in symbol Halt
+Building in symbol Delay
+Building in symbol Mem_To_Var
+Building in symbol Var_To_Mem
+Building in symbol address
+Building in symbol put
+Building in symbol get
+Building in symbol eoln
+Building in symbol eof
+Building in symbol page
+Building in symbol writeln
+Building in symbol write
+Building in symbol readln
+Building in symbol read
+Building in symbol Dispose
+Building in symbol Close
+Building in symbol UpCase
+Building in symbol LowVideo
+Building in symbol HighVideo
+Building in symbol NormVideo
+Building in symbol TPLibProc
+Building in symbol TPLibFunc
+Building in symbol MaxAvail
+Building in symbol MemAvail
+Building in symbol FreeMem
+Building in symbol GetMem
+Building in symbol New
+Building in symbol maxint
+Building in symbol Exit
+Building in symbol Err
+Building in symbol Out
+Building in symbol Inp
+Building in symbol Trm
+Building in symbol Con
+Building in symbol Aux
+Building in symbol Lst
+Building in symbol PortW
+Building in symbol Port
+Building in symbol MemW
+Building in symbol Mem
+Building in symbol ParamCount
+Building in symbol ParamStr
+Building in symbol SeekEof
+Building in symbol SeekEoln
+Building in symbol LongFileSize
+Building in symbol FileSize
+Building in symbol LongFilePos
+Building in symbol LongFilePosition
+Building in symbol LongSeek
+Building in symbol BlockWrite
+Building in symbol BlockRead
+Building in symbol Release
+Building in symbol Mark
+Building in symbol GetDir
+Building in symbol RmDir
+Building in symbol MkDir
+Building in symbol ChDir
+Building in symbol FilePos
+Building in symbol Rename
+Building in symbol FillChar
+Building in symbol Move
+Building in symbol Seg
+Building in symbol Ofs
+Building in symbol Ptr
+Building in symbol Addr
+Building in symbol SSeg
+Building in symbol DSeg
+Building in symbol CSeg
+Building in symbol Randomize
+Building in symbol Flush
+Building in symbol Erase
+Building in symbol MSDos
+Building in symbol WhereY
+Building in symbol WhereX
+Building in symbol NoSound
+Building in symbol Swap
+Building in symbol Lo
+Building in symbol Hi
+Building in symbol StringToAr
+Building in symbol ArToString
+Building in symbol ReadDir
+Building in symbol OpenDir
+Building in symbol CrtExit
+Building in symbol Mono
+Building in symbol C80
+Building in symbol BW80
+Building in symbol C40
+Building in symbol BW40
+Building in symbol Blink
+Building in symbol White
+Building in symbol Yellow
+Building in symbol LightMagenta
+Building in symbol LightRed
+Building in symbol LightCyan
+Building in symbol LightGreen
+Building in symbol LightBlue
+Building in symbol DarkGray
+Building in symbol LightGray
+Building in symbol Brown
+Building in symbol Magenta
+Building in symbol Red
+Building in symbol Cyan
+Building in symbol Green
+Building in symbol Blue
+Building in symbol Black
+Building in symbol text
+Building in symbol AnyFile
+Building in symbol Generic
+Building in symbol char
+Building in symbol Boolean
+Building in symbol real
+Building in symbol Pointer
+Building in symbol integer
+Building in symbol Byte
+Building in symbol Number
+Building in symbol Ordinal
+Building in symbol Variable
+Building in symbol String
+Building in symbol TypeCode
+Building in symbol Size
+Building in symbol Component_Size
+Building in symbol Realval
+Building in symbol Intval
+Building in symbol Object
+mmalloc(736) returns 8095420
+max stack size 3301, lc_stack_size 412
+mmalloc(3301) returns 8095900
+mmalloc(1648) returns 80965f0
+mmalloc(413) returns 8096c68
+mmalloc(40) returns 8096e10
+New node, type 2(pascal program) at 8096e10, 7 kids, 0 0
+mmalloc(16) returns 8096e40
+New node, type 98(placeholder) at 8096e40, 1 kids, 20 8080b02
+New stub of type 32 - Ignored Name
+mmalloc(16) returns 8096e58
+New node, type 98(placeholder) at 8096e58, 1 kids, 20 8080b02
+New stub of type 96 - Ignored Name
+mmalloc(28) returns 8096e70
+newlist(8096e58) returns 8096e70
+mmalloc(16) returns 8096e90
+New node, type 98(placeholder) at 8096e90, 1 kids, 1b 8080b02
+New stub of type 91 - {Comment that says what the routine does}
+mmalloc(28) returns 8096ea8
+newlist(8096e90) returns 8096ea8
+mmalloc(16) returns 8096ec8
+New node, type 98(placeholder) at 8096ec8, 1 kids, 7 8080b02
+New stub of type 71 - Declarations
+mmalloc(28) returns 8096ee0
+newlist(8096ec8) returns 8096ee0
+mmalloc(16) returns 8096f00
+New node, type 98(placeholder) at 8096f00, 1 kids, 13 8080b02
+New stub of type 83 - Statement
+mmalloc(28) returns 8096f18
+newlist(8096f00) returns 8096f18
+build node 8096e10
+myWS(8092db0) returns 8080b80
+myWS(8096e10) returns 8080b80
+skip_down, cursor starts at 8096e10 stub not 1 is 0
+skip_down, cursor type 2, kid_count 5, lookaheadchar 0
+cursor at 8096e10
+follow child
+c_nextpos returns 8096e40: 8096e40
+cursor skipped to 8096e40
+skip_down, cursor ends at 8096e40
+Sticking symbol table on 8096e10 at child 5
+mmalloc(16) returns 8096f38
+New node, type 102(Symbol Table) at 8096f38, 1 kids, 0 8080b80
+mmalloc(16) returns 8096f50
+New node, type 98(placeholder) at 8096f50, 1 kids, 20 8080b80
+growlist(8096e70), lcount=1, lacount=4
+growlist() returns 8096e70, lcount=2, lacount=4
+myWS(8096f50) returns 8080b80
+mmalloc(16) returns 8096f68
+New node, type 1(comment) at 8096f68, 1 kids, 0 0
+build node 8096f68
+myWS(8096e58) returns 8080b80
+if_sym_call(8096e58, 8058928), ntype(np)=98
+if_sym_call(8096f68, 805879c), ntype(np)=1
+myWS(8096f68) returns 8080b80
+mmalloc(6) returns 8096f80
+skip_down, cursor starts at 8096f68 stub not 1 is 0
+skip_down, cursor type 1, kid_count 0, lookaheadchar 0
+cursor at 8096f68
+popped out, rv=8096f68, at root 0, kidnum+1 1, num_children 2
+try right, rv=8096f68, root CENSORED
+c_nextpos returns 8096f50: 8096f50
+cursor skipped to 8096f50
+skip_down, cursor ends at 8096f50
+mmalloc(16) returns 8096f90
+New node, type 1(comment) at 8096f90, 1 kids, 0 0
+build node 8096f90
+myWS(8096f50) returns 8080b80
+if_sym_call(8096f50, 8058928), ntype(np)=98
+if_sym_call(8096f90, 805879c), ntype(np)=1
+myWS(8096f90) returns 8080b80
+mmalloc(7) returns 8096fa8
+skip_down, cursor starts at 8096f90 stub not 1 is 0
+skip_down, cursor type 1, kid_count 0, lookaheadchar 0
+cursor at 8096f90
+go up, rv=8096f90, at root 0, kidnum+1 2, num_children 2
+popped out, rv=8096e70, at root 0, kidnum+1 2, num_children 5
+try right, rv=8096e70, root CENSORED
+c_nextpos returns 8096ea8: 8096ea8
+cursor at 8096ea8
+follow child
+c_nextpos returns 8096e90: 8096e90
+cursor skipped to 8096e90
+skip_down, cursor ends at 8096e90
+mmalloc(4) returns 8096fb8
+mmalloc(4) returns 8096fc8
+mmalloc(8) returns 8096fd8
+mmalloc(10) returns 8096fe8
+mmalloc(4) returns 8096ff8
+mmalloc(9) returns 8097008
+mmalloc(4) returns 8097018
+mmalloc(7) returns 8097028
+mmalloc(4) returns 8097038
+mmalloc(6) returns 8097048
+mmalloc(6) returns 8097058
+mmalloc(7) returns 8097068
+mmalloc(5) returns 8097078
+mmalloc(7) returns 8097088
+mmalloc(5) returns 8097098
+mmalloc(6) returns 80970a8
+mmalloc(5) returns 80970b8
+mmalloc(10) returns 80970c8
+mmalloc(5) returns 80970d8
+mmalloc(10) returns 80970e8
+mmalloc(9) returns 80970f8
+mmalloc(8) returns 8097108
+mmalloc(8) returns 8097118
+mmalloc(9) returns 8097128
+mmalloc(12) returns 8097138
+mmalloc(8) returns 8097148
+mfree(8096fb8) frees 2
+mfree(8096fc8) frees 3
+mfree(8096fd8) frees 4
+mfree(8096fe8) frees 5
+mfree(8096ff8) frees 6
+mfree(8097008) frees 7
+mfree(8097018) frees 8
+mfree(8097028) frees 9
+mfree(8097038) frees 10
+mfree(8097048) frees 11
+mfree(8097058) frees 12
+mfree(8097068) frees 13
+mfree(8097078) frees 14
+mfree(8097088) frees 15
+mfree(8097098) frees 16
+mfree(80970a8) frees 17
+mfree(80970b8) frees 18
+mfree(80970c8) frees 19
+mfree(80970d8) frees 20
+mfree(80970e8) frees 21
+mfree(80970f8) frees 22
+mfree(8097108) frees 23
+mfree(8097118) frees 24
+mfree(8097128) frees 25
+mfree(8097138) frees 26
+mfree(8097148) frees 27
+mmalloc(16) returns 8097070
+New node, type 98(placeholder) at 8097070, 1 kids, 6 4015d48c
+myWS(8096e10) returns 8080b80
+myWS(8097070) returns 8080b80
+273 builtin symbols
+mmalloc(1096) returns 8097088
+mmalloc(28) returns 80974d8
+Loading for type 2, kid_count 5, parent 0
+mmalloc(40) returns 80974f8
+New node, type 2(pascal program) at 80974f8, 7 kids, 0 0
+New tree in load is 80974f8
+mmalloc(16) returns 8097528
+mmalloc(40) returns 8098ea0
+mmalloc(5) returns 8097540
+loaded size
+mmalloc(40) returns 8098ed0
+mmalloc(2) returns 8097550
+loaded i
+mmalloc(40) returns 8098f00
+mmalloc(6) returns 8098f30
+loaded prime
+mmalloc(40) returns 8098f40
+mmalloc(2) returns 8098f70
+loaded k
+mmalloc(40) returns 8098f80
+mmalloc(6) returns 8098fb0
+loaded count
+mmalloc(40) returns 8098fc0
+mmalloc(5) returns 8098ff0
+loaded iter
+mmalloc(40) returns 8099000
+mmalloc(6) returns 8099030
+loaded flags
+symbol table 8097528 should be 8097528
+Loading for type 1, kid_count 0, parent 80974f8
+mmalloc(16) returns 8099040
+New node, type 1(comment) at 8099040, 1 kids, 0 0
+New tree in load is 8099040
+mmalloc(6) returns 8099058
+Loading for type 101, kid_count 0, parent 80974f8
+mmalloc(20) returns 8099068
+Loading for type 1, kid_count 0, parent 8099068
+mmalloc(16) returns 8099080
+New node, type 1(comment) at 8099080, 1 kids, 0 0
+New tree in load is 8099080
+mmalloc(6) returns 8099098
+Loading for type 1, kid_count 0, parent 8099068
+mmalloc(16) returns 80990a8
+New node, type 1(comment) at 80990a8, 1 kids, 0 0
+New tree in load is 80990a8
+mmalloc(7) returns 80990c0
+Loading for type 101, kid_count 0, parent 80974f8
+mmalloc(16) returns 80990d0
+Loading for type 34, kid_count 1, parent 80990d0
+mmalloc(16) returns 80990e8
+New node, type 34(statement comment) at 80990e8, 1 kids, 0 0
+New tree in load is 80990e8
+Loading for type 1, kid_count 0, parent 80990e8
+mmalloc(16) returns 8099100
+New node, type 1(comment) at 8099100, 1 kids, 0 0
+New tree in load is 8099100
+mmalloc(44) returns 8099118
+Loading for type 101, kid_count 0, parent 80974f8
+mmalloc(20) returns 8099148
+Loading for type 4, kid_count 1, parent 8099148
+mmalloc(16) returns 8099160
+New node, type 4(declarations) at 8099160, 1 kids, 0 0
+New tree in load is 8099160
+Loading for type 101, kid_count 0, parent 8099160
+mmalloc(16) returns 8099178
+Loading for type 12, kid_count 3, parent 8099178
+mmalloc(28) returns 8099190
+New node, type 12(constant declaration) at 8099190, 4 kids, 0 0
+New tree in load is 8099190
+Loading for type 103, kid_count 0, parent 8099190
+getting decl_id symbol number 0
+Loading for type 62, kid_count 0, parent 8099190
+mmalloc(20) returns 80991b0
+New node, type 62(integer constant) at 80991b0, 2 kids, 0 0
+New tree in load is 80991b0
+mmalloc(4) returns 80991c8
+Loading for type 98, kid_count 0, parent 8099190
+mmalloc(16) returns 80991d8
+New node, type 98(placeholder) at 80991d8, 1 kids, 0 0
+New tree in load is 80991d8
+Loading for type 6, kid_count 1, parent 8099148
+mmalloc(16) returns 80991f0
+New node, type 6(declarations) at 80991f0, 1 kids, 0 0
+New tree in load is 80991f0
+Loading for type 101, kid_count 0, parent 80991f0
+mmalloc(20) returns 8099208
+Loading for type 14, kid_count 3, parent 8099208
+mmalloc(24) returns 8099220
+New node, type 14(variable declaration) at 8099220, 3 kids, 0 0
+New tree in load is 8099220
+Loading for type 101, kid_count 0, parent 8099220
+mmalloc(32) returns 8099240
+Loading for type 103, kid_count 0, parent 8099240
+getting decl_id symbol number 1
+Loading for type 103, kid_count 0, parent 8099240
+getting decl_id symbol number 2
+Loading for type 103, kid_count 0, parent 8099240
+getting decl_id symbol number 3
+Loading for type 103, kid_count 0, parent 8099240
+getting decl_id symbol number 4
+Loading for type 103, kid_count 0, parent 8099240
+getting decl_id symbol number 5
+Loading for type 99, kid_count 0, parent 8099220
+mmalloc(16) returns 8099268
+New node, type 99(Symbol) at 8099268, 1 kids, 807c9c0 0
+Loading for type 98, kid_count 0, parent 8099220
+mmalloc(16) returns 8099280
+New node, type 98(placeholder) at 8099280, 1 kids, 0 0
+New tree in load is 8099280
+Loading for type 14, kid_count 3, parent 8099208
+mmalloc(24) returns 8099298
+New node, type 14(variable declaration) at 8099298, 3 kids, 0 0
+New tree in load is 8099298
+Loading for type 101, kid_count 0, parent 8099298
+mmalloc(16) returns 80992b8
+Loading for type 103, kid_count 0, parent 80992b8
+getting decl_id symbol number 6
+Loading for type 18, kid_count 2, parent 8099298
+mmalloc(32) returns 80992d0
+New node, type 18(array) at 80992d0, 5 kids, 0 0
+New tree in load is 80992d0
+Loading for type 16, kid_count 2, parent 80992d0
+mmalloc(28) returns 80992f8
+New node, type 16(subrange) at 80992f8, 4 kids, 0 0
+New tree in load is 80992f8
+Loading for type 62, kid_count 0, parent 80992f8
+mmalloc(20) returns 8099318
+New node, type 62(integer constant) at 8099318, 2 kids, 0 0
+New tree in load is 8099318
+mmalloc(2) returns 8099330
+Loading for type 99, kid_count 0, parent 80992f8
+mmalloc(16) returns 8099340
+New node, type 99(Symbol) at 8099340, 1 kids, 8098ea0 0
+Loading for type 99, kid_count 0, parent 80992d0
+mmalloc(16) returns 8099358
+New node, type 99(Symbol) at 8099358, 1 kids, 807ca80 0
+Loading for type 98, kid_count 0, parent 8099298
+mmalloc(16) returns 8099370
+New node, type 98(placeholder) at 8099370, 1 kids, 0 0
+New tree in load is 8099370
+Loading for type 101, kid_count 0, parent 80974f8
+mmalloc(28) returns 8099388
+Loading for type 41, kid_count 2, parent 8099388
+mmalloc(24) returns 80993a8
+New node, type 41(assignment statement) at 80993a8, 3 kids, 0 0
+New tree in load is 80993a8
+Loading for type 99, kid_count 0, parent 80993a8
+mmalloc(16) returns 80993c8
+New node, type 99(Symbol) at 80993c8, 1 kids, 8098f80 0
+Loading for type 62, kid_count 0, parent 80993a8
+mmalloc(20) returns 80993e0
+New node, type 62(integer constant) at 80993e0, 2 kids, 0 0
+New tree in load is 80993e0
+mmalloc(2) returns 80993f8
+Loading for type 46, kid_count 4, parent 8099388
+mmalloc(28) returns 8099408
+New node, type 46(for loop) at 8099408, 4 kids, 0 0
+New tree in load is 8099408
+Loading for type 99, kid_count 0, parent 8099408
+mmalloc(16) returns 8099428
+New node, type 99(Symbol) at 8099428, 1 kids, 8098ed0 0
+Loading for type 62, kid_count 0, parent 8099408
+mmalloc(20) returns 8099440
+New node, type 62(integer constant) at 8099440, 2 kids, 0 0
+New tree in load is 8099440
+mmalloc(2) returns 8099458
+Loading for type 99, kid_count 0, parent 8099408
+mmalloc(16) returns 8099468
+New node, type 99(Symbol) at 8099468, 1 kids, 8098ea0 0
+Loading for type 101, kid_count 0, parent 8099408
+mmalloc(16) returns 8099480
+Loading for type 41, kid_count 2, parent 8099480
+mmalloc(24) returns 8099498
+New node, type 41(assignment statement) at 8099498, 3 kids, 0 0
+New tree in load is 8099498
+Loading for type 66, kid_count 2, parent 8099498
+mmalloc(24) returns 80994b8
+New node, type 66(array indexing) at 80994b8, 3 kids, 0 0
+New tree in load is 80994b8
+Loading for type 99, kid_count 0, parent 80994b8
+mmalloc(16) returns 80994d8
+New node, type 99(Symbol) at 80994d8, 1 kids, 8099000 0
+Loading for type 99, kid_count 0, parent 80994b8
+mmalloc(16) returns 80994f0
+New node, type 99(Symbol) at 80994f0, 1 kids, 8098ed0 0
+Loading for type 99, kid_count 0, parent 8099498
+mmalloc(16) returns 8099508
+New node, type 99(Symbol) at 8099508, 1 kids, 8080060 0
+Loading for type 46, kid_count 4, parent 8099388
+mmalloc(28) returns 8099520
+New node, type 46(for loop) at 8099520, 4 kids, 0 0
+New tree in load is 8099520
+Loading for type 99, kid_count 0, parent 8099520
+mmalloc(16) returns 8099540
+New node, type 99(Symbol) at 8099540, 1 kids, 8098ed0 0
+Loading for type 62, kid_count 0, parent 8099520
+mmalloc(20) returns 8099558
+New node, type 62(integer constant) at 8099558, 2 kids, 0 0
+New tree in load is 8099558
+mmalloc(2) returns 8099570
+Loading for type 99, kid_count 0, parent 8099520
+mmalloc(16) returns 8099580
+New node, type 99(Symbol) at 8099580, 1 kids, 8098ea0 0
+Loading for type 101, kid_count 0, parent 8099520
+mmalloc(16) returns 8099598
+Loading for type 44, kid_count 2, parent 8099598
+mmalloc(20) returns 80995b0
+New node, type 44(if-then) at 80995b0, 2 kids, 0 0
+New tree in load is 80995b0
+Loading for type 66, kid_count 2, parent 80995b0
+mmalloc(24) returns 80995c8
+New node, type 66(array indexing) at 80995c8, 3 kids, 0 0
+New tree in load is 80995c8
+Loading for type 99, kid_count 0, parent 80995c8
+mmalloc(16) returns 80995e8
+New node, type 99(Symbol) at 80995e8, 1 kids, 8099000 0
+Loading for type 99, kid_count 0, parent 80995c8
+mmalloc(16) returns 8099600
+New node, type 99(Symbol) at 8099600, 1 kids, 8098ed0 0
+Loading for type 101, kid_count 0, parent 80995b0
+mmalloc(32) returns 8099618
+Loading for type 41, kid_count 2, parent 8099618
+mmalloc(24) returns 8099640
+New node, type 41(assignment statement) at 8099640, 3 kids, 0 0
+New tree in load is 8099640
+Loading for type 99, kid_count 0, parent 8099640
+mmalloc(16) returns 8099660
+New node, type 99(Symbol) at 8099660, 1 kids, 8098f00 0
+Loading for type 78, kid_count 2, parent 8099640
+mmalloc(24) returns 8099678
+New node, type 78(addition) at 8099678, 3 kids, 0 0
+New tree in load is 8099678
+Loading for type 78, kid_count 2, parent 8099678
+mmalloc(24) returns 8099698
+New node, type 78(addition) at 8099698, 3 kids, 0 0
+New tree in load is 8099698
+Loading for type 99, kid_count 0, parent 8099698
+mmalloc(16) returns 80996b8
+New node, type 99(Symbol) at 80996b8, 1 kids, 8098ed0 0
+Loading for type 99, kid_count 0, parent 8099698
+mmalloc(16) returns 80996d0
+New node, type 99(Symbol) at 80996d0, 1 kids, 8098ed0 0
+Loading for type 62, kid_count 0, parent 8099678
+mmalloc(20) returns 80996e8
+New node, type 62(integer constant) at 80996e8, 2 kids, 0 0
+New tree in load is 80996e8
+mmalloc(2) returns 8099700
+Loading for type 38, kid_count 2, parent 8099618
+mmalloc(20) returns 8099710
+New node, type 38(procedure call) at 8099710, 2 kids, 0 0
+New tree in load is 8099710
+Loading for type 99, kid_count 0, parent 8099710
+mmalloc(16) returns 8099728
+New node, type 99(Symbol) at 8099728, 1 kids, 807ede0 0
+Loading for type 101, kid_count 0, parent 8099710
+mmalloc(16) returns 8099740
+Loading for type 99, kid_count 0, parent 8099740
+mmalloc(16) returns 8099758
+New node, type 99(Symbol) at 8099758, 1 kids, 8098f00 0
+Loading for type 41, kid_count 2, parent 8099618
+mmalloc(24) returns 8099770
+New node, type 41(assignment statement) at 8099770, 3 kids, 0 0
+New tree in load is 8099770
+Loading for type 99, kid_count 0, parent 8099770
+mmalloc(16) returns 8099790
+New node, type 99(Symbol) at 8099790, 1 kids, 8098f40 0
+Loading for type 78, kid_count 2, parent 8099770
+mmalloc(24) returns 80997a8
+New node, type 78(addition) at 80997a8, 3 kids, 0 0
+New tree in load is 80997a8
+Loading for type 99, kid_count 0, parent 80997a8
+mmalloc(16) returns 80997c8
+New node, type 99(Symbol) at 80997c8, 1 kids, 8098ed0 0
+Loading for type 99, kid_count 0, parent 80997a8
+mmalloc(16) returns 80997e0
+New node, type 99(Symbol) at 80997e0, 1 kids, 8098f00 0
+Loading for type 48, kid_count 2, parent 8099618
+mmalloc(20) returns 80997f8
+New node, type 48(while loop) at 80997f8, 2 kids, 0 0
+New tree in load is 80997f8
+Loading for type 88, kid_count 2, parent 80997f8
+mmalloc(24) returns 8099810
+New node, type 88(less than) at 8099810, 3 kids, 0 0
+New tree in load is 8099810
+Loading for type 99, kid_count 0, parent 8099810
+mmalloc(16) returns 8099830
+New node, type 99(Symbol) at 8099830, 1 kids, 8098f40 0
+Loading for type 99, kid_count 0, parent 8099810
+mmalloc(16) returns 8099848
+New node, type 99(Symbol) at 8099848, 1 kids, 8098ea0 0
+Loading for type 101, kid_count 0, parent 80997f8
+mmalloc(20) returns 8099860
+Loading for type 41, kid_count 2, parent 8099860
+mmalloc(24) returns 8099878
+New node, type 41(assignment statement) at 8099878, 3 kids, 0 0
+New tree in load is 8099878
+Loading for type 66, kid_count 2, parent 8099878
+mmalloc(24) returns 8099898
+New node, type 66(array indexing) at 8099898, 3 kids, 0 0
+New tree in load is 8099898
+Loading for type 99, kid_count 0, parent 8099898
+mmalloc(16) returns 80998b8
+New node, type 99(Symbol) at 80998b8, 1 kids, 8099000 0
+Loading for type 99, kid_count 0, parent 8099898
+mmalloc(16) returns 80998d0
+New node, type 99(Symbol) at 80998d0, 1 kids, 8098f40 0
+Loading for type 99, kid_count 0, parent 8099878
+mmalloc(16) returns 80998e8
+New node, type 99(Symbol) at 80998e8, 1 kids, 8080020 0
+Loading for type 41, kid_count 2, parent 8099860
+mmalloc(24) returns 8099900
+New node, type 41(assignment statement) at 8099900, 3 kids, 0 0
+New tree in load is 8099900
+Loading for type 99, kid_count 0, parent 8099900
+mmalloc(16) returns 8099920
+New node, type 99(Symbol) at 8099920, 1 kids, 8098f40 0
+Loading for type 78, kid_count 2, parent 8099900
+mmalloc(24) returns 8099938
+New node, type 78(addition) at 8099938, 3 kids, 0 0
+New tree in load is 8099938
+Loading for type 99, kid_count 0, parent 8099938
+mmalloc(16) returns 8099958
+New node, type 99(Symbol) at 8099958, 1 kids, 8098f40 0
+Loading for type 99, kid_count 0, parent 8099938
+mmalloc(16) returns 8099970
+New node, type 99(Symbol) at 8099970, 1 kids, 8098f00 0
+Loading for type 41, kid_count 2, parent 8099618
+mmalloc(24) returns 8099988
+New node, type 41(assignment statement) at 8099988, 3 kids, 0 0
+New tree in load is 8099988
+Loading for type 99, kid_count 0, parent 8099988
+mmalloc(16) returns 80999a8
+New node, type 99(Symbol) at 80999a8, 1 kids, 8098f80 0
+Loading for type 78, kid_count 2, parent 8099988
+mmalloc(24) returns 80999c0
+New node, type 78(addition) at 80999c0, 3 kids, 0 0
+New tree in load is 80999c0
+Loading for type 99, kid_count 0, parent 80999c0
+mmalloc(16) returns 80999e0
+New node, type 99(Symbol) at 80999e0, 1 kids, 8098f80 0
+Loading for type 62, kid_count 0, parent 80999c0
+mmalloc(20) returns 80999f8
+New node, type 62(integer constant) at 80999f8, 2 kids, 0 0
+New tree in load is 80999f8
+mmalloc(2) returns 8099a10
+Loading for type 38, kid_count 2, parent 8099388
+mmalloc(20) returns 8099a20
+New node, type 38(procedure call) at 8099a20, 2 kids, 0 0
+New tree in load is 8099a20
+Loading for type 99, kid_count 0, parent 8099a20
+mmalloc(16) returns 8099a38
+New node, type 99(Symbol) at 8099a38, 1 kids, 807ede0 0
+Loading for type 101, kid_count 0, parent 8099a20
+mmalloc(20) returns 8099a50
+Loading for type 99, kid_count 0, parent 8099a50
+mmalloc(16) returns 8099a68
+New node, type 99(Symbol) at 8099a68, 1 kids, 8098f80 0
+Loading for type 65, kid_count 0, parent 8099a50
+mmalloc(20) returns 8099a80
+New node, type 65(string constant) at 8099a80, 2 kids, 0 0
+New tree in load is 8099a80
+mmalloc(10) returns 8099a98
+
+dump of tree
+node=80974f8, type 2=pascal program: 
+8099000(flags) - type 5 typetree 0, scope 0, size 0, offset/value 0, flags 4
+8098fc0(iter) - type 5 typetree 0, scope 0, size 0, offset/value 0, flags 0
+8098f80(count) - type 5 typetree 0, scope 0, size 0, offset/value 0, flags 4
+8098f40(k) - type 5 typetree 0, scope 0, size 0, offset/value 0, flags 4
+8098f00(prime) - type 5 typetree 0, scope 0, size 0, offset/value 0, flags 4
+8098ed0(i) - type 5 typetree 0, scope 0, size 0, offset/value 0, flags 4
+8098ea0(size) - type 2 typetree 0, scope 0, size 0, offset/value 0, flags 4
+flags 0, parent 0, kids: #0: 8099040, #1: 8099068, #2: 80990d0, #3: 8099148, #4: 8099388, #5: 8097528, #6: 0,
+  node=8099040, type 1=comment: flags 0, parent 80974f8, kids: #0: 8099058,
+  Text: sieve
+  node=8099068, type 101=List: parent 80974f8
+      node=8099080, type 1=comment: flags 0, parent 8099068, kids: #0: 8099098,
+    Text: input
+      node=80990a8, type 1=comment: flags 0, parent 8099068, kids: #0: 80990c0,
+    Text: output
+  node=80990d0, type 101=List: parent 80974f8
+      node=80990e8, type 34=statement comment: flags 0, parent 80990d0, kids: #0: 8099100,
+      node=8099100, type 1=comment: flags 0, parent 80990e8, kids: #0: 8099118,
+      Text: calculates prime numbers up to 2 * size + 3
+  node=8099148, type 101=List: parent 80974f8
+      node=8099160, type 4=declarations: flags 0, parent 8099148, kids: #0: 8099178,
+      node=8099178, type 101=List: parent 8099160
+              node=8099190, type 12=constant declaration: flags 0, parent 8099178, kids: #0: 8098ea0, #1: 80991b0, #2: 80991d8, #3: 0,
+          node=8098ea0, type 103=name: flags 20, parent 8099190, kids:
+          declared symbol: size
+          node=80991b0, type 62=integer constant: flags 0, parent 8099190, kids: #0: 80991c8, #1: c8,
+          Text: 200
+          STUB at 80991d8 : Comment
+      node=80991f0, type 6=declarations: flags 0, parent 8099148, kids: #0: 8099208,
+      node=8099208, type 101=List: parent 80991f0
+              node=8099220, type 14=variable declaration: flags 0, parent 8099208, kids: #0: 8099240, #1: 8099268, #2: 8099280,
+          node=8099240, type 101=List: parent 8099220
+                      node=8098ed0, type 103=name: flags 20, parent 8099240, kids:
+            declared symbol: i
+                      node=8098f00, type 103=name: flags 20, parent 8099240, kids:
+            declared symbol: prime
+                      node=8098f40, type 103=name: flags 20, parent 8099240, kids:
+            declared symbol: k
+                      node=8098f80, type 103=name: flags 20, parent 8099240, kids:
+            declared symbol: count
+                      node=8098fc0, type 103=name: flags 20, parent 8099240, kids:
+            declared symbol: iter
+          node=8099268, type 99=Symbol: flags 0, parent 8099220, kids: #0: 807c9c0,
+          symbol: integer
+          STUB at 8099280 : Comment
+              node=8099298, type 14=variable declaration: flags 0, parent 8099208, kids: #0: 80992b8, #1: 80992d0, #2: 8099370,
+          node=80992b8, type 101=List: parent 8099298
+                      node=8099000, type 103=name: flags 20, parent 80992b8, kids:
+            declared symbol: flags
+          node=80992d0, type 18=array: flags 0, parent 8099298, kids: #0: 80992f8, #1: 8099358, #2: 0, #3: 0, #4: 0,
+            node=80992f8, type 16=subrange: flags 0, parent 80992d0, kids: #0: 8099318, #1: 8099340, #2: 0, #3: 0,
+              node=8099318, type 62=integer constant: flags 0, parent 80992f8, kids: #0: 8099330, #1: 0,
+              Text: 0
+              node=8099340, type 99=Symbol: flags 0, parent 80992f8, kids: #0: 8098ea0,
+              symbol: size
+            node=8099358, type 99=Symbol: flags 0, parent 80992d0, kids: #0: 807ca80,
+            symbol: Boolean
+          STUB at 8099370 : Comment
+  node=8099388, type 101=List: parent 80974f8
+      node=80993a8, type 41=assignment statement: flags 0, parent 8099388, kids: #0: 80993c8, #1: 80993e0, #2: 0,
+      node=80993c8, type 99=Symbol: flags 0, parent 80993a8, kids: #0: 8098f80,
+      symbol: count
+      node=80993e0, type 62=integer constant: flags 0, parent 80993a8, kids: #0: 80993f8, #1: 0,
+      Text: 0
+      node=8099408, type 46=for loop: flags 0, parent 8099388, kids: #0: 8099428, #1: 8099440, #2: 8099468, #3: 8099480,
+      node=8099428, type 99=Symbol: flags 0, parent 8099408, kids: #0: 8098ed0,
+      symbol: i
+      node=8099440, type 62=integer constant: flags 0, parent 8099408, kids: #0: 8099458, #1: 0,
+      Text: 0
+      node=8099468, type 99=Symbol: flags 0, parent 8099408, kids: #0: 8098ea0,
+      symbol: size
+      node=8099480, type 101=List: parent 8099408
+              node=8099498, type 41=assignment statement: flags 0, parent 8099480, kids: #0: 80994b8, #1: 8099508, #2: 0,
+          node=80994b8, type 66=array indexing: flags 0, parent 8099498, kids: #0: 80994d8, #1: 80994f0, #2: 0,
+            node=80994d8, type 99=Symbol: flags 0, parent 80994b8, kids: #0: 8099000,
+            symbol: flags
+            node=80994f0, type 99=Symbol: flags 0, parent 80994b8, kids: #0: 8098ed0,
+            symbol: i
+          node=8099508, type 99=Symbol: flags 0, parent 8099498, kids: #0: 8080060,
+          symbol: true
+      node=8099520, type 46=for loop: flags 0, parent 8099388, kids: #0: 8099540, #1: 8099558, #2: 8099580, #3: 8099598,
+      node=8099540, type 99=Symbol: flags 0, parent 8099520, kids: #0: 8098ed0,
+      symbol: i
+      node=8099558, type 62=integer constant: flags 0, parent 8099520, kids: #0: 8099570, #1: 0,
+      Text: 0
+      node=8099580, type 99=Symbol: flags 0, parent 8099520, kids: #0: 8098ea0,
+      symbol: size
+      node=8099598, type 101=List: parent 8099520
+              node=80995b0, type 44=if-then: flags 0, parent 8099598, kids: #0: 80995c8, #1: 8099618,
+          node=80995c8, type 66=array indexing: flags 0, parent 80995b0, kids: #0: 80995e8, #1: 8099600, #2: 0,
+            node=80995e8, type 99=Symbol: flags 0, parent 80995c8, kids: #0: 8099000,
+            symbol: flags
+            node=8099600, type 99=Symbol: flags 0, parent 80995c8, kids: #0: 8098ed0,
+            symbol: i
+          node=8099618, type 101=List: parent 80995b0
+                      node=8099640, type 41=assignment statement: flags 0, parent 8099618, kids: #0: 8099660, #1: 8099678, #2: 0,
+              node=8099660, type 99=Symbol: flags 0, parent 8099640, kids: #0: 8098f00,
+              symbol: prime
+              node=8099678, type 78=addition: flags 0, parent 8099640, kids: #0: 8099698, #1: 80996e8, #2: 0,
+                node=8099698, type 78=addition: flags 0, parent 8099678, kids: #0: 80996b8, #1: 80996d0, #2: 0,
+                  node=80996b8, type 99=Symbol: flags 0, parent 8099698, kids: #0: 8098ed0,
+                  symbol: i
+                  node=80996d0, type 99=Symbol: flags 0, parent 8099698, kids: #0: 8098ed0,
+                  symbol: i
+                node=80996e8, type 62=integer constant: flags 0, parent 8099678, kids: #0: 8099700, #1: 3,
+                Text: 3
+                      node=8099710, type 38=procedure call: flags 0, parent 8099618, kids: #0: 8099728, #1: 8099740,
+              node=8099728, type 99=Symbol: flags 0, parent 8099710, kids: #0: 807ede0,
+              symbol: writeln
+              node=8099740, type 101=List: parent 8099710
+                              node=8099758, type 99=Symbol: flags 0, parent 8099740, kids: #0: 8098f00,
+                symbol: prime
+                      node=8099770, type 41=assignment statement: flags 0, parent 8099618, kids: #0: 8099790, #1: 80997a8, #2: 0,
+              node=8099790, type 99=Symbol: flags 0, parent 8099770, kids: #0: 8098f40,
+              symbol: k
+              node=80997a8, type 78=addition: flags 0, parent 8099770, kids: #0: 80997c8, #1: 80997e0, #2: 0,
+                node=80997c8, type 99=Symbol: flags 0, parent 80997a8, kids: #0: 8098ed0,
+                symbol: i
+                node=80997e0, type 99=Symbol: flags 0, parent 80997a8, kids: #0: 8098f00,
+                symbol: prime
+                      node=80997f8, type 48=while loop: flags 0, parent 8099618, kids: #0: 8099810, #1: 8099860,
+              node=8099810, type 88=less than: flags 0, parent 80997f8, kids: #0: 8099830, #1: 8099848, #2: 0,
+                node=8099830, type 99=Symbol: flags 0, parent 8099810, kids: #0: 8098f40,
+                symbol: k
+                node=8099848, type 99=Symbol: flags 0, parent 8099810, kids: #0: 8098ea0,
+                symbol: size
+              node=8099860, type 101=List: parent 80997f8
+                              node=8099878, type 41=assignment statement: flags 0, parent 8099860, kids: #0: 8099898, #1: 80998e8, #2: 0,
+                  node=8099898, type 66=array indexing: flags 0, parent 8099878, kids: #0: 80998b8, #1: 80998d0, #2: 0,
+                    node=80998b8, type 99=Symbol: flags 0, parent 8099898, kids: #0: 8099000,
+                    symbol: flags
+                    node=80998d0, type 99=Symbol: flags 0, parent 8099898, kids: #0: 8098f40,
+                    symbol: k
+                  node=80998e8, type 99=Symbol: flags 0, parent 8099878, kids: #0: 8080020,
+                  symbol: false
+                              node=8099900, type 41=assignment statement: flags 0, parent 8099860, kids: #0: 8099920, #1: 8099938, #2: 0,
+                  node=8099920, type 99=Symbol: flags 0, parent 8099900, kids: #0: 8098f40,
+                  symbol: k
+                  node=8099938, type 78=addition: flags 0, parent 8099900, kids: #0: 8099958, #1: 8099970, #2: 0,
+                    node=8099958, type 99=Symbol: flags 0, parent 8099938, kids: #0: 8098f40,
+                    symbol: k
+                    node=8099970, type 99=Symbol: flags 0, parent 8099938, kids: #0: 8098f00,
+                    symbol: prime
+                      node=8099988, type 41=assignment statement: flags 0, parent 8099618, kids: #0: 80999a8, #1: 80999c0, #2: 0,
+              node=80999a8, type 99=Symbol: flags 0, parent 8099988, kids: #0: 8098f80,
+              symbol: count
+              node=80999c0, type 78=addition: flags 0, parent 8099988, kids: #0: 80999e0, #1: 80999f8, #2: 0,
+                node=80999e0, type 99=Symbol: flags 0, parent 80999c0, kids: #0: 8098f80,
+                symbol: count
+                node=80999f8, type 62=integer constant: flags 0, parent 80999c0, kids: #0: 8099a10, #1: 1,
+                Text: 1
+      node=8099a20, type 38=procedure call: flags 0, parent 8099388, kids: #0: 8099a38, #1: 8099a50,
+      node=8099a38, type 99=Symbol: flags 0, parent 8099a20, kids: #0: 807ede0,
+      symbol: writeln
+      node=8099a50, type 101=List: parent 8099a20
+              node=8099a68, type 99=Symbol: flags 0, parent 8099a50, kids: #0: 8098f80,
+        symbol: count
+              node=8099a80, type 65=string constant: flags 0, parent 8099a50, kids: #0: 8099a98, #1: 7,
+        constant text:  primes
+myWS(8097070) returns 8080b80
+myWS(80974f8) returns 8080b80
+treefree(8097070)
+freeing self
+mfree(8097070) frees 134836336
+mmalloc(9) returns 8097070
+Descend in block 80974f8, isdirty is 1
+mfree(8097088) frees 1075172492
+mfree(80974d8) frees 1075172492
+tparent(np)=8080b80 != NIL!
+mmalloc(40) returns 8096fb8
+New node, type 2(pascal program) at 8096fb8, 7 kids, 0 0
+mmalloc(16) returns 8096fe8
+New node, type 98(placeholder) at 8096fe8, 1 kids, 20 8080b02
+New stub of type 32 - Ignored Name
+mmalloc(16) returns 8097000
+New node, type 98(placeholder) at 8097000, 1 kids, 20 8080b02
+New stub of type 96 - Ignored Name
+mmalloc(28) returns 8097018
+newlist(8097000) returns 8097018
+mmalloc(16) returns 8097038
+New node, type 98(placeholder) at 8097038, 1 kids, 1b 8080b02
+New stub of type 91 - {Comment that says what the routine does}
+mmalloc(28) returns 8097050
+newlist(8097038) returns 8097050
+mmalloc(16) returns 8097088
+New node, type 98(placeholder) at 8097088, 1 kids, 7 8080b02
+New stub of type 71 - Declarations
+mmalloc(28) returns 80970a0
+newlist(8097088) returns 80970a0
+mmalloc(16) returns 80970c0
+New node, type 98(placeholder) at 80970c0, 1 kids, 13 8080b02
+New stub of type 83 - Statement
+mmalloc(28) returns 80970d8
+newlist(80970c0) returns 80970d8
+build node 8096fb8
+myWS(80974f8) returns 8080b80
+myWS(8096fb8) returns 8080b80
+skip_down, cursor starts at 8096fb8 stub not 1 is 0
+skip_down, cursor type 2, kid_count 5, lookaheadchar 0
+cursor at 8096fb8
+follow child
+c_nextpos returns 8096fe8: 8096fe8
+cursor skipped to 8096fe8
+skip_down, cursor ends at 8096fe8
+Sticking symbol table on 8096fb8 at child 5
+mmalloc(16) returns 80970f8
+New node, type 102(Symbol Table) at 80970f8, 1 kids, 0 8080b80
+mmalloc(16) returns 8097110
+New node, type 98(placeholder) at 8097110, 1 kids, 20 8080b80
+growlist(8097018), lcount=1, lacount=4
+growlist() returns 8097018, lcount=2, lacount=4
+myWS(8097110) returns 8080b80
+mmalloc(16) returns 8097128
+New node, type 1(comment) at 8097128, 1 kids, 0 0
+build node 8097128
+myWS(8097000) returns 8080b80
+if_sym_call(8097000, 8058928), ntype(np)=98
+if_sym_call(8097128, 805879c), ntype(np)=1
+myWS(8097128) returns 8080b80
+mmalloc(6) returns 8097140
+skip_down, cursor starts at 8097128 stub not 1 is 0
+skip_down, cursor type 1, kid_count 0, lookaheadchar 0
+cursor at 8097128
+popped out, rv=8097128, at root 0, kidnum+1 1, num_children 2
+try right, rv=8097128, root CENSORED
+c_nextpos returns 8097110: 8097110
+cursor skipped to 8097110
+skip_down, cursor ends at 8097110
+mmalloc(16) returns 8097150
+New node, type 1(comment) at 8097150, 1 kids, 0 0
+build node 8097150
+myWS(8097110) returns 8080b80
+if_sym_call(8097110, 8058928), ntype(np)=98
+if_sym_call(8097150, 805879c), ntype(np)=1
+myWS(8097150) returns 8080b80
+mmalloc(7) returns 8097168
+skip_down, cursor starts at 8097150 stub not 1 is 0
+skip_down, cursor type 1, kid_count 0, lookaheadchar 0
+cursor at 8097150
+go up, rv=8097150, at root 0, kidnum+1 2, num_children 2
+popped out, rv=8097018, at root 0, kidnum+1 2, num_children 5
+try right, rv=8097018, root CENSORED
+c_nextpos returns 8097050: 8097050
+cursor at 8097050
+follow child
+c_nextpos returns 8097038: 8097038
+cursor skipped to 8097038
+skip_down, cursor ends at 8097038
+treefree(80974f8)
+treefree(8099040)
+freeing hidden kid 8099058
+mfree(8099058) frees 134844480
+freeing self
+mfree(8099040) frees 134844480
+treefree(8099068)
+treefree(8099080)
+freeing hidden kid 8099098
+mfree(8099098) frees 134844544
+freeing self
+mfree(8099080) frees 134844544
+treefree(80990a8)
+freeing hidden kid 80990c0
+mfree(80990c0) frees 134844584
+freeing self
+mfree(80990a8) frees 134844584
+freeing self
+mfree(8099068) frees 134844520
+treefree(80990d0)
+treefree(80990e8)
+treefree(8099100)
+freeing hidden kid 8099118
+mfree(8099118) frees 134844672
+freeing self
+mfree(8099100) frees 134844672
+freeing self
+mfree(80990e8) frees 134844648
+freeing self
+mfree(80990d0) frees 134844624
+treefree(8099148)
+treefree(8099160)
+treefree(8099178)
+treefree(8099190)
+treefree(8098ea0)
+mfree(8097540) frees 134844064
+freeing self
+mfree(8098ea0) frees 134844064
+treefree(80991b0)
+freeing hidden kid 80991c8
+mfree(80991c8) frees 134844848
+freeing self
+mfree(80991b0) frees 134844848
+treefree(80991d8)
+freeing self
+mfree(80991d8) frees 134844888
+freeing self
+mfree(8099190) frees 134844816
+freeing self
+mfree(8099178) frees 134844792
+freeing self
+mfree(8099160) frees 134844768
+treefree(80991f0)
+treefree(8099208)
+treefree(8099220)
+treefree(8099240)
+treefree(8098ed0)
+mfree(8097550) frees 134844112
+freeing self
+mfree(8098ed0) frees 134844112
+treefree(8098f00)
+mfree(8098f30) frees 134844160
+freeing self
+mfree(8098f00) frees 134844160
+treefree(8098f40)
+mfree(8098f70) frees 134844224
+freeing self
+mfree(8098f40) frees 134844224
+treefree(8098f80)
+mfree(8098fb0) frees 134844288
+freeing self
+mfree(8098f80) frees 134844288
+treefree(8098fc0)
+mfree(8098ff0) frees 134844352
+freeing self
+mfree(8098fc0) frees 134844352
+freeing self
+mfree(8099240) frees 134844992
+treefree(8099268)
+freeing self
+mfree(8099268) frees 134845032
+treefree(8099280)
+freeing self
+mfree(8099280) frees 134845056
+freeing self
+mfree(8099220) frees 134844960
+treefree(8099298)
+treefree(80992b8)
+treefree(8099000)
+mfree(8099030) frees 134844416
+freeing self
+mfree(8099000) frees 134844416
+freeing self
+mfree(80992b8) frees 134845112
+treefree(80992d0)
+treefree(80992f8)
+treefree(8099318)
+freeing hidden kid 8099330
+mfree(8099330) frees 134845208
+freeing self
+mfree(8099318) frees 134845208
+treefree(8099340)
+freeing self
+mfree(8099340) frees 134845248
+freeing self
+mfree(80992f8) frees 134845176
+treefree(8099358)
+freeing self
+mfree(8099358) frees 134845272
+freeing self
+mfree(80992d0) frees 134845136
+treefree(8099370)
+freeing self
+mfree(8099370) frees 134845296
+freeing self
+mfree(8099298) frees 134845080
+freeing self
+mfree(8099208) frees 134844936
+freeing self
+mfree(80991f0) frees 134844912
+freeing self
+mfree(8099148) frees 134844744
+treefree(8099388)
+treefree(80993a8)
+treefree(80993c8)
+freeing self
+mfree(80993c8) frees 134845384
+treefree(80993e0)
+freeing hidden kid 80993f8
+mfree(80993f8) frees 134845408
+freeing self
+mfree(80993e0) frees 134845408
+freeing self
+mfree(80993a8) frees 134845352
+treefree(8099408)
+treefree(8099428)
+freeing self
+mfree(8099428) frees 134845480
+treefree(8099440)
+freeing hidden kid 8099458
+mfree(8099458) frees 134845504
+freeing self
+mfree(8099440) frees 134845504
+treefree(8099468)
+freeing self
+mfree(8099468) frees 134845544
+treefree(8099480)
+treefree(8099498)
+treefree(80994b8)
+treefree(80994d8)
+freeing self
+mfree(80994d8) frees 134845656
+treefree(80994f0)
+freeing self
+mfree(80994f0) frees 134845680
+freeing self
+mfree(80994b8) frees 134845624
+treefree(8099508)
+freeing self
+mfree(8099508) frees 134845704
+freeing self
+mfree(8099498) frees 134845592
+freeing self
+mfree(8099480) frees 134845568
+freeing self
+mfree(8099408) frees 134845448
+treefree(8099520)
+treefree(8099540)
+freeing self
+mfree(8099540) frees 134845760
+treefree(8099558)
+freeing hidden kid 8099570
+mfree(8099570) frees 134845784
+freeing self
+mfree(8099558) frees 134845784
+treefree(8099580)
+freeing self
+mfree(8099580) frees 134845824
+treefree(8099598)
+treefree(80995b0)
+treefree(80995c8)
+treefree(80995e8)
+freeing self
+mfree(80995e8) frees 134845928
+treefree(8099600)
+freeing self
+mfree(8099600) frees 134845952
+freeing self
+mfree(80995c8) frees 134845896
+treefree(8099618)
+treefree(8099640)
+treefree(8099660)
+freeing self
+mfree(8099660) frees 134846048
+treefree(8099678)
+treefree(8099698)
+treefree(80996b8)
+freeing self
+mfree(80996b8) frees 134846136
+treefree(80996d0)
+freeing self
+mfree(80996d0) frees 134846160
+freeing self
+mfree(8099698) frees 134846104
+treefree(80996e8)
+freeing hidden kid 8099700
+mfree(8099700) frees 134846184
+freeing self
+mfree(80996e8) frees 134846184
+freeing self
+mfree(8099678) frees 134846072
+freeing self
+mfree(8099640) frees 134846016
+treefree(8099710)
+treefree(8099728)
+freeing self
+mfree(8099728) frees 134846248
+treefree(8099740)
+treefree(8099758)
+freeing self
+mfree(8099758) frees 134846296
+freeing self
+mfree(8099740) frees 134846272
+freeing self
+mfree(8099710) frees 134846224
+treefree(8099770)
+treefree(8099790)
+freeing self
+mfree(8099790) frees 134846352
+treefree(80997a8)
+treefree(80997c8)
+freeing self
+mfree(80997c8) frees 134846408
+treefree(80997e0)
+freeing self
+mfree(80997e0) frees 134846432
+freeing self
+mfree(80997a8) frees 134846376
+freeing self
+mfree(8099770) frees 134846320
+treefree(80997f8)
+treefree(8099810)
+treefree(8099830)
+freeing self
+mfree(8099830) frees 134846512
+treefree(8099848)
+freeing self
+mfree(8099848) frees 134846536
+freeing self
+mfree(8099810) frees 134846480
+treefree(8099860)
+treefree(8099878)
+treefree(8099898)
+treefree(80998b8)
+freeing self
+mfree(80998b8) frees 134846648
+treefree(80998d0)
+freeing self
+mfree(80998d0) frees 134846672
+freeing self
+mfree(8099898) frees 134846616
+treefree(80998e8)
+freeing self
+mfree(80998e8) frees 134846696
+freeing self
+mfree(8099878) frees 134846584
+treefree(8099900)
+treefree(8099920)
+freeing self
+mfree(8099920) frees 134846752
+treefree(8099938)
+treefree(8099958)
+freeing self
+mfree(8099958) frees 134846808
+treefree(8099970)
+freeing self
+mfree(8099970) frees 134846832
+freeing self
+mfree(8099938) frees 134846776
+freeing self
+mfree(8099900) frees 134846720
+freeing self
+mfree(8099860) frees 134846560
+freeing self
+mfree(80997f8) frees 134846456
+treefree(8099988)
+treefree(80999a8)
+freeing self
+mfree(80999a8) frees 134846888
+treefree(80999c0)
+treefree(80999e0)
+freeing self
+mfree(80999e0) frees 134846944
+treefree(80999f8)
+freeing hidden kid 8099a10
+mfree(8099a10) frees 134846968
+freeing self
+mfree(80999f8) frees 134846968
+freeing self
+mfree(80999c0) frees 134846912
+freeing self
+mfree(8099988) frees 134846856
+freeing self
+mfree(8099618) frees 134845976
+freeing self
+mfree(80995b0) frees 134845872
+freeing self
+mfree(8099598) frees 134845848
+freeing self
+mfree(8099520) frees 134845728
+treefree(8099a20)
+treefree(8099a38)
+freeing self
+mfree(8099a38) frees 134847032
+treefree(8099a50)
+treefree(8099a68)
+freeing self
+mfree(8099a68) frees 134847080
+treefree(8099a80)
+freeing hidden kid 8099a98
+mfree(8099a98) frees 134847104
+freeing self
+mfree(8099a80) frees 134847104
+freeing self
+mfree(8099a50) frees 134847056
+freeing self
+mfree(8099a20) frees 134847008
+freeing self
+mfree(8099388) frees 134845320
+mfree(8097528) frees 134837496
+freeing self
+mfree(80974f8) frees 134837496
+treefree(8097000)
+freeing self
+mfree(8097000) frees 134836224
+treefree(8097110)
+freeing self
+mfree(8097110) frees 134836496
+mfree(8097070) frees 1075172492
+Ready to call mainloop after errset
+mainloop, cursor 80970c0, ocursor 0, srch_row 0, srch_real 0, look.=0
+back from hist_mark()
+disp_lines(80823a0, 0, 0, 8096fb8, 0, 0)
+pcod_adjust(bffff650), line->pcode=0, line_headnode(*line)=8096fb8
+treeprint(thenode=8096fb8, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+treeprint(thenode=8096fe8, prcode_index=0, listcode=32, def=808217c, plist=0)
+out_flag 0, pr_column 8
+treeprint does !c, setecol 0, pr_column 8
+Bufadd asked to add string Program-Name
+P, newnode=8097018, ntype(newnode)=101
+treeprint(thenode=8097018, prcode_index=0, listcode=44, def=0, plist=0)
+out_flag 0, pr_column 21
+treeprint(thenode=8097128, prcode_index=0, listcode=44, def=0, plist=0)
+out_flag 0, pr_column 21
+treeprint does !c, setecol 0, pr_column 21
+Bufadd asked to add string input
+Bufadd asked to add string , 
+treeprint(thenode=8097150, prcode_index=0, listcode=44, def=0, plist=0)
+out_flag 0, pr_column 28
+treeprint does !c, setecol 0, pr_column 28
+Bufadd asked to add string output
+line size = 36, room = 80
+line_bord 1 = 80
+size = -44, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "program 'P'r'o'g'r'a'm'-'N'a'm'e('i'n'p'u't, 'o'u't'p'u't);"
+out_line: cur_line = 1
+         stop_line = 46
+pcod_adjust(bffff650), line->pcode=0, line_headnode(*line)=8097038
+treeprint(thenode=8097038, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string {Comment that says what the routine does}
+line size = 41, room = 80
+line_bord 1 = 80
+size = -39, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "'{'C'o'm'm'e'n't' 't'h'a't' 's'a'y's' 'w'h'a't' 't'h'e' 'r'o'u't'i'n'e' 'd'o'e's'}"
+out_line: cur_line = 2
+         stop_line = 46
+pcod_adjust(bffff650), line->pcode=0, line_headnode(*line)=8097088
+treeprint(thenode=8097088, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string Declarations
+line size = 12, room = 80
+line_bord 1 = 80
+size = -68, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "'D'e'c'l'a'r'a't'i'o'n's"
+out_line: cur_line = 3
+         stop_line = 46
+pcod_adjust(bffff650), line->pcode=3, line_headnode(*line)=8096fb8
+treeprint(thenode=8096fb8, prcode_index=3, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+line size = 5, room = 80
+line_bord 1 = 80
+size = -75, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "begin"
+out_line: cur_line = 4
+         stop_line = 46
+pcod_adjust(bffff650), line->pcode=0, line_headnode(*line)=80970c0
+treeprint(thenode=80970c0, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string Statement
+line size = 9, room = 80
+line_bord 1 = 80
+size = -71, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "'S't'a't'e'm'e'n't"
+out_line: cur_line = 5
+         stop_line = 46
+pcod_adjust(bffff650), line->pcode=5, line_headnode(*line)=8096fb8
+treeprint(thenode=8096fb8, prcode_index=5, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+line size = 4, room = 80
+line_bord 1 = 80
+size = -76, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "end."
+out_line: cur_line = 6
+         stop_line = 46
+pcod_adjust(bffff684), line->pcode=0, line_headnode(*line)=80970c0
+treeprint(thenode=80970c0, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 0
+treeprint does !c, setecol 1, pr_column 0
+Bufadd asked to add string Statement
+line size = 9, room = 80
+line_bord 1 = 80
+size = -71, room = 78
+nlines = 1
+SearchReal: 0
+line_borders[0] = 9
+Chopping up the text
+OLE_StartCursor @ 8083dc0
+OLE_EndCursor @ 8083de4
+Found start of cursor at 8083dc0
+Edit text is a stub, set it to null
+OLE_PrcText @ 8082d60
+OLE_CurText @ 8082d64
+OLE_FolText @ 8082d64
+pcod_adjust(bffff510), line->pcode=0, line_headnode(*line)=80970c0
+treeprint(thenode=80970c0, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 0
+treeprint does !c, setecol 1, pr_column 0
+Bufadd asked to add string Statement
+line size = 9, room = 80
+line_bord 1 = 80
+size = -71, room = 78
+nlines = 1
+SearchReal: 0
+line_borders[0] = 9
+OLE_Edit(80970c0,64,**Null-String**,4,0)
+srch_row = 4
+Start of OLEdit()
+length of prec: 0, fol: 0
+becpy: 
+oledit: savey 4, srch_row 4, strlen 0, choffset 316
+Cursor is 0 chars into string, len = 0
+line_buffer is 0 long
+line size = 0, room = 80
+line_bord 1 = 80
+size = -80, room = 78
+nlines = 1
+SearchReal: 0
+line_borders[0] = 0
+Fit line 1 lines long into space 1 in size
+output line 0: ""
+out_line: cur_line = 5
+         stop_line = 46
+Initial offset = 316
+sline = 4
+n_lines = 0, n_cols = 0
+Cursor is 0 chars into text on that line
+Offset into string = 0
+Offset into edit text = 0
+choffset winds up 0
+ole loop, edtext '', len = 0, cursor 0
+OLE_Accept, fl 100, tc '', cmd 'q' (161)
+docmd(161)
+inschar(161), olcursor 1
+expscan called, str 'q', ta bffff11c, tbuf 8082b20
+Token number: 34, text: 'q'
+token 34, bscan ()
+text after expscan (q) () @ 8082b20
+OLE_Done finds 0 tokens 34 140
+Cursor is 1 chars into string, len = 1
+line_buffer is 1 long
+line size = 1, room = 80
+line_bord 1 = 80
+size = -79, room = 78
+nlines = 1
+SearchReal: 1
+line_borders[0] = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "'q"
+out_line: cur_line = 5
+         stop_line = 46
+ole loop, edtext 'q', len = 1, cursor 1
+OLE_Accept, fl 100, tc '', cmd '€' (200)
+OLE_Accepted
+expscan called, str 'q ', ta bffff11c, tbuf 8082b20
+Token number: 99, text: 'q'
+token 99, bscan ( )
+Token number: 34, text: ''
+token 34, bscan ()
+text after expscan (q) (q) @ 8082b20
+OLE_Done finds 1 tokens 99 34
+Pushing 1 tokens onto the stack
+pushtoken tn A Symbol, text 'q'
+mainloop: topcmd returns A Symbol (99)
+
+in_token A Symbol 'q'
+cp (80970c0), basic class 19=Statement
+find_class(toknum 99=A Symbol, childclass 19=Statement) toknum 99, cursor (80970c0), ntype 101, class 19
+action 18
+action routine #18, token 99
+slookup(q, nocreate, 0, moan, 0)
+next_symtab(80970c0)
+Found table at 8096fb8 type pascal program
+search_symtab(80970f8, q, 113, noredecls)
+returning NIL
+next_symtab(80970f8)
+search_symtab(8080be8, q, 113, noredecls)
+returning NIL
+next_symtab(8080be8)
+mmalloc(24) returns 8097178
+New node, type 41(assignment statement) at 8097178, 3 kids, 0 0
+mmalloc(16) returns 8097000
+New node, type 98(placeholder) at 8097000, 1 kids, 16 8097029
+New stub of type 22 - Variable
+mmalloc(16) returns 8097110
+New node, type 98(placeholder) at 8097110, 1 kids, 17 8097029
+New stub of type 23 - Value
+build node 8097178
+myWS(80970c0) returns 8080b80
+if_sym_call(80970c0, 8058928), ntype(np)=98
+if_sym_call(8097178, 805879c), ntype(np)=41
+myWS(8097178) returns 8080b80
+skip_down, cursor starts at 8097178 stub not 1 is 0
+skip_down, cursor type 41, kid_count 2, lookaheadchar 128
+cursor at 8097178
+follow child
+c_nextpos returns 8097000: 8097000
+cursor skipped to 8097000
+skip_down, cursor ends at 8097000
+slookup(q, create, 0, moan, 0)
+next_symtab(8097000)
+Found table at 8096fb8 type pascal program
+search_symtab(80970f8, q, 113, noredecls)
+returning NIL
+next_symtab(80970f8)
+search_symtab(8080be8, q, 113, noredecls)
+returning NIL
+next_symtab(8080be8)
+Error: Symbol 'q' has not been declared
+s_declare(q, 8, 0)
+mmalloc(40) returns 8097198
+mmalloc(2) returns 8097070
+sym_link(8097198, 80970f8)
+empty symtab
+mmalloc(16) returns 80971c8
+New node, type 99(Symbol) at 80971c8, 1 kids, 8097198 8097063
+build node 80971c8
+myWS(8097000) returns 8080b80
+if_sym_call(8097000, 8058928), ntype(np)=98
+if_sym_call(80971c8, 805879c), ntype(np)=99
+myWS(80971c8) returns 8080b80
+skip_down, cursor starts at 80971c8 stub not 1 is 0
+skip_down, cursor type 99, kid_count 0, lookaheadchar 128
+skip_down, cursor ends at 80971c8
+my_scope(8096fb8) returns 1
+mainloop: c_comp_decls(1, 8096fb8, 4)
+my_scope(8096fb8) returns 1
+Descend in block 8096fb8, isdirty is 1
+CheckAt=8097178, cursor=80971c8
+mainloop: c_typecheck(8097178, 0, 14)
+Error: Symbol 'q' has not been declared
+mainloop, cursor 80971c8, ocursor 0, srch_row 4, srch_real 1, look.=80
+back from hist_mark()
+pcod_adjust(bffff694), line->pcode=0, line_headnode(*line)=8097178
+treeprint(thenode=8097178, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint(thenode=80971c8, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string q
+treeprint does !c, setecol 0, pr_column 2
+treeprint(thenode=8097110, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 5
+treeprint does !c, setecol 0, pr_column 5
+Bufadd asked to add string Value
+line size = 11, room = 80
+line_bord 1 = 80
+size = -69, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "'q := 'V'a'l'u'e;"
+out_line: cur_line = 5
+         stop_line = 46
+pcod_adjust(bffff684), line->pcode=0, line_headnode(*line)=8097178
+treeprint(thenode=8097178, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 0
+treeprint(thenode=80971c8, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 0
+treeprint does !c, setecol 1, pr_column 0
+Bufadd asked to add string q
+treeprint does !c, setecol 0, pr_column 2
+treeprint(thenode=8097110, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 5
+treeprint does !c, setecol 0, pr_column 5
+Bufadd asked to add string Value
+line size = 11, room = 80
+line_bord 1 = 80
+size = -69, room = 78
+nlines = 1
+SearchReal: 0
+line_borders[0] = 11
+mainloop: topcmd returns ?<97>? (97)
+
+Command: exit
+Error: You haven't saved workspace main
+Error: You haven't saved workspace main
+disp_lines(80823a0, 0, 0, 8096fb8, 0, 0)
+pcod_adjust(bffff1f4), line->pcode=0, line_headnode(*line)=8096fb8
+treeprint(thenode=8096fb8, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+treeprint(thenode=8096fe8, prcode_index=0, listcode=32, def=808217c, plist=0)
+out_flag 0, pr_column 8
+treeprint does !c, setecol 0, pr_column 8
+Bufadd asked to add string Program-Name
+P, newnode=8097018, ntype(newnode)=101
+treeprint(thenode=8097018, prcode_index=0, listcode=44, def=0, plist=0)
+out_flag 0, pr_column 21
+treeprint(thenode=8097128, prcode_index=0, listcode=44, def=0, plist=0)
+out_flag 0, pr_column 21
+treeprint does !c, setecol 0, pr_column 21
+Bufadd asked to add string input
+Bufadd asked to add string , 
+treeprint(thenode=8097150, prcode_index=0, listcode=44, def=0, plist=0)
+out_flag 0, pr_column 28
+treeprint does !c, setecol 0, pr_column 28
+Bufadd asked to add string output
+line size = 36, room = 80
+line_bord 1 = 80
+size = -44, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "program 'P'r'o'g'r'a'm'-'N'a'm'e('i'n'p'u't, 'o'u't'p'u't);"
+out_line: cur_line = 1
+         stop_line = 46
+pcod_adjust(bffff1f4), line->pcode=0, line_headnode(*line)=8097038
+treeprint(thenode=8097038, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string {Comment that says what the routine does}
+line size = 41, room = 80
+line_bord 1 = 80
+size = -39, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "'{'C'o'm'm'e'n't' 't'h'a't' 's'a'y's' 'w'h'a't' 't'h'e' 'r'o'u't'i'n'e' 'd'o'e's'}"
+out_line: cur_line = 2
+         stop_line = 46
+pcod_adjust(bffff1f4), line->pcode=0, line_headnode(*line)=8097088
+treeprint(thenode=8097088, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string Declarations
+line size = 12, room = 80
+line_bord 1 = 80
+size = -68, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "'D'e'c'l'a'r'a't'i'o'n's"
+out_line: cur_line = 3
+         stop_line = 46
+pcod_adjust(bffff1f4), line->pcode=3, line_headnode(*line)=8096fb8
+treeprint(thenode=8096fb8, prcode_index=3, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+line size = 5, room = 80
+line_bord 1 = 80
+size = -75, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "begin"
+out_line: cur_line = 4
+         stop_line = 46
+pcod_adjust(bffff1f4), line->pcode=0, line_headnode(*line)=8097178
+treeprint(thenode=8097178, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint(thenode=80971c8, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string q
+treeprint does !c, setecol 0, pr_column 2
+treeprint(thenode=8097110, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 5
+treeprint does !c, setecol 0, pr_column 5
+Bufadd asked to add string Value
+line size = 11, room = 80
+line_bord 1 = 80
+size = -69, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "'q := 'V'a'l'u'e;"
+out_line: cur_line = 5
+         stop_line = 46
+pcod_adjust(bffff1f4), line->pcode=5, line_headnode(*line)=8096fb8
+treeprint(thenode=8096fb8, prcode_index=5, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+line size = 4, room = 80
+line_bord 1 = 80
+size = -76, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "end."
+out_line: cur_line = 6
+         stop_line = 46

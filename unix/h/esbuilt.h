@@ -1,0 +1,26 @@
+/* Definitions of the standard symbols that must be referenced in the
+   segment of the bulitin symbol table */
+#ifndef ESBUILT
+#define ESL(type,index) STAR((type far *)tfarptr(index * sizeof(char *)))
+#define	BT_text		ESL(nodep,1)
+#define	BT_integer	ESL(symptr,2)
+#define	BT_real		ESL(symptr,3)
+#define	BT_char		ESL(symptr,4)
+#define	BT_pointer	ESL(symptr,5)
+#define	BT_set		ESL(nodep,6)
+#define	SP_passtype	ESL(nodep,7)
+#define	BT_boolean	ESL(nodep,8)
+#define	SP_file		ESL(symptr,9)
+#define	SP_ordinal	ESL(symptr,10)
+#define	SP_number	ESL(symptr,11)
+#define	SP_string	ESL(symptr,12)
+#define	SP_proc		ESL(symptr,13)
+#define	ndlast		ESL(symptr,14)
+#define	main_ws		ESL(workp,15)
+#define	null_undef	ESL(symptr,16)
+#define	master_table	ESL(nodep,17)
+#define UnknownSymbol	ESL(symptr,18)
+#define	BT_anytype	ESL(symptr,19)
+#define	built_count	ESL(bits16 *,20)
+#define SP_variable	ESL(symptr,21)
+#endif

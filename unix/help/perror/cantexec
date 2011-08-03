@@ -1,0 +1,5 @@
+|5,71
+Cant't be executed in immediate mode
+    You were in immediate mode and attempted to execute something that
+    could not be executed.  For example, you may have tried to execute a
+    declaration or a GOTO.

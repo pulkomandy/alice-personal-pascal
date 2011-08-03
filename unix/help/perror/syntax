@@ -1,0 +1,18 @@
+|18,74
+Expression syntax error
+    You have entered an expression that had an incorrect form.  Most of the
+    time, it should be easy to understand what went wrong -- the expression
+    should LOOK wrong.  To correct the error, you can SELECT the
+    highlighted expression and then choose the EDIT command from the Change
+    Menu to edit the expression.  You can also SELECT the expression,
+    delete it, and retype it again, or you can just UNDO the expression.
+         If you do not understand why the expression is incorrect, check
+    your user's manual or textbook to see how such expressions should be
+    written.
+|mFor more, choose
+|iDo nothing,nop
+|iEDIT,Hcommand/edit
+|iCLIP,Hcommand/clip
+|iDELETE,Hcommand/delete
+|iUNDO,Hcommand/undo
+|p

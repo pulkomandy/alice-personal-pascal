@@ -1,0 +1,13 @@
+|14,74
+StrInsert: Offset NUMBER beyond the end of string STRING
+    In a call to the StrInsert procedure, you attempted to insert something
+    beyond the end of a string.  For example, in
+
+          StrInsert(str1,str2,N);
+
+    the number N was larger than the number of characters in "str1".
+    Either change the number N or increase the length of "str1".
+|mFor more, choose
+|iDo nothing,nop
+|iStrInsert,Hpsymbol/strinsert
+|p

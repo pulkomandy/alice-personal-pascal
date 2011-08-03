@@ -1,0 +1,32 @@
+|23,72
+     "Text" is a predefined type used for files that contain normal text
+(lines of material that could be typed from the keyboard).  It is defined
+as
+          type
+              text = file of char;
+In other words, a text file is just a file of characters.
+     Text files are special because you can use the routines "eoln",
+"readln", and "writeln" on them.  You can also use "read" and "write" in
+special ways.
+     The predefined file variables "input" and "output" (attached to the
+terminal) are declared to be text files.
+
+Text Examples:
+     var
+         textfile : text;
+         i : integer;
+         r : real;
+         c : char;
+         s : string;
+     begin
+     reset(textfile,'filename');
+     readln(textfile,i,r,c,s);
+|mFor more, choose
+|iDo nothing,nop
+|iRead,Hpsymbol/read
+|iReadln,Hpsymbol/readln
+|iWrite,Hpsymbol/write
+|iWriteln,Hpsymbol/writeln
+|iEoln,Hpsymbol/eoln
+|iChar,Hpsymbol/char
+|p

@@ -1,0 +1,14 @@
+|15,74
+     "CPtrFunc" calls a C function that returns a pointer.  The first argu-
+ment of CPtrFunc is an integer indicating the C function you want to call.
+The arguments that follow are the arguments for the C function.  The value
+returned by CPtrFunc is the pointer returned by the C function.  This has
+the Pascal "Pointer" type.
+     Note that CPtrFunc also gives you access to QNX calls that return a
+pointer.
+     For further information on CPtrFunc, see the ALICE Reference Manual.
+|mFor more, choose
+|iDo nothing,nop
+|iCIntFunc,Hpsymbol/cintfunc
+|iCProc,Hpsymbol/cproc
+|p

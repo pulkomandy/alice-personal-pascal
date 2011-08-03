@@ -1,0 +1,18 @@
+|14,73
+     A real constant has a decimal point, an exponent, or both.  Constants
+may have leading "+" or "-" signs.
+     If it has a decimal point, there has to be at least one digit before
+the decimal and one digit after.
+     If it has an exponent, the exponent is written as an "e" or "E"
+followed by a positive or negative integer.  The exponent stands for 10 to
+the power of the integer; therefore E2 stands for 10 to the power 2, or
+100.
+
+Valid Real Constant Examples:
+     3.0    0.4    -7.82    3e4    2.1e-3    -3.4e5
+Invalid Real Constant Examples:
+     3.    .4    3e.1
+|mFor more, choose
+|iDo nothing,nop
+|iThe "real" type,Hpsymbol/real
+|p

@@ -1,0 +1,18 @@
+|13,73
+     The "RawPointer" function converts an address expressed as an integer
+into a Pointer type.  On the ICON, RawPointer takes a single integer argu-
+ment giving an absolute machine address (like the one returned by
+"address").  The value returned by RawPointer has the "Pointer" type.
+
+RawPointer Examples:
+     var
+         p : Pointer;
+         i : integer;
+       ...
+     i := address(x);
+     p := RawPointer(i);
+|mFor more, choose
+|iDo nothing,nop
+|iThe Pointer type,Hpsymbol/pointer
+|iThe Address function,Hpsymbol/address
+|p

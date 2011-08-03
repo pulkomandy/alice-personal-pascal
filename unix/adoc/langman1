@@ -1,0 +1,2493 @@
+.func booktype [ALICE Pascal Reference Manual]
+.sp 9ln
+.center {big ALICE Pascal Reference Manual}
+
+.chapter Introduction
+This manual deals only with the Pascal language that is supported by {ALICE}.
+The features of {ALICE} that help you write Pascal programs are discussed
+in the {ALICE} user guide and the {ALICE} tutorial.
+.bt
+{ALICE}'s version of Pascal is based on WATCOM Pascal, with
+additions from Turbo Pascal; detailed information concerning Turbo
+compatibilty and the conversion of Turbo programs to {Alice} can be found
+in a separate document.
+.section Caveat
+This is a manual, not a tutorial.
+While we have tried to make it generally readable from start to finish,
+early chapters occasionally refer to concepts described in later chapters.
+People new to the Pascal language may want to skim the book once to
+get an overview of how things fit together, before making a detailed
+reading.
+If you are unclear on any particular point, the fastest way to get an
+answer is to ask {ALICE} -- start the program and see how {ALICE} behaves.
+The HELP facility is also invaluable.
+.chapter Constants
+Pascal lets you define several types of numeric constants, as well
+as character and string constants.
+Every constant has a Pascal {it data type}.
+These data types will be mentioned in the descriptions that follow,
+and explained in Chapter 3.
+.section Integers
+Integer constants may be decimal or hexadecimal.  Decimal constants are
+written as ordinary integers with no decimal point.
+Leading plus or minus signs are permitted, as are leading zeros.
+Valid examples of decimal integer constants are
+.codebeg 10
+0    12    -45    078    +99
+.codend 0
+Hexadecimal constants are written with a leading dollar sign ($) in front of
+them, and may contain the digits 0-9 and the letters A-F.  Valid examples
+of hexadecimal integer constants are
+.codebeg 10
+$0    $C   $FE27   $21   $FF
+.codend 0
+An integer constant has the {type integer} type.
+.section Real Constants
+Real constants contain a decimal point, an exponent, or both.
+If the constant has a decimal point, there must be at least one digit before
+it and after it; therefore {type 0.1} is valid but {type .1} and
+{type 1.} are not.
+.bt
+Exponents for real constants consist of an upper or lower case {type E}
+followed by a (possibly signed) integer.
+The exponential part always comes at the end of the real constant.
+.bt
+Leading plus or minus signs are permitted, as are leading zeros.
+Valid examples of real constants are
+.codebeg 10
+0.0    -12.0    3E4    4e+5    +12.3e-45
+.codend 0
+A real constant has the {type real} type.
+.section Character Constants
+An character constant consists of a single character enclosed
+in single quotes.  Control characters can be placed in character constants
+by a # character followed by an integer constant (decimal or hexadecimal)
+corresponding to the desired ASCII value..
+Valid examples of character constants are
+.codebeg 10
+'a'    '1'    ';'    '#10'    '#$1A'
+.codend 0
+.tp
+If you want a character constant that consists of a single quote
+character, you must type two single quotes enclosed by single quotes:
+.codebeg 10
+''''
+.codend 0
+.tp
+A character constant has the {type char} type.
+.section String Constants
+A string constant consists of zero or more characters enclosed
+in double quotes, as in
+.codebeg 10
+"ab"    "Hello!"    "A line..."    ""
+.codend 0
+If the string is two or more characters, it can be enclosed in single
+quotes instead of double quotes:
+.codebeg 10
+'ab'   is the same as   "ab"
+.codend 0
+If there is only one character in the string and you enclose it in single
+quotes, it will be taken as a character constant rather than a string
+constant.
+This causes no problems because {ALICE} lets you use a character constant
+as a string of length 1.
+If there are no characters in the string, you cannot use single quotes
+because '' would be taken as an escape sequence for a single quote.
+.bt
+A string constant has the type {rwd packed array of char}.
+Therefore there is a great difference between
+.codebeg 10
+'a'  -- character constant, type char
+"a"  -- string constant, type packed array of char
+.codend 0
+.section Predefined Constants
+In addition to normal constants, {ALICE} Pascal has several symbols that
+are known as {it predefined constants}.
+{ALICE} assigns constant values to these symbols whenever your program
+starts executing.
+.routine Alice{und}Version
+This gives the version number of the {ALICE} you are using.
+.routine maxint
+This has the value of the largest integer that can be represented by the
+hardware.
+On the IBM PC, this is {type 32767}.
+.routine Pi
+This is the closest approximation of {q pi} that your computer can
+represent (3.14159...).
+.routine true
+This has the {type Boolean} value {q true}.
+For more information about {type Boolean} data, see Chapter 3.
+.routine false
+This has the {type Boolean} value {q false}.
+.routine StrEnd
+This is a special character used to mark the end of strings.
+It is actually the ASCII null character.
+{type StrEnd} will be discussed in greater detail in Chapter 3.
+.blnk 0
+You can change the meanings of these predefined names if you choose, but
+this is not recommended.
+.chapter Data Objects
+{ALICE} Pascal recognizes many kinds of data.
+These include simple variables of various types, as well as arrays,
+pointers, records, files, sets, and scalar types.
+This chapter describes the nature of these objects and indicates simple
+ways in which they may be declared.
+.section Identifiers
+Data objects in Pascal are referenced using names or {it identifiers}.
+Identifiers may be formed from the upper case letters {type 'A'-'Z'},
+the lower case letters {type 'a'-'z'}, the digits {type '0'-'9'},
+and the underscore {type {und}}.
+Identifiers may not begin with a digit or underscore.
+{ALICE} Pascal does not put any limits on how long an identifier can be;
+however, the maximum length of an input line is 255 characters, so the
+length of an identifier is restricted by the amount of space available
+in declarations and statements where the identifier is used.
+.bt
+{ALICE} Pascal does not pay attention to the case of letters in identifiers.
+Thus the identifiers {type SUM}, {type sum}, and {type Sum}
+all refer to the same thing.
+This is not true of some other versions of Pascal.
+.subsect Keywords
+{ALICE} Pascal recognizes a number of keywords that may not be used
+as identifiers.
+If you try to use them as identifiers, {ALICE} will either give you an error
+message or lay out the template associated with the keyword (which should
+tell you something has gone wrong).
+Recognized keywords are listed below.
+(Those marked with a {type *} are Turbo Pascal keywords.)
+.codebeg 2
+and       array     begin     case
+const     div       do        downto
+else      end       file      for
+function  goto      if        in
+label     mod       nil       not
+of        or        packed    procedure
+program   record    repeat    set
+shl*      shr*      string*   then
+to        type      until     var
+while     with      xor*
+.codend 0
+In the rest of this manual, keywords will usually be written in
+a special type face to remind users that they are reserved.
+.section Declarations
+Every identifier in a Pascal program must be declared.
+Declarations are made in special declaration sections that appear at the
+beginning of the function, procedure, or program mainline where the
+identifier appears.
+Declarations made inside a subprogram (a function or a procedure) are
+local to the subprogram in which they appear and to other subprograms
+declared inside the first subprogram.
+Declarations that are not inside any subprogram apply to the entire
+program.
+.bt
+There are four major declaration sections.
+.oca The Label Section
+This section begins with the keyword {rwd label}.
+It declares numbers that will be used as statement labels.
+.oca The Constant Section
+This section begins with the keyword {rwd const}.
+It declares identifiers that will represent constant values.
+.oca The Type Section
+This section begins with the keyword {rwd type}.
+It declares identifiers that will stand for specific data types.
+.oca The Variable Section
+This section begins with the keyword {rwd var}.
+It declares identifiers that will be used as variables.
+.blnk 0
+Any or all of these declaration sections may be omitted at the beginning
+of a function, procedure, or program mainline.
+{ALICE} lets you give these sections in any order, and lets you have more
+than one of each kind of section (e.g. a {rwd type} section followed by
+a {rwd var} section followed by another {rwd type} section).
+However, other versions of Pascal usually demand that you only have one
+of each kind of section and that the sections appear in the order listed
+above.
+.bt
+Programs and subprograms may also contain subprogram declarations.
+{rwd function} declarations describe subprograms that return a value.
+The declaration gives the type of value returned, as well as the type of
+each argument to the function.
+Arguments are explained in Chapter 6.
+.bt
+The other type of subprogram declaration is a {rwd procedure} declaration.
+A procedure is exactly like a function except that it does not return a
+value.
+.bt
+In other versions of Pascal, subprogram
+declarations come after the other declaration sections,
+but {rwd procedure} and {rwd function} declarations may be intermixed.
+For example, you could have a {rwd procedure} declaration, then a
+{rwd function} declaration, then another {rwd procedure}, and so on.
+Again, {ALICE} lets you put declarations in any order at all.
+.bt
+In the rest of this chapter, we will describe the first four declaration
+sections.
+Subprogram declarations will be described in Chapter 6.
+.section Label Declarations
+Statement labels are rarely used in Pascal.
+Only the {rwd goto} statement references such labels, and Pascal has a number
+of program structures like {rwd while} loops and {rwd for} statements that
+make {rwd goto} statements unnecessary.
+.bt
+If a program {it is} going to use statement labels, the labels must be
+declared in the {rwd label} declaration section.
+Most versions of Pascal use unsigned integers for statement labels.
+These must be integer constants (just sequences of digits) -- they cannot
+be variables or constant expressions.
+.bt
+Turbo Pascal lets you use identifier names as labels, in addition to numbers.
+While {Alice}internally supports alphanumeric identifers, and the APIN program
+allows them as well, {Alice} won't allow you to type in non-numeric labels in
+order to encourage portability.
+.bt
+The {rwd label} declaration section consists of the keyword
+{rwd label} followed by a list of the integers that will be used as labels.
+Integers in the list are separated by commas.
+The end of the list is marked with a semicolon.
+Therefore, you might have
+.codebeg 10
+label
+____5,68,23;
+.codend 0
+Once a label has been declared, it may be used to label a statement, as in
+.codebeg 10
+68: writeln('The label is 68');
+.codend 0
+.tp
+A single statement may have more than one label.
+Each such label is followed by a colon.
+.section The Constant Declaration Section
+A constant declaration section assigns names to certain constants.
+These names may then be used in exactly the same way as
+the constants that the names represent.
+Constants declared in the constant section are sometimes called
+{it manifest constants}.
+.bt
+A constant declaration section begins with the keyword {rwd const}.
+Following this are lines of the form
+.codebeg 10
+identifier = constant;
+.codend 0
+For example, here is a typical constant declaration section.
+.codebeg 10
+const
+____VECSIZE = 100;
+____FILENAME = 'myfile';
+____E = 2.71828;
+.codend 0
+In the declarations above, we have followed the widely-used convention
+of writing manifest constants in upper case so they stand out in the
+source code.
+.bt
+Any valid Pascal constant may be associated with a name in a {rwd const}
+section.
+Named constants are frequently used for constants that may have to be
+changed if modifications are made in the program.
+For example, the {type VECSIZE} constant shown above may give the size of
+a particular vector.
+The source code can then use {type VECSIZE} to refer to the vector's size
+instead of stating the size as an explicit constant.
+If it later becomes necessary to change the vector's size, you just have
+to change the definition of {type VECSIZE} and run the program again.
+.subsect Typed Constants
+{Alice} supports the use of {type typed constants}, which are equivalent to
+variables with a constant value.  They can be used anywhere a variable is
+used; they should not be assigned to, however.
+.bt
+A typed constant is declared as follows:
+.codebeg 10
+const
+____identifier : type = value;
+.codend 0
+For example,
+.codebeg 10
+const
+____HoursPerDay : integer = 24;
+____SalesTaxRate : real = 1.07;
+.codend 0
+.bt
+In addition, structured typed constants are supported.  They are declared the
+same way as unstructured typed constants, but their type specifier is a
+structured type and the initializer provides values for all the elements of
+the structured type.
+.bt
+Array constant initializers are enclosed in parentheses and separated by
+commas, as in the following examples:
+.codebeg 10
+const
+____punctuation : array [0..5] of char = ( '!', '@', '%', '&', '<', '> );
+____tictacgrid : array[0..2,0..2] of integer = ((0, 1, 2),(3,4,5),(6,7,8));
+.codend 0
+.bt
+Record constant initializers are enclosed in parentheses, separated by commas,
+and consist of a field name, a colon, and a value for that field.
+The initializers need not all be present, and do not need to be in any
+particular order.  For example
+.codebeg 10
+type
+____Emp_record = record
+________empname : string[15];
+________empwage : real;
+________empnum : integer;
+________end;
+const
+____Best_emp : Emp_record = (empnum : 15, empname = 'J.Q. Public');
+.codend 0
+.bt
+Set constant initializers consist of a list of set elements enclosed in square
+brackets and separated by commas.  In addition, the form val..val may be used
+to denote a range of values.  For example
+.codebeg 10
+const
+____lowprimes : set of integer = [1, 3, 5, 7, 11, 13, 17, 19, 23];
+.codend 0
+.bt
+Note that only a limited number of initializers is supported in {Alice}.
+.section The Type Declaration Section
+A type declaration section gives names to certain data types.
+These names may then be used as data types in variable and subprogram
+declarations.
+.bt
+A type declaration section begins with the keyword {rwd type}.
+After this comes lines of the form
+.codebeg 10
+identifier = type;
+.codend 0
+For example, we might have
+.codebeg 10
+type
+____PRICE = real;
+____vec = array[1..10] of integer;
+.codend 0
+We will explain the various types of Pascal in the description of the Variable
+Declaration Section.
+.bt
+Pascal is much more rigorous than other languages when it comes to
+type-checking.
+For example, a variable declared with the type {type vec} (declared above)
+would {it not} be compatible with a variable declared with the unnamed type
+.codebeg 10
+array[1..10] of integer
+.codend 0
+even though the two look the same to the human eye.
+Pascal's rules of data compatibility are given later in this chapter.
+.section The Variable Declaration Section
+A variable declaration section declares one or more variables that will
+be used in the program.
+Every declaration gives the variable's name and its type.
+.bt
+A variable declaration section begins with the keyword {rwd var}.
+After this come lines of the form
+.codebeg 10
+identifier : type;
+.codend 0
+or
+.codebeg 10
+identifier, identifier, identifier, ... : type;
+.codend 0
+For example, here is a typical {rwd var} section.
+.codebeg 10
+var
+____x,y,z : real;
+____i,j : integer;
+____c : char;
+____switcher : Boolean;
+.codend 0
+.tp
+In the paragraphs to come, we will describe the various types of variables
+that can be declared in a {rwd var} section.
+.subsect The integer Type
+To declare a variable of the {type integer} type, use
+.codebeg 10
+var
+____NAME : integer;
+.codend 0
+where {type NAME} is the name of the variable.
+Integer variables may (naturally) be assigned integer values.
+.bt
+Chapter 4 describes the various operations that may be
+performed on integers.
+These include standard addition, subtraction, multiplication, and integer
+division, plus a division remainder operation.
+.bt
+Pascal does not let you assign {type real} values directly to {type integer}
+variables.
+Instead, the {type real} value must be converted with either the
+{type round} or {type trunc} function.
+The {type round} function converts a {type real} value to {type integer} by
+rounding up or down to the nearest whole number.
+For example, if {type i} is an integer variable
+.codebeg 10
+i := round(3.7);
+.codend 0
+will round {type 3.7} to {type 4} and assign this to {type i}.
+.bt
+The {type trunc} function converts a {type real} value to {type integer} by
+truncating the fractional part.
+You can think of this truncation as {q erasing} everything that comes
+after the decimal point.
+For example,
+.codebeg 10
+i := trunc(3.7);
+.codend 0
+will truncate {type 3.7} to {type 3}.
+.codebeg 10
+i := trunc(-3.7);
+.codend 0
+will truncate {type -3.7} to {type -3}.
+.subsect The real Type
+To declare a variable of the {type real} type, use
+.codebeg 10
+var
+____NAME : real;
+.codend 0
+where {type NAME} is the name of the variable.
+Real variables may (naturally) be assigned real values.
+.bt
+Chapter 4 contains descriptions of the various operations that may be
+performed on real values.
+These include standard addition, subtraction, multiplication, and real
+division.
+.bt
+If an {type integer} value is assigned to a {type real} variable, the
+integer will automatically be converted to {type real} first.
+For example, if {type x} is a {type real} variable
+.codebeg 10
+x := 3;
+.codend 0
+will first convert {type 3} to {type 3.0}, then assign this to {type x}.
+.subsect The char Type
+To declare a variable of the {type char} type, use
+.codebeg 10
+var
+____NAME : char;
+.codend 0
+where {type NAME} is the name of the variable.
+Variables of this type can hold a {it single} character.
+.bt
+Unlike some other languages, Pascal will not allow {type char} data to be
+used numerically.
+To treat characters as integers, you must use the {it transfer functions}
+{type ord} and {type chr}.
+If {type c} is a {type char} variable,
+.codebeg 10
+ord(c)
+.codend 0
+is an integer that is equal to the numeric value of the representation
+of the character in {type c}.
+Similarly, if {type i} is an integer,
+.codebeg 10
+chr(i)
+.codend 0
+is the character whose representation is equal to {type i}.
+{type ord} can be used on any character; {type chr} can only be used on
+integers in the range 0 to 255.
+.subsect The Byte Type
+To declare a variable of {type Byte}, use
+.codebeg 10
+var
+____NAME : byte;
+.codend 0
+where {type NAME} is the name of the variable.
+.bt
+{type Byte} variables may contain any value in the range 0..255.  They are
+compatible with integers, except when used as parameters.
+.subsect The Boolean Type
+To declare a {type Boolean} variable, use
+.codebeg 10
+var
+____NAME : Boolean;
+.codend 0
+where {type NAME} is the name of the variable.
+.bt
+{type Boolean} variables may only take on the two values {type true} and
+{type false}.
+{type Boolean} values most commonly arise as the result of a relational
+comparison.
+For example,
+.codebeg 10
+A > B
+.codend 0
+returns a {type Boolean} value that is {type true} if {type A} is greater than
+{type B}, and {type false} otherwise.
+As noted previously, {type true} and {type false} are predefined identifiers.
+.subsect Enumerated Types
+An enumerated type is defined by listing the values that belong
+to the type.
+Each value is represented by a normal identifier.
+For example,
+.codebeg 10
+type
+____days = (sun,mon,tue,wed,thu,fri,sat);
+.codend 0
+might appear in the {rwd type} declaration section to define an
+enumerated type.
+The values in the list may be assigned to variables with the {type days}
+type.
+For example, we might define
+.codebeg 10
+var
+____today : days;
+.codend 0
+and then make an assignment like
+.codebeg 10
+today := tue;
+.codend 0
+.tp
+The most practical way to declare a variable of a given enumerated type
+is to name the type in the {rwd type} declaration section, as in
+.codebeg 10
+{rwd type}
+____ENAME = (identifier,identifier,...);
+.codend 0
+where {type ENAME} is a valid Pascal identifier.
+The enumerated type will then have the name {type ENAME}.
+You can then declare a variable with that type, as in
+.codebeg 10
+var
+____NAME : ENAME;
+.codend 0
+You can also use unnamed enumerated types right in a variable declaration,
+as in
+.codebeg 10
+var
+___x,y,z : (red,green,blue);
+.codend 0
+but this tends to be less useful.
+.bt
+The identifiers given as values for the enumerated type must be unique --
+they cannot be used as names for other data objects or as values in other
+enumerated types.
+.bt
+The standard comparison operators (e.g., {type <} and {type >}) can be used
+with values of the same enumerated type.
+When the enumerated type is defined, the order in which values are listed
+indicates which values are {q smaller} and which are {q larger}.
+For example, in our definition of the type {type days}, we would have
+{type sun} less than {type mon}, {type mon} less than {type tue}, and so on.
+.bt
+The functions {type pred} and {type succ} are also related to the order of
+enumerated types.
+If {type etv} is an enumerated type value, then
+.codebeg 10
+pred(etv)
+.codend 0
+is the enumerated type value that {it precedes} {type etv} in the list, and
+.codebeg 10
+succ(etv)
+.codend 0
+is the enumerated type value that {it follows} {type etv} in the list.
+Therefore, {type pred(tue)} is {type mon} and {type succ(tue)} is {type wed}.
+.bt
+The {type ord} function will convert an enumerated type value to an integer
+that represents the value's position in the list.
+The first item in an enumerated type list has a value of {type 0}, the next
+has a value of {type 1}, and so on.
+Therefore, {type ord(tue)} is {type 2}.
+.bt
+Note that the {type Boolean} type is actually predefined as an enumerated
+type, with
+.codebeg 10
+type
+____Boolean = (false,true);
+.codend 0
+This means that {type false} is less than {type true}.
+.bt
+Unlike most versions of Pascal, the {ALICE} version of the {type write}
+subprogram can write out all enumerated values by name.
+See Chapter 7.
+.subsect Scalar Types
+Enumerated types, the {type char} type, and the {type integer} type
+are commonly called {it scalar types}.
+The functions {type pred} and {type succ} can be used with
+integer and character data as well as with scalar types created by the user.
+.bt
+The {type real} type is sometimes called a scalar type by other Pascal manuals.
+However, it is illegal to use {type pred} and {type succ} on {type real}
+values, and there are other ways in which reals differ from scalar types.
+For this reason, we will not group real values with scalar types in this
+manual.
+.bt
+Note that books which include {type real} as one of the scalar types
+sometimes use the term {it ordinal type}
+to refer to the things we call scalar types.
+.subsect Subrange Types
+A subrange is a subset of an existing scalar type.
+Subranges are represented by the construct
+.codebeg 10
+lowest..highest
+.codend 0
+where {type lowest} and {type highest} are values of the same scalar type,
+and
+.codebeg 10
+lowest <= highest
+.codend 0
+For example, here are some valid subranges.
+.codebeg 10
+1..100
+'a'..'z'
+mon..fri
+.codend 0
+.tp
+Subranges can be set up in the {rwd type} declaration section, as in
+.codebeg 10
+type
+____lowercase = 'a'..'z';
+.codend 0
+or they may be set up in the {rwd var} declaration section, as in
+.codebeg 10
+var
+____index : 1..100;
+.codend 0
+.tp
+If a variable has a subrange type, it is an error to assign that variable
+a value which is outside the subrange, even if the value has the same
+scalar type.
+For example, if {type index} is declared as above,
+.codebeg 10
+index := 101;
+.codend 0
+is an error.
+Variables with a subrange type can only take on values inside the range.
+.bt
+Apart from the limited range, variables with a subrange type can generally be
+used in any way that is valid for variables of the same scalar type.
+Because of this, the rest of this manual will use the term {q scalar type}
+to refer to subranges of scalar types as well as full scalar types.
+.bt
+Note, however, that any subrange type which is a subset of the range 0..255
+will cause variables of that type to occupy a single byte of storage.
+.subsect The Array Type
+An array is made up of a fixed number of elements that all have the same type.
+For example, we can have an array of integers, an array of characters, etc.
+.bt
+The elements of an array are referenced using {it subscripts}.
+At the time that the array is declared, you must also declare what type of
+values will be used as subscripts.
+To declare an array variable, use
+.codebeg 10
+{rwd var}
+____NAME : {rwd array}[type1] {rwd of} type2;
+.codend 0
+{type type1} gives the type of the subscripts that will be used for the array.
+{type type2} gives the type of the elements that will be contained in
+the array.
+Below we give some examples of array declarations.
+.codebeg 10
+var
+____intarr : array [1..100] of integer;
+____weekarr : array [mon..fri] of integer;
+____carr : array [char] of array [1..10] of real;
+.codend 0
+These declarations indicate the versatility of Pascal arrays.
+The type of the elements in the array ({type type2}) can be any valid type.
+The subscripts can have any scalar type with one exception.
+The declared type of the subscripts can be a subrange of the integers, but
+it cannot be the type {type integer} itself, since this would imply an array
+of virtually infinite size.
+.bt
+When an array variable is declared, Pascal will create the array with one
+element for every value in the scalar type of the subscripts.
+Therefore,
+.codebeg 10
+var
+____intarr : array [1..10] of integer;
+.codend 0
+means an array of ten integers.
+.codebeg 10
+var
+____table : array [char] of char;
+.codend 0
+means an array with one character element for every possible {type char}
+value, i.e., an element for every possible character.
+Of course, the most common type for subscripts will be a subrange of
+integers beginning at {type 0} or {type 1}.
+.bt
+Once an array has been declared in this way, elements of the array may be
+referenced by giving a subscript value of the correct scalar type inside
+square brackets following the name of the array.
+For example,
+.codebeg 10
+intarr[5]
+.codend 0
+refers to the element of {type intarr} that has the subscript {type 5}.
+.codebeg 10
+table['A']
+.codend 0
+refers to the element of {type table} that has the subscript {type 'A'}.
+.bt
+Pascal also supports multi-dimensional arrays.
+One way of declaring a multi-dimensional array is to declare an array of
+arrays, as in
+.codebeg 5
+var
+____multi : array [1..10] of array [1..20] of real;
+.codend 0
+The construct
+.codebeg 10
+multi[N]
+.codend 0
+will refer to one of the sub-arrays, so
+.codebeg 10
+multi[N][M]
+.codend 0
+will refer to one of the {type real} elements of the sub-array.
+.bt
+{ALICE} also lets you talk about multi-dimensional arrays using the form
+.codebeg 10
+var
+____multi : array [1..10,1..20] of real;
+.codend 0
+and
+.codebeg 10
+multi[N,M]
+.codend 0
+These will be converted to
+.codebeg 10
+var
+____multi : array [1..10] of array [1..20] of real;
+.codend 0
+and
+.codebeg 10
+multi[N][M]
+.codend 0
+on your display screen, as you enter them.
+.subsect Packed Arrays
+A packed array is declared in the same way as a normal array, except that
+the keyword {rwd packed} is placed before the keyword {rwd array}, as in
+.codebeg 10
+var
+____arr1 : array [1..20] of char;
+____arr2 : packed array of [1..20] of char;
+.codend 0
+Traditionally, the {rwd packed} keyword asks Pascal to compress
+the elements of the array into the smallest space possible.
+Since {ALICE} already does this, {rwd packed} has no effect on how arrays
+are stored.
+.subsect String Types
+String constants that contain more than one character are considered
+to have the type
+.codebeg 10
+packed array [1..N] of char;
+.codend 0
+where {type N} is the number of characters in the string.
+For this reason, variables that are to contain strings are usually declared
+to be packed arrays as well.
+We use the term {it string types} to refer to all packed character
+array types whose starting index is {type 1}.
+.bt
+At times, a string type variable may be longer than the string it holds.
+For example, suppose we have
+.codebeg 10
+var
+____str : packed array [1..10] of char;
+.codend 0
+and then assign the value {type "abc"} to {type str}.
+It is fairly clear that
+.codebeg 10
+str[1] = 'a';
+str[2] = 'b';
+str[3] = 'c';
+.codend 0
+but what about the rest of the {type str} array?
+.bt
+In situations like this, the special character {type StrEnd} is used to
+mark the end of the string that is stored in {type str}.
+{type StrEnd} is put into {type str[4]} and the other elements in
+{type str} remain undefined.
+.bt
+The {type StrEnd} character is actually the ASCII null character, so
+.codebeg 10
+ord(StrEnd) = 0
+.codend 0
+.tp
+The {type packed array of char} method for representing strings is common
+to all versions of Pascal.
+{ALICE} and Turbo Pascal also support a special type named {type String}.
+A declaration of the form
+.codebeg 10
+var
+____name : String[N];
+.codend 0
+is equivalent to
+.codebeg 10
+var
+____name : packed array[1..N] of char;
+.codend 0
+.bt
+Note that the + operator can be used to concatenate strings together; its
+use is detailed in the second on the binary + operator.
+.subsect Record Types
+The Pascal record type is similar to a COBOL record or a C structure.
+A record is a structure that contains one or more sub-elements called
+{it fields}.
+These fields can contain data of practically any type.
+For example, here is a typical record type.
+.codebeg 4
+type
+____personnel = record
+____________________name : packed array [1..40] of char;
+____________________empno, age : integer;
+____________________income : real
+________________end;
+.codend 0
+The name of this type is {type personnel}.
+Each {type personnel} record contains four fields: a {type name}, an employee
+number (called {type empno}), an {type age}, and an {type income}.
+A name and type are given for each field in the record.
+The end of the list of record fields is indicated by the keyword {rwd end}.
+Once we have defined this type in the {rwd type} declaration section,
+we could use this type in variable declarations.
+.codebeg 10
+var
+____Bob, Rick, Nancy : personnel;
+____department : array [1..10] of personnel;
+.codend 0
+Record variables can also be declared directly in the {rwd var} section.
+.codebeg 10
+var
+____z1, z2, z3 : record
+_____________________re, im : real
+_________________end;
+.codend 0
+This sort of record might represent a complex number.
+.bt
+If a variable has a record type, the fields of the record can be referenced by
+giving the name of the variable, followed by a dot, followed by the field name.
+For example, {type z1.re} refers to the {type re} field in the record {type z1}
+declared above.
+.bt
+A record type can contain a {it variant} part as well as a fixed part.
+This means that part of the record contains a set of fields that can
+change from record to record.
+The variant part must always appear at the {it end} of the record; the
+first part of the record contains the fields that are found in every record
+of the type.
+.bt
+Below we give a typical record structure that contains a variant part.
+.codebeg 5
+type
+____person = record
+_________________name : packed array [1..40] of char;
+_________________case age : integer of
+___________________1..16 : (grades:integer);
+___________________17..24 : (inschool:Boolean);
+_____________end;
+.codend 0
+The {type name} field is the fixed part of the record.
+The variant part is introduced by the keyword {rwd case}.
+After this comes a declaration of the {it tag field}.
+The tag field dictates what form the variant part will take.
+.bt
+In the above example, the tag field is {type age}.
+If the value of this field is in the range {type 1..16}, the variant
+part takes the form given in parentheses after the {type 1..16}; the
+variant part consists of a single integer field called {type grades}.
+If the value of {type age} is in the range {type 17..24}, the variant
+part consists of a single {type Boolean} field called {type inschool}.
+.bt
+It is not necessary to give a range of values for the possible forms of
+the variant part; for example, one might have the following record form.
+.codebeg 5
+type
+____days = (sun,mon,tue,wed,thu,fri,sat);
+____work = record
+_______________case d : day of
+_________________mon..fri : (hours : integer);
+_________________sat : (holiday : Boolean,
+________________________sathours : integer);
+_________________sun : ()
+___________end;
+.codend 0
+This example demonstrates several points.
+A record does not have to have a fixed part.
+It can begin directly with the keyword {rwd case} and the variant part.
+The tag field can have any scalar type.
+Some forms of the variant part may be empty; in the above case, if
+{type d} has the value {type sun}, the variant part contains no fields.
+.bt
+The field names of a record must all be different.
+In particular, two different forms of the variant part cannot contain
+fields with the same name.
+.bt
+Now that we have seen examples of {rwd record} types, we can give a
+complete description of a record declaration.
+.codebeg 5
+{rwd record}
+____field-name : type;
+____field-name : type;
+______________...
+____{rwd case} tag-field : type {rwd of}
+______tag-value : (variant-field : type;
+___________________variant-field : type);
+__________________________...
+______tag-value,tag-value : (variant-field : type);
+_________________________________________...
+______tag-value..tag-value : (variant-field : type);
+_________________________________________...
+______\{end variant\}
+______{rwd end};
+.codend 0
+Either the fixed part before {rwd case} or the variant part after {rwd case}
+may be omitted (but not both).
+It doesn't matter what order you use to list the cases in the variant
+part of the record.
+The tag-field name placeholder may be left blank but the {type type}
+must be filled in before running the program.
+Note that {ALICE} puts in a comment to mark the end of the variant part of
+the record.
+.bt
+Records may be designated as {rwd packed} if desired, but this
+has no effect.
+.subsect Pointer Types
+A pointer variable contains a pointer to another data object.
+At the time that the pointer type is declared, you must also declare
+the type of object that the pointer will point at.
+The general form of a pointer type declaration is
+.codebeg 10
+{rwd type}
+____NAME = ^ datatype ;
+.blnk 0
+where {type NAME} is the name of the pointer type, {type datatype}
+is the type of data that the pointer points to, and
+{type ^} is the caret (uparrow) character.
+For example,
+.codebeg 10
+type
+____intp = ^ integer;
+.codend 0
+declares a pointer to an integer.
+You can also declare pointers in the {rwd var} section without declaring
+the pointer type in the {rwd type} section.
+.codebeg 10
+var
+____charp : ^ char;
+.codend 0
+declares {type charp} to be a variable that contains a pointer to a character.
+.bt
+Pascal lets you define a pointer to a particular type of value
+before the actual type is defined.
+This allows you to make interlinked records, as in
+.codebeg 10
+type
+____man = record
+______________name : packed array[1..40] of char;
+______________wife : ^ woman
+______________end;
+____woman = record
+______________name : packed array[1..40] of char;
+______________husband : ^ man
+______________end;
+.codend 0
+If {type ptr} was a pointer to the record type {type man}, we would refer
+to elements of the record as
+.codebeg 10
+ptr^ . name
+ptr^ . wife
+.codend 0
+It is an error to declare a circular list of pointer types, as in
+.codebeg 10
+type
+____x = ^ y;
+____y = ^ x;
+.codend 0
+.tp
+In standard Pascal, pointers can only be used when memory is allocated
+dynamically; see the description of the {type new} function in Chapter 8.
+In addition, {Alice} has two routines (MakePointer and RawPointer) which can
+reate pointers to objects that have not been allocated dynamically.
+.subsect The Universal Pointer Type
+In addition to pointers to specific types, there is a built-in {type Pointer}
+type that can hold a pointer to {it any} kind of data.
+For example, if we define
+.codebeg 10
+var
+____uptr : Pointer;
+____iptr : ^ integer;
+____cptr : ^ char;
+.codend 0
+we may make assignments like
+.codebeg 10
+uptr := iptr;
+uptr := cptr;
+.codend 0
+{type Pointer} types may also be assigned string values.
+.bt
+One example of a {type Pointer} type is the keyword {rwd nil}.
+This is used as the {it null pointer}, i.e. a pointer that doesn't
+point to anything.
+The value {rwd nil} can be assigned to a pointer variable of any type.
+.subsect File Types
+File types are similar to arrays -- a file is viewed as a collection
+of elements that all have the same type.
+The difference is that arrays have a fixed length, while files do not.
+Also, files can only be accessed sequentially, while arrays
+allow random access to elements.
+.bt
+To declare a file type, use
+.codebeg 10
+{rwd type}
+____identifier = {rwd file of} type;
+.codend 0
+The {type identifier} is the name that will be used for this particular
+file type; the {type type} is the type of elements that will be contained
+in data objects of this type.
+For example,
+.codebeg 10
+type
+____intfile = file of integer;
+.codend 0
+defines a file type {type intfile} that contains normal integers.
+.bt
+There is a predefined file type named {type text} that can be used for
+files containing normal text.
+{type text} is much like {rwd file of} {type char}, but it has a few
+extra properties.
+In particular, you can apply the {type eoln}, {type readln}, {type writeln},
+and {type page} subprograms to {type text} files.
+These subprograms are described in Chapters 7 and 8.
+.bt
+Naturally, there is a close association between the file type and files
+stored on peripheral devices.
+For every file that the program uses, there must be a corresponding file
+variable having an appropriate file type.
+The {type text} type is one of the most common file types.
+For data processing, files of {rwd record} data are often common.
+However, you can set up files of any type of data object.
+.bt
+The I/O functions of the Pascal library are set up to read, write, and
+perform other operations on file type data objects.
+These are explained in Chapter 7.
+.bt
+Every declaration of a file variable automatically creates an associated
+{it buffer variable} for the file.
+The name of this variable is the name of the file variable followed by a
+caret (^).
+For example, if {type f} has been declared as a file variable,
+it will have an associated buffer variable named {type f^}.
+The buffer variable has the same type as the elements contained by the file.
+Chapter 7 gives a much fuller description of how Pascal I/O works.
+.subsect Set Types
+A value of the {rwd set} type can be thought of as a subset of all the
+values that belong to a given scalar type.
+This scalar type is called the {it base type} of the set.
+A type declaration for a set type has the form
+.codebeg 10
+{rwd type}
+____NAME = {rwd set of} base-type;
+.codend 0
+For example, we might have
+.codebeg 10
+type
+____intset = set of 1..30;
+.codend 0
+Variables of this type would be sets whose elements were integers in the
+range {type 1} to {type 30}.
+.bt
+Set values are represented by values of the base type enclosed in
+square brackets.
+For example, suppose {type s} is a variable of the {type intset} type
+declared above.
+Then
+.codebeg 10
+s := [10,20,30];
+.codend 0
+makes {type s} into a set that contains the integers {type 10}, {type 20},
+and {type 30}.
+.bt
+There are a few restrictions on the base type of a set.
+The base type must be a scalar type.
+If the base type is a subrange of the integers, the subrange
+must fall in the range {type 0..255}.
+If the base type is an enumerated class, the class can have a maximum of
+256 elements.
+.bt
+Pascal allows all the usual set operations: intersection, union, and
+{q set difference}.
+You can also determine if one set is equal to another, or a subset of
+another.
+Lastly, you can determine if a particular value of the base type is an
+element of a set.
+.bt
+Set types can be declared as {rwd packed} if you wish.
+However, this makes no difference to memory requirements.
+.bt
+Unlike other Pascals, {Alice} can Write set types.
+.subsect Generic Type
+A special type called the generic type is available for declaring parameters
+of a function or procedure which may be of any of a number of different types.
+See the section on Procedure Declarations for more details on generic types.
+.section Compatibility
+One of Pascal's most important characteristics is its strict type-checking.
+In general, Pascal tries to prevent the user from performing operations
+that mix data of two different types.
+However, it makes some exceptions when the types are {q compatible enough}
+to be mixed.
+For example, suppose we declare
+.codebeg 10
+var
+____A : 1..10;
+____B : 1..9;
+.codend 0
+{type A} and {type B} have different types because they are different
+subranges of the integers.
+However, it is obvious that the assignment {type A:=B} makes sense since the
+value of {type B} must be in the allowed range for {type A}.
+.bt
+There are two definitions of compatibility: {it assignment}
+compatibility (which means that a value of one type may be assigned to
+a variable of a different type) and {it general} compatibility (which means
+that two types are compatible enough for expressions like comparison tests).
+.subsect General Compatibility
+Two data types {type T1} and {type T2} are compatible if any of the following
+statements are true.
+
+{type T1} and {type T2} are the same type.
+
+{type T1} is a subrange of {type T2}, or {type T2} is a subrange of {type T1},
+or both are subranges of the same scalar type.
+Thus the following pairs of declarations would all be compatible under
+this rule.
+.codebeg 15
+T1: 1..10;  T2: 1..12;
+T1: 1..10;  T2: 2..8;
+T1: 1..10;  T2: 3..12;
+T1: 1..10;  T2: 100..1000;
+.codend 0
+
+{type T1} and {type T2} are {rwd set} types of compatible base types, and
+either both are {rwd packed} or neither are {rwd packed}.
+For example,
+.codebeg 15
+T1: set of 1..10;   T2: set of 1..12;
+.codend 8
+would be compatible according to this rule.
+
+{type T1} and {type T2} are both string types.
+For example,
+.codebeg 15
+T1: packed array [1..12] of char;
+T2: packed array [1..15] of char;
+.codend 8
+would be compatible under this definition.
+Note that a packed character array must have a starting index of {type 1}
+if it is to be a string type.
+
+One of {type T1} or {type T2} is a pointer type and the other is the
+universal {type Pointer} type.
+
+One of {type T1} or {type T2} is a string type and the other is a {type char}
+type.
+.blnk 0
+If two types are generally compatible, variables of those types may be
+used together in expressions, e.g. arithmetic operations and comparison tests.
+.subsect Assignment Compatibility
+Assignment compatibility dictates whether or not a value of one type
+may be assigned to a variable of another type using {type :=}.
+If {type VT1} is a variable of type {type T1} and {type VT2} is a variable of
+type {type T2}, the statement
+.codebeg 10
+VT1 := VT2;
+.codend 0
+is valid when any one of the following is true.
+
+{type T1} and {type T2} are the same type.
+This type may not be a {rwd file} type or a structured
+type that has a {rwd file} component.
+
+{type T1} is the {type real} type and {type T2} is the {type integer} type.
+This means that assignment automatically converts integers to reals.
+
+{type T1} and {type T2} are generally compatible subrange types and the
+value of {type VT2} is in the subrange specified by the type {type T1}.
+General compatibility was described in the last section.
+For example, if we define
+.codebeg 15
+type
+____T1: 1..10;  T2: 3..12;
+.codend 8
+the operation {type VT1:=VT2} is valid provided that {type VT2} is in the
+range {type 3..10}.
+
+{type T1} and {type T2} are generally compatible {rwd set} types and all the
+members of {type VT2} are in the base type of {type T1}.
+This is similar to point (c).
+
+{type T1} and {type T2} are both string types.
+
+{type T1} is a string type and {type T2} is the {type char} type.
+
+One of {type T1} and {type T2} is a pointer type and the other is the
+universal {type Pointer} type.
+
+{type T1} is the {type Pointer} type and {type T2} is a string type.
+.blnk 0
+The above rules give the {it only} conditions in which {type VT1:=VT2}
+is valid.
+For example, consider
+.codebeg 10
+var
+____x : ^ char;
+____y : ^ char;
+.codend 0
+With these declarations, it would be valid to say
+.codebeg 10
+x^ := y^ ;
+.codend 0
+since both pointers point to the type {type char}.
+However, it would not be valid to say
+.codebeg 10
+x := y;
+.codend 0
+because {type x} and {type y} are not assignment compatible.
+Appearances to the contrary, {type x} and {type y} are not the same type in
+the eyes of Pascal.
+To be the same type, you need something like
+.codebeg 10
+type
+____charp : ^ char;
+var
+____x : charp;
+____y : charp;
+.codend 0
+.subsect Compatibility for Subprogram Arguments
+Compatibility is important when passing arguments to a function or procedure.
+Functions, procedures, and their arguments will be described in more
+detail in Chapter 6.
+.bt
+If an argument is a {rwd var} argument, the argument must have the
+{it same} type in both the caller and the called subprogram.
+It is not enough for them to be compatible or assignment compatible.
+.bt
+If an argument is a normal {q value} argument, the caller's argument must
+be assignment compatible with the called function's argument.
+Certain built-in subprograms (e.g. {type get} or {type put}) are exceptions
+to this rule, in that specific arguments may have many different types.
+.bt
+When passing a subprogram as an argument to another subprogram,
+the argument lists of the argument subprogram must match {it exactly}
+in both caller and callee.
+It is not enough for the argument lists to be compatible or assignment
+compatible.
+This means that many built-in subprograms may not be passed as arguments
+to other subprograms, because they do not always take the same type of
+arguments.
+.chapter Expressions
+{ALICE} Pascal supports a large number of operators that can be used in
+various types of expressions.
+The operations in an expression are evaluated according to a
+fixed order of precedence.
+For example, any multiplications in an expression are normally evaluated
+before additions (as is the convention in normal arithmetic).
+This standard order of operation can be altered using parentheses in
+the usual way.
+.bt
+Some operations share the same precedence (e.g. addition and subtraction).
+The set of all operations with a given precedence comprises a
+{it precedence class}.
+When the time comes for operations of a given class to be performed,
+they may be evaluated from right to left or left to right,
+depending on the class.
+.bt
+The sections in the chapter describe the operators in each precedence class.
+These sections are arranged from highest precedence to lowest.
+Subsections within each section describe individual operators.
+.section Factor Operations
+The following expressions give results that are known as {it factors}.
+Factor operations have the highest precedence in Pascal.
+.too 10
+{it variable}
+{it unsigned constant}
+{it function}({it argument list})
+[ {it element list} ]
+( {it expression} )
+{rwd not} {it expression}
+.blnk 0
+.subsect Variables and Unsigned Constants
+The term {it variable} refers to several things that can be assigned values:
+simple variables, elements in an array, or fields in a record.
+If a variable reference occurs in an expression, {ALICE} will use the value of
+that variable when evaluating the expression.
+An unsigned constant may be an unsigned number, a string constant, or
+an identifier that stands for a constant (either a constant named in
+the {rwd const} section, or a name that stands for a value in a scalar type).
+.subsect Function Calls
+A function call may be used as part of an expression.
+It takes the form of the name of the function followed by parentheses
+containing the arguments for the function.
+If no arguments are being passed to the function, the parentheses are
+omitted.
+The value of the function in the expression is the value that is returned
+as the result of the function.
+.bt
+Note that procedure calls have exactly the same form.
+However, procedures calls cannot be used in expressions, because
+procedures do not return values.
+.subsect Set Factors
+A set factor consists of an element list enclosed in square brackets.
+The elements of the list are separated by commas.
+All elements in the list must have the same scalar type.
+The element list may include subranges as well as single elements.
+For example,
+.codebeg 10
+[ 'a'..'z' , 'A'..'Z' , '0'..'9' , '_' ]
+.codend 0
+is a set that contains all the characters that may legally appear in
+a Pascal identifier.
+.subsect Parenthesized Expressions
+The value of a parenthesized expression is the value of the expression
+inside the parentheses.
+Parentheses indicate that the enclosed expression should be evaluated before
+other (unparenthesized) expressions.
+.subsect The not Operator
+The {rwd not} operator is a unary operator that can be applied to
+{type Boolean} or {type integer} operands.
+The form of the operator is
+.too 10
+{rwd not} {it operand}
+.blnk 0
+If the operand is {type true}, {rwd not} makes it {type false}.
+If the operand is {type false}, {rwd not} makes it {type true}.
+.tp
+If the operand is an integer, {rwd not} turns all the 0-bits in the
+integer into 1-bits, and all the 1-bits into 0-bits.
+This is only of interest to those familiar with bit operations on your
+computer.
+.section Multiplying Operators
+Multiplying operators follow the factor operations in precedence.
+Multiplying operators are executed from left to right, in the order in
+which they appear on the line.
+Below we list the possible multiplying operations.
+.too 10
+{it expression} * {it factor}
+{it expression} / {it factor}
+{it expression} {rwd div} {it factor}
+{it expression} {rwd mod} {it factor}
+{it expression} {rwd and} {it factor}
+{it expression} {rwd shl} {it factor}
+{it expression} {rwd shr} {it factor}
+.blnk 0
+.subsect The * Operator
+The {type *} operator may be applied either to numbers or to sets.
+When {type *} is applied to numeric values, it stands for normal
+multiplication.
+The operands can be either {type real} or {type integer}.
+If both operands are {type integer}, the result will be {type integer}.
+If either operand is {type real}, the result will be {type real}.
+Pascal allows multiplication of real values by integers.
+.bt
+When {type *} is applied to set values, it stands for {it intersection}.
+If {type A} and {type B} are sets, {type A*B} is the set that contains all the
+elements that are in both {type A} and {type B}.
+For example,
+.codebeg 10
+[1..10,20,30,40] * [20..34]
+.codend 0
+yields the set value
+.codebeg 10
+[20,30]
+.codend 0
+.subsect The / Operator
+The {type /} operator stands for real division.
+{type A/B} divides {type A} by {type B}.
+The operands may be {type real} or {type integer}.
+Integer operands will be converted to {type real} before the division
+takes place.
+The result of real division is always {type real}.
+.subsect The div Operator
+The {type div} operator stands for integer division.
+The operands must be {type integer} and its result is {type integer}.
+The result of
+.codebeg 10
+A div B
+.codend 0
+is the integer you get when you divide {type A} by {type B} and throw away
+any remainder.
+For example,
+.codebeg 10
+7 div 2
+.codend 0
+is the integer {type 3}.
+.codebeg 10
+-7 div 2
+.codend 0
+is the integer {type -3}.
+.subsect The mod Operator
+The {rwd mod} operator stands for the mathematical {q modulo} operation.
+Its operands must both be {type integer}.
+The general form of the operation is
+.codebeg 10
+A mod B
+.codend 0
+where {type A} and {type B} are expressions.
+The value of {type B} must be positive.
+.bt
+The result of the {rwd mod} operation is always non-negative, and is equal
+to {type A} modulo {type B}.
+If {type A} is non-negative, this value will be equal to
+.codebeg 10
+A - ( (A div B) * B )
+.codend 0
+In other words, it is the non-negative remainder that is left after {type A}
+is divided by {type B}.
+.subsect The and Operator
+The {rwd and} operator has the same precedence as the other multiplying
+operators, but is not really related to them.
+Both operands must have the same type and must be {type Boolean} or
+{type integer}.
+The result is the same type as the operands.
+If the operands are {type Boolean},
+.codebeg 10
+A and B
+.codend 0
+yields a {type Boolean} result that is {type true} when both {type A} and
+{type B} are {type true}, and is {type false} otherwise.
+.bt
+If the operands are {type integer}, the result is an integer with 1-bits
+wherever both operands have 1-bits and 0-bits everywhere else.
+This is only of interest to those who are familiar with bit operations
+on the computer.
+.bt
+It is important to point out that {rwd and} has a higher precedence than
+relational comparisons like {type >}, {type =}, and so on.
+This means that comparisons joined with {rwd and} must be parenthesized, as in
+.codebeg 10
+if (a > b) and (b > c) then ...
+.codend 0
+Omitting the parentheses will result in a syntax error.
+.subsect The shl Operator
+The {rwd shl} operator shifts the bits of an integer to the left.
+Vacated bits are filled with zeroes.
+The form of the operation is
+.codebeg 10
+A shl B
+.codend 0
+{type A} is the integer that is shifted.
+{type B} is an integer giving the number of bits to shift.
+{type B} must be in the range {type 0..15}.
+.subsect The shr Operator
+The {rwd shr} operator shifts the bits of an integer to the right.
+Vacated bits are filled with the sign bit of the integer.
+The form of the operation is
+.codebeg 10
+A shr B
+.codend 0
+{type A} is the integer that is shifted.
+{type B} is an integer giving the number of bits to shift.
+{type B} must be in the range {type 0..15}.
+.section Adding Operators
+Adding operators follow the multiplying operations in precedence.
+Adding operators are executed from left to right, in the order in
+which they appear on the line.
+Below we list the possible adding operations.
+.too 10
++ {it expression}
+- {it expression}
+{it expression} + {it expression}
+{it expression} - {it expression}
+{it expression} {rwd or} {it expression}
+{it expression} {rwd xor} {it expression}
+.blnk 0
+.subsect The Unary + Operator
+The operation
+.too 10
++ {it expression}
+.blnk 0
+is known as the unary {type +} operation.
+The value of this operation is just the value of the expression that
+follows the {type +}.
+The operand must be {type integer} or {type real}.
+.subsect The Unary - Operator
+The operation
+.too 10
+- {it expression}
+.blnk 0
+is known as the unary {type -} operation.
+The operand must be {type integer} or {type real}.
+The value of the operation is the negative of the expression that follows
+the {type -}.
+.subsect The Binary + Operation
+The binary {type +} may be applied to numbers, sets, or strings.
+It has the general form
+.codebeg 10
+A + B
+.codend 0
+If {type A} and {type B} are numbers (either {type integer} or {type real}),
+{type A+B} is the sum of {type A} and {type B}.
+If both operands are {type integer}, the result will be {type integer}.
+Otherwise, the result will be {type real}.
+Pascal permits the addition of a {type real} and an {type integer}.
+.bt
+If {type A} and {type B} are sets, {type A+B} is the union of the sets.
+In other words, it is the set containing all the elements that are in
+{type A} or {type B} or both.
+For example,
+.codebeg 10
+[1..10,20,30,40] + [20..34]
+.codend 0
+is the set
+.codebeg 10
+[1..10,20..34,40]
+.codend 0
+.tp
+If {type A} and {type B} are string types, {type A+B} is the string you
+get when you concatenate {type B} to the end of {type A}.
+For example,
+.codebeg 10
+"abc" + "def"
+.codend 0
+is the string
+.codebeg 10
+"abcdef"
+.codend 0
+.subsect The Binary - Operation
+The binary {type -} may be applied to numbers or sets.
+It has the general form
+.codebeg 10
+A - B
+.codend 0
+If {type A} and {type B} are numbers (either {type integer} or {type real}),
+{type A-B} gives the result of {type A} minus {type B}.
+If both operands are {type integer}, the result will be {type integer}.
+Otherwise, the result will be {type real}.
+Pascal permits the subtraction of a {type real} and an {type integer}.
+.bt
+If {type A} and {type B} are sets, {type A-B} is the difference of the sets.
+In other words, it is the set containing all the elements that are in
+{type A} but are not in {type B}.
+For example,
+.codebeg 10
+[1..10,20,30,40] - [20..34]
+.codend 0
+is the set
+.codebeg 10
+[1..10,40]
+.codend 0
+.subsect The or Operator
+The {rwd or} operator has the same precedence as the other adding
+operators, but is not really related to them.
+The operands of {rwd or} must have the same type, either {type Boolean}
+or {type integer}.
+The result is the same type as the operands.
+If the operands are {type Boolean},
+.codebeg 10
+A or B
+.codend 0
+yields a {type Boolean} result that is {type false} when both {type A} and
+{type B} are {type false}, and is {type true} otherwise.
+.bt
+If the operands are {type integer}, the result is an integer with 0-bits
+where both {type A} and {type B} have 0-bits, and 1-bits elsewhere.
+.bt
+As with the {rwd and} operator, {rwd or} has a higher precedence than the
+relational comparisons.
+This means that comparisons joined with {rwd or} must be parenthesized, as in
+.codebeg 10
+if (a > b) or (a < c) then ...
+.codend 0
+.subsect The xor Operator
+The {rwd xor} operator performs the {q exclusive OR} operation.
+Its arguments must both have the same type and must be either {type Boolean}
+or {type integer}.
+The result has the same type as the operands.
+If the operands are {type Boolean},
+.codebeg 10
+A xor B
+.codend 0
+is {type false} if {type A} and {type B} are both false or both true.
+It is {type true} if one operand is true but not the other.
+.bt
+If the operands are {type integer}, the result is an integer that has
+1-bits where one operand has a 1-bit and the other has a 0-bit; the result
+has 0-bits where both operands have either 1-bits or 0-bits.
+.section The Relational Operators
+The relational operators have the lowest precedence of any Pascal operators.
+All the relational operators yield {type Boolean} results.
+Below we list the relational operators and what data types
+they may be applied to.
+(Some also apply to strings but this will be described later.)
+.too 10
+{it expression} =  {it expression}  ({type scalars,reals,sets,pointers})
+{it expression} <> {it expression}  ({type scalars,reals,sets,pointers})
+{it expression} >  {it expression}  ({type scalars,reals})
+{it expression} >= {it expression}  ({type scalars,reals,sets})
+{it expression} <  {it expression}  ({type scalars,reals})
+{it expression} <= {it expression}  ({type scalars,reals,sets})
+.blnk 0
+.subsect The Equal Comparison (=)
+The {type =} operator can be used to compare any two operands of the same
+scalar type or the {type real} type.
+.codebeg 10
+A = B
+.codend 0
+is {type true} if the operands have the same value, and {type false} otherwise.
+{type =} can also be used to compare sets and pointers for
+equality, but it cannot be used to compare objects of other data types
+(e.g. records).
+.subsect The Not Equal Comparison (<>)
+The {q not equal} comparison can be used to compare any two operands of the
+same scalar type or the {type real} type.
+.codebeg 10
+A <> B
+.codend 0
+is {type false} if the operands have the same value, and {type true} otherwise.
+{type <>} can also be used to compare sets and pointers for
+inequality, but it cannot be used to compare objects of other data types
+(e.g. records).
+.subsect The Greater Than Comparison (>)
+The {type >} operator can be used to compare any two operands of the same
+scalar type or the {type real} type.
+For integers and real values,
+.codebeg 10
+A > B
+.codend 0
+is {type true} if {type A} is greater than {type B}, and {type false}
+otherwise.
+For scalar types that were created by listing the elements of the type,
+{type A} is greater than {type B} if {type A} came later in the list than
+{type B}.
+For {type Boolean} values, {type true} is greater than {type false}.
+.subsect The Less Than Comparison (<)
+The {type <} operator can be used to compare any two operands of the same
+scalar type or the {type real} type.
+For integers and real values,
+.codebeg 10
+A < B
+.codend 0
+is {type true} if {type A} is less than {type B}, and {type false} otherwise.
+For scalar types that were created by listing the elements of the type,
+{type A} is less than {type B} if {type A} came earlier in
+the list than {type B}.
+For {type Boolean} values, {type false} is less than {type true}.
+.subsect The Greater Than or Equal Comparison (>=)
+The {type >=} operator can be used to compare any two operands of the same
+scalar type or the {type real} type.
+For all these types,
+.codebeg 10
+A >= B
+.codend 0
+is {type true} if either {type A>B} or {type A=B}; otherwise, the comparison
+is {type false}.
+.bt
+The {type >=} operator can also be used to compare two set operands.
+In this case, {type A>=B} is {type true} if the set {type A} contains {type B}
+as a subset; otherwise, it is {type false}.
+.subsect The Less Than or Equal Comparison (<=)
+The {type <=} operator can be used to compare any two operands of the same
+scalar type or the {type real} type.
+For all these types,
+.codebeg 10
+A <= B
+.codend 0
+is {type true} if either {type A<B} or {type A=B}; otherwise, the comparison
+is {type false}.
+.bt
+The {type <=} operator can also be used to compare two set operands.
+In this case, {type A<=B} is {type true} if the set {type A} is a subset of
+{type B}; otherwise, it is {type false}.
+.subsect The in Operator
+The {rwd in} operator is used to determine if a particular value happens
+to be an element of a set.
+The operation has the form
+.codebeg 10
+A in B
+.codend 0
+where {type A} is a value of a scalar type and {type B} is a set of that type.
+The result of the comparison will be {type true} if the value {type A} is in
+{type B}, and {type false} otherwise.
+.subsect String Comparisons
+The operators
+.codebeg 10
+=    <>    >    >=    <     <=
+.codend 0
+can be used to compare {rwd packed array of char} strings.
+One string is greater than another if it is {it lexicographically} greater
+(i.e., if it comes later when the strings are sorted according to the ASCII
+collating sequence).
+.bt
+String comparisons are made character by character.
+The comparison will stop at the end of the shorter string, or when the
+special {type StrEnd} character is found in either string.
+.chapter Statements
+In this chapter, we deal with the statements of Pascal.
+These statements control most of the actions performed by a program.
+.bt
+Note that {ALICE} can only handle lines shorter than 256 characters.
+If you have a very long line, you will have to break it up into smaller
+pieces.
+.section Comments
+Comments are not really statements at all, but it is convenient to
+deal with them at this time.
+Comments are enclosed in brace brackets.
+Everything between the "\{" and the "\}" is ignored.
+.bt
+Because of {ALICE}'s tight structure, comments may only appear in two
+places: as part of a template (where they are included automatically)
+and on a line all on their own.
+If you have a comment that extends over several lines, each line must be
+enclosed in brace brackets, as in
+.codebeg 10
+\{    This\}
+\{    is\}
+\{    a\}
+\{    comment!\}
+.codend 0
+.section The Assignment Statement
+The most basic statement type in Pascal is the assignment.
+It has the form
+.too 10
+{it variable} := {it expression}
+.blnk 0
+where the type of {it expression} is assignment-compatible
+with the type of {it variable}.
+An assignment statement stores the value of the {it expression} in
+the given {it variable}.
+.bt
+You may not assign values to variables that have a {rwd file} type, or
+records or arrays that contain a {rwd file} type.
+.bt
+If a string value (constant or variable) is assigned to a variable of
+a string type, the result depends on the relative lengths of the two strings.
+If you assign a longer string to a shorter one, the assigned string
+will be truncated to the appropriate length.
+For example, if {type str3} is a string variable of length {type 3},
+.codebeg 10
+str3 := 'abcde';
+.codend 0
+stores the string {type "abc"} in {type str3}.
+.bt
+If you assign a shorter string to a longer one, the characters of the
+shorter string are placed in the longer string, and then the special
+{type StrEnd} character is placed after the last character to mark the
+end of the string.
+For example, if {type str5} is a string of length {type 5},
+.codebeg 10
+str5 := 'abc';
+.codend 0
+gives {type str5} the following elements.
+.codebeg 10
+str5[1] = 'a'
+str5[2] = 'b'
+str5[3] = 'c'
+str5[4] = StrEnd
+str5[5] is undefined
+.codend 0
+.tp
+{ALICE} also lets you assign string constants to {type Pointer} variables.
+The string is created in memory and the {type Pointer} variable
+receives a pointer to the first character in the string.
+For example, you might write
+.codebeg 10
+type
+____str10 = packed array [1..10] of char;
+var
+____p : Pointer;
+____sp : ^str10;
+begin
+p := 'SMILE!';
+sp := p;
+writeln(sp^[1]);
+.codend 0
+This will write out the letter {type S}.
+.bt
+You can also assign variables of type {type String} to {type Pointer} variables;
+the resulting pointer points at the first character of the string ({it not} at
+the 0th element).
+.bt
+The assignment statement is also used in functions (subprograms that
+return values to their callers).
+The function indicates its return value by assigning the value to
+the name of the function.
+For example, in a function called {type func}
+.codebeg 10
+func := 3;
+.codend 0
+means that the function should return the value {type 3}.
+The type of the value assigned to the function name should be assignment
+compatible with the type declared for the function.
+.bt
+This sort of assignment does {it not} cause the function to
+return immediately.
+The function may have several statements that assign values to the
+function name.
+The return value for the function will be the last value that was
+assigned to the function name.
+.section Procedure Calls
+A procedure call is another common kind of statement.
+The general form of a procedure call is
+.too 10
+{it procname}( {it argument},{it argument},... )
+.blnk 0
+where {it procname} is the name of the procedure that is being called.
+If no arguments are being passed to the procedure, the parentheses are
+omitted, as in
+.codebeg 10
+writeln;
+.codend 0
+Chapter 6 discusses function calls in more detail.
+.section The goto Statement
+The {rwd goto} statement can be used to jump to a labelled statement.
+The label must be a positive integer constant that has been declared in the
+{rwd label}
+declaration section of the program or subprogram that contains the {rwd goto}.
+(Note that the label cannot be a constant expression or a variable.)
+A typical {rwd goto} statement might be
+.codebeg 10
+goto 12;
+.codend 0
+.tp
+The scope of a label is the subprogram in which it was defined.
+It is not possible to jump from a subprogram into an entirely separate
+subprogram.
+However, if one subprogram is declared inside another subprogram, you
+may jump out of the inner subprogram to the outer -- simply declare a
+label in the outside subprogram and the scope of the label will include
+the inner subprogram.
+.bt
+You cannot jump into a {rwd begin} block or any statement whose
+template contains a {rwd begin} block.
+You can, however, jump {it out} of a {rwd begin} block, provided that
+you are not superstepping or using {ALICE}'s EXECUTE command.
+.section Structured Statements
+The statements we have discussed up to this point were {it simple}
+statements.
+The ones that follow are known as {it structured} statements.
+Structured statements are ones that can contain other statements.
+.subsect Compound Statements
+A compound statement is made up of one or more other statements.
+A compound statement may be used anywhere a simple statement may be used.
+.bt
+Compound statements start with the keyword {rwd begin} and end with the
+keyword {rwd end}.
+Statements inside a compound statement are separated with semicolons.
+The standard form of a compound statement is
+.too 10
+{rwd begin}
+____{it statement};
+____{it statement};
+____{it statement};
+____     ...
+____{it statement}
+{rwd end}
+.blnk 0
+(Note that the block can contain a single statement as well as a number of
+statements.)
+.bt
+Normally, compound statements are not used explicitly in {ALICE}, since
+all structured statements automatically contain a compound statement.
+This is shown in the sections that follow.
+.subsect The if Statement
+There are two forms of the Pascal {rwd if} statement.
+The first is
+.codebeg 10
+{rwd if} {pclho Condition} {rwd then begin}
+____{pclho Statement}
+____{pclho Statement}
+__________...
+____{pclho Statement}
+____{rwd end};
+.codend 0
+The {plho Condition} is a {type Boolean} expression.
+If the result is {type true}, the statement(s) in the {rwd begin} block
+are executed.
+If the result is {type false}, {ALICE} will skip
+to whatever follows the {rwd end} of the block.
+For example,
+.codebeg 10
+if A > B then begin
+____C := A;
+____end;
+.codend 0
+will do the assignment {type C:=A} if {type A} is greater than {type B}.
+If {type A} is not greater than {type B}, control will skip to whatever
+follows the {rwd end}.
+.bt
+The second form of the {rwd if} statement is
+.codebeg 10
+{rwd if} {pclho Condition} {rwd then begin}
+____{pclho Statement}
+______...
+____{rwd end}
+_{rwd else begin}
+____{pclho Statement}
+______...
+____{rwd end};
+.codend 0
+Again, the {plho Condition} is a {type Boolean} expression.
+If this result is {type true}, the statement(s) in the first {rwd begin}
+block are executed.
+If the result is {type false},
+the statements in the second {rwd begin} block are executed.
+.bt
+You may nest {rwd if}s and {rwd else}s if you wish.
+{ALICE} will show how {rwd if}s and {rwd else}s pair up by indentation.
+.subsect The case Statement
+The {rwd case} statement contains several blocks of code.
+It decides which of these blocks should be executed by looking at the
+value of an expression.
+The statement has the form
+.codebeg 10
+{rwd case} {pclho Value} {rwd of}
+____{pclho Case-Instance}
+____{pclho Case-Instance}
+____{pclho Case-Instance}
+________...
+____{pclho Case-Instance}
+____{rwd end};
+.codend 0
+The {plho Case-Instance} blocks take the form
+.codebeg 10
+{pclho Constant} : {rwd begin}
+____{pclho Statement}
+____{rwd end};
+.codend 0
+or
+.codebeg 10
+{pclho Constant}, {pclho Constant}, ... : {rwd begin}
+____{pclho Statement}
+____{pclho Statement}
+________...
+____{pclho Statement}
+____{rwd end};
+.codend 0
+or
+.codebeg 10
+{pclho Constant}..{pclho Constant}: {rwd begin}
+____{pclho Statement}
+____{pclho Statement}
+________...
+____{pclho Statement}
+____{rwd end};
+.codend 0
+The first step in executing the {rwd case} statement is to evaluate
+the {plho Value} that follows the keyword {rwd case}.
+This expression may have any scalar type.
+.bt
+The next step is to see if the result of the expression matches any of
+the constants that begin individual case instances.
+These constants are known as {it case labels}.
+The case label values must be of the same scalar type as the expression
+that follows the keyword {rwd case}.
+The result of this expression matches a case label if it is equal to
+one of the constant values given in the label, or if it falls in the
+range of a
+.codebeg 10
+{pclho Constant}..{pclho Constant}
+.codend 0
+form.
+The first time that a case label matches the result of the expression,
+the {rwd begin} block following the case label will be executed.
+Once this statement has been executed, {ALICE} will jump to whatever
+follows the {rwd end} that marks the end of the whole {rwd case} statement.
+.bt
+As a simple example, suppose the
+variable {type i} is a {type integer} variable.
+.codebeg 10
+case i%3 of
+__0 : begin
+______writeln('Number is multiple of three');
+______end;
+__1,2 : begin
+______writeln('Number is not a multiple of three');
+______end;
+__end;
+.codend 0
+This code determines whether {type i} is an even multiple of three and
+prints out the result.
+.bt
+In addition to normal case instances, every {rwd case} statement can
+contain a special case instance of the form
+.codebeg 10
+{rwd else begin}
+____{pclho Statement}
+____{pclho Statement}
+________...
+____{pclho Statement}
+____{rwd end};
+.codend 0
+The {rwd begin} block in this case instance is executed if the
+case expression does not match any of the other case labels.
+For example, you might have
+.codebeg 10
+case c of
+__'a'..'z' : begin
+______writeln('Lower case');
+______end;
+__'A'..'Z' : begin
+______writeln('Upper case');
+______end;
+__else begin
+______writeln('Not a letter');
+______end;
+__end;
+.codend 0
+If {type c} is an upper or lower case letter, an appropriate message
+is printed.
+Otherwise, the {type Not a letter} message is printed.
+.bt
+The {rwd else} does not have to be the last in the list of cases.
+If a {rwd case} statement has two {rwd else} clauses, you will be given
+an error message when you run the program.
+If a {rwd case} statement has no {rwd else} clause and the case expression
+value does not match any of the case labels, you will also be given an
+error at run-time.
+.subsect The while Statement
+The {rwd while} statement has the form
+.codebeg 10
+{rwd while} {pclho Condition} {rwd do begin}
+____{pclho Statement}
+____{pclho Statement}
+________...
+____{pclho Statement}
+____{rwd end};
+.codend 0
+The {plho Condition} is a {type Boolean} expression.
+The statements in the {rwd begin} block will be executed over and over
+again as long as the condition is {type true} at the beginning of the block.
+The looping stops when the condition is found to be {type false}
+at the beginning of the block.
+For example,
+.codebeg 10
+i := 1;
+while arr[i] > 0 do begin
+____i := i + 1;
+____end;
+.codend 0
+begins with the index {type i} at {type 1} and loops until it finds an element
+of the array {type arr} that is less than or equal to zero.
+.bt
+If the expression at the beginning of the {rwd while} loop is {type false}
+to begin with, the {rwd begin} block is {it not} executed.
+In the example above, if {type arr1} was not greater than {type 0},
+the statement inside the {rwd while} loop would not even be executed once.
+.subsect The repeat Statement
+The {rwd repeat} statement is similar to the {rwd while} statement.
+It has the form
+.codebeg 10
+{rwd repeat}
+____{pclho Statement}
+____{pclho Statement}
+____{pclho Statement}
+________...
+____{pclho Statement}
+{rwd until} {pclho Condition};
+.codend 0
+The {plho Condition} is a {type Boolean} expression.
+The statements between the {rwd repeat} and {rwd until} will be repeated
+until the result of the condition is {type true} at the end of
+an execution of the block.
+.bt
+The statements between {rwd repeat} and {rwd until} will always be executed
+at least once --  the condition is tested {it after} the statements have been
+executed, unlike {rwd while}, where the condition is tested {it before}
+the statements are executed.
+For example, in
+.codebeg 10
+i := 0;
+repeat
+____i := i + 1
+until arr[i] <= 0;
+.codend 0
+the assignment incrementing {type i} will always be executed at least once.
+.subsect The for Statement
+The {rwd for} statement is another way of repeating a block of statements.
+It has the form
+.codebeg 10
+{rwd for} {pclho variable} := {pclho start} {rwd to} {pclho finish} {rwd do begin}
+____{pclho Statement}
+____{pclho Statement}
+____{pclho Statement}
+________...
+____{pclho Statement}
+____{rwd end};
+.codend 0
+The {plho variable} is called the {it control variable}
+of the {rwd for} loop.
+It may have any scalar type.
+The expressions {plho start} and {plho finish} must have the same scalar type.
+.bt
+The first step in executing the {rwd for} statement is comparing the
+expressions {plho start} and {plho finish}.
+If {plho start} is greater than {plho finish}, the {rwd begin} block that
+comes after the keyword {rwd do} will {it not} be executed at all.
+.bt
+If {plho start} is less than or equal to {plho finish}, the value of
+{plho start} will be assigned to the control variable.
+The {rwd begin} block after the {rwd do} will then be executed.
+When the statement is finished, {ALICE} will change the value of the
+control variable to its successor using the {type succ} function and the
+statement will be executed again.
+(The {type succ} function is described in Chapter 8.)
+This process will be repeated, until {ALICE} has finished executing the
+statement with the control variable having the value given by {plho finish}.
+When this is finished, {ALICE} will go on to whatever follows the
+{rwd end} of the {rwd for} loop block.
+.bt
+As an example,
+.codebeg 10
+for i := 1 to 10 do begin
+____arr[i] := 0;
+____end;
+.codend 0
+zeroes the first {type 10} elements of an array {type arr}.
+The statement after {rwd do} is executed once for every value of {type i}
+between {type 1} and {type 10} (inclusive).
+.bt
+At the end of a {rwd for} loop, the value of the control variable is
+undefined.
+If control passes out of the loop by means of a {rwd goto}, the value of
+the control variable will be whatever it was when the {rwd goto} was
+encountered.
+.bt
+The {rwd for} statement can also be written as
+.codebeg 10
+{rwd for} {pclho variable} := {pclho start} {rwd downto} {pclho finish} {rwd do begin}
+____{pclho Statement}
+____{pclho Statement}
+____{pclho Statement}
+________...
+____{pclho Statement}
+____{rwd end};
+.codend 0
+In this case, {plho start} should be greater than {plho finish}.
+The control variable begins at {plho start} and goes {bo down} step by step
+(using the {type pred} function) until it reaches {plho finish}.
+(The {type pred} function is described in Chapter 8.)
+Apart from this, the {rwd downto} form is the same as the {rwd to} form.
+.bt
+You should not assign values to the control variable inside a {rwd for} block,
+and you may not pass the control variable as a {rwd var} argument to a
+subprogram.
+.subsect The with Statement
+The {rwd with} statement is used to simplify work with {rwd record} variables.
+It has the form
+.codebeg 10
+{rwd with} {pclho record-variable} {rwd do begin}
+____{pclho Statement}
+____{pclho Statement}
+____{pclho Statement}
+________...
+____{pclho Statement}
+____{rwd end};
+.codend 0
+Inside a {rwd with} block, you can refer to fields of the
+given record variable without putting the usual
+.codebeg 10
+record-variable.
+.codend 0
+prefix in front of them.
+For example, suppose we have declared
+.codebeg 1
+type
+____personnel = record
+____________________name : packed array [1..40] of char;
+____________________empno, age : integer;
+____________________income : real
+________________end;
+var
+____Bob, Rick, Nancy : personnel;
+.codend 0
+We might have a {rwd with} statement of the form
+.codebeg 10
+with Bob do begin
+____name := 'Bob Jones';
+____age := 35;
+____income := 30000.00
+____end;
+.codend 0
+This is equivalent to
+.codebeg 10
+begin
+____Bob.name := 'Bob Jones';
+____Bob.age := 35;
+____Bob.income := 30000.00
+____end;
+.codend 0
+Inside the {rwd with} statement, we can use field names without the usual
+prefix.
+If a field name happens to be the same as the name of another variable,
+the reference inside the {rwd with} statement will always be to the field,
+not the variable with the same name.
+.bt
+Note that some versions of Pascal let you write
+.codebeg 10
+with A,B do ...
+.codend 0
+to represent
+.codebeg 10
+with A do begin
+____with B do begin...
+.codend 0
+The abbreviated form is not used in {ALICE}.
+However, the APIN program recognizes the form and will convert it properly
+if you are reading in a program for some other version of Pascal.
+.chapter Program Structure
+A Pascal program takes the following form.
+.too 10
+{rwd program} {it name} ({it file-variables});
+{rwd label} {it lab}, {it lab}, ... ;
+{rwd const}
+____{it name} = {it constant};
+____\{ Other constant declarations \}
+{rwd type}
+____{it name} = {it type};
+____\{ Other type declarations \}
+{rwd var}
+____{it name} : {it type};
+____\{ Other variable declarations \}
+\{ Procedure and function declarations \}
+{rwd begin}
+____{it statements}
+{rwd end.}
+.blnk 0
+We have already discussed the first four declaration sections and the
+possible statements that can appear in the body of the program.
+We will now go on to describe the other parts of the Pascal program.
+.section The program Statement
+Traditionally, every working Pascal program begins with a {rwd program}
+statement.
+With {ALICE}, the {rwd program} statement will always be present, but it
+has absolutely no effect on how the program behaves.
+{ALICE} ignores everything on the {rwd program} statement.
+.bt
+The {rwd program} statement has the form
+.too 10
+{rwd program} {it name}({it file-variables});
+.blnk 0
+The {it name} is the name of the program.
+The {it file-variables} that are enclosed in parentheses in the {rwd program}
+template are {type input} and {type output}.
+These are just there for form -- their presence means nothing.
+More file variables may be added to this list, but this has no meaning to
+the program.
+.bt
+All declarations following the {rwd program} statement (before any
+function or procedure declarations) are global to the entire program.
+.section Procedure Declarations
+The general form of a procedure declaration is
+.too 10
+{rwd procedure} {it name}({it parameter declarations});
+{rwd label}
+____{it label-declarations}
+{rwd const}
+____{it constant-declarations}
+{rwd type}
+____{it type-declarations}
+{rwd var}
+____{it variable-declarations}
+{it procedure and function declarations}
+{rwd begin}
+____{it Code for procedure}
+{rwd end};
+.blnk 0
+This is almost exactly the same format as the program itself.
+The various declaration sections declare identifiers that are local
+to this particular procedure.
+This items will not be available to subprograms that are defined outside
+this procedure.
+.bt
+The names will also mask any names declared in subprograms that enclose
+the procedure.
+For example, suppose that procedure {type A} contains the declaration of
+procedure {type B} and both declare a variable {type i}.
+Inside {type B}, the identifier {type i} will refer to {type B}'s version of
+this variable; outside {type B}, the identifier {type i} will refer to
+{type A}'s version of the variable.
+Operations performed on {type i} in {type B} will not affect the value of
+{type i} in {type A}.
+.bt
+The {it parameter declarations} at the beginning of the procedure
+declaration give the names and the types for the parameters that the
+procedure accepts.
+The parameter names are local and mask any identical names declared
+outside the procedure.
+Simple parameter declarations can have any of the following forms.
+.too 10
+{rwd   } {it name} : {it type};
+{rwd   }{it name}, {it name}, ... : {it type};
+{rwd var} {it name} : {it type};
+{rwd var} {it name}, {it name}, ... : {it type};
+.blnk 0
+For example, a typical {rwd procedure} declaration might begin with
+.codebeg 10
+procedure example( k : integer;
+___________________x, y : real;
+___________________var c : char);
+.codend 0
+.tp
+Parameter declarations without the word {rwd var} are called
+{it value parameters}.
+When the procedure is called, these value parameters will receive a
+copy of the argument value passed by the caller.
+This process is called {it call by value}.
+The argument passed by the caller may be any expression of an assignment
+compatible type, because passing the argument is like assigning a value
+to the parameter.
+.bt
+Because the procedure only has a {it copy} of these parameters, operations
+that the procedure performs on the parameters will {it not} effect the
+corresponding arguments in the caller.
+For example, consider the following procedure.
+.codebeg 10
+procedure fakeswitch(a,b:integer);
+var
+____temp : integer;
+begin
+temp := a;
+a := b;
+b := temp;
+end;
+.codend 0
+This procedure switches the values of its parameters, but the switch has no
+effect on the values that the caller passes.
+Since {type fakeswitch} is only working with copies of the caller's arguments,
+nothing can change in the caller.
+.bt
+Parameter declarations that start with the word {rwd var} are called
+{it var parameters}.
+When the procedure is called, the caller will pass the address of each
+argument instead of the value of the arguments.
+Through these addresses, the parameters are directly associated with
+the caller's arguments.
+This process is called {it call by reference}.
+Any operations that the procedure performs on the parameters
+are actually performed on the arguments passed by the caller.
+For this reason, the arguments passed by the caller must be variables with
+exactly the same type as the parameter -- the parameter and the argument
+are exactly the same thing.
+As an example, consider the following procedure.
+.codebeg 10
+procedure trueswitch(var a,b:integer);
+var
+____temp : integer;
+begin
+temp := a;
+a := b;
+b := temp;
+end;
+.codend 0
+This procedure switches the values of its parameters, and thereby
+switches the values of the arguments that were passed to the procedure.
+The {rwd var} parameters are identified with the arguments passed by
+the caller.
+The arguments must be integer variables.
+This avoids absurdities like
+.codebeg 10
+trueswitch(2,3);
+.codend 0
+which would attempt to switch the values of the constants
+{type 2} and {type 3}.
+.bt
+When a parameter is declared as a {rwd var} parameter, the argument
+passed by the caller may be an array element or a record field as well as
+a normal variable.
+Note that some versions of Pascal do not let you pass an element of a
+packed structure when the argument corresponds to a {rwd var} parameter.
+For example,
+.codebeg 10
+var
+____str : packed array[1..100] of char;
+____...
+proc(str[1]);
+.codend 0
+would be illegal if the parameter for {type proc} was a {rwd var} parameter.
+.bt
+Arguments to a procedure may have any type.
+If you are passing a record or array as a value argument, it is not
+necessary to initialize every field in the record or every element in the
+array.
+You will, however, receive an error if the called routine tries to use
+an uninitialized record field or array element.
+.subsect Generic Type Parameters
+{Alice} supports a special kind of parameter, of type {it generic}.  A generic
+parameter may be of any type, and is passed to the procedure as a record
+containing information about the size and type of the parameter (as well as
+a pointer to the actual parameter that was passed).  The format for the
+generic type record is:
+.codebeg 10
+generic = record
+____Object : pointer;   { pointer to the actual parameter }
+____Size : integer;     { size of the variable in bytes }
+____TypeCode : integer; { the type of the parameter 9see below) }
+____end;
+
+TypeCode is one of:
+
+_1 - enum, boolean, char, byte or small subrange of integer
+_2 - integer or subrange
+_3 - pointer (in which case, size is the size of the object pointed to)
+_4 - real number
+_5 - set
+_6 - string (i.e. packed array [1..n] of char); size is length of string + 2
+_10 - array variable (other than a string)
+_11 - file
+_12 - record
+.codend 0
+.section Function Declarations
+Function declarations are almost exactly like procedure declarations.
+The difference is that the first line has the form
+.too 10
+{rwd function} {it name}({it parameter declarations}):{it type};
+.blnk 0
+The {it type} that comes after the colon at the end of the line is
+the type of value returned by the function.
+.bt
+To set a return value for the function, you should assign the return value
+to the function name, as in
+.codebeg 10
+function iabs(i:integer):integer;
+begin
+if i < 0 then
+____iabs := -i
+else
+____iabs := i
+end;
+.codend 0
+This function returns the absolute value of an integer.
+.bt
+Functions may not return record or file values.
+They may return string values but not other kinds of arrays.
+.section Forward References
+{it Forward references} are needed in some versions of Pascal, but not
+in {ALICE}.
+The need for forward references arises when subprogram {type A} must call
+subprogram {type B}, but {type B} has not yet been defined in the source
+code.
+Because of Pascal's strong type-checking requirements, it is necessary
+to know the types of {type B}'s parameters when {type A} calls {type B}.
+In {ALICE} this is no problem, because {ALICE} knows the types of everything
+by the time you run your program.
+With other versions of Pascal, however, this information may not be
+available, so a forward reference is necessary.
+.bt
+A forward reference is a partial declaration of a subprogram that appears
+before the subprogram is used or defined.
+This declaration consists of the keyword {rwd function} or {rwd procedure},
+followed by the name of the subprogram, followed by declarations for the
+subprogram's arguments, followed by the word {type forward}.
+The forward reference appears in the subprogram declaration section of
+a program or subprogram.
+Once the reference has been made, other subprograms can call the referenced
+subprogram, even if the referenced subprogram isn't actually defined
+until much later.
+.bt
+Such complications are not necessary in {ALICE} and {ALICE} Pascal programs
+will run without any forward references.
+However, if you are using {ALICE} to prepare a Pascal program that will
+eventually run under another version of Pascal, you may need to put
+forward references into your program.
+To do this, type {q for} on any {plho Declaration} placeholder that comes
+before the subprogram is called.
+{ALICE} will lay out the template
+.codebeg 10
+{rwd forward} {pclho routine};
+.codend 0
+Fill in the name of the subprogram for which you need a forward reference.
+When you use the TEXT command to save the program in text form, {ALICE}
+will automatically transform this forward declaration into a forward
+reference of the proper format.
+.bt
+Because {ALICE} uses this technique for forward references, you may not
+use the forward reference format used by other versions of Pascal.
+.bt
+Note that this format is converted over to Alice's convention by APIN.

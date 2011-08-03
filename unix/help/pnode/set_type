@@ -1,0 +1,21 @@
+|16,73
+     The set type is a special information type that is used for sets of
+other types of information.  You can have sets of characters, integers, or
+enumerated values.
+     Pascal lets you find the intersection of sets (*), the union of sets
+(+), and the difference of sets (-).  The "in" operator lets you determine
+if a particular value happens to be inside a set.
+
+Set Examples:
+     type
+         days = (sun,mon,tue,wed,thu,fri,sat);
+     var
+         schedule : set of days;
+     begin
+     schedule := [mon..wed,fri];
+     if thu in schedule then begin ...
+|mFor more, choose
+|iDo nothing,nop
+|iIn,Hpnode/set_membersh
+|iSet constants,Hpnode/set
+|p

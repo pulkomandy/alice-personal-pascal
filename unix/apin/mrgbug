@@ -1,0 +1,33 @@
+program {+ Ignored Name}(input, output);
+
+type
+	filebuffertype = record
+		reserved : array [1..21] of Byte;
+		attribute : Byte;
+		time, date, filesizelo, filesizehi : integer;
+		name : packed array [1..13] of char;
+	    end;
+
+var
+	S : packed array [1..40] of char;       {general purpose string}
+	regs : registerss8086;
+	FileName : packed array [1..60] of char;
+	Filebuffer : filebuffertype;
+
+procedure find_first ;
+	
+	var
+		error : integer;        {error status}
+	
+    begin
+	Filebuffer.name := '             ';
+	regs.ax := $4e00;
+	regs.cx := $ff;
+	regs.ds := address(FileName);
+	regs.dx := address(FileName);
+	Intr(dosfunc, regs);
+	error := 1 and regs.Flags;
+    end;
+begin
+{+ Statement}
+end.

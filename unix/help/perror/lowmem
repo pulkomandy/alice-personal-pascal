@@ -1,0 +1,16 @@
+|16,74
+You are running out of memory. Save your work and reload.
+    As the message says, you have come close to filling up the memory of
+    your computer.  This may be a problem with ALICE or it may just mean
+    that you have too many things in too many workspaces.  It is imperative
+    that you save your program(s) in files and quit immediately, since it
+    is only a matter of time before ALICE runs out of memory and aborts.
+         If you have trouble saving your workspaces, issue the RECOVER
+    command to try to get some memory back.  However, only do this if you
+    have trouble saving.  If you were using several workspaces before,
+    don't load them all back in when you restart ALICE, or you'll just end
+    up with the same problem again.
+|mFor more, choose
+|iDo nothing,nop
+|iRecovering memory,Hcommand/recover
+|p

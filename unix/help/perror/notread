@@ -1,0 +1,11 @@
+|11,72
+Cannot read from this file
+    You attempted to do a read or get from a file that hasn't been set up
+    for reading.  Usually this means that it was set up for writing with
+    "rewrite".  You can use the "update" procedure to create a file that
+    can be both read from and written to.
+|mFor more, choose
+|iDo nothing,nop
+|iUpdate procedure,Hpsymbol/update
+|iGet procedure,Hpsymbol/get
+|p

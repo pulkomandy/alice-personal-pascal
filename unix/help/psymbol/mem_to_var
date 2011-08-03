@@ -1,0 +1,13 @@
+|9,62
+Mem_To_Var( variable, offset, segment )
+
+This procedure copies the contents of a region of memory into a
+variable.  The variable is marked as initialized.
+See Var_To_Mem above for more details.
+
+THIS IS NOT IMPLEMENTED IN THE CURRENT ICON RELEASE
+
+|mFor more, choose
+|iDo nothing,nop
+|iVar_To_Mem,Hpsymbol/var_to_mem
+|p

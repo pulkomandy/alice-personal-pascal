@@ -1,0 +1,12 @@
+|12,73
+     The "StrDelete" procedure deletes a number of characters from a
+string.  The first argument of StrDelete is a string variable.  The second
+is an integer, giving the number of characters to be deleted.  The third
+is another integer, giving the subscript of the first character to be
+deleted.
+
+StrDelete Examples:
+     str := 'Hixxxx there!';
+     StrDelete(str,4,3);
+     writeln(str);
+         {Will write out "Hi there!"}

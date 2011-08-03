@@ -1,0 +1,12 @@
+|12,74
+Non-set value combined with set
+    You have tried to execute an operation where one operand was a set and
+    the other was not.  One possible cause of this is confusing an array
+    subscript with a set.  Both subscripts and set elements are enclosed in
+    square brackets, so if you made a small error when typing an array
+    subscript operation, ALICE may become confused.
+|mFor more, choose
+|iDo nothing,nop
+|iSet constants,Hpnode/set
+|iSet Types,Hpnode/set_type
+|p

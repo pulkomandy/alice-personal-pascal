@@ -1,0 +1,19 @@
+|19,73
+Value NUMBER is not in subrange bounds for this assignment
+    In an assignment, you attempted to assign NUMBER to a variable.
+    However, the variable was declared with a subrange type and the NUMBER
+    you assigned was outside this subrange.  For example, you might have
+
+          var
+              i : 1..10;
+            ...
+          i := 12;
+
+    Either change the declaration to expand the subrange or determine why
+    the assigned value fell outside the proper subrange.
+         Note that this error can also crop up when you use subranges
+    inside sets.
+|mFor more, choose
+|iDo nothing,nop
+|iSubranges,Hpnode/subrange
+|p

@@ -1,0 +1,18 @@
+|18,73
+Symbol used before it is defined
+    It is illegal to use a symbol (in declarations) before it is defined.
+    For example, the following is invalid:
+
+          type
+              col = red..green;
+              colours = (red,blue,orange,green,purple);
+
+    The definition of "col" is called a forward reference because the
+    explanation of "red" and "green" comes later in the program.
+         The only kind of legal forward reference involves pointers.  You
+    can talk about a pointer to a particular type before you have declared
+    the type as in
+
+          type
+              MONEYP = ^MONEY;
+              MONEY = real;

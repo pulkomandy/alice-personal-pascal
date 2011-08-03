@@ -1,0 +1,18 @@
+|18,74
+Single-stepping Through a Program:
+     To single-step, just press F2 over and over.  Every time you press the
+key, ALICE will execute another instruction.
+     If you come to a subprogram call, ALICE will execute the subprogram
+step by step as well.  If you want do not want to single-step through
+subprogram calls, use SUPERSTEP.
+     You will notice that single-stepping splits the screen into two parts,
+one showing the source code and one showing your output.  To return the
+screen to normal, press F6 to get the Run-Time Menu and choose the "Debug
+off" selection.
+|mFor more, choose
+|iDo nothing,nop
+|iThe STEP command,Hcommand/step
+|iSUPERSTEP,Hcommand/superstep
+|iContinuing programs,Hcommand/runit
+|iDebug off,Hcommand/bugoff
+|p

@@ -1,0 +1,14 @@
+|14,74
+Getting a List of What You Can Type Next:
+     Pressing SHIFT-times (where you are using the "multiplication x" on
+the keypad at the right of the ICON keyboard) will give you a list of
+everything that you could type to fill in the current empty placeholder.
+If you select something from this list, ALICE will put it into the
+placeholder for you.  For example, if you are on a Variable placeholder,
+issuing this command will give you the names of all the variables that
+could legally be filled into the placeholder.  You can fill the placeholder
+just by choosing the correct name from this menu.
+|mFor more, choose
+|iDo nothing,nop
+|iThe TOKLIST command,Hcommand/toklist
+|p

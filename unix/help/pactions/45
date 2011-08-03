@@ -1,0 +1,8 @@
+|8,66
+     Selecting this lets you declare a parameter while creating a
+subprogram header.  ALICE will lay out the template for a parameter
+declaration
+
+          Name : Type;
+
+and fill the identifier into the Name placeholder.

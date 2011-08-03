@@ -1,0 +1,5 @@
+|5,74
+     This action occurs when you type a "]" inside an array subscript.  The
+effect is to move the cursor to the end of the subscript.  Whatever you
+enter next will be entered AFTER the square bracket that marks the end of
+the subscript.

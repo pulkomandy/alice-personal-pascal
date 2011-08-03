@@ -1,0 +1,25 @@
+|20,74
+     The variant part of a record can contain different fields of informa-
+tion depending on the value of a "tag field".  The tag field need not have
+a name.  In a record that holds information about books we might have
+
+          case English : Boolean of
+          true : (Canadian : Boolean);
+          false : (language : packed array [1..20] of char;
+                   translator : packed array [1..40] of char);
+
+The "tag field" is a Boolean field named "English".  This field indicates
+if the book was originally written in English.  The format of the remainder
+of the record depends on whether the tag field is "true" or "false".
+
+Variant Examples:
+  {In a record describing cattle}
+  case cowtype : (cow,bull,calf) of
+  cow : (quarts : integer;);
+  bull : (angry : Boolean;);
+  calf : (fate : (veal,milkstock,breeding););
+|mFor more, choose
+|iDo nothing,nop
+|iRecords,Hpnode/record_type
+|iVariant cases,Hpnode/variant_case
+|p

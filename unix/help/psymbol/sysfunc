@@ -1,0 +1,17 @@
+|14,73
+     The ISysCall function is the same as the SysFunc function.  ISysCall
+is used to call an assembler language or library routine.  The first argu-
+ment must be an integer value that gives the address of the routine to be
+called.  After this come a maximum of ten other arguments to be passed to
+the routine being called.  The value returned by ISysCall is an integer
+indicating the value returned by the invoked routine.
+     Further details about this subprogram may be found in the ALICE
+Reference Manual.
+
+ISysCall Examples:
+     i := ISysCall(routine,arg1,arg2,...,arg10);
+|mFor more, choose
+|iDo nothing,nop
+|isysproc,Hpsymbol/sysproc
+|isysfunc,Hpsymbol/sysfunc
+|p

@@ -1,0 +1,7 @@
+|7,70
+     Selecting this lets you make a label declaration.  It only happens
+after the LABEL declaration section has already been set up as
+
+          label Label;
+
+The integer token is filled in to the Label placeholder.

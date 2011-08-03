@@ -1,0 +1,15 @@
+|15,74
+Bad Save Format
+(And variations of this message)
+    You tried to load a program from a file, but the file didn't contain a
+    program in the ALICE Pascal format.  Check the file to make sure it
+    contains an ALICE Pascal program.  If it does, the program was probably
+    saved using an old version of ALICE, and your current version of ALICE
+    uses a different file format.  To convert the program to the new
+    format, quit ALICE and type
+
+            apmap4 file
+
+    where "file" is the name of the old format file.  The APMAP4 program
+    will convert this file into the current format, and you may then LOAD
+    it into ALICE normally.

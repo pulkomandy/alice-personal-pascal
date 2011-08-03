@@ -1,0 +1,11 @@
+|11,74
+     A Block Statement placeholder in ALICE stands for any sort of
+construct that can contain other statements: WHILE loops, IF statements,
+etc.  This placeholder is produced by the ENCLOSE command.  To fill in a
+Block Statement placeholder, type the keyword that starts the statement you
+want (e.g. "while", "if"), and ALICE will lay out the appropriate kind of
+enclosing statement.
+|mFor more, choose
+|iDo nothing,nop
+|iENCLOSE,Hcommand/enclose
+|p

@@ -1,0 +1,12 @@
+|13,74
+Breakpoint!
+    As ALICE was executing your program, it encountered a breakpoint.  This
+    breakpoint was either set by the BREAKPOINT command or by using the
+    "pause" procedure.  To start your program after a breakpoint, issue the
+    RUNIT command ("Continue" on the Run-Time Menu or None).
+|mFor more, choose
+|iDo nothing,nop
+|iBreakpoints,Hcommand/breakpoint
+|iRUNIT,Hcommand/runit
+|ipause,Hpsymbol/pause
+|p

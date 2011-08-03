@@ -1,0 +1,19 @@
+|14,74
+     The "peek" function lets you peek into memory and see what is there.
+The argument of "peek" is an integer that stands for a memory address.  The
+value returned by "peek" is an integer that holds the value of the byte
+that was at the given address.  Since this is only a byte, the value will
+be in the range 0..255.
+
+Peek Examples:
+     var
+         i, v : integer;
+     begin
+     i := address(v);
+     poke(i,200);
+     writeln(peek(i),' is the value 200.');
+|mFor more, choose
+|iDo nothing,nop
+|iPoke,Hpsymbol/poke
+|iAddress,Hpsymbol/address
+|p

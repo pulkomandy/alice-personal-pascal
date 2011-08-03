@@ -1,0 +1,13 @@
+|13,74
+Operand must be integer or real
+    You tried to perform a numeric operation on something that wasn't a
+    number.  Check the type on the values that appear in the operation.
+    Either change these values or change the operation.  The "ord" function
+    may be useful -- it converts an enumerated type or a character into an
+    integer.
+|mFor more, choose
+|iDo nothing,nop
+|iInteger,Hpsymbol/integer
+|iReal,Hpsymbol/real
+|iOrd,Hpsymbol/ord
+|p

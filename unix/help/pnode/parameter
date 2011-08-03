@@ -1,0 +1,29 @@
+|23,74
+     A value parameter is a type of parameter that can be listed in the
+heading of a subprogram declaration.  To declare a value parameter, just
+give the parameter's name and its type.
+     When the subprogram is called, this parameter gets a COPY of the argu-
+ment being passed.  Nothing that the subprogram does to the parameter can
+affect the argument that the caller passed, because the subprogram only has
+a copy of the argument's value.
+     To change a value parameter to a VAR parameter, move the cursor to the
+parameter and type "var".
+     Passing large arrays and records as value parameters can be
+inefficient; use VAR parameters instead.
+
+Value Parameter Examples:
+procedure proc(i:integer; var c:char);
+    {"i" is a value parameter; "c" is a var parameter}
+function f(x:real):real;
+    {"x" is a value parameter}
+ ...
+f(2.0)    f(a)    f(b/2.4)
+proc(1,c)    proc(i,c)    proc(3+i,c)
+    {value parameters can be many things}
+    {var parameters must be variables}
+|mFor more, choose
+|iDo nothing,nop
+|iVAR parameters,Hpnode/var_paramete
+|iProcedure declarations,Hpnode/procedure
+|iFunction declarations,Hpnode/function
+|p

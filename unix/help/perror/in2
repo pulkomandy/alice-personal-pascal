@@ -1,0 +1,12 @@
+|12,74
+IN: Types of set and member don't match
+    You tried to use the "in" operator to determine if a particular value
+    was a member of a set.  However, the value didn't have the same base
+    type as the set.  As an example, this error occurs if you try to see if
+    3 is in the set ['a','b','c'].  Change the IN expression so that the
+    types match.
+|mFor more, choose
+|iDo nothing,nop
+|iSet,Hpnode/set
+|iIn operator,Hpnode/set_membersh
+|p

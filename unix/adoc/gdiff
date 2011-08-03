@@ -1,0 +1,2210 @@
+1,3c1,3
+< .include lasmacros
+< .sp 9ln
+< .center {big INTRODUCTION}
+---
+> .func booktype [ALICE Pascal User Guide]
+> .sp 9ln
+> .center {big ALICE User Guide & Reference}
+36c36
+< As an example, ALICE allows the user to "single-step" through a program,
+---
+> As an example, ALICE allows the user to {q single-step} through a program,
+41,44c41,44
+< to "get inside" their programs as the programs run.
+< .bt
+< As another example of the interplay between debugger, interpreter, and
+< editor, ALICE supports "cursor-following".
+---
+> to {q get inside} their programs as the programs run.
+> .bt
+> As another example of the interplay between debugger, interpreter, and
+> editor, ALICE supports {q cursor-following.}
+48c48
+< This allows the user to "see" the program in action.
+---
+> This allows the user to {q see} the program in action.
+60c60
+< A unique feature of the HELP system is the  "What can I type here?" menu.
+---
+> A unique feature of the HELP system is the  {q What can I type here?} menu.
+78c78
+< ALICE commands may also be "bound" to keys, so the
+---
+> ALICE commands may also be {q bound} to keys, so the
+87c87
+< The word "unique" is important.
+---
+> The word {q unique} is important.
+106c106
+< The most experienced programmers often prefer to "leap into" using a
+---
+> The most experienced programmers often prefer to {q leap into} using a
+110a111
+> .newpage
+149,150c150,159
+< Looking Glass Software has published its own introduction to programming
+< and Pascal, {it Learning to Program with ALICE Pascal}.
+---
+> .bt
+> Looking Glass Software has published its own introduction to programming
+> and Pascal, {it Learning to Program with ALICE Pascal} by Jim Gardner.
+> We suggest this
+> book because it covers a variety of topics concerning Pascal and computers
+> while giving hands-on experience with ALICE.  The book is complete with
+> classroom exercises and many interesting lessons.
+> It can be ordered through
+> Software Channels Inc., 22 Balliol Street, Toronto, Ontario.  Phone
+> 416/482-2002.  Specify the version for the ICON.
+167d175
+< We sometimes call this the {it META} key.
+181,187c189,195
+< the "8" key on the keypad.
+< This is NOT the same as pressing the "8" key on the main
+< part of the keyboard.
+< We might also say things like {key SHIFT-F2} (which means you should hold
+< down {key SHIFT} and press the {key F2} key) or {key SHIFT-divide}
+< (which means you should hold
+< down {key SHIFT} and press the "divide" key on the keypad at the right of the
+---
+> the {q 8} key on the keypad.
+> This is NOT the same as pressing the {q 8} key on the main
+> part of the keyboard.
+> We might also say things like {key SHIFT-F2} (which means you should hold
+> down {key SHIFT} and press the {key F2} key) or {key SHIFT-{divide}}
+> (which means you should hold
+> down {key SHIFT} and press the {q divide} key on the keypad at the right of the
+200c208
+< and press the "U" key.
+---
+> and press the {q U} key.
+213c221
+< In this manual, we will generally use the term "highlighted" to mean
+---
+> In this manual, we will generally use the term {q highlighted} to mean
+224,228c232,235
+< .screen From file whiletemp, showing WHILE template
+< {plho Condition} and {plho Statement} are empty placeholders that the user
+< must fill in to get a complete {rwd while} loop.
+< ALICE shows underlines placeholders or shows them in a special colour,
+< depending on what kind of monitor display you are using.
+---
+> .screen 6 8 whiletemp
+> {plho Condition} and {plho Statement} are empty placeholders that the user
+> must fill in to get a complete {rwd while} loop.
+> ALICE shows underlines placeholders on the ICON display.
+269,274c276,281
+< {plho Value} placeholder and type "+", ALICE will expand things to
+< .codebeg 10
+< {plho Value} + {plho Value}
+< .codend 0
+< However, this is not very natural to most people.
+< Therefore, ALICE also lets you type expressions "straight", as they would
+---
+> {plho Value} placeholder and type {q +,} ALICE will expand things to
+> .codebeg 10
+> {pclho Value} + {pclho Value}
+> .codend 0
+> However, this is not very natural to most people.
+> Therefore, ALICE also lets you type expressions {q straight,} as they would
+325,326c332,333
+< .subsect The >> Key
+< The >> key
+---
+> .subsect The {rightfquote} Key
+> The {rightfquote} key
+332,333c339,340
+< .subsect The << Key
+< The << key
+---
+> .subsect The {leftfquote} Key
+> The {leftfquote} key
+340c347
+< For the purposes of >> and <<, an erroneous piece of
+---
+> For the purposes of {rightfquote} and {leftfquote}, an erroneous piece of
+348c355
+< .screen From file fortemp, showing FOR template
+---
+> .screen 7 11 forsq1
+450,453c457,461
+< .hbb (a)
+< You can press the command key CTRL-X and enter a command that
+< explicitly calls up a command menu.
+< .hbb (b)
+---
+> .begin list
+> 
+> You can press the command key CTRL-X and enter a command that
+> explicitly calls up a command menu.
+> 
+459,460c467,468
+< .hbb (c)
+< Press a "menu-summoning" key.
+---
+> 
+> Press a {q menu-summoning} key.
+463a472
+> .end list
+481,489c490,500
+< named "ap.ini"
+< under ALICE's directory.
+< You may change the standard set of bindings by changing "ap.ini".
+< You may also create new key bindings of your own in two ways.
+< .hbb (a)
+< Using the MAP command (described in Chapter 4).
+< .hbb (b)
+< Using the "m=" option on the command line that invokes ALICE (described
+< in Chapter 5).
+---
+> named {q ap.ini}
+> under ALICE's directory.
+> You may change the standard set of bindings by changing {q ap.ini.}
+> You may also create new key bindings of your own in two ways.
+> .begin list
+> 
+> Using the MAP command (described in Chapter 4).
+> 
+> Using the {q m=} option on the command line that invokes ALICE (described
+> in Chapter 5).
+> .end list
+509,513c520,525
+< .hbb (a)
+< Move the cursor to the section of code you want to select.
+< .hbb (b)
+< Press F10.
+< This is called the {it select} key.
+---
+> .begin list
+> 
+> Move the cursor to the section of code you want to select.
+> 
+> Press F10.  This is called the {it select} key.
+> 
+526c538
+< If the cursor is on the "0" of the assignment statement, only the "0"
+---
+> If the cursor is on the {q 0} of the assignment statement, only the {q 0}
+531c543
+< .hbb (c)
+---
+> 
+536a549
+> .end list
+566c579
+< This "unselects" the code.
+---
+> This {q unselects} the code.
+576c589
+< When you first start ALICE, you are placed in a workspace called "main".
+---
+> When you first start ALICE, you are placed in a workspace called {q main.}
+629c642
+< then press ,C.
+---
+> then press {cedille}.
+643,647c656,660
+< ,C to type the rest.
+< .bt
+< Pressing ,C also works for built-in names.
+< For example, if you want to say that a variable has the type {type integer},
+< just enter {type int}, then press ,C to type the rest.
+---
+> {cedille} to type the rest.
+> .bt
+> Pressing {cedille} also works for built-in names.
+> For example, if you want to say that a variable has the type {type integer},
+> just enter {type int}, then press {cedille} to type the rest.
+652c665
+< ,C, ALICE will not check names that are local to other functions
+---
+> {cedille}, ALICE will not check names that are local to other functions
+677,686c690,701
+< .bullet
+< when you are entering a comment
+< .bullet
+< when you are entering a string constant
+< .bullet
+< when you are entering an expression in a {plho Value} or {plho Condition}
+< placeholder
+< .bullet
+< when you are editing something using the EDIT command (described in
+< Chapter 4).
+---
+> .begin list
+> 
+> when you are entering a comment
+> 
+> when you are entering a string constant
+> 
+> when you are entering an expression in a {plho Value} or {plho Condition}
+> placeholder
+> 
+> when you are editing something using the EDIT command (described in
+> Chapter 4).
+> .end list
+708c723
+< alice
+---
+> {type alice}
+730c745
+< to "play" with ALICE without actually writing a program.
+---
+> to {q play} with ALICE without actually writing a program.
+773c788
+< See the "File Commands" section in Chapter 4.
+---
+> See the {q File Commands} section in Chapter 4.
+781c796
+< If the file you pick ends in the suffix ".pas", ALICE will assume that
+---
+> If the file you pick ends in the suffix {q .pas,} ALICE will assume that
+796c811
+< If the file you pick from the File Name Menu does not end in ".pas",
+---
+> If the file you pick from the File Name Menu does not end in {q .pas,}
+805c820
+< .screen From file progtemp, showing empty program template
+---
+> .fullphoto progtemp
+820c835
+< {plho \{Comment that says what the routine does\}}
+---
+> {ul \{Comment that says what the routine does\}}
+832d846
+< .screen From file scrlay, showing screen lay-out and program template
+882c896
+< However, in "Debug" mode (described later on), the screen will be
+---
+> However, in {q Debug} mode (described later on), the screen will be
+929,936c943,950
+< For now, we will just discuss the difference between "Debug" mode and
+< "Debug Off".
+< .bt
+< To enter "Debug" mode, press F6 and choose the selection
+< {type Debug On}.
+< You can also enter "Debug" mode by invoking one of the debugging
+< commands listed in Chapter 4.
+< For example, you automatically enter "Debug" mode by
+---
+> For now, we will just discuss the difference between {q Debug} mode and
+> {q Debug Off.}
+> .bt
+> To enter {q Debug} mode, press F6 and choose the selection
+> {type Debug On}.
+> You can also enter {q Debug} mode by invoking one of the debugging
+> commands listed in Chapter 4.
+> For example, you automatically enter {q Debug} mode by
+940c954
+< .screen From file debugscr, showing debug screen lay-out
+---
+> .fullphoto debugscr
+990,991c1004,1005
+< The ALICE screen remains split in two as long as you are in "Debug" mode.
+< To go to "Debug Off" mode, press F6 and choose the {type Debug Off}
+---
+> The ALICE screen remains split in two as long as you are in {q Debug} mode.
+> To go to {q Debug Off} mode, press F6 and choose the {type Debug Off}
+1008,1010c1022,1024
+< {plho Declarations}
+< {rwd begin}
+< {plho Statement}
+---
+> {pclho Declarations}
+> {rwd begin}
+> {pclho Statement}
+1031,1033c1045,1047
+< As noted in Chapter 3, the question mark "?" is a shorthand for
+< .codebeg 10
+< writeln({plho Value});
+---
+> As noted in Chapter 3, the question mark {q ?} is a shorthand for
+> .codebeg 10
+> writeln({pclho Value});
+1073c1087
+< ("Continue" on the Run-Time Menu).
+---
+> ({q Continue} on the Run-Time Menu).
+1097c1111
+< TAB and >>.
+---
+> TAB and {rightfquote}.
+1176c1190
+< ____iarr : {plho Type}; \{{plho Comment}\}
+---
+> ____iarr : {pclho Type}; \{{pclho Comment}\}
+1181c1195
+< ____iarr : {rwd array of} {plho Type}; \{{plho Comment}\}
+---
+> ____iarr : {rwd array of} {pclho Type}; \{{pclho Comment}\}
+1214c1228
+< {rwd for} {plho Variable} := {plho Start} {rwd to} {plho Finish} ...
+---
+> {rwd for} {pclho Variable} := {pclho Start} {rwd to} {pclho Finish} ...
+1218,1220c1232,1234
+< {rwd for} {plho Variable} := {plho Start} {rwd downto} {plho Finish} ...
+< .codend 0
+< Similarly, entering {rwd to} inside a "downto"
+---
+> {rwd for} {pclho Variable} := {pclho Start} {rwd downto} {pclho Finish} ...
+> .codend 0
+> Similarly, entering {rwd to} inside a {q downto}
+1240c1254
+< {plho Value} {rwd div} {plho Value}
+---
+> {pclho Value} {rwd div} {pclho Value}
+1246c1260
+< "textual" way and will call up the Simple Text Editor to gather the
+---
+> {q textual} way and will call up the Simple Text Editor to gather the
+1261c1275
+< {plho Value} * {plho Value}
+---
+> {pclho Value} * {pclho Value}
+1273,1275c1287,1289
+< if you enter a "-" on an expression placeholder.
+< .bt
+< If you decide to enter an expression "operators first", you should be
+---
+> if you enter a {q -} on an expression placeholder.
+> .bt
+> If you decide to enter an expression {q operators first,} you should be
+1281,1290c1295,1298
+< {plho Value} * {plho Value}
+< .codend 0
+< If we were to represent this as a tree, it would be
+< .scrbeg 10
+< _____*
+< ____/ \\
+< ___/   \\
+< __/     \\
+< Value  Value
+< .scrend 0
+---
+> {pclho Value} * {pclho Value}
+> .codend 0
+> If we were to represent this as a tree, it would be
+> .sp 0.7in
+1294,1307c1302,1308
+< {plho Value} * ({plho Value} + {plho Value})
+< .codend 0
+< To understand what has happened, think of what has happened to the tree.
+< .scrbeg 10
+< _____*
+< ____/ \\
+< ___/   \\
+< __/     \\
+< Value    +
+< ________/ \\
+< _______/   \\
+< ______/     \\
+< ____Value  Value
+< .scrend 0
+---
+> {pclho Value} * ({pclho Value} + {pclho Value})
+> .codend 0
+> .begin
+> .num textbot =foottop
+> To understand what has happened, think of what has happened to the tree.
+> .sp 1in
+> .end
+1314c1315
+< If you experiment with this "operator first" method of entering expressions,
+---
+> If you experiment with this {q operator first} method of entering expressions,
+1319c1320
+< {plho Value} + {plho Value}
+---
+> {pclho Value} + {pclho Value}
+1323c1324
+< {plho Value} + {plho Value} * {plho Value}
+---
+> {pclho Value} + {pclho Value} * {pclho Value}
+1328,1332c1329,1333
+< The operators {type [}, {type .}, and {type ^} are special in that they
+< may be entered in {plho Variable} placeholders.
+< If you enter a {type [} operator, ALICE will give you
+< .codebeg 10
+< {plho Variable}[ {plho Subscript} ]
+---
+> The operators {type \[}, {type .}, and {type ^} are special in that they
+> may be entered in {plho Variable} placeholders.
+> If you enter a {type \[} operator, ALICE will give you
+> .codebeg 10
+> {pclho Variable}\[ {pclho Subscript} \]
+1336c1337
+< {plho Variable}.{plho Field}
+---
+> {pclho Variable}.{pclho Field}
+1340,1342c1341,1343
+< {plho Variable}^
+< .codend 0
+< In addition, typing {type [}, {type .}, {type ^}
+---
+> {pclho Variable}^
+> .codend 0
+> In addition, typing {type \[}, {type .}, {type ^}
+1346c1347
+< ptr := {plho Value};
+---
+> ptr := {pclho Value};
+1350c1351
+< ptr^ := {plho Value};
+---
+> ptr^ := {pclho Value};
+1372c1373
+< NAME := {plho Value};
+---
+> NAME := {pclho Value};
+1378c1379
+< NAME[
+---
+> NAME\[
+1383c1384
+< NAME[{plho Subscript}] := {plho Value};
+---
+> NAME\[{pclho Subscript}\] := {pclho Value};
+1391c1392
+< NAME({plho p1:type},{plho p2:type},...);
+---
+> NAME({pclho p1:type},{pclho p2:type},...);
+1402c1403
+< proc({plho a:integer},{plho b:real});
+---
+> proc({pclho a:integer},{pclho b:real});
+1407c1408
+< proc2({plho var c:char});
+---
+> proc2({ul var c:char});
+1425c1426
+< writeln({plho Value});
+---
+> writeln({pclho Value});
+1430c1431
+< description of "Delimiters" below for further details).
+---
+> description of {q Delimiters} below for further details).
+1445,1449c1446,1450
+< typing an opening parenthesis "(".
+< For example, if you type a "(" on top of the no-argument {type writeln}
+< above, you will get
+< .codebeg 10
+< writeln({plho Value});
+---
+> typing an opening parenthesis {q (.}
+> For example, if you type a {q (} on top of the no-argument {type writeln}
+> above, you will get
+> .codebeg 10
+> writeln({pclho Value});
+1460a1462,1463
+> .begin
+> .num textbot +3ln
+1467a1471
+> .end
+1472,1479c1476,1485
+< .hbb (a)
+< The ":" in a variable declaration.
+< .hbb (b)
+< The commas in a list of arguments to a subprogram call.
+< .hbb (c)
+< The semicolons that end most Pascal statements.
+< .hbb (d)
+< Keywords like {rwd then} in the template of an {rwd if} statement.
+---
+> .begin list
+> 
+> The {q :} in a variable declaration.
+> 
+> The commas in a list of arguments to a subprogram call.
+> 
+> The semicolons that end most Pascal statements.
+> 
+> Keywords like {rwd then} in the template of an {rwd if} statement.
+> .end list
+1489,1490c1495,1496
+< {rwd for} i := {plho Start} {rwd to} {plho Finish} {rwd do begin}
+< ____{plho Statement}
+---
+> {rwd for} i := {pclho Start} {rwd to} {pclho Finish} {rwd do begin}
+> ____{pclho Statement}
+1511c1517
+< ____{plho Name} : {plho Type}; \{{plho Comment}\}
+---
+> ____{pclho Name} : {pclho Type}; \{{pclho Comment}\}
+1516c1522
+< ____{plho Name}, {plho Name} : {plho Type}; \{{plho Comment}\}
+---
+> ____{pclho Name}, {pclho Name} : {pclho Type}; \{{pclho Comment}\}
+1525c1531
+< writeln({plho Value});
+---
+> writeln({pclho Value});
+1529c1535
+< writeln(i,{plho Value});
+---
+> writeln(i,{pclho Value});
+1543,1551c1549,1557
+< {plho Declaration} placeholder) and typing an opening brace "\{".
+< ALICE will lay out the template
+< .codebeg 10
+< \{{plho Comment}\}
+< .codend 0
+< and you may then fill in the comment.
+< To indicate the end of the comment, type a closing brace "\}" or
+< move the cursor off the comment with a cursor movement key (e.g. TAB,
+< >>, or an arrow key).
+---
+> {plho Declaration} placeholder) and typing an opening brace {q \{.}
+> ALICE will lay out the template
+> .codebeg 10
+> \{{pclho Comment}\}
+> .codend 0
+> and you may then fill in the comment.
+> To indicate the end of the comment, type a closing brace {q \}} or
+> move the cursor off the comment with a cursor movement key (e.g. TAB,
+> {rightfquote}, or an arrow key).
+1558c1564
+< key ,C.
+---
+> key {cedille}.
+1590,1592c1596,1598
+< Typing a question mark "?" on a {plho Statement} placeholder gives you
+< .codebeg 10
+< writeln({plho Value});
+---
+> Typing a question mark {q ?} on a {plho Statement} placeholder gives you
+> .codebeg 10
+> writeln({pclho Value});
+1614,1615c1620,1621
+< {rwd for} i := {plho Start} {rwd to} {plho Finish} {rwd do begin}
+< ____{plho Statement}
+---
+> {rwd for} i := {pclho Start} {rwd to} {pclho Finish} {rwd do begin}
+> ____{pclho Statement}
+1646c1652
+< commands under the heading "Editing Commands".
+---
+> commands under the heading {q Editing Commands.}
+1651c1657
+< .set fill off
+---
+> .nofill
+1659c1665
+< .set fill off
+---
+> .nofill
+1667c1673
+< .set fill off
+---
+> .nofill
+1675c1681
+< .set fill off
+---
+> .nofill
+1683c1689
+< .set fill off
+---
+> .nofill
+1691c1697
+< .set fill off
+---
+> .nofill
+1699c1705
+< .set fill off
+---
+> .nofill
+1707c1713
+< .set fill off
+---
+> .nofill
+1715c1721
+< .set fill off
+---
+> .nofill
+1725,1726c1731,1732
+< .set fill off
+< Associated with Key: (e agout)
+---
+> .nofill
+> Associated with Key: {eagout}
+1750c1756
+< .set fill off
+---
+> .nofill
+1758c1764
+< .set fill off
+---
+> .nofill
+1772c1778
+< .set fill off
+---
+> .nofill
+1789c1795
+< .set fill off
+---
+> .nofill
+1814,1816c1820,1822
+< off the material (e.g. with TAB, >>, or an arrow key).
+< .subsect ENCLOSE
+< .set fill off
+---
+> off the material (e.g. with TAB, {rightfquote}, or an arrow key).
+> .subsect ENCLOSE
+> .nofill
+1833c1839
+< .set fill off
+---
+> .nofill
+1847c1853
+< In this way, they are "raised" out of the enclosing loop.
+---
+> In this way, they are {q raised} out of the enclosing loop.
+1854,1855c1860,1861
+< .set fill off
+< Associated with Key: None
+---
+> .nofill
+> Associated with Key: SHIFT-F5
+1888,1891c1894,1897
+< Many of these are found on the "Move and Search Menu", which we have
+< abbreviated to "Move Menu" in the following descriptions.
+< .subsect BLOCK
+< .set fill off
+---
+> Many of these are found on the {q Move and Search Menu,} which we have
+> abbreviated to {q Move Menu} in the following descriptions.
+> .subsect BLOCK
+> .nofill
+1902c1908
+< .set fill off
+---
+> .nofill
+1914c1920
+< .set fill off
+---
+> .nofill
+1924,1925c1930,1931
+< .set fill off
+< Associated with Key: None
+---
+> .nofill
+> Associated with Key: SHIFT-comma (keypad)
+1938c1944
+< .set fill off
+---
+> .nofill
+1948c1954
+< .set fill off
+---
+> .nofill
+1958c1964
+< .set fill off
+---
+> .nofill
+1985,1991c1991,1997
+< The "?" can be used as a wild card character when specifying the string to
+< search for.
+< The "?" will match any character.
+< For example, "i?t" will match words like "integer", "list", and "dictionary".
+< .subsect RSEARCH
+< .set fill off
+< Associated with Key: None
+---
+> The {q ?} can be used as a wild card character when specifying the string to
+> search for.
+> The {q ?} will match any character.
+> For example, {q i?t} will match words like {q integer,} {q list,} and {q dictionary.}
+> .subsect RSEARCH
+> .nofill
+> Associated with Key: CTRL-V
+1998c2004
+< .set fill off
+---
+> .nofill
+2009c2015
+< .set fill off
+---
+> .nofill
+2020c2026
+< Thus "A" is the same as "a".
+---
+> Thus {q A} is the same as {q a.}
+2044c2050
+< .set fill off
+---
+> .nofill
+2066a2073
+> .nofill
+2075a2083
+> .nofill
+2081a2090
+> .nofill
+2089c2098,2099
+< Associated with Key: >>
+---
+> .nofill
+> Associated with Key: {rightfquote}
+2094,2097c2104,2108
+< and the end of the program, NEXT will "wrap around" to the top of the
+< program and look for the first placeholder or error.
+< .subsect PREV
+< Associated with Key: <<
+---
+> and the end of the program, NEXT will {q wrap around} to the top of the
+> program and look for the first placeholder or error.
+> .subsect PREV
+> .nofill
+> Associated with Key: {leftfquote}
+2102,2104c2113,2116
+< and the beginning of the program, PREV will "wrap around" to the bottom of
+< the program and look for the last placeholder or error.
+< .subsect FWD
+---
+> and the beginning of the program, PREV will {q wrap around} to the bottom of
+> the program and look for the last placeholder or error.
+> .subsect FWD
+> .nofill
+2110a2123
+> .nofill
+2120c2133
+< .set fill off
+---
+> .nofill
+2130c2143
+< If the name of the file you're loading ends in ".pas", ALICE will
+---
+> If the name of the file you're loading ends in {q .pas,} ALICE will
+2140,2143c2153,2156
+< If the name of the file you're loading does not end in ".pas",
+< ALICE will assume that the program is already in the proper ALICE format.
+< If you are typing in the name of the file, you do not have to enter the
+< usual ".ap" suffix; ALICE will automatically add the suffix if necessary.
+---
+> If the name of the file you're loading does not end in {q .pas,}
+> ALICE will assume that the program is already in the proper ALICE format.
+> If you are typing in the name of the file, you do not have to enter the
+> usual {q .ap} suffix; ALICE will automatically add the suffix if necessary.
+2158c2171
+< See the "History List" section in Chapter 5 for details.
+---
+> See the {q History List} section in Chapter 5 for details.
+2174,2175c2187,2188
+< .set fill off
+< Associated with Key:
+---
+> .nofill
+> Associated with Key: CTRL-S
+2193,2194c2206,2207
+< Note that ALICE automatically puts ".ap" on the end of a new file name,
+< if the file name does not have a "." in it.
+---
+> Note that ALICE automatically puts {q .ap} on the end of a new file name,
+> if the file name does not have a {q .} in it.
+2206,2207c2219,2220
+< .set fill off
+< Associated with Key:
+---
+> .nofill
+> Associated with Key: None
+2218,2224c2231,2237
+< ALICE-format file associated with the program, except that the ".ap"
+< on the end is changed to ".pas".
+< For example, if the ALICE-format program is stored in "prog.ap",
+< the text format will be stored in "prog.pas".
+< If the current save file does not have the extension ".ap",
+< TEXT writes the text version directly to this file and does not add
+< the ".pas" extension.
+---
+> ALICE-format file associated with the program, except that the {q .ap}
+> on the end is changed to {q .pas.}
+> For example, if the ALICE-format program is stored in {q prog.ap,}
+> the text format will be stored in {q prog.pas.}
+> If the current save file does not have the extension {q .ap,}
+> TEXT writes the text version directly to this file and does not add
+> the {q .pas} extension.
+2233,2235c2246,2248
+< with the extension ".pas" instead of ".ap".
+< .subsect MERGE
+< .set fill off
+---
+> with the extension {q .pas} instead of {q .ap.}
+> .subsect MERGE
+> .nofill
+2249,2254c2262,2267
+< The MERGE facility offers a way to create "libraries" of useful routines.
+< Such a library would be a set of declarations and subprograms that could
+< be merged into programs that need to use the library routines.
+< For more information, see the section on "Merge Libraries" in Chapter 5.
+< .subsect FILENAME
+< .set fill off
+---
+> The MERGE facility offers a way to create {q libraries} of useful routines.
+> Such a library would be a set of declarations and subprograms that could
+> be merged into programs that need to use the library routines.
+> For more information, see the section on {q Merge Libraries} in Chapter 5.
+> .subsect FILENAME
+> .nofill
+2276,2277c2289,2290
+< .set fill off
+< Associated with Key: SHIFT-divide
+---
+> .nofill
+> Associated with Key: SHIFT-{divide}
+2288,2289c2301,2302
+< .set fill off
+< Associated with Key: CTRL-C
+---
+> .nofill
+> Associated with Key: None, but {cedille} has this effect.
+2303,2304c2316,2317
+< .set fill off
+< Associated with Key: SHIFT-times
+---
+> .nofill
+> Associated with Key: SHIFT-{times}
+2324c2337
+< .set fill off
+---
+> .nofill
+2340,2341c2353,2354
+< .set fill off
+< Associated with Key: SHIFT-9
+---
+> .nofill
+> Associated with Key: SHIFT-9 (keypad)
+2350,2351c2363,2364
+< .set fill off
+< Associated with Key: None
+---
+> .nofill
+> Associated with Key: CTRL-F1
+2370c2383
+< .set fill off
+---
+> .nofill
+2379,2380c2392,2393
+< .set fill off
+< Associated with Key:
+---
+> .nofill
+> Associated with Key: None
+2389c2402
+< .set fill off
+---
+> .nofill
+2401c2414
+< In between steps, you may issue "Immediate mode" instructions to examine,
+---
+> In between steps, you may issue {q Immediate mode} instructions to examine,
+2420,2421c2433,2434
+< .set fill off
+< Associated with Key: None
+---
+> .nofill
+> Associated with Key: SHIFT-F2
+2432c2445
+< .set fill off
+---
+> .nofill
+2439,2445c2452,2458
+< will be written to a file named "log".
+< The output will also be displayed on the screen as usual.
+< .bt
+< The first time you run a program with "logging" turned on, the current contents
+< of "log" will be deleted and replaced with your program's output.
+< If you keep "logging" turned on, output from subsequent program runs will be
+< APPENDED to the "log" file.
+---
+> will be written to a file named {q log.}
+> The output will also be displayed on the screen as usual.
+> .bt
+> The first time you run a program with {q logging} turned on, the current contents
+> of {q log} will be deleted and replaced with your program's output.
+> If you keep {q logging} turned on, output from subsequent program runs will be
+> APPENDED to the {q log} file.
+2450,2451c2463,2464
+< "log" instead of being appended, turn logging off, then turn it back on again.
+< ALICE always cleans out "log" when "logging" is turned on.
+---
+> {q log} instead of being appended, turn logging off, then turn it back on again.
+> ALICE always cleans out {q log} when {q logging} is turned on.
+2456c2469
+< instead of the usual "log" file.
+---
+> instead of the usual {q log} file.
+2461,2463c2474,2476
+< will log output to "myfile" instead of "log".
+< .subsect NOLOG
+< .set fill off
+---
+> will log output to {q myfile} instead of {q log.}
+> .subsect NOLOG
+> .nofill
+2468c2481
+< This command turns off output "logging".
+---
+> This command turns off output {q logging.}
+2473c2486
+< .set fill off
+---
+> .nofill
+2490,2491c2503,2504
+< .set fill off
+< Associated with Key: None
+---
+> .nofill
+> Associated with Key: SHIFT-F6
+2501,2502c2514,2515
+< .set fill off
+< Associated with Key: None
+---
+> .nofill
+> Associated with Key: CTRL-P
+2509c2522
+< When this happens, the program stays around in a frozen or "suspended" state.
+---
+> When this happens, the program stays around in a frozen or {q suspended} state.
+2525c2538
+< .set fill off
+---
+> .nofill
+2534c2547
+< This lets you "see" your program executed.
+---
+> This lets you {q see} your program executed.
+2541c2554
+< .set fill off
+---
+> .nofill
+2548c2561
+< .set fill off
+---
+> .nofill
+2556c2569
+< When you issue the IMMEDIATE command, ALICE will create an "immediate block".
+---
+> When you issue the IMMEDIATE command, ALICE will create an {q immediate block.}
+2584,2585c2597,2598
+< .set fill off
+< Associated with Key: META-F1
+---
+> .nofill
+> Associated with Key: SHIFT-F1
+2608c2621
+< .set fill off
+---
+> .nofill
+2655c2668
+< .set fill off
+---
+> .nofill
+2666c2679
+< .set fill off
+---
+> .nofill
+2680,2684c2693,2697
+< You can also specify a "checking frequency option" on the command line
+< that invokes ALICE -- see the description of "f=" in Chapter 5.
+< .subsect TRACEBACK
+< .set fill off
+< Associated with Key: None
+---
+> You can also specify a {q checking frequency option} on the command line
+> that invokes ALICE -- see the description of {q f=} in Chapter 5.
+> .subsect TRACEBACK
+> .nofill
+> Associated with Key: CTRL-B
+2711c2724
+< .set fill off
+---
+> .nofill
+2734c2747
+< .set fill off
+---
+> .nofill
+2745,2746c2758,2759
+< .set fill off
+< Associated with Key: None
+---
+> .nofill
+> Associated with Key: CTRL-C
+2771,2772c2784,2785
+< .set fill off
+< Associated with Key: CTRL-+
+---
+> .nofill
+> Associated with Key: SHIFT-+ (keypad)
+2800,2801c2813,2814
+< .set fill off
+< Associated with Key: CTRL-minus
+---
+> .nofill
+> Associated with Key: SHIFT-minus (keypad)
+2855c2868
+< "Merge Libraries" in Chapter 5.
+---
+> {q Merge Libraries} in Chapter 5.
+2859c2872
+< .set fill off
+---
+> .nofill
+2864,2869c2877,2882
+< This "undoes" the most recent action that changed program source code.
+< By issuing UNDO several times in a row, you can undo several sets of changes.
+< The REDO command "undoes" an UNDO -- if you do something, then take
+< it back with UNDO, you can do it again with REDO.
+< .subsect REDO
+< .set fill off
+---
+> This {q undoes} the most recent action that changed program source code.
+> By issuing UNDO several times in a row, you can undo several sets of changes.
+> The REDO command {q undoes} an UNDO -- if you do something, then take
+> it back with UNDO, you can do it again with REDO.
+> .subsect REDO
+> .nofill
+2879c2892
+< .set fill off
+---
+> .nofill
+2886c2899
+< Such code may be "commented out" when it is no longer needed.
+---
+> Such code may be {q commented out} when it is no longer needed.
+2906c2919
+< .set fill off
+---
+> .nofill
+2913c2926
+< For the purposes of AUTOSAVE, an "operation" is a command, a cursor
+---
+> For the purposes of AUTOSAVE, an {q operation} is a command, a cursor
+2938c2951
+< .set fill off
+---
+> .nofill
+2949,2952c2962,2965
+< "no operation").
+< .subsect HIDE
+< .set fill off
+< Associated with Key: Umlaut (..)
+---
+> {q no operation}).
+> .subsect HIDE
+> .nofill
+> Associated with Key: {umlaut}
+2965c2978
+< _... \{{plho Comment}\} ...
+---
+> _... \{{pclho Comment}\} ...
+2977,2978c2990,2991
+< .set fill off
+< Associated with Key: Circumflex (^)
+---
+> .nofill
+> Associated with Key: Circumflex (SHIFT-{umlaut})
+2985c2998
+< _... \{{plho Comment}\} ...
+---
+> _... \{{pclho Comment}\} ...
+2989,2990c3002,3003
+< .set fill off
+< Associated with Key: !
+---
+> .nofill
+> Associated with Key: CTRL-Q
+3010,3012c3023,3033
+< .subsect EXIT
+< .set fill off
+< Associated with Key: (beta)
+---
+> .bt
+> Be warned that on ICONs with only 384K of RAM, it is unlikely that there
+> will be enough memory to run QNX commands when Alice is running.  This
+> command is thus reserved for users of 512K machines.
+> .bt
+> When using this command in a macro, you may wish to use the special \\f
+> escape code.  See the section on {it Calling Other Versions of Pascal}
+> for more details.
+> .subsect EXIT
+> .nofill
+> Associated with Key: {beta}, SHIFT-F8
+3031c3052
+< You can avoid the "do you really want to quit" menu by pressing CTRL-X,
+---
+> You can avoid the {q do you really want to quit} menu by pressing CTRL-X,
+3040c3061
+< .set fill off
+---
+> .nofill
+3054c3075
+< place in the string where the "new-line" should be.
+---
+> place in the string where the {q new-line} should be.
+3068c3089
+< .set fill off
+---
+> .nofill
+3080,3083c3101,3104
+< "undoing" information before it performs the operation.
+< .subsect CLEAR
+< .set fill off
+< Associated with Key: SHIFT-plus
+---
+> {q undoing} information before it performs the operation.
+> .subsect CLEAR
+> .nofill
+> Associated with Key: SHIFT-8 (keypad)
+3091a3113
+> .nofill
+3104c3126
+< option ca=128
+---
+> option ca=4
+3137c3159
+< For more information, see the section on "Configuration Files".
+---
+> For more information, see the section on {q Configuration Files.}
+3157c3179
+< This sets the size of the "location" stack.
+---
+> This sets the size of the {q location} stack.
+3166,3167c3188,3189
+< .routine p=NNNNN
+< This dictates the amount of memory fo set aside for holding user programs.
+---
+> .routine s=NNNNN
+> This sets the size of the run-time stack for user programs.
+3171,3177d3192
+< p=10000
+< .scrend 0
+< .routine s=NNNNN
+< This sets the size of the run-time stack for user programs.
+< {type NNNNN} is an integer giving the number of bytes.
+< The default is
+< .scrbeg 10
+3187,3222c3202,3223
+< .ca a
+< normal text
+< .ca b
+< placeholders
+< .ca c
+< errors
+< .ca d
+< keywords
+< .ca e
+< variables
+< .ca f
+< named constants
+< .ca g
+< comments
+< .ca h
+< char constants
+< .ca i
+< integer constants
+< .ca j
+< real constants
+< .ca k
+< string constants
+< .ca l
+< user subprogram names
+< .ca m
+< built-in subprogram names
+< .ca n
+< record field names
+< .ca o
+< undefined symbols
+< .ca p
+< labels
+< .ca q
+< expressions being edited with the Simple Text Editor
+< .blnk 7
+< The number {type NN} is a number indicating colour or representation mode.
+---
+> .begin nofill
+> .indent 0.1in
+> a {tab 1.0in} normal text
+> b {tab 1.0in} placeholders
+> c {tab 1.0in} errors
+> d {tab 1.0in} keywords
+> e {tab 1.0in} variables
+> f {tab 1.0in} named constants
+> g {tab 1.0in} comments
+> h {tab 1.0in} char constants
+> i {tab 1.0in} integer constants
+> j {tab 1.0in} real constants
+> k {tab 1.0in} string constants
+> l {tab 1.0in} user subprogram names
+> m {tab 1.0in} built-in subprogram names
+> n {tab 1.0in} record field names
+> o {tab 1.0in} undefined symbols
+> p {tab 1.0in} labels
+> q {tab 1.0in} expressions being edited with the Simple Text Editor
+> .end nofill
+> .blnk 7
+> The number {type NN} is a number indicating representation mode.
+3228,3230c3229,3234
+< 1   -- underlined
+< 2   -- bold-faced
+< 128 -- reverse video
+---
+> 1   -- bold-faced
+> 2   -- italics
+> 4   -- reverse video
+> 8   -- solid underline
+> 16  -- dotted underline
+> 24  -- dashed underline
+3240d3243
+< everything else: normal
+3256c3259
+< This associates the given "string" with the ASCII character whose decimal
+---
+> This associates the given {q string} with the ASCII character whose decimal
+3283c3286
+< These are the "Key Bindings" given in Chapter 4.
+---
+> These are the {q Key Bindings} given in Chapter 4.
+3304c3307
+< issued the IMMEDIATE command.
+---
+> issued the IMMEDIATE command.  (N.B. CTRL-B is normally the TRACEBACK command.)
+3315,3317c3318,3321
+< \\s  -- symbol completion key (,C)
+< \\b  -- delete character under cursor
+< \\h  -- backspace
+---
+> \\s  -- symbol completion key ({cedille})
+> \\b  -- delete character under cursor
+> \\h  -- backspace
+> \\f  -- the root of the current filename in text and shell commands.
+3324c3328
+< completion key ,C, and the backspace.
+---
+> completion key {cedille}, and the backspace.
+3335,3336c3339,3340
+< {rwd while} {plho Condition} {rwd do begin}
+< ____{plho Statement}
+---
+> {rwd while} {pclho Condition} {rwd do begin}
+> ____{pclho Statement}
+3344,3345c3348,3349
+< {rwd while} {plho Condition} {rwd do begin}
+< ____{plho Statement}
+---
+> {rwd while} {pclho Condition} {rwd do begin}
+> ____{pclho Statement}
+3428c3432
+< For example, you may have "commented out" a section of your program using
+---
+> For example, you may have {q commented out} a section of your program using
+3433c3437
+< In standard Pascal, a closing brace marks the end of _a_l_l comments up
+---
+> In standard Pascal, a closing brace marks the end of {bo all} comments up
+3464,3467c3468,3472
+< {plho Declaration} placeholder.
+< ALICE will lay out the template
+< .codebeg 10
+< {rwd Forward} <{plho routine}>;
+---
+> {plho Declaration} placeholder that comes before the first use of
+> the routine in question.
+> ALICE will lay out the template
+> .codebeg 10
+> {rwd Forward} <{pclho routine}>;
+3488c3493
+< the "invisible" comment will be written out as is.
+---
+> the {q invisible} comment will be written out as is.
+3542,3545c3547,3581
+< To suppress this message, add "+s" to the APIN command line.
+< .section Merge Libraries
+< The MERGE command (described in Chapter 4) is a simple way to support
+< "libraries" of routines.
+---
+> To suppress this message, add {q +s} to the APIN command line.
+> .subsect Calling other versions of Pascal
+> ALICE contains the SHELL command which allows you to call other QNX
+> commands while using ALICE on a 512K ICON.  To help you work with other
+> Pascals, such as the {it WATCOM} Pascal compiler, ALICE has a special
+> macro code called \\f to help you form SHELL commands.
+> .bt
+> When using another compiler, you will want to save your file out as text
+> and then pass it through the other compiler.  Say the compiler is called
+> {q pc} and it takes filenames that end in {q .p.}  ALICE expands \\f in
+> a macro to be the {it root} part of a filename, which is to say the
+> filename with the extension (normally {q .ap}) stripped off.  For example,
+> the root of {q sieve.ap} is {q sieve.}
+> .bt
+> To issue your compiler, set up a macro that saves your file as text and
+> then uses the SHELL command.  You could do this on key CTRL-C by putting
+> the following line in your {q config} file. (/config/ap.init)
+> .codebeg 10
+> m^c=\\ctext \\f.p\\n\\cshell pc \\f.p\\n
+> .codend 0
+> Say your filename is {q prog.ap.}  When this is expanded, \\f is replaced
+> with {q prog} so the result is:
+> .codebeg 10
+> >text prog.p
+> >shell pc prog.p
+> .codend 0
+> This means that every time you hit CTRL-C, ALICE would compile your program
+> with the {q pc} Pascal compiler, whatever that is.  You could also arrange
+> something like listing on the printer with such a scheme.
+> .bt
+> For safety, you may want to add a regular save command in here to save the
+> file in ALICE format at the same time.
+> .section Merge Libraries
+> The MERGE command (described in Chapter 4) is a simple way to support
+> {q libraries} of routines.
+3550c3586
+< This file can be thought of as the subprogram "library".
+---
+> This file can be thought of as the subprogram {q library.}
+3570c3606
+< recent actions, by "backing up" in the history list.
+---
+> recent actions, by {q backing up} in the history list.
+3655c3691
+< You will see your input written out in short "bursts" rather than
+---
+> You will see your input written out in short {q bursts} rather than
+3668c3704
+< Remember that the completion key ,C is particularly useful when
+---
+> Remember that the completion key {cedille} is particularly useful when
+3690c3726
+< \{{plho Comment}\}
+---
+> \{{pclho Comment}\}
+3701,3702c3737,3738
+< {rwd while} {plho Condition} {rwd do begin}
+< ____{plho Statement}
+---
+> {rwd while} {pclho Condition} {rwd do begin}
+> ____{pclho Statement}
+3719c3755
+< You might regard UNDO as a "program-oriented backspace".
+---
+> You might regard UNDO as a {q program-oriented backspace.}
+3747c3783
+< Remember that the << key will take you back through
+---
+> Remember that the {leftfquote} key will take you back through
+3788,3794c3824,3830
+< It acts as the "run" key as well as performing its usual function of
+< creating empty placeholders.
+< For this reason, you may want to use INSERT (SHIFT-INS) and EXTEND
+< ((e agout)) to create empty placeholders instead of ENTER
+< in immediate mode.
+< .chapter Pascal Extensions and Enhancements
+< ALICE supports a superset of "standard" Pascal (i.e. Pascal as described in
+---
+> It acts as the {q run} key as well as performing its usual function of
+> creating empty placeholders.
+> For this reason, you may want to use INSERT (SHIFT-INS) and EXTEND
+> ({eagout}) to create empty placeholders instead of ENTER
+> in immediate mode.
+> .chapter Pascal Extensions and Enhancements
+> ALICE supports a superset of {q standard} Pascal (i.e. Pascal as described in
+3807,3809c3843,3845
+< The underscore "{und}" is a valid character in the middle of
+< names, but may not be used as the first character.
+< Thus "input{und}line" is a valid name, but "{und}hello" is not.
+---
+> The underscore {q {und}} is a valid character in the middle of
+> names, but may not be used as the first character.
+> Thus {q input{und}line} is a valid name, but {q {und}hello} is not.
+3817c3853
+< "authoritative" version.
+---
+> {q authoritative} version.
+3825c3861
+< {rwd packed array} [1..N] {rwd of} char
+---
+> {rwd packed array} \[1..N\] {rwd of} char
+3841,3842c3877,3878
+< This means that you may have null strings ("", zero characters), and
+< single character strings (e.g. "a").
+---
+> This means that you may have null strings ({type ""}, zero characters), and
+> single character strings (e.g. {type "a"}).
+3846,3847c3882,3883
+< Thus you could not assign 'a' to a {rwd packed array of} {type char}
+< variable but you could assign "a".
+---
+> Thus you could not assign {type 'a'} to a {rwd packed array of} {type char}
+> variable but you could assign {type "a"}.
+3852c3888
+< {rwd packed array} [1..N] {rwd of} char
+---
+> {rwd packed array} \[1..N\] {rwd of} char
+3860c3896
+< str := "abcde";  FIX (JIM THESE STAY AS REGULAR QUOTES)
+---
+> str := "abcde";
+3866c3902
+< "end of string" marker named {type StrEnd} is added to show the end
+---
+> {q end of string} marker named {type StrEnd} is added to show the end
+3871c3907
+< str6 := "abc"; FIX
+---
+> str6 := "lgs";
+3875,3880c3911,3916
+< str6[1] = 'a'
+< str6[2] = 'b'
+< str6[3] = 'c'
+< str6[4] = StrEnd
+< str6[5] is undefined
+< str6[6] is undefined
+---
+> str6\[1\] = 'l'
+> str6\[2\] = 'g'
+> str6\[3\] = 's'
+> str6\[4\] = StrEnd
+> str6\[5\] is undefined
+> str6\[6\] is undefined
+3886c3922
+< str6 := "abcdef"; FIX
+---
+> str6 := "abcdef";
+3959,3962c3995,3998
+< Moreover, the maximum ordinal value (from the "ord" function) in the base
+< type must be in the range 0..255.
+< None of the elements of the base type can be negative.
+< This means that "set of char" is all right, but "set of integer" is invalid,
+---
+> Moreover, the maximum ordinal value (from the {q ord} function) in the base
+> type must be in the range 0..255.
+> None of the elements of the base type can be negative.
+> This means that {q set of char} is all right, but {q set of integer} is invalid,
+3972c4008
+< {rwd array} [1..10,1..20] {rwd of} char;
+---
+> {rwd array} \[1..10,1..20\] {rwd of} char;
+3978c4014
+< {rwd array} [1..10] {rwd of array} [{plho Range}] {rwd of} {plho Type};
+---
+> {rwd array} \[1..10\] {rwd of array} \[{pclho Range}\] {rwd of} {pclho Type};
+3984c4020
+< arr[M,N]
+---
+> arr\[M,N\]
+3988c4024
+< arr[M][N]
+---
+> arr\[M\]\[N\]
+4011c4047
+< ______writeln("power has unacceptable value"); FIX
+---
+> ______writeln("power has unacceptable value");
+4064,4075c4100,4113
+< .hbb (a)
+< At run-time, ALICE detects the use of uninitialized variables, i.e. variables
+< that have not yet been assigned a value.
+< .hbb (b)
+< ALICE checks subrange bounds in scalar assignments.
+< .hbb (c)
+< ALICE detects array subscripts that have gone out of bounds.
+< .hbb (d)
+< ALICE checks for argument values that are out of bounds when calling
+< built-in routines.
+< .hbb (e)
+< ALICE also detects the following:
+---
+> .begin list
+> 
+> At run-time, ALICE detects the use of uninitialized variables, i.e. variables
+> that have not yet been assigned a value.
+> 
+> ALICE checks subrange bounds in scalar assignments.
+> 
+> ALICE detects array subscripts that have gone out of bounds.
+> 
+> ALICE checks for argument values that are out of bounds when calling
+> built-in routines.
+> 
+> ALICE also detects the following:
+> .end list
+4119c4157
+< ____writeln("Enter integer"); FIX
+---
+> ____writeln("Enter integer");
+4131c4169
+< You can create an explicit "end-of-file" condition by pressing
+---
+> You can create an explicit {q end-of-file} condition by pressing
+4163,4166c4201,4204
+< reset(indata,"myfile");
+< .codend 0
+< associates the file named "myfile" with the file variable {type indata}
+< and opens "myfile" for input.
+---
+> reset(indata, 'myfile');
+> .codend 0
+> associates the file named {q myfile} with the file variable {type indata}
+> and opens {q myfile} for input.
+4174c4212
+< ALICE will write output to a file named "info".
+---
+> ALICE will write output to a file named {q info.}
+4184c4222
+< out a real number, {type writeln} chooses an "optimal" format for the
+---
+> out a real number, {type writeln} chooses an {q optimal} format for the
+4238c4276
+< found in "standard" Pascal.
+---
+> found in {q standard} Pascal.
+4248,4249c4286,4287
+< str1 := "hello"; FIX
+< str2 := " there"; FIX
+---
+> str1 := "hello";
+> str2 := " there";
+4260c4298
+< str := "The quick brown fox"; FIX
+---
+> str := "The quick brown fox";
+4270c4308
+< str := "The quick fox"; FIX
+---
+> str := "The quick fox";
+4285,4289c4323,4327
+< str := "abcdef"; FIX
+< writeln(StrLen(str));
+< str := "abc"; FIX
+< writeln(StrLen(str));
+< writeln(StrLen("xyz"); FIX
+---
+> str := "abcdef";
+> writeln(StrLen(str));
+> str := "abc";
+> writeln(StrLen(str));
+> writeln(StrLen("xyz");
+4301c4339
+< i := StrScan("hello there","the"); FIX
+---
+> i := StrScan("hello there","the");
+4315,4318c4353,4356
+< ____str : {rwd packed array} [1..10] {rwd of} char;
+< __...
+< writeln(StrSize("abc")); FIX
+< str := "abc"; FIX
+---
+> ____str : {rwd packed array} \[1..10\] {rwd of} char;
+> __...
+> writeln(StrSize("abc"));
+> str := "abc";
+4330c4368
+< str1 := "Hello there"; FIX
+---
+> str1 := "Hello there";
+4382c4420
+< It returns "true" if there is a character waiting and "false" otherwise.
+---
+> It returns {q true} if there is a character waiting and {q false} otherwise.
+4411,4420c4449,4455
+< .ca ScrXY(1)
+< tells how many rows the screen has.
+< .ca ScrXY(2)
+< tells how many columns the screen has.
+< .ca ScrXY(-1)
+< gives the number of the row where the cursor is currently positioned.
+< The top row is number 0.
+< .ca ScrXY(-2)
+< gives the number of the column where the cursor is currently positioned.
+< The leftmost column is number 0.
+---
+> .begin nofill
+> .indent 0.2in
+> ScrXY(1) -- tells how many rows the screen has.
+> ScrXY(2) -- tells how many columns the screen has.
+> ScrXY(-1) -- row of current cursor position. (top=0)
+> ScrXY(-2) -- column of current cursor position. (left=0)
+> .end nofill
+4428,4432c4463,4469
+< 0   -- normal text
+< 1   -- underlined
+< 2   -- bold-faced
+< 128 -- reverse video
+< .blnk 0
+---
+> 0   -- normal roman letters
+> 1   -- bold-faced
+> 2   -- italics
+> 4   -- reverse video
+> 8   -- solid underline
+> 16  -- dotted underline
+> 24  -- dashed underline
+4449c4486
+< ____str10 = {rwd packed array} [1..10] {rwd of} char;
+---
+> ____str10 = {rwd packed array} \[1..10\] {rwd of} char;
+4454,4456c4491,4493
+< p := "Hello"; FIX
+< sp := p;
+< writeln(sp^[1]);
+---
+> p := "Hello";
+> sp := p;
+> writeln(sp^\[1\]);
+4523c4560
+< When ALICE has "Debug On" and it encounters a call to the {type pause}
+---
+> When ALICE has {q Debug On} and it encounters a call to the {type pause}
+4528c4565
+< When ALICE has "Debug Off", the {type pause} procedure has no effect.
+---
+> When ALICE has {q Debug Off,} the {type pause} procedure has no effect.
+4553c4590
+< on the ALICE supplementary disk.
+---
+> in file /alice/help/cproc.
+4591c4628
+< This means that ALICE may give you "uninitialized variable" error
+---
+> This means that ALICE may give you {q uninitialized variable} error
+4599c4636
+< ____bigstr = {rwd packed array}[1..32000] {rwd of} char;
+---
+> ____bigstr = {rwd packed array}\[1..32000\] {rwd of} char;
+4625,4639c4662,4664
+< on your ALICE supplementary disk.
+< .blnk 0
+< .page
+< .ce
+< .sp 1.7ln
+< .begin nopara
+< .set chapno A
+< .set sectno 0
+< .set subsectno 0
+< {big {bo Appendix A}}
+< {big {bo ALICE Summary for Experienced Users}}
+< .thick
+< .end nopara
+< 
+< .bt
+---
+> in file /alice/help/syspointer
+> .blnk 0
+> .appendix A/ALICE Summary for Experienced Users
+4645c4670
+< "bare bones" descriptions of what you need to know first.
+---
+> {q bare bones} descriptions of what you need to know first.
+4656c4681
+< [Section 1.2.1]
+---
+> \[Section 1.2.1\]
+4666c4691
+< [Section 1.2.2]
+---
+> \[Section 1.2.2\]
+4675,4678c4700,4703
+< All menu selections are labelled "A", "B", "C", etc.
+< To choose a selection from a menu, press the letter that labels that
+< selection.
+< [Section 1.4]
+---
+> All menu selections are labelled {q A,} {q B}, {q C}, etc.
+> To choose a selection from a menu, press the letter that labels that
+> selection.
+> \[Section 1.4\]
+4685,4689c4710,4714
+< Of particular interest is on this menu is "What Can I Type?".
+< This gives a list of all possible inputs on the current placeholder.
+< Choose one and it will be filled into the placeholder.
+< You can also press SHIFT-times to get this input list.
+< [Section 4.5]
+---
+> Of particular interest is on this menu is {q What Can I Type?}.
+> This gives a list of all possible inputs on the current placeholder.
+> Choose one and it will be filled into the placeholder.
+> You can also press SHIFT-{times} to get this input list.
+> \[Section 4.5\]
+4704,4708c4729,4733
+< Through cursor movements you can "sweep out" all the code you want to select.
+< .bt
+< If you make a mistake, press F10 again.
+< This "unselects" the highlighted code and you can start again from scratch.
+< [Section 1.6]
+---
+> Through cursor movements you can {q sweep out} all the code you want to select.
+> .bt
+> If you make a mistake, press F10 again.
+> This {q unselects} the highlighted code and you can start again from scratch.
+> \[Section 1.6\]
+4717c4742
+< [Sections 3.7.1, 4.2.1, 4.2.2]
+---
+> \[Sections 3.7.1, 4.2.1, 4.2.2\]
+4722,4725c4747,4750
+< Pressing CTRL-R "redoes" something that you just undid.
+< You can also issue the UNDO and REDO commands from the Changes Menu -- press
+< F5 to get this menu.
+< [Section 4.9.1]
+---
+> Pressing CTRL-R {q redoes} something that you just undid.
+> You can also issue the UNDO and REDO commands from the Changes Menu -- press
+> F5 to get this menu.
+> \[Section 4.9.1\]
+4746c4771
+< [Sections 1.8, 3.2.3, 3.3, 3.7.3, 4.2.5]
+---
+> \[Sections 1.8, 3.2.3, 3.3, 3.7.3, 4.2.5\]
+4756c4781
+< [Sections 1.7, 4.8]
+---
+> \[Sections 1.7, 4.8\]
+4770,4771c4795,4798
+< [Sections 2.4.1, 4.5.5, 4.5.6]
+< .section Non-Intuitive Changes
+---
+> \[Sections 2.4.1, 4.5.5, 4.5.6\]
+> .section Non-Intuitive Changes
+> .begin
+> .num textbot +2ln
+4778,4781c4805,4809
+< [Sections 4.2.8, 4.8]
+< .section Symbol Name Completion
+< After you have typed the first few characters of a symbol name, press
+< ,C.
+---
+> \[Sections 4.2.8, 4.8\]
+> .end
+> .section Symbol Name Completion
+> After you have typed the first few characters of a symbol name, press
+> {cedille}.
+4789,4791c4817,4819
+< This applies to built-in names like "integer" and "writeln" as well as
+< user-defined ones.
+< [Section 1.8.1]
+---
+> This applies to built-in names like {q integer} and {q writeln} as well as
+> user-defined ones.
+> \[Section 1.8.1\]
+4798,4810c4826
+< .page
+< .ce
+< .sp 1.7ln
+< .begin nopara
+< .set chapno B
+< .set sectno 0
+< .set subsectno 0
+< {big {bo Appendix B}}
+< {big {bo Menus of ALICE}}
+< .thick
+< .end nopara
+< 
+< .bt
+---
+> .appendix B/Menus of ALICE
+4826c4842
+< .hed Master Menu \{F11\}
+---
+> .section Master Menu \{F11\}
+4834,4847c4850,4863
+< Information about Pascal (PHELP) \{SHIFT-divide\}
+< What Can I Type Here (TOKLIST) \{SHIFT-times\}
+< Misc (MISC) \{F7\}
+< File Operations (IO) \{F8\}
+< Special Changes (SPECIALTIES) \{None\}
+< Running the Program (DEBUG) \{F6\}
+< Possible Symbols (COMPLETE) \{,C\}
+< .menend 0
+< .hed Select Menu \{F9\}
+< This menu is used to perform operations on selected portions of code.
+< .menbeg 10
+< Clear Selection (UNSELECT) \{F10\}
+< Hide (HIDE) \{Umlaut (..)\}
+< Copy to workspace (COPY) \{None\}
+---
+> Information about Pascal (PHELP) \{SHIFT-{divide}\}
+> What Can I Type Here (TOKLIST) \{SHIFT-{times}\}
+> Misc (MISC) \{F7\}
+> File Operations (IO) \{F8\}
+> Special Changes (SPECIALTIES) \{SHIFT-F5\}
+> Running the Program (DEBUG) \{F6\}
+> Possible Symbols (SYMBOL) \{{cedille}\}
+> .menend 0
+> .section Select Menu \{F9\}
+> This menu is used to perform operations on selected portions of code.
+> .menbeg 10
+> Clear Selection (UNSELECT) \{None\}
+> Hide (HIDE) \{{umlaut}\}
+> Copy to workspace (COPY) \{CTRL-C\}
+4852,4853c4868,4869
+< Move to workspace (MOVE) \{CTRL-minus\}
+< Special changes (SPECIALTIES) \{None\}
+---
+> Move to workspace (MOVE) \{SHIFT-minus\}
+> Special changes (SPECIALTIES) \{SHIFT-f5\}
+4857c4873
+< .hed Help Menu \{HELP\}
+---
+> .section Help Menu \{HELP\}
+4863,4864c4879,4880
+< Information about Pascal (PHELP) \{SHIFT-divide\}
+< What Can I Type Here? (TOKLIST) \{SHIFT-times\}
+---
+> Information about Pascal (PHELP) \{SHIFT-{divide}\}
+> What Can I Type Here? (TOKLIST) \{SHIFT-{times}\}
+4869c4885
+< .hed Move and Search Menu \{SHIFT-4\}
+---
+> .section Move and Search Menu \{SHIFT-4\}
+4874,4877c4890,4893
+< Former cursor loc (POPBACK) \{None\}
+< Mark Position (MARK) \{None\}
+< Search forward (SEARCH) \{CTRL-F\}
+< Search backwards (RSEARCH) \{None\}
+---
+> Former cursor loc (POPBACK) \{SHIFT-comma\}
+> Mark Position (MARK) \{None\}
+> Search forward (SEARCH) \{CTRL-F\}
+> Search backwards (RSEARCH) \{CTRL-V\}
+4885c4901
+< .hed Run-Time Menu \{F6\}
+---
+> .section Run-Time Menu \{F6\}
+4905c4921
+< Big Step (SUPERSTEP) \{None\}
+---
+> Big Step (SUPERSTEP) \{SHIFT-F2\}
+4909,4916c4925,4932
+< Continue (CONTINUE) \{None\}
+< Debug on (BUGON) \{None\}
+< Debug off (BUGOFF) \{None\}
+< Don't Log Output to File (LOG) \{None\}
+< Immediate mode block (IMMEDIATE) \{None\}
+< Pop suspended state (POP) \{None\}
+< Pop suspend & Run (RUN) \{F1\}
+< Run Program (RUNIT) \{\}
+---
+> Continue (CONTINUE) \{CTRL-F1\}
+> Debug on (BUGON) \{None\}
+> Debug off (BUGOFF) \{SHIFT-F6\}
+> Don't Log Output to File (LOG) \{None\}
+> Immediate mode block (IMMEDIATE) \{None\}
+> Pop suspended state (POP) \{CTRL-P\}
+> Pop suspend & Run (RUN) \{F1\}
+> Run Program (RUNIT) \{None\}
+4920,4933c4936,4949
+< Who called me? (TRACEBACK) \{None\}
+< Log Output to File (LOG) \{None\}
+< .menend 0
+< .hed Insert Menu \{F4\}
+< This menu offers commands to insert various types of code into a program.
+< .menbeg 10
+< Extend list (EXTEND) \{(e agout)\}
+< Insert (INSERT) \{SHIFT-INS\}
+< Get workspace (GET) \{CTRL-+\}
+< What Can I Type Here? (TOKLIST) \{SHIFT-times\}
+< Possible Symbols (COMPLETE) \{,C\}
+< Enclose (ENCLOSE) \{None\}
+< .menend 0
+< .hed Delete Menu \{F3\}
+---
+> Who called me? (TRACEBACK) \{CTRL-B\}
+> Log Output to File (LOG) \{None\}
+> .menend 0
+> .section Insert Menu \{F4\}
+> This menu offers commands to insert various types of code into a program.
+> .menbeg 10
+> Extend list (EXTEND) \{{eagout}\}
+> Insert (INSERT) \{SHIFT-INS\}
+> Get workspace (GET) \{SHIFT-+\}
+> What Can I Type Here? (TOKLIST) \{SHIFT-{times}\}
+> Possible Symbols (SYMBOL) \{{cedille}\}
+> Enclose (ENCLOSE) \{None\}
+> .menend 0
+> .section Delete Menu \{F3\}
+4939c4955
+< Move to workspace (MOVE) \{CTRL-minus\}
+---
+> Move to workspace (MOVE) \{SHIFT-minus\}
+4943c4959
+< .hed Changes Menu \{F5\}
+---
+> .section Changes Menu \{F5\}
+4948,4955c4964,4971
+< Hide (HIDE) \{Umlaut (..)\}
+< Reveal (REVEAL) \{Circumflex (^)\}
+< Copy to workspace (COPY) \{None\}
+< Comment Out (COMOUT) \{None\}
+< Redo (REDO) \{CTRL-R\}
+< Special Changes (SPECIALTIES) \{None\}
+< .menend 0
+< .hed Files Menu \{F8\}
+---
+> Hide (HIDE) \{{umlaut}\}
+> Reveal (REVEAL) \{SHIFT-{umlaut}\}
+> Copy to workspace (COPY) \{CTRL-C\}
+> Comment Out (COMOUT) \{None\}
+> Redo (REDO) \{CTRL-R\}
+> Special Changes (SPECIALTIES) \{SHIFT-F5\}
+> .menend 0
+> .section Files Menu \{F8\}
+4959,4975c4975,4991
+< Save (SAVE) \{\}
+< Save to Text File (TEXT) \{\}
+< Merge (Load Library) (MERGE) \{None\}
+< QNX Command (SHELL) \{!\}
+< Set Filename (FILENAME) \{None\}
+< Quit ALICE (EXIT) \{(beta)\}
+< .menend 0
+< .hed Starting Menu
+< This menu is displayed when you begin your session with ALICE.
+< .menbeg 5
+< Edit a new program (NEW) \{None\}
+< Load in an existing Pascal Program (LOAD) \{CTRL-L\}
+< Quit the ALICE system (QUIT) \{(beta)\}
+< Experiment in Immediate Mode (IMMEDIATE) \{None\}
+< What is ALICE all about? (ALICE) \{None\}
+< .menend 0
+< .hed Safety Menu
+---
+> Save (SAVE) \{CTRL-S\}
+> Save to Text File (TEXT) \{\}
+> Merge (Load Library) (MERGE) \{None\}
+> QNX Command (SHELL) \{CTRL-Q\}
+> Set Filename (FILENAME) \{None\}
+> Quit ALICE (EXIT) \{{beta}, SHIFT-F8\}
+> .menend 0
+> .section Starting Menu
+> This menu is displayed when you begin your session with ALICE.
+> .menbeg 5
+> Edit a new program
+> Load in an existing Pascal Program
+> Quit the ALICE system
+> Experiment in Immediate Mode
+> What is ALICE all about?
+> .menend 0
+> .section Safety Menu
+4985c5001
+< .hed Miscellaneous Menu \{F7\}
+---
+> .section Miscellaneous Menu \{F7\}
+4992c5008
+< Special changes (SPECIALTIES) \{None\}
+---
+> Special changes (SPECIALTIES) \{SHIFT-F5\}
+4996,5010c5012,5013
+< 
+< .blnk 0
+< .page
+< .ce
+< .sp 1.7ln
+< .begin nopara
+< .set chapno C
+< .set sectno 0
+< .set subsectno 0
+< {big {bo Appendix C}}
+< {big {bo Templates used by ALICE}}
+< .thick
+< .end nopara
+< 
+< .bt
+---
+> .blnk 0
+> .appendix C/Templates used by ALICE
+=========================
+From this point to the end you can s/plho/pclho/
+and here are the rest of the diffs
+=======================
+
+1d0
+< .bt
+11c10
+< \{{pclho Comment that says what the routine does}\}
+---
+> \{{ul Comment that says what the routine does}\}
+34c33
+< ____\{{pclho Comment that says what the routine does}\}
+---
+> ____\{{ul Comment that says what the routine does}\}
+42c41
+< ____\{{pclho Comment that says what the routine does}\}
+---
+> ____\{{ul Comment that says what the routine does}\}
+58c57
+< {rwd array} [{pclho range}] {rwd of} {pclho Type}
+---
+> {rwd array} \[{pclho range}\] {rwd of} {pclho Type}
+156a156
+> .codend 0
+168c168
+< {pclho Variable}[{pclho Subscript}]
+---
+> {pclho Variable}\[{pclho Subscript}\]
+177,178c177,178
+< The templates that follow are all used for expressions.
+< The format depends on the first character (operator) that is typed in.
+---
+> {bo The templates that follow are all used for expressions.
+> The format depends on the first character (operator) that is typed in.}
+182,183c182,183
+< .template [
+< [{pclho Value}]
+---
+> .template \[
+> \[{pclho Value}\]
+237a238
+> .codend 0
+239,253c240
+< 
+< .blnk 0
+< .page
+< .ce
+< .sp 1.7ln
+< .begin nopara
+< .set chapno D
+< .set sectno 0
+< .set subsectno 0
+< {big {bo Appendix D}}
+< {big {bo The APRUN Program}}
+< .thick
+< .end nopara
+< 
+< .bt
+---
+> .appendix D/The APRUN Program
+256c243
+< In many ways, it is an "interpreter only" version of ALICE.
+---
+> In many ways, it is an {q interpreter only} version of ALICE.
+262a250,253
+> {bo NOTE:  APRUN is currently not supplied with the ICON version of ALICE.
+> It may be provided later.  Alice programs produced on the ICON can run
+> on the IBM-PC using the IBM-PC version of ALICE and APRUN.}
+> .bt
+274c265
+< sets the size of the "location" stack.
+---
+> sets the size of the {q location} stack.
+280c271
+< indicates that the software of the "curses" package should be loaded.
+---
+> indicates that the software of the {q curses} package should be loaded.
+286c277
+< from a "heap" of available memory.
+---
+> from a {q heap} of available memory.
+293c284,285
+< .hbb (a)
+---
+> .begin list
+> 
+296c288
+< .hbb (b)
+---
+> 
+299a292
+> .end list
+300a294,295
+> .appendix E/ICON Keyboard
+> This diagram gives the location of various keys on the ICON.
+302,331c297
+< .page
+< .ce
+< .sp 1.7ln
+< .begin nopara
+< .set chapno E
+< .set sectno 0
+< .set subsectno 0
+< {big {bo Appendix E}}
+< {big {bo Trouble-Shooting}}
+< .thick
+< .end nopara
+< 
+< .bt
+< This appendix discusses a variety of problems that may occur while you
+< are using ALICE, and what to do about them.
+< 
+< .blnk 0
+< .page
+< .ce
+< .sp 1.7ln
+< .begin nopara
+< .set chapno F
+< .set sectno 0
+< .set subsectno 0
+< {big {bo Appendix F}}
+< {big {bo Organization of Help Files}}
+< .thick
+< .end nopara
+< 
+< .bt
+---
+> .appendix F/Organization of Help Files
+333c299
+< files under a directory called "alice/help".
+---
+> files under a directory called {q alice/help.}
+360c326
+< where "|" is the or-bar character, and {type M} and {type N} are integers.
+---
+> where {q |} is the or-bar character, and {type M} and {type N} are integers.
+406c372
+< "psymbol/integer".
+---
+> {q psymbol/integer.}
+409c375
+< This is what tells ALICE to "pop-up" the menu.
+---
+> This is what tells ALICE to {q pop-up} the menu.
+428,430c394,442
+< This would obtain a HELP format file named "stuff" from the
+< HELP catalog "teachcat".
+< .blnk 0
+---
+> This would obtain a HELP format file named {q stuff} from the
+> HELP catalog {q teachcat.}
+> .blnk 0
+> .appendix G/Trouble-Shooting
+> This appendix discusses a variety of problems that may occur while you
+> are using {ALICE}, and what to do about them.
+> .oca SHARED LIBRARY NOT MOUNTED
+> Yout get this message if either of the QNX shared libraries "farcall" and
+> "float" have not been mounted.  Alice needs both of these and will abort
+> on startup if they have not been prepared.  This is usually done by the
+> system administrator in the file /config/sys.init.  A line of the form
+> .codebeg 10
+> mount lib /config/farcall.slib
+> .codend 0
+> is usually in order
+> .oca ALICE aborts on startup
+> This can happen if there is not enough memory, or if ALICE has not been
+> properly installed.  Use the {q {type task +m}} command on QNX to see if
+> memory is left.  In qnx_tty_mode, there should be a block of around 200K
+> free for ALICE to use.  ALICE also insists that files {q /config/ap.init,}
+> {q /fonts/alice,} {q /config/apbuiltin} and {q /config/apstrings} be
+> present when it starts running.  Make sure these files are there and
+> readable.
+> .bt
+> In order to run ALICE you must be in {q QNX tty mode} which is set up
+> with the command {type qnx_tty_mode}.  This command disables the
+> memory-eating {q gtask} and configures the keyboard for ALICE to work
+> properly.  Some people run ICONs in this mode all the time.  They can
+> run ALICE directly.  Others must go into this mode when running ALICE.
+> A special shell script which does all this for you is available, but there
+> have been problems reported using this script on ICONs with only 384K of
+> ram.
+> .oca ALICE aborts while running with strange diagnostic
+> Many QNX calls will abort the program if there is any sort of system error,
+> such as writing to a full disk.  There is little ALICE can do to avoid this
+> at present.
+> .oca Internal Error: ...
+> If ALICE reports an internal error, it will ask you at the bottom of the
+> screen whether you wish to continue.  You may try, but you should save
+> your work immediately and quit if ALICE allows you too.  If saying yes
+> just gives the error again, you must say no.  Please note the error and
+> as much as you can about the circumstances surrounding it.  If at all possible,
+> find a way of reliably duplicating this condition.  Report this error to
+> LGS through appropriate channels.
+> .oca Can't find a help file
+> Make sure that the help files have been properly installed, and that you
+> are not using specially modified help files.  Some token input actions
+> (from the Possible Input menu) do not have associated help, and so might
+> generate this message.

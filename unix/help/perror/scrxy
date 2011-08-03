@@ -1,0 +1,5 @@
+|5,72
+ScrXY: Illegal screen query NUMBER
+    You tried an instruction of the form ScrXY(N), where N was not one of
+    the numbers 1,2,-1,-2.  Those four numbers are the only ones that can
+    be specified as arguments for ScrXY.

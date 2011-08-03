@@ -1,0 +1,21 @@
+|16,74
+     To fill in a Constant Declaration placeholder, you enter a name that
+will be associated with a particular constant.  This sets up a constant
+declaration.
+     Constant declarations appear in the CONST declaration section of a
+program or subprogram.  Once a constant has been associated with a name,
+the name may be used anywhere that the value of the constant would be
+valid.
+     Named constants are used to make your program easier to understand and
+easier to change.
+
+Constant Declaration Examples:
+     const
+         PI = 3.14159;
+         SIZE = 100;
+         DOLLAR = '$';
+|mFor more, choose
+|iDo nothing,nop
+|iNames,Hpclass/name
+|iConstants,Hpclass/constant
+|p

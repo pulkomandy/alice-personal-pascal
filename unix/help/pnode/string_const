@@ -1,0 +1,24 @@
+|19,74
+     A string constant is written as any number of characters enclosed in
+single or double quote marks.  You can use any character in the ASCII
+character set (anything you can type in from the terminal keyboard, and a
+lot of others too).
+     If you want the string to contain the same sort of quote mark that you
+are using to enclose the string, you have to type TWO of those quotes.  If
+you only type one, ALICE thinks it's the end of the string.
+     Strings in double quotes always have the type "packed array of char".
+Single quotes give "packed array of char" except when they enclose a single
+character; in this case, the type is just "char".
+     A string constant with no characters in it is called the "null
+string".  You can only create one of these with double quotes: "".
+
+String Constant Examples:
+     'A string'
+     'Don''t forget to put two single quotes'
+     "Don't need two singles if doubles outside"
+     ""  {Null string}
+|mFor more, choose
+|iDo nothing,nop
+|iPacked arrays,Hpnode/packed_type
+|iCharacter constants,Hpnode/character_co
+|p

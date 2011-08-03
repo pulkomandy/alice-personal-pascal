@@ -1,0 +1,38 @@
+* means low priority for now
+Editor:
+!!	Error messages for unimplemented features
+	fix up debugging prints to use printt3, etc.
+	load/save a subtree
+	labels with leading zeros. (*)
+	window for immediate mode - need this at least
+	debug on typecheck - pvs
+	Editing of with, fix errors that are signaled (*)
+	entry of records (ability to do field without record?) (*)
+	windows (*)
+	cursor move after null type can still go quite a distance (*)
+	fancier macros (2 or more char) (*)
+	lines longer than 255 chars - treeprint buffer is fixed size (*)
+	multi-d arrays - special representation *
+	search user interface (*)
+	special local variable for function assign instead of actual symbol
+	reading in templates from a file (*)
+Interp:
+	Subrange and other checks on value parameters
+	some non checked errors on goto
+	check for duplication of label - this is hard...
+	typecheck fixing with errors
+	proper creation of frames in immediate execution (how do I duplicate
+	  this bug)
+	function & procedure params - checks, 
+	printpoints - variable assign, routine call (*)
+	Assigning to for loop variable caught (*)
+	variant records checking(*)
+	writeln of records, small arrays * - for debug mostly
+	new & dispose with variants. - check them at least (*)
+	new & dispose with table of pointers & double indirection
+	traceback statements (*)
+	start up again after error? (*)
+	start up again from different point (manual goto) (*)
+	duplicate cases detection (*)
+Parser bugs:
+	withs,

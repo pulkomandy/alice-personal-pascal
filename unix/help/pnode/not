@@ -1,0 +1,12 @@
+|13,73
+     The "not" operator reverses the truth of a Boolean (true/false) value
+or expression.  "not(A)" is true if A is false, and false if A is true.
+"A" must have the Boolean type, and the result of "not" is also Boolean.
+
+not Examples:
+     while not eoln do begin ...
+     if not ( (c = '+') or (c = '-') ) then begin ...
+|mFor more, choose
+|iDo nothing,nop
+|iBoolean data,Hpsymbol/boolean
+|p

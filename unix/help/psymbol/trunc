@@ -1,0 +1,13 @@
+|9,74
+     The "trunc" function converts a real value or expression to an integer
+by "chopping off" the fractional part.
+
+Trunc Examples:
+     trunc(3.4)  {is the integer 3}
+     trunc(3.7)  {is the integer 3}
+     trunc(-4.1) {is the integer -4}
+     trunc(-4.7) {is the integer -4}
+|mFor more, choose
+|iDo nothing,nop
+|iRound,Hpsymbol/round
+|p

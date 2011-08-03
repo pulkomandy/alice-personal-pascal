@@ -1,0 +1,28 @@
+|23,71
+     An Enumerated Type is a scalar type that is created by listing or
+"enumerating" the values in the type.  The values in the type are
+represented by ordinary names.
+     The values in an enumerated type may be compared with the usual
+comparison operators.  A is less than B (A<B) if A comes earlier in the
+list of values than B does.
+     Enumerated types may be used anywhere a normal scalar type may be
+used.  In particular, they may be used in subranges, as case labels, and
+as array subscripts.
+     Boolean is actually defined as an enumerated type (see below).
+
+Enumerated Type Examples:
+     type
+         day = (sun,mon,tue,wed,thu,fri,sat);
+         boolean = (false,true);
+         colour = (red,orange,yellow,green,blue,indigo,violet);
+     var
+         birthday : day;
+         paint : colour;
+     begin
+     paint := red;
+     birthday := wed;
+|mWould you like more on
+|iDo nothing,nop
+|iScalar types,Hmisc/scalar
+|iBoolean,Hpsymbol/boolean
+|p

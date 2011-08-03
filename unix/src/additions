@@ -1,0 +1,87 @@
+New Features:
+
+By default, or if you choose a stack size (s=) of zero, Alice selects
+approximately half the available main data segment for runtime memory.
+If this is too much, or too little, you can alter the amount of memory
+taken with the "l=" and "s=" options.  Remember that runtime memory comes
+from the same region as constant strings ("Hello There") and variable names.
+
+The GET and MOVE commands are not on CTRL-"plus" and CTRL-"minus" as
+documented.  Instead GET is on ALT-"plus" and MOVE is on ALT-"minus".
+You must use the plus and minus keys on the main keyboard, not the large
+ones on the numeric keypad.  You don't need to shift the "=/+" key.
+
+ALICE now detects overflow on integer addition, subtraction and
+multiplication.  ALICE integers are 16 bits, and must be in the range
+-32768 .. 32767.  Any result outside this range generates a runtime
+error.
+
+ALICE now has a "-f" option which tells it that the color/graphics
+display card being used does not "flicker" the way the IBM card does.
+Most name-brand non-IBM cards don't have this flicker misfeature.
+If you have a card like this, using "-f" makes screen output a fair
+bit faster.
+
+ALICE now loads the Pascal templates from the file "aptempla.suf".
+Look in the future for new templates offering different formatting,
+and the possible release of the template generator program, allowing
+you to alter the way ALICE displays programs on the screen.
+On the supplemental disk, you'll find a file called "nlbegin.suf" which
+you can rename to "aptempla.suf".  This provides templates where the word
+"begin" is on a line by itself.
+
+
+Known Bugs:
+
+No programming language system in history has ever gone out without
+a few minor problems.  ALICE: The Personal Pascal is sadly not an
+exception.  The following bugs are either chronic, can't be duplicated,
+or were discovered just prior to release:
+
+1) There have been some reported problems when ALICE runs out of
+memory if extensive editing is done.  Nothing solid enough to track down,
+but to be sure, save your programs in new files if you run out of memory.
+
+2) If ALICE runs out of memory while loading a program, some memory is
+lost forever.  Usually it's not a lot.  Sorry.  The solution is to save
+out, quit ALICE and begin again.  This also frees up memory lost to
+"fragmentation" in a long session.
+
+3) Alice needs about 230K of free memory to run.  That means that if you
+have a 256K machine, you can't run DOS 3.0 or have any RAMdisks or
+memory resident programs.  If you have only 256K, we advise you get more,
+as memory cards are quite inexpensive these days.  Don't expect a lot
+from ALICE with this limited amount of memory.
+
+4) There have been reported problems using the BREAK key while the
+Borland "Sidekick" program is running.
+
+5) ALICE's handling of field references and WITH statements is not perfect.
+when record declarations are deleted or the variable in a WITH statement is
+deleted.  One sure fire way to correct any field problems in the body of
+a WITH statement is to MOVE (ALICE command) the whole body out to a
+workspace and COPY it back in.  This re-looks up any symbol references.
+If you delete an entire record declaration and UNDO this, references to
+fields in this record are currently not restored.
+
+6) Take caution when using HIDE or ENCLOSE on long lists of statements
+or declarations.  This can use up all your UNDO memory with unpredictable
+results.
+
+7) If you use the EDIT command to edit expressions, be warned that
+placeholders just get placed in the editing buffer as regular text.  When
+you are finished editing, they will not be turned back into placeholders,
+so you might get messages saying that the symbol "Value" is undefined.
+
+8) Hiding of large blocks of declarations can be quite slow.  Currently
+ALICE deletes all the declarations and inserts them back, hidden.
+
+9) Floating point overflow and underflow are not detected.  ALICE uses
+large-size (8 byte) floating point numbers, so you should not normally
+run into trouble here.
+
+10) Beware of using CProc routines like the CURSES windowing library when
+low on memory.  If these routines run out, they simply return error
+indicators and don't announce the fact or interupt your program.
+If you don't check for trouble, (like a 0 return from newwin) you can
+step all over the memory of your computer, causing ALICE to "hang."

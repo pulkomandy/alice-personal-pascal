@@ -1,0 +1,11 @@
+|11,72
+This name is not a constant
+    Inside a subrange in a type declaration, you used a name that was not
+    the name of a constant.  You cannot use variables when you are
+    specifying a subrange.
+|mFor more, choose
+|iDo nothing,nop
+|iType declarations,Hpnode/type_declara
+|iNamed constants,Hpnode/constant_dec
+|iSubranges,Hpnode/subrange
+|p

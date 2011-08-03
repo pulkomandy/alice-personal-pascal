@@ -1,0 +1,334 @@
+About to do initscr
+
+Initializing text drawing
+
+f_nxt: 256, s_nxt: 80
+
+Templates loaded...
+
+Full size = 0, 32, 640, 368
+
+Work area of window 3: 0, 69, 620, 120
+
+Making a curses window with 0, 80, 620, 120
+
+In chars: 7, 77, 5, 0
+
+Work area of window 4: 0, 243, 620, 122
+
+Making a curses window with 0, 256, 620, 122
+
+In chars: 7, 77, 16, 0
+
+max stack size 5000, lc_stack_size 625
+
+Ready to call mainloop after errset
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=0
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: gemredraw
+
+Redrawing window 2
+
+Descend in block 68DD0, isdirty is 1
+
+CheckAt=0, cursor=0
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=4
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: gemredraw
+
+Redrawing window 3
+
+Redrawing clip: 0, 69, 620, 120
+
+Curwin: 66444
+
+GetBeg(66444) returns 0, 69
+
+Window: 0, 2114, 616, 112
+
+Clip: 0, 69, 620, 120
+
+CheckAt=0, cursor=0
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=4
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: gemredraw
+
+Redrawing window 4
+
+Redrawing clip: 0, 243, 620, 122
+
+Curwin: 668F2
+
+GetBeg(668F2) returns 0, 243
+
+Window: 0, 2114, 616, 112
+
+Clip: 0, 243, 620, 122
+
+CheckAt=0, cursor=0
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=4
+
+back from hist_mark()
+
+
+
+--------------------
+About to do initscr
+
+Initializing text drawing
+
+f_nxt: 256, s_nxt: 80
+
+Templates loaded...
+
+Full size = 0, 32, 640, 368
+
+Work area of window 5: 0, 69, 620, 120
+
+Making a curses window with 0, 80, 620, 120
+
+In chars: 7, 77, 5, 0
+
+Work area of window 6: 0, 243, 620, 122
+
+Making a curses window with 0, 256, 620, 122
+
+In chars: 7, 77, 16, 0
+
+max stack size 5000, lc_stack_size 625
+
+Ready to call mainloop after errset
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=0
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: gemredraw
+
+Redrawing window 5
+
+Redrawing clip: 0, 69, 620, 120
+
+Curwin: 66444
+
+GetBeg(66444) returns 0, 69
+
+Window: 0, 2114, 616, 112
+
+Clip: 0, 69, 620, 120
+
+Descend in block 68DD0, isdirty is 1
+
+CheckAt=0, cursor=0
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=4
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: gemredraw
+
+Redrawing window 6
+
+Redrawing clip: 0, 243, 620, 122
+
+Curwin: 668F2
+
+GetBeg(668F2) returns 0, 243
+
+Window: 0, 2114, 616, 112
+
+Clip: 0, 243, 620, 122
+
+CheckAt=0, cursor=0
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=4
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: dump
+
+
+
+dump of tree
+
+node=68DD0, type 2=pascal program: 
+
+flags 0, parent 586A6, kids: #0: 68DF8, #1: 68E18, #2: 68E44, #3: 68E70, #4: 68E9C, #5: 68EB8, #6: 0,
+
+  STUB at 68DF8 : Ignored Name
+
+  node=68E18, type 101=List: parent 68DD0
+
+      node=68ED8, type 1=comment: flags 0, parent 68E18, kids: #0: 68EE8,
+
+    comment text: input
+
+      node=68EF2, type 1=comment: flags 0, parent 68E18, kids: #0: 68F02,
+
+    comment text: output
+
+  node=68E44, type 101=List: parent 68DD0
+
+      STUB at 68E34 : {Comment that says what the routine does}
+
+  node=68E70, type 101=List: parent 68DD0
+
+      STUB at 68E60 : Declarations
+
+  node=68E9C, type 101=List: parent 68DD0
+
+      STUB at 68E8C : Statement
+
+CheckAt=0, cursor=0
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=4
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: gemredraw
+
+Redrawing window 6
+
+Redrawing clip: 117, 243, 408, 19
+
+Curwin: 668F2
+
+GetBeg(668F2) returns 0, 243
+
+Window: 0, 2114, 616, 112
+
+Clip: 117, 243, 408, 19
+
+CheckAt=0, cursor=0
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=4
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: gemredraw
+
+Redrawing window 5
+
+Redrawing clip: 117, 158, 408, 31
+
+Curwin: 66444
+
+GetBeg(66444) returns 0, 69
+
+Window: 0, 2114, 616, 112
+
+Clip: 117, 158, 408, 31
+
+CheckAt=0, cursor=0
+
+mainloop, cursor 6, ocursor 8E8C, srch_row 0, srch_real 0, look.=4
+
+back from hist_mark()
+
+GetBeg(66444) returns 0, 69
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 77, StartY: 0, numlin: 7
+
+mainloop: topcmd returns ?<97>? (97)
+
+
+
+Command: exit
+
+BegX: 0, BegY: 0
+
+StartX: 0, len: 80, StartY: 0, numlin: 25
+
+

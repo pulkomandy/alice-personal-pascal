@@ -1,0 +1,453 @@
+
+
+define( `classnum', -1 )
+define(makeclass, `divert(9)define(`classnum',incr(classnum))
+`#define' C_$1 classnum
+divert(1)static ActionNum c$1[] = $3;
+ifelse(`$4',NILTYP,,`static type_code t$1[] = $4;')
+ifelse(`$5',NULL,,`static NodeNum n$1[] = $5;')
+divert(2)c$1,
+divert(3)$2,
+divert(4)ifelse(`$4',NILTYP,0,t$1),
+divert(5)ifelse(`$5',NULL,0,n$1),
+divert(10)' )
+
+define(mfakeclass, `define(`classnum',incr(classnum))
+divert(2)0,
+divert(3)0,
+divert(4)0,
+divert(5)0,
+divert(10)' )
+
+divert(1)`#include' "alice.h"
+`#include' "action.h"
+`#include' "token.h"
+`#include' "typecodes.h"
+`#include' "class.h"
+divert(2) ActionNum *Class_Actions[] = {
+divert(3) char *Class_Names[] = {
+divert(4) type_code *Class_Types[] = {
+divert(5) NodeNum *Valid_Nodes[] = {
+divert(9) /* cpp definitions */
+`#define' CLIST(arg) arg+64
+`#define' CLASSMASK 63
+
+
+/*
+ * Classes - these are the actions that are taken for a given token
+ * when the cursor is on an unexpanded stub of the given class.
+ */
+makeclass( ROOT, "Code-Root", ` {
+	TOK_PROG, EXPAND + N_PROGRAM,	/* cant normally happen */
+	TOK_PROCEDURE, EXPAND+N_DECL_PROC,
+	TOK_FUNCTION, EXPAND+N_DECL_FUNC,
+	0 } ',
+	`NILTYP',
+	`{N_PROGRAM, N_DECL_PROC, N_DECL_FUNC, 0}' )
+makeclass( COMMENT, "Comment", ` {
+	TOK_CMNT, ACT_CONTOK,
+	0 } ',
+	`NILTYP',
+	`{ N_T_COMMENT, 0 }' )
+makeclass( INIT, "initializer", ` {
+	TOK_INT, ACT_CONTOK,
+	TOK_ID, ACT_RECID,
+	TOK_NUMB, ACT_CONTOK,
+	TOK_CHAR, ACT_CONTOK,
+	TOK_STRING, ACT_CONTOK,
+	TOK_PLUS, ACT_CONTOK,
+	TOK_MINUS, ACT_CONTOK,
+	TOK_LPAREN, EXPAND+N_INIT_STRUCT,
+	TOK_COLON, EXPAND+N_FLD_INIT,
+	TOK_LBRACKET, EXPAND+N_EXP_SET,
+	0 } ',
+	`{ T_CONST, T_BCONST, T_BENUM, T_ENUM_ELEMENT, T_UNDEF, T_FIELD, 0 }',
+	`{ N_ID, N_CON_INT, N_CON_CHAR, N_CON_STRING, N_CON_REAL,
+		N_CON_PLUS, N_CON_MINUS, N_INIT_STRUCT, N_FLD_INIT,
+		N_EXP_SET, 0 }')
+makeclass( LABEL, "Label Number", ` {
+	TOK_INT, EXPAND + N_ID,
+	0 } ',
+	`{ T_LABEL, 0 }',
+	`{ N_ID, 0 }'
+	)
+makeclass( PROC_ID, "Procedure Name", `{
+	TOK_ID, EXPAND + N_ID,
+	0 } ',
+	`{ T_PROCEDURE, T_BPROC, T_READLN, T_WRITELN, T_BTPROC, T_LPROC,
+		T_FORM_PROCEDURE, T_UNDEF, 0 }',
+		`{ N_ID, 0 }'
+	)
+makeclass( FUN_ID, "Function Name", ` {
+	TOK_ID, EXPAND + N_ID,
+	0 } ',
+	`{ T_FUNCTION, T_BFUNC, T_LFUNC, T_BTFUNC, T_FORM_FUNCTION, T_UNDEF, 0 }',
+	`{ N_ID, 0 }'
+	)
+makeclass( PROGRAM, "Pascal Program", ` { 
+	TOK_PROG, ACT_DPGM,
+	0 } ',
+	`NILTYP',
+	`{ N_PROGRAM, 0 }' )
+makeclass( DECLARATIONS, "Declarations", ` {
+	TOK_FOR, EXPAND + N_FORWARD,
+	TOK_CR, ACT_IGNORE,
+	TOK_CMNT, ACT_COMMENT,
+	TOK_NOT, EXPAND + N_NOTDONE,
+	0 } ',
+	`NILTYP',
+	`{ N_DECL_VAR, N_DECL_TYPE, N_DECL_CONST, N_DECL_LABEL, N_DECL_PROC,
+		N_HIDE, N_REVEAL, N_LIBRARY,
+		N_DECL_FUNC, N_FORWARD, N_ST_COMMENT, N_NOTDONE, 0 }' )
+makeclass( LABEL_DECL, "Label", ` {
+	TOK_INT, ACT_DECLARE,
+	0 } ',
+	`NILTYP',
+	`{N_DECL_ID, 0 }' )
+makeclass( CONST_DECL, "Constant Declaration", ` {
+	TOK_ID, ACT_CDID,
+	TOK_EQ, EXPAND + N_CONST_DECL,
+	TOK_COLON, EXPAND + N_CONST_INIT,
+	TOK_CMNT, ACT_COMMENT,
+	TOK_NOT, EXPAND + N_NOTDONE,
+	TOK_CR, ACT_IGNORE,
+	0 } ',
+	`NILTYP',
+	`{ N_CONST_INIT, N_CONST_DECL, N_HIDE, N_REVEAL, N_ST_COMMENT,
+		N_NOTDONE, 0 }' )
+makeclass( TYPE_DECL, "Type Declaration", ` {
+	TOK_ID, ACT_TDID,
+	TOK_EQ, EXPAND + N_TYPE_DECL,
+	TOK_CR, ACT_IGNORE,
+	TOK_CMNT, ACT_COMMENT,
+	TOK_NOT, EXPAND + N_NOTDONE,
+	0 } ',
+	`NILTYP',
+	`{ N_TYPE_DECL, N_HIDE, N_REVEAL, N_ST_COMMENT, N_NOTDONE, 0 }' )
+makeclass( VAR_DECL, "Variable Declaration", ` {
+	TOK_ID, ACT_VDID,
+	TOK_COLON, EXPAND + N_VAR_DECL,
+	TOK_ABSOLUTE, EXPAND + N_VAR_ABSOLUTE,
+	TOK_CR, ACT_IGNORE,
+	TOK_CMNT, ACT_COMMENT,
+	TOK_NOT, EXPAND + N_NOTDONE,
+	0 } ',
+	`NILTYP',
+	`{ N_VAR_DECL, N_VAR_ABSOLUTE, N_HIDE, N_REVEAL, N_ST_COMMENT,
+				N_NOTDONE, 0 }' )
+makeclass( CONSTANT, "Constant", ` {
+	TOK_INT, ACT_CONTOK,
+	TOK_ID, ACT_CONTOK,
+	TOK_NUMB, ACT_CONTOK,
+	TOK_CHAR, ACT_CONTOK,
+	TOK_STRING, ACT_CONTOK,
+	TOK_PLUS, ACT_CONTOK,
+	TOK_MINUS, ACT_CONTOK,
+	0 } ',
+	`{ T_CONST, T_BCONST, T_BENUM, T_ENUM_ELEMENT, T_UNDEF, 0 }',
+	`{ N_ID, N_CON_INT, N_CON_CHAR, N_CON_STRING, N_CON_REAL,
+		N_CON_PLUS, N_CON_MINUS, 0 }')
+makeclass( TYPE, "Type", ` {
+	TOK_ID, ACT_TYPID,
+	/* TOK_ID will actually be smarter */
+	TOK_ARRAY, EXPAND + N_TYP_ARRAY,
+#ifdef TURBO
+	TOK_STTYPE, EXPAND + N_TYP_STRING,
+#endif
+	TOK_SET, EXPAND + N_TYP_SET,
+	TOK_FILE, EXPAND + N_TYP_FILE,
+	TOK_UPARROW, EXPAND + N_TYP_POINTER,
+	TOK_RECORD, ACT_RECORD,
+	TOK_LPAREN, EXPAND + N_TYP_ENUM,
+	TOK_MINUS, ACT_TYPSR,
+	TOK_CHAR, ACT_TYPSR,	/* single chars only */
+	TOK_INT, ACT_TYPSR,
+	TOK_PACKED, EXPAND + N_TYP_PACKED,
+	0 } ',
+	`{ T_TYPE, T_BTYPE, T_BBTYPE, T_UNDEF, 0 }',
+	`{ N_TYP_ARRAY, N_ID, N_TYP_SET, N_TYP_FILE, N_TYP_POINTER,
+#ifdef TURBO
+		N_TYP_STRING,
+#endif
+		N_TYP_RECORD, N_TYP_ENUM, N_TYP_SUBRANGE, N_TYP_PACKED, 0 }'
+	)
+makeclass( TYPEID, "Type-Name", `{
+	TOK_ID, ACT_TYPID,
+	0} ',
+	`{ T_TYPE, T_BTYPE, T_BBTYPE, T_UNDEF, 0 }',
+	`{ N_ID, 0 }'
+	)
+makeclass( SIM_TYPE, "Simple-Type", `{
+	TOK_ID, ACT_TYPID,
+	TOK_LPAREN, EXPAND + N_TYP_ENUM,
+	TOK_DOTDOT, EXPAND + N_TYP_SUBRANGE,
+	TOK_DOT, EXPAND+N_TYP_SUBRANGE,
+	TOK_PLUS, ACT_TYPSR,
+	TOK_MINUS, ACT_TYPSR,
+	TOK_CHAR, ACT_TYPSR,	/* single chars only */
+	TOK_INT, ACT_TYPSR,
+	0} ',
+	`{ T_TYPE, T_BTYPE, T_BBTYPE, T_UNDEF, 0 }',
+	`{ N_ID, N_TYP_ENUM, N_TYP_SUBRANGE, 0 }'
+	)
+makeclass( ST_TYPE, "Structured-Type", `{
+	TOK_ARRAY, EXPAND + N_TYP_ARRAY,
+	TOK_SET, EXPAND + N_TYP_SET,
+	TOK_FILE, EXPAND + N_TYP_FILE,
+	TOK_RECORD, ACT_RECORD,
+	0} ',
+	`NILTYP',
+	`{ N_TYP_ARRAY, N_TYP_SET, N_TYP_FILE, N_TYP_RECORD, 0 }' )
+makeclass( FIELD, "Field-Declaration", ` {
+	TOK_ID, ACT_FDID,
+	TOK_CR, ACT_IGNORE,
+	TOK_CASE, EXPAND+N_VARIANT,
+	TOK_COLON, EXPAND+N_FIELD,
+	TOK_CMNT, ACT_COMMENT,
+	TOK_NOT, EXPAND + N_NOTDONE,
+	0 } ',
+	`NILTYP',
+	`{ N_FIELD, N_HIDE, N_REVEAL, N_VARIANT, N_ST_COMMENT, N_NOTDONE,  0 }'
+	)
+makeclass( FORMAL, "Parameter", ` {
+	TOK_VAR, EXPAND + N_FORM_REF,
+	TOK_SEMI, ACT_EXPLIST,
+	TOK_PROCEDURE, ACT_DPPROC,
+	TOK_FUNCTION, ACT_DPFUNC,
+	TOK_ID, ACT_PDID,
+	0 } ',
+	`NILTYP',
+	`{N_FORM_REF, N_FORM_VALUE, N_FORM_FUNCTION, N_FORM_PROCEDURE, 0 }' )
+makeclass( STATEMENT, "Statement", ` {
+	TOK_ASSIGN, EXPAND + N_ST_ASSIGN,
+	TOK_IF, EXPAND + N_ST_IF,
+	TOK_CMNT, ACT_COMMENT,
+	TOK_WHILE, EXPAND + N_ST_WHILE,
+	TOK_FOR, EXPAND + N_ST_FOR,
+	TOK_CASE, EXPAND + N_ST_CASE,
+	TOK_DOWNTO, EXPAND + N_ST_DOWNTO,
+	TOK_REPEAT, EXPAND + N_ST_REPEAT,
+	TOK_LPAREN, EXPAND + N_ST_CALL,
+	TOK_GOTO, EXPAND + N_ST_GOTO,
+	/* Actually should have routine here to resolve situation */
+	TOK_ID, ACT_STID,
+	TOK_QUESTION, ACT_WRITELN,
+	TOK_WITH, EXPAND + N_ST_WITH,
+	TOK_BEGIN, EXPAND + N_ST_BLOCK,
+	TOK_INT, ACT_LBSTAT,
+	TOK_COLON, EXPAND + N_ST_ASSIGN,
+	TOK_EQ, EXPAND + N_ST_ASSIGN,
+	TOK_CR, ACT_IGNORE,
+	TOK_DO, EXPAND + N_ST_TRACE,
+	TOK_NOT, EXPAND + N_NOTDONE,
+	0 } ',
+	`{T_VAR,T_INIT, T_FILENAME,T_PROCEDURE, T_BPROC, T_BTPROC, T_READLN, T_WRITELN,  T_LPROC,
+		T_FIELD, T_FORM_REF, T_FORM_VALUE, T_FORM_PROCEDURE, T_ABSVAR,
+		T_FUNCTION, 0}',
+	`{ N_ST_ASSIGN, N_ST_IF, N_ST_ELSE, N_ST_COMMENT, N_NOTDONE,
+		N_ST_WHILE, N_ST_FOR, N_HIDE, N_REVEAL,
+		N_ST_CASE, N_ST_DOWNTO, N_ST_REPEAT, N_ST_CALL, N_ST_GOTO,
+		N_ST_WITH, N_ST_BLOCK, N_ST_LABEL, 0 }'
+	)
+makeclass( CASE, "Case-Instance", ` {
+	/* These cases should expand another production */
+	TOK_ID, ACT_CCONST,
+	TOK_INT, ACT_CCONST,
+	TOK_ELSE, EXPAND + N_CASE_ELSE,
+	TOK_CHAR, ACT_CCONST,
+	TOK_PLUS, ACT_CCONST,
+	TOK_MINUS, ACT_CCONST,
+	TOK_COMMA, ACT_EXPLIST,
+	TOK_CMNT, ACT_COMMENT,
+	TOK_NOT, EXPAND+N_NOTDONE,
+	TOK_CR, ACT_IGNORE,
+	0 } ',
+	`NILTYP',
+	`{N_CASE, N_HIDE, N_REVEAL, N_CASE_ELSE, N_ST_COMMENT, N_NOTDONE, 0 }' )
+mfakeclass( RECINIT, "record init", ` {
+	TOK_COLON, EXPAND+N_FLD_INIT
+	TOK_ID, ACT_RECID,
+	0 } ',
+	`NILTYP',
+	`{ N_FLD_INIT, 0}' )
+makeclass( VAR, "Variable", ` {
+	TOK_ID, EXPAND + N_ID,
+	TOK_LBRACKET, EXPAND + N_VAR_ARRAY,
+	TOK_DOT, EXPAND + N_VAR_FIELD,
+	TOK_UPARROW, EXPAND + N_VAR_POINTER,
+	0 } ',
+	`{ T_VAR, T_FORM_REF, T_FORM_VALUE,T_FILENAME, T_UNDEF,
+		T_MEMVAR, T_PORTVAR, T_ABSVAR, T_INIT, T_FIELD, 0 }',
+	`{ N_ID, N_VAR_ARRAY, N_VAR_FIELD, N_VAR_POINTER, N_VF_WITH, 0 }'
+	)
+makeclass( EXP, "Value", ` {
+	/* Special provisions should be made for "type in expression" mode */
+	TOK_RBRACKET, EXPAND + N_VAR_ARRAY,
+	TOK_RPAREN, EXPAND + N_EXP_FUNC,
+	TOK_LPAREN, EXPAND + N_EXP_PAREN,
+	TOK_PLUS, EXPAND + N_EXP_PLUS,		/* ambiguous */
+	TOK_MINUS, EXPAND + N_EXP_MINUS,	/* ambiguous */
+	TOK_STAR, EXPAND + N_EXP_TIMES,
+	TOK_SLASH, EXPAND + N_EXP_SLASH,
+	TOK_DIV, EXPAND + N_EXP_DIV,
+	TOK_MOD, EXPAND + N_EXP_MOD,
+	TOK_EQ, EXPAND + N_EXP_EQ,
+	TOK_NE, EXPAND + N_EXP_NE,
+	TOK_LT, EXPAND + N_EXP_LT,
+	TOK_LE, EXPAND + N_EXP_LE,
+	TOK_GT, EXPAND + N_EXP_GT,
+	TOK_GE, EXPAND + N_EXP_GE,
+	TOK_NOT, EXPAND + N_EXP_NOT,
+	TOK_AND, EXPAND + N_EXP_AND,
+	TOK_OR, EXPAND + N_EXP_OR,
+#ifdef TURBO
+	TOK_XOR, EXPAND + N_EXP_XOR,
+	TOK_SHL, EXPAND + N_EXP_SHL,
+	TOK_SHR, EXPAND + N_EXP_SHR,
+#endif
+	TOK_IN, EXPAND + N_EXP_IN,
+	TOK_PLUS, EXPAND + N_EXP_UPLUS,
+	TOK_MINUS, EXPAND + N_EXP_UMINUS,
+	TOK_LBRACKET, EXPAND + N_EXP_SET,	/* ambiguous */
+	TOK_NIL, EXPAND + N_EXP_NIL,
+	TOK_DOT, EXPAND + N_VAR_FIELD,
+	TOK_DOTDOT, ACT_SET_SUBRANGE,
+/* Because of assignment statements, we cannot allow colon to be a prefix
+ * operator for expressions, since "david <space> := " would create
+ * david := <value> = <value> : <value>
+ */
+/*	TOK_COLON, EXPAND + N_OEXP_2,   ... Remove prefix colons on exps */
+	TOK_UPARROW, EXPAND + N_VAR_POINTER,
+ifelse(PREFIX,PREFIX,`
+	TOK_ID, ACT_EXPID,
+	TOK_INT, ACT_CONTOK,
+	TOK_NUMB, ACT_CONTOK,
+	TOK_CHAR, ACT_CONTOK,
+	TOK_STRING, ACT_CONTOK,
+', `
+	TOK_ID,	ACT_CEXPR,
+	TOK_INT, ACT_CEXPR,
+	TOK_NUMB, ACT_CEXPR,
+	TOK_CHAR, ACT_CEXPR,
+	TOK_STRING, ACT_CEXPR,
+' )
+	0 } ',
+	`{ T_VAR, T_CONST, T_BCONST, T_BENUM, T_ENUM_ELEMENT, T_FORM_VALUE, T_FORM_REF,
+		T_ABSVAR, T_INIT, T_FUNCTION, T_BFUNC, T_BTFUNC, T_FORM_FUNCTION, T_LFUNC,
+		T_FIELD, T_FILENAME, T_PROCEDURE, T_FORM_PROCEDURE, T_UNDEF,0}',
+	`{ N_VAR_ARRAY, N_EXP_FUNC, N_EXP_PAREN, N_EXP_PLUS, N_EXP_MINUS,
+	 N_EXP_TIMES, N_EXP_SLASH, N_EXP_DIV, N_EXP_MOD, N_EXP_EQ,
+	 N_EXP_NE, N_EXP_LT, N_EXP_LE, N_EXP_GT, N_EXP_GE, N_EXP_NOT,
+	 N_EXP_AND, N_EXP_OR, N_EXP_IN, N_EXP_UPLUS, N_EXP_UMINUS,
+	 N_OEXP_3, N_OEXP_2,
+	 N_EXP_SET, N_EXP_NIL, N_SET_SUBRANGE,
+	 N_VAR_FIELD, N_VAR_POINTER, N_VF_WITH, N_ID,
+#ifdef TURBO
+	 N_EXP_XOR, N_EXP_SHL, N_EXP_SHR,
+#endif
+	 N_CON_INT, N_CON_REAL, N_CON_STRING, N_CON_CHAR, 0 }'
+	)
+makeclass( CASECONST, "Case Constant", ` {
+	TOK_INT, ACT_CONTOK,
+	TOK_ID, ACT_CONTOK,
+	TOK_CHAR, ACT_CONTOK,
+	TOK_PLUS, ACT_CONTOK,
+	TOK_MINUS, ACT_CONTOK,
+	TOK_DOTDOT, EXPAND+N_TYP_SUBRANGE,
+	TOK_DOT, EXPAND+N_TYP_SUBRANGE,
+	0 } ',
+	`{ T_CONST, T_BCONST, T_BENUM, T_ENUM_ELEMENT, T_UNDEF, 0 }',
+	`{ N_CON_CHAR, N_CON_INT, N_ID, N_CON_PLUS, N_TYP_SUBRANGE,
+		N_CON_MINUS, 0 }')
+makeclass( DECL_ID, "Name", ` {
+	TOK_ID, ACT_DECLARE,
+	0 } ',
+	`NILTYP',
+	`{N_DECL_ID, 0 }' )
+makeclass( HIDECL_ID, "Routine Name", ` {
+	TOK_ID, ACT_HDECLARE,
+	0 } ',
+	`NILTYP',
+	`{N_DECL_ID, 0 }' )
+makeclass( BLCOMMENT, "{Comment that says what the routine does}", ` {
+	TOK_CMNT, ACT_COMMENT,
+	TOK_CR, ACT_IGNORE,
+	0 } ',
+	`NILTYP',
+	`{N_ST_COMMENT, N_HIDE, N_REVEAL, 0 }' )
+makeclass( VARIANT, "Variant", ` {
+	TOK_COLON, EXPAND+N_ST_VCASE,
+	TOK_LPAREN, EXPAND+N_ST_VCASE,
+	TOK_ID, ACT_CCONST,
+	TOK_INT, ACT_CCONST,
+	TOK_CHAR, ACT_CCONST,
+	TOK_PLUS, ACT_CCONST,
+	TOK_MINUS, ACT_CCONST,
+	TOK_CMNT, ACT_COMMENT,
+	TOK_NOT, EXPAND+N_NOTDONE,
+	TOK_CR, ACT_IGNORE,
+	0 } ',
+	`NILTYP',
+	`{ N_ST_VCASE, N_ST_COMMENT, N_NOTDONE,  0 }' )
+makeclass( FLD_NAME, "Field", ` {
+	TOK_ID, ACT_FDUSE,
+	0} ',
+	`{ T_FIELD, 0 }',
+	`{ N_ID, 0 }',
+	)
+makeclass( PASSUP, "Anything", `{
+	0} ',
+	`NILTYP',
+	`{ 0 }' )
+makeclass( OCONSTANT, "Constant", ` {
+	TOK_INT, ACT_CONTOK,
+	TOK_ID, ACT_CONTOK,
+	TOK_CHAR, ACT_CONTOK,
+	TOK_PLUS, ACT_CONTOK,
+	TOK_MINUS, ACT_CONTOK,
+	0 } ',
+	`{ T_CONST, T_BCONST, T_BENUM, T_ENUM_ELEMENT, T_UNDEF, 0 }',
+	`{ N_CON_CHAR, N_CON_INT, N_ID, N_CON_PLUS, N_CON_MINUS, 0 }')
+makeclass( PNAME, "Ignored Name", ` {
+	TOK_ID, ACT_IDCOMMENT,
+	0 } ',
+	`NILTYP',
+	`{ N_T_COMMENT, 0 }' )
+
+makeclass( SPECIAL, "Block-Statement", `{
+	TOK_IF, ACT_BLCHG,
+	TOK_WHILE, ACT_BLCHG,
+	TOK_REPEAT, ACT_BLCHG,
+	TOK_FOR, ACT_BLCHG,
+	TOK_CMNT, ACT_COMCHG,
+	TOK_BEGIN, ACT_BLCHG,
+	0 }',
+	`NILTYP',
+	`{ 0 }' )
+makeclass( ROUTNAME, "Routine-Name", `{
+	TOK_ID, EXPAND + N_ID,
+	0 } ',
+	`{ T_PROCEDURE, T_FUNCTION, T_UNDEF, 0 }',
+	`{ N_ID, 0 }'
+	)
+makeclass( ABSID, "Absolute Address", `{
+#ifndef LARGEPTR
+	TOK_ID, EXPAND+N_ID,
+#else
+	TOK_ID, ACT_ABSCON,
+	TOK_COLON, EXPAND+N_OEXP_2,
+	TOK_INT, ACT_ABSCON,
+	TOK_CHAR, ACT_ABSCON,
+	TOK_PLUS, ACT_ABSCON,
+	TOK_MINUS, ACT_ABSCON,
+#endif
+	0 } ',
+	`{ T_VAR, T_FORM_VALUE, T_FORM_REF,
+		T_ABSVAR, T_INIT, T_FILENAME, T_UNDEF,0}',
+	`{ N_ID, N_OEXP_2, 0 }'
+	)
+
+divert(2) 0};
+divert(3) 0};
+divert(4) 0};
+divert(5) 0};

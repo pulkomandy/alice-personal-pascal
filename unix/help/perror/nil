@@ -1,0 +1,12 @@
+|8,46
+Error - This pointer is NIL
+    You used a pointer in something of the form
+
+          p^
+
+    but the value of the pointer was "nil".
+|mFor more, choose
+|iDo nothing,nop
+|iThe nil pointer,Hpnode/nil_pointer
+|iPointers,Hpnode/pointer_type
+|p

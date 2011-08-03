@@ -1,0 +1,9 @@
+|9,71
+Second operand of mod must be strictly positive
+    In an expression of the form "A mod B", your B value was negative or
+    zero.  However, the "mod" operator requires that this value be posi-
+    tive.
+|mFor more, choose
+|iDo nothing,nop
+|imod,Hpnode/modulus
+|p

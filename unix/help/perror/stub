@@ -1,0 +1,13 @@
+|13,74
+Error - program is not finished yet
+    You tried to run the program before an important placeholder was filled
+    in.  When the program stops execution, the cursor should be located on
+    the placeholder that was not filled in.  Fill it in and try again.
+         Note that if your program is suspended because of this error, you
+    will have to use the POP command to sweep away the suspended program
+    before you can run it again.
+|mFor more, choose
+|iDo nothing,nop
+|iSuspended programs,Hmisc/susp_prog
+|iPOP,Hcommand/pop
+|p

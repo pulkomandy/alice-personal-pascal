@@ -1,0 +1,15 @@
+|16,72
+Substr: Substring too long to fit in destination
+    In a call to the SubStr procedure, you obtained a substring that was
+    too long to fit in the string variable where you wanted to put the
+    substring.  This would happen in
+
+          SubStr(str1,LENGTH,subscript,str2);
+
+    if the substring length LENGTH was greater than the length of "str2".
+    Either change the declaration of "str2" so it has room for more
+    characters, or decrease the LENGTH that you specify.
+|mFor more, choose
+|iDo nothing,nop
+|iSubStr,Hpsymbol/substr
+|p

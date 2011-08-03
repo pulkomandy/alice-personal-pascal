@@ -1,0 +1,398 @@
+Command: get c
+mmalloc(20) returns 6fb624
+mmalloc(20) returns 6fb63a
+mmalloc(12) returns 6fb650
+mmalloc(12) returns 6fb65e
+mmalloc(12) returns 6fb66c
+treefree(aeb2)
+freeing self
+mfree(6faeb2) frees 20828
+myWS(ade0) returns 6f
+if_sym_call(ade0, 1574006f), ntype(np)=71
+if_sym_call(b624, 130c006f), ntype(np)=71
+myWS(b624) returns 6f
+my_scope(ab74) returns 1
+Descend in block 6fab74, isdirty is 1
+slookup(c, create, 0, moan, 0)
+next_symtab(b650)
+Found table at ab74 type pascal program
+search_symtab(6fac48, c, 99, noredecls)
+returning, ptr=6faece(c)
+Error: Symbol 'c' has not been declared
+slookup(b, create, 0, moan, 0)
+next_symtab(b65e)
+with or field, ntype(45ea)=95
+Found table at ab74 type pascal program
+search_symtab(6fac48, b, 98, noredecls)
+returning, ptr=6fadfc(b)
+Error: Symbol 'b' has not been declared
+CheckAt=b624, cursor=6f
+mainloop: c_typecheck(b624, 0, 14)
+Error: Symbol 'c' has not been declared
+mainloop, cursor b624, ocursor 6f, srch_row 0, srch_real 0, look.=4
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: dump
+
+dump of tree
+node=6fab74, type 2=pascal program: 
+6facc4(tye) - type 8 typetree 5f45ea, scope 0, size 0, offset/value 0, flags 20
+6fad30(a) - type 8 typetree 5f45ea, scope 4, size 2, offset/value 0, flags 20
+6fadfc(b) - type 8 typetree 5f45ea, scope 9, size 2, offset/value 0, flags 20
+6faece(c) - type 8 typetree 5f45ea, scope 5, size 2, offset/value 4, flags 20
+flags 0, parent 5f61b2, kids: #0: 6fab9a, #1: 6fabb6, #2: 6fabde, #3: 6fac06, #4: 6fac2e, #5: 6fac48, #6: 0,
+  STUB at 6fab9a : Ignored Name
+  node=6fabb6, type 101=List: parent 6fab74
+      node=6fac64, type 1=comment: flags 0, parent 6fabb6, kids: #0: 6fac72,
+    comment text: input
+      node=6fac7a, type 1=comment: flags 0, parent 6fabb6, kids: #0: 6fac88,
+    comment text: output
+  node=6fabde, type 101=List: parent 6fab74
+      STUB at 6fabd0 : {Comment that says what the routine does}
+  node=6fac06, type 101=List: parent 6fab74
+      STUB at 6fb20c : Declarations
+  node=6fac2e, type 101=List: parent 6fab74
+      node=6fb624, type 41=assignment statement: flags 0, parent 6fac2e, kids: #0: 6fb63a, #1: 6fb66c, #2: 2,
+      node=6fb63a, type 68=field use: flags 0, parent 6fb624, kids: #0: 6fb650, #1: 6fb65e, #2: 5f45ea,
+        node=6fb650, type 99=Symbol: flags 0, parent 6fb63a, kids: #0: 6faece,
+        symbol: c
+        node=6fb65e, type 99=Symbol: flags 0, parent 6fb63a, kids: #0: 6fadfc,
+        symbol: b
+      STUB at 6fb66c : Value
+CheckAt=0, cursor=0
+mainloop, cursor b624, ocursor 6f, srch_row 0, srch_real 0, look.=4
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: get a
+mmalloc(12) returns 6faeb2
+mmalloc(12) returns 6fb67a
+mmalloc(20) returns 6fb688
+mmalloc(32) returns 6fb69e
+mmalloc(2) returns 6fb6c0
+mmalloc(20) returns 6fb6c4
+mmalloc(12) returns 6fb6da
+mmalloc(20) returns 6fb6e8
+mmalloc(12) returns 6fb6fe
+mmalloc(32) returns 6fb70c
+mmalloc(2) returns 6fb72e
+mmalloc(12) returns 6fb732
+mmalloc(12) returns 6fb740
+mmalloc(12) returns 6fb74e
+mmalloc(12) returns 6fb75c
+treefree(ac20)
+freeing self
+mfree(6fac20) frees 21486
+treefree(af18)
+freeing self
+mfree(6faf18) frees 20726
+myWS(b20c) returns 6f
+if_sym_call(b20c, 1574006f), ntype(np)=71
+if_sym_call(aeb2, 130c006f), ntype(np)=71
+if_sym_call(b67a, 130c006f), ntype(np)=71
+if_sym_call(b688, 130c006f), ntype(np)=71
+if_sym_call(b69e, 130c006f), ntype(np)=71
+add_decl(b69e)
+if_sym_call(b6c4, 130c006f), ntype(np)=71
+if_sym_call(b6da, 130c006f), ntype(np)=71
+if_sym_call(b6e8, 130c006f), ntype(np)=71
+if_sym_call(b6fe, 130c006f), ntype(np)=71
+if_sym_call(b70c, 130c006f), ntype(np)=71
+add_decl(b70c)
+if_sym_call(b732, 130c006f), ntype(np)=71
+if_sym_call(b740, 130c006f), ntype(np)=71
+if_sym_call(b75c, 130c006f), ntype(np)=71
+myWS(aeb2) returns 6f
+add_decl(b69e)
+my_symtab(b69e), ntype=111
+next_symtab(b688)
+Found table at ab74 type pascal program
+slookup(a, nocreate, 6fac48, nomoan, 0)
+search_symtab(6fac48, a, 97, noredecls)
+returning, ptr=6fad30(a)
+old_decl=ad30
+sym_link(b69e, 6f)
+ad30 was T_UNDEF
+sym_assign(ab74=pascal program, ad30, b69e)
+do_sym_swap(aeb2=declarations)
+do_sym_swap(b67a=List)
+do_sym_swap(b688=type declaration)
+do_sym_swap(b69e=name)
+do_sym_swap(b6c4=record type)
+do_sym_swap(b6da=List)
+do_sym_swap(b6e8=record field)
+do_sym_swap(b6fe=List)
+do_sym_swap(b70c=name)
+do_sym_swap(b732=Unref Symbol)
+do_sym_swap(b740=placeholder)
+do_sym_swap(b75c=placeholder)
+do_sym_swap(ab9a=placeholder)
+do_sym_swap(abb6=List)
+do_sym_swap(ac64=comment)
+do_sym_swap(ac7a=comment)
+do_sym_swap(abde=List)
+do_sym_swap(abd0=placeholder)
+do_sym_swap(ac2e=List)
+do_sym_swap(b624=assignment statement)
+do_sym_swap(b63a=field use)
+do_sym_swap(b650=Symbol)
+do_sym_swap(b65e=Symbol)
+do_sym_swap(b66c=placeholder)
+sym_assign(ab74=pascal program, ad30, b69e)
+do_sym_swap(aeb2=declarations)
+do_sym_swap(b67a=List)
+do_sym_swap(b688=type declaration)
+do_sym_swap(b69e=name)
+do_sym_swap(b6c4=record type)
+do_sym_swap(b6da=List)
+do_sym_swap(b6e8=record field)
+do_sym_swap(b6fe=List)
+do_sym_swap(b70c=name)
+do_sym_swap(b732=Unref Symbol)
+do_sym_swap(b740=placeholder)
+do_sym_swap(b75c=placeholder)
+do_sym_swap(ab9a=placeholder)
+do_sym_swap(abb6=List)
+do_sym_swap(ac64=comment)
+do_sym_swap(ac7a=comment)
+do_sym_swap(abde=List)
+do_sym_swap(abd0=placeholder)
+do_sym_swap(ac2e=List)
+do_sym_swap(b624=assignment statement)
+do_sym_swap(b63a=field use)
+do_sym_swap(b650=Symbol)
+do_sym_swap(b65e=Symbol)
+do_sym_swap(b66c=placeholder)
+add_decl(b70c)
+my_symtab(b70c), ntype=111
+field
+slookup(b, nocreate, 6fb74e, nomoan, 0)
+search_symtab(6fb74e, b, 98, noredecls)
+returning NIL
+next_symtab(b74e)
+Found table at ab74 type pascal program
+search_symtab(6fac48, b, 98, noredecls)
+returning, ptr=6fadfc(b)
+old_decl=adfc
+sym_link(b70c, 6f)
+empty symtab
+sym_assign(ab74=pascal program, adfc, b70c)
+do_sym_swap(aeb2=declarations)
+do_sym_swap(b67a=List)
+do_sym_swap(b688=type declaration)
+do_sym_swap(b69e=name)
+do_sym_swap(b6c4=record type)
+do_sym_swap(b6da=List)
+do_sym_swap(b6e8=record field)
+do_sym_swap(b6fe=List)
+do_sym_swap(b70c=name)
+do_sym_swap(b732=Unref Symbol)
+do_sym_swap(b740=placeholder)
+do_sym_swap(b75c=placeholder)
+do_sym_swap(ab9a=placeholder)
+do_sym_swap(abb6=List)
+do_sym_swap(ac64=comment)
+do_sym_swap(ac7a=comment)
+do_sym_swap(abde=List)
+do_sym_swap(abd0=placeholder)
+do_sym_swap(ac2e=List)
+do_sym_swap(b624=assignment statement)
+do_sym_swap(b63a=field use)
+do_sym_swap(b650=Symbol)
+do_sym_swap(b65e=Symbol)
+do_sym_swap(b66c=placeholder)
+slookup(integer, create, 0, moan, 0)
+next_symtab(b732)
+Found table at b6c4 type record type
+search_symtab(6fb74e, integer, 238, noredecls)
+returning NIL
+next_symtab(b74e)
+Found table at ab74 type pascal program
+search_symtab(6fac48, integer, 238, noredecls)
+returning NIL
+next_symtab(ac48)
+search_symtab(5f6204, integer, 238, noredecls)
+returning, ptr=5f45ea(integer)
+my_scope(ab74) returns 1
+Descend in block 6fab74, isdirty is 1
+mmalloc(12) returns 6faf18
+New node, type 98(placeholder) at 6faf18, 1 kids, 7 6f0001
+growlist(6fac06), lcount=1, lacount=4
+growlist() returns ac06, lcount=111, lacount=2
+myWS(af18) returns 6f
+mmalloc(12) returns 6fb76a
+mmalloc(12) returns 6fb778
+mmalloc(20) returns 6fb786
+mmalloc(12) returns 6fb79c
+mmalloc(32) returns 6fb7aa
+mmalloc(2) returns 6fb7cc
+mmalloc(12) returns 6fb7d0
+mmalloc(12) returns 6fb7de
+myWS(af18) returns 6f
+if_sym_call(af18, 1574006f), ntype(np)=71
+if_sym_call(b76a, 130c006f), ntype(np)=71
+if_sym_call(b778, 130c006f), ntype(np)=71
+if_sym_call(b786, 130c006f), ntype(np)=71
+if_sym_call(b79c, 130c006f), ntype(np)=71
+if_sym_call(b7aa, 130c006f), ntype(np)=71
+add_decl(b7aa)
+if_sym_call(b7d0, 130c006f), ntype(np)=71
+if_sym_call(b7de, 130c006f), ntype(np)=71
+myWS(b76a) returns 6f
+add_decl(b7aa)
+my_symtab(b7aa), ntype=111
+next_symtab(b79c)
+Found table at ab74 type pascal program
+slookup(c, nocreate, 6fac48, nomoan, 0)
+search_symtab(6fac48, c, 99, noredecls)
+returning, ptr=6faece(c)
+old_decl=aece
+sym_link(b7aa, 6f)
+aece was T_UNDEF
+sym_assign(ab74=pascal program, aece, b7aa)
+do_sym_swap(aeb2=declarations)
+do_sym_swap(b67a=List)
+do_sym_swap(b688=type declaration)
+do_sym_swap(b69e=name)
+do_sym_swap(b6c4=record type)
+do_sym_swap(b6da=List)
+do_sym_swap(b6e8=record field)
+do_sym_swap(b6fe=List)
+do_sym_swap(b70c=name)
+do_sym_swap(b732=Symbol)
+do_sym_swap(b740=placeholder)
+do_sym_swap(b75c=placeholder)
+do_sym_swap(b76a=declarations)
+do_sym_swap(b778=List)
+do_sym_swap(b786=variable declaration)
+do_sym_swap(b79c=List)
+do_sym_swap(b7aa=name)
+do_sym_swap(b7d0=Unref Symbol)
+do_sym_swap(b7de=placeholder)
+do_sym_swap(ab9a=placeholder)
+do_sym_swap(abb6=List)
+do_sym_swap(ac64=comment)
+do_sym_swap(ac7a=comment)
+do_sym_swap(abde=List)
+do_sym_swap(abd0=placeholder)
+do_sym_swap(ac2e=List)
+do_sym_swap(b624=assignment statement)
+do_sym_swap(b63a=field use)
+do_sym_swap(b650=Symbol)
+kid_id(b650) set to 6f [b7aa]
+do_sym_swap(b65e=Symbol)
+do_sym_swap(b66c=placeholder)
+sym_assign(ab74=pascal program, aece, b7aa)
+do_sym_swap(aeb2=declarations)
+do_sym_swap(b67a=List)
+do_sym_swap(b688=type declaration)
+do_sym_swap(b69e=name)
+do_sym_swap(b6c4=record type)
+do_sym_swap(b6da=List)
+do_sym_swap(b6e8=record field)
+do_sym_swap(b6fe=List)
+do_sym_swap(b70c=name)
+do_sym_swap(b732=Symbol)
+do_sym_swap(b740=placeholder)
+do_sym_swap(b75c=placeholder)
+do_sym_swap(b76a=declarations)
+do_sym_swap(b778=List)
+do_sym_swap(b786=variable declaration)
+do_sym_swap(b79c=List)
+do_sym_swap(b7aa=name)
+do_sym_swap(b7d0=Unref Symbol)
+do_sym_swap(b7de=placeholder)
+do_sym_swap(ab9a=placeholder)
+do_sym_swap(abb6=List)
+do_sym_swap(ac64=comment)
+do_sym_swap(ac7a=comment)
+do_sym_swap(abde=List)
+do_sym_swap(abd0=placeholder)
+do_sym_swap(ac2e=List)
+do_sym_swap(b624=assignment statement)
+do_sym_swap(b63a=field use)
+do_sym_swap(b650=Symbol)
+do_sym_swap(b65e=Symbol)
+do_sym_swap(b66c=placeholder)
+slookup(a, create, 0, moan, 0)
+next_symtab(b7d0)
+Found table at ab74 type pascal program
+search_symtab(6fac48, a, 97, noredecls)
+returning, ptr=6fb69e(a)
+my_scope(ab74) returns 1
+Descend in block 6fab74, isdirty is 1
+my_scope(ab74) returns 1
+mainloop: c_comp_decls(1, ab74, 6f)
+my_scope(ab74) returns 1
+Descend in block 6fab74, isdirty is 1
+CheckAt=b76a, cursor=6f
+mainloop, cursor b76a, ocursor 6f, srch_row 0, srch_real 0, look.=2
+tparent(np)=af42 != NIL!
+treefree(aca8)
+freeing self
+mfree(6faca8) frees 21350
+treefree(af58)
+freeing self
+mfree(6faf58) frees 20662
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: dump
+
+dump of tree
+node=6fab74, type 2=pascal program: 
+6facc4(tye) - type 8 typetree 5f45ea, scope 0, size 0, offset/value 0, flags 20
+6fb69e(a) - type 4 typetree 6fb6c4, scope 1, size 2, offset/value 0, flags 20
+6fadfc(b) - type 8 typetree 5f45ea, scope 9, size 2, offset/value 0, flags 20
+6fb7aa(c) - type 5 typetree 6fb6c4, scope 1, size 2, offset/value 4, flags 20
+flags 0, parent 5f61b2, kids: #0: 6fab9a, #1: 6fabb6, #2: 6fabde, #3: 6fac06, #4: 6fac2e, #5: 6fac48, #6: 4,
+  STUB at 6fab9a : Ignored Name
+  node=6fabb6, type 101=List: parent 6fab74
+      node=6fac64, type 1=comment: flags 0, parent 6fabb6, kids: #0: 6fac72,
+    comment text: input
+      node=6fac7a, type 1=comment: flags 0, parent 6fabb6, kids: #0: 6fac88,
+    comment text: output
+  node=6fabde, type 101=List: parent 6fab74
+      STUB at 6fabd0 : {Comment that says what the routine does}
+  node=6fac06, type 101=List: parent 6fab74
+      node=6faeb2, type 5=declarations: flags 0, parent 6fac06, kids: #0: 6fb67a,
+      node=6fb67a, type 101=List: parent 6faeb2
+              node=6fb688, type 13=type declaration: flags 0, parent 6fb67a, kids: #0: 6fb69e, #1: 6fb6c4, #2: 6fb75c,
+          node=6fb69e, type 103=name: flags 20, parent 6fb688, kids:
+          declared symbol: a
+          node=6fb6c4, type 25=record type: 
+6fb70c(b) - type 9 typetree 5f45ea, scope 0, size 2, offset/value 0, flags 20
+flags 0, parent 6fb688, kids: #0: 6fb6da, #1: 6fb74e, #2: 2,
+            node=6fb6da, type 101=List: parent 6fb6c4
+                          node=6fb6e8, type 26=record field: flags 0, parent 6fb6da, kids: #0: 6fb6fe, #1: 6fb732, #2: 6fb740,
+                node=6fb6fe, type 101=List: parent 6fb6e8
+                                  node=6fb70c, type 103=name: flags 20, parent 6fb6fe, kids:
+                  declared symbol: b
+                node=6fb732, type 99=Symbol: flags 0, parent 6fb6e8, kids: #0: 5f45ea,
+                symbol: integer
+                STUB at 6fb740 : Comment
+          STUB at 6fb75c : Comment
+      node=6fb76a, type 6=declarations: flags 0, parent 6fac06, kids: #0: 6fb778,
+      node=6fb778, type 101=List: parent 6fb76a
+              node=6fb786, type 14=variable declaration: flags 0, parent 6fb778, kids: #0: 6fb79c, #1: 6fb7d0, #2: 6fb7de,
+          node=6fb79c, type 101=List: parent 6fb786
+                      node=6fb7aa, type 103=name: flags 20, parent 6fb79c, kids:
+            declared symbol: c
+          node=6fb7d0, type 99=Symbol: flags 0, parent 6fb786, kids: #0: 6fb69e,
+          symbol: a
+          STUB at 6fb7de : Comment
+  node=6fac2e, type 101=List: parent 6fab74
+      node=6fb624, type 41=assignment statement: flags 0, parent 6fac2e, kids: #0: 6fb63a, #1: 6fb66c, #2: 2,
+      node=6fb63a, type 68=field use: flags 0, parent 6fb624, kids: #0: 6fb650, #1: 6fb65e, #2: 5f45ea,
+        node=6fb650, type 99=Symbol: flags 0, parent 6fb63a, kids: #0: 6fb7aa,
+        symbol: c
+        node=6fb65e, type 99=Symbol: flags 0, parent 6fb63a, kids: #0: 6fadfc,
+        symbol: b
+      STUB at 6fb66c : Value
+CheckAt=0, cursor=0
+mainloop, cursor b76a, ocursor 6f, srch_row 0, srch_real 0, look.=7
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: exit dammit

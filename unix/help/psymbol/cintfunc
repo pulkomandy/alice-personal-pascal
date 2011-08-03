@@ -1,0 +1,13 @@
+|14,74
+     "CIntFunc" calls a C function that returns an integer.  The first
+argument of CIntFunc is an integer indicating the C function you want to
+call.  The arguments that follow are the arguments for the C function.  The
+value returned by CIntFunc is the value returned by the C function.
+     Note that CIntFunc also gives you access to QNX calls that return an
+integer.
+     For further information on CIntFunc, see the ALICE Reference Manual.
+|mFor more, choose
+|iDo nothing,nop
+|iCPtrFunc,Hpsymbol/cptrfunc
+|iCProc,Hpsymbol/cproc
+|p

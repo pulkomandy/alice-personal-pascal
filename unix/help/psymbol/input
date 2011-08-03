@@ -1,0 +1,24 @@
+|17,73
+     The "input" file variable is a special predefined file variable that
+is usually associated with the terminal.  "input" is declared as a "text"
+file.  "read" or "readln" instructions that do not specify a file variable
+will read from "input".  You may use "reset" to associate "input" with a
+file instead of the terminal.
+
+Input Examples:
+     program name(input,output);
+           ...
+     readln(x,y,z);
+     {is the same as}
+     readln(input,x,y,z);
+|mFor more, choose
+|iDo nothing,nop
+|iFile declarations,Hpnode/file_type
+|iReset,Hpsymbol/reset
+|iRead,Hpsymbol/read
+|iEoln,Hpsymbol/eoln
+|iOutput,Hpsymbol/output
+|iText,Hpsymbol/text
+|iGet,Hpsymbol/get
+|iFile Buffers,Hpnode/indirection
+|p

@@ -1,0 +1,10 @@
+|10,74
+Placeholder in type declaration
+    ALICE needs complete type declarations for variables and other kinds of
+    data or else it can't execute or typecheck your program.  This means
+    that you can't have placeholders in type declarations -- the declara-
+    tion isn't complete.
+|mFor more, choose
+|iDo nothing,nop
+|iType declarations,Hpnode/type_declara
+|p

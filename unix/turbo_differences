@@ -1,0 +1,453 @@
+
+                      Compatibility with Turbo Pascal (tm)
+
+This section describes some of the differences between Alice and Turbo Pascal. 
+It  also  explains  how  to  modify  your existing Turbo programs to run under 
+Alice, how to use Turbo to compile programs developed under Alice,  and how to 
+write a program that can be run without modification under both. 
+
+Although  Pascal  is  a  fairly  standard  language,   almost   all   of   its 
+implementations  have  introduced extensions in those areas where the language 
+itself is lacking.  In particular,  file i/o and access to "low-level" machine 
+resources (memory,  display,  i/o ports, etc) vary from one Pascal to another.  
+
+It  is  in  these  extensions  that  incompatibilities  arise;  it  is usually 
+impossible to simply recompile an arbitrary program written  with  one  Pascal 
+compiler under another. 
+
+However,  an  effort  has  been  made  to provide some degree of compatibility 
+between Turbo compatibility within Alice;  the  differences  between  the  two 
+implementations are listed later in this document. 
+
+
+                              General Procedures
+
+Since  some internal information is lost when moving from an Alice format file 
+to a Turbo format file, the best approach is to maintain your code using Alice 
+and use Turbo only for recompilation. 
+
+Moving from Turbo to Alice 
+
+This should only have to be done once for any given Turbo program; after that, 
+all program changes will be made using Alice and subsequent compilations  will 
+be done with Turbo.
+
+The  APIN  program  does  the  actual  conversion;  if  there are any problems 
+converting the program,  APIN will issue an error message and  abort.  It  may 
+take several tries to get it to convert a program completely. 
+
+When running such a converted program under Alice,  you should use the +b flag 
+on the command line; this flag is described in detail later in this document. 
+
+Moving from Alice to Turbo
+
+This  is done by saving your Alice program using the TEXT command.  If you use 
+only  routines  in  the  Turbo  compatibility  library  and  adhere   to   the 
+restrictions  listed  below,  there  should be no problem.  The CTRL-F6 key is 
+useful for this,  since it saves your program in both Alice filename.ap format 
+and  in  a  filename.pas  file  using the TEXT command.  It also invokes Turbo 
+Pascal, so you can compile the resulting program; when you leave Turbo, you're 
+back in Alice. 
+
+
+                             Language Differences
+
+                                   Constants
+
+(2.4)  String Constants
+
+Turbo  does  not  recognize  the  use  of  double  quotes  ("")  around string 
+constants; for compatibility, use only single quotes ('').  The only ambiguity 
+arises when you want less than two characters in a string constant; Turbo will 
+interpret 'a' and '' as character  constants  rather  than  string  constants. 
+Since both Alice and Turbo allow you to assign characters to strings,  this is 
+not a major problem. 
+
+The use of # and ^ escapes within string constants is not supported in  Alice.  
+The  solution  is  to  split the string up into pieces and put out the control 
+characters individually (Alice recognizes both # and ^  escapes  in  character 
+constants).  The APIN program will do this for you.
+
+
+                                 Data Objects
+
+(3.3) Label Declarations
+
+In Alice,  all labels must be numeric;  Turbo  supports  alphanumeric  labels. 
+There is no problem moving from Alice to Turbo;  when converting from Turbo to 
+Alice,  the APIN program will convert alphanumeric labels  to  unique  numeric 
+ones.
+
+For compatibility with standard Pascal, use numeric labels only. 
+
+(3.4) Constant Declarations
+
+In  both  Alice and Turbo,  typed constants are equivalent to variables with a 
+constant value and can be used anywhere a variable is used.  The only area  of 
+incompatibility  here  is  that  Turbo  allows  you  to use these variables in 
+subsequent declarations (to specify the size of data objects,  for example) as 
+if  they  were  constants.  For  compatibility  with standard Pascal (and with 
+Alice), use only untyped constants in those cases. 
+
+Note  that  Alice  requires  that structured type constants are all put on one 
+line.
+
+Alice is compatible with the  Turbo  documentation  on  the  subject  of  type 
+identifiers  in the definition of structured type constants;  it only allows a 
+type identifer in the "type" position.  However,  Turbo Pascal strays from its 
+own  documentation  by allowing a complete type descriptor as well.  Avoid use 
+of this undocumented extension.  (The APIN program will  create  a  fake  type 
+definition  where  necessary  and  use this fake type in the definition of the 
+structured type constant;  however,  the name thus created will  not  be  very 
+meaningful,  so you should probably edit it to make clear what your program is 
+doing). 
+
+(3.6.10) Record types
+
+Alice allows you to have the fields in a record initializer in any order (i.e. 
+not  necessarily in the order they appeared in the declaration) and allows you 
+to omit some of them.  Turbo requires the initializers to be all  present  and 
+accounted  for  in the precise order they were placed in the declaration;  for 
+compatibility, you should adhere to this requirement. 
+
+(3.6.12) File types
+
+Turbo's  untyped  file type is not supported.  APIN will convert these to text 
+files,  but some re-coding will be necessary.  One  way  of  having  128  byte 
+records is to define a filetype 
+
+      rawfile = file of array[0..127] of byte; 
+
+This provides something similar to an untyped file. 
+
+There are some miscellaneous differences in file i/o between Turbo and  Alice; 
+see the section on "Input/Output Incompatabilities" later in this document for 
+details. 
+
+(3.6.13) Set types
+
+The Turbo manual is ambiguous on the subject of set types.  The chapter on set 
+types indicates that the members of a set must be of a simple type (i.e. not a 
+user-defined type); this requirement is shared by Alice.  However, the chapter 
+on typed constants gives examples of defined types being used as the base type 
+of a set,  and  these  examples  run.  For  compatibility,  avoid  using  this 
+undocumented extension.
+
+(3.??) String types
+
+Turbo has defined a non-standard "string" type,  essentially a variable-length 
+array of characters.  The latest release of Alice supports this, and treats it 
+internally as a packed array of characters;  the command line option -t  turns 
+this  keyword  off  (to  allow  existing Turbo programs that use "string" as a 
+variable or type to continue to run). 
+
+As in Turbo,  all variables of the form "packed array  [1..N]  of  char")  are 
+assignment  compatible.  The  first  element  of  the  packed  array (actually 
+element 0) is the length of the string in bytes (this  is  the  same  as  both 
+standard  Pascal and Turbo).  In addition a StrEnd character (an ascii NUL) is 
+used as a string terminator (this is not the same as in  Turbo  Pascal).  This 
+terminator  is  used when string variables contain fewer characters than their 
+declared length (for example when a five-character string  is  assigned  to  a 
+string  variable with a length of ten).  Because of this,  Turbo programs that 
+rely on the ascii NUL being a valid character in a  string  will  have  to  be 
+modified. 
+
+Alice  fully  supports assignment of characters to strings,  but assignment of 
+strings to characters is invalid;  Turbo supports both.  A  workaround  is  to 
+assign  the  character  the  value  of the first character of the string (i.e. 
+"cvar := svar[1]" where cvar is a character variable  and  svar  is  a  string 
+variable. 
+
+String concatenation using the + operator is converted by APIN to calls to the 
+Concat() routine (this routine is found in the Turbo compatibility library). 
+
+(3.??) Absolute memory references
+
+Neither  standard  Pascal nor Alice support absolute variables,  functions and 
+constants.  If your Turbo program uses them,  it will  have  to  be  modified; 
+quite  often,  you  can  achieve the same effect by using the Var_To_Mem() and 
+Mem_to_Var()  routines  to  copy  variables  to  and  from  absolute   storage 
+locations.  Var_To_Mem(variable,  offset,  segment)  will copy the data at the 
+given segment and offset into the specified  variable;  the  number  of  bytes 
+copied  depends  on  the  type of the variable.  Mem_To_Var(variable,  offset, 
+segment) does the reverse. 
+
+None of the following are supported in Alice:
+
+                           Mem   MemW   Port   Portw
+
+Note  that  one  of  the  most frequent uses of absolute variables is for fast 
+screen i/o;  Alice's cproc  routines  will  provide  virtually  instantaneous, 
+flicker-free  output  to  the  screen,  and should be used instead of using an 
+absolute array for screen access.  The other common use is  to  set  interrupt 
+vectors  in  low  memory;  there are standard DOS calls provided for this that 
+should be used instead of directly modifying  the  memory  yourself  (this  is 
+essential for compatibility with future versions of DOS). 
+
+Standard Alice operates in a small memory model (a large memory model will be 
+available soon).
+  
+(3.??) Generic type parameters
+
+Alice supports a special type,  "generic" that is an expanded version  of  the 
+untyped var parameters supported by Turbo.  The advantage of "generic" is that 
+it  allows  you  to obtain information about the type and size of a parameter, 
+and use that information in the called routine.  For compatibility, you should 
+not  write  any  routines  that  take  advantage  of  this  information  being 
+available.  Note that APIN will turn untyped parameters into type generic, but 
+you  will still have to re-code.  In any case,  generic is not supported under 
+Turbo,  so moving back and forth between the two will be difficult.  The  best 
+solution is to avoid typeless parameters. 
+
+Alice's generic type is actually a builtin record type:
+
+       generic = record
+               Object : pointer;    { pointer to the variable }
+               Size : integer;      { size of the variable }
+               TypeCode : integer;  { the type of the object (see below) }
+               end;
+
+TypeCode is one of:
+
+   1 - enum, boolean, char, byte, or small subrange of integer
+   2 - integer or subrange
+   3 - pointer (in which case, Size is the size of the object pointed to)
+   4 - real number
+   5 - set
+   6 - string (i.e. packed array [1..n] of char; size is length of string + 2)
+  10 - array variable (other than a string)
+  11 - file
+  12 - record
+
+
+                                  Expressions
+
+(4.??) Expressions
+
+The use of type names  to  convert  variables  to  a  different  type  is  not 
+supported  by Alice;  i.e.  integer(x) where x is some scalar type is invalid. 
+Workarounds are possible;  for example,  you might use functions that  take  a 
+generic type as an argument and always return (for example) an integer. 
+
+
+
+                                  Statements
+
+(5.4) Goto 
+
+The Alice GOTO statement can be used to jump out  of  a  block;  this  is  not 
+allowed in Turbo, and is in any case bad programming practice. 
+
+(5.6.3) Case 
+
+The ELSE clause in Alice can appear anywhere within the case statement;  Turbo 
+requires that it be the last entry in  the  case.  For  compatibility,  always 
+make it the last. 
+
+In  Turbo,  all  the  statements  between the ELSE and the end of the case are 
+considered part of the ELSE;  Alice requires that there be a single  statement 
+(possibly  a  BEGIN  ...  END) in this position.  The parser will handle this.  
+Obviously, the Alice single-statement will be compatible with Turbo. 
+
+(5.6.7) With
+
+Alice does not support With statements with multiple variables; thus all 
+statements of the form
+
+                               with a, b do ...
+
+should be converted to
+                               with a do begin
+                                  with b do begin ...
+
+The APIN program will do these conversions for you.
+
+
+                               Program Structure
+
+(6.1) "Program" statement
+
+Turbo programs can be compiled without a  "program"  statement;  this  is  not 
+supported  by  Alice.  The  solution  is simply to add such a statement to the 
+program. 
+
+(6.??) Forward referencing
+
+Alice does not  require  that  routines  be  explicitly  declared  as  forward 
+references;  Turbo  does,  and  its  mechanism  for forward referencing is not 
+compatible with Alice syntax.  This is not a problem when moving from Alice to 
+Turbo (when you save with the TEXT command,  the Forward  statement  in  Alice 
+will  be expanded to a Turbo-compatible form).  However,  moving from Turbo to 
+Alice is not as easy, and requires putting 
+       Forward <routine>
+in the place where Turbo's full forward declaration was, and putting the full 
+declaration down with the <routine>.  Of course, the resulting modified 
+program will no longer compile under Turbo.
+
+In the latest release, the APIN program will do this conversion for you.  
+
+For  the  sake  of  compatibility with standard Pascal,  you may want to avoid 
+forward referencing altogether. 
+
+(6.??) Comments
+
+Alice allows the  use  of  nested  comments;  Turbo  does  not.  Avoid  nested 
+comments  for  compatibility.  Also  note  the the (* and *) sequences are not 
+recognized as equivalent to { and }; this is taken care of for you by APIN. 
+
+(6.??) Include files
+
+The Turbo {$I filename} convention is supported;  in addition,  there is a {+I 
+filename} which does the same thing.  This latter version will be treated as a 
+normal  comment  by Turbo;  this allows you to include the Turbo compatibility 
+library when compiling under Alice,  but still  compile  under  Turbo  without 
+modifying the program. 
+
+(6.8) Passing routines as parameters
+
+Alice allows functions or procedures to be passed as  arguments  to  functions 
+and  procedures.  This is not supported in Turbo,  so it should be avoided for 
+compatability. 
+
+(6.9) External functions and procedures
+
+Alice does not support the EXTERNAL keyword, or the use of external functions 
+and procedures.
+
+
+                                 Miscellaneous
+             
+Alice allows program lines to be up to 255 characters long; Turbo truncates at 
+127.  For compatability, keep your lines under 127 characters.
+
+
+
+                             Command-Line Options
+
+The following command-line options control various aspects of Alice's 
+Turbo-compatibility: 
+
+"-v" will cause string var parameter typechecking to be relaxed;  this  should 
+     be   used  when  running  Turbo  programs  under  Alice,   since  Turbo's 
+     typechecking is not as rigourous as Alice's.  It is roughly equivalent to 
+     Turbo's {$V-} option. 
+
+"+b" enables  Borland  style   i/o;   see   the   section   on   Input/Output 
+     Incompatabilties below. 
+
+"-t" turn OFF Alice's Turbo-compatible mode.  This mode is on by default;  in 
+     this mode,  special Turbo keywords (for example,  STRING) are  recognized 
+     and used by Alice.  To DISable Turbo support, you should specify "-t". 
+
+
+
+                               Builtin Routines
+
+There are a number of Turbo-compatible routines provided with Alice; these 
+should  be  included  in  your  program  (using the {+I filename} directive as 
+described above if it will be compiled under Turbo.  Note that they  are  part 
+of  a  special  Alice "HIDE" block that will not be written to the output file 
+when you save using the TEXT command. 
+
+Turbo routines not included in Alice:
+
+    Chain, Execute   (although you can chain to other Alice programs)
+    Maxavail, Memavail
+    HeapPtr
+    ParamCount, ParamStr  (no command line)
+    OvrPath, OvrDrive  (no overlays)    
+    Pack, Unpack
+    Inline  (Alice is an interpreter)
+
+Routines that are different between Alice and Turbo:
+
+Fillchar():
+
+In  addition,  several  i/o  routines  behave differently;  see the section on 
+"Input/Output Incompatibilities" for details. 
+
+The turtle graphics routines are not yet supplied.
+
+
+
+                        Input/Output Incompatabilities
+                              
+There are a number of differences between Turbo and Alice i/o, particularly in 
+dealing  with  text files.  
+
+When the +b flag is specified on the Alice command line, the incompatibilities 
+between  Alice  and  Turbo  i/o are minimized.  If you develop a program under 
+Alice,  you will have to convert to Turbo i/o if you  want  to  compile  under 
+Turbo.
+
+That Turbo's "standard files" are not provided by default (though you can  set 
+them up within your program).  These file variables are: 
+
+                          Con   Trm   Lst   Aux   Usr
+
+
+User-installed device drivers are not supported.  Consequently,  the following 
+are not supported either: 
+
+                 ConStPtr   ConInptr   ConOutPtr   LstOutPtr 
+                  AuxInPtr   AuxOutPtr  UsrInPtr   UsrOutPtr
+
+
+Turbo I/O functions not supported in Alice:
+
+BlockRead, BlockWrite:  the untyped file type is not supported;  however,  see 
+   section on "file type" earlier in this document for a way of working around 
+   this. 
+
+Buflen(): in Turbo, this sets the record length for the next Readln(); this is 
+    usually unnecessary, and you can re-code to avoid using it. 
+
+
+Differences in specific functions:
+
+Write():  Alice  puts out a space before numbers in the default format;  Turbo 
+    doesn't.  With  the  +b  option,  this  space  is  suppressed.   For  full 
+    compatibility, you can specify a field width less than or equal to zero to 
+    get the same effect.  
+
+Close():  Alice  automatically  closes  all files defined in a block when that 
+    block is exited.  For compatibility with Turbo,  you  should  be  sure  to 
+    explicitly close all files when they are no longer in use. 
+
+Flush(): in Alice, this routine does nothing. 
+
+Reset():  in Alice,  this function allows read-only access to the file;  Turbo 
+    uses it for read-write (i.e., update) access.  In Alice, an extra argument 
+    to the function is the filename,  which gives the  same  effect  as  first 
+    doing  an  Assign  of  that  file to the file variable passed as the first 
+    argument.  Turbo does not allow you to Reset() a device.
+
+Update():  in Alice,  this function  allows  read-write  access  to  the  file 
+    (equivalent  to  Turbo's  Reset()).  If  the +b switch is specified on the 
+    Alice command line, Reset() will perform the way update() does.  In Alice, 
+    an extra argument to the function is the filename,  which gives  the  same 
+    effect  as  first doing an Assign of that file to the file variable passed 
+    as the first argument. 
+
+Rewrite():  In Alice, an extra argument to the function is the filename, which 
+    gives  the  same  effect as first doing an Assign of that file to the file 
+    variable passed as the first argument. 
+
+Seek(): same as Alice's SetNext(). 
+
+<MORE FUNCTIONS TO FOLLOW>
+
+                                 I/O Checking
+
+Turbo's method of dealing with i/o error checking is  very  non-standard,  and 
+involves  the  use  of  a  compile-time  switch  embedded in a comment.  Alice 
+instead provides a function called "iochecking";  iochecking(1) turns  it  on, 
+iochecking(0)  turns  it  off.  APIN  will attempt to map {$I+} and {$I-} into 
+calls to iochecking(),  but requires that the Turbo pseudo-comments appear  on 
+lines  by  themselves.  The behaviour of i/o checking in the resulting program 
+may be different,  since Turbo enables or disables it an compile time  whereas 
+Alice  does  it  dynamically;  they  will  be almost identical if the {$I+} is 
+placed directly in front of a function, and the {$I-} is placed directly after 
+it (i.e. i/o checking is on within that one function). 
+
+

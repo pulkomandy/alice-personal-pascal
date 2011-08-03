@@ -1,0 +1,7 @@
+|8,73
+     All right, we'll wrap things up.  Do you want to work with ALICE now,
+or would you prefer to quit and do some reading before you begin?
+|mChoose one:
+|iQuit ALICE,exit
+|iStart working with ALICE,nop
+|p

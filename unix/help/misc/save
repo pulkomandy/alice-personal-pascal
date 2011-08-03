@@ -1,0 +1,17 @@
+|17,74
+Saving a Program:
+     If you want to save the program in the current workspace, issue the
+SAVE command by pressing CTRL-S (hold down the CTRL key, then press S).  If
+you have never saved this program before, ALICE will ask you for the name
+of the file where the program should be saved.  Type in this file name,
+then press ENTER.
+     If this isn't the first time you've saved this program, ALICE will
+just save the program in the file it used before.  If you want to save the
+program in a different file, you'll have to use the FILENAME command to set
+the name of the file, BEFORE you do the save.
+|mFor more, choose
+|iDo nothing,nop
+|iThe FILENAME command,Hcommand/filename
+|iLoading a saved program,Hmisc/load
+|iThe SAVE command,Hcommand/save
+|p

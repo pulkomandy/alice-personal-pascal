@@ -1,0 +1,11 @@
+|11,74
+You can't insert a list of things here
+    You tried to use GET to insert material from another workspace into the
+    current workspace.  However, the material you tried to insert was a
+    list of things (for example, a list of statements or declarations) and
+    the placeholder in which you were inserting the material could not
+    accept such a list.
+|mFor more, choose
+|iDo nothing,nop
+|iGET,Hcommand/get
+|p

@@ -1,0 +1,21 @@
+|22,74
+This parameter must be the name of a function
+    In a call to a subprogram, the indicated argument should be a function.
+    The argument you gave was NOT a function.
+         When a subprogram expects a function argument, you only specify
+    the name of the function when you call the subprogram.  If you add
+    arguments after the function name, you don't have a function; you have
+    a CALL to a function.  For example,
+
+          subprog(trunc);
+
+    passes the "trunc" function.
+
+          subprog(trunc(3.4));
+
+    passes the integer value that is the result of "trunc(3.4)".
+|mFor more, choose
+|iDo nothing,nop
+|iProcedure parameters,Hpnode/procedure_pa
+|iFunction parameters,Hpnode/function_par
+|p

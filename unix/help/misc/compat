@@ -1,0 +1,16 @@
+|17,74
+     Pascal has rigid rules describing what types of values may be assigned
+to what types of variables.  If a particular value can be assigned to a
+variable, the type of the value and variable are said to be "compatible".
+     Subranges of the same base type are compatible.  Sets of the same base
+type are compatible.  Integers may be assigned to real variables, but not
+the other way around.  Similarly, the assignment is valid if the type of
+the value is a subrange of the integers and the variable is real.
+     The null set [] may be assigned to any set.  The special pointer "nil"
+and things of the named "Pointer" type may be assigned to any pointer type.
+|mFor more, choose
+|iDo nothing,nop
+|iSubranges,Hpnode/subrange
+|iSets,Hpnode/set
+|iThe "Pointer" Type,Hmisc/pointer
+|p

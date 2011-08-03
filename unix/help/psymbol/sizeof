@@ -1,0 +1,10 @@
+|10,73
+     The "SizeOf" function returns the number of bytes of storage that are
+occupied by a particular variable.
+
+SizeOf Examples:
+     var
+         c : char;
+       ...
+     writeln(SizeOf(c));
+     {Writes out "1"}

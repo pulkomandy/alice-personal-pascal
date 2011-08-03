@@ -1,0 +1,15 @@
+|11,75
+Value NUMBER is beyond bounds of set
+    You tried to use the "in" operator to determine if a particular value
+    was a member of a set.  However, the value was outside the declared
+    bounds of the set, as in
+
+          var
+              s : set of [1..10];
+           ...
+          if 100 in s ...
+|mFor more, choose
+|iDo nothing,nop
+|iSet,Hpnode/set
+|iIn operator,Hpnode/set_membersh
+|p

@@ -1,0 +1,12 @@
+|12,73
+Nothing to redo
+    You tried to issue the REDO command, but you haven't used UNDO yet.
+    The error also occurs if you UNDO something, make some changes to your
+    program, then try the REDO command.  REDO can only be used immediately
+    after an UNDO.  (If you issued the REDO by accident, don't worry --
+    nothing happened.)
+|mFor more, choose
+|iDo nothing,nop
+|iUNDO,Hcommand/undo
+|iREDO,Hcommand/redo
+|p

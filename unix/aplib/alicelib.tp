@@ -1,0 +1,144 @@
+type
+	al_string90 = string[90];	{ general string for arguments }
+
+const
+	Alice_Version = 0;		{ This is not ALICE! }
+
+{ update procedure with second argument.  You can delete the argument
+  if you want to do the assign yourself }
+
+procedure Update( var filevar : file; name : al_string90 );
+
+begin
+	Assign( filevar, name );
+	reset( filevar );
+end;
+
+{ setnext can't be done due to need for component size }
+{ use Seek instead }
+
+function Char_Waiting : boolean;
+
+begin
+	Char_Waiting := KeyPressed;
+end;
+
+function Get_Char : char;
+
+var
+	ch : char;
+
+
+begin
+	read( kbd, ch );
+	if ( ch = #27) and KeyPressed then begin
+		read( bkd, ch );
+		Get_Char := chr( ord(ch) + 128 );
+		end
+	 else
+		Get_Char := ch;
+end;
+		
+
+procedure Cursor_To( row, column : integer )
+
+begin
+	GotoXY( column+1, row+1 );
+end;
+
+function ScrXY( infotype : integer ) : integer;
+
+var
+	regs : record
+		al, ah : byte;
+		rest : array[1..9] of integer;
+		end;
+
+begin
+	{ get current video mode }
+	regs.ah = 15; 
+	Intr( $10, regs );
+	case infotype of
+		1: ScrXY := 25;
+		2: ScrXY := regs.ah;
+		3: ScrXY := 200;	/* always 200 high */
+		4:
+			if regs.al and 14 = 4 then
+				ScrXY := 320
+			 else if regs.al = 6 then
+				ScrXY := 640
+			 else
+				ScrXY := 0;
+			 
+		5:
+			if regs.al and 14 = 4 then
+				ScrXY := 4
+			 else if regs.al = 6 then
+				ScrXY := 2
+			 else
+				ScrXY := 0;
+		7:
+			if regs.al = 7 then
+				ScrXY := 1
+			 else
+				ScrXY := 0
+		8: 
+			if (regs.al < 7) and (regs.al <> 0) and (regs.al <> 2)
+							then
+				ScrXY := 1
+			 else
+				ScrXY := 0;
+		-1: ScrXY := WhereY - 1;
+		-2: ScrXY := WhereX - 1;
+		else begin
+			writeln( 'ScrXY - illegal information code ',infotype);
+			Halt(1);
+			end;
+		end;
+end;
+
+procedure Set_Attr( attr : integer )
+
+begin
+	if attr and 128 then
+		attr := attr or Blink
+	if attr and 32 then begin
+		textbackground( LightGray );
+		textcolor( Black + (attr and 24) );
+		end
+	 else if attr and 64 then begin
+		textbackground( attr and 7 );
+		textcolor( Black + (attr and 24 ) );
+		end
+	 else begin
+		textbackground( Black );
+		textcolor( attr and 31 );
+		end;
+end;
+
+
+function Address( var variable; int adrtype );
+
+begin
+	if adrtype = 0 then
+		Address := Ofs(variable)
+	 else
+		Address := Seg(variable);
+end;
+
+{ Routines  MakePointer and RawPointer can't be done in Turbo Pascal,
+  as you can't return any type of pointer.  They could easily be written
+  for a specific type of pointer. }
+
+
+function peek( address : integer ) : byte;
+
+begin
+	peek := Mem[ 0 : address ];
+end;
+
+procedure poke( address : integer; value : byte );
+
+begin
+	Mem[ 0 : address ] := value;
+end;

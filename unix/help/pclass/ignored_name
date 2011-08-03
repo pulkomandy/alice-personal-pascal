@@ -1,0 +1,10 @@
+|11,73
+     A number of names that appear in a program do not really affect the
+program's behaviour, and are therefore ignored by ALICE.  For example, the
+name of the program (on the PROGRAM statement) helps a programmer identify
+the program but the name has no effect on how the program works.
+|mFor more, choose
+|iDo nothing,nop
+|iNames,Hpclass/name
+|iPrograms,Hpnode/pascal_progr
+|p

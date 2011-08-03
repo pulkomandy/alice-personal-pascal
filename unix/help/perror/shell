@@ -1,0 +1,16 @@
+|16,70
+Error executing "command" - cause : <<error>>
+
+There are many reasons why a SHELL command might fail.  The most
+likely is that you typed the name of a command QNX doesn't know about.
+This may have been a spelling error - check the name and try again.
+
+It's also possible you don't have enough memory to run this QNX command
+or the shell itself.  On a 384K ICON, you will not have enough memory.
+
+The command you executed might have failed and reported this failure.
+This will also cause this error message.
+|mFor more, choose
+|iDo nothing,nop
+|iThe SHELL command,Hcommand/shell
+|p

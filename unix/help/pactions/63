@@ -1,0 +1,8 @@
+|8,71
+     Selecting this will change a DOWNTO FOR statement into a normal FOR
+statement with the form
+
+          for Variable := Start to Finish do begin
+              Statement
+              end;
+

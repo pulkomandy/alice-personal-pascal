@@ -1,0 +1,7 @@
+|7,73
+     The "ln" function returns the natural logarithm (base e) of its argu-
+ment.  The argument may be real or integer, but the result is always real.
+
+ln Examples:
+     x := ln(2.71828);
+       { Will be approximately 1.0 }

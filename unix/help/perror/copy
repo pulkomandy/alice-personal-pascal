@@ -1,0 +1,12 @@
+|12,74
+Can't copy onto the current workspace
+    You used the COPY or MOVE command and specified the name of the current
+    workspace as the place where the source code should be sent.  This sort
+    of operation would destroy everything in the workspace, and therefore
+    is not allowed.  Issue the COPY or MOVE command again and specify the
+    name of a different workspace.
+|mFor more, choose
+|iDo nothing,nop
+|iCOPY,Hcommand/copy
+|iMOVE,Hcommand/move
+|p

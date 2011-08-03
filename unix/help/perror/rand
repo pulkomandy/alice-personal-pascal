@@ -1,0 +1,10 @@
+|10,74
+You must call initrandom before using random
+    You have called the "random" built-in function without calling
+    "initrandom" first.  You must always call "initrandom" to set things up
+    before you can use "random".
+|mFor more, choose
+|iDo nothing,nop
+|iInitrandom,Hpsymbol/initrandom
+|iRandom,Hpsymbol/random
+|p

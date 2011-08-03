@@ -1,0 +1,16 @@
+|12,74
+     Char_Waiting is a Boolean function to determine if there is a
+character waiting to be read from the terminal keyboard.  It returns "True"
+if there is a character waiting and "False" otherwise.
+
+Char_Waiting Examples:
+     while Char_Waiting do begin
+         c := Get_Char;
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iGet_Char,Hpsymbol/get_char
+|iEoln,Hpsymbol/eoln
+|iInput,Hpsymbol/input
+|iChar,Hpsymbol/char
+|p

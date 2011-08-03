@@ -1,0 +1,18 @@
+|18,74
+Put/Write - Not at end of file
+    You tried a "put", "write", or "writeln" operation, but the file was
+    not in an "eof" condition.  This means that you were trying to write in
+    the middle of the file instead of on the end.  In Pascal, this sort of
+    write operation is illegal.  The usual cause of the error is that you
+    did not set up the file with the "rewrite" or "append" procedures;
+    instead you may have used "reset".
+|mFor more, choose
+|iDo nothing,nop
+|iPut,Hpsymbol/put
+|iWrite,Hpsymbol/write
+|iWriteln,Hpsymbol/writeln
+|iEof,Hpsymbol/eof
+|iRewrite,Hpsymbol/rewrite
+|iAppend,Hpsymbol/append
+|iReset,Hpsymbol/reset
+|p

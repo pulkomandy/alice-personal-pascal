@@ -1,0 +1,11 @@
+|12,71
+StrDelete: Attempt to delete past end of string: Offset NUMBER
+    In a call to the StrDelete procedure, you attempted to delete
+    characters that weren't there.  Check the two integers passed to the
+    procedure (arguments 2 and 3).  Argument number 2 is the number of
+    characters to be deleted; argument number 3 is the subscript of the
+    first character to be deleted.  One of these is likely too big.
+|mFor more, choose
+|iDo nothing,nop
+|iStrDelete,Hpsymbol/strdelete
+|p

@@ -1,0 +1,7 @@
+|7,73
+NAME must be a string variable
+    The given NAME is the name of a variable that is passed as an argument
+    to a built-in subprogram for manipulating strings.  NAME is not the
+    right kind of variable -- it should be a "packed array of char".
+    Either change the declaration of the variable or use a different
+    variable.

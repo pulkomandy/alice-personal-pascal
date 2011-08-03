@@ -1,0 +1,82 @@
+addr
+anyfile - untyped file
+aux - file
+black - colour
+blink - colour
+blockread
+blockwrite
+blue - colour
+brown - colour
+bw40 - mode
+bw80 - mode
+c40 - mode
+c80 - mode
+chdir
+component_si - generic
+con - file
+crtexit
+crtinit
+cseg - constant
+cyan - colour
+darkgray - colour
+dseg - constant
+erase
+err - file
+exit
+filepos
+filesize
+fillchar
+flush
+getdir
+green - colour
+hi
+inp - file
+intval - generic
+lightblue - colour
+lightcyan - colour
+lightgray - colour
+lightgreen - colour
+lightmagenta - colour
+lightred - colour
+lo
+longfileposi
+longfilesize
+longseek
+lst - file
+magenta - colour
+mark
+mem
+memw
+mkdir
+mono - mode
+move
+msdos
+nosound
+null
+object - generic
+ofs
+out - file
+paramcount
+paramstr
+pi - constant
+port
+portw
+ptr
+randomize
+realval - generic
+red - colour
+release
+rename
+rmdir
+seekeof
+seekeoln
+seg
+size - generic
+sseg - constant
+swap
+trm - file
+typecode - generic
+wherex
+wherey
+white - colour
+yellow - colour

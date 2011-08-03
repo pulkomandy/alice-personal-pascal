@@ -1,0 +1,7 @@
+|7,73
+     The "cos" function returns the cosine of its argument.  The argument
+is assumed to be in radians.  The argument may be real or integer, but the
+result is always real.
+
+cos Examples:
+     x := cos(3.14159);

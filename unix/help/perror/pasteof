@@ -1,0 +1,17 @@
+|17,73
+READ/GET - tried to get past end of file
+    In a "read", "readln" or "get" operation, you attempted to read beyond
+    the end of a file.  Use the "eof" function to determine when you have
+    reached the end of a file, and do not try to read any further.  Also,
+    you might check that the file you are trying to read actually contains
+    valid data.
+         Another common cause for this error is trying to read a file that
+    was actually set up for writing with "rewrite" or "append".  To read
+    from a file, you should set it up with "reset".
+|mFor more, choose
+|iDo nothing,nop
+|iRead,Hpsymbol/read
+|iGet,Hpsymbol/get
+|iEof,Hpsymbol/eof
+|iReset,Hpsymbol/reset
+|p

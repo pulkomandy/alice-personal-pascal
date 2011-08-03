@@ -1,0 +1,195 @@
+CAST	nodes2.c	?^#define CAST(atp) (atp)$?
+Mmain	main.c	?^main(argc,argv)$?
+NNC	builtin.c	?^# define NNC(arg) (char*)0$?
+YYBACKUP	y.tab.c	?^#define YYBACKUP( newtoken, newvalue )\\$?
+YYRECOVERING	y.tab.c	?^#define YYRECOVERING()	(!!yyerrflag)$?
+_del_list	support.c	?^_del_list(_lp, kn)$?
+add_decl	alsym.c	?^add_decl(_decl)$?
+addlist	treesubr.c	?^listp $?
+allocstring	extra.c	?^allocstring(str)$?
+argp_call	scan_decl.c	?^argp_call( plist, thenode )$?
+bug	extra.c	?^bug( str, a1, a2, a3, a4, a5 )$?
+buildin	alsym.c	?^buildin()$?
+builtstring	support.c	?^builtstring( st )$?
+c_at_root	treesubr.c	?^c_at_root(cp)$?
+c_lsib	treesubr.c	?^c_lsib(xcp)$?
+c_nextpos	treesubr.c	?^c_nextpos(xcp)$?
+c_prevpos	treesubr.c	?^c_prevpos(xcp)$?
+c_rightpos	treesubr.c	?^c_rightpos(xcp)$?
+c_rsib	treesubr.c	?^c_rsib(xcp)$?
+case_equal	alsym.c	?^case_equal( xstr1, xstr2 )$?
+check_backpatch	support.c	?^check_backpatch(np)$?
+checkalloc	extra.c	?^checkalloc(size)$?
+clear_em	nullfunc.c	?^clear_em() {}$?
+clearla	lex.c	?^#define clearla()	/* */$?
+cless_comp	alsym.c	?^cless_comp( xstr, xprefix, len )$?
+commentize	lex.c	?^commentize(st)$?
+comstub	support.c	?^comstub()$?
+conclist	treesubr.c	?^listp $?
+const_declare	support.c	?^const_declare( lname, ctree )$?
+countParams	scan_decl.c	?^countParams(foo1, runningTotal, foo2, foo3)$?
+decl_kid	kids.c	?^listp $?
+del_decl	alsym.c	?^del_decl(_decl)$?
+do_abs	extra.c	?^do_abs( argc, argv ) {}$?
+do_address	nullfunc.c	?^do_address() {}$?
+do_append	nullfunc.c	?^do_append() {}$?
+do_arctan	extra.c	?^do_arctan( argc, x ) {}$?
+do_charwait	nullfunc.c	?^do_charwait() {}$?
+do_chr	extra.c	?^do_chr( argc, argv ) {}$?
+do_cintfunc	extra.c	?^do_cintfunc( argc, argv ) {}$?
+do_cos	extra.c	?^do_cos( argc, x ) {}$?
+do_cproc	extra.c	?^do_cproc( argc, argv ) {}$?
+do_cptrfunc	extra.c	?^do_cptrfunc( argc, argv ) {}$?
+do_cursorto	nullfunc.c	?^do_cursorto(){}$?
+do_dispose	nullfunc.c	?^do_dispose() {}$?
+do_eof	nullfunc.c	?^do_eof() {}$?
+do_eoln	nullfunc.c	?^do_eoln() {}$?
+do_exp	extra.c	?^do_exp( argc, x ) {}$?
+do_get	nullfunc.c	?^do_get() {}$?
+do_getch	nullfunc.c	?^do_getch() {}$?
+do_getptr	extra.c	?^do_getptr( argc, argv ) {}$?
+do_initrandom	nullfunc.c	?^do_initrandom() {}$?
+do_ln	extra.c	?^do_ln( argc, x ) {}$?
+do_lnread	extra.c	?^do_lnread( args, type, ptr ) {}$?
+do_lnwrite	extra.c	?^do_lnwrite( args, type, value, width, precision ) ?
+do_makeptr	extra.c	?^do_makeptr( argc, argv ) {}$?
+do_new	nullfunc.c	?^do_new() {}$?
+do_odd	extra.c	?^do_odd( argc, argv ) {}$?
+do_ord	extra.c	?^do_ord( argc, argv ) {}$?
+do_pack	nullfunc.c	?^do_pack(){}$?
+do_page	nullfunc.c	?^do_page() {}$?
+do_pause	extra.c	?^do_pause( argc, argv ) {}$?
+do_peek	extra.c	?^do_peek( argc, argv ) {}$?
+do_point	extra.c	?^do_point( argc, argv ) {}$?
+do_poke	extra.c	?^do_poke( argc, argv ) {}$?
+do_pred	extra.c	?^do_pred( argc, argv ) {}$?
+do_put	nullfunc.c	?^do_put() {}$?
+do_random	nullfunc.c	?^do_random() {}$?
+do_read	extra.c	?^do_read( args, type, ptr ) {}$?
+do_reset	nullfunc.c	?^do_reset() {}$?
+do_rewrite	nullfunc.c	?^do_rewrite() {}$?
+do_round	extra.c	?^do_round( argc, x ) {}$?
+do_scrfunc	extra.c	?^do_scrfunc( argc, argv ) {}$?
+do_setattr	extra.c	?^do_setattr( argc, argv ) {}$?
+do_setnext	nullfunc.c	?^do_setnext() {}$?
+do_sin	extra.c	?^do_sin( argc, x ) {}$?
+do_sizeof	nullfunc.c	?^do_sizeof(){}$?
+do_sqr	extra.c	?^do_sqr( argc, argv ) {}$?
+do_sqrt	extra.c	?^do_sqrt( argc, x ) {}$?
+do_strcat	extra.c	?^do_strcat( argc, argv ) {}$?
+do_strdelete	extra.c	?^do_strdelete( argc, argv ) {}$?
+do_strinsert	extra.c	?^do_strinsert( argc, argv ) {}$?
+do_strlen	extra.c	?^do_strlen( argc, argv ) {}$?
+do_strscan	extra.c	?^do_strscan( argc, argv ) {}$?
+do_stsize	extra.c	?^do_stsize( argc, argv ) {}$?
+do_substr	extra.c	?^do_substr( argc, argv ) {}$?
+do_succ	extra.c	?^do_succ( argc, argv ) {}$?
+do_sym_swap	alsym.c	?^do_sym_swap(xsnode )$?
+do_syscall	extra.c	?^do_syscall( argc, argv ) {}$?
+do_sysfunc	nullfunc.c	?^do_pack(){}$?
+do_sysproc	nullfunc.c	?^do_sysproc() {}$?
+do_trunc	extra.c	?^do_trunc( argc, x ) {}$?
+do_update	nullfunc.c	?^do_update() {}$?
+do_write	extra.c	?^do_write( args, type, value, width, precision ) {}?
+down_and_right	treesubr.c	?^down_and_right(xcp)$?
+dump	dump.c	?^dump(){}$?
+efputc	save.c	?^efputc( a, f )$?
+enum_declare	support.c	?^enum_declare( enumlist )$?
+error	extra.c	?^error( str, a1, a2, a3, a4, a5 )$?
+everyKid	kids.c	?^everyKid(np)$?
+exprid	support.c	?^nodep $?
+find_r_symtab	alsym.c	?^nodep $?
+fld_symref	alsym.c	?^nodep $?
+forcelist	treesubr.c	?^listp $?
+fparam_declare	support.c	?^nodep $?
+func_declare	support.c	?^func_declare( pnode )$?
+get_kidnum	kids.c	?^get_kidnum(np )$?
+get_type	support.c	?^nodep $?
+getuid	main.c	?^getuid(){return 1;}$?
+growlist	treesubr.c	?^listp $?
+hash	alsym.c	?^hash( xname )$?
+highType	alsym.c	?^highType(type)$?
+if_sym_call	alsym.c	?^if_sym_call(_np, funcp)$?
+inUse	alsym.c	?^inUse(name)$?
+incrlineno	lex.c	?^incrlineno()$?
+infix_descend	treesubr.c	?^infix_descend(xcp)$?
+isBlock	alsym.c	?^isBlock(np)$?
+isRecord	alsym.c	?^isRecord(np)$?
+iscombuf	lex.c	?^iscombuf()$?
+iscomnext	lex.c	?^iscomnext()$?
+label_declare	support.c	?^label_declare( lname )$?
+linkup	treesubr.c	?^linkup( parent, kidnum, kidnode )$?
+look_kw	lex.c	?^look_kw(str)$?
+lookupFor	alsym.c	?^nodep $?
+madd_table	alsym.c	?^madd_table( symtab, oclass, prefix, len, loc )$?
+makecom	support.c	?^nodep $?
+makeprog	support.c	?^makeprog( pnode )$?
+message	support.c	?^message( str, a1, a2, a3, a4, a5, a6 ) $?
+mfree	extra.c	?^mfree(p)$?
+min	extra.c	?^min(x, y)$?
+myWS	treesubr.c	?^myWS(_np)$?
+my_block	treesubr.c	?^nodep $?
+my_scope	treesubr.c	?^my_scope(_np)$?
+my_symtab	alsym.c	?^nodep $?
+n_num_children	kids.c	?^n_num_children(np)$?
+namestring	support.c	?^namestring( st )$?
+newlist	treesubr.c	?^listp $?
+next_symtab	alsym.c	?^nodep $?
+nextcomment	lex.c	?^nextcomment()$?
+nodeSize	kids.c	?^nodeSize(np)$?
+par_error	support.c	?^par_error( str )$?
+paramStubs	scan_decl.c	?^listp $?
+param_declare	support.c	?^param_declare( ptype, namelist, ttree )$?
+pop_backpatch	support.c	?^pop_backpatch()$?
+pparam_declare	support.c	?^pparam_declare( lname, params )$?
+proc_declare	support.c	?^proc_declare( pnode )$?
+ptr_symref	support.c	?^nodep $?
+push_backpatch	support.c	?^push_backpatch()$?
+putword	save.c	?^putword(word, fp)$?
+readkey	lex.c	?^readkey()$?
+rec_pop	support.c	?^rec_pop()$?
+rec_push	support.c	?^rec_push(rec)$?
+reg_kids	kids.c	?^reg_kids( np )$?
+rscheck	alsym.c	?^nodep $?
+s_declare	alsym.c	?^s_declare(lname, symtype, symtab)$?
+s_node_kid	kids.c	?^s_node_kid(xthenode, num, val )$?
+s_yylex	lex.c	?^s_yylex()$?
+save	save.c	?^save(flags)$?
+saveMisc	save.c	?^saveMisc(flags)$?
+saveSyms	save.c	?^saveSyms(_symtab_node)$?
+save_string	support.c	?^save_string(s)$?
+savecomment	lex.c	?^savecomment(comtext)$?
+scan_decl	scan_decl.c	?^scan_decl( dlist, procfun, total, stub_ignore, fer?
+scanstub	lex.c	?^scanstub()$?
+scoop_comments	lex.c	?^scoop_comments()$?
+search_symtab	alsym.c	?^search_symtab(symtab, name, nhash, redecls)$?
+sized_list	treesubr.c	?^listp $?
+slookup	alsym.c	?^slookup(nam, create, table, moan, symtouse)$?
+stackcheck	save.c	?^stackcheck()$?
+stackerr	alsym.c	?^stackerr()$?
+sym_assign	alsym.c	?^sym_assign(xblock, oldid, newid )$?
+sym_complete	alsym.c	?^sym_complete( loc, prefix, len )$?
+sym_kid	kids.c	?^nodep $?
+sym_link	alsym.c	?^sym_link(_sp, symtab)$?
+sym_menu	alsym.c	?^sym_menu( loc )$?
+sym_unlink	alsym.c	?^sym_unlink(_decl, _sp)$?
+symhelp	alsym.c	?^symhelp( selected, menu )$?
+symref	alsym.c	?^nodep $?
+t_blk_move	support.c	?^t_blk_move( to, from, bytes )$?
+tfarptr	kids.c	?^	tfarptr(thenode)->n_kids[num] = val;$?
+trealloc	extra.c	?^trealloc( ptr, oldval, newval )$?
+tree	treesubr.c	?^nodep $?
+treeCountSyms	save.c	?^treeCountSyms(_np)$?
+treeSave	save.c	?^treeSave(_np)$?
+trimzero	support.c	?^trimzero(p)$?
+type_declare	support.c	?^type_declare( lname, ttree )$?
+type_error	support.c	?^type_error()$?
+uc_nextpos	treesubr.c	?^uc_nextpos(xcp)$?
+uc_prevpos	treesubr.c	?^uc_prevpos(xcp)$?
+var_declare	support.c	?^var_declare( nodetype, sttype, namelist, ttree )$?
+var_type	support.c	?^nodep $?
+were_errors	support.c	?^were_errors()$?
+writeError	save.c	?^writeError(fp)$?
+yyerror	lex.c	?^yyerror(s)$?
+yylex	lex.c	?^yylex()$?
+yyparse	y.tab.c	?^yyparse()$?

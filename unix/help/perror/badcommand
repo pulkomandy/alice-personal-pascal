@@ -1,0 +1,9 @@
+|9,73
+Unknown command
+    You typed a command that ALICE didn't recognize.  This should only
+    happen when you have entered a command by pressing CTRL-X, then typing
+    the command in words.  Possibly you just misspelled the command you
+    wanted; if so, retype the command and try again.  You could also ask
+    for Help on ALICE commands or ask ALICE for a Command Menu.
+         If the error arose when you weren't entering a command in this
+    way, it is possible that you have set up a macro incorrectly.

@@ -1,0 +1,4 @@
+|4,71
+     The "pack" procedure takes an unpacked array and creates a packed
+array whose elements are the same as the unpacked one.  This function is
+not currently implemented in ALICE.

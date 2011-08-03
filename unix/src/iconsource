@@ -1,0 +1,84 @@
+
+Structure of the ALICE source code for the ICON -- version 1.5
+
+The main ALICE source directory can be placed just about anywhere.
+Most of the ALICE source files themselves are packed into archives
+with the "par" program, and must be unpacked into this directory.
+
+The "unpar" program can be found in "/user_cmds/unpar" on the ALICE
+distribution disk and on ALICE source disk #2.  If it is not already in
+your own "/user/cmds" directory, place it there.
+
+Create a directory on your fileserver called "/src/curses".  The
+".o" files from the curses library (found in /src/curses on the
+ALICE source disk #2) must go there.  Copy the ".o" files from disk #2's
+"/src/curses" directory there.  The curses library is the ICON version of
+our portable screen access library.  Source is provided if you need to
+recreate it, but it is generally treated by us as a library.
+
+	backup 2:/src/curses 1:/src/curses p=*.o
+
+
+Create a directory for the ALICE source.  You can use "/src/alice" or
+"/alice/src" (or "/alice/at" if you want to use the same structure that
+we use).
+
+You will find "par" files in the /src/par directories on both disks.
+You will want to unpack them by saying something like
+
+	cd /alice/src  (alice source directory)
+	unpar <2:/src/par/cpar1
+	unpar <2:/src/par/cpar2
+	unpar <2:/src/par/hf.par
+	   and on SOURCE DISK #2
+	unpar <2:/src/par/cpar3
+
+A few other files from disk #2 need to be moved over.  These are the
+files in /src that are not packed in archives.  Included are the source
+to the template generator, the Makefile for ALICE and the "linkit"
+shell script that links ALICE.  Copy these over.
+Also get "speech1.o" from the Cemcorp toolkit speech library.
+
+You will need to place a few files in the "/lib" directory of your ICON
+for use by the c preprocessor.  These can be found in /lib of disk #2.
+Use the backup or cp commands to move these files over.  You may have to
+modify permissions on the "/lib" directory to move files there.
+
+	backup 2:/lib 1:/lib +a
+
+
+If you wish to compile the APIN program, copy over the /src/apin directory
+from disk #2
+	mkdir /alice/src/apin
+	backup 2:/src/apin /alice/src/apin +a
+
+TO TEST ALICE
+	You will need all of Alice's extra files to test it once compiled.
+	You should thus have alice installed on your machine, although
+	you can remove "/user_cmds/alice.bin" before compiling.
+
+	Notably alice needs
+		/fonts/alice
+		/config/pas.tpl
+		/config/apbuiltin
+		/config/ap.init
+	in order to run.
+
+TO COMPILE ALICE
+	Simply say "make" in the source directory.  You need the QNX
+	"make" program.  You should be using QNX 2.2 and the latest compiler
+	from Quantum.
+
+To compile the template generator
+	"make template" in the source directory.
+
+To compile APIN
+	"make" in the APIN directory.
+
+
+The development of ALICE has required that we make use of many advanced
+features not normally available to ICON users.  We get these advanced
+features directly from Quantum.  Only recently have these tools started
+to show up in Cemcorp releases.  There may still be some tools around
+that haven't shown up.  Call us at 519-884-7473 if you are missing some
+of these.

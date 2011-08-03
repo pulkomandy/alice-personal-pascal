@@ -1,0 +1,608 @@
+Error: turning on trace, file 'dumpfile'
+CheckAt=0, cursor=0
+mainloop, cursor 6354, ocursor 6f, srch_row 0, srch_real 0, look.=7
+back from hist_mark()
+pcod_adjust(5ff542), line->pcode=0, line_headnode(*line)=6f6330
+treeprint(thenode=6f6330, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint(thenode=6f6362, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string test
+treeprint does !c, setecol 0, pr_column 5
+treeprint(thenode=6f6354, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 0, pr_column 8
+treeprint does !c, setecol 0, pr_column 8
+Bufadd asked to add string <<
+Bufadd asked to add string Value
+Bufadd asked to add string >>
+line size = 18, room = 80
+line_bord 1 = 80
+size = -62, room = 78
+nlines = 1
+Fit line 1 lines long into space 1 in size
+output line 0: "test := <<Value>>;"
+out_line: cur_line = 8
+         stop_line = 23
+pcod_adjust(5ff52c), line->pcode=0, line_headnode(*line)=6f6330
+treeprint(thenode=6f6330, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 0
+treeprint(thenode=6f6362, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string test
+treeprint does !c, setecol 0, pr_column 5
+treeprint(thenode=6f6354, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 8
+treeprint does !c, setecol 1, pr_column 8
+Bufadd asked to add string <<
+Bufadd asked to add string Value
+Bufadd asked to add string >>
+line size = 18, room = 80
+line_bord 1 = 80
+size = -62, room = 78
+nlines = 1
+SearchReal: 8
+line_borders[0] = 18
+pcod_adjust(5ff3e0), line->pcode=0, line_headnode(*line)=6f6330
+treeprint(thenode=6f6330, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 0
+treeprint(thenode=6f6362, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 0
+treeprint does !c, setecol 0, pr_column 0
+Bufadd asked to add string test
+treeprint does !c, setecol 0, pr_column 5
+treeprint(thenode=6f6354, prcode_index=0, listcode=32, def=0, plist=0)
+out_flag 2, pr_column 8
+treeprint does !c, setecol 1, pr_column 8
+Bufadd asked to add string <<
+Bufadd asked to add string Value
+Bufadd asked to add string >>
+line size = 18, room = 80
+line_bord 1 = 80
+size = -62, room = 78
+nlines = 1
+SearchReal: 8
+line_borders[0] = 18
+Start of OLEdit()
+length of prec: 8, fol: 1
+becpy: 
+oledit: savey 7, srch_row 7, strlen 0, choffset 568
+Cursor is 8 chars into string, len = 9
+line_buffer is 9 long
+line size = 9, room = 80
+line_bord 1 = 80
+size = -71, room = 78
+nlines = 1
+SearchReal: 8
+line_borders[0] = 9
+Fit line 1 lines long into space 1 in size
+output line 0: "test := ;"
+out_line: cur_line = 8
+         stop_line = 23
+Initial offset = 568
+sline = 7
+n_lines = 0, n_cols = 8
+Cursor is 8 chars into text on that line
+Offset into string = 8
+Offset into edit text = 0
+choffset winds up 0
+ole loop, edtext '', len = 0, cursor 0
+OLE_Accept, fl 110, tc '', cmd 't' (164)
+docmd(164)
+inschar(164), olcursor 1
+expscan called, str 't', ta f0b8, tbuf 5f
+Token number: 34, text: 't'
+token 34, bscan (G)
+text after expscan (t) () @ 388
+OLE_Done finds 0 tokens 34 126
+OLE_Done - expression
+expscan returns  total 0 tokens
+Cursor is 9 chars into string, len = 10
+line_buffer is 10 long
+line size = 10, room = 80
+line_bord 1 = 80
+size = -70, room = 78
+nlines = 1
+SearchReal: 9
+line_borders[0] = 10
+Fit line 1 lines long into space 1 in size
+output line 0: "test := t;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 't', len = 1, cursor 1
+OLE_Accept, fl 110, tc '', cmd 'e' (145)
+docmd(145)
+inschar(145), olcursor 2
+expscan called, str 'te', ta f0b8, tbuf 5f
+Token number: 34, text: 'te'
+token 34, bscan ()
+text after expscan (te) () @ 388
+OLE_Done finds 0 tokens 34 126
+OLE_Done - expression
+expscan returns  total 0 tokens
+Cursor is 10 chars into string, len = 11
+line_buffer is 11 long
+line size = 11, room = 80
+line_bord 1 = 80
+size = -69, room = 78
+nlines = 1
+SearchReal: 10
+line_borders[0] = 11
+Fit line 1 lines long into space 1 in size
+output line 0: "test := te;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'te', len = 2, cursor 2
+OLE_Accept, fl 110, tc '', cmd 's' (163)
+docmd(163)
+inschar(163), olcursor 3
+expscan called, str 'tes', ta f0b8, tbuf 5f
+Token number: 34, text: 'tes'
+token 34, bscan (¯¼Š9_)
+text after expscan (tes) () @ 388
+OLE_Done finds 0 tokens 34 126
+OLE_Done - expression
+expscan returns  total 0 tokens
+Cursor is 11 chars into string, len = 12
+line_buffer is 12 long
+line size = 12, room = 80
+line_bord 1 = 80
+size = -68, room = 78
+nlines = 1
+SearchReal: 11
+line_borders[0] = 12
+Fit line 1 lines long into space 1 in size
+output line 0: "test := tes;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'tes', len = 3, cursor 3
+OLE_Accept, fl 110, tc '', cmd 't' (164)
+docmd(164)
+inschar(164), olcursor 4
+expscan called, str 'test', ta f0b8, tbuf 5f
+Token number: 34, text: 'test'
+token 34, bscan (¼Š9_)
+text after expscan (test) () @ 388
+OLE_Done finds 0 tokens 34 126
+OLE_Done - expression
+expscan returns  total 0 tokens
+Cursor is 12 chars into string, len = 13
+line_buffer is 13 long
+line size = 13, room = 80
+line_bord 1 = 80
+size = -67, room = 78
+nlines = 1
+SearchReal: 12
+line_borders[0] = 13
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test', len = 4, cursor 4
+OLE_Accept, fl 110, tc '', cmd ' ' (40)
+docmd(40)
+inschar(40), olcursor 5
+expscan called, str 'test ', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( )
+Token number: 34, text: ''
+token 34, bscan (Š9_)
+text after expscan (test ) (test) @ 388
+OLE_Done finds 1 tokens 99 34
+OLE_Done - expression
+expscan returns  A Symbol 'test', total 1 tokens
+isexptok(A Symbol) returns 1
+isterm ntok 0, stn A Symbol, et 3
+Cursor is 13 chars into string, len = 14
+line_buffer is 14 long
+line size = 14, room = 80
+line_bord 1 = 80
+size = -66, room = 78
+nlines = 1
+SearchReal: 13
+line_borders[0] = 14
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test ;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test ', len = 5, cursor 5
+OLE_Accept, fl 110, tc '', cmd 'o' (157)
+docmd(157)
+inschar(157), olcursor 6
+expscan called, str 'test o', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( o)
+Token number: 34, text: 'o'
+token 34, bscan (9_)
+text after expscan (test o) (test) @ 388
+OLE_Done finds 1 tokens 99 34
+OLE_Done - expression
+expscan returns  A Symbol 'test', total 1 tokens
+isexptok(A Symbol) returns 1
+isterm ntok 0, stn A Symbol, et 3
+Cursor is 14 chars into string, len = 15
+line_buffer is 15 long
+line size = 15, room = 80
+line_bord 1 = 80
+size = -65, room = 78
+nlines = 1
+SearchReal: 14
+line_borders[0] = 15
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test o;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test o', len = 6, cursor 6
+OLE_Accept, fl 110, tc '', cmd 'r' (162)
+docmd(162)
+inschar(162), olcursor 7
+expscan called, str 'test or', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or)
+Token number: 34, text: 'or'
+token 34, bscan (_)
+text after expscan (test or) (test) @ 388
+OLE_Done finds 1 tokens 99 34
+OLE_Done - expression
+expscan returns  A Symbol 'test', total 1 tokens
+isexptok(A Symbol) returns 1
+isterm ntok 0, stn A Symbol, et 3
+Cursor is 15 chars into string, len = 16
+line_buffer is 16 long
+line size = 16, room = 80
+line_bord 1 = 80
+size = -64, room = 78
+nlines = 1
+SearchReal: 15
+line_borders[0] = 16
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test or;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test or', len = 7, cursor 7
+OLE_Accept, fl 110, tc '', cmd ' ' (40)
+docmd(40)
+inschar(40), olcursor 8
+expscan called, str 'test or ', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or )
+Token number: 80, text: 'or'
+token 80, bscan ( )
+Token number: 34, text: ''
+token 34, bscan ()
+text after expscan (test or ) (test) @ 388
+OLE_Done finds 2 tokens 99 80
+OLE_Done - expression
+expscan returns  A Symbol 'test', or 'or', total 2 tokens
+isexptok(A Symbol) returns 1
+isterm ntok 0, stn A Symbol, et 3
+isexptok(or) returns 1
+isterm ntok 1, stn or, et 1
+Cursor is 16 chars into string, len = 17
+line_buffer is 17 long
+line size = 17, room = 80
+line_bord 1 = 80
+size = -63, room = 78
+nlines = 1
+SearchReal: 16
+line_borders[0] = 17
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test or ;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test or ', len = 8, cursor 8
+OLE_Accept, fl 110, tc '', cmd 'i' (151)
+docmd(151)
+inschar(151), olcursor 9
+expscan called, str 'test or i', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or i)
+Token number: 80, text: 'or'
+token 80, bscan ( i)
+Token number: 34, text: 'i'
+token 34, bscan (Y:_)
+text after expscan (test or i) (test) @ 388
+OLE_Done finds 2 tokens 99 80
+OLE_Done - expression
+expscan returns  A Symbol 'test', or 'or', total 2 tokens
+isexptok(A Symbol) returns 1
+isterm ntok 0, stn A Symbol, et 3
+isexptok(or) returns 1
+isterm ntok 1, stn or, et 1
+Cursor is 17 chars into string, len = 18
+line_buffer is 18 long
+line size = 18, room = 80
+line_bord 1 = 80
+size = -62, room = 78
+nlines = 1
+SearchReal: 17
+line_borders[0] = 18
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test or i;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test or i', len = 9, cursor 9
+OLE_Accept, fl 110, tc '', cmd ' ' (40)
+docmd(40)
+inschar(40), olcursor 10
+expscan called, str 'test or i ', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or i )
+Token number: 80, text: 'or'
+token 80, bscan ( i )
+Token number: 99, text: 'i'
+token 99, bscan ( )
+Token number: 34, text: ''
+token 34, bscan (:_)
+text after expscan (test or i ) (test) @ 388
+OLE_Done finds 3 tokens 99 80
+OLE_Done - expression
+expscan returns  A Symbol 'test', or 'or', A Symbol 'i', total 3 tokens
+isexptok(or) returns 1
+isterm ntok 1, stn or, et 1
+isexptok(A Symbol) returns 1
+isterm ntok 2, stn A Symbol, et 3
+Cursor is 18 chars into string, len = 19
+line_buffer is 19 long
+line size = 19, room = 80
+line_bord 1 = 80
+size = -61, room = 78
+nlines = 1
+SearchReal: 18
+line_borders[0] = 19
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test or i ;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test or i ', len = 10, cursor 10
+OLE_Accept, fl 110, tc '', cmd '+' (53)
+docmd(53)
+inschar(53), olcursor 11
+expscan called, str 'test or i +', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or i +)
+Token number: 80, text: 'or'
+token 80, bscan ( i +)
+Token number: 99, text: 'i'
+token 99, bscan ( +)
+Token number: 78, text: '+'
+token 78, bscan ()
+Token number: 34, text: ''
+token 34, bscan (_)
+text after expscan (test or i +) (test) @ 388
+OLE_Done finds 4 tokens 99 80
+OLE_Done - expression
+expscan returns  A Symbol 'test', or 'or', A Symbol 'i', + '+', total 4 tokens
+isexptok(A Symbol) returns 1
+isterm ntok 2, stn A Symbol, et 3
+isexptok(+) returns 1
+isterm ntok 3, stn +, et 1
+Cursor is 19 chars into string, len = 20
+line_buffer is 20 long
+line size = 20, room = 80
+line_bord 1 = 80
+size = -60, room = 78
+nlines = 1
+SearchReal: 19
+line_borders[0] = 20
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test or i +;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test or i +', len = 11, cursor 11
+OLE_Accept, fl 110, tc '', cmd ' ' (40)
+docmd(40)
+inschar(40), olcursor 12
+expscan called, str 'test or i + ', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or i + )
+Token number: 80, text: 'or'
+token 80, bscan ( i + )
+Token number: 99, text: 'i'
+token 99, bscan ( + )
+Token number: 78, text: '+'
+token 78, bscan ( )
+Token number: 34, text: ''
+token 34, bscan ()
+text after expscan (test or i + ) (test) @ 388
+OLE_Done finds 4 tokens 99 80
+OLE_Done - expression
+expscan returns  A Symbol 'test', or 'or', A Symbol 'i', + '+', total 4 tokens
+isexptok(A Symbol) returns 1
+isterm ntok 2, stn A Symbol, et 3
+isexptok(+) returns 1
+isterm ntok 3, stn +, et 1
+Cursor is 20 chars into string, len = 21
+line_buffer is 21 long
+line size = 21, room = 80
+line_bord 1 = 80
+size = -59, room = 78
+nlines = 1
+SearchReal: 20
+line_borders[0] = 21
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test or i + ;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test or i + ', len = 12, cursor 12
+OLE_Accept, fl 110, tc '', cmd '2' (62)
+docmd(62)
+inschar(62), olcursor 13
+expscan called, str 'test or i + 2', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or i + 2)
+Token number: 80, text: 'or'
+token 80, bscan ( i + 2)
+Token number: 99, text: 'i'
+token 99, bscan ( + 2)
+Token number: 78, text: '+'
+token 78, bscan ( 2)
+Token number: 34, text: '2'
+token 34, bscan (*)
+text after expscan (test or i + 2) (test) @ 388
+OLE_Done finds 4 tokens 99 80
+OLE_Done - expression
+expscan returns  A Symbol 'test', or 'or', A Symbol 'i', + '+', total 4 tokens
+isexptok(A Symbol) returns 1
+isterm ntok 2, stn A Symbol, et 3
+isexptok(+) returns 1
+isterm ntok 3, stn +, et 1
+Cursor is 21 chars into string, len = 22
+line_buffer is 22 long
+line size = 22, room = 80
+line_bord 1 = 80
+size = -58, room = 78
+nlines = 1
+SearchReal: 21
+line_borders[0] = 22
+Fit line 1 lines long into space 1 in size
+output line 0: "test := test or i + 2;"
+out_line: cur_line = 8
+         stop_line = 23
+ole loop, edtext 'test or i + 2', len = 13, cursor 13
+OLE_Accept, fl 110, tc '', cmd '
+' (12)
+OLE_Accepted
+expscan called, str 'test or i + 2 ', ta f0b8, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or i + 2 )
+Token number: 80, text: 'or'
+token 80, bscan ( i + 2 )
+Token number: 99, text: 'i'
+token 99, bscan ( + 2 )
+Token number: 78, text: '+'
+token 78, bscan ( 2 )
+Token number: 62, text: '2'
+token 62, bscan ( )
+Token number: 34, text: ''
+token 34, bscan ()
+text after expscan (test or i + 2) (test) @ 388
+OLE_Done finds 5 tokens 99 80
+OLE_Done - expression
+expscan returns  A Symbol 'test', or 'or', A Symbol 'i', + '+', Integer Constant '2', total 5 tokens
+isexptok(+) returns 1
+isterm ntok 3, stn +, et 1
+isexptok(Integer Constant) returns 1
+isterm ntok 4, stn Integer Constant, et 3
+s_expparse( 'test or i + 2 ' )
+expscan called, str 'test or i + 2 ', ta f120, tbuf 5f
+Token number: 99, text: 'test'
+token 99, bscan ( or i + 2 )
+Token number: 80, text: 'or'
+token 80, bscan ( i + 2 )
+Token number: 99, text: 'i'
+token 99, bscan ( + 2 )
+Token number: 78, text: '+'
+token 78, bscan ( 2 )
+Token number: 62, text: '2'
+token 62, bscan ( )
+Token number: 34, text: ''
+token 34, bscan ()
+s_expparse gets 5 tokens, first 99 'test'
+t_expparse( ta f120, rtree 5f )
+stack(0):  EOF(0)
+expmap(99, 14) returns 2
+push toknum 2 toktype A Symbol (99)
+stack(1):  EOF(0) < NAME(0)
+expmap(80, 2) returns 0
+push toknum 0 toktype or (80)
+reduce, stack top 2
+stack(2):  EOF(0) < NAME(0) > ADDOP(0)
+btn = 2, tn = 0
+optab = 0
+btn = 14, tn = 2
+optab = 3
+reduce found bot 0, tn 2
+slookup(test, create, 0, moan, 0)
+next_symtab(6354)
+Found table at 60ae type pascal program
+search_symtab(6f6182, test, 192, noredecls)
+returning, ptr=6f62f8(test)
+mmalloc(12) returns 6f6588
+New node, type 99(Symbol) at 6f6588, 1 kids, 6f62f8 6f62f8
+stack(2):  EOF(0) EXP(6588) < ADDOP(0)
+stack(2):  EOF(0) EXP(6588) < ADDOP(0)
+expmap(99, 0) returns 2
+push toknum 2 toktype A Symbol (99)
+stack(3):  EOF(0) EXP(6588) < ADDOP(0) < NAME(0)
+expmap(78, 2) returns 0
+push toknum 0 toktype + (78)
+reduce, stack top 4
+stack(4):  EOF(0) EXP(6588) < ADDOP(0) < NAME(0) > ADDOP(0)
+btn = 2, tn = 0
+optab = 0
+btn = 0, tn = 2
+optab = 3
+reduce found bot 2, tn 2
+slookup(i, create, 0, moan, 0)
+next_symtab(6354)
+Found table at 60ae type pascal program
+search_symtab(6f6182, i, 105, noredecls)
+returning, ptr=6f625c(i)
+mmalloc(12) returns 6f6596
+New node, type 99(Symbol) at 6f6596, 1 kids, 6f625c 6f625c
+stack(4):  EOF(0) EXP(6588) < ADDOP(0) EXP(6596) > ADDOP(0)
+reduce, stack top 4
+stack(4):  EOF(0) EXP(6588) < ADDOP(0) EXP(6596) > ADDOP(0)
+btn = 15, tn = 0
+btn = 0, tn = 0
+optab = 0
+btn = 15, tn = 0
+btn = 14, tn = 0
+optab = 3
+reduce found bot 0, tn 0
+mmalloc(20) returns 6f65a4
+New node, type 80(or) at 6f65a4, 3 kids, 6f6588 6f6596
+Kid #1, at 6588 type 99(%s)
+Kid #2, at 6596 type 99(%s)
+stack(2):  EOF(0) EXP(65a4) < ADDOP(0)
+stack(2):  EOF(0) EXP(65a4) < ADDOP(0)
+expmap(62, 0) returns 2
+push toknum 2 toktype Integer Constant (62)
+stack(3):  EOF(0) EXP(65a4) < ADDOP(0) < NAME(6596)
+expmap(34, 2) returns 14
+push toknum 14 toktype ?<34>? (34)
+reduce, stack top 4
+stack(4):  EOF(0) EXP(65a4) < ADDOP(0) < NAME(6596) > EOF(0)
+btn = 2, tn = 14
+optab = 0
+btn = 0, tn = 2
+optab = 3
+reduce found bot 2, tn 2
+mmalloc(16) returns 6f65ba
+New node, type 62(integer constant) at 6f65ba, 2 kids, 0 22000e
+mmalloc(2) returns 6f65cc
+stack(4):  EOF(0) EXP(65a4) < ADDOP(0) EXP(65ba) > EOF(0)
+reduce, stack top 4
+stack(4):  EOF(0) EXP(65a4) < ADDOP(0) EXP(65ba) > EOF(0)
+btn = 15, tn = 14
+btn = 0, tn = 14
+optab = 0
+btn = 15, tn = 0
+btn = 14, tn = 0
+optab = 3
+reduce found bot 0, tn 0
+mmalloc(20) returns 6f65d0
+New node, type 78(addition) at 6f65d0, 3 kids, 6f65a4 6f65ba
+Kid #1, at 65a4 type 80(%s)
+Kid #2, at 65ba type 62(%s)
+stack(2):  EOF(0) EXP(65d0) ? EOF(0)
+end of e_expparse parseok 1, subtree 65d0
+mmalloc(12) returns 6f65e6
+New node, type 98(placeholder) at 6f65e6, 1 kids, 17 3f8126
+treefree(6370)
+freeing self
+mfree(6f6370) frees -25442
+myWS(6354) returns 6f
+if_sym_call(6354, 207a006f), ntype(np)=71
+if_sym_call(65e6, 1e12006f), ntype(np)=71
+myWS(65e6) returns 6f
+myWS(65e6) returns 6f
+if_sym_call(65e6, 207a006f), ntype(np)=71
+if_sym_call(65d0, 1e12006f), ntype(np)=71
+myWS(65d0) returns 6f
+mainloop: topcmd returns ?<96>? (96)
+CheckAt=6330, cursor=6f
+mainloop: c_typecheck(6330, 0, 14)
+Error: Operands of AND/OR must be boolean or integer

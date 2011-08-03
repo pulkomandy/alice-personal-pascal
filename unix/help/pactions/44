@@ -1,0 +1,7 @@
+|7,71
+     Selecting this sets up a field declaration inside a record declara-
+tion.  ALICE will lay out the template for a record field
+
+          Name : Type; {Comment}
+
+and position the cursor on the Name placeholder.

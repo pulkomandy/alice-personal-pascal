@@ -1,0 +1,26 @@
+|20,73
+     This procedure initializes a file for reading and writing with direct
+access.  The full form is
+
+          update(fvar,filename)
+
+where "fvar" is a file variable and "filename" is a string giving the name
+of a file.  The named file will be associated with the file variable, and
+the file will be positioned so that reading or writing will take place at
+the beginning of the file.
+
+Update Examples:
+     var
+         f : file of integer;
+      ...
+     update(f,'myfile');
+|mFor more, choose
+|iDo nothing,nop
+|iReset,Hpsymbol/reset
+|iRewrite,Hpsymbol/rewrite
+|iSetnext,Hpsymbol/setnext
+|iGet,Hpsymbol/get
+|iPut,Hpsymbol/put
+|iRead,Hpsymbol/read
+|iWrite,Hpsymbol/write
+|p

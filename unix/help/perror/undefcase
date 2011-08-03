@@ -1,0 +1,17 @@
+|17,74
+Undefined case VALUE
+    While executing a CASE statement, ALICE came up with a value that
+    didn't match any of the listed case labels.  In addition, there wasn't
+    an ELSE clause to handle such values.  To correct this problem, add an
+    ELSE clause or a case to handle the value that ALICE found.  It might
+    also be that some other error in the program resulted in an incorrect
+    value by the time ALICE got to the CASE statement.  If the CASE state-
+    ment should not have received this value, figure out where the value
+    came from and correct the problem.  Single-stepping may help you locate
+    where the trouble arose.
+|mFor more, choose
+|iDo nothing,nop
+|iCase statements,Hpnode/case
+|iELSE cases,Hpnode/case_else
+|iSingle stepping,Hcommand/step
+|p

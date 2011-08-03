@@ -1,0 +1,13 @@
+|13,73
+Nothing to undo
+    You tried to issue the UNDO command, but you haven't done anything yet
+    so ALICE can't undo anything.  If you issued the command by accident,
+    don't worry -- nothing happened.  You may also get this message if you
+    tried to do too many UNDO commands in a row.  ALICE can only UNDO a
+    limited number of commands; if you try to UNDO more than that number,
+    you'll get this error message.
+|mFor more, choose
+|iDo nothing,nop
+|iUNDO,Hcommand/undo
+|iREDO,Hcommand/redo
+|p

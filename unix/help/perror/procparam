@@ -1,0 +1,19 @@
+|20,74
+This parameter must be a procedure
+    In a call to a subprogram, the indicated argument should be a
+    procedure.  The argument you gave was NOT a procedure.
+         When a subprogram expects a procedure argument, you only specify
+    the name of the procedure when you call the subprogram.  For example,
+    if "procarg" is a subprogram that takes a procedure as an argument, you
+    might say
+
+          procard(page);
+
+    to pass the "page" procedure as the appropriate argument.  You do NOT
+    specify any arguments for the procedure being passed.
+|mFor more, choose
+|iDo nothing,nop
+|iProcedure parameters,Hpnode/procedure_pa
+|iFunction parameters,Hpnode/function_par
+|iPage,Hpsymbol/page
+|p

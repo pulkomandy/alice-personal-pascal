@@ -1,0 +1,13 @@
+|14,74
+Memory recovered -- cannot undo past this point
+    This is a warning, not an error message.  You have performed an opera-
+    tion that has cleaned up a lot of things inside ALICE to make more room
+    in memory.  One of the things that was cleaned away was ALICE's record
+    of your recent actions.  Since this has been cleaned away, you will not
+    be able to UNDO anything that happened before memory was cleaned.
+|mFor more, choose
+|iDo nothing,nop
+|iUNDO,Hcommand/undo
+|iRECOVER,Hcommand/recover
+|iNEW,Hcommand/new
+|p

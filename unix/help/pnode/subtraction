@@ -1,0 +1,14 @@
+|14,74
+     A subtraction operation subtracts two numbers or expressions.  You can
+only subtract numeric values (reals or integers).
+     If one or both of the things being subtracted are "real", the result
+of the subtraction will be "real".  If both are integers, the result of the
+subtraction will be "integer".
+     The subtraction operator "-" is also used to find the difference
+between two sets.  In this case, A-B is the set of all elements in A that
+are not in B.  The base types of the two sets must be compatible.
+
+Valid Subtraction Examples:
+     3-5     3.1-2.3     4.4-2     2-a     [1..100]-[5..20]
+Invalid Subtraction Examples:
+     'a'-2     (b>c)-4.3     [1,2,3]-['a'..'z']

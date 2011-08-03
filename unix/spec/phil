@@ -1,0 +1,191 @@
+.ce
+Notes on ALICE philosophy
+.sp 2
+.pp
+Many feel that the teaching of computer use will be one of the most
+important issues in education in the eighties.  The new times need new
+tools to better teach students exactly what programming is and how it
+is done.  At Looking Glass, we think one important step involves changing
+the way people write programs.
+.pp
+ALICE is an attempt to make that change.  It is a whole new system
+for entering, changing, running and finding the bugs in programs.
+The ideas behind ALICE are not original, but the ALICE project will be
+the first effort to seriously design a system of this type for high-school
+education.
+.pp
+ALICE is what is called a "syntax-directed" or "language based" editor.
+This is to say, it is a system for producing computer programs that
+knows the structure of these programs intimately.
+A language based editor usually deals (internally, at least) with the
+program according to programming structure units, rather than the "line"
+and "character" units that normal text-based editors used.  To do this,
+an editor must naturally know the syntax of the language being edited.
+This means that programmer mistakes can often be picked up as soon as they
+are typed in.  It can even be made impossible for novices to type in many
+of the most common mistakes.   Knowing the language so well, such an editor
+can also provide all sorts of help about programming.
+.pp
+Such systems often deal with more than just the syntax of a programming
+language.  Once the system goes that far, it can also check for basic
+semantic mistakes and provide help in these areas as well.  For example,
+if a novice types in a variable name that has not been declared, this
+can be detected easily.  The system can go even further and offer to
+declare the variable in some sane way, taking the worry of managing all
+sorts of details away from the beginner.  Once a system does semantic
+checking, the next step is to provide an actual interpreter for the language
+as part of the editor.  This is much easier to do than writing a complete
+interpreter, for the editor has already done most of the hard work, such
+as building the program into a parse tree and creating the symbol table.
+.pp
+Beyond execution, the next step to provide "debugging tools".  Again, this
+is much simpler than producing a seperate debugger because most of the
+work is already done.  When all these facets are combined, one has what we
+call an "Interactive Computing Environment".  The term environment is
+important, for what is created is a complete system for doing all programming
+tasks.  A programmer now has one single program that is used for an
+entire session.  This means that there is only one user-interface to learn,
+and that facets of the programming task will be consistent with each other.
+The total environment concept has been an important factor in the success
+of languages like Basic, APL, FORTH and LISP.  The U.S. Department of
+Defence has also insisted that a complete standard environment be produced
+for ADA, its language of choice.
+.sh 1 "Past Research"
+.pp
+There are been several
+other efforts to make such editors.  A list of these is provided in the
+bibliography, but a short history is in order.  In addition, a description
+is provided of the two main streams of philosophy involved in the design
+of these systems.
+.pp
+While the idea sprang up even earlier, the first such system to gain
+recognition was the "Cornell Program Synthesizer" by Tim Teitlebaum of
+Cornell University in Ithaca, New York.  The term "Program Syntesizer"
+was very apt; the central concept of this system was that a program
+should be synthesized from basic building blocks rather than just
+typed in as text.  This makes the student much more aware of the
+structure of a program, and makes it impossible to enter syntax errors.
+The Program Synthesizer also did basic checking for semantic errors and
+compiled to a threaded pseudo-language for interpretation.  The initial
+system worked only with Cornell's derivitave of PL/1.
+.pp
+The Cornell system created quite a stir, for it presented a whole new
+way to write programs and a whole new way to teach programming.  A
+controversy sprung up as to whether or not the Cornell system was a good
+idea or not.  While most people like the synthesizer idea, many more
+experienced programmers felt it would get in the way rather than help.
+Since the synthesizer does not let you enter a syntax error, it can often
+be a pain to construct certain things that would be simple to do in
+a normal text editor.  Users complained that the shortest distance between
+two points could often become a very jagged line, since it was required
+that a correct program (in a vague sense) be present after every editing step.
+Teitlebaum recognized this and made some steps to correct it, while others
+went on to produce language based editors that looked like regular text
+editors.
+.pp
+Despite what peole may have felt about the suitability of the language based
+editor for advanced programmers, most still approve of the idea for teaching.
+The problems that have been presented are common to many other systems designed
+for novices.  It seems to be an almost unescapable fact that a system that
+protects novices from themselves and helps them along will get in the way
+of a user who feels competent to deal with the system at a more raw level.
+.pp
+Before going on, a description of the two types of language based editors
+is in order:
+.sh 2 "Template Editors"
+.pp
+The Cornell system is a good example of the first type of language
+based editor, what we call the "template editor".  This is the style
+we have decided to follow for ALICE for several reasons which we will
+detail shortly.  One primary reason, however, is that the use of template
+building blocks provides "prompts" to the novice user indicating what
+elements of program structure have to be filled in.  This allows the
+novice to work on a programming without knowing everything about how
+to write a program.  The template shows all the unimportant details and
+leaves "placeholders" for the student to fill in the important information.
+.pp
+The template makes it easier to deal with structured languages such
+as Pascal, which can otherwise provide some confusion to a student.
+Many people today learn programming with BASIC because it allows them to
+just bang away a few statements and see the results immediately.  Learners
+faced with Pascal systems on the other hand, must immediately learn about
+"program" statements, types, declarations and "begin-end" blocks before they
+can produce their first working program.  A template system can eliminate
+some of this trouble.
+.pp
+Further work has been done by people outside Cornell, such as POE from
+the University of Wisconsin.  Research is still going on.
+.sh 1 "Checking Editors"
+.pp
+The other stream of thought in language based editors deals with what
+we call "checking" editors.  These are editors that try to appear like
+a normal text editor to the user, but are actually dealing with the
+program being entered in a highly sophisticated manner.  A checking
+editor simply points out mistakes in the program, usually after every
+carriage return or major change, and will indicate errors that need
+to be fixed.  There is no requirement to fix them, and it is quite easy
+to take a program through various incorrect states in order to build it.
+.pp
+Checking editors have to be able to parse partial programs, and reparse
+them quickly as they are changed.  This requires a complex technique
+known as incremental parsing, and is much more difficult to implement
+than template synthesis.  Work in this area has been done by Tektronix, Inc.
+and also by Mark Horton of Looking Glass Software.  Our conclusion from
+this research is that while a checking editor is a nice idea for advanced
+programmers, and is still better than a normal editor for students, the
+problems presented in implementation are too great.  Even on large machines
+checking editors tend to be very slow and cumbersome, to the point that
+slow response time annoys the user far too much.  In addition, it is our
+belief that template synthesis is a much better teaching tool, and there
+is no reason to throw away these advantages just to make the job harder!
+.sh 1 "Problems of Template Synthesis"
+.pp
+As was noted above, template editors are not a perfect idea, and several
+problems have been encountered.  These are:
+.np
+Complete integrated computing environments are naturally larger than
+the individual components of a traditional programming system.  It is thus
+difficult, if not impossible, to implement them on the small machines commonly
+found in schools today.  Many of these machines have less than 32K of RAM,
+and could never hold such programs.  With the advent of the ICON, however,
+we now find a machine with the power to do a Template Synthesis Editor (TSE)
+well.
+.np
+Since TSEs are designed for novices, they require a straight and narrow
+path that more experienced programmers sometimes find annoying.  In systems
+like that from Cornell, actions like changing a FOR to a WHILE, or taking
+a block of statements and building a procedure out of them can be quite
+cumbersome.
+.np
+While it is good that the TSE shows the structure of a program
+in a much plainer way, it is still true that humans prefer to look at programs
+in listing form on the screen.  In addition, they like to move the cursor
+in a linear fashion, without having it make confusing jumps.
+On the other hand, with a TSE it seems natural to have cursor movement
+relate to the tree structure, which invovles non-obvious jumps.   Cornell
+provided only tree-based cursor movement, and this annoyed users.
+.np
+The input a TSE accepts depends highly on the context of the input.  While
+one type of command might be valid in one place, it might not be valid in
+others.  This means it is possible a user might get confused as to what
+constitutes valid input.  Fortunately the visual cues provided by the context
+are obvious, and it is less common to be confused about the state of the
+editor than is the case with so called "moded" text editors that provide
+no cues.
+.np
+There are still incremental entry problems with TSEs because of declarations.
+A change in a declaration can have ramifications throught the whole program
+and they must be checked.  Unless special plans are made, this can be
+a time consuming task.  Fortunately, it doesn't happen all the time.
+.np
+It is much harder to deal with program fragments that need other information
+such as declarations to be complete.  Since Pascal does not include seperate
+compilation, there is less need to worry about this, but the ability to
+deal with program fragments is still a handy editing tool.
+.np
+The program is kept as a tree internally, so a great deal more processing
+is required to display it on the screen.  Text editors, on the other hand,
+have a fairly simple task.  One must take steps to speed up screen display,
+and put special care into this part of the program to make it fast so that
+the user does not get annoyed.
+

@@ -1,0 +1,8 @@
+|8,74
+BUG: appropriate list not found for comma
+(And many other messages starting with the word BUG)
+    This indicates ALICE itself has a bug somewhere.  Please save a copy of
+    the file you are working on at the moment and write down what you were
+    doing before the message appeared.  You should also make sure that
+    Looking Glass Software is informed of this error, so they can correct
+    the problem.

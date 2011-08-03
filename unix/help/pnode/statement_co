@@ -1,0 +1,20 @@
+|17,74
+     Comments provide English descriptions of what the program is doing.
+Even though comments do not affect how the program runs, they are an
+important part of it.  Comments make it easier for someone reading your
+program to understand it.
+     ALICE Pascal requires comments at the beginning of every program (to
+explain what the program does), at the beginning of every procedure and
+function (to explain what they do), and at the end of every declaration (to
+describe what the thing being defined will be used for).  ALICE also lets
+you put a comment anywhere that you would normally put a statement or
+declaration.  Simply type an opening brace bracket and ALICE will put out
+the standard comment template.
+     A special kludge for estheticians is provided.  If you make a comment
+that consists of a single space, the braces will not be displayed, removing
+the comment entirely from sight.  This is also how you get a blank line.
+
+Comment Examples:
+     { This program sorts data. }
+     var
+         str : packed array[1..100] of char; { Character string }

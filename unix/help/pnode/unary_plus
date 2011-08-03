@@ -1,0 +1,11 @@
+|11,70
+     The unary plus operation can be applied to either integers or real
+numbers.  It does not affect a number's value.
+
+Unary Plus Examples:
+     a := +3.6;
+     writeln(+a);
+         {Will write real 3.6}
+     b := -2;
+     writeln(+b);
+         {Will write integer -2}

@@ -1,0 +1,12 @@
+|12,73
+     The easiest way to quit ALICE is to press F8 and choose the selection
+that says "Quit ALICE".  You can also quit by pressing the (beta) key.
+     If you have been editing a program and have not saved it, ALICE will
+not let you quit immediately.  Instead, it will display a menu that gives
+you a chance to save your program before quitting, or to quit without
+saving.
+|mFor more, choose
+|iDo nothing,nop
+|iThe EXIT command,Hcommand/exit
+|iSaving programs,Hcommand/save
+|p

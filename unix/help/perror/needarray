@@ -1,0 +1,9 @@
+|9,74
+Indexing requires an array
+    You typed something of the form
+
+          name[subscript]
+
+    but the "name" wasn't the name of an array.  Make sure that you typed
+    the name correctly; if you did, check the declaration of "name" to make
+    sure that it really is an array.

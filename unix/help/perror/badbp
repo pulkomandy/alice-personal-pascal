@@ -1,0 +1,11 @@
+|12,73
+Breakpoints should only be put on statements
+    You attempted to put a breakpoint on something that was not a complete
+    statement.  The most common cause of this error is highlighting only
+    PART of a statement before setting the breakpoint.  For example, it is
+    not enough to highlight the word "writeln" in a "writeln" instruction.
+    You must make sure that the entire line is highlighted.
+|mFor more, choose
+|iDo nothing,nop
+|iSetting breakpoints,Hcommand/breakpoint
+|p

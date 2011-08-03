@@ -1,0 +1,25 @@
+|18,73
+     The "output" file variable is a special predefined file variable that
+is usually associated with the terminal.  "output" is declared as a "file
+of text".  "write" or "writeln" instructions that do not specify a file
+variable will write to "output".
+     The "rewrite" and "append" functions may be used to associated
+"output" with a file instead of the terminal.
+
+Output Examples:
+     program name(input,output);
+           ...
+     writeln(x,y,z);
+     {is the same as}
+     readln(output,x,y,z);
+|mFor more, choose
+|iDo nothing,nop
+|iFile declarations,Hpnode/file_type
+|iRewrite,Hpsymbol/rewrite
+|iAppend,Hpsymbol/append
+|iWrite,Hpsymbol/write
+|iInput,Hpsymbol/input
+|iText,Hpsymbol/text
+|iPut,Hpsymbol/put
+|iIndirection,Hpnode/indirection
+|p

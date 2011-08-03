@@ -1,0 +1,60 @@
+
+This is the ALICE header files.  Also included here is the complex m4
+script that built ALICE's table of syntax tree nodes.   The node.m4
+file contains everything about every syntax node.  It builds a set of
+.h files for the node names, and builds some .c files with the data in them.
+
+Today this might be done a bit different but for now it works.  If you want
+to add a new node to the syntax trees, it should be possible with a full
+recompile.   However, if you don't do it right you might renumber the
+nodes and ruin the loading of old files.    
+
+There used to be some gaps to add new nodes, they are now all gone, I think.
+You can add non-standard nodes at the end.
+
+action.h		Definition of special actions when nodes are created
+alctype.h
+alice.h			master alice include
+altypes.h		Most of the main structs and typedefs
+bfuncs.h
+break.h
+class.h
+command.h
+dbflags.h
+debug.h
+esbuilt.h
+esmacros.h
+extramem.h
+flags.h
+foo.h
+functions.h
+hmacros.h
+huff.h
+idebug.h
+interp.h
+jump.h
+keycurs.h
+keyibm.h		For use in IBM curses version
+keys.h
+ldebug.h
+macros.h		Tree access macros
+mdebug.h
+mem.h
+menu.h
+mess.h
+msdos.h
+node.h
+ole.h
+printt.h
+process.h
+scan.h
+search.h
+sym.h
+systemCall.h
+token.h
+treerot.h
+tune.h
+typecodes.h
+whoami.h
+window.h
+workspace.h

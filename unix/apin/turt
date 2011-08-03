@@ -1,0 +1,134 @@
+
+const
+        TGLib = 'GRAPH.BIN';
+        North = 0;
+        East = 90;
+        South = 180;
+        West = 270;
+
+procedure Back(Dist: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 57, Dist);
+    end;
+procedure ClearScreen ;
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 60);
+    end;
+procedure Forwd(Dist: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 63, Dist);
+    end;
+function Heading  : integer;
+
+        {+ Declarations}
+    begin
+        Heading := TPLibFunc(TGLib, 66);
+    end;
+procedure HideTurtle ;
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 69);
+    end;
+procedure Home ;
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 72);
+    end;
+procedure NoWrap ;
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 75);
+    end;
+procedure PenDown ;
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 78);
+    end;
+procedure PenUp ;
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 81);
+    end;
+procedure SetHeading(Angle: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 84, Angle);
+    end;
+procedure SetPenColor(Color: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 87, Color);
+    end;
+procedure SetPosition(x, y: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 90, x, y);
+    end;
+procedure ShowTurtle ;
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 93);
+    end;
+procedure TurnLeft(Angle: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 96, Angle);
+    end;
+procedure TurnRight(Angle: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 99, Angle);
+    end;
+procedure TurtleDelay(Delay: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 102, Delay);
+    end;
+procedure TurtleWindow(X, Y, W, H: integer);
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 105, X, Y, W, H);
+    end;
+function TurtleThere  : Boolean;
+
+        {+ Declarations}
+    begin
+        TurtleThere := TPLibFunc(TGLib, 108) <> 0;
+    end;
+procedure Wrap ;
+
+        {+ Declarations}
+    begin
+        TPLibProc(TGLib, 111);
+    end;
+function Xcor  : integer;
+
+        {+ Declarations}
+    begin
+        Xcor := TPLibFunc(TGLib, 114);
+    end;
+function ycor  : integer;
+
+        {+ Declarations}
+    begin
+        ycor := TPLibFunc(TGLib, 117);
+    end;

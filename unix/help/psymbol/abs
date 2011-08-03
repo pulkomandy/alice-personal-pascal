@@ -1,0 +1,9 @@
+|9,73
+     The "abs" function returns the absolute value of an integer or real
+argument.  The result is integer if the argument is integer, and real if
+the argument is real.
+     Because "abs" can return two different types of numbers, it cannot be
+passed as a function argument to another subprogram.
+
+Abs Examples:
+     abs(-1)    abs(1)    abs(-3.4)    abs(4.5)

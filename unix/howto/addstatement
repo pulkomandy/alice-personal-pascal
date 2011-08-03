@@ -1,0 +1,58 @@
+
+To add a statement is more complex.  You must define a node for it
+in the range of statement nodes.  Currently there is only one empty statement
+space and one empty expression space.   If you use those up you will have
+to renumber the nodes, which would mean scrapping all the old save files.
+(We used to have a lot more extra nodes).  If you renumber, you must recompile
+all of alice.  Be sure to leave lots of blank slots yourself for future
+expansion.
+
+For now, you can experiment making a new statement in the slot called
+ST_EX2.  The places to change for it are marked in h/node.h, tem/nodetable.c
+You have to add for yourself in pascal.src, typecheck.c and interp.c.  Make
+your additions near the code for N_ST_ASSIGN
+
+THen go to the template directory and put in the node name in the
+file nodetable.c.  It can go here in any order.
+
+Now you must add the node description in the template file 'pascal.src'.
+
+You need to add a
+	node name - for help and menus
+	template -- how it shows up on screen
+	flags -- of various sorts from flags.h
+	Infix flag - indicates how it is typed in
+	Kid counts-- the first is the number of visible kids that are
+		full subtrees, the 2nd is the total count of kids, including
+		hidden kids that get processed by special code
+
+	class	- an array of the 'classes' for the kids
+	actions - when a given token is typed on this node, what action
+		is taken.
+
+
+Then you re-make the template file  (make aptempla.suf)
+
+If you moved nodes around in node.h, you must effectively recompile all
+of Alice.
+
+You must add code to typecheck the node in typecheck.c, unless there is
+no typechecking that needs to be done on the statement. (that's pretty rare)
+
+You must add code to interpret the node in interp.c or related files
+
+Adding an expression node is a similar procedure.  You have to update
+the case statements in types.c
+
+Adding a declaration node is more involved.  You must put code in
+the case statements in setup.c and the declaration compiling routines.
+
+Adding a new type that involves the operators would involve putting code
+on the typechecking routines for the operators to handle the new type, and
+new code on the operators in the interpreter.
+
+
+
+A good general rule when creating a node is to find a node that is similar
+to it, and search through the source for all code that references the
+similar node.  It is likely you have to put support in there.

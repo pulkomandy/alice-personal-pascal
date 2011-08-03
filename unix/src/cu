@@ -1,0 +1,19 @@
+fullfuncs.c:		check_undef( thefile, 1 );
+fullfuncs.c:			check_undef( &thefile->f_name, 1 );
+fullfuncs.c:	check_undef( &oldname->f_name, 1 );
+fullfuncs.c:		check_undef( thevar, 1 );
+fullfuncs.c:	check_undef( blockfile, 1 );
+fullfuncs.c:	check_undef( seekfile, 1 );
+functions.c:		check_undef( st-1, 1 );
+functions.c:	/* check_undef( wh_put_ptr, 1 ); - value pointer */
+ilowstates.c:			check_undef( sp.st_stackloc, sym_size(thesym) );
+run2.c:			/* check_undef( tempptr, formsize ); */
+runfile.c:	check_undef( whfile, 1 );
+runfile.c:	check_undef( whfile, 1 );
+runfile.c:	check_undef( whfile, 1 );
+runfile.c:		check_undef(whfile, sizeof(struct pas_file)-sizeof(char));
+runfile.c:		check_undef(whfile, sizeof(struct pas_file)-sizeof(char));
+runfile.c:	check_undef( rdbuf, datsiz );
+runfile.c:	check_undef( toclose, 1 );
+runtime.c:		check_undef( tempptr, bytes );
+runtime.c:		check_undef( tempptr, bytes );

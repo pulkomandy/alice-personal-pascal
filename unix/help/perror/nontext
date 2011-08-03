@@ -1,0 +1,15 @@
+|15,74
+Readln - text file required
+    You tried to use the "readln" procedure to read things from a file that
+    did not have the type "text".  You can only use "readln" on the
+    predefined file variable "input" and on variables that are explicitly
+    declared with the type "text".  If you want to read a different sort of
+    file, use "read" or "get".
+|mFor more, choose
+|iDo nothing,nop
+|iReadln,Hpsymbol/readln
+|iRead,Hpsymbol/read
+|iGet,Hpsymbol/get
+|iText,Hpsymbol/text
+|iInput,Hpsymbol/input
+|p

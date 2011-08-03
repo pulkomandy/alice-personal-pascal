@@ -1,0 +1,20 @@
+|16,73
+     An assignment statement assigns a value to a variable.  The value
+being assigned must be "compatible" with the type of the variable (ask for
+help with "compatibility" below).
+
+Valid Assignment Examples:
+     a := 3;
+     arreal[5] := 3.2 + pi*4 ;
+     str := 'A sample string';
+Invalid Assignment Examples:
+     var
+         i : integer;
+        ...
+     i := a>b ;
+     i := 3.4 ;
+     i := 'c';
+|mFor more, choose
+|iDo nothing,nop
+|iCompatibility,Hmisc/compat
+|p

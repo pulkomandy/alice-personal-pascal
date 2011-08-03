@@ -1,0 +1,11 @@
+|11,73
+     Selecting this lets you enter an identifier on a Statement
+placeholder.  If the identifier is the name of a variable, ALICE will
+expand the line into an assignment statement and fill in the input
+identifier as the variable on the left side of the assignment.  If the
+identifier is the name of a procedure, ALICE will expand the line into a
+procedure call (to the named procedure).  If the identifier is the name of
+something inappropriate (e.g. a named type), ALICE will give an error.  If
+the identifier is an undeclared name, ALICE will give an "undefined
+variable" error and set up an assignment using the identifier as the
+variable on the left hand side.

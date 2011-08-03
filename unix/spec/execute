@@ -1,0 +1,95 @@
+.H 2 "Program Execution"
+As the program is already stored as a tree, execution is a much
+simpler task than it would be in a regular interpreter.  It should
+also be much faster.  Execution in ALICE consists of descending the tree,
+executing each node according to its type.  Debug information consists
+of flags associated with the nodes, which are checked if debug operations
+are enabled.  Otherwise special code is executed for each node by the
+interpreter.
+.H 3 "The Stack"
+Pascal demands all operations take place on a stack, to allow recursion
+and many other operations.  Thus all variables and values will be placed
+on a stack, as well as return addresses and other recursive information
+about the tree descent.  This allows us to write the interpreter without
+recursion, increasing speed.  Symbols in the symbol table will in fact
+contain offsets into the current stack frame, where the value associated
+with the symbol will be stored.  Arithmetic operations will be reduced
+to performing simple stack operations.
+.H 3 "Initialization"
+Before running a program, it will be necessary to perform some initializations.
+For example, stack offsets must be calculated for all local variables.  Windows
+must be set up for I/O from the program and other Pascal initializations
+must be performed.  These will be kept to a minimum, so that any delay
+before the program begins remains less than one second.
+.H 3 "Environment"
+Running the program under normal circumstances will create a window for
+I/O that totally covers the editor window.  in the event of an error or
+other interruption in the program, the system will wait for a key to be
+struck.  When then key is struck, the I/O window will be destroyed and
+the editor window will be restored.  The cursor will be placed on the
+node where the error occured, or at the node it occupied when the program
+was run in the event of normal termination.
+.H 4 "Debug Operation"
+If the user has specified debugging, slightly different arrangements occur.
+When debug mode is entered, the user may specify what size of window should
+be created for program I/O during operation.  If this has been done, such
+a window will be created.  Otherwise a window using one half the screen
+will be set up by default.  This will be the lower half.  The editor will
+remain in the upper half.  The editor will adjust itself for the new window
+size and execution will begin.  If execution stops, control returns to
+the editor.  If execution halted due to the normal termination, then
+control is returned as described above.  Otherwise, the execution is
+actually suspended, and the editor cursor is placed on the node where
+execution stopped.
+.P
+Once inside the editor with execution suspended, it is possible to issue
+various debug related commands that allow the examination of variables,
+the execution of test statements and the altering of debug settings.
+It is also possible to resume execution or to single step.
+.H 5 "Cursor Following"
+In the debug menu, the user may specify that the cursor follow the
+program as it executes.  This will cause the cursor to move to each new
+statement-class node as it is executed.
+If the user has specified the cursor follow execution, it will do this
+in the editor window.  If such following is unconditional, the editor
+window may move about a great deal, which will result in fairly slow
+operation.  Otherwise, such following will only occur when the executed
+node is already displayed in the editor window.
+.H 5 "Interrupts"
+The user may interrupt the program with the same effect as a breakpoint
+by pressing the "RESET" key.
+.H 5 "Pause"
+Pressing the pause key will halt execution temporarily while the key
+is down.  The  
+.H 5 "Breakpoints"
+The user may set a breakpoint at any node except a symbol table node.
+When a breakpoint is encountered, execution stops and control returns
+to the editor.  The built-in "pause" procedure will cause a break into
+the editor as well.  A limited number of breakpoints may be set with
+counts, which is to say they only break after they have been executed
+a specified number of times.
+.H 5 "Variable Trace"
+It is possible to set a variable trace so that a breakpoint occurs whenever
+a given variable is either used or assigned to.  These two conditions can
+be set individually.  In addition, a variable "print-point" may be set to
+trap on assignments to scalar values.  In this event, the variable and
+its value will be printed on the program output whenever that variable
+is assigned to.
+.H 5 "Subroutine Trace"
+It is possible to set a breakpoint or print-point on a procedure or
+function that will trap whenever the routine is called.  Setting print-points
+on parameters will also show the values of the parameters when the routine
+is called.
+.H 5 "Single Step"
+In order to single step, one must ensure that the program breaks in some
+way first.  This can be done by placing a breakpoint at the start of
+the program, or wherever desired.  Issuing the single-step command will
+then cause the program to execute one displayed statement.  If code is
+hidden (reduced to an elipsis "...") this will count as one step.
+.H 5 "Program Modification"
+Minor modifications may be made to a suspended program.  No modifications
+may be made that involve changes in declarations or parents of the active
+node in the execution stack.
+.H 5 "Termination of Execution"
+The user may terminate the suspended program from the debug menu.
+This causes a normal termination as described above.

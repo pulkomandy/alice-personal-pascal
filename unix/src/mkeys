@@ -1,0 +1,23 @@
+^X  : Type a command
+
+F10 : Select on/off			^U  : Undo
+DEL : Delete selection			^R  : Redo
+^DEL: Delete, leaving placeholder	^S  : Save
+INS : Insert a placeholder		^L  : Load
+
+E   : Insert a placeholder after cursor	F1  : Run program			
+TAB : Go to next placeholder		F2  : Single step
+>>  : Go to next placeholder or error	F3  : Delete menu			
+<<  : Go to prev. placeholder or error  F4  : Insert menu
+^F  : Search forward			F5  : Change menu
+^B  : Search backward			F6  : Debug menu
+^A  : Search again			F7  : Miscellaneous menu
+c   : Complete a symbol			F8  : File I/O and Quit menu
+..  : Hide selection			F9  : Range commands menu
+^   : Reveal selection			F11 : Master menu of all menus
+					/4  : Cursor movement menu
+beta: Quit				/div: Pascal help menu
+/HELP: Help menu			/x  : Possible input menu
+
+	^<key> means press CTRL  and <key> at the same time
+	/<key> means press SHIFT and <key> at the same time

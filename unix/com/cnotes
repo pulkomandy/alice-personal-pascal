@@ -1,0 +1,68 @@
+
+Compiler Notes:
+
+1) Alice does most of the work of a compiler so all that needs to be
+   done is a code generator and runtime library system.
+2) Use fast in-memory code generator on a procedure-by-procedure basis
+   to provide "instant compilation."  The program will appear to be
+   constantly in a compiled state, since we only compile what is changed.
+
+	
+Stage 1: In-Ram compilation
+
+	This would generate small programs from Alice files while running
+	Alice.  Compilation would be instantaneous.  Alice would manage
+	blocks of code on a routine-by-routine basis and link them
+	together when the program is run.  To provide a superb debug
+	environment, it will be possible to have some routines compiled
+	and some interpreted in the same program.
+
+	The code generator will be the simplest, fastest possible.
+	It will not optimize.  Users who want heavily optimized programs
+	will (for the while) be forced to later compile their finished
+	programs with another compiler.
+
+	Use of libraries would be limited.
+	It will be possible to output a .COM file so the user can
+	run the resulting program independently.
+
+	To handle this stage ALICE will be adapted to support compiler
+	type constructs and to manage groups of routines that are
+	"hidden to disk" so that they don't take up memory.  Hooks for
+	this are already present.
+
+Stage 2: .OBJ output
+	The compiler would be adapted to output .OBJ files for use
+	by the MS-DOS linker.  This allows use of various libraries
+	that are on the market and lots of expansion capability.
+	Pascal routines would be able to call C functions.
+	Support for large pointers would be included.
+
+Stage 3: Optimization
+	A slower compiler with optimization will be necessary to round
+	out the product line, as we don't want customers going out and
+	buying another compiler just to get optimized output in the end.
+
+
+Who:
+	This is an independent project, so independent contractors could
+	do this quite easily.  I have several possible programmers lined
+	up.
+
+Machines:
+	The first target will the the 8086 for the IBM-PC.  Later, we will
+	wish to support the 68000 for use on computers like the Atari ST
+	and the Apple Mac.  The 68000 is easier to generate code for so
+	this should be easy.  The rest of the system will be portable.
+	We might even want to adapt for large machines like the Vax and
+	IBM 4341, as incremental compilers are in short supply and high
+	demand.
+
+Expected times for expert programmer
+
+Code Generator & Memory management system - 2 months
+Runtime library - 1 month
+
+Stage 2 - 1 month
+
+Stage 3 - as long as you like

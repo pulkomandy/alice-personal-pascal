@@ -1,0 +1,16 @@
+|17,71
+     The "in" operator tells you whether a value is in a set.  The value
+must be the same type as the elements in the set.
+     The result of E in S is a Boolean (true/false) value.  It will be
+"true" if the element E is really in the set S, and "false" otherwise.
+
+In Examples:
+     if c in ['a'..'z'] then begin...
+     while 0 in S do begin...
+     if not (day in [mon,tue,wed,thu,fri]) then begin...
+|mFor more, choose
+|iDo nothing,nop
+|iSets,Hpnode/set_type
+|iSet Constants,Hpnode/set
+|iBoolean data,Hpsymbol/boolean
+|p

@@ -1,0 +1,13 @@
+|14,72
+Out of memory
+    This is a serious problem that likely means ALICE itself has made an
+    error.  Save your program immediately so you don't lose anything.
+    After this, you can load the program again to see if the problem has
+    gone away.  If it hasn't, you may have to make your program smaller
+    somehow.  One way to shrink things is to issue the RECOVER command.
+    You can also use the "l=" and "s=" command line options when invoking
+    ALICE.  These are described in the ALICE Reference Manual.
+|mFor more, choose
+|iDo nothing,nop
+|iRECOVER,Hcommand/recover
+|p

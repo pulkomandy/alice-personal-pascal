@@ -1,0 +1,6 @@
+Parser features to do list
+	{$I } and {+I } include files
+	Finish hide/reveal
+	map {I+/-} into iochecking()
+	misc stub removal
+	VALIDATION!

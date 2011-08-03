@@ -1,0 +1,21 @@
+|22,71
+     We can offer you a list of the commands of ALICE or descriptions of
+how to do various things with ALICE.
+|mFor more, choose
+|iDo nothing,nop
+|iCommand list,Hmisc/comlist
+|iChanging an expression,Hmisc/edit
+|iDeleting a section of code,Hmisc/delete
+|iRunning the program,Hmisc/run
+|iSingle-stepping through Program,Hmisc/step
+|iAdding a statement in the middle of others,Hmisc/insert
+|iGetting a list of what you can type next,Hmisc/toklist
+|iGetting information about Pascal,Hmisc/phelp
+|iSaving a Program,Hmisc/save
+|iLoading a Program that has been Saved,Hmisc/load
+|iIssuing a QNX Command,Hmisc/shell
+|iUndoing a mistake,Hmisc/undo
+|iSearching for a Particular Piece of Code,Hmisc/search
+|iUseful menus,Hmisc/usemenu
+|iSymbol completion,Hmisc/completion
+|p

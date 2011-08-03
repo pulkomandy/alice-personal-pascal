@@ -1,0 +1,14 @@
+|14,73
+Undefined type name
+    You used a named type that ALICE didn't recognize.  The most common
+    cause of this error is a simple spelling mistake -- you were typing a
+    name that you already declared and just spelled it wrong.  To correct
+    this, press CTRL-U to UNDO your error, then retype the name correctly.
+         Another common cause is forgetting to put in the declaration for
+    the name.  To add this declaration, just type "type".  ALICE will jump
+    up to the appropriate TYPE declaration section and let you enter the
+    new declaration.
+|mFor more, choose
+|iDo nothing,nop
+|iType declarations,Hpnode/type_declara
+|p

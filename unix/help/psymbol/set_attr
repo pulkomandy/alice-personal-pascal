@@ -1,0 +1,13 @@
+|13,74
+     The Set_Attr procedure is used to set terminal attributes when your
+program is writing output.  The argument of Set_Attr is an integer
+indicating the attribute you want to set (colour, bold face, reverse video,
+etc.).  The currently recognized values are
+
+     0 - normal roman letters
+     1 - bold-face
+     2 - italics
+     4 - reverse video
+     8 - solid underline
+     16 - dotted underline
+     24 - dashed underline

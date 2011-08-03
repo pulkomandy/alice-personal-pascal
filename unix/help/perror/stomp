@@ -1,0 +1,13 @@
+|14,73
+Previous contents of workspace NAME deleted
+    This is just a warning, not an actual error.  When you use the COPY or
+    MOVE command to put something into a workspace that already contains
+    material, the material that was previously in that workspace is all
+    deleted.  If you see this message and realize that you didn't want to
+    get rid of that material, just type CTRL-U to UNDO the COPY or MOVE.
+|mFor more, choose
+|iDo nothing,nop
+|iCOPY,Hcommand/copy
+|iMOVE,Hcommand/move
+|iUNDO,Hcommand/undo
+|p

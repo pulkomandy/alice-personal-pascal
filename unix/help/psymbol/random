@@ -1,0 +1,14 @@
+|10,70
+     The "random" function returns a random integer in a given range.
+Before you can call "random", you must set things up with a call to the
+"initrandom" procedure.
+
+Random Examples:
+     initrandom(345,6);
+       {345 is arbitrary; 6 is range}
+     dice := random + 1;
+       {Get roll of six-sided die}
+|mFor more, choose
+|iDo nothing,nop
+|iInitrandom,Hpsymbol/initrandom
+|p

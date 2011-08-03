@@ -1,0 +1,10 @@
+|11,71
+Too many arguments to a C function
+    You attempted to call a C function but specified too many arguments.
+    Check the definition of the function you wanted to call.
+|mFor more, choose
+|iDo nothing,nop
+|iCProc,Hpsymbol/cproc
+|iCIntFunc,Hpsymbol/cintfunc
+|iCPtrFunc,Hpsymbol/cptrfunc
+|p

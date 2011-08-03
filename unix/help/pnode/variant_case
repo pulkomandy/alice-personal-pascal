@@ -1,0 +1,21 @@
+|16,73
+     A variant case appears in the variant part of the record.  It has the
+form
+
+          C: (field declarations);
+
+where C is a constant.  C is called the case label.  If the tag field of
+the record has the value C, the variant part of the record will have the
+field declarations given in the parentheses.
+
+Variant Examples:
+  {In a record describing cattle}
+  case cowtype : (cow,bull,calf) of
+  cow : (quarts : integer;);
+  bull : (angry : Boolean;);
+  calf : (fate : (veal,milkstock,breeding););
+|mFor more, choose
+|iDo nothing,nop
+|iRecords,Hpnode/record_type
+|iVariant part of records,Hpnode/variant_reco
+|p

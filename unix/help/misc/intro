@@ -1,0 +1,21 @@
+|21,74
+                             Welcome to ALICE!
+
+     We hope you'll find that ALICE helps you write programs, run programs,
+and find mistakes in programs more easily than anything else you might have
+tried.  ALICE can do an enormous number of things...which means that you
+won't be able to learn everything in one sitting.  However, you can
+certainly learn the basics very quickly.
+     One of the most important things to learn is how to select things from
+a menu.  A menu is just a list of things that you can do or look at.  ALICE
+uses menus for many things -- in fact, you've already seen ALICE's Starting
+Menu when you first started ALICE up.
+     To choose a selection from a menu, roll the trackball until the selec-
+tion you want lights up.  When the selection is lit, press the spacebar.
+You can also just press the letter that labels the menu selection.
+     Here's a chance to try this.  We're going to give you a menu.  Choose
+the second item on the menu if you want more on ALICE.
+|mChoose one of
+|iDo nothing,nop
+|iMore on ALICE,Hmisc/intro2
+|p

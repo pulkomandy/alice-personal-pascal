@@ -1,0 +1,13 @@
+|13,72
+You may only raise a block statement
+    You selected (highlighted) a part of your program and then issued the
+    RAISE command.  However, the highlighted code was not a block (i.e.
+    something that contains a set of statements, like a WHILE loop or IF
+    statement).  If you issued the RAISE command by accident, simply
+    unselect the highlighted code by pressing F10 again, or choose a
+    different command.  If you really want to raise something, you must
+    select an entire block.
+|mFor more, choose
+|iDo nothing,nop
+|iRAISE command,Hcommand/raise
+|p

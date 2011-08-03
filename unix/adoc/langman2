@@ -1,0 +1,2284 @@
+.section The Stack
+Local variables (declared in the {rwd var} section of a function or
+procedure) are stored in a block of memory called {it the stack}.
+When the subprogram is called, space for these variables is allocated
+from the stack's memory.
+When the subprogram terminates, the space that its variables occupied is
+de-allocated, and freed for other subprograms to use.
+This means that local variables must be initialized every time the
+subprogram is called -- they do not retain their values from one invocation
+to the next, because other subprograms use the same space for their
+local variables.
+In fact, the local variables may not be stored in the same place from
+one invocation to the next.
+The variables are simply stored in the next available space on the stack,
+so where they are stored depends on what's already on the stack.
+.bt
+Because local storage is allocated in this dynamic way, subprograms may
+be called recursively.
+Each invocation of the function has its own copy of its local variables.
+Therefore, if a function has a variable {type v} and calls itself recursively,
+each invocation will have its own separate {type v}, and operations on one
+{type v} will not affect any of the others.
+.bt
+In addition to local variables, the stack is used to store the information
+that is needed for a subprogram to return correctly to its caller.
+This is usually called the {it linkage} information.
+.bt
+The amount of stack space provided by {ALICE} Pascal is ample for
+most programs.
+However, you may run out of space if your subprograms use a great deal of
+local storage space, or if the level of recursion becomes too great.
+You can avoid this problem in several ways.
+
+Rewrite your program so it doesn't use so many local variables.
+
+Don't use local arrays.
+Large local arrays can take up a lot of stack space.
+If you need a local array, allocate it dynamically with the {type new}
+function.
+This function is described in Chapter 8.
+
+Increase the amount of stack space for your program.
+Do this with the {type s=} option on the command line that invokes {ALICE}.
+.blnk 0
+.bt
+Arrays may be passed to subprograms in the same way that simple values are
+passed.
+They may be passed as either value parameters or {rwd var} parameters.
+If they are passed as value parameters, the entire contents of the array
+will be copied so that the subprogram has its own copy of the array.
+Naturally, this process makes for a fair amount of overhead: the time needed
+to copy the array, and the stack space needed to store the copy.
+For this reason, it is usually preferable to pass arrays as {rwd var}
+parameters.
+.section Passing Subprograms as Arguments
+Functions and procedures may be passed as arguments to other subprograms.
+In the parameter declarations for a subprogram that receives a function
+or procedure argument, you must also declare the parameters for the
+function or procedure being passed.
+For example,
+.codebeg 10
+procedure proc(function f(x:real):real;
+_______________i,j:integer);
+.codend 0
+starts off a declaration for a procedure named {type proc}.
+The parameters for this procedure are a function and two integers.
+The function takes one real parameter and returns a real value.
+.bt
+When a subprogram is passed as an argument to another subprogram,
+the parameter lists must match {bo exactly} in both caller and callee.
+It is not enough for the parameters to be compatible.
+.chapter Input/Output
+{ALICE} Pascal performs input and output using functions and procedures that
+are {it built-in}.
+This means that {ALICE} has defined the subprograms for you -- all you have
+to do is call them.
+.bt
+Because of the unusual definition of Pascal, many of the built-in routines can 
+do things that user-written routines are not capable of.  In particular, they 
+can take a varying number of arguments, and these arguments may be of any 
+type.  The Write and Writeln procedures take parameters with formatting 
+information tagged onto them.  See the descriptions of Write and Writeln for 
+details.
+.bt
+I/O operations use {it file variables}, as described in Chapter 3.
+Just as normal variables have to be initialized with values before they
+can be used, file variables must be initialized by associating them with
+files.
+Once a file variable has been initialized, an I/O operation that references
+the file variable causes I/O on the associated file.
+.section The assign Procedure
+The {type assign} procedure associates a filename with a particular file 
+variable.  All access to the file through that file variable will operate on 
+the file whose name is given in the assign.
+The format of {type assign} is
+.codebeg 10
+assign(filevar, filename)
+.codend 0
+where {type filevar} is a previously declared {rwd file} variable and {type 
+filename} is a string giving the name of the file to be used.
+For example,
+.codebeg 10
+assign(initfile,'myprog.ini');
+.codend 0
+would cause subsequent references to {type initfile} to refer to the 
+disk file 'myprog.ini'.
+.bt
+section Reset, Rewrite, Append, Update and Close
+The following four routines are used to set up access to files, and de-access
+them.
+The three functions {type reset}, {type rewrite}, and {type append} all "open"
+a file, that is, they make the file directly accessible to the program.
+.bt
+At any given time,
+a file is "positioned" at a certain distance from its beginning, and
+the position of this "file pointer" changes as the file is read or written.
+Initially, the file pointer is set to the beginning of a file (for {type reset}
+or {type rewrite}, or to the end (for {type append}).
+.section The reset Procedure
+The behavior of the {type reset} procedure depends on the setting of the +b
+flag on the {ALICE} command line.
+.bt
+If you do not specify +b,
+the {type reset} procedure initializes a file variable with a file that
+you only intend to read.
+If you try to write on that file,
+you will get an error.
+.bt
+If you do specify the +b option, {type reset} opens the file for reading
+writing, and random access.
+.bt
+The full format of {type reset} is
+.codebeg 10
+reset(filevar,filename);
+.codend 0
+where {type filevar} is a {rwd file} variable declared in the variable
+declaration section and {type filename} is a string giving the name of
+the file that should be associated with the file variable.
+For example,
+.codebeg 10
+reset(indata,'myfile');
+.codend 0
+associates the file {type myfile} with the file variable {type indata}.
+From this point onward, you can perform input operations on {type indata}
+to read from {type myfile} (and output operations to write to it, if the +b
+flag is set).
+.bt
+Note that {type reset} does an implicit {type assign} of the filename to the file 
+variable.
+If the file name string is omitted, {ALICE} will use whatever filename was 
+last assigned to that file variable.  If no filename has been assigned, a new 
+filename is formed out of the variable name and a unique hexadecimal suffix.  
+For example,
+.codebeg 10
+reset(stuff);
+.codend 0
+associates the file name {type stuffX} (where X is some hexadecimal number) 
+with the file variable {type stuff}.
+.bt
+The file name string can have the special format
+.codebeg 10
+'?:filename'
+.codend 0
+This tells {ALICE} to search for the given file on several drives.
+The search begins on the current drive, then goes to other drives on
+the system.  Note that this format is not supported in Turbo Pascal.
+.bt
+If you wish to be compatible with Turbo Pascal, you should do the {type 
+assign} 
+separately and omit the filename argument from the call to {type reset}.  For 
+example,
+.codebeg 10
+reset(userdata,'employee.rec');
+.codend 0
+would become
+.codebeg 10
+assign(userdata,'employee.rec');
+reset(userdata);
+.codend 0
+.section The rewrite Procedure
+The {type rewrite} procedure is like {type reset} except that {type rewrite}
+initializes a file that the program only intends to write on.
+The format of {type rewrite} is
+.codebeg 10
+rewrite(filevar,filename);
+.codend 0
+For example,
+.codebeg 10
+rewrite(outdata,'info');
+.codend 0
+associates the file {type info} with the file variable {type outdata}.
+.bt
+Note that {type rewrite} does an implicit {type assign} of the filename to the file 
+variable.
+If the file name string is omitted, {ALICE} will use whatever filename was 
+last assigned to that file variable.  If no filename has been assigned, a new 
+filename is formed out of the variable name and a unique hexadecimal suffix.  
+.bt
+If the given file does not exist, it will be created.
+If the given file already exists, its current contents will be destroyed
+by the {type rewrite} operation and data written to the file will overwrite
+whatever was previously there.
+.bt
+If you wish to be compatible with Turbo Pascal, you should do the {type 
+assign} 
+separately and omit the filename argument from the call to {type rewrite}.  For 
+example,
+.codebeg 10
+rewrite(userdata,'employee.rec');
+.codend 0
+would become
+ .codebeg 10
+assign(userdata,'employee.rec');
+rewrite(userdata);
+.codend 0
+.section The append Procedure
+The {type append} procedure is exactly like {type rewrite} except that
+it does not destroy the current contents of the file.
+For example,
+.codebeg 10
+append(appdata,'oldfile');
+.codend 0
+associates the file {type oldfile} with the file variable {type appdata}.
+.bt
+Note that {type append} does an implicit {type assign} of the filename to the file 
+variable.
+If the file name string is omitted, {ALICE} will use whatever filename was 
+last assigned to that file variable.  If no filename has been assigned, a new 
+filename is formed out of the variable name and a unique hexadecimal suffix.  
+.bt
+Any output written to {type appdata} will be {it appended} to the current
+contents of the file (i.e., added on to the end).
+.bt
+If you wish to be compatible with Turbo Pascal, you should do the {type 
+assign} 
+separately and omit the filename argument from the call to {type append}.  For 
+example,
+.codebeg 10
+append(userdata,'employee.rec');
+.codend 0
+would become
+.codebeg 10
+assign(userdata,'employee.rec');
+append(userdata);
+.codend 0
+.section Update(filevar,filename)
+The {type Update} procedure acts must like {type reset} when the {type +b}
+option is enabled.  It opens an existing file for read, write and random
+I/O.  This routine is not in Turbo Pascal.
+.section Close(filevar);
+This routine closes the file associated with the specified file variable.
+This causes all data that has not yet been transferred to disk to be written
+out, and prevents subsequent access to the file through the file variable.
+.bt
+When you get rid of a file variable (for example, by leaving the part of your
+program in which that variable is active), the file is automatically closed
+for you by {ALICE}.  {ALICE} will also close any files that are left open
+when your program terminates.  The {type close} procedure is provided so that
+you can close files whenever you need to (this is often necessary because
+ALICE only allows you to have a certain number of files open at one time).
+.bt
+Closing a text file without an end of line marker on the end causes one
+to be written
+to the file.  This does not happen if the +b flag is specified on the {ALICE}
+command line.
+.section Flush(filevar);
+When you write data to a disk file, it is first temporarily stored in a
+special part of the computer's memory (called a "buffer").  It is sometimes
+important to write the data in this buffer to the disk during the running
+of a program.  The {type flush} procedure does this.  (Note that closing
+a file (see {type close}) will do this for you, and that it's unusual for
+you to have to do it yourself).
+{TLIB}
+.section FilePos(filevar)
+This routine returns the position of the "file pointer" for the 
+specified file.  The filevar is a file variable of any type
+The return value is an integer 
+telling where the filepointer for the given file is located; this 
+value is a count of the number of objects that are 
+before the filepointer.  Thus a file that has just been accessed
+using {type reset} or {rewrite} has a file position of
+zero.
+.bt
+If a file is positioned beyond record {type maxint} (32767), an error
+results.
+{TLIB}
+(See 
+LongFilePos for an alternative that returns a large value as a 
+real number). 
+.section FileSize(filevar) returns the number of objects in the
+file, where an "object" is an element of the file's component type.
+For a {type file of char} or a {type text}, this is thus the size of the
+file in bytes.
+.bt
+The value returned is an integer;
+if a file contains more than {type maxint} records, an error
+condition results.  This often happens when the size of the objects making
+up the file is small (for example file of byte, or a text file).
+See LongFileSize for an alternative that returns a large value as a 
+real number). 
+.bt
+{TLIB}
+.section Seek(filevar, n)
+This procedure positions the filepointer for the file specified by 
+filevar to the n'th component of the file.  The value n is of 
+type integer; see LongSeek for a version that takes a real number 
+as a long file pointer.  This routine is similar to {type setnext},
+but it does a lazy-io style {type get} on the file so that the next
+call to {type read} obtains the n'th component rather than the contents
+of the current component before the {type seek}.
+.section LongFilePos(filevar)
+This function returns the position of the "file pointer" for the 
+specified file.  The filevar is a file variable of any type, and
+return value is a real number 
+telling where the filepointer for the given file is located.  This 
+value is a count of the number of objects that are 
+before the filepointer; thus, a file that has just been accessed using
+{type reset} or {type rewrite} is has a file position of
+zero.
+This routine is equivalent to {type FilePos}, but it can handle larger
+because it returns a real number.
+{TLIB}
+.section LongFileSize(filevar)
+This function returns the number of objects
+contained in the file specified by filevar, where filevar is a 
+file variable of any type.
+This routine is equivalent to {type FileSize}, but it returns
+a real number and can thus deal with much larger files.  Note that the file
+must currently be active.
+{TLIB}
+.section LongSeek(filevar, n)
+This procedure positions the filepointer for the file specified by 
+filevar to the n'th component of the file.  The argument n is of 
+type real.   This routine is identical to {type Seek}, but it can seek
+further through the use of the real argument.
+{TLIB}
+.section IOChecking and IOResult
+The {type IOChecking} routine controls user i/o checking;
+.codebeg 10
+IOChecking(1);
+.codend 0
+turns it on, while
+.codebeg 10
+IOChecking(0);
+.codend 0
+turns it off.
+.bt
+When user i/o checking is off, all errors are handled by {ALICE}; you will
+receive a message whenever such an error occurs.
+.bt
+When user i/o checking is on, i/o errors do not stop the program from
+executing.  However, all subsequent input will be suspended until you call
+the function {type IOResult}.  Calling this function will allow i/o to
+continue normally (even though the result of the function may be discarded).
+A zero value from IOResult indicates that the most recent i/o operation
+was successful; other return values indicate various types of errors.
+IOResult will return zero after it's been read once, until another error
+occurs.
+.bt
+Possible error codes are:
+
+ 1 - file does not exist
+ 2 - file not available for input
+ 3 - file not available for output
+ 4 - file not open
+ 5 - file not set for random i/o
+$10 - bad numeric read
+$99 - read past EOF
+$F0 - write error (full disk)
+
+Note that these codes are in hex.  Turbo Pascal supports some additional codes,
+so if you're moving your program from {ALICE} to Turbo Pascal be sure to refer
+to the Turbo Pascal Manual for details as to their meaning.
+Error status should be checked after calls to {type read, get, write, put,
+close, reset, rewrite, update, append}, and {type seek}.
+.section Predefined File Variables
+In addition to file variables that are explicitly declared in the
+program, there are some file variables that are automatically declared
+for every program.
+These are
+.codebeg 10
+input
+output
+Kbd
+.codend 0
+By default, {type input} is associated with the keyboard (in a buffered, 
+line-at-a-time mode) and
+{type output} is associated with the display screen.
+For example, anything that you write to {type output} will normally
+be printed out on the display screen.
+However, you can use {type reset} to associate {type input} with a file
+(so that input will be taken from the file instead of being typed in)
+and you can use {type rewrite} or {type append} to associate {type output}
+with a file (so that output will be written to the file instead of being
+displayed on the screen).
+.bt
+The {type Kbd} variable is an input variable also associated with the
+keyboard.
+Input from {type Kbd} is done {it raw}, which is to say one character at
+a time.  This is similar to the input done by the routine {type Get{und}Char}.
+The main difference is that special IBM function key codes are input as
+a single byte with {type Get{und}Char}, while they come as two bytes when
+reading from {type Kbd}.  In this case, the first character is an {it escape}
+character (chr(27)) and the second character is the special code for the key.
+See the IBM-PC Technical Reference or Turbo Pascal manuals for details.
+.section Reading and Writing
+Declaring a file variable automatically declares an associated
+{it buffer variable}.
+The name of the buffer variable is the name of the file variable followed by
+a caret (^) and the type of the buffer variable is the same as the
+type of data that is stored in the file.
+.bt
+When {type reset} is executed to position a particular file variable,
+the associated buffer variable is assigned the value of the first
+element in the file (if such an element exists).
+This value can then be assigned in the normal way.
+For example, we might have
+.codebeg 10
+var
+____intfile : file of integer;
+____i : integer;
+begin
+reset(intfile);
+i := intfile^;
+.codend 0
+This assigns the first integer in {type intfile} to the variable {type i}.
+.bt
+The procedure {type get} obtains the next element in a file that has been
+initialized with {type reset}.
+The procedure takes the name of the file variable that is associated with
+the file you wish to read, as in
+.codebeg 10
+get(intfile);
+.codend 0
+The element that {type get} obtains is placed into the buffer variable.
+Thus the following code reads the first {type 100} elements from {type intfile}
+into an array named {type iarr}.
+.codebeg 10
+reset(intfile);
+for i := 1 to 100 do begin
+____iarr[i] := intfile^ ;
+____get(intfile);
+____end;
+.codend 0
+At the end of this code, {type intfile^} will hold the 101st element of
+{type intfile}.
+.bt
+Writing is done in a similar way.
+When a file variable is initialized with {type rewrite} or {type append}, the
+file buffer and the buffer variable are cleared.
+The first step in writing a value is to assign the value to the buffer
+variable.
+For example, we might say
+.codebeg 10
+intfile^ := i;
+.codend 0
+The {type put} procedure writes the contents of the buffer variable to
+the file buffer (and so to the output file).
+The following piece of code writes the first {type 100} elements of the array
+{type iarr} to the file associated with {type intfile}.
+.codebeg 10
+rewrite(intfile);
+for i := 1 to 100 do begin
+____intfile^ := iarr[i];
+____put(intfile);
+____end;
+.codend 0
+Note that the use of buffer variables, {type get}, and {type put} is
+not supported in Turbo Pascal.
+Therefore, if you plan to move a program to Turbo Pascal at any time in
+the future, you should make sure to use {type read} and {type write}
+instead of {type get} and {type put}.
+.section The eof Function
+The {type eof} function determines whether or not a particular file has
+reached end-of-file.
+{type eof} returns a {type Boolean} value: {type true} if the file really is
+at end-of-file, and {type false} otherwise.
+For example,
+.codebeg 10
+while not eof(intfile) do begin
+____i := intfile^;
+____get(intfile)
+____end;
+.codend 0
+reads through {type intfile} element by element.
+.bt
+{type eof} may be applied to both input and output files.
+Output files are always at end-of-file, so {type eof} is always true.
+Input files reach {type eof} when the {type get} procedure discovers that
+there are no more elements to get.
+This means that you have tried to {type get} something beyond
+the last element of the file.
+When you issue such a {type get}, the buffer variable will become undefined
+and {type eof} will become true.
+Should you attempt to {type get} again, an error will occur.
+.section SeekEof(filevar)
+This routine is similar to {type eof}, but it
+first skips over blanks and tabs in the specified file.
+{TLIB}
+.section Text Files
+In order to make it easier to read and write text, Pascal offers a number
+of special subprograms that may be used on files that have been declared
+to have the type {type text}.
+.subsect The read Procedure
+The {type read} procedure may be applied to any text file.
+The simplest form of {type read} is
+.codebeg 10
+read(filevar,variable);
+.codend 0
+where {type filevar} is a file variable initialized with {type reset}
+and {type variable} is an integer, real, character, or string type.
+.bt
+If the variable has the type {type char}, {type read(f,v)} is equivalent to
+.codebeg 10
+v := f^;
+get(f);
+.codend 0
+If the variable is {type integer} or {type real}, {type read} will read through
+the text character by character, collecting a number.
+It will skip over leading blanks, tabs, and new-lines if necessary, but
+the first character after the white space must be a digit or a sign (+ or -).
+It will continue collecting characters until it finds one that cannot be
+part of the appropriate type of number.
+The collected value will be returned in the argument variable.
+For example,
+.codebeg 10
+var
+____i : integer;
+____f : text;
+__...
+read(f,i);
+.codend 0
+reads an integer from {type f} and stores it in {type i}.
+The {type read} procedure will let you read integers (i.e. numbers without
+decimals or exponents) into real variables.
+.bt
+If {type read} is passed a string variable,
+it will read in text character by character until all the elements in the
+string have received characters or the end of the text line is reached.
+If the line is too long to fit in the string, {type read} will only read
+enough characters to fill the string up; the rest of the line can be
+read by other calls to {type read}.
+If the line is too short, the {type StrEnd} marker will be placed in
+the string after the last character read.
+.bt
+A more complicated form of {type read} is
+.codebeg 10
+read(f,v1,v2,v3,...);
+.codend 0
+This is equivalent to
+.codebeg 10
+read(f,v1);
+read(f,v2);
+read(f,v3);
+___...
+.codend 0
+.tp
+{type read} can be used in connection with files that are not
+declared as {type text}.
+In this case,
+.codebeg 10
+read(f,v);
+.codend 0
+is equivalent to
+.codebeg 10
+v := f^;
+get(f);
+.codend 0
+where {type v} is a variable whose type matches the type of the elements
+in the file being read.
+.bt
+If the file variable argument is omitted, {type read} will read from
+the {type input} file variable.
+In other words,
+.codebeg 10
+read(v1,v2,v3,...);
+.codend 0
+is equivalent to
+.codebeg 10
+read(input,v1,v2,v3,...);
+.codend 0
+This will read input typed from the keyboard unless you have associated
+{type input} with a file by calling {type reset}.
+.subsect The eoln Function
+The {type eoln} function returns a {type Boolean} value indicating whether or
+not you have reached the end of an input line.
+If {type eoln} returns {type true}, the last read operation reached the
+new-line character that marks the end of a text line.
+.bt
+The argument of {type eoln} is a text file variable.
+If no argument is specified, {type input} is assumed.
+A typical use of {type eoln} might be
+.codebeg 10
+var
+____chararr : packed array [1..80] of char;
+____c : char;
+__...
+i := 1;
+while not eoln(fv) do begin
+____read(fv,c);
+____chararr[i] := c;
+____i := i + 1;
+____end;
+.codend 0
+This reads characters into {type c} and stores those characters in the
+array {type chararr} until the end of the line has been reached.
+.section SeekEoln(filevar)
+This routine is similar to {type eoln}, but first
+skips blanks and tabs in the specified file. 
+{TLIB}
+.subsect The readln Procedure
+The {type readln} function is similar to {type read}, but it is used to read
+everything on the current input line up to and including the new-line
+character on the end.  File arguments to {type readln} must be of type
+{type text}.
+More technically, {type readln} satisfies the following conditions.
+.codebeg 10
+readln(v1,v2,v3,...);
+.codend 0
+is equivalent to
+.codebeg 10
+readln(input,v1,v2,v3,...);
+.codend 0
+(so {type input} is the default file variable if none is specified).
+.codebeg 10
+readln(fv,v1,v2,...);
+.codend 0
+is equivalent to
+.codebeg 10
+read(fv,v1,v2,...);
+readln(fv);
+.codend 0
+This means that {type readln} reads things into variables using the same
+conventions that {type read} does.
+It also means that you don't have to issue {type readln} at the very beginning
+of the input line -- you can have several {type read}s first and then a
+{type readln}.
+.codebeg 10
+readln(fv);
+.codend 0
+is equivalent to
+.codebeg 10
+while not eoln(fv) do begin
+____get(fv);
+____end;
+get(fv);
+.codend 0
+This means that when {type readln} has filled all its arguments, it will
+skip through everything else on the input line until it finds the new-line
+on the end, and will then read the new-line as well.
+This sets things up for a new input line (essentially {q flushing}
+whatever remains of the old input line).
+.bt
+As a special {ALICE} extension, {type readln} takes an optional string constant
+that will be used as a prompt for input.
+For example,
+.codebeg 10
+readln('Enter a value for x: ',x);
+.codend 0
+prints out
+.codebeg 10
+Enter a value for x:
+.codend 0
+and then waits you to enter an appropriate value.
+.subsect Reading from the Terminal
+Input is only read from the terminal when the program calls for it, and
+at that time {ALICE} reads an entire line.
+This is slightly different than reading from a file, since Pascal file input
+is always one character ahead of the {type read} function.
+When you are entering an input line, you may correct typing mistakes
+with backspacing.
+Nothing from the input line is passed to the program until you press
+{key ENTER}.
+.bt
+The {type eof} and {type eoln} functions may actually perform a read operation
+on the terminal to see if there is a character waiting to be read.
+This can cause some problems.
+For example, suppose you have
+.codebeg 10
+while not eof do begin
+____writeln('Enter integer:');
+____read(i);
+_______...
+____end;
+.codend 0
+The call to {type eof} causes {ALICE} to read an entire line of input
+from the terminal.
+This happens {it before} the {type writeln} instruction writes out
+the prompt for input.
+You may have to rewrite programs slightly to get the prompt in the
+right place.
+.bt
+You can create an explicit {q end-of-file} condition by pressing {key F6}
+as the first character of an input line.
+You do not have to press {key ENTER}.
+.bt
+If you ask {type read} or {type readln} to read a number from the
+terminal but they find something non-numeric, they throw away the rest
+of the input line and keep looking for a number.
+For example, suppose you say
+.codebeg 10
+read(i,j,k);
+.codend 0
+and enter the input line
+.codebeg 10
+15 b 68
+.codend 0
+The variable {type i} gets the {type 15}, then a warning is printed
+indicating that {ALICE} expected numeric input but found a {type b}.
+{ALICE} will read in another line of input to get values for {type j}
+and {type k}.
+.bt
+When Borland deviations (+b) are enabled a special case exists for numeric
+input.  If {type eoln} is true at the start of the {type read} or {type
+readln}, the input routine will return immediately without setting the
+value of the variable.  This allows null input to imply a default.
+Under these circumstances, all further calls to {type read} will return
+immediately until a {type readln} has been done to clear the end of line
+status.
+.subsect The write Procedure
+The {type write} procedure corresponds to {type read}.
+Its standard format is
+.codebeg 10
+write(fv,exp1,exp2,exp3,...);
+.codend 0
+where {type fv} is a text file variable and the {type exp}{it n} are
+expressions of set, string scalar/ordinal or {type real} type.
+If the file variable is omitted, the standard file {type output} is assumed.
+.bt
+If an argument is an {type integer} expression, its value will be output in
+the usual ASCII representation.
+.bt
+If an argument is a {type real} expression, its value will be output using
+scientific notation (i.e. a number between 1 and 10 followed by an
+appropriate scaling exponent).
+.bt
+If an argument is a {type Boolean} expression, the word {type true} or
+{type false} will be output, as appropriate.
+.bt
+If an argument is a {type char} expression, the value will be output as
+a single ASCII character.
+Similarly, if an argument is a string type, it will be output as is.
+.bt
+{type write} can write enumerated type values and sets in readable forms.
+For example, if you have
+.codebeg 10
+type
+____color = (red,blue,green);
+________...
+____write(red);
+.codend 0
+{ALICE} will write out the word {type red}.
+Similarly, a set will be written as a list of values surrounded by square
+brackets.
+.bt
+All expressions for {type write} may have a {it field width}
+specified as
+.codebeg 10
+:m
+.codend 0
+following the expression.
+{type m} may be a positive integer expression.
+For example, we might have
+.codebeg 10
+write(i:5);
+.codend 0
+This tells how many characters should be used in printing the value.
+Integers will be printed with the given number of characters, padded
+on the left with blanks if necessary.
+If the integer requires more characters to print than the specified field
+width, the field will be expanded until the integer fits.
+In other words,
+the field width you specify is a minimum width, not an absolute.
+.bt
+Real numbers will be printed with the given number of characters,
+using scientific notation.
+This means a number containing a decimal point, followed by an {type e}
+followed by an integer giving a power of 10.
+For example,
+.codebeg 10
+1.00e2
+.codend 0
+is used to represent {type 100.0}.
+.bt
+Characters, strings, and {type Boolean} values will be padded on the left with
+blanks, as appropriate.
+Again, the field will be expanded if the output is too large to fit in
+the specified field width.
+However, if the field width {type m} is smaller than the length of a string,
+only the first {type m} characters of the string will be output.
+.bt
+Real expressions may have a second specifier {type :n}, as in
+.codebeg 10
+write(x:m:n);
+.codend 0
+This specifies the {it precision} of the output value -- how many
+digits will be printed after the decimal point.
+If a precision is specified, the number will be written in standard
+(not scientific) notation.
+For example,
+.too 10
+write(100.0:8:3);
+.blnk 0
+would write out
+.codebeg 10
+b100.000
+.codend 0
+The {type b} shows where a padding blank would be added.
+.bt
+Note that if no field width is given, {ALICE} attempts to print real numbers
+in a {it nice} format.  This means that they are printed in normal
+decimal fashion (for example, {q {type 12.645}}) when possible, and in
+scientific notation otherwise.  Note that for portable output, you should
+use field widths the Pascal standard defines rules for that type of output.
+.bt
+When an integer is written with no field width, {ALICE} places a space
+before the integer so that statements like:
+.codebeg 10
+writeln( 10, 20, 30 );
+.codend 0
+produce readable output.  This space can be avoided by using a field
+width of zero.  If Borland deviations are enabled (+b), then the space
+is not output.
+.bt
+All other writable data types are printed in exactly the amount of space
+necessary if no field width is provided.
+.bt
+{type write} may also be used to write values to files that do not
+have the {type text} type.
+In this case,
+.codebeg 10
+write(f,v);
+.codend 0
+is equivalent to
+.codebeg 10
+f^ := v;
+put(f);
+.codend 0
+where {type v} is a value of the type that the output file is declared
+to contain.
+.subsect The writeln Procedure
+The {type writeln} procedure works exactly like {type write}, except that
+it adds a new-line character to the end of the output after it has
+finished writing out all its arguments.
+The effect is to finish off a line of text.
+{type writeln} may be called without arguments, as in
+.codebeg 10
+for i := 1 to LEN do begin
+____write(intarr[i]);
+____end;
+writeln;
+.codend 0
+The {rwd for} loop writes out a number of values from the array {type intarr}.
+All these values will be written to the same text line of the
+{type output} file variable.
+After this is done, the {type writeln} procedure is called to end the
+output line with a new-line character.  {type writeln} may only be used
+on {type text} files.
+.subsect The page Procedure
+The procedure call
+.codebeg 10
+page(fv);
+.codend 0
+causes a form-feed character to be written to the text file {type fv}.
+When the file is printed, this will cause a jump to a new page.
+.bt
+If the argument {type fv} is omitted, the file {type output} is assumed,
+and thus a call to {type page} with no arguments clears
+the display screen.
+.section Alternative Terminal I/O
+The I/O routines we have discussed so far are found in most versions of
+Pascal.
+{ALICE} Pascal also has a number of non-standard routines for performing I/O.
+Some of these are unique to {ALICE}
+while some are derived from Turbo Pascal.
+In the rest of the manual, we will usually indicate the package
+where each subprogram originated.
+If we do not, the subprogram can be taken as {q standard} Pascal.
+.routine bool := Char{und}Waiting;
+This function returns a {type Boolean} value indicating whether or not
+there is a character waiting to be read from the keyboard.
+It returns {q true} if there is a character waiting and {q false} otherwise.
+{type Char{und}Waiting} is unique to {ALICE}, and its use is discouraged.
+.routine bool := KeyPressed;
+This is exactly the same as {type Char{und}Waiting}.
+However, {type KeyPressed} is recognized by Turbo Pascal.
+.routine Cursor{und}To(Row,Column);
+This procedure moves the cursor to a particular position on the terminal
+screen.
+{type Row} is an integer giving the row to which the cursor should be moved.
+The top row is numbered 0.
+{type Column} is an integer giving the column to which the cursor should
+be moved.
+The leftmost column is numbered 0.
+Thus {type Cursor{und}To(0,0)} puts the cursor in the upper left hand corner
+while {type Cursor{und}To(13,40)} moves the cursor to about the middle of
+the screen.
+{type Cursor{und}To} is unique to {ALICE}.
+.routine GoToXY(Column,Row);
+This procedure is exactly like {type Cursor{und}To} except that the top
+row is numbered 1 and the leftmost column is numbered 1.
+Note also that the row and column numbers are in the opposite order.
+{type GotoXY} is recognized by Turbo Pascal.
+.routine c := Get{und}Char;
+This function gets a single character from the keyboard.
+If there isn't an input character already waiting, {type Get{und}Char}
+waits for one to be entered.
+Unlike {type read} and {type readln}, {type Get{und}Char} obtains a character
+immediately -- it does not wait for an entire line to be entered.
+{type Get{und}Char} cannot detect end-of-file.
+{type Get{und}Char} returns special codes for the non-ASCII keys on the
+IBM-PC keyboard.  These keys all return codes of ordinal value 128 or greater.
+{type Get{und}Char} is unique to {ALICE}.
+.bt
+You should avoid mixing calls to {type Get{und}Char} and {type Char{und}Waiting} with
+calls to standard I/O functions like {type readln}, {type get},
+{type writeln}, etc., since they perform I/O in entirely different ways.
+(Standard I/O functions buffer I/O, while {type Get{und}Char} does not.)
+.routine i := ScrXY(code);
+This function returns integer values that provide information about the
+terminal screen.
+{type ScrXY} is unique to {ALICE}.
+The {type code} argument is an integer indicating what kind of information
+you want.
+.begin nofill
+.indent 0.2in
+ScrXY(1)  -- tells how many rows the screen has.
+ScrXY(2)  -- tells how many columns the screen has.
+ScrXY(3)  -- tells the height of the current graphics screen in pixels
+ScrXY(4)  -- tells the width of the current graphics screen in pixels
+ScrXY(5)  -- tells the number of colors currently available in this mode
+ScrXY(7)  -- returns 1 if a monochrome adapter is installed, 0 for color
+ScrXY(8)  -- returns 1 if a color monitor is installed, 0 for monochrome
+ScrXY(-1) -- row of current cursor position (top=0).
+ScrXY(-2) -- column of current cursor position (left=0).
+.end nofill
+.routine Set{und}Attr(code);
+This procedure is used to set terminal attributes when your
+program is writing output.
+{type Set{und}Attr} is unique to {ALICE}.
+The argument of {type Set{und}Attr} is an integer indicating the attribute you
+want to set (color, bold face, reverse video, etc.).
+The integer is interpreted as a bit pattern, according to the following
+key:
+.ca Bits 0-2 (values 1-7)
+color; on a monochrome screen, 1 means underlining;
+color codes are
+.too 10
+0 -- black
+1 -- blue
+2 -- green
+3 -- cyan
+4 -- red
+5 -- magenta
+6 -- brown
+7 -- white
+.blnk 0
+.ca Bit 3 (value 8)
+bold face (brighter for color)
+.ca Bit 5 (value 32)
+"reverse video" (black on white background)
+.ca Bit 6 (value 64)
+black on colored background; color given by bits 0-2
+.ca Bit 7 (value 128)
+blinking output
+.blnk 0
+For example, a code of octal 054 would give reverse video bold red.
+.blnk 0
+.routine ClrEol;
+This routine clears the screen from the current cursor
+position to the end of the line, using the current attribute
+for the clear.  The cursor position does not change.
+This is from Turbo Pascal.
+.routine ClrScr;
+This routine clears the entire screen, and positions the cursor
+at the top left corner of the display.  The current attribute is
+used for the clear.
+This is from Turbo Pascal.
+.routine CrtInit;
+This routine does nothing in {ALICE}, and is included primarily 
+for compatibility with Turbo Pascal.  Historically, this routine
+would send an "initialization string" to the terminal used in a
+CP/M environment.  Since this is all unnecessary on a PC, there
+is no real need to call this routine.
+{TLIB}
+.routine CrtExit;
+This routine does nothing in {ALICE}, and is included primarily 
+for compatibility with Turbo Pascal.  Historically, this routine
+would send a "de-initialization string" to the terminal used in a
+CP/M environment.  Since this is all unnecessary on a PC, there
+is no real need to call this routine.
+{TLIB}
+.routine DelLine;
+This procedure erases the current line on the display, and scrolls
+the text below that line up to fill the gap.  The bottom line of
+the display is cleared, using the current attribute.
+This is from Turbo Pascal.
+.routine InsLine;
+This procedure scrolls the current line and all the lines below it
+downward, and clears the current line to blanks in the current
+attribute.  The cursor remains on the newly-vacated line.
+This is from Turbo Pascal.
+.routine TextColor(color);
+This routine sets the color for to use for any characters written
+to the display.  The color value is an integer, in the range 0..15.
+If you would like the text to blink, add 16 to the color value.
+This is from Turbo Pascal.
+The colors and the blink attribute are all defined in the file {TURBOLIB}.
+.routine TextBackground(color);
+This routine sets the color for to use for the background when writing
+text to the display.  The color value is an integer, in the range 0..7.
+This is from Turbo Pascal.
+The colors are all defined in the file {TURBOLIB}.
+.routine TextMode(n)
+This routine sets the display to text mode.  The argument is optional;
+if specified, it is interpreted as follows:
+
+   0  Black and White, 40 columns
+   1  Color, 40 columns
+   2  Black and White, 80 columns
+   3  Color, 80 columns
+   7  Monochrome adapter
+ 
+There are definitions for these values in {TURBOLIB}.
+.bt
+If no argument is specified, the last text mode to have been set is set
+again.  If no text mode has previously been set, mode 3 is used.
+.bt
+Note that in TextMode, all output to the display is done through the BIOS;
+this means that the normal blinking cursor will appear on the screen,
+and that the full 25 line display is available for output.
+.bt
+Text written in this mode is saved when a program is suspended, and may
+be examined using the {type view} command.
+.routine Window(x1,y1,x2,y2);
+This procedure re-maps all subsequent text output so that it 
+fits within the box whose upper left corner is at (x1, y1) and 
+whose lower right corner is at (x2, y2). (x1, y1) is treated as 
+the new origin; thus ClrEol, for example will only clear to the 
+rightmost edge of the window.  All arguments are of type integer
+and the coordinate system used is the same as that of {type GotoXY}.
+.bt
+Keep in mind that these screen coordinates are absolute, and do not
+depend on the screen being 23 lines, 25 lines, or 9 lines high.
+.routine WhereX;
+This function returns the current column of the cursor (in the range 1..80
+or 1..40, depending on the screen mode).  See also {type ScrXY}.
+{TLIB}
+.routine WhereY;
+This function returns the current row of the cursor (in the range 1..25,
+1..23 or 1..9, depending on whether i/o is being done in TextMode, normal
+mode, or debug mode).  See also {type ScrXY}.
+{TLIB}
+.routine LowVideo;
+This procedure causes subsequent output to the display to be displayed at
+low (i.e. normal) intensity.  See {type NormVideo} and {type HighVideo}, below.
+This Routine is from Turbo Pascal.
+.routine NormVideo;
+This procedure causes subsequent output to the display to be displayed
+at high intensity.
+This unusual choice is consistent with Turbo Pascal; however, you will
+probably find {type LowVideo} a better setting in most cases.
+.routine HighVideo
+This routine is equivalent to {type NormVideo} (i.e. it sets high intensity
+mode on for
+the display).  This routine is undocumented in Turbo Pascal, but is used
+in programs provided by Borland itself.
+.section Sound Support
+.routine Sound(n)
+This routine causes a tone of frequency {type n} cycles per second to be
+emitted rom the speaker.  {type sound}(0) will turn off all sound.  See also
+{type nosound}.
+This Routine is from Turbo Pascal.
+.routine NoSound;
+This routine turns off all sound from the speaker.  It is equivalent to
+sound(0).
+{TLIB}
+.section Graphics
+The following routines all deal with graphics on the PC.
+.bt
+A standard PC Color/Graphics Adapter (CGA) supports a variety of display
+modes.  There are four text modes (see TextMode and related routines) which
+display text characters only, and there are three graphics modes which are
+capable of displaying both graphical images and text.
+.bt
+The first graphics mode, set by the {type GraphColorMode} procedure, is
+medium resolution colour.  The display becomes a 320 x 200 array of dots
+(pixels), and each pixel can be one of four colors.
+.bt
+The procedure {type GraphMode} also sets up a 320 x 200 pixel graphics
+screen, but the colors are chosen to look distinct on black and white
+monitors.  This mode is known as medium resolution black and white.
+.bt
+The third mode is high resolution (640 x 200 in a single color).  This mode
+is set by the routine {type HiRes}.
+.bt
+Many of the graphics routines take a parameter called {type color}.  This
+color will be in the range 0..3 for {type GraphMode} mode and {type GraphColorMode},
+and in the range 0..1 in {type HiRes}.  In cases where the color
+may be 0 or 1, 0 selects the "background" color and 1 selects the "foreground"
+color; the default is a white foreground on a black background.  In four-color
+mode, 0 is still the "background" color, while the colors corresponding to
+values 1..3 are determined by the choice of "palette".
+.bt
+In {type HiRes} mode, you can use the procedure {type HiResColor(color)} to
+set the foreground color, which may be any value in the range 0..15
+(see the color definitions in {TURBOLIB}).
+The background color in {type HiRes} mode is always 0 (black).
+The default {type HiRes} foreground color in Alice Pascal is white, but
+Turbo Pascal defaults to black, so it is a good idea to set the
+foreground color after {type HiRes}.
+.bt
+In {type GraphColorMode}, you can use
+{type GraphBackground(color)} to set the
+background color to any of the 16 possible colors (again, see the color
+definitions in {TURBOLIB}).  The {type palette} routine can be used to
+select one of four possible palettes, and the color specified in the
+drawing routines selects a color from that palette (with 0 always being
+the same as the background color).
+.bt
+In {type GraphMode}, you can still use some colors.  The background color
+is still set by {type GraphBackground}, and may be any of the 16 possible
+colors.  The palette available is more limited; see the {type palette}
+routine for details.
+.bt
+Note that setting any of the graphics modes (using {type GraphMode},
+{type GraphColorMode}, or {type HiRes}) will cause the screen to be
+cleared.  Note also that any attempt to do graphics on a Monochrome
+display adapter will produce an error.  Your programs should query
+the type of display adapter with {type ScrXY}.
+.routine Palette(num)
+This routine selects which of the color palettes is to be used.
+In GraphColorMode, the selection is:
+
+            Palette 0   Green         Red             Brown
+            Palette 1   Cyan          Magenta         Light Gray 
+            Palette 2   Light Green   Light Red       Yellow
+            Palette 3   Light Cyan    Light Magenta   White 
+
+The colors listed above are for color values of 1, 2 and 3; color 
+zero is always the background color (see {type GraphBackground}). 
+.bt
+In GraphMode, the selection is more limited:
+
+            Palette 0   Blue          Red             Light Gray
+            Palette 1   Light Blue    Light Red       White 
+.bt
+There are two graphics primitives, {type Plot} and {type Draw}.  Both
+assume that the x coordinate is horizontal, and the y coordinate is
+vertical, with the origin (0, 0) being the top left corner of the screen.
+.routine Plot(x, y, color)
+This routine
+sets the point at location {type (x, y)} to be the specified {type color}.
+.routine Draw(x1, y1, x2, y2,  color)
+This routine
+draws a line from ({type x1}, {type y1}) to ({type x2}, {type y2}) in the 
+given {type color}.  This routine is extremely fast.  Note that the Turtle
+Graphics libraries replace this routine with another of the same name (see
+the documentation on Turtle Graphics for details).
+.bt
+Some examples would be in order:
+.codebeg 10
+GraphColorMode;
+GraphBackground(14);
+Palette(2);
+Plot(13, 27, 1);
+Delay(1000);
+Plot(13, 27, 0);
+.codend 0
+would cause the screen to go into 320 x 200 mode, and set the screen background
+color to be Yellow.  It would then plot a Light Green
+point at (13, 27).  It would then wait for approximately 1 second (see {type Delay})
+and then set that point back to the background color (in this case, Yellow).
+.routine GraphWindow(x1, y1, x2, y2)
+This routine changes the origin or plotting procedures and alters the clipping
+window.  The new origin is at {type x1, y1} and the new clipping window is
+the rectangle with upper left hand corner at the origin and upper right hand
+corner at {type x2, y2}.
+.bt
+The change or origin means that all coordinates will have the new origin
+added too them.  The clipping window causes lines draw to coordinates outside
+the rectangle to be {it clipped}, which means that only the portion of the
+line that falls within the rectangle is drawn.
+.bt
+For example,
+.codebeg 10
+GraphWindow(10, 10, 100, 100);
+Draw(0, 0, 200, 200);
+.codend 0
+will cause a line to be drawn from (10, 10) to (100, 100).
+.bt
+All arguments are of type integer; {type x} is 
+the column and {type y} is the row. 
+.section Special Features of GraphMode
+The {type GraphMode} routine has a set of optional parameters.  Note that
+these parameters are not supported in the Turbo Pascal version of {type
+GraphMode}, and so using them will make it more difficult to move your program
+from {ALICE} to Turbo.
+.bt
+These additional parameters, if specified, cause all subsequent graphics
+output to be done using the ROM BIOS "set pixel" routines.  This will be
+considerably slower, but has the advantage that you can use your program with
+a wide variety of display adapters (provided, of course, that they are
+supported by your BIOS).
+.bt
+The full form of the call to GraphMode is:
+.codebeg 10
+GraphMode(mode, width, height, colors, rows, cols, segment, size);
+.codend 0
+where {type mode} is the ROM BIOS video mode to set (default is 4,
+i.e. 320 x 200 color
+graphics), {type width} and {type height} are the screen size in pixels
+(default 320, 200),
+{type colors} is the maximum color supported in this mode of the adapter
+(default 3), and {type rows} and {type cols} are the number of character
+rows and columns on the screen (default 25, 40).  You only need to specify
+as many arguments as necessary (the defaults will be used for unspecified
+arguments).
+.bt
+The {type segment} is the segment address of the display, and {type size}
+is the number of bytes of storage that the screen occupies.  The defaults
+for both these values are zero.  These values are used to copy the graphics
+screen away to a buffer when a program using graphics is suspended.
+If {type segment} and {type size} are 0, no graphics buffer is created.
+For example, the values for the IBM CGA are $B800 for {type segment}
+and 16000 for {type size}.
+.section Direct Access I/O
+The {type reset} routine initializes a file variable for reading only.
+The {type rewrite} and {type append} routines initialize a file
+variable for writing only.
+If you want to write a program that can read and write to the same file,
+you must use {it direct access} I/O routines or enable the Borland
+deviations (+b option).
+The direct access routines come from Watcom Pascal.
+.bt
+The {type update} procedure initializes a file variable for both reading
+and writing by direct access.
+It has the form
+.codebeg 10
+update(filevar,filename);
+.codend 0
+This associates the file {type filename} with the file variable
+{type filevar}.
+Initializing a file variable for direct access I/O does not let you add
+new elements to the end of the file, but it lets you read and write
+existing elements in any order.
+.bt
+The {type update} call performs an automatic
+.codebeg 10
+get(filevar);
+.codend 0
+to read the first element in the file.
+This means that the buffer variable {type filevar^} will contain the
+value of the first element in the file.
+.bt
+To move to any other element in the file, you use the {type setnext}
+routine.
+This has the form
+.codebeg 10
+setnext(filevar,record);
+.codend 0
+where {type filevar} is a file variable initialized for direct access
+I/O and {type record} is an integer indicating the number of the file
+element to which you want to move.
+The element at the beginning of the file is number {type 0}.
+Thus
+.codebeg 10
+setnext(filevar,1);
+.codend 0
+will move to the second element in the file.
+Note that unlike {type seek}, {type setnext} does not do an automatic
+{type get}, so the file buffer does not contain the selected element
+of the file after the call.  This means that a call to {type read} will
+read the contents of the old file buffer variable, so you must be careful
+to do a {type get} if you intend to read the selected element.
+There is no such problem if you plan to write, as both {type put} and
+{type write} will output to the selected element.
+.section Block Oriented I/O
+The BlockRead and BlockWrite routines read and write 128-byte blocks.
+Their use is as follows:
+.routine BlockRead(filevar, variable, nrecs)
+This routine reads a number of 128-byte records into the region of memory.
+The number of records is specified by the integer {type nrecs}.  The file the
+records are read from are specified by the file variable {type filevar}.  The
+records are stored in the specified {type variable}.
+.routine BlockWrite(filevar, variable, nrecs)
+This routine writes a number of 128-byte records to the file specified by the
+file variable {type filevar}.
+The number of records is specified by the integer {type nrecs}.
+The records are written from the specified {type variable}.
+.bt
+The BlockRead and BlockWrite routines are identical to the
+procedures of the same names in Turbo Pascal,
+except that the optional fourth parameter is not included.  In Turbo, this
+is an integer var parameter giving the number of records actually read or
+written.
+If this parameter
+is needed, the source for both BlockRead and BlockWrite can be modified; see
+{TURBOLIB}.
+For both BlockRead and BlockWrite, the {type filevar} may be a file of any type
+of variable.  Quite often this will be
+.codebeg 10
+file of array[1..128] of byte
+.codend 0
+and in this case normal read and write will perform a similar function to
+these block routines.
+.routine 
+.chapter The Pascal Library
+In the last chapter, we described the standard library subprograms
+related to I/O.
+In this chapter, we will deal with other commonly used subprograms.
+Note that the HELP facility can also give information on most of
+these subprograms.
+.section Conversion Functions
+The following functions convert one type of data to another.
+.routine round(x)
+This converts a {type real} expression {type x} into an {type integer} value
+by rounding it up or down to the nearest integer.
+Therefore, {type round(3.2)} has the value {type 3} while {type round(3.7)} has
+the value {type 4}.
+{type round(-3.2)} has the value {type -3} while {type round(-3.7)} has
+the value {type -4}.
+.routine trunc(x)
+This converts a {type real} expression {type x} into an {type integer} value
+by truncating the fractional part.
+Therefore the expressions {type trunc(3.2)} and {type trunc(3.7)} both have
+the value {type 3}.
+{type trunc(-3.2)} and {type trunc(-3.7)} both have the value {type -3}.
+.routine chr(i)
+This converts an {type integer} expression {type i} into a {type char} value.
+The integer is converted to whatever character has the same ASCII
+representation.
+This means that the integer must lie inside the values
+for the ASCII character set, in this case {type 0} to {type 255}.
+.routine ord(c)
+This converts a scalar type expression into an integer.
+{type char} values are translated into the integer that has the same
+ASCII representation.
+This means that for any {type char} value {type c},
+.too 10
+{type chr( ord(c) )} equals {type c}
+.blnk 0
+The effect of {type ord} on enumerated types was described in Chapter 3.
+.blnk 0
+The {type ord} function is a non-standard function because its arguments
+can have any scalar type.
+For this reason, it cannot be passed as an function argument to another
+subprogram.
+.routine Frac(x)
+This returns a real number whose value is the fractional part of the real
+value x.  For example,
+.codebeg 10
+n := Frac(7.3);
+.codend 0
+will cause n to have the value 0.3.
+This comes from Turbo Pascal.
+.routine Int(x)
+This returns a real number whose value is the integer part of the real
+value x.  For example,
+.codebeg 10
+n := Int(8.3);
+.codend 0
+will cause n to have the value 8.0.
+This comes from Turbo Pascal.
+.routine Hi(num);
+This routine returns the high-order byte of the integer argument.
+For example,
+.codebeg 10
+i := Hi($1234);
+.codend 0
+would set {type i} to be $12.
+{TLIB}
+.routine Lo(num);
+This routine returns the low-order byte of the integer argument.
+For example,
+.codebeg 10
+i := Lo($1234);
+.codend 0
+would set {type i} to be $34.
+{TLIB{
+.routine Swap(variable);
+This function returns an integer whose high and low bytes are reversed
+from those of the {type variable} argument.
+For example,
+.codebeg 10
+i := Swap($1234);
+.codend 0
+will result in {type i} having the value $3412.
+{TLIB}
+.section Mathematical Functions
+Pascal supports most of the basic mathematical functions.
+.routine abs(x)
+returns the absolute value of {type x}.
+{type x} may be {type real} or {type integer}, and the result will have
+the same type as the argument.
+.routine odd(x)
+returns {type true} if {type x} is an odd integer, and {type false} if
+{type x} is even.
+{type x} must be an integer.
+.routine sqr(x)
+returns the square of {type x}.
+{type x} may be {type real} or {type integer}, and the result will have
+the same type as the argument.
+.routine sqrt(x)
+returns the square root of {type x}.
+{type x} may be {type real} or {type integer}.
+The result is always {type real}.
+.routine sin(x)
+returns the sine of {type x}.
+{type x} may be {type real} or {type integer}, and gives an angle in radians.
+The result is always {type real}.
+.routine cos(x)
+returns the cosine of {type x}.
+{type x} may be {type real} or {type integer}, and gives an angle in radians.
+The result is always {type real}.
+.routine arctan(x)
+returns the arctangent of {type x}.
+{type x} may be {type real} or {type integer}.
+The result is always {type real}, and gives an angle in radians.
+.routine ln(x)
+returns the natural logarithm of {type x} (base {type e}).
+{type x} may be {type real} or {type integer}.
+The result is always {type real}.
+.routine exp(x)
+returns the number {type e} to the power {type x}.
+{type x} may be {type real} or {type integer}.
+The result is always {type real}.
+.blnk 0
+The functions {type abs} and {type sqr} are non-standard, in that they
+may return either an integer or real number.
+For this reason, they may not be passed as function arguments to
+subprograms.
+.section Order Functions
+Order functions can be applied to any scalar type.
+The {q successor} function {type succ} has the form
+.codebeg 10
+next := succ(value);
+.codend 0
+where {type value} is any scalar value.
+The result returned by {type succ} is the next value in the scalar type.
+For example, if {type value} is an integer, {type succ} returns the
+next integer, so
+.codebeg 10
+succ(3) = 4
+.codend 0
+If {type value} is an enumerated type, {type succ} returns the next
+value in the enumerated list.
+Thus if you define
+.codebeg 10
+type
+____days = (sun,mon,tue,wed,thu,fri,sat);
+.codend 0
+you would have
+.codebeg 10
+succ(sun) = mon
+succ(mon) = tue
+\{ And so on \}
+.codend 0
+If you try
+.codebeg 10
+succ(sat)
+.codend 0
+you will be given an error message.
+{type sat} is the last element in the enumerated type and has no
+successor.
+.bt
+The {q predecessor} function {type pred} is the converse of {type succ}.
+It has the form
+.codebeg 10
+previous := pred(value);
+.codend 0
+{type pred} returns whatever comes before the given {type value}.
+For example,
+.codebeg 10
+succ(3) = 2
+succ(tue) = mon
+.codend 0
+If {type value} has no predecessor, {ALICE} will give you an error.
+.section Packing Functions
+Other implementations of Pascal have functions named {type pack} and
+{type unpack}.
+{type pack} takes the values that are stored in a normal array and
+assigns them one by one to a packed array.
+{type unpack} takes the values that are stored in a packed array and
+assigns them one by one to a normal array.
+.bt
+{ALICE} recognizes the names {type pack} and {type unpack}, but the
+subprograms just give an error if called.
+.section Dynamic Memory Allocation
+The {type new} procedure can be used to allocate memory dynamically at
+execution time.
+The memory is allocated from a store of memory called the {it heap}.
+The simplest form of {type new} is
+.codebeg 10
+new(p);
+.codend 0
+where {type p} is a pointer variable.
+The procedure will allocate sufficient memory space to contain the
+sort of data that {type p} points to.
+For example, if {type p} is declared
+.codebeg 10
+var
+____p : ^integer;
+.codend 0
+{type new} will obtain enough space to hold an integer.
+If {type p} is a pointer to some {rwd record} type, {type new} will
+allocate enough space to hold a record of that type.
+When the space has been obtained, {type new} will set up {type p} to
+point at the space that has been obtained.
+.tp
+As a simple example, the following code uses {type new} to set up
+a linked list of records.
+.codebeg 10
+type
+____listptr = ^listelement;
+____listelement = record
+________link : listptr;
+________other : \{Various things\};
+________end;
+var
+____root, pl : listptr;
+begin
+\{Get root of list\}
+new(root);
+pl := root;
+for i := 1 to 10 do begin
+____new(pl^.link);
+____pl := pl^.link;
+____end;
+pl^.link := nil;
+\{And so on\}
+.codend 0
+This allocates {type 10} new list elements and links them together in a
+linked list.
+.bt
+Note that {type new} is one of the few ways to initialize a pointer.
+All the other ways involve calls to Pointer functions (described later
+in this chapter).
+.bt
+A second form of {type new} is used when allocating space for records
+with variant fields.
+This has the form
+.codebeg 10
+new(p,t1,t2,...);
+.codend 0
+where {type p} is a pointer to the record type, and {type t1,t2,...}
+are values for one or more tag fields of the variant part.
+By plugging these values into the various tag-fields, {type new} can
+determine the correct amount of memory to allocate.
+Note that {type new} does not put these values into the tag-fields of
+the record it creates; it simply uses these values to determine how big
+the record should be.
+If {type new} is not supplied with enough tag-fields to totally determine
+the size of memory required, it will allocate enough memory to hold the
+largest possible record of this type.  {ALICE} ignores the tag fields and
+always does this.
+.bt
+The {type dispose} procedure is used to release memory that has been
+allocated through {type new}.
+{type dispose} should be called with the same arguments that were passed
+to the {type new} procedure that allocated the memory.
+Therefore you should use
+.codebeg 10
+dispose(p);
+dispose(p,t1,t2,...);
+.codend 0
+This is the only way that memory allocated by {type new} may be freed up.
+In particular, memory allocated inside a subprogram is {it not} automatically
+released when the subprogram terminates.
+You must release the memory explicitly with {type dispose}.
+Releasing the memory makes it available for re-allocation in later calls
+to {type new}, but it does not decrease the size of your program.
+.bt
+If you call {type dispose} and give a file variable as an argument,
+{ALICE} will close the file associated with the variable.
+.bt
+The {type Mark} procedure is used to find out the current value of the heap pointer.
+The usage is
+.codebeg 10
+Mark(variable);
+.codend 0
+where the {type variable} is a pointer.
+.bt
+The {type Release} procedure sets the heap pointer back to a particular
+value.  Its usage is
+.codebeg 10
+Release(variable);
+.codend 0
+where the {type variable} is a pointer.
+.bt
+Both {type Mark} and {type Release} are found in {TURBOLIB}.  They are
+intended for Turbo Pascal compatibility, and should not be used in new
+programs; instead, {type Dispose} should be used.  Also note that
+{type Mark} and {type Release} are not compatible with the {type New}/{type Dispose}
+form of memory allocation.
+.bt
+To find out how large a block can be allocated, use the {type MaxAvail} function.
+It returns the size of the largest  block  of  contiguous  free  storage 
+available on the heap.
+.bt
+To find out the total amount of free memory, use the {type MemAvail}
+function.  It returns the total amount of storage available on the heap.
+.bt
+Both {type MaxAvail} and {type MemAvail} return an integer specifying the
+number of 16-byte units called {q paragraphs.}  The 
+returned  value  is  an integer;  if it is less than zero,  the actual 
+value can be computed as a real number using the expression MaxAvail + 65536.0,
+or MemAvail + 65536.0.  In the current release of {ALICE}, the values will
+always be greater than zero.
+.bt
+The {type GetMem} and {type FreeMem} routines are used to allocate and
+deallocate dynamic memory blocks of a user-specified size.
+.codebeg 10
+GetMem(variable, n);
+.codend 0
+will allocate {type n} bytes from the heap and set the pointer {type variable}
+to point to that block.  This is more general than {type new}, since it is
+not limited to allocating just enough space for a particular instance of a
+variable.
+.bt
+The {type MaxAvail} function can be used to find out in advance if the
+call to GetMem will succeed or fail.
+.codebeg 10
+FreeMem(variable, n);
+.codend 0
+will return the memory pointed to by {type variable} to the free pool for
+subsequent re-allocation.  The pointer should be one set by {type GetMem},
+and the value of {type n} should match the value in the call to {type GetMem}.
+It is important that you not call {type FreeMem} on any pointer not allocated
+by {type GetMem}, and that you not accidentally free the same memory twice.
+You should also be careful not to keep copies of the pointer from {type GetMem}
+in other pointer variables, and then try and refer through them after the
+memory has been deallocated by {type FreeMem}.
+.section String Manipulation Routines
+String manipulation routines manipulate string constants and variables
+with string types.
+Our descriptions of these routines will give examples of source code
+using each routine, followed by output from this source code.
+.bt
+The first set of functions in this section are taken from Watcom Pascal.
+.routine StrConcat(str1,str2);
+This procedure concatenates the contents of {type str2} on the end of
+{type str1}.
+.codebeg 10
+str1 := 'hello';
+str2 := ' there';
+StrConcat(str1,str2);
+writeln(str1);
+- - - - -
+hello there
+.codend 0
+Note the string concatenation can also be performed with the {q +}
+operator.
+.routine StrDelete(string,N,position);
+This procedure deletes {type N} characters from {type string}.
+{type Position} is an integer giving the subscript of the first character
+to be deleted.
+.codebeg 10
+str := 'The quick brown fox';
+StrDelete(str,2,5);
+writeln(str);
+- - - - -
+The ick brown fox
+.codend 0
+This routine is similar to the Turbo Pascal {type Delete} routine.
+.routine StrInsert(str1,str2,N);
+This procedure inserts the contents of {type str2} into {type str1}.
+The first character of {type str2} will become character N of {type str1}.
+.codebeg 10
+str := 'The quick fox';
+StrInsert(str1,'brown',5);
+writeln(str);
+- - - - -
+The brownquick fox
+.codend 0
+This routine is similar to the Turbo Pascal {type Insert} routine.
+.routine i := StrLen(string);
+This function returns an integer giving the length of a string.
+For a string constant, this is the number of characters in the constant.
+For a string variable, it is the number of characters currently stored in
+the variable.
+If the variable is not full, it will be the number of characters up to
+but not including the {type StrEnd} that follows the last character
+in the string.
+.codebeg 10
+str := 'abcdef';
+writeln(StrLen(str));
+str := 'abc';
+writeln(StrLen(str));
+writeln(StrLen('xyz');
+- - - - -
+6
+3
+3
+.codend 0
+This routine is similar to the Turbo Pascal {type Length} routine.
+.routine i := StrScan(str1,str2);
+This function looks for the string {type str2} inside {type str1}.
+If it is found, {type StrScan} returns the subscript where {type str2}
+begins in {type str1}.
+If the string is not found, {type StrScan} returns 0.
+.codebeg 10
+i := StrScan('hello there','the');
+writeln(i);
+- - - - -
+7
+.codend 0
+This routine is similar to the Turbo Pascal {type Pos} routine.
+.routine i := StrSize(string);
+This function returns an integer giving the {it maximum} length of a string.
+If the string is a string constant, this is the number of characters in
+the string.
+If the string is a string variable, this is the maximum number of
+characters that the string can hold, regardless of how many it holds
+at the moment.
+.codebeg 10
+{rwd var}
+____str : {rwd packed array} [1..10] {rwd of} char;
+__...
+writeln(StrSize('abc'));
+str := 'abc';
+writeln(StrSize(str));
+- - - - -
+3
+10
+.codend 0
+.routine SubStr(str1,N,position,str2);
+This procedure obtains a copy of part of {type str1}.
+{type N} is the length of the substring and {type position} is the subscript
+where the substring starts.
+The substring that is obtained is copied into {type str2}.
+.codebeg 10
+str1 := 'Hello there';
+SubStr(str1,2,3,str2);
+writeln(str2);
+- - - - -
+ll
+.codend 0
+Also of note for this purpose is the Turbo Pascal {type Copy} function.
+.bt
+The remaining functions in this section are taken from Turbo Pascal.
+.routine Delete(str, pos, num);
+This procedure deletes a substring of length {type num} starting
+at position {type pos} in the string variable {type str}.  The
+remaining characters (if any) in the string are shifted left.
+This routine is similar to the Watcom StrDelete routine.
+.routine Insert(src, dest, pos);
+This procedure inserts the string {type src} into the string {type dest}
+at position {type pos}.  The variables {type src} and {type dest} are
+both of type string; pos is of type integer.
+An error message will be issued if the {type pos} is past the
+end of the string, or the string becomes too long.  This is stricter error
+checking than that provided by the same routine in the Turbo Pascal compiler.
+This routine is similar to the Watcom StrInsert routine.
+.routine Copy(str, pos, num);
+This function returns a substring of the string variable {type str}
+of length {type num} starting at position {type pos}.
+It returns the null string (i.e. a string of length zero) if pos is
+greater than the length of the string.
+.routine Length(str)
+This function returns the length of the string argument in characters.
+For a string constant, this is the number of characters in the constant.
+For a string variable, it is the number of characters currently stored in
+the variable.
+Length gets its value from the special length byte kept at the zeroth index
+of every string.
+It is similar to the Watcom Strlen function.
+.routine Pos(srch, str);
+This function returns the position in the string {type str} at which
+the string {type srch} is found.  It returns 0 if {type srch} was not
+found in {type str}.  For example,
+.codebeg 10
+i := Pos('exec', 'autoexec.bat');
+.codend 0
+will cause i to have the value 5, while
+.codebeg 10
+i := Pos('gremlin', 'halloween');
+.codend 0
+will cause i to have the value 0.
+This is similar to {type StrScan}
+.routine Str(val, str)
+This procedure puts the value of the given variable {type val} (which may
+be integer or real) into the given string variable {type str} as an ASCII
+representation of the number.  The variable {type val} can actually have
+format specifiers of the same type found in {type write} procedure calls.
+One can specify a field width for integers and reals.  Reals may also have
+a precision field, just as with {type write}.
+In general
+.codebeg 10
+Str(i:n, dest);
+writeln(dest);
+.codend 0
+is the same as:
+.codebeg 10
+writeln(i : n);
+.codend 0
+if {type dest} is a string large enough to hold the written number.
+.bt
+Note that {ALICE} places a space in front of integer operands if no
+field width is provided.  A field width of zero eliminates this.
+This space is not output when Borland deviations (+b) are enabled.
+.bt
+An error occurs if the string is not large enough to hold the number.
+.routine Val(str, variable, code);
+This procedure is the inverse of the {type str} procedure; it examines
+the string contained in {type str} and converts it to a number which it
+stores in {type var}.  The type of the number is either real or integer,
+depending on the type of {type var}.  Leading and trailing spaces are
+not permitted; the valid formats for the number are the same as those
+for constants in {ALICE} Pascal.  In addition, real numbers with nothing
+before the decimal point (e.g. ".1") are acceptable.
+.bt
+If the conversion is successful, the
+integer variable {type code} is set to zero; otherwise, it contains an
+index into {type str} of the character on which the conversion failed.
+If this is the case, the value of {type var} is undefined.
+.bt
+For example,
+.codebeg 10
+Val('7.8', n, stat);
+.codend 0
+will set {type n} to 7.8 and {type stat} to zero, while
+.codebeg 10
+Val('7y2', n, stat);
+.codend 0
+will result in {type stat} being 2 (the index of the letter y in the string)
+and the value of {type n} will be undefined.
+.routine UpCase(c);
+This function returns a character which is the upper-case equivalent of
+the character {type c}.  For example,
+.codebeg 10
+ch := UpCase('b');
+.codend 0
+will result in {type ch} having the value 'B'.  This routine is handy if you
+want to accept user input in either upper or lower case.
+.section Pointer Functions
+There are a variety of routines that deal with addresses and pointers.  Most
+of these use values of the {type Pointer} type, the special {ALICE} built in
+type that is assignment compatible with all other pointers.
+.routine i := address(variable);
+This function obtains the actual memory address of its argument.
+The argument must be a variable name, a subscripted variable, a field
+inside a record variable, or an indirectly-referenced variable.
+{type address} returns an integer that gives the machine address
+that has been allocated to that variable.  If a machine address does not
+fit in an integer, as is the case with the 8086 processor in the IBM-PC,
+the result returned is actually
+only part of the address, namely the {it offset}.
+For example,
+.codebeg 10
+i := address(v);
+.codend 4
+obtains the integer offset of the variable {type v}.
+.blnk 4
+You can also specify a second argument for {type address}, indicating
+whether you want the segment containing the variable or the offset of
+the variable within the segment.
+If the argument is the integer {type 0}, you get the offset; if it is any other
+integer, you get the segment.
+If this second argument is omitted, {type address} returns the offset.
+For example,
+.codebeg 10
+i := address(v,1);
+.codend 4
+obtains the segment that contains the variable {type v}.
+.bt
+{type address} is unique to {ALICE}.
+.routine i := Ofs(variable);
+This function is similar to {type address}, except that it does not
+take a second argument and always returns the offset.
+{TLIB}
+.routine p := MakePointer(variable);
+This function is much like {type address} except that it returns a
+{type Pointer} type value instead of an integer.
+This can be assigned to any valid Pascal pointer type.
+{type MakePointer} is unique to {ALICE}.
+Unlike {type address}, {type MakePointer} does not need to deal with offsets
+and segments, as a variable of {type Pointer} type always holds a pointer.
+Note, however, that in SMALL model {ALICE}, such pointers may only point
+within {ALICE}'s 64K data segment.
+.routine p := Addr(variable);
+This is Turbo Pascal's version of {type Makepointer}.  It returns a pointer
+to the given variable.
+For example,
+.codebeg 10
+var
+____i : ^integer;
+_...
+i := Addr(v);
+i^ := 10
+.codend 4
+Places 10 (indirectly) into {type v}, assuming it is an integer variable.
+.bt
+{TLIB}
+.routine p := RawPointer(offset,segment);
+This function converts an integer address into a Pointer type.
+As such, it is the inverse of {type address}.
+The {type offset} argument is an integer giving an offset within a segment,
+and the optional {type segment} argument is an integer giving a
+segment number.  If not provided, the second argument is assumed to be
+the Data Segment.
+In small-model {ALICE}, this segment number must either be omitted or equal
+to the Data Segment (Dseg).
+The value returned by {type RawPointer} has the {type Pointer} type.
+{type RawPointer} is unique to {ALICE}.
+.routine p := Ptr(segment, offset);
+This function creates a pointer from two integers, and is the Turbo Pascal
+equivalent of {type RawPointer}.  None of the parameters are optional, and
+in SMALL model {ALICE}, the first parameter must be equal to the Data Segment
+as returned by {type DSeg}.
+.routine i := peek(address);
+This function returns the value that is at the given memory address.
+The {type address} argument is given as an integer.
+The value that is returned is a single byte and will therefore be in the
+range 0..255.
+On the IBM PC, only the first 64K of physical memory may be accessed this way.
+This 64K is {it not} the Data Segment of {ALICE}.
+To access other addresses, use {type Mem{und}To{und}Var} (described below).
+.routine poke(address,value);
+This procedure stores a value in the given address.
+The {type address} is given as an integer.
+Since {type poke} only stores a single byte, the {type value} argument
+should be in the range 0..255.
+If it is not, {type poke} will use {type value mod 256}.
+On the IBM PC, only the first 64K of physical memory may be accessed this way.
+This is not the Data Segment used by {ALICE}.
+To access other addresses, use {type Var{und}To{und}Mem} (described below).
+.routine Var{und}To{und}Mem(variable,offset,segment)
+This routine copies a variable to an absolute address in memory.  On an
+IBM-PC, this address is specified with two integers, an offset and a segment.
+Great care should be taken when using this routine, as writing improperly
+on absolute memory can easily crash your machine.  The segment argument
+is optional, and defaults to the Data Segment.  Be warned when writing into
+the Data Segment that this routine does not mark the memory it touches
+as initialized.
+.routine Mem{und}To{und}Var
+This routine copies from absolute memory into the specified variable.  It
+is the inverse of {type Var{und}To{und}Mem}.  On an IBM-PC, the address is
+specified with two integers providing the offset and segment of the
+desired memory location.  The number of bytes copied equals the size of
+the variable in question.
+.routine Move(src, dest, count)
+This procedure copies a number of bytes specified by the integer {type count} 
+from the location of the variable specified by {type src} to the location  of 
+the variable specified by {type dest}.  Both {type src} and {type dest}
+may be of any type.  It is up to you to make sure there is enough room in
+{type dest} to contain the data.
+See also {type Var_To_Mem} and {type Mem_To_Var}.
+This routine is contained in {TURBOLIB}.
+.routine FillChar(variable,  num,  value)
+This procedure fills memory with the given character {type value}, 
+starting at the base address of the specified {type variable}, for a 
+length of {type num} characters.  The {type var} can be of any type; {type num}
+must be an integer, and the {type value} must be a {type character}
+or {type byte}.
+.bt
+This routine is very fast (much faster than doing it yourself in a loop).
+It is up to you to make sure that there is enough room in the variable to
+contain the data.
+.bt
+Note that strings have a length byte in the zeroth position; this byte will
+get overwritten if you pass a string to {type FillChar}.
+.bt
+This routine is contained in {TURBOLIB}.
+.routine i := Dseg;
+This function returns the value of the Data Segment as an integer.
+In small model {ALICE}, this is the segment in which all variables are found.
+When constructing pointers (for example, using {type ptr}), you should use
+the value of {type dseg}.
+This routine is contained in {TURBOLIB}.
+.routine i := Cseg;
+This function returns the value of the Code Segment as an integer.
+This value should almost never be used for anything,
+since {ALICE} is an interpreter.  (For more information about the differences
+between interpreters and compilers, refer to the section on converting between
+Turbo and {ALICE}).  The Cseg function returns the value of one of the code
+segments of the {ALICE} interpreter.  Any offsets into the Cseg that the
+program uses will be meaningless; also, using Cseg in the setting of interrupt
+vectors is incorrect. 
+This routine is contained in {TURBOLIB}.
+.routine i := Sseg;
+This function returns the value of the Stack Segment as an integer.
+In small model {ALICE}, this is the same as the Data Segment.
+This routine is contained in {TURBOLIB}.
+.blnk 0
+.routine i := Seg(variable);
+This function returns the segment address of the given variable.  In small
+model {ALICE}, this will always be the same as the program's data segment
+(i.e., {type dseg}).
+This routine is found in {TURBOLIB}.
+.section Random Number Generation
+{ALICE} includes a function called {type random} that generates pseudo-random
+numbers.  Unfortunately,
+maintaining compatiblity with both Watcom and Turbo Pascals is impossible
+with this function, so two versions exist.
+When Turbo Pascal features are disabled with the {q {type -t}} option,
+{type random} acts as it does in {ALICE} 1.2 and Watcom Pascal.  Otherwise
+it acts as the {type random} function of Turbo Pascal.
+.bt
+For both systems,
+.codebeg 10
+initrandom(seed,upper);
+.codend 0
+initializes a pseudo-random number generator.
+Both {type seed} and {type upper} are integers.
+Different values of {type seed} will give different number sequences;
+identical values of {type seed} will give identical sequences.
+When using {ALICE} 1.2/Watcom random numbers, these will be generated in
+the range {type 0..(upper-1)}.  
+.bt
+The actual random numbers are obtained from a function named {type random}.
+If you disable Turbo Pascal compatibility by invoking ALICE with the
+{type -t} option, the call to {type random} has the form
+.codebeg 10
+i := random;
+.codend 0
+This returns a pseudo-random integer.
+You may not call {type random} until you have initialized the random
+number generator with {type initrandom}.
+.bt
+If you do not disable Turbo Pascal features, the call to {type random}
+has the form
+.codebeg 10
+i := random(N);
+.codend 0
+where {type N} is an integer.
+This generates a pseudo-random integer in the range {type 0..N-1}.
+In this case, you do not have to call {type initrandom} first.
+If you omit the {type N} as in
+.codebeg 10
+a := random;
+.codend 0
+the function will return a pseudo-random {type real} number that is
+strictly less than {type 1.0} and greater than or equal to {type 0.0}.
+.routine Randomize;
+This procedure re-seeds the random number generator from the system clock,
+so that a different sequence of values will be produced for every run.
+{TLIB}
+.subsect System Calls
+The following routines let you perform system calls.
+Users should normally never need to use these.
+.routine i := SysFunc(p,arg,arg,arg,...);
+This function calls a system function.
+The {type p} argument is a {type Pointer} type pointing to the memory
+location of the function to be called.
+The function is passed (in Microsoft C calling style) an itneger argument count
+and pointers to the top and bottom of a vector of arguments.
+The value returned by {type SysFunc} is the value returned by the
+system function.
+{type SysFunc} comes from Watcom Pascal, but is not compatible with it on
+the IBM-PC.
+.routine SysProc(p,arg,arg,arg,...);
+This procedure works the same way as {type SysFunc}.
+It is used to call system routines that do not return a value.
+{type SysProc} comes from Watcom Pascal, but is not compatible with it on
+the IBM-PC.
+.subsect Internal C Routines
+The following routines all make calls to a special internal library of
+useful routines contained in {ALICE}.  These routines are not intended for
+general users, and no guarantees are made they they will remain the same
+from one {ALICE} release to the next.  The {ALICE} distribution disks
+come with Pascal library routines that make use of these internal features.
+To be safe, make use of the libraries instead of calling these {q CProcs}
+directly.  These routines are all unique to {ALICE}.
+.routine i := CIntFunc(args);
+calls a C function that returns an integer.
+For more information, see the {ALICE} User Guide.
+.routine l := CLongFunc(args);
+calls a C function that returns a long integer.
+{type CLongFunc} actually returns a pointer to this long integer.
+The long integer is expressed as a {rwd record} with two integer fields
+named {type low} and {type high}.
+These contain the two halves of the long integer.
+For more information, see the {ALICE} User Guide.
+.routine p := CPtrFunc(args);
+calls a C function that returns a pointer.
+For more information, see the {ALICE} User Guide.
+.routine CProc(args);
+calls a C function that does not returns a value.
+For more information, see the {ALICE} User Guide.
+.routine p := SysPointer(i);
+returns the value of an {ALICE} control variable.
+For more information, see the {ALICE} User Guide.
+{type SysPointer} is unique to {ALICE}.
+.subsect Outside World Interface
+.routine Chain(filename);
+runs the {ALICE} program contained in the specified file.  There is a similar
+routine in Turbo Pascal; however, it is not the same.  Turbo's Chain routine
+only runs special Turbo chain files, and preserves variables from one program
+to the other.  In {ALICE}, the {type chain} routine will erase the current
+program, and load and run the new one.  This is found in the Useful DOS
+routines library.
+.bt
+.routine Execute(filename);
+This routine executes a DOS program in the same way that the {ALICE}
+{type DOS} command does.  The command is executed, and control is returned
+to the running {ALICE} program when it terminates.  The {q COMMAND.COM} shell
+program is not used, so commands built into it like {q DIR} and {q COPY} may
+not be used directly.
+Note that sufficient memory must be available to execute the command at
+the same time as {ALICE}.
+This is found in the Useful DOS routines library.
+.section File and Directory Handling Routines
+.routine ChDir(path);
+This routine changes the DOS current directory to the specified path.
+If the string includes a leading drive specifier, the current drive is
+changed as well.  For example,
+.codebeg 10
+ChDir('c:\data');
+.codend 0
+will set the current drive to be C:, and the current directory to be the
+\data directory on that drive.
+.blnk 0
+If you change directories, any relative pathnames (i.e. pathnames that are
+not completely specified from the root directory down) will no longer be
+valid.  In particular, this applies to the save file name.
+This routine is contained in {TURBOLIB}.
+.routine Erase(filename);
+This procedure erases the specified file from the disk.
+It is important that you do not erase a file that is currently active (that
+is, opened using {type reset} or {type rewrite} or {type append}).
+This routine is contained in {TURBOLIB}.
+.routine GetDir(drive, stringvar);
+This procedure stores into the specified string variable the current directory
+for the specified drive.  The drive is an integer, 1 for A:, 2 for B: and so
+on.  If drive is 0, the current drive is assumed.
+For example,
+.codebeg 10
+GetDir(3, currdir);
+.codend 0
+will store into the string variable currdir the current directory for drive
+C:.  A typical directory string would be '\data\first'.  If the current
+directory for the specified drive is the root directory, the string variable
+will contain the null string (i.e. StrLen(currdir) will be zero).
+.blnk 0
+This routine is contained in {TURBOLIB}.
+.routine MkDir(path);
+This procedure creates a new directory on the disk, whose name is contained
+in the string argument {type path}.
+This new directory is always created on the current drive.  For more
+information on directories, see the DOS manual.
+.routine RmDir(path);
+This procedure removes (i.e., erases) a directory from the disk.
+You cannot remove a directory that contains files or other directories.
+Refer to the DOS manuals for more information about directory handling.
+This routine is contained in {TURBOLIB}.
+.routine Rename(oldpath, newname);
+This routine changes the name of a file or directory on disk.
+{type oldpath} specifies
+the name (and optional path) of the file or directory to be renamed,
+and {type newname}
+contains the new name.
+This routine is contained in {TURBOLIB}.
+.section Miscellaneous Routines
+.routine pause;
+When {ALICE} has {q Debug On} and it encounters a call to the {type pause}
+procedure, the effect is the same as if a breakpoint was triggered while
+running the program.
+The program will stop and wait for run-time commands (e.g. going into
+immediate mode).
+When {ALICE} has {q Debug Off}, the {type pause} procedure has no effect.
+If you give {type pause} an argument (as in {type pause(1)}),
+the program will pause regardless of whether Debug is On or Off.
+{type pause} comes from Watcom Pascal.
+.routine i := SizeOf(variable);
+This function returns the number of bytes of storage that are allocated
+to a particular variable.
+With string variables, {type SizeOf} is equivalent to {type StrSize + 2}.
+{type SizeOf} is found both in {ALICE} and Turbo Pascal, but the {ALICE} 
+version does not allow a type as an argument (i.e. SizeOf(integer) is invalid).
+.routine Delay(n)
+This procedure simply delays for {type n} milliseconds, where n is an integer.
+The system clock "ticks" every 55 milliseconds, and this limits the accuracy
+of {type delay}.  Note that the system clocks on all members of the PC family
+run at the same speed, so a call to {type delay} will produce a consistent
+delay regardless of whether it's running on a PC, an XT or an AT.
+.bt
+You can use the break key to stop the delay and interrupt the execution of
+your program.
+.routine Halt(n);
+The {type halt} routine will terminate your program and return to {ALICE}.
+The argument is optional; in the Turbo Pascal version of this routine, the
+argument is the "return value" or "error level" or "exit status" of the
+program that is passed back to DOS.
+.routine Intr(intnum, regrec);
+This procedure generates a software interrupt of type {type intnum} (an 
+integer) and transfers register values into and out of the interrupt 
+routine using the record {type regrec}.  The variable {type regrec} should be 
+declared as follows: 
+.codebeg 10
+type regs = record 
+        AX,BX,CX,DX,BP,SI,DI,DS,ES,Flags : Integer;
+     end;
+var 
+     regrec : regs;
+.codend 0
+The various register fields should be set to whatever values the 
+registers ought to contain at the time the software interrupt is 
+issued; when the {type Intr} procedure returns, the various fields of the 
+record will hold the register contents as of the completion of the 
+interrupt. 
+.bt
+The {type Flags} field may be read from, but its value is not used to change the
+actual hardware flags register.
+.bt
+It is important that the full record be used, not a shorter version of it,
+since the routine that copies the hardware registers into the {type regrec}
+record assume the full record is available.
+.bt
+Use of {type Intr} should be avoided, since there are higher-level functions
+for almost everything.
+.routine MsDos(regrec);
+This procedure executes the software interrupt that interfaces to the 
+MSDOS operating system.  It is equivalent to {type Intr($21, regrec)}. It 
+transfers register values into and out of the MSDOS call using the 
+record {type regrec}. The variable {type regrec} should be declared as follows: 
+.codebeg 10
+type regs = record 
+        AX,BX,CX,DX,BP,SI,DI,DS,ES,Flags : Integer;
+     end;
+var regrec : regs;
+.codend 0
+The various register fields should be set to whatever values the 
+registers ought to contain at the time that MSDOS is called; when 
+the {type MsDos} procedure returns, the various fields of the record will 
+hold the register contents as of the completion of the call to 
+MSDOS. 
+.bt
+The {type Flags} field may be read, but its value is not used to change the
+actual hardware flags register.
+.bt
+It is important that the full record be used, not a shorter version of it,
+since the routine that copies the hardware registers into the {type regrec}
+record assume the full record is available.
+.routine TPLibProc(filename, offset);
+.routine TPLibFunc(filename, offset);
+These procedures load a binary file from the specified {type filename} 
+(a string constant or constant expression) and execute the routine at 
+the specified (integer) {type offset} into that file.
+.bt
+The machine language code 
+contained in the binary file must be position independent.
+.bt
+Some Turbo Pascal programs (notably those written for version 2.0 of Turbo
+Pascal) assume only one routine per binary file; in this case, use an
+offset value of zero.
+.bt
+On entry to a routine called in this way,
+the return address is on top of the stack, and it is always a one-word
+value (i.e. it is a return address within the current code segment).
+The routine ends with a RET instruction, which also removes the parameters
+from the stack.
+The BP register should be preserved (usually by pushing it, and then
+transferring the SP register into BP to allow easy access to variables in
+the stack frame).  Restoring SP from BP and then popping BP is a standard
+way of ending a function.
+
+If the routine has additional parameters following it in its call,
+then the following applies:
+
+- {type Var} type parameters are passed as long pointers (segment address is
+  higher on the stack than the offset).
+- value parameters generally have their actual values pushed onto the
+  stack
+    - integers, chars, bytes, subranges of integers and booleans will
+      take a single word, with the top byte set to zero for chars and bytes;
+    - real values are stored as six-byte quantities, with the exponent lowest
+      in memory.
+    - strings are stored as the string length, followed by the characters
+	  in the string in reverse (i.e. right-to-left) order up into the
+	  stack.
+	- sets always occupy 32 bytes (one bit for each member).
+	- pointers are passed much like {type var} parameters, with the word
+	  containing the segment address higher than the offset.
+	- arrays and records are passed like pointers and {type var} parameters.
+
+For functions, the function value is returned in AX for functions returning
+scalar types other than reals, DX:AX for functions returning pointers, and
+on the top of the stack for all others.
+.bt
+Values passed back on the top of the stack are in the same form as parameters
+to the function (e.g. reals are six bytes, exponent lowest in memory).
+.bt
+These routines are found in {TURBOLIB}. 

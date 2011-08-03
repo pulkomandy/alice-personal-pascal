@@ -1,0 +1,17 @@
+|12,73
+     The "address" function obtains the actual memory address of its argu-
+ment.  The argument must be a variable name, a subscripted variable, a
+field inside a record variable, or an indirectly-referenced variable.  The
+function returns an integer that gives the machine address of the storage
+that has been allocated for that variable.
+
+Address Examples:
+     i := address(v);
+     i := address(rec.f);
+     i := address(arr[j]);
+|mFor more, choose
+|iDo nothing,nop
+|iPeek,Hpsymbol/peek
+|iPoke,Hpsymbol/poke
+|iRawPointer,Hpsymbol/rawpointer
+|p

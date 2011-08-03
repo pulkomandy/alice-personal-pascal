@@ -1,0 +1,6 @@
+|6,74
+Integer overflow
+    You tried to perform an operation that created an integer that is too
+    large for the computer to handle.  Remember that the maximum size for
+    an integer on your computer is 32767 and the minimum is -32768.  If you
+    try to go outside these bounds, you will get an error.

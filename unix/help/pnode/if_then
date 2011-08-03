@@ -1,0 +1,22 @@
+|17,74
+     IF will execute one or more statements provided a particular condition
+is true.  The Condition that follows the word "if" tells what the condition
+is.  It is almost always a relational condition.  In fact, the Condition
+can be any that yields a Boolean (true/false) result.
+     The statement(s) inside the BEGIN/END block will be executed if and
+only if the Condition has a true result.
+     IFs are frequently followed by ELSEs.  To create an ELSE, type the
+keyword "else" anywhere inside the IF statement.
+
+IF Examples:
+     if a=1 then begin
+         writeln('a equals 1!');
+         end;
+     if c >= d then begin
+         pos = c - d;
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iELSE,Hpnode/if_then_else
+|iBoolean data,Hpsymbol/boolean
+|p

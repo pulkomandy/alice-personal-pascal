@@ -1,0 +1,10 @@
+|11,72
+Can't open text save file
+    For some reason, ALICE couldn't create the text file in which you
+    wanted to save your program.  Possible reasons: there's no space left
+    on your disk, you don't have permissions to write to the specified
+    directory, or there's something wrong with the file name you entered.
+|mFor more, choose
+|iDo nothing,nop
+|iThe TEXT command,Hcommand/text
+|p

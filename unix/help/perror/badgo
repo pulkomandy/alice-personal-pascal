@@ -1,0 +1,16 @@
+|16,74
+Can't find the label NUMBER
+(And related messages)
+    You attempted a GOTO but ALICE could not find the label you wanted to
+    go to.  Note that ALICE's search for the desired label follows
+    different rules than some other versions of Pascal.  For example, ALICE
+    will not let you jump into the middle of loops or IF statements;
+    therefore, ALICE will not search for the the label you want inside such
+    blocks.  In general, ALICE will let you jump OUT of things but will not
+    let you jump INTO them.
+|mFor more, choose
+|iDo nothing,nop
+|iGOTO,Hpnode/goto
+|iLabelled statements,Hpnode/labeled_stat
+|iLabel declarations,Hpnode/labels
+|p

@@ -1,0 +1,11 @@
+|11,73
+No file associated with workspace
+    You issued an AUTOSAVE command to save your program every few opera-
+    tions.  However, there is no file name associated with your workspace,
+    so ALICE has nowhere to save the program.  Either turn off AUTOSAVE or
+    set a file name using the FILENAME command.
+|mFor more, choose
+|iDo nothing,nop
+|iAUTOSAVE,Hcommand/autosave
+|iFILENAME,Hcommand/filename
+|p

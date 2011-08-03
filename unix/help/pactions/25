@@ -1,0 +1,5 @@
+|5,74
+     Selecting this lets you declare a name outside the current procedure
+or function.  ALICE will lay out an appropriate declaration template in the
+program mainline, or in the subprogram that contains the current procedure
+or function.

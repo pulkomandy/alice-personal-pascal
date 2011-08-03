@@ -1,0 +1,22 @@
+|18,74
+
+           ... {Comment} ...
+
+stands for a section of code that the programmer has decided to HIDE.  The
+Comment should tell what the hidden code does.  The HIDE command just tells
+ALICE that the hidden code should not be shown on the terminal screen when
+the rest of the program is displayed.  The code is still there and will
+work when you run the program.  Hiding uninteresting parts of your program
+makes the rest of your program easier to read and understand.
+     The REVEAL command will bring a section of code out of hiding.  REVEAL
+may be found on the Change Menu.
+
+Hidden Code Examples:
+      ... {Perform initializations} ...
+      ... {Write everything out}
+|mFor more, choose
+|iDo nothing,nop
+|iThe HIDE command,Hcommand/hide
+|iThe REVEAL command,Hcommand/reveal
+|iRevealed code,Hpnode/revealed_cod
+|p

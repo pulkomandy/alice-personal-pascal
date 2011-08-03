@@ -1,0 +1,20 @@
+|16,73
+     The "initrandom" procedure must be called before using "random" to
+generate random numbers.  It is called with
+
+          initrandom(seed,range);
+
+where both "seed" and "range" are integers.  "Seed" can be any integer and
+is used to start the random progression.  Starting with the same seed will
+yield the same sequence of random numbers.  The random numbers will be
+chosen in the range from zero to "range-1".
+
+Initrandom Examples:
+     initrandom(345,6);
+       {345 is arbitrary; 6 is range}
+     dice := random + 1;
+       {Get roll of six-sided dice}
+|mFor more, choose
+|iDo nothing,nop
+|iRandom,Hpsymbol/random
+|p

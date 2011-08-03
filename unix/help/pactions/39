@@ -1,0 +1,5 @@
+|5,74
+     Selecting this is the same as pressing ENTER.  If you are currently on
+an empty Statement or Declaration placeholder, nothing will happen.  If you
+are not, the cursor will go down one line and create an empty Statement or
+Declaration placeholder, as appropriate.

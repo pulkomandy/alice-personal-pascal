@@ -1,0 +1,158 @@
+
+How to add a new built-in symbol:
+
+1)  Assign the symbol a unique symbol number.  Got to "tune.h" and find
+	the #define BUILT_COUNT.   It is currently 273.   This your unique
+	number would be -274.   Use this and bump BUILT_COUNT to the
+	magnitude of the biggest symbol number.  (ie. make it 274)
+
+2) Go to the built-in symbol file.  Currently this is the combination of
+	builtin.c, newbuilt.c and turbuilt.c
+
+3) Create a "sym_node" for your new symbol.  Use a prototype from a similar
+	symbol of the same type.  For example, if you are defining a
+	built-in procedure, of sym_type T_BPROC, take one like that.
+
+	For example, here's 'gotoxy'
+
+ssymnode ndgotoxy = { N_DECL_ID, NCAST &r_gotoxy, NLF, NNC("GotoXY"), T_BPROC,
+	HashByte, &ndclrscr, Basetype(SP_proc), 0, 0, 0,Mflgs, -83};
+
+	We will break it apart.
+
+ssymnode ndgotoxy = { N_DECL_ID,	- always N_DECL_ID.  This is a symbol
+					  node
+	NCAST &r_gotoxy,		- a pointer to the 'rout_node' that
+					  is the parent.  It will describe
+					  the arguments.  (See below)
+	NLF,				- This macro is 0,0 -- null flags
+	NNC("GotoXY"),			- The name of the symbol.   The NNC
+					  macro casts it for you.
+	T_BPROC,			- The type of symbol.  T_BPROC is a
+					  built in procedure.  These are
+					  defined in typecodes.h
+	HashByte,			- A filler for the hash byte of
+					  user symbol tables
+	&ndclrscr,			- a pointer to the symbol node of the
+					  next symbol in the chain.  That's
+					  usually the symbol defined just above
+					  you in the file.
+	Basetype(SP_proc),		- The type (as in data type) of the
+					  symbol.  As procedures have no
+					  data type, except when passed along,
+					  we use this special Basetype.
+
+					  A function would have a pointer to
+					  the type the function will return.
+	0,				- the 'value' of the symbol.  Not
+					  used in procedures or functions.
+	0,				- the size of the data region for
+					  a variable.  Not used in procedures.
+					  In a function, it's the size of the
+					  return type.  Often sizeof(rint) if
+					  you return an integer.
+	0,				- the scope of the symbol.  0 for
+					  built in symbols.
+	Mflgs,				- this #define gives the symbol flags
+					  Simply always use it.
+	-83};				- the unique symbol number
+
+Procedures and functions have a 'rout_node' parent, which looks like this:
+
+static rout_node r_gotoxy = { 0,	- always 0
+		do_cursorto,		- the address of the C function which
+					  is called to execute this routine
+		2,			- the minimum number of arguments
+		2,			- the maximum number of args
+		l_twoint };		- a pointer to a structure that
+					  defines the types of the arguments.
+					  In this case, a standard structure
+					  for two integer args is used.
+
+argument structures are arrays of 'bargs' (built in args).
+
+static bargs l_twoint[] = {NULL,	- we start with a null pointer
+
+	/* This is followed by pairs of pointers.  The first one is a pointer
+	   to a general argument descriptor.  The second is the name of the
+	   argument if any.  If a name is provided, use a string that starts
+	   with the byte \200. */
+
+	IBC &un_int_param, NULL,	
+	IBC &un_int_param, NULL,
+	NULL };				- the end of the list is indicated
+					  by a null argument descriptor
+
+	/* as an example, here's a 'pointer and size' arg list */
+
+static bargs l_ponandsize[] = {NULL,
+	IBC &un_ptr_param, NULL,
+	IBC &un_int_param, "\200Size",	/* this gets a prompted name */
+	NULL };
+
+
+	/* An argument descriptor is a tree node with two kids. */
+
+static struct node2 un_int_param =
+		{ N_FORM_VALUE,		- value parameter or var parameter 
+		NIL,			-
+		NLF,			nil flags
+		/* the kids */
+		CAST(nodep ) &G_Stub,	- usually just a stub here where the
+					  name would go.
+		Basetype(BT_integer) }; - the type tree for the parameter,
+					  in this case, just a pointer to
+					  the built-in type tree for integers.
+
+
+Once all this is defined and linked into the chain, you have to define the
+C function.  (the one called do_cursorto in this case)
+
+Go to functions.h and put in a line like:
+
+	extern in do_cursorto();
+
+(If you are defining for the PC version you need to define other stuff but
+we will assume you aren't)
+
+Finally, make a file like functions.c in the source directory where you
+will define your functions.
+
+Define your function:
+
+do_cursorto( argc, argv )
+int argc;		/* number of arguments passed to the routine */
+rint *argv;		/* pointer to stack above the arguments */
+{
+		/* code for procedure */
+}
+
+Now argv will point to the stack frame, just above the arguments.  They
+were pushed on the stack, growing downwards, from the first to the last.
+But each argument takes up a least sizeof(char *) bytes on the stack.
+
+In the case of a function, argv itself points at where the return result
+of the function is to go.
+
+If you were defining a 'multiply' function on a machine where
+sizeof(rint) == sizeof(char*), it might look like:
+
+do_maltiply( argc, argv )
+int argc;		/* number of arguments passed to the routine */
+rint *argv;		/* pointer to stack above the arguments */
+{
+	argv[0] = argv[-1] * argv[-2]
+}
+
+The top of stack will be the last argument pushed, so you can also code:
+
+	argv[0] = int_spop() * int_stop
+
+	popping args off the stack.
+
+Of course procedures don't have to store in argv[0]
+
+If you want to be portable to machines that might have small ints, use
+the pop method to pop and store your args in C variables, or index
+using argv[-2*P_S] instead of argv[-2].  P_S is the number of ints in
+a pointer.

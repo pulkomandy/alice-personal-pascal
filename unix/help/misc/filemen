@@ -1,0 +1,19 @@
+|20,74
+     File name menus are offered by several commands on the Files Menu,
+e.g. LOAD and SAVE.  A file name menu lists the names of all the files
+under your current directory.  Choosing a file from this list indicates
+that you want to read that file.
+     File name menus also offer a number of special entries.  There is
+always an entry "Enter a file name" which allows you to enter a file name
+that does not appear on the list.  You would choose this if you wanted to
+save a program in a new file.
+     Other special entries give the names of subdirectories of the current
+directory.  These names are marked with a "+".  If you select such an entry,
+you will be given a file name menu of all the files and directories under that
+directory.  This subdirectory will become the current directory until you do
+something to change directories again.
+|mFor more, choose
+|iDo nothing,nop
+|iSAVE,Hcommand/save
+|iLOAD,Hcommand/load
+|p

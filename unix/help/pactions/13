@@ -1,0 +1,8 @@
+|8,69
+     Selecting this sets up a type declaration.  ALICE will expand the
+declaration to the template
+
+          type
+              Name = Type;  {Comment}
+
+and the token will be placed in the Name placeholder.

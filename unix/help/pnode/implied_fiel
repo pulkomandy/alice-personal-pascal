@@ -1,0 +1,15 @@
+|15,73
+     An implied field use can only appear in a WITH block.  The WITH block
+begins with a statement of the form
+
+          with RECORD-NAME do begin ...
+
+The RECORD-NAME is the name of a record variable.  Inside the WITH block,
+you can refer to fields of that record just by "field" instead of
+"recordname.field".
+|mFor more, choose
+|iDo nothing,nop
+|iRecord Declarations,Hpnode/record_type
+|iWith blocks,Hpnode/with_block
+|iField use,Hpnode/field_use
+|p

@@ -1,0 +1,6 @@
+|6,52
+     This action adds a label to a statement, turning
+        Statement
+into
+        Label:
+        Statement

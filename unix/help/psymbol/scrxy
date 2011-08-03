@@ -1,0 +1,22 @@
+|18,72
+     The "ScrXY" function returns an integer value that provides informa-
+tion about the screen.
+
+   ScrXY(1)
+       tells how many lines the screen has.
+   ScrXY(2)
+       tells how many columns the screen has.
+   ScrXY(-1)
+       gives the number of the row where the cursor is currently located.
+       The top row is number 0.
+   ScrXY(-2)
+       gives the number of the column where the cursor is currently
+       located.  The leftmost column is number 0.
+
+ScrXY Examples:
+     CursorX := ScrXY(-2);
+     CursorY := ScrXY(-1);
+|mFor more, choose
+|iDo nothing,nop
+|iMoving the cursor,Hpsymbol/cursor_to
+|p

@@ -1,0 +1,14 @@
+|14,74
+Case selector must be of ordinal type
+    The expression that comes after the keyword "case" in a CASE statement
+    can be integer, character, Boolean, or an enumerated type.  Any other
+    type is illegal.  You must change the expression to one of the accepted
+    types.
+|mFor more, choose
+|iDo nothing,nop
+|iCASE statements,Hpnode/case
+|iInteger,Hpsymbol/integer
+|iCharacters,Hpsymbol/char
+|iBoolean,Hpsymbol/boolean
+|iEnumerated types,Hpnode/enumerated_t
+|p

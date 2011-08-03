@@ -1,0 +1,9 @@
+|10,73
+Sorry, sets element NUMBER not allowed
+    You have attempted to use a set that was too large.  ALICE only allows
+    sets of integers with values in the range 0..255, and sets of other
+    scalar types with less than 256 values in the type.
+|mFor more, choose
+|iDo nothing,nop
+|iSet types,Hpnode/set_type
+|p

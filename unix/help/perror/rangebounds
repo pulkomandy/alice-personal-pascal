@@ -1,0 +1,12 @@
+|12,71
+The two bounds of this range don't match
+    A subrange had the form
+
+          A..B
+
+    but A and B were not the same type of value.  You must change one or
+    the other so the types match.
+|mFor more, choose
+|iDo nothing,nop
+|iSubranges,Hpnode/subrange
+|p

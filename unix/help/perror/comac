@@ -1,0 +1,11 @@
+|11,68
+Command macros must be completed with '\n'
+    If you define a macro with a '\c' (COMMAND) code in it, the macro
+    must be completed with a '\n' (ENTER) code.  Due to the fact that
+    ALICE doesn't echo on the command line when reading from a macro,
+    you can't make a macro that leaves the cursor in the middle of
+    command line input.
+|mFor more, choose
+|iDo nothing,nop
+|iThe MAP command,Hcommand/map
+|p

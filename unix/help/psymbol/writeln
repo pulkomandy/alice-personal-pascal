@@ -1,0 +1,28 @@
+|20,74
+     The "writeln" procedure writes information to a text file or the
+terminal.  If you are writing to a text file, the first argument should be
+a file variable that has been set up with "rewrite".  If you are writing
+to the terminal, you can omit this argument or you can specify the file
+variable "output".
+     The other arguments of "writeln" are values that you want to write
+out.  These values may be characters, integers, reals, strings, sets, or
+enumerated types.  When "writeln" has written all these values, it will
+automatically write a new-line character to end this line of text and get
+set for a new output line.  If you do not want this automatic new-line, use
+the "write" procedure.
+
+Writeln Examples:
+     writeln(filevar,x,y,z);
+     for i := 1 to StrLen(line) do begin
+         write(line[i]);
+         end;
+     writeln;
+     {Puts out new-line}
+|mFor more, choose
+|iDo nothing,nop
+|iWrite,Hpsymbol/write
+|iFiles,Hpnode/file_type
+|iText,Hpsymbol/text
+|iField Widths,Hpnode/field_width
+|iPrecisions,Hpnode/precision
+|p

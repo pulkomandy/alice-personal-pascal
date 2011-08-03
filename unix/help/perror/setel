@@ -1,0 +1,17 @@
+|18,74
+This set element doesn't match the first one
+    Inside a set constant, the type of a particular element is not the same
+    as the type of the first element in the set.  For example, you might
+    have something like
+
+          ['1',2,'3']
+
+    The middle element of the set is an integer, while the other ones are
+    characters (enclosed in single quotes).  When ALICE first sees a set,
+    it assumes that every element should have the same type as the first
+    element.  When one doesn't match, you get this error.  Either the first
+    element is the wrong type or the element in the middle is wrong.
+|mFor more, choose
+|iDo nothing,nop
+|iSet constants,Hpnode/set
+|p

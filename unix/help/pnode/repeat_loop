@@ -1,0 +1,16 @@
+|11,73
+     The REPEAT loop REPEATs a number of instructions until a given condi-
+tion becomes true.  The instructions will always be executed once, even if
+the condition starts out as true.
+
+repeat Examples:
+     i := 0;
+     repeat
+         writeln(i,i*i,i*i*i);
+         i := i + 1;
+         until i > 10;
+|mFor more, choose
+|iDo nothing,nop
+|iWHILE loops,Hpnode/while_loop
+|iBoolean values,Hpsymbol/boolean
+|p

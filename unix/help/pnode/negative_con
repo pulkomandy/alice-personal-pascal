@@ -1,0 +1,9 @@
+|8,72
+     A negative constant is a number with a "-" sign in front of it.  The
+number may be either a real or integer constant.
+
+|mFor more, choose
+|iDo nothing,nop
+|iInteger constants,Hpnode/integer_cons
+|iReal constants,Hpnode/real_constan
+|p

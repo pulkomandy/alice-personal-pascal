@@ -1,0 +1,8 @@
+|9,73
+     A bad expression is an expression that contains a syntax error (which
+means that there's something wrong with the form of the expression).
+|mFor more, choose
+|iDo nothing,nop
+|iList of possible expressions,Hpclass/value
+|iEditing expressions,Hcommand/edit
+|p

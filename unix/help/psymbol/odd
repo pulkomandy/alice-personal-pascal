@@ -1,0 +1,16 @@
+|11,71
+     "Odd" determines if an integer is odd.  It returns a Boolean value:
+"True" if the integer is odd, "False" if it is even.
+
+Odd Examples:
+     if Odd(i) then do begin
+         writeln("i is odd");
+         end
+     else begin
+         writeln("i is even");
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iInteger,Hpsymbol/integer
+|iBoolean,Hpsymbol/boolean
+|p

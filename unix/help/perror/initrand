@@ -1,0 +1,12 @@
+|13,73
+Random modulus must be greater than zero
+    In a call to the Initrandom procedure, you wrote
+
+          Initrandom(X,modulus);
+
+    where X is any number and "modulus" was something that was negative or
+    zero.  The second argument of "initrandom" must be greater than zero.
+|mFor more, choose
+|iDo nothing,nop
+|iInitrandom,Hpsymbol/initrandom
+|p

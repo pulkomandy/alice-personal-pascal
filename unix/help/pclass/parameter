@@ -1,0 +1,19 @@
+|19,74
+     A parameter placeholder appears in the heading of a procedure or func-
+tion declaration.  It stands for an argument that will be passed to the
+subprogram when it is called.
+     The parameter declaration gives the name of the parameter and its
+type.  The name of the parameter must follow the usual rules for Pascal
+names and must be different from every name inside the defined subprogram.
+However, it can be the same as a name defined outside the subprogram.
+     Parameters may be value parameters, var parameters, or formal
+parameters.
+|mFor more, choose
+|iDo nothing,nop
+|iProcedure declarations,Hpnode/procedure
+|iFunction declarations,Hpnode/function
+|iValue parameters,Hpnode/parameter
+|iVar parameters,Hpnode/var_paramete
+|iFormal function parameters,Hpnode/function_par
+|iFormal procedure parameters,Hpnode/procedure_pa
+|p

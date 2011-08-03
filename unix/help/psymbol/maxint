@@ -1,0 +1,13 @@
+|13,73
+     "maxint" is a predefined constant standing for the largest integer
+that the computer can accept.  This happens to be +32767, but it is better
+to use "maxint" than the actual number, since other computers may have
+different limits on the size of integers that they can accept.
+
+Maxint Examples:
+     if a < (maxint/2) then begin
+         a := 2 * a;
+         end;
+     else begin
+         writeln('Cannot double "a".');
+         end;

@@ -1,0 +1,6 @@
+|6,74
+Line on screen too long
+    The maximum length of a line on the screen is 250 characters.  You must
+    delete something from the line immediately.  Try to break the line into
+    several separate pieces, e.g. separate instructions.  This is one error
+    that you can't wait to change later on.

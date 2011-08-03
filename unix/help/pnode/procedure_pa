@@ -1,0 +1,22 @@
+|22,74
+     A procedure parameter appears in the heading of a subprogram declara-
+tion and stands for a procedure that is passed as an argument to the
+subprogram.  When you pass a procedure to a subprogram, the declaration of
+the procedure parameter in the subprogram's heading must be exactly the
+same as the declaration of the procedure argument in the caller.
+     A lot of built-in procedures may NOT be passed as procedure arguments.
+For example, "readln" and "writeln" may not be passed as procedure argu-
+ments because they are defined in non-standard ways.
+
+Procedure Parameter Examples:
+     type
+         info = array [1..N] of record ... end;
+     function f( procedure proc(i,j:integer) ):real;
+         ...
+     procedure search( procedure sort(table:info) );
+         ...
+|mFor more, choose
+|iDo nothing,nop
+|iFunction declarations,Hpnode/function
+|iProcedure declarations,Hpnode/procedure
+|p

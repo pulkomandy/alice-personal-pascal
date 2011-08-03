@@ -1,0 +1,31 @@
+|24,74
+     When you are writing a real value with "write" or "writeln", you may
+specify a precision.  This tells how many digits you want the computer to
+write out after the decimal point of the real value.
+     If you want to specify a precision, you also have to specify a field
+width.  The field width specifier follows the value you want to write out,
+and the precision follows the field width specifier.  Both the field width
+specifier and the precision are written as a colon (:) followed by a posi-
+tive integer.
+     If you want N places after the decimal point, your precision should be
+:N.  For example, :2 gives you two places after the decimal point (the
+usual way that money values are written out).
+     If you have something like "a:8" in a writing instruction and you want
+to add a precision on the end, you must edit the entire "a:8", not just the
+"8".
+               Precision Examples:
+     var
+         price : real;  {Price of something}
+     begin
+     price := 10.00;
+     writeln('The price is $',price:6:2);
+          {Will print out $ 10.00}
+     writeln('The price is $',price:6:3);
+          {Will print out 0.000}
+|mFor more, choose
+|iDo nothing,nop
+|iThe "write" procedure,Hpsymbol/write
+|iThe "writeln" procedure,Hpsymbol/writeln
+|iField width,Hpnode/field_width
+|iReal numbers,Hpsymbol/real
+|p

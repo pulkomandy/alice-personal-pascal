@@ -1,0 +1,13 @@
+|14,70
+     A Set-Item placeholder may be filled into a set constant with a
+constant or a subrange of constants.  These constants can be integers,
+characters, or enumerated types, depending on the base type of the set.
+|mFor more, choose
+|iDo nothing,nop
+|iSet Constants,Hpnode/set
+|iSets,Hpnode/set_type
+|iSubranges,Hpnode/subrange
+|iInteger,Hpsymbol/integer
+|iChar,Hpsymbol/char
+|iEnumerated Types,Hpnode/enumerated_t
+|p

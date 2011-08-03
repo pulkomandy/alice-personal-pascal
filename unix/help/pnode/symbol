@@ -1,0 +1,25 @@
+|20,74
+     A Symbol is the name of something: a variable, a subprogram, or a
+named type or constant.  Symbol names can be made up of letters, digits,
+and underscore (_) characters.  The first character of a symbol name cannot
+be a digit.  Symbols names can be any length from 1 to 255 characters.
+     The first time you enter a particular symbol name, ALICE will note
+which letters are in upper case and which are in lower.  From that point
+onward, ALICE will always display the symbol name in that way, even if you
+type it differently.  For example, if you start off calling a variable
+"Xyz", ALICE will always display it that way, even if you type "XYZ",
+"xyz", etc.
+
+Valid Symbol Examples:
+     Hello   lucky_day   C1   ab_123
+Invalid Symbol Examples:
+     2c   x!yz   what?
+|mFor more, choose
+|iDo nothing,nop
+|iPossible variable forms,Hpclass/variable
+|iPossible types,Hpclass/type
+|iConstants,Hpclass/constant
+|iProcedures,Hpnode/procedure
+|iFunctions,Hpnode/function
+|iSymbol Completion,Hmisc/completion
+|p

@@ -1,0 +1,4 @@
+|4,72
+Square root of negative number
+    You cannot take the square root of a negative number.  Therefore, you
+    can't use the "sqrt" function on such numbers.

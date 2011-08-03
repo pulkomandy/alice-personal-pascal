@@ -1,0 +1,21 @@
+|21,72
+Improper use of format specifier (colons)
+    This error occurs if you use the ":" operator inside any expression
+    that is not an argument to "write" or "writeln" (or some other
+    subprogram).  In "write" and "writeln", the colon is used to indicate
+    field widths and precision, as in
+
+          writeln(a:8:5);
+
+    Elsewhere, they are illegal.  One deceptive way of getting this error
+    is to start with something like
+
+          writeln(a:8)
+
+    and edit the "8" into "8:5".  You must highlight the full expression
+    "a:8" and edit that.
+|mFor more, choose
+|iField widths,Hpnode/field_width
+|iPrecisions,Hpnode/precision
+|iCLIP,Hcommand/clip
+|p

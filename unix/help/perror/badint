@@ -1,0 +1,6 @@
+|6,68
+Integer not in the range -32767..32767
+
+    You tried to use an integer not in the range -32767..32767.  If
+you wish to use a number outside this range, it must be declared as a
+'real' number.  Note in Pascal, the number -32768 is not allowed.

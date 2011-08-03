@@ -1,0 +1,9 @@
+|9,74
+There is no declaration for this item
+    You tried to use the DECL command to go to the declaration of some
+    name, but ALICE could not do this.  The most common cause of this error
+    is that the cursor was not pointing to an actual name.  For example, it
+    might have been resting on a constant instead of a variable name.  It
+    is also possible that the name you were pointing to is a built-in name
+    (like the type name "integer").  You cannot obtain the declaration for
+    a built-in name.

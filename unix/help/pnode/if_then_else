@@ -1,0 +1,24 @@
+|19,73
+     The statements in the first BEGIN/END block are executed if a
+particular condition is true; otherwise, the statements in the BEGIN/END
+block that follows the "else" are executed.
+     The Condition that follows the word "if" tells what the condition is.
+It is almost always a relational condition.  If fact, the Condition can be
+any that yields a Boolean (true/false) result.
+     When you have an IF/ELSE statement, the statements following the "if"
+are executed if the condition is true and the statements following the
+"else" are executed otherwise.  There is also a form of IF that doesn't
+have an ELSE part (see menu for further help).
+
+IF-THEN-ELSE Examples:
+     if c >= d then begin
+         pos := c - d;
+         end;
+     else begin
+         pos := d - c;
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iThe IF statement,Hpnode/if_then
+|iBoolean data,Hpsymbol/boolean
+|p

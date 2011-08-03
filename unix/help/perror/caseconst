@@ -1,0 +1,12 @@
+|12,73
+Constant isn't the same type as case value
+    One of the constants in your case labels doesn't have the same type as
+    the expression that is given in the CASE statement.  For example, if
+    "i" is an integer variable
+
+          case i of
+            'a' : ...
+
+    gives this sort of error because 'a' isn't the same type as "i".
+    Either change the expression on the CASE statement line or change the
+    case label value.

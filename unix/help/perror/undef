@@ -1,0 +1,19 @@
+|19,74
+Undefined name
+(And various other messages)
+    You used a name that ALICE didn't recognize.  This could be the name of
+    a type, a variable, a named constant, or a subprogram.
+         The most common cause of this error is a simple spelling mistake
+    -- you were typing a name that you already declared and just spelled it
+    wrong.  To correct this, press CTRL-U to UNDO your error, then retype
+    the name correctly.
+         Another common cause is forgetting to put in the declaration for
+    the name.  To add this declaration, just type "var", "type", "const",
+    "procedure", or "function" (depending on what the name stands for).
+    ALICE will jump up to the appropriate declaration section and you can
+    then add the necessary declaration.
+|mFor more, choose
+|iDo nothing,nop
+|iKinds of declarations,Hpclass/declarations
+|iSymbol completion,Hmisc/completion
+|p

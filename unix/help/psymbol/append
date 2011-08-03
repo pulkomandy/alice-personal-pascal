@@ -1,0 +1,19 @@
+|14,74
+     The "append" procedure associates a file with a file variable and sets
+up the file for writing.  Information written to the file will be written
+on the end of the file's current contents; it will NOT write over what is
+already there.  If the file does not already exist, it will be created.
+     If the "filename" argument is omitted, ALICE will use the name of the
+file variable as the file name.
+
+append Examples:
+     var
+         intfile : file of integer;
+     begin
+     append(intfile,'filename');
+     write(intfile,1);
+|mFor more, choose
+|iDo nothing,nop
+|iRewrite,Hpsymbol/rewrite
+|iFile,Hpnode/file_type
+|p

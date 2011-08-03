@@ -1,0 +1,16 @@
+|16,74
+     The SubStr procedure copies part of one string into another string.
+The first argument of SubStr is the string that contains the characters to
+be copied.  This can be a string constant or variable.  The second argument
+is an integer giving the number of characters to be copied.  The third
+argument is another integer giving the subscript where copying should
+begin.  The fourth argument is a string variable; this is where the
+characters will be copied.
+
+SubStr Examples:
+     var
+         str : packed array [1..10] of char;
+     begin
+     SubStr('abcdefg',2,3,str);
+     writeln(str);
+        {Will write out "cd"}

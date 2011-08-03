@@ -1,0 +1,24 @@
+|18,74
+     "Setnext" is used to position a file that has been opened for direct
+access reading and writing.  It is called with
+
+          setnext(fvar,number);
+
+where "fvar" is a file variable that has been initialized with the "update"
+procedure and "number" is an integer.  The integer gives the number of the
+element in the file to which the next "get" or put" is to apply.  The first
+element in the file is number zero.
+
+Setnext Examples:
+     var
+         f : file of integer;
+      ...
+     update(f,'myfile');
+     setnext(f,4);
+        { Will read fifth element in file }
+|mFor more, choose
+|iDo nothing,nop
+|iUpdate,Hpsymbol/update
+|iGet,Hpsymbol/get
+|iPut,Hpsymbol/put
+|p

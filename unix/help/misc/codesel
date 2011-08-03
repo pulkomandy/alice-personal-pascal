@@ -1,0 +1,17 @@
+|17,74
+     Before some ALICE commands may be issued, you have to select a portion
+of your code for the command to work on.  You do this by moving the cursor
+on top of the code you want to select, then pushing F10.  This will
+highlight whatever is directly under the cursor and anything this thing
+contains.  For example, if you place the cursor on the "while" of a WHILE
+loop, you will highlight the entire loop, including the statements inside
+the loop.
+     If you want to highlight more than one thing and its contents, move
+the cursor again.  Whatever the cursor crosses will also be highlighted.
+     If you change your mind about selecting something, just press F10
+again and the highlighting will disappear.
+     Code selection indicates to various commands what section of code you
+want to work with.  If you only want to work with a single variable,
+constant, or comment, you don't need to select it in the way we've just
+described.  Simply move the cursor to the thing you want to work with and
+issue the appropriate command.

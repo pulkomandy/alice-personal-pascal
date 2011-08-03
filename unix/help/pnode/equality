@@ -1,0 +1,17 @@
+|13,74
+     The = operator decides if two things are equal.  The things being
+compared must have the same type, with the exception of strings.  The
+strict rules of Pascal say that strings of different lengths have different
+types, but "=" can be used to compare strings of different lengths.
+     The result of = is a Boolean (true/false) value.  It will be "true" if
+the things being compared really are equal, and "false" otherwise.
+
+Equality Examples:
+     if a = b then begin ...
+     while (I div J) = 0 do begin ...
+     if (c = ' ') or (c = '_') then begin ...
+     if str1 = "hello" then begin ...
+|mWould you like more on
+|iDo nothing,nop
+|iBoolean types,Hpsymbol/boolean
+|p

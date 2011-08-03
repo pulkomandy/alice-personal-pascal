@@ -1,0 +1,20 @@
+|15,72
+     The "real" type is used for numbers that may have fractional parts.
+These numbers can be positive or negative or zero.
+     Pascal lets you add (+), subtract (-), multiply (*), and divide (/)
+real numbers.  Integer values that are assigned to real variables will
+automatically be converted into real values.  However, real values cannot
+legally be assigned to integer variables.
+
+Real Examples:
+     var
+         x, y, z : real;
+     begin
+     x := 3.0;
+     y := x * -3.44;
+     z := 4 + y / x;
+|mFor more, choose
+|iDo nothing,nop
+|iReal constants,Hpnode/real_constan
+|iVariable declarations,Hpnode/variable_dec
+|p

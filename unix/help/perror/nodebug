@@ -1,0 +1,9 @@
+|10,72
+Debug window does not exist
+    You attempted to perform an operation on the debug window, but the
+    debug window has not yet been created.  The easiest way to create the
+    debug window is to choose "Debug On" from the Run-Time Menu.
+|mFor more, choose
+|iDo nothing,nop
+|iDebug On,Hcommand/bugon
+|p

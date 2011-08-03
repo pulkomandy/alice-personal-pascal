@@ -1,0 +1,3 @@
+	cc -LARGE -I../h -O -Ml2 -DLARGE -DTURBO -DFULL -p  -c treeprint.c
+treeprint.c
+	cc -i -Ml -F 2000 -SEG 135 -nl 12 /lib/Lsignal.o main.o treesubr.o scan.o subr.o  window.o workspace.o search.o  pop.o menu.o menudat.o  load.o save.o  history.o mark.o text.o text2.o oledit.o ole.o keyboard.o  expparse.o cmds2.o  help.o nullhelp.o alsym.o  treeprint.o output.o outfuncs.o display.o dump.o  command.o action.o actrout.o actrout2.o builtin.o filename.o  mem.o kids.o mainloop.o trace.o run2.o runfile.o types.o setup.o interp.o runtime.o  typecheck.o functions.o cfunc.o fullfuncs.o classes.o scan_decl.o common.o load_nodes.o unix.o -o alice -lcurses -ltermcap -lm

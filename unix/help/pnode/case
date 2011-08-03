@@ -1,0 +1,26 @@
+|20,74
+     A CASE statement executes one set of statements from a list of Case
+Instances.  Each statement in the list has one or more case labels.  Each
+case label is a constant value, and all the labels have the same type.  The
+CASE statement evaluates an expression of that type and executes the state-
+ments with a label that matches the value of the expression.  If the value
+of the expression doesn't match any of the labels, ALICE will see if there
+is a statement in the list with the label "else".  If there is such a
+statement, it will be executed; otherwise, ALICE will give you an error.
+ALICE does not notice if two case labels have the same value.
+     The expression that the CASE statement evaluates may have any scalar
+type.
+
+CASE Statement Examples:
+     case t mod 3 of
+         0: writeln('Divisible by three');
+         else begin
+             writeln('Not divisible by three');
+         end;
+     end;
+|mFor more, choose
+|iDo nothing,nop
+|iScalar types,Hmisc/scalar
+|iCase instances,Hpnode/case_instanc
+|iELSE clause,Hpnode/case_else
+|p

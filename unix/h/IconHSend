@@ -1,0 +1,19 @@
+INCL = action.h alctype.h alice.h\
+	altypes.h bfuncs.h break.h\
+	class.h\
+	command.h dbflags.h esbuilt.h\
+	esmacros.h extramem.h flags.h\
+	functions.h huff.h\
+	interp.h jump.h keys.h\
+	mem.h menu.h node.h\
+	ole.h printt.h process.h\
+	scan.h search.h\
+	sym.h systemCall.h token.h\
+	treerot.h tune.h typecodes.h\
+	window.h workspace.h
+
+LastIconHfiles: $(INCL)
+	-echo $? | tr ' ' '\012' >hfiles
+	isend `cat hfiles` hfiles
+	touch LastIconHfiles
+

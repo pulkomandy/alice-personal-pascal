@@ -1,0 +1,11 @@
+|11,74
+     The StrScan function searches one string to see if it contains a
+second string.  The first argument of the function is the string to search.
+The second is the string to search for.  The function returns an integer
+that gives the subscript inside the first string where the second string
+begins.  If the second string is not found inside the first string, StrScan
+returns the value 0.
+
+StrScan Examples:
+     StrScan('Hi there','the') = 4
+     StrScan('Hi there','abc') = 0

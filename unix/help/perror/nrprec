@@ -1,0 +1,12 @@
+|13,73
+Precisions may only be applied to real numbers
+    In a "write" or "writeln" instruction, you had an argument of the form
+    "a:m:n", where "m" and "n" were integers.  For this form to be valid,
+    "a" must be a real number.  In your program, however, "a" was not a
+    real number.  Either change the argument that you are trying to write
+    out so that it IS a real number, or delete the ":n".
+|mFor more, choose
+|iDo nothing,nop
+|iReal numbers,Hpsymbol/real
+|iPrecisions,Hpnode/precision
+|p

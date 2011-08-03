@@ -1,0 +1,24 @@
+|24,71
+     All the commands of ALICE may be found on menus.  To execute any
+command, you just have to select it from the appropriate menu.  You can
+also press a key that has been bound to the command, or press CTRL-X and
+type in the command name and any arguments it takes.
+     The Master Menu contains a list of all the other command menus.  To
+get this menu, press F11 (the unlabelled key to the right of F10).  From
+this, you can choose any of the other menus.  Most of the menus are also
+bound to individual keys, so you can summon a menu by pressing the
+appropriate key.
+  Master Menu (F11) -- lists all other major command menus
+  Select Menu (F9) -- do things with selected sections of code
+  Help Menu (HELP) -- help on a variety of topics
+  Move Menu (SHIFT-4) -- commands that move the cursor around
+  Run Menu (F6) -- running programs and setting up debugging options
+  Insert Menu (F4) -- insert various types of code into a program
+  Delete Menu (F3) -- delete sections of code from a program
+  Changes Menu (F5) -- change code in various ways
+  Files Menu (F8) -- commands that work with files
+  Misc Menu (F7) -- other commands
+|mFor more, choose
+|iDo nothing,nop
+|iGetting Information about Commands,Hmisc/comhelp
+|p

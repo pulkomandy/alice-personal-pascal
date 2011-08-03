@@ -1,0 +1,24 @@
+|18,73
+     GOTO tells ALICE to go to the statement with the specified label and
+continue execution there.  The label must be an integer that has been
+declared in a LABEL declaration section of your program.
+     As a general rule, you should try to avoid the use of GOTOs in your
+programs -- they tend to make the logic of your program harder to follow.
+Whenever you are tempted to use a GOTO, first ask yourself if there is a
+more elegant way to express what you want to do, using such statements as
+FOR or WHILE.
+     You will receive an error message if a GOTO attempts to jump out of a
+subprogram while you are using SUPERSTEP to execute your program.
+
+GOTO Examples:
+     goto 5;
+     if eof() then begin
+         writeln('Something wrong happened!');
+         goto 999;
+     end;
+|mFor more, choose
+|iDo nothing,nop
+|iLabel declarations,Hpnode/labels
+|iStatement labels,Hpnode/labeled_stat
+|iSUPERSTEP,Hcommand/superstep
+|p

@@ -1,0 +1,11 @@
+|11,73
+Cannot write to this file
+    You attempted to do a write or put to a file that hasn't been set up
+    for writing.  Usually this means that it was set up for reading with
+    "reset".  You can use the "update" procedure to create a file that can
+    be both read from and written to.
+|mFor more, choose
+|iDo nothing,nop
+|iUpdate procedure,Hpsymbol/update
+|iPut procedure,Hpsymbol/put
+|p

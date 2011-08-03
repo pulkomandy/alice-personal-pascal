@@ -1,0 +1,23 @@
+|16,73
+     The "Get_Char" function gets a single character from the keyboard.
+
+          c := Get_Char;
+
+assigns a single character from the keyboard to the "char" variable "c".
+     Users should avoid mixing calls to "Get_Char" and "Char_Waiting" with
+calls to "readln", "get", "writeln", etc.
+
+Get_Char Examples:
+     c := StrEnd;
+     {Search for a blank}
+     while c <> ' ' do begin
+         c := Get_Char;
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iChar_Waiting,Hpsymbol/char_waiting
+|iRead,Hpsymbol/read
+|iReadln,Hpsymbol/readln
+|iInput,Hpsymbol/input
+|iStrEnd,Hpsymbol/strend
+|p

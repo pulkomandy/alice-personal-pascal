@@ -1,0 +1,13 @@
+|14,73
+Cannot find a list to expand
+    You have used the one of the ALICE commands that is supposed to expand
+    a list, but the cursor is not on a list that can be expanded.  If you
+    issued the expansion command by accident, don't worry -- nothing
+    happened.  If you really wanted to issue the command, move the cursor
+    so it is on something that is part of a list (e.g. a statement, a
+    declaration, or a list inside a statement or declaration).
+|mFor more, choose
+|iDo nothing,nop
+|iInserting,Hcommand/insert
+|iExtending,Hcommand/extend
+|p

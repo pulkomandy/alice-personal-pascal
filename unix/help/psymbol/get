@@ -1,0 +1,29 @@
+|20,73
+     The "get" procedure is usually used to read an element from a file.
+The argument of "get" is the file variable of the file you want to read.
+If this argument is omitted, "get" will read "input".  You will get an
+error if the file you try to read was not initialized with "reset".
+     If "eof" is true on the file you are trying to read, you will get an
+error if you call "get" on that file.  Otherwise, ALICE advances the
+current position of the file by one element and "f^" receives the value of
+the new current element.  "Get" will set "eof" true if there is no next
+element, and will set "eoln" true if you are reading a text file and you
+have reached the end of a line.
+
+Get Examples:
+     var
+         f : file of integer;
+         i : integer;
+       ...
+     reset(f,'myfile');
+     get(f);
+     i := f^;
+|mFor more, choose
+|iDo nothing,nop
+|ireset,Hpsymbol/reset
+|iinput,Hpsymbol/input
+|iFiles,Hpnode/file_type
+|ieoln,Hpsymbol/eoln
+|ieof,Hpsymbol/eof
+|iread,Hpsymbol/read
+|p

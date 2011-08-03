@@ -1,0 +1,13 @@
+|14,74
+This index is not of the appropriate type
+    You typed something of the form
+
+          name[subscript]
+
+    but the "subscript" was not the right data type for subscripting this
+    array.  Check the array declaration to see what type of data you should
+    use.  Either change the array declaration or change the subscript.
+|mFor more, choose
+|iDo nothing,nop
+|iArray subscripts,Hpnode/array_indexi
+|p

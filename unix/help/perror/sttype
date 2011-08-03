@@ -1,0 +1,5 @@
+|5,74
+Can't return a complex type from a function
+    At present, functions cannot return complication values (records,
+    arrays, etc.).  This error is given if you attempt to define a function
+    that returns anything but a simple value.

@@ -1,0 +1,6 @@
+#define	valid_node(typ)		(typ >= 0 && typ < NodeCount)
+#define ntype_info(typ)		lt_node_flags[typ]
+#define kid_count(typ)		lt_kid_count[typ]
+#define full_kids(typ)		lt_full_kids[typ]
+#define	kid_class(typ,kid)	(lt_class_val[lt_K_Class[typ]+kid])
+#else

@@ -1,0 +1,13 @@
+|9,74
+     Inside a set constant, you may specify sequences of elements using a
+subrange.  Subranges must be given in the right order.  For example, [8..1]
+is wrong, as is [5..8,1..3].
+
+Range Sets Examples:
+     [1..4]    {Set of integers from 1 to 4}
+     ['a'..'z']    {Set of lower case letters}
+|mFor more, choose
+|iDo nothing,nop
+|iSet constants,Hpnode/set
+|iThe SET type,Hpnode/set_type
+|p

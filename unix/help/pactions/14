@@ -1,0 +1,8 @@
+|8,69
+     Selecting this lets you enter a variable declaration.  ALICE will
+expand the declaration to the template
+
+          var
+              Name : Type;  {Comment}
+
+and the token will be placed in the Name placeholder.

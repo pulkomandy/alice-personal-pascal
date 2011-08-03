@@ -1,0 +1,14 @@
+|14,74
+Var actual parameter must be of identical type to the formal
+    When you pass an argument to a subprogram that requires a var
+    parameter, the type of the argument must be identical to the type that
+    the subprogram declared for the parameter.  If the parameter is a
+    structured type like an array, the only way around this error is to
+    declare a named type in the TYPE declaration section and associate the
+    structured type with the name.  Then declare both the parameter and the
+    argument to have the named type.
+|mFor more, choose
+|iDo nothing,nop
+|iVar parameters,Hpnode/var_paramete
+|iType declarations,Hpnode/type_declara
+|p

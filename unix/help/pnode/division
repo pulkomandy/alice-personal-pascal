@@ -1,0 +1,14 @@
+|15,74
+     A division operation divides two numbers or expressions.  You can only
+divide numeric values (reals or integers).  The result of the division is
+always "real".
+
+Valid Division Examples:
+     3.0/5.0   5/3    -6/2.0    4.3/-2    (2*b)/c    p/3+3/p
+Invalid Division Examples:
+     'a'/2    (b>c)/4.3    [1,2,3]/[4,5,6]
+|mFor more, choose
+|iDo nothing,nop
+|iDividing integers,Hpnode/integer_divi
+|iFinding division remainders,Hpnode/modulus
+|p

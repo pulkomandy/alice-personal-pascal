@@ -1,0 +1,14 @@
+|11,73
+     The "sysproc" procedure is used to call an assembler language or
+library routine.  The first argument must be an integer value that gives
+the address of the routine to be called.  After this come a maximum of ten
+other arguments to be passed to the routine being called.
+     Further details about this subprogram may be found in the ALICE
+Reference Manual.
+
+Sysproc Examples:
+     sysproc(routine,arg1,arg2,...,arg10);
+|mFor more, choose
+|iDo nothing,nop
+|isysfunc,Hpsymbol/sysfunc
+|p

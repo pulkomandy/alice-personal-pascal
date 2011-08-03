@@ -1,0 +1,15 @@
+|11,74
+Not a hidden part of the program
+    You issued the REVEAL command on something that was not hidden.  If you
+    did this by accident, don't worry because nothing happened.  If you
+    were really trying to reveal something, check to make sure that the
+    cursor was on a
+
+           ... {Comment} ...
+
+    that indicates hidden code.
+|mFor more, choose
+|iDo nothing,nop
+|iHiding things,Hcommand/hide
+|iREVEAL,Hcommand/reveal
+|p

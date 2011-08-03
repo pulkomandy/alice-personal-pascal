@@ -1,0 +1,18 @@
+|17,74
+     ALICE allows you to comment out sections of code, allowing you to omit
+lines of statements from the execution of your program.  Errors within the
+commented out code are still reported.  To restore the section of code to
+normal, select it and execute the 'raise' command.
+
+For example:
+
+	{
+		writeln("This statement will not be executed");
+	}
+
+|mFor more, choose
+|iDo nothing,nop
+|iHow to comment out code,Hcommand/comout
+|iThe RAISE command,Hcommand/raise
+|iHiding code,Hcommand/hide
+|p

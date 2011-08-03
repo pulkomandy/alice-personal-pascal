@@ -1,0 +1,69 @@
+Alice Pascal allows the user to prepare "library" routines which can be
+loaded (merged) with his program.  The library routines are entered using
+Alice Pascal as usual, then saved in a special way that permits them to
+be later loaded as a library.
+
+Consider the following program:
+
+>program {+ Program-Name}(input, output);
+>
+>const
+>	sec_per_min = 60;       {+ Comment}
+>	min_per_hr = 60;        {+ Comment}
+>	hr_per_day = 24;        {+ Comment}
+>	day_per_yr = 365;       {+ Comment}
+>
+>procedure duration(secs: integer);
+>	
+>	var
+>		mins, hrs, days, years : integer;       {+ Comment}
+>	
+>    begin
+>	mins := secs div sec_per_min;
+>	secs := secs mod sec_per_min;
+>	hrs := mins div min_per_hr;
+>	mins := mins mod min_per_hr;
+>	days := hrs div hr_per_day;
+>	hrs := hrs mod hr_per_day;
+>	years := days div day_per_yr;
+>	days := days mod day_per_yr;
+>	writeln(years, "years,", days, "days,", hrs, "hours", mins, "mins", secs, "secs");
+>    end;
+>begin
+>	duration(7200);
+>end.
+
+If the user wished to make the duration procedure and its constant declarations
+into a library, he simply saves the workspace as a library, using the savelib
+command (which now also appears on the files menu).  The saved file will
+contain information identifying it as a library to Alice Pascal.
+
+To merge the "duration library" into another program, simply load the library
+the usual way -- the declarations (including procedures and functions) of
+the library will be merged into the workspace (i.e. they won't destroy
+the current contents of the workspace).
+
+Note that *only* the declarations (including procs and funcs) part of the
+library is merged; statements in the "mainline" of the library aren't
+loaded.
+
+Since Alice Pascal permits various types of declarations in any order
+(provided there aren't forward references), you can load multiple libraries
+to get something like:
+
+program
+	const {for library 1}
+	type {for library 1}
+	var {for library 1}
+	procedure(s) {for library 1}
+	const {for library 2}
+	type {for library 2}
+	var {for library 2}
+	procedure(s) {for library 2}
+
+A point on style:  it might be nice to mention that all of the declarations
+in a library could be hidden before savelib'ing, with the hide comment
+describing the library, so that later when the library is loaded it shows
+up as hidden code.
+
+Jan

@@ -1,0 +1,26 @@
+|21,74
+     The pointer type is a special data type that points to another kind of
+data.  For example, you can have pointers to integers, pointers to records,
+pointers to enumerated types, and so on.  If P is the name of the pointer,
+P^ stands for the thing that the pointer points to.
+     Pointers are set up with the "new" procedure.  This creates a variable
+that the pointer can point to and points the pointer toward that variable.
+     The value of one pointer can be assigned to another in an assignment
+statement, provided that the two point to the same type of value.  The
+value "nil" stands for a null pointer: a pointer that doesn't point to
+anything.
+
+Pointer Examples:
+     var
+         pc1, pc2 : ^char;
+     begin
+     new(pc1);
+     pc1^ := 'A';
+     pc2 := pc1;
+     writeln(pc2^,' is the letter A.');
+     pc1 := nil;
+|mFor more, choose
+|iDo nothing,nop
+|iIndirection,Hpnode/indirection
+|iThe Pointer type,Hpsymbol/pointer
+|p

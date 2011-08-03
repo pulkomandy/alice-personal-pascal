@@ -1,0 +1,16 @@
+|16,74
+     A label number placeholder should be filled in with a label that has
+been declared in the LABEL declaration of your program or subprogram.  This
+label will be an integer with no more than four digits.
+     Label numbers are used to label instructions so you can go to them
+with a GOTO instruction.  As a general rule, you should try to avoid the
+use of GOTOs in your programs -- they make the logic of your program hard
+to follow.  Whenever you are tempted to use a GOTO, first ask yourself if
+there is a more elegant way to express what you want to do, using such
+statements as FOR or WHILE.
+|mFor more, choose
+|iDo nothing,nop
+|iLabel declarations,Hpnode/labels
+|iThe GOTO command,Hpnode/goto
+|iLabelled Statements,Hpnode/labeled_stat
+|p

@@ -1,0 +1,157 @@
+
+'asize' is the type that holds a size.  Either long or unsigned int.
+	(DONE)
+
+2nd argument to do_pushing is an asize.	
+	(partly done -- some calls )
+
+2nd argument to all functions called by scan_decl is an asize, and
+	the value returned by these functions is an asize
+	(partly done)
+
+3rd argument to do_undef becomes an asize
+
+frame size argument to make_frame is an asize.
+
+in the interpreter there is a 'tempsize' variable for size calculations.
+	(done)
+
+we need a blk_move that takes an asize, and it needs to be used in
+N_ST_ASSIGN and other places.  The watcom string routines, for example.
+It must take an asize as the number of bytes.
+
+	(alternate, change blk_move itself and all calls to it)
+
+array index calculation done in asize (DONE)
+
+sym_size of a symbol and sym_offset of a symbol are asizes.
+	(done)
+
+int_kid() macro to be replaced with size_kid() when referring to
+kids that hold sizes, like the kid of the array index.
+	(some done)
+
+calc_size returns an asize.
+
+size_adjust takes and returns an asize
+	(done)
+
+max_stack_size, lc_stack_size are asizes.
+	memory for stacks allocated with lcheckalloc
+	calculations done in long
+	(done)
+
+word_allign returns an asize
+
+copy_mask needs to take an asize.
+
+anything that referred to a 'number of bytes' needs to be an asize.
+
+traceon 2nd arg to become an asize
+
+get_stsize probably DOESN'T want to be an asize.  It must be checked
+	and calls to it must be cleared.
+
+/something here got erased by undo in vi */
+
+scan_trace 2nd argument to become an asize...
+
+bump_stack and unload_stack to take aszie, check code that calcs the
+	argument values.
+
+assig_compat returns a size, must be asize
+
+int_kid(2 of subranges has to be a size_kid, I think
+
+New() memory allocator must be able to handle more than 64K.
+
+arguments passed as calc_size from new/dispose will be asize
+
+zeroing of stack when starting frame must be asize
+
+size of file buffer must be asize (pretty crazy, mind you)
+	This means that all things that ref this size must be checked
+	too.  Loops that read in or write out data must be made asize.
+	routines to do buffer write must be changed (or calls to library
+	routines that can only output 64K must be removed)
+
+rstackov needs to take an asize, and the calls to it with 65000 that were
+supposed to guarantee failure should be replaced.
+
+str_assign needs to handle those long watcomish strings.
+how about a strlen that can do strings >64K?
+
+fillchar needs to take an asize, as this is related to 'zero', but
+	other callers of fillchar may or may not want to pass an asize.
+	Notably the Pascal fillchar, which takes an integer, pascal style.
+
+do_strcat, do_strdelete, do_strinsert, do_substr, I guess we can safely
+rule out strings longer than 64K because users can't declare them or
+access them.
+
+pack and unpack work with arrays.  Can be any size.
+
+do_blkmov itself (var_to_mem and mem_to_var) needs to use asize
+
+The code that pushes arrays and records on the stack (do_1call)
+
+the 'size' field in a generic must remain integer, but we have to figure
+out what to put there if the object is a whopper.
+
+-- I think we can give up on this:
+
+=========================
+To allow stack bigger than 64K
+	define new typedef 'stacksize' as long for ST.  unsigned elsewhere
+	max_stack_size, lc_stack_size modified and math modified.
+
+	do_undef, copy_mask, check_undef must be able to handle
+	larger stack.
+
+	check in make_frame for stack overflow must be long
+
+	rstackov must handle long stack size, calls to rstackov(65000)
+	must be changed.
+
+	New() memory allocator must be able to handle more than 64K.
+
+=========================
+To allow stack frame bigger than 64K  (no object >64K (or 32, see below))
+	all the above, plus
+	sym_offset must be framesize.  (It always has been as it is overlayed
+			with sym_value, a pint)
+	act_size must return a framesize.
+		setting of the act_size field (comp_decls) must be framesize.
+
+	make frame 2nd argument a framesize.
+
+	zeroing of frame must be modified for larger stack frames
+		(special call if >64K)
+	unload_stack and bump_stack in makeframe and S_RETURN must handle longs
+
+2nd argument to all functions called by scan_decl is an stacksize, and
+	the value returned by these functions is an stacksize
+	(partly done)
+	Scan_decl itself must be properly modified.
+======================
+Objects bigger than 32K
+	Right now the limit is a bit low, at 32K.  To fix this, we can
+	still work with the asize type, but it now becomes an unsigned.
+	The only objects larger than 32K are arrays and records,
+	so in theory we only have to change these guys to make sure
+	all references to their size are unsigned.
+
+	In theory, lots of related stuff needs changing to be pure.
+	All loops over the size (ie. of a file buffer) have to be
+	unsigned and not signed.  Most of this is done, I think.
+	Also, overflow checking gets a bit harder.  (must be done in long)
+----------------------
+
+check that min and max are not suddenly used on longs.  Perhaps they
+	should have been macros.
+
+
+
+
+LOTS OF LOCAL VARIABLES referring to all these functions and macros must
+be changed from 'int' or 'unsigned' or 'bits16' into asize.

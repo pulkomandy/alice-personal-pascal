@@ -1,0 +1,20 @@
+|15,74
+     The "poke" procedure stores a byte at a particular location in memory.
+"Poke" takes two arguments: the first is an integer giving the address
+where you want to store the byte, and the second is an integer that holds
+the byte itself.  Since the second is only supposed to represent a byte,
+it should be in the range 0..255.  If it is not, its value will be taken
+"mod 256".
+
+Poke Examples:
+     var
+         i, v : integer;
+     begin
+     i := address(v);
+     poke(i,200);
+     writeln(peek(i),' is the value 200.');
+|mFor more, choose
+|iDo nothing,nop
+|iPeek,Hpsymbol/peek
+|iAddress,Hpsymbol/address
+|p

@@ -1,0 +1,57 @@
+> "baddir`Bad directory"
+> "baddir`Can't read current directory"
+> "baddir`Can't read current directory"
+> "baddir`can't cd to %s"
+	from selecting directories in the menu of file names
+9a14
+> "baddot`dot (.) requires a record variable on the left"
+	if you don't have a record on the left of a dot, it won't let you
+	type in anything on the right.  apologize, and tell them to put in
+	a proper variable of record type.
+	(I think this used to be called "needrec")
+> "bnum`Badly formed number %s on input"
+> "bnum`Sorry, '%s' isn't a valid number, please try again"
+	these happen when doing a readln and the user types a garbage
+	number.  The first is from a file, the second is for interactive
+	readln
+> "complex`Nasty Error - expression or program too complex"
+	yup, this means alice ran out of stack space on something.
+	Pretty unlikely, but tell them to reduce the depth of their tree.
+	Probably they have a very complex expression.
+> "foref`Symbol used before it is defined"
+	This is illegal in pascal.  you can't say
+	type blat = integer;
+	     integer = real;
+
+	     because although it's legal to redefine integer, you can't
+	     do it if it has been used.
+> "nodecl`There is no declaration for this item"
+	the new decl command that goes to the declaration of an item gives
+	this if it doesn't have one.  ie. it isn't a symbol or it is
+	a builtin or undefine symbol.
+> "notsusp`Your program is not currently in a suspended state"
+	I think you have this one
+> "nottype`%s is not a type name, you can't put it here"
+	This happens on a type placeholder.  We reject all non-types
+109a120
+> "opt`Invalid m#= option"
+	this is a syntax error on the macro assign command line option.
+	this error can't be explained as it aborts the program.
+> "redo`Nothing to redo"
+	you have this, don't you?
+> "scrxy`ScrXY: Illegal screen query %d\n"
+	for the new scrxy function I told you of.
+> "setord`Set elements must be of ordinal type"
+	when building a set with [], things like [1.2] aren't allowed
+> "toolong`Line on screen too long"
+	nasty nasty.  Lines limited to 250 chars.  Have then shrink it
+	immediately.
+> "undefcase`Undefined case %s"
+> "undeft`Undefined type name"
+> "undo`Nothing to undo"
+	I think you have these.
+> "uninit`Attempt to use a variable that has not been assigned to!"
+	name change, you should have this
+> "varcon`Constant is not of the right type"
+	inside a variant record, the  constants must all match the tag
+	type.

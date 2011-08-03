@@ -1,0 +1,15 @@
+|15,73
+Output precision must be integer
+    In a "write" or "writeln" function, you gave a precision for a real
+    value, but the precision wasn't an integer.  In other words, if you
+    wrote
+
+          writeln(r:A:B);
+
+    the value B was not an integer.  Only an integer can be accepted for a
+    precision.
+|mFor more, choose
+|iDo nothing,nop
+|iPrecisions,Hpnode/precision
+|iWriteln,Hpsymbol/writeln
+|p

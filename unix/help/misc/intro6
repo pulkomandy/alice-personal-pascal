@@ -1,0 +1,21 @@
+|21,74
+     The UNDO command CTRL-U is very important.  It will undo anything you
+just did.  If you press CTRL-U more than once, you undo more than one
+thing.  For example, press CTRL-U three times and you undo the last three
+things you did.
+     As you fill in the blanks of the original program skeleton, you will
+find that ALICE keeps on laying out more skeletons for you.  For example,
+suppose you want to fill in a Statement placeholder with a WHILE statement.
+As soon as you type "while" followed by a space, you will see that ALICE
+lays out the template of a WHILE statement.  This template contains
+placeholders for the various things that always have to be specified in a
+WHILE statement.
+     In this way, you put your program together with templates.  At every
+point of editing, you'll find that you have a valid-looking program.  You
+never have to worry about so-called "syntax" errors, errors that arise
+because the form of your program is bad.  With ALICE, your program's form
+is always perfect.
+|mDo you want more?
+|iYes,Hmisc/intro7
+|iNo,Hmisc/intro_exit
+|p

@@ -1,0 +1,22 @@
+|16,73
+     A FOR loop executes a group of statements one or more times.  It
+begins by assigning the value Start to the given Variable.  It then
+executes the Statement in the block.  Once it has done this, it goes back
+to the top, adds one to the value of Variable, then executes the Statement
+again.  This process repeats itself over and over until the variable
+finally reaches the End value.  The Statement is repeated one last time,
+and then execution continues to the statement that follows the "end;".
+     The Variable and the Start and Finish values must all have the same
+scalar type.
+
+FOR Loop Examples:
+     { Print first ten squares }
+     for i := 10 to 1 do begin
+         writeln(i*i);
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iThe DOWNTO version of FOR,Hpnode/reverse_for_
+|iWHILE loops,Hpnode/while_loop
+|iScalar types,Hmisc/scalar
+|p

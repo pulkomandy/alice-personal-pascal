@@ -1,0 +1,8 @@
+|8,72
+     The "sqr" function returns the square of its argument.  The argument
+may be real or integer, and the result will be the same type as the argu-
+ment.
+
+sqr Examples:
+     sqr(3)   {will be the integer 9}
+     sqr(3.0)  {will be the real 9.0}

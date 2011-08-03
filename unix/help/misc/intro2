@@ -1,0 +1,16 @@
+|17,73
+     Good!  You picked the right menu selection.  You likely noticed that
+the other selection on the menu was "Do nothing".  This appears as the
+first thing on almost every menu in ALICE.  It means something like "I've
+seen enough but don't want to do anything".  If you chose "Do nothing" on
+the last menu, you'd go back to whatever you were doing before you asked
+for this information about ALICE.
+     Now, as we said before, ALICE helps you write programs, run programs,
+and debug programs (debug means finding any mistakes you might have made).
+For a full description of what ALICE can do, you should check the tutorial
+guide, the reference manual, or the text book that describes ALICE.
+However, if you want, we'll keep going with descriptions of the basics.
+|mDo you want more?
+|iYes,Hmisc/intro3
+|iNo,Hmisc/intro_exit
+|p

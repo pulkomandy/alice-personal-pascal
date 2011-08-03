@@ -1,0 +1,13 @@
+|13,73
+     This action occurs if you are on the declaration of an array and type
+a comma in the Range placeholder of the declaration.  The comma indicates
+that the array will have more than one subscript (i.e. it is multi-
+dimensional).  The action therefore changes the usual
+
+          array [Range] of Type;
+
+set up to
+
+          array [Range] of array [Range] of Type;
+
+to accommodate the multi-dimensional nature of the array.

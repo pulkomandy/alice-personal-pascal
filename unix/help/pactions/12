@@ -1,0 +1,8 @@
+|8,73
+     Selecting this will set up a constant declaration.  ALICE will expand
+the declaration to the template
+
+          const
+              Name = Constant;  {Comment}
+
+and the name you enter will be placed in the Name placeholder.

@@ -1,0 +1,29 @@
+|22,74
+     "readln" works like "read" except for following differences.
+
+   (a)  "readln" can only read from text files.
+   (b)  "readln" always reads an entire line.  If there is more on the line
+        than can be stored in the variable arguments given in the call to
+        "readln", the surplus text is just discarded.
+   (c)  When reading from the terminal, you may specify a string constant
+        that prompts for input.
+            readln('Enter an integer: ',i);
+        causes the string
+            Enter an integer:
+        to be displayed on the terminal to tell the user what sort of input
+        is desired.
+
+Readln Examples:
+     readln(filevar,x,y,z);
+     while not eoln do begin
+         read(c);
+         write(c);
+         end;
+     readln;
+|mFor more, choose
+|iDo nothing,nop
+|iRead,Hpsymbol/read
+|iInput,Hpsymbol/input
+|iText,Hpsymbol/text
+|iFiles,Hpnode/file_type
+|p

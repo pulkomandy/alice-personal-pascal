@@ -1,0 +1,13 @@
+|9,74
+     The and operator joins two Boolean values or expressions into a single
+Boolean expression.  The new expression is only true if both of its parts
+are true.  Otherwise the expression is false.
+
+and Examples:
+     if (c >= 'a') and (c <= 'z') then begin
+         writeln(c,' is a lower case letter.');
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iBoolean,Hpsymbol/boolean
+|p

@@ -1,0 +1,6 @@
+|6,74
+Too few arguments
+    You called a procedure or function, but the number of arguments you
+    gave was less than the number that the subprogram expected.  Either add
+    arguments to get the expected number, or change the subprogram declara-
+    tion to take a smaller number of parameters.

@@ -1,0 +1,5 @@
+|5,71
+     If you have a parameter list that has been reduced to zero length
+(because you deleted the last parameter), you can get back a Parameter
+placeholder by choosing this action.  If the parameter list DOES contain
+parameters, this action will place the cursor on the first parameter.

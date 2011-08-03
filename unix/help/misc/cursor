@@ -1,0 +1,9 @@
+|9,72
+     The easiest way to move the cursor is to use the trackball.  You can
+also use
+
+          >>                 -- to go to next empty placeholder
+          <<                 -- to go to previous empty placeholder
+          TAB                -- to go forward
+          SHIFT-TAB          -- to go backward
+          SHIFT-4            -- menu of commands that move cursor

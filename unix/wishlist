@@ -1,0 +1,148 @@
+Editor:
+	load/save a subtree
+		as you can clip a subtree to a workspace, so should you be
+		able to save.
+	labels with leading zeros. 
+		pascal says leading zeros in a label don't matter.  We may
+		switch to full text labels, in which case we won't 'fix' this,
+		or will we?
+	window for immediate mode - need this at least
+		and in general this is part of the multiple editing window
+		bit.  Or we should implement the "statement on the command
+		line bit"
+	Editing of with, fix errors that are signaled (*)
+		The whole business with withs and fields is poor and needs
+		major rework.  this includes the ability to enter a field
+		name without the record define etc. 
+	windows (*)
+		This means multiple editing windows.
+	cursor move after null type can still go quite a distance (*)
+		The whole question of TAB, SPACE and ESC has never been
+		generally dealt with.
+	fancier macros (2 or more char) (*)
+		If we have a meta key we don't need this.
+	lines longer than 255 chars - treeprint buffer is fixed size (*)
+		This is the total refix of oledit, treeprint's output and
+		the output routines.
+	multi-d arrays - special representation *
+		I doubt we need this, but it lets the user display the
+		array as array[1..2,1..2] if entered that way.  Needs
+		special bits
+	search user interface (*)
+		Which means putting search on a key, something like the
+		slash style of vi for fast searching
+		also make token search and regular search the same thing
+	special local variable for function assign instead of actual symbol
+		ie. stop recognizing the function name on the left of the
+		assignment outside the function body.
+	reading in templates from a file (*)
+		Jan is keen on this, but our current output scheme isn't
+		flexible enough to make it really useful.
+Interp:
+	Subrange and other checks on value parameters
+		This can only be done by scanning over the parameters at
+		input time.  This would also be a good time to do the
+		conversion of string parameters which we currently do
+		at push time, and general support for any other funny
+		passing types.
+	some non checked errors on goto
+		We don't catch them all, I am not sure which.
+	goto INTO an if
+		we don't let this happen.  The block the goto is in must
+		be active.
+		actually, further checking shows this may be illegal anyway
+	check for duplication of label - this is hard...
+		since labels uses are actually references.  Need a bit
+		or something.
+	proper creation of frames in immediate execution (how do I duplicate
+	  this bug)
+	function & procedure params - checks, 
+		We don't check the parameters on procedures that are passed
+		as parameters, WHEN they are passed.  We allow the passing
+		if the number of params and the return type, if any, match.
+	printpoints - variable assign, routine call (*)
+		This will be done by the general "debug block" feature I
+		have designed.
+	Assigning to for loop variable caught (*)
+		This needs a bit set in the variable for the duration of
+		the loop.  Time consuming - is it that important?
+	variant records checking(*)
+		Yes, we should check variant assignments.
+	writeln of records, small arrays * - for debug mostly
+		Would be handy
+	new & dispose with variants. - check them at least (*)
+		We currently don't check the extra arguments passed to
+		new that say what variants are to be set.  I am not
+		sure I care.
+	new & dispose with table of pointers & double indirection
+		We should switch new and dispose over to this scheme.
+		it's doubly safe and then we can have a real dispose, only
+		wasting one pointer for every item disposed.
+	traceback statements (*)
+		ie. traceback of the last N statements done, or the last N
+		function calls. Kind of like reverse execution - "how did
+		I get here?"
+	start up again after error? (*)
+		not important
+	start up again from different point (manual goto) (*)
+		Could be done but on the back burner
+	duplicate cases detection (*)
+		this is quadratic but should be done at entry time.  The
+		point is that cases are probably small so it won't be bad.
+
+
+Parser
+	doesn't do withs properly yet.
+	
+General
+	"C functions"
+		support call to a general C function kept in a big array,
+		but no memory wasted, let the user load in an "external"
+		declaration for the routine.
+
+		Include here window routines, message passing, operating
+		system interface and have loadable libraries with these.
+		this can be done as a whole new node, or as a variant on
+		syscall/sysfunc.  On the ibm, perhaps even an absolute
+		address?  investigate dynamic loading of a .com file although
+		that can't be large model...
+	Generic types
+		Let the user write a routine (or declare a c routine) that
+		can take a generic ordinal.  We allow it for our builtins
+	Absolute variables
+		variables located somewhere in memory, or in i/o space
+		This might include a pre-defined "memory" array and "io"
+		array.  On the large model, the memory array would have to
+		be two dimensional.  64K by 16 bytes or 16 rows of 64K?
+	writestr procedure (and readstr)
+		line writeln but writes into a string, or perhaps returns
+		one, with the problem that you get restricted in size and
+		in the number that can be in one expression.
+		best stick with the procedure unless we do something fancier
+		with strings, like
+	String operators
+		use of string expressions and string building with '+'
+		as in basic.
+	byte operators, upper, lower, shift left, shift right
+
+	pointer type
+		that you can build, as as substitute for the absolue variable
+		and perhaps an in/out procedure, although they exist in c
+	A string val function like val() in basic (or readstr)
+
+	TRACE block
+		to trace assignment to a given memory loc, or breakpoints
+		within the block, causing the code in the block to
+		be executed when it is trapped.  This is a very handy
+		and general debug feature.	Also perhaps trap
+		certain runtime errors, particularly input errors
+
+	use of typenames in error messages
+		many of the typecheck errors could be more specific
+		about the types involved, using a variant of the new
+		treeprint.
+
+	dynarray of <<type>> - user supplied upper and lower bound when
+		created, dynarray of char as a string, compatible with other
+		arrays - automatic release on function termination.
+

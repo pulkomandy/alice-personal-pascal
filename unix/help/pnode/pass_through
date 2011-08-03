@@ -1,0 +1,13 @@
+|14,74
+     A "pass through comment" is treated like a comment in that ALICE
+ignores it when executing your program.  However, this kind of comment is
+not enclosed by brace brackets when your program is displayed on the screen
+or written into a text file.  The comment is simply printed out, as is.
+     Pass through comments are usually created for programs that will be
+run with another version of Pascal.  Things that are not supported by ALICE
+Pascal can be entered as pass-through comments; in this way, ALICE will not
+regard them as errors, even though ALICE doesn't understand them.
+|mFor more, choose
+|iDo nothing,nop
+|iNormal comments,Hpnode/comment
+|p

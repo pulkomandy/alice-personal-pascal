@@ -1,0 +1,10 @@
+|10,74
+Set types are not compatible
+    You have tried to execute an operation on two sets with different types
+    of elements.  You can only perform set operations on sets that have the
+    same kind of elements.
+|mFor more, choose
+|iDo nothing,nop
+|iSet constants,Hpnode/set
+|iSet types,Hpnode/set_type
+|p

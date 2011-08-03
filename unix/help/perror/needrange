@@ -1,0 +1,11 @@
+|12,74
+You must select a range first - see SELECT command
+    The command that you tried to issue won't work until you select a sec-
+    tion of your code.  If you issued the command by accident, don't worry
+    -- nothing happened.  If you really want to issue the command, you must
+    select a part of your program by pressing the F10 key, then moving the
+    cursor to "sweep" out part of your program.
+|mFor more, choose
+|iDo nothing,nop
+|iMore information on SELECT,Hmisc/codesel
+|p

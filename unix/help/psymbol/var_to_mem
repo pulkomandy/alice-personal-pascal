@@ -1,0 +1,19 @@
+|16,70
+Var_To_Mem( variable, offset, segment )
+
+This procedure copies the contents of a variable to anywhere in the
+address space of an IBM-PC.  It is mainly intended for use in the SMALL
+model version of ALICE where RawPointer cannot be used for this
+purpose.  The offset and segment must be specified and are integers.
+The resulting address is equal to 'segment*16 + offset' in the 8086
+style.  Large amounts of memory may be moved quickly by copying whole
+arrays and records.  Whether the memory has been initialized is NOT
+checked.
+
+THIS IS NOT IMPLEMENTED IN THE CURRENT ICON RELEASE
+
+|mFor more, choose
+|iDo nothing,nop
+|iMem_To_Var,Hpsymbol/mem_to_var
+|iRawPointer,Hpsymbol/rawpointer
+|p

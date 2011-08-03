@@ -1,0 +1,53 @@
+/* type codes */
+#define T_LABEL {1}
+#define T_CONST	{+}
+#define T_ENUM_ELEMENT {+}
+#define T_TYPE {+}
+#define T_VAR {+}
+#define T_BTYPE {+}
+#define T_BBTYPE {+}
+#define T_UNDEF {+}
+#define T_FIELD {+}
+#define T_FILENAME {+}
+#define T_FORM_VALUE {+}
+#define T_FORM_REF {+}
+#define T_FORM_PROCEDURE {+}
+#define T_FORM_FUNCTION {+}
+#define T_PROCEDURE {+}
+#define T_FUNCTION {+}
+#define T_USERCALL T_FUNCTION		/* above here built in */
+#define T_BTFUNC {+}
+#define T_BTPROC {+}
+#define T_BPROC {+}
+#define T_BFUNC {+}
+#define T_WRITELN {+}
+#define T_READLN {+}
+#define T_PROGRAM {+}
+#define T_BCONST {+}
+#define T_ABSVAR {+}
+#define T_INIT {+}
+#define T_BENUM {+}
+#define T_MEMVAR {+}
+#define T_PORTVAR {+}
+/* BPROC and BFUNC must both be greater than BTPROC and BTFUNC */
+#define CC_SUBRANGE 32
+
+/* comparison type codes */
+#define CC_BYTE {1}
+#define CC_INTEGER {+}
+#define CC_POINTER {+}
+#define CC_REAL {+}
+#define CC_SET {+}
+#define CC_STRING {+}
+#define CC_GENERIC {+}
+#define CC_STRPOINT {+}
+#define CC_CHRSTR {+}
+#define CC_ARRAY {+}
+#define CC_FILE {+}
+#define CC_RECORD {+}
+#define CC_ENUM {+}
+#define CC_ORDVALUE {+}
+#define CC_REALVALUE {+}
+#define CC_PORT {+}
+#define CC_PBYTE CC_PORT+CC_BYTE
+#define CC_PWORD CC_PORT+CC_INTEGER

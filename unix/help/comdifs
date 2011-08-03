@@ -1,0 +1,5214 @@
+
+
+Apr 21 14:13 1987  command only and ibm/command only Page 1
+
+
+					    ./compile
+					    ./dos
+					    ./view
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:13 1987  Comparison of command ibm/command Page 1
+
+
+directory	.
+different	./again
+different	./autosave
+different	./block
+different	./breakpoint
+different	./bugoff
+different	./bugon
+different	./change
+different	./check
+different	./clear
+different	./clearfollow
+different	./clearpoint
+different	./clip
+different	./comout
+different	./continue
+different	./copy
+different	./cursor
+different	./debug
+different	./decl
+different	./delete
+different	./delmenu
+different	./edit
+different	./enclose
+different	./errhelp
+different	./execute
+different	./execws
+different	./exit
+different	./extend
+different	./filename
+different	./get
+different	./go
+different	./help
+different	./hide
+different	./immediate
+different	./insert
+different	./insmenu
+different	./io
+different	./lasterror
+different	./load
+different	./log
+different	./map
+different	./mark
+different	./menu
+different	./merge
+different	./misc
+different	./move
+different	./new
+different	./nolog
+different	./nop
+different	./option
+different	./pagedown
+different	./pageup
+different	./parent
+different	./phelp
+different	./pop
+different	./popback
+
+
+
+
+
+
+
+Apr 21 14:13 1987  Comparison of command ibm/command Page 2
+
+
+different	./raise
+different	./recover
+different	./redo
+different	./reveal
+different	./rsearch
+different	./run
+different	./runit
+different	./save
+different	./search
+different	./setfollow
+different	./shell
+different	./specialties
+different	./step
+different	./superstep
+different	./symbol
+different	./text
+different	./toklist
+different	./traceback
+different	./undo
+different	./unselect
+different	./ws
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:13 1987  diff of ./again in command and ibm/command Page 1
+
+
+1c1
+< |14,73
+---
+> |14,77
+6,10c6,10
+<      The AGAIN command is issued after a SEARCH or RSEARCH (reverse search)
+< command.  If it comes after a SEARCH, it searches forward for the same
+< thing that the SEARCH was trying to find.  If it comes after an RSEARCH,
+< it searches backwards.
+< |mFor more,choose
+---
+>      The Search Again command can be used after a search command to look for
+> the next occurrence of the pattern sought.  If AGAIN follows a forward search
+> it will find the next occurrence, if the command follows a reverse search, it
+> will find the previous occurrence.
+> |mFor more, choose
+12,13c12,13
+< |iSEARCH,Hcommand/search
+< |iRSEARCH,Hcommand/rsearch
+---
+> |iSearching forwards,Hcommand/search
+> |iSearching backwards,Hcommand/rsearch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:13 1987  diff of ./autosave in command and ibm/command Page 1
+
+
+1c1
+< |21,74
+---
+> |22,77
+6,11c6,12
+<      The AUTOSAVE command tells ALICE to save your program automatically
+< every few operations.  When you issue the command, ALICE will ask you to
+< enter a number N.  Enter the number and press ENTER.  From that point
+< onward, ALICE will save your program after every N commands.  If, for
+< example, you enter a 2, ALICE will save your program every other command.
+< Specifying 0 for N turns autosaving off.
+---
+>      ALICE's Autosave command allows you to automatically save your program
+> every so often.  This feature prevents you from losing too many modifications
+> should the machine accidentally be turned off or otherwise malfunction.
+>      When ALICE asks you for the save interval, enter the number of commands
+> you want between autosaving and press the <ENTER> key.
+> If, for example, you enter 10, ALICE will save your program every ten
+> commands.  If you enter a save interval of zero, autosave will be disabled.
+13c14
+< the current workspace.  Without such a file name, ALICE cannot perform the
+---
+> the current workspace.  Without a file name, ALICE cannot perform the
+15c16
+< |mFor more,choose
+---
+> |mFor more, choose
+17c18
+< |iSaving programs,Hcommand/save
+---
+> |iSaving programs (in ALICE format),Hcommand/save
+19c20
+< |iChanging filenames,Hcommand/filename
+---
+> |iSpecifying a filename,Hcommand/filename
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:13 1987  diff of ./block in command and ibm/command Page 1
+
+
+1c1
+< |10,74
+---
+> |10,75
+8,9c8,9
+< Issuing this command repeatedly will eventually get you back to the PROGRAM
+< statement.  (Typing "program" will also get you back to the PROGRAM state-
+---
+> Issuing this command repeatedly will eventually move you to the PROGRAM
+> statement.  (Typing "program" will also move you to the PROGRAM state-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:13 1987  diff of ./breakpoint in command and ibm/command Page 1
+
+
+1c1
+< |23,74
+---
+> |24,75
+6c6
+<      This sets a breakpoint at a selected location of a program.  If the
+---
+>      This sets a breakpoint at the selected location in the program. If the
+8,9c8,9
+< will stop.  You can then examine, modify, or test parts of your program
+< (e.g. check the value of variables).
+---
+> will pause.  You can then examine, modify, or test parts of your program
+> (for example, print out the value of variables using immediate mode).
+11,23c11,19
+< instruction where the breakpoint will be set.  Once you have done this, you
+< may issue the command.  The breakpoint will be triggered BEFORE the command
+< is actually executed.
+<      When you have done everything you want after stopping at a breakpoint,
+< you may start the program up from where it left off by issuing the
+< "Continue" (RUNIT) command from the Run Menu.  You may also begin single-
+< stepping through the program using STEP or SUPERSTEP.
+<      Stopping at a breakpoint does not
+< get rid of the breakpoint.    The next
+< time  the  program  reaches  a  marked
+< breakpoint, it will stop again.
+< Breakpoints only work in DEBUG mode.
+< |mFor more,choose
+---
+> instruction where the breakpoint is desired.  Once you have done this, you
+> may issue the command.  Execution will be paused BEFORE the instruction
+> is executed.
+>      You may resume execution from the point where it left off by issuing
+> the "Continue" (RUNIT) command from the Run Menu.  You may also begin
+> single-stepping through the program using STEP or SUPERSTEP.
+>      Stopping at a breakpoint does not remove the it.  The next time the
+> program reaches a marked breakpoint, it will pause again.
+> |mFor more, choose
+25c21
+< |iGetting rid of breakpoints,Hcommand/clearpoint
+---
+> |iRemoving breakpoints,Hcommand/clearpoint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:13 1987  diff of ./bugoff in command and ibm/command Page 1
+
+
+1c1
+< |14,74
+---
+> |16,77
+6,10c6,12
+<      This turns off the ability to use a number of the debugging facilities
+< that are available through ALICE.  It also restores the screen to full-
+< screen editing (in debug mode, half the screen shows your program's source
+< code while the other half shows output of various kinds).
+< |mFor more,choose
+---
+>      This command turns ALICE's debug mode off.  While in debug mode, half
+> of the screen shows the current program, while the other half displays output
+> from the execution of the program.  If debug is off, execution of the program
+> causes the editing window to be replaced by a full-screen output window.
+>
+> Breakpoints are ignored when not in debug mode.
+> |mFor more, choose
+12c14
+< |iDebug On,Hcommand/bugon
+---
+> |iTurning on debug mode,Hcommand/bugon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:13 1987  diff of ./bugon in command and ibm/command Page 1
+
+
+1c1
+< |21,74
+---
+> |24,76
+4d3
+< Associated with Key: None
+6,13c5,17
+<      This starts up a number of the debugging facilities that are available
+< with ALICE.  For example, breakpoints in a program will not be triggered
+< unless you turn on debugging.  Turning on the debugging facilities also
+< splits the display screen into two parts: the top part shows source code
+< in your program, while the bottom is used to display output of various
+< kinds.  Debugging is automatically turned on when you start single-stepping
+< through your program, or when you turn on cursor following.
+< |mFor more,choose
+---
+>      This turns on ALICE's debugging mode.  Debug mode allows the user to
+> exercise more control over the execution of the program.  Breakpoints may
+> be set in order to examine or change variables, the program may be executed
+> one instruction at a time (Single-Stepping), or you can turn on 'Cursor
+> following' which positions the cursor on each statement as it is being
+> executed.  You can also request a Traceback, which will position your cursor
+> on the statement that called the suspended procedure or function.
+>      Turning on the debug mode splits ALICE's editing screen into two parts.
+> The top window shows the current program being edited, while the bottom
+> window shows the output from the program. Debugging is automatically turned
+> on when you start single-stepping through your program, or when you turn on
+> cursor following.
+> |mFor more, choose
+15,16c19,20
+< |iDebug off,Hcommand/bugoff
+< |iBreakpoints,Hcommand/breakpoint
+---
+> |iTurning off debug mode,Hcommand/bugoff
+> |iSetting breakpoints,Hcommand/breakpoint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./change in command and ibm/command Page 1
+
+
+1c1
+< |7,74
+---
+> |7,75
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./check in command and ibm/command Page 1
+
+
+1c1
+< |13,74
+---
+> |14,75
+4c4
+< Associated with Key: SHIFT-7
+---
+> Associated with Key: CTRL-T
+9c9,10
+< the problem will be highlighted.  The cursor is placed on the first error.
+---
+> the problem will be highlighted.  If no errors are found, you will get a
+> message to this effect.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./clear in command and ibm/command Page 1
+
+
+1c1
+< |9,73
+---
+> |7,74
+4c4
+< Associated with Key: SHIFT-plus
+---
+> Associated with Key: CTRL-HOME
+6,9c6,7
+<      This redraws the screen the way it should appear.  This command is
+< needed from time to time if the screen gets fouled up somehow (e.g. if you
+< mistakenly type something on a blank line and your typing is not erased
+< after the error is issued).
+---
+>      This command redraws the screen. If for any reason the screen appears
+> to be confused, issue this command to clean things up.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./clearfollow in command and ibm/command Page 1
+
+
+6,7c6,7
+<      This command stops cursor following.  See the explanation of SETFOLLOW
+< ("Set Cursor Following") for more details.
+---
+>      This command stops cursor following.  See the explanation of 'Turn on
+> Cursor Following' for more details.
+10c10
+< |iSet Cursor Following,Hcommand/setfollow
+---
+> |iTurn on Cursor Following,Hcommand/setfollow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./clearpoint in command and ibm/command Page 1
+
+
+1c1
+< |14,72
+---
+> |14,73
+6,9c6,10
+<      This command is used to clear breakpoints that have been set by "Set
+< Breakpoint" (BREAKPOINT).  Before issuing the command, you must select
+< (highlight) a section of code.  Issuing the command will then clear any
+< breakpoints set in the code that you have highlighted.
+---
+>      This command is used to clear breakpoints that have been set by the
+> "Set Breakpoint" command.  Before issuing the command, you must select
+> (highlight) the section of code which contains the undesired breakpoints.
+> Issuing the command will then clear any breakpoints set in the code that
+> you have highlighted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./clip in command and ibm/command Page 1
+
+
+1c1
+< |17,73
+---
+> |17,74
+4c4
+< Associated with Key: CTRL-DEL
+---
+> Associated with Key: CTRL-P
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./comout in command and ibm/command Page 1
+
+
+1c1
+< |23,74
+---
+> |25,75
+14,18c14,20
+< portion of code to be commented out.  This code must be made up of list
+< elements which are complete instructions; you cannot comment out a declara-
+< tion or part of an instruction.  Once the code has been selected, the
+< command may be issued.  The commented-out code will be displayed like a
+< comment, enclosed by braces.
+---
+> portion of code to be commented out.  You can only comment out statements;
+> you cannot comment out a declaration or just part of a statement.  Once
+> the code has been selected, the command may be issued.  The commented-out
+> code will be displayed indented one more level, enclosed by braces.
+>      Note that if there are comments in the code you comment out, these
+> nested comments will cause problems for compilers attempting to process
+> your program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./continue in command and ibm/command Page 1
+
+
+1c1
+< |19,68
+---
+> |19,69
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./copy in command and ibm/command Page 1
+
+
+1c1
+< |16,74
+---
+> |16,73
+4c4
+< Associated with Key: None
+---
+> Associated with Key: ALT-C
+6,14c6,12
+<      This command copies code from one workspace to another.  Before you
+< can execute the command, you must select (highlight) the portion of code
+< to be copied.  Once you have done this, you can issue the command.  ALICE
+< will give you a menu of existing workspaces; one selection on this menu
+< allows you to specify a new workspace.  If the workspace doesn't already
+< exist, ALICE will create it.  If the workspace does already exist, whatever
+< the workspace contained will be lost (overwritten).  This can be undone.
+< Note also that you can copy a placeholder to a workspace and issue the
+< RECOVER command if you want to reclaim the memory used by that workspace.
+---
+>      This command copies code from the current workspace to another.
+> Before you execute the command, select (highlight) the portion of code
+> to be copied.  Once you have done this, you can issue the command.
+> ALICE will give you a list of the available workspaces; You may move the
+> highlighted code to a new workspace by picking the 'New Workspace' item
+> from the menu.  The previous contents of the target workspace will be
+> lost.
+18d15
+< |iRecovering memory,Hcommand/recover
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./cursor in command and ibm/command Page 1
+
+
+1c1
+< |7,73
+---
+> |7,74
+4c4
+< Associated with Key: SHIFT-4
+---
+> Associated with Key: ALT-G
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./debug in command and ibm/command Page 1
+
+
+1c1
+< |7,72
+---
+> |9,75
+7c7,9
+< program and using various debugging facilities.
+---
+> program and using various debugging facilities.  This menu varies according
+> to the state of your system, so not all commands will be present if some
+> don't apply at the given time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./decl in command and ibm/command Page 1
+
+
+1c1
+< |13,73
+---
+> |13,74
+8,9c8,9
+< jump up to the line where the name was declared.
+< |mFor more,choose
+---
+> move the cursor up to the line where the name is declared.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./delete in command and ibm/command Page 1
+
+
+1c1
+< |19,74
+---
+> |21,78
+3,14c3,14
+< Command line name: DELETE
+< Associated with Key: SHIFT-DEL
+< Found on: Delete Menu, Select Menu
+<      DELETE deletes something from your program.  Normally, you must select
+< (highlight) a portion of your source code before issuing the DELETE
+< command.  The highlighted code will then be deleted.  However, if you are
+< only deleting a single symbol or constant, just position the cursor on the
+< thing you want to delete, then issue the command (you do not have to select
+< code in this case).  DELETE usually does not leave an empty placeholder in
+< the place where code was deleted.  However, if a placeholder is necessary
+< for the program to remain correct, DELETE leaves behind an appropriate
+< placeholder.
+---
+> Command line name: delete
+> Associated with key: DEL
+> Found on: Delete menu, Select menu
+>
+>      Delete deletes something from your program.  Normally you must select
+> (highlight) a portion of your source code before issuing the delete command.
+> The highlighted code will then be deleted.  However, if you are only deleting
+> a single symbol or constant, just position the cursor on the thing you want
+> to delete and issue the command (you do not have to select in this case).
+> Delete usually does not leave an empty placeholder in the place where the code
+> was deleted.  However, if a placeholder is necessary for the program to be
+> correct, the appropriate placeholder will be inserted.
+17,18c17,19
+< |iClip,Hcommand/clip
+< |iHighlighting code,Hmisc/codesel
+---
+> |iClipping out code,Hcommand/clip
+> |iSelecting code,Hmisc/codesel
+> |iUndoing mistakes,Hcommand/undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./delmenu in command and ibm/command Page 1
+
+
+1c1
+< |7,73
+---
+> |7,74
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./edit in command and ibm/command Page 1
+
+
+1c1
+< |20,74
+---
+> |23,75
+4c4
+< Associated with Key: CTRL-E
+---
+> Associated with Key: ALT-E
+6,16c6,18
+<    This command allows you to edit things that were filled into Value
+< placeholders (expressions).  It can also be applied to string constants and
+< comments.  Before you can use the command, you must select (highlight) the
+< expression you wish to edit, using the normal code selection methods.  Once
+< you have done this, you can issue the command.  To add something, just move
+< the cursor to the place you want to add material and begin typing.  To
+< delete something, go to the end of the material you want to delete and
+< start backspacing.  CTRL-D deletes the character on which the cursor rests.
+< CTRL-W deletes and entire "word" back from the cursor.
+<    To show that you have finished typing the expression, move off the expres-
+< sion using one of the usual motion methods.
+---
+>      This command allows you to edit on a character by character basis
+> strings, comments, expressions and variable names.
+>      Before you use the command, select (highlight) the expression, string,
+> comment or variable you wish to change.  Once you have done this, you can
+> issue the command.  To insert characters, just move the cursor to where
+> you want to insert text and type the characters.  To delete characters,
+> go to the start of the text you want to delete and type CTRL-D until the
+> text has been deleted.  Typing a backspace deletes the character to the
+> left of the cursor.  Editing a declaration of a variable or constant
+> causes all references to that variable or constant to be changed also.
+>      When you have finished changing the expression, simply move the cursor
+> off of the edited text.  If ALICE does not understand the new expression,
+> she will tell you why.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./enclose in command and ibm/command Page 1
+
+
+1c1
+< |20,74
+---
+> |19,73
+6,14c6,14
+<      This command encloses a set of instructions inside some other sort of
+< construction.  For example, you can enclose a set of instructions in an IF
+< statement so that the instructions are only executed if a particular condi-
+< tion is true.  Before executing this command, you must select (highlight)
+< a portion of code in the executable part of your program.  You may then
+< issue the command.  ALICE creates a Block Statement placeholder where you
+< should type the keyword for the construct that will enclose the selected
+< instructions.  For example, if you type "if" in this placeholder, ALICE
+< will make the enclosing statement an IF statement.
+---
+>      This command encloses a set of statements inside a generic block.
+> This block may then be made into any one of a number of constructs, such
+> as if-then blocks, repeat-untils, for loop, etc.  To use this command,
+> select the range of statements to enclose, and issue the command.  This
+> will enclose the statements in a generic block.  You may then specify
+> which type of block you want by typing a keyword on the 'Block-Statement'
+> placeholder.  Typing 'for' turns the block into a for-loop, 'while' turns
+> it into a while loop, etc.  You cannot currently convert a generic block
+> into a 'with' block.
+18c18
+< |iBlock Statement,Hpclass/block_statem
+---
+> |iBlock Statement,Hpnode/generic_bloc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./errhelp in command and ibm/command Page 1
+
+
+1c1
+< |17,73
+---
+> |17,74
+10,12c10,12
+<      The description given by ERRHELP pertains to your most recent error
+< message, even if that message has disappeared from the display screen.  If
+< you want a reminder of what that error was, use the LASTERROR command.
+---
+>      The description pertains to your most recent error message, even if
+> that message has disappeared from the display screen.  If you want a
+> reminder of what that error was, use the 'lasterror' command.
+15c15
+< |iLASTERROR,Hcommand/lasterror
+---
+> |iDisplaying the last error,Hcommand/lasterror
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./execute in command and ibm/command Page 1
+
+
+1c1
+< |21,74
+---
+> |21,75
+4c4
+< Associated with Key: META-F1
+---
+> Associated with Key: SHIFT-F1
+10c10
+< execute the instruction.  You can't select a list of instructions.
+---
+> execute the instruction.
+14c14
+<      The EXECUTE command may create an additional suspended state that must be
+---
+>      The EXECUTE command creates an additional suspended state that must be
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./execws in command and ibm/command Page 1
+
+
+1c1
+< |17,73
+---
+> |15,72
+10,17c10,15
+<      To understand we mean, we should explain that ALICE comes with a
+< number of subprogram libraries, and one of these libraries contains
+< routines that edit source code stored in ALICE workspaces.  Using these
+< library routines, you can write an editing program in workspace A and then
+< apply that program to the source code stored in workspace B.  To do this,
+< you go to workspace B using the WS command, then press CTRL-X and type
+< "execws A".  The code in B will be edited according to the instructions in
+< A.  For further information on subprogram libraries, see the manual.
+---
+>      By using this command, ALICE allows the user to define his/her own
+> custom commands, which can get access to the internal structure of an
+> ALICE program.  This technique is for advanced users only.  ALICE comes
+> with all the commands an average user will ever need.
+>
+> For further information on this topic, refer to the users manual.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./exit in command and ibm/command Page 1
+
+
+1c1
+< |22,74
+---
+> |17,76
+4c4
+< Associated with Key: (beta)
+---
+> Associated with Key: ALT-Q
+6,18c6,12
+<      This lets you quit ALICE.  If you have not saved the source code in
+< any workspace since the last time you changed the code, ALICE will not quit
+< immediately.  The assumption is that you probably want to save everything
+< you have created and all the changes you have made in this session.
+< Therefore, if there are some things that you have not saved, ALICE will
+< display the following menu.
+<
+<           Go back to ALICE
+<           Quit, forgetting all the changes
+<
+< The first option is equivalent to the usual "Do nothing".  The other option
+< quits ALICE without preserving the changes you have made since you last
+< saved the program.
+---
+>      This lets you quit ALICE.  If you have modified your program and you
+> have not yet saved it back to disk, ALICE will remind you and allow you to
+> return to the editor to save your program.  This prevents you from losing
+> any changes to your program accidentally.  If you want to exit ALICE without
+> saving your changes, simply choose the 'Quit, forgetting all changes'
+> selection from the menu.
+>      Exit as a command will quit immediately if given any argument.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./extend in command and ibm/command Page 1
+
+
+1c1
+< |16,74
+---
+> |17,75
+4c4
+< Associated with Key: (e agout)
+---
+> Associated with Key: CTRL-E
+6,7c6,10
+<      This expands a list by adding an empty placeholder of the same type as
+< the other elements of the list.  For example, if you are expanding a list
+---
+>      The extend command allows you to add extra placeholders in a list.
+> The list may be a list of statements, parameters in a procedure or function
+> call, declarations of variables, or practically any other list.  The new
+> placeholder is inserted after the cursor.  The type of the new placeholder
+> depends upon the cursor position.  For example, if you are expanding a list
+9,12c12,13
+< an empty Name placeholder.  If you are expanding a list of statements,
+< ALICE will add an empty Statement placeholder.  The empty placeholder is
+< added after the list item that the cursor is on, and the cursor is moved
+< to the new placeholder.
+---
+> an empty 'Name' placeholder.  If you are expanding a list of statements,
+> ALICE will add an empty 'Statement' placeholder.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./filename in command and ibm/command Page 1
+
+
+1c1
+< |17,73
+---
+> |18,74
+6,7c6,8
+<      This allows you to set the name of the file where the current program
+< should be saved.
+---
+>      This allows you to specify the name of the file where your program
+> should be saved.  When you save your program back to disk, the filename
+> specified will be used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./get in command and ibm/command Page 1
+
+
+1c1
+< |22,74
+---
+> |22,75
+4c4
+< Associated with Key: SHIFT-+
+---
+> Associated with Key: ALT-plus
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./go in command and ibm/command Page 1
+
+
+1c1
+< |19,73
+---
+> |19,74
+17c17
+< |iPOPBACK,Hcommand/popback
+---
+> |iMoving back to the previous location,Hcommand/popback
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./help in command and ibm/command Page 1
+
+
+1c1
+< |14,72
+---
+> |14,73
+4c4
+< Associated with Key: SHIFT-HELP
+---
+> Associated with Key: F9
+8,10c8,9
+< kinds of help, see below.  You must press SHIFT-HELP, since CEMCORP has
+< reserved the HELP key for a future special HELP task.
+< |mFor more,choose
+---
+> kinds of help, see below.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./hide in command and ibm/command Page 1
+
+
+1c1
+< |24,74
+---
+> |23,75
+4c4
+< Associated with Key: Umlaut (..)
+---
+> Associated with Key: ALT-H
+19c19
+< |mFor more,choose
+---
+> |mFor more, choose
+22d21
+< |iRemoving hiding altogether,Hcommand/raise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:14 1987  diff of ./immediate in command and ibm/command Page 1
+
+
+1c1
+< |20,74
+---
+> |24,75
+4d3
+< Associated with Key: None
+7c6
+< of incorporating them as part of a program.
+---
+> of adding them as part of a program.
+9,12c8,15
+< block".  This will hold the immediate instructions that you type in,
+< allowing you to execute a series of instructions (e.g. a FOR loop to print
+< the contents of an array).  As soon as you press ENTER at the end of an
+< immediate instruction, ALICE will execute the instruction.
+---
+> block".  Statements within this block are executed when they are entered.
+> Multi-line statements, such as loops and conditionals must be typed in and
+> then executed by the 'execute' statement.  You may define variables in
+> the declaration area to hold intermediate results, if you wish.
+> The output of each statement (if any) will be shown in the debugging window
+> at the bottom of the screen.  Statements containing errors will not be
+> executed.  Statements may be re-executed by using the 'execute' command
+> or simply by positioning the cursor on top of it and hitting {enter}.
+19a23
+> |iThe EXECUTE command,Hcommand/execute
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./insert in command and ibm/command Page 1
+
+
+1c1
+< |12,63
+---
+> |12,64
+4c4
+< Associated with Key: SHIFT-INS
+---
+> Associated with Key: INS
+8c8
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./insmenu in command and ibm/command Page 1
+
+
+1c1
+< |7,74
+---
+> |7,75
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./io in command and ibm/command Page 1
+
+
+1c1
+< |7,74
+---
+> |7,75
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./lasterror in command and ibm/command Page 1
+
+
+1c1
+< |12,73
+---
+> |12,74
+4c4
+< Associated with Key: SHIFT-9 (keypad)
+---
+> Associated with Key: None
+7,8c7,9
+< lets you refresh your memory once the error message goes off the screen.
+< |mFor more,choose
+---
+> lets you refresh your memory once the error message has disappeared from
+> the message area of the screen.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./load in command and ibm/command Page 1
+
+
+1c1
+< |24,74
+---
+> |25,75
+4c4
+< Associated with Key: CTRL-L
+---
+> Associated with Key: ALT-L
+7c7,8
+< (in this workspace) is overwritten and lost.
+---
+> (in this workspace) is overwritten and lost. ALICE will remind you if you
+> have made changes to the current file and have not saved them.
+12c13
+<      If the name of the file you type in ends in ".pas", ALICE will
+---
+>      If the name of the file you're loading ends in ".pas", ALICE will
+15,23c16,19
+< ALICE will assume that the program is already in this special format.
+< The conversion is done on disk using the APIN program and requires that
+< you have a 512K ICON.
+<      Loading a program gets rid of whatever you are currently working on in
+< this workspace; therefore if you already
+< are working on a program, ALICE
+< will ask you if you really want to
+< load something on top of it.
+< |mFor more,choose
+---
+> ALICE will assume that the program is already in ALICEs internal format.
+> The conversion, if necessary, is done by a special program called APIN
+> that must reside somewhere in your DOS path.  See the manual for details.
+> |mFor more, choose
+26c22
+< |iLoading libraries,Hcommand/merge
+---
+> |iLoading libraries and merging,Hcommand/merge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./log in command and ibm/command Page 1
+
+
+1c1
+< |22,74
+---
+> |19,75
+8,9c8,9
+< written to a file named "log" under your current working directory.  The
+< output will also be displayed on the screen as usual.
+---
+> written to a file named "log" in your current directory.  The output will
+> also be displayed on the screen as usual.
+12,13c12,13
+< If you keep "logging" turned on, output from subsequent program runs will
+< be APPENDED to the "log" file.  Therefore you can capture the output of
+---
+> As long as you keep "logging" turned on, output from subsequent program
+> will be appended to the "log" file.  Therefore you can record the output of
+15,19c15
+<      If you want the output of a program run to replace the current con-
+< tents of "log" instead of being appended, turn logging off, then turn it
+< back on again.  ALICE always cleans out "log" the first time that "logging"
+< is turned on.
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./map in command and ibm/command Page 1
+
+
+1c1
+< |20,74
+---
+> |19,78
+6,13c6,12
+<      This lets you bind a string of characters to a key.  ALICE begins by
+< asking you to press the key.  You will then be asked to type in the string
+< of characters that will be bound to that key.  To show the end of the
+< string, press ENTER.  Once you have set things up like this, you may type
+< the key or key sequence and ALICE will replace it with the string that is
+< bound to it.
+<      If you want an ENTER inside the bound string, type \n at the place
+< in the string where the "new-line" should be.  Similarly, if you want
+---
+>      This lets you associate a string of characters to a key.  ALICE begins by
+> asking you to press the key for which you want to define the macro. You
+> will then be prompted for the string of characters. When you have entered the
+> string, hit {enter}.  You will then be able to type that single character
+> instead of the string.
+>      If you want to put a carriage return inside the string, type \n at the
+> place in the string where the "new-line" should be.  Similarly, if you want
+20,21c19
+< and hitting ENTER to invoke the IMMEDIATE command.  See the manual for other
+< backslash codes.
+---
+> {enter} to invoke the IMMEDIATE command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./mark in command and ibm/command Page 1
+
+
+1c1
+< |18,74
+---
+> |18,75
+14c14
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./menu in command and ibm/command Page 1
+
+
+1c1
+< |7,74
+---
+> |7,75
+4c4
+< Associated with Key: F11
+---
+> Associated with Key: F7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./merge in command and ibm/command Page 1
+
+
+1c1
+< |22,74
+---
+> |25,77
+8,10c8,10
+< of getting rid of whatever is in the current workspace, ALICE keeps the
+< current program and adds the selected program to it.  The declarations of
+< the saved program are added to the program being edited; any statements in
+---
+> of deleting whatever is in the current workspace, ALICE keeps the
+> current program and merges the selected program with it.  The declarations of
+> the saved program are added to the program being edited and any statements in
+12c12
+< program being edited.
+---
+> current program.
+14,15c14,15
+< routines.  Such a library would be a set of declarations and subprograms
+< that could be merged into programs that need to use the library routines.
+---
+> routines.  Such a library could be a set of procedure/function and type
+> declarations that would be used in a variety of different programs.
+16a17,20
+>      Note that after you merge, new declarations may be created before the
+> merge block.  If you want to use symbols from your merge block, explicitly
+> make a declarations placeholder after the block and type your declarations
+> keyword there.
+19,20c23,24
+< |iSAVE,Hcommand/save
+< |iLOAD,Hcommand/load
+---
+> |iSaving programs,Hcommand/save
+> |iLoading programs,Hcommand/load
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./misc in command and ibm/command Page 1
+
+
+1c1
+< |7,70
+---
+> |7,71
+4c4
+< Associated with Key: F7
+---
+> Associated with Key: SHIFT-F9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./move in command and ibm/command Page 1
+
+
+1c1
+< |21,74
+---
+> |21,75
+4c4
+< Associated with Key: SHIFT-minus
+---
+> Associated with Key: ALT-minus
+6c6
+<      This command lifts code out of one workspace and puts it in another.
+---
+>      This command moves code out of one workspace and puts it in another.
+15c15
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./new in command and ibm/command Page 1
+
+
+1c1
+< |15,72
+---
+> |15,77
+6,10c6,10
+<      This command clears away your current program and sets up for a new
+< program (in the same workspace).  Note that this command CANNOT be undone
+< with UNDO.  Because of this, NEW will confirm that you really want to get
+< rid of the program before it performs the operation.
+< |mFor more,choose
+---
+>      This command clears (deletes) your current program and presents you
+> with the initial pascal program template for a new program.
+>      Note that this command CANNOT be undone with the 'undo' command.
+> Because of this, NEW will confirm that you really want to delete the program.
+> |mFor more, choose
+13c13
+< |iLoading new programs,Hcommand/load
+---
+> |iLoading programs,Hcommand/load
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./nolog in command and ibm/command Page 1
+
+
+1c1
+< |11,74
+---
+> |11,75
+8c8
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./nop in command and ibm/command Page 1
+
+
+1c1
+< |10,72
+---
+> |10,73
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./option in command and ibm/command Page 1
+
+
+1c1
+< |15,70
+---
+> |22,71
+7,8c7,9
+< ALICE session.  These options are described in Chapter 5 of the manual.
+< The following make some sense within a session:
+---
+> ALICE session.  These options are described in Chapter 6 of the manual.
+> The following are allowed during a session:
+>      +c         : Turns on color display tables.
+10c11,12
+<      f=nn       : Alters frequency of declaration checking.
+---
+>      f=nn       : Alters frequency of declaration checking. (default 4)
+>      h=prefix   : Says helpfiles are in "prefix.huf".
+13c15,20
+<      cL=nnn     : Sets a colour/font code - see manual.
+---
+>      cL=nnn     : Sets a color code - see manual.
+>      -f         : Tells ALICE your color/graphics card doesn't
+>                   "flicker" like the IBM one, for faster output.
+>      -t         : Disable Turbo Pascal keywords, random numbers.
+>      +b         : Enable Borland Turbo-Pascal Deviations.
+>      -v         : Relax typechecking on VAR string parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./pagedown in command and ibm/command Page 1
+
+
+1c1
+< |13,74
+---
+> |12,76
+4c4
+< Associated with Key: None
+---
+> Associated with Key: PgDn
+6,9c6,8
+<      This moves the cursor down through the source code a distance that is
+< one line less than the length of the terminal screen.  In other words, the
+< bottom line of the screen becomes the top.  This allows you to move quickly
+< through your program.
+---
+>      This moves the cursor down one screen.  In other words, the bottom line
+> of the screen becomes the top.  This allows you to move quickly through your
+> program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./pageup in command and ibm/command Page 1
+
+
+1c1
+< |12,73
+---
+> |12,72
+4c4
+< Associated with Key: None
+---
+> Associated with Key: PgUp
+6,8c6,7
+<      This moves the cursor backwards through the source code a distance
+< that is a little less than the length of the terminal screen.  This allows
+< you to move quickly back through your program.
+---
+>      This moves the cursor backwards up one screen, stopping at the top.
+> This allows you to move quickly back through your program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./parent in command and ibm/command Page 1
+
+
+1c1
+< |10,73
+---
+> |10,74
+4c4
+< Associated with Key: CTRL-uparrow
+---
+> Associated with Key: CTRL-6
+6c6
+<      This moves the cursor to the parent (container) of the current cursor
+---
+>      This moves the cursor to the parent of the current cursor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./phelp in command and ibm/command Page 1
+
+
+1c1
+< |14,72
+---
+> |17,74
+4c4
+< Associated with Key: SHIFT-divide
+---
+> Associated with Key: ALT-P
+10c10,12
+< |mFor more,choose
+---
+>      When used on the command line, PHELP may be given an argument that is
+> the name of a language element as presented in the PHELP menu.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./pop in command and ibm/command Page 1
+
+
+1c1
+< |22,72
+---
+> |21,73
+8,16c8,14
+< were using immediate mode, or a breakpoint went off.  When this happens,
+< the program stays around in a frozen or "suspended" state.  This lets you
+< look at parts of the program.  For example, you can use immediate mode to
+< print out the values of variables so you can see what they are.
+<      If you have multiple suspended states, you can use the POP command to
+< restore an old state.  Most of the time, you will use this command to
+< enable you to single step from the beginning of a program that you have
+< already interrupted.
+< |mFor more,choose
+---
+> were using immediate mode, or a breakpoint was hit.  When this happens,
+> the program is in a frozen or "suspended" state.  This lets you look at
+> the current value of variables, etc.
+>      If you are in immediate mode, you have to 'pop' out of the suspended
+> state before you can resume single-stepping or normal execution.  This is
+> what the POP command does.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./popback in command and ibm/command Page 1
+
+
+1c1
+< |17,73
+---
+> |17,74
+4c4
+< Associated with Key: None
+---
+> Associated with Key: CTRL-B
+7,14c7,14
+< particularly useful if you have just done a DECL in order to check out the
+< declaration of a symbol, then want to go back to where you were.  It is
+< also useful after you have finished searching through your program for
+< appearances of a variable, or after any other major cursor motion.  Just
+< issue the POPBACK command and you will go back.  Several POPBACK commands
+< in a row will pop back through the sequence of most recent cursor posi-
+< tions.
+< |mFor more,choose
+---
+> particularly useful if you have used the 'go to declaration' command to
+> look at the declaration of a symbol, then want to go back to where you
+> were.  It is also useful after you have finished searching through your
+> program for occurrences of a variable, or after any other major cursor
+> movement. Just issue the POPBACK command and the cursor will be put back
+> to where it was.  Consecutive POPBACK commands will pop back through the
+> last few cursor positions.
+> |mFor more, choose
+16c16
+< |iThe DECL command,Hcommand/decl
+---
+> |iThe 'Go to Declaration' command,Hcommand/decl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./raise in command and ibm/command Page 1
+
+
+1c1
+< |19,74
+---
+> |21,71
+8c8
+< instructions (e.g. a WHILE loop or an IF statement).  When you issue the
+---
+> statements (e.g. a WHILE loop or an IF statement).  When you issue the
+10,18c10,18
+< instructions will be left behind.  For example, if you do this to a WHILE
+< loop, the line containing the word "while" and the "end" that marks the end
+< of the loop will disappear, but the instructions that were inside the loop
+< will remain.  In this way, they are "raised" out of the enclosing loop.
+<      This can also be used to "RAISE" a block of hidden code, so that it is
+< no longer hidden.  This deletes the comment describing the hidden block.
+<      Warning: if you raise an IF-THEN-ELSE construct, both blocks of code
+< will be raised to the same level.
+< |mFor more,choose
+---
+> statements will be left behind.  For example, if you do this to a WHILE
+> loop, the WHILE loop will disappear, but the statements that were
+> within the loop remain.  In this way, they are "raised" out of the
+> enclosing loop.  You can also use raise to convert revealed or hidden
+> code back to normal.
+>      Warning: if you raise an IF-THEN-ELSE construct, the code for both
+> the IF and the ELSE part will be raised.  In many cases, you will want
+> to delete one part or the other from your code.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./recover in command and ibm/command Page 1
+
+
+1c1
+< |16,73
+---
+> |16,76
+11,13c11,13
+< RECOVER will confirm that you really want to get rid of the program before
+< it performs the operation.
+< |mFor more,choose
+---
+> RECOVER will confirm that you really want to get rid of the undo information
+> before it performs the operation.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:15 1987  diff of ./redo in command and ibm/command Page 1
+
+
+1c1
+< |13,74
+---
+> |13,75
+10c10
+< |mFor more,choose
+---
+> |mFor more, choose
+12c12
+< |iUNDO,Hcommand/undo
+---
+> |iUndoing mistakes,Hcommand/undo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./reveal in command and ibm/command Page 1
+
+
+1c1
+< |20,74
+---
+> |12,68
+4c4
+< Associated with Key: Circumflex ()
+---
+> Associated with Key: ALT-R
+6,14c6,9
+<      The Reveal command brings back code that was hidden by HIDE.  The com-
+< ment
+<
+<            ... {Comment} ...
+<
+< remains in your program at the top of the revealed code.
+<      If a program is saved then loaded back again, hidden code will
+< automatically be revealed.
+< |mFor more,choose
+---
+>      The Reveal command brings back code that was hidden by HIDE.
+> The associated comment is still displayed, on a separate line at the
+> top of the revealed code.
+> |mFor more, choose
+17,19d11
+< |iPermanent reveal,Hcommand/raise
+< |iSaving programs,Hcommand/save
+< |iLoading programs,Hcommand/load
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./rsearch in command and ibm/command Page 1
+
+
+1c1
+< |14,65
+---
+> |14,66
+8c8
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./run in command and ibm/command Page 1
+
+
+1c1
+< |13,72
+---
+> |14,73
+7,8c7,8
+< already partly through another run of the program (e.g. through single-
+< stepping).
+---
+> currently suspended (partly through execution of your program already).
+> The program is executed from the beginning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./runit in command and ibm/command Page 1
+
+
+1,2c1,2
+< |22,74
+< "Run Program/Continue"
+---
+> |14,74
+> "Run Program"
+4c4
+< Associated with Key: None
+---
+> Associated with Key: CTRL-F1
+8,16c8
+< off.
+<      One reason you might be part way through execution is because you have
+< hit a breakpoint (see "Set Breakpoint" (BREAKPOINT)).  After RUNIT, the
+< program will keep going until it hits another breakpoint or it finishes.
+< Another reason you might be half way through a program is if you are
+< single-stepping with STEP or SUPERSTEP.  In this case, RUNIT will run the
+< rest of the program immediately.  If you are part way through a program,
+< this command will appear as "Continue" on the Run-Time Menu; otherwise, it
+< will appear as "Run".
+---
+> off, otherwise, ALICE will run your program from the beginning.
+19,21c11,12
+< |iBreakpoints,Hcommand/breakpoint
+< |iSingle-stepping,Hcommand/step
+< |iSuspended programs,Hmisc/susp_prog
+---
+> |iThe RUN command,Hcommand/run
+> |iThe CONTINUE command,Hcommand/continue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./save in command and ibm/command Page 1
+
+
+1c1
+< |23,74
+---
+> |23,78
+4c4
+< Associated with Key: CTRL-S
+---
+> Associated with Key: ALT-S
+11c11
+< and catalogs where the program may be saved.  For further information about
+---
+> and directories where the program may be saved.  For further information about
+13,15c13,15
+<      Note that ALICE automatically puts ".ap" on the end of new file names
+< if necessary.  This identifies the file as an ALICE Pascal program.
+< |mFor more,choose
+---
+>      Note that ALICE automatically puts ".ap" on the end of new file names.
+> This identifies the file as an ALICE Pascal program.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./search in command and ibm/command Page 1
+
+
+1c1
+< |22,74
+---
+> |22,75
+17,19c17
+<      Be warned not to search for short strings like "i", particularly those
+< found in Pascal keywords.  The results can be confusing.
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./setfollow in command and ibm/command Page 1
+
+
+1c1
+< |21,74
+---
+> |15,75
+6,16c6,11
+<      If this command is issued before you run a program, ALICE will split
+< your screen in two, with the top half showing your source code and the
+< bottom showing any output written by your program as it runs.  As the
+< program runs, the cursor will move through the source code in the top half
+< of the screen, showing which instructions are being executed.  This lets
+< you "see" your program executed.
+<      Once you have issued this command, ALICE will always use the cursor to
+< show your program executing until you issue the "Cursor Following Off"
+< command (from the Run-Time Menu).  The screen will remain split in two
+< until you issue the "Debug Off" command from the Run-Time Menu.
+< |mFor more,choose
+---
+>      This command turns on cursor-following.  Cursor following allows you
+> to see a 'motion picture' of the execution of your program.  When you run
+> your program, ALICE will position the cursor on top of each statement as
+> it is being executed.  Turning on cursor-following automatically puts ALICE
+> into debug mode.
+> |mFor more, choose
+18,19c13,14
+< |iCursor Following Off,Hcommand/clearfollow
+< |iDebug Off,Hcommand/bugoff
+---
+> |iTurning off Cursor Following,Hcommand/clearfollow
+> |iDebug mode,Hcommand/bugon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./shell in command and ibm/command Page 1
+
+
+1,2c1,2
+< |12,74
+< "QNX Command"
+---
+> |17,74
+> "DOS Command"
+4c4
+< Associated with Key: CTRL-Z
+---
+> Associated with Key: SHIFT-F3
+6,14c6,16
+<      This allows you to execute a command through the QNX operating system
+< shell.  When you issue the SHELL command, ALICE will open up a line at the
+< bottom of the screen where you can type the command.  The command may be
+< edited with backspacing.  Pressing ENTER will send the command to the shell
+< for execution.  After the command is finished, ALICE will wait for you to
+< press any key, and will then restore the screen to whatever it displayed
+< before you issued the SHELL command.
+<      Note that on a 384K ICON, you will probably not have enough memory left
+< to exeucte SHELL commands.
+---
+>      This allows you to execute a command through the DOS operating system
+> shell.  When you issue the SHELL command, ALICE will prompt you for a line
+> of text which will then be given to DOS to execute.  When DOS has finished
+> executing your command, ALICE will wait for you to press any key, and then
+> restore the screen (in case your DOS command displayed information on the
+> screen).
+>      If you don't want to go through COMMAND.COM, use the "DOS" command.
+> |mFor more, choose
+> |iDo nothing,nop
+> |iExecuting commands directly,Hcommand/dos
+> |p
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./specialties in command and ibm/command Page 1
+
+
+14,19c14,16
+< statement can be converted to.  Select the appropriate thing from the list,
+< and ALICE will make the change.  Things contained by the statement will
+< remain unchanged.
+<      This command can also interchange procedures and functions.  Note
+< also that any complex change can be made by moving (MOVE) blocks of code
+< to workspaces and GETting the code back where you want it.
+---
+> statement can be converted to.  Select the appropriate item from the list,
+> and ALICE will make the change.  Statements within the block will remain
+> unchanged.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./step in command and ibm/command Page 1
+
+
+1c1
+< |24,74
+---
+> |25,75
+14c14
+< (STEP), except that it executes entire blocks as a single action.
+---
+> (STEP), except that it executes subprogram calls as a single action.
+17,19c17,18
+< "Debug Off" selection from the Run-Time Menu
+< restores things to normal.
+< |mFor more,choose
+---
+> "Debug Off" selection from the Run-Time Menu restores things to normal.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./superstep in command and ibm/command Page 1
+
+
+1c1
+< |18,73
+---
+> |18,74
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./symbol in command and ibm/command Page 1
+
+
+1c1
+< |15,72
+---
+> |15,76
+4c4
+< Associated with Key: None, but C-cedille has this effect
+---
+> Associated with Key: END
+6,11c6,11
+<      This command will list all the symbols that could be entered in the
+< current location of the cursor.  For example, if you are on a Variable
+< placeholder, ALICE will give you a list of all the variables defined at
+< this point.  If you choose a name from this menu, the name will be filled
+< into the placeholder.
+< |mFor more,choose
+---
+>      This command will list all the symbols that could be entered at the
+> current cursor position.  For example, if you are on a Variable placeholder,
+> ALICE will give you a list of all the variables defined at this point.  If
+> If you choose a name from this menu, the name will be filled into the
+> placeholder.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./text in command and ibm/command Page 1
+
+
+1c1
+< |22,74
+---
+> |21,76
+4c4
+< Associated with Key: None
+---
+> Associated with Key: None (Used by CTRL-F6)
+6,7c6,7
+<      This writes your current program into a file in text format.  In this
+< way, you can save your program in text format instead of the special format
+---
+>      This writes your current program into a file in text format.  This
+> allows you to save your program in text format instead of the special format
+9,10c9
+< the program on a printer, submit the program to another Pascal compiler,
+< etc.
+---
+> the program on a printer, compile it with a Pascal compiler, etc.
+13c12
+< end is changed to ".pas".  For example, if the ALICE-format program is
+---
+> end is replaced with ".pas".  For example, if the ALICE-format program is
+16,17c15,16
+< version directly to this file and does not change the extension to ".pas".
+< |mFor more,choose
+---
+> version directly to that file and does not change the name.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./toklist in command and ibm/command Page 1
+
+
+1c1
+< |18,74
+---
+> |18,75
+4c4
+< Associated with Key: SHIFT-times
+---
+> Associated with Key: ALT-T
+14c14
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./traceback in command and ibm/command Page 1
+
+
+1c1
+< |24,74
+---
+> |25,75
+20,21c20
+< on the ninth subprogram (the one that
+< called the current subprogram).
+---
+> on the ninth subprogram (the one that called the current subprogram).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./undo in command and ibm/command Page 1
+
+
+1c1
+< |14,74
+---
+> |14,75
+10c10
+< |mFor more,choose
+---
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./unselect in command and ibm/command Page 1
+
+
+1c1
+< |10,72
+---
+> |10,73
+3,4c3,4
+< Command line name: UNSELECT
+< Associated with Key: F10 (in a sense)
+---
+> Command line name: SELECT
+> Associated with Key: F10
+9c9
+< |iSelecting things,Hmisc/codesel
+---
+> |iDeleting things,Hcommand/delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Apr 21 14:16 1987  diff of ./ws in command and ibm/command Page 1
+
+
+1c1
+< |17,74
+---
+> |17,75
+6,8c6,8
+<      This moves from one workspace to another.  ALICE will give you a menu
+< showing the existing workspaces.  You can choose one of these or ask to go
+< to a new workspace.  If you ask for a new workspace, the workspace will be
+---
+>      This allows you to edit another workspace.  ALICE will give you a menu
+> of the existing workspaces.  You can choose one of these or ask to go to
+> a new workspace.  If you ask for a new workspace, the workspace will be
+11,16c11,12
+< last time you were in this workspace.  There is no actual way to delete a
+< workspace, but you can recover its memory by COPYing a placeholder to the
+< workspace and issuing the RECOVER command.
+<       Note that if you change workspaces, a RECOVER command is issued so
+< that you cannot UNDO past that point.
+< |mFor more,choose
+---
+> last time you were there.
+> |mFor more, choose
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

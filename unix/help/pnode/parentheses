@@ -1,0 +1,16 @@
+|17,74
+     Parentheses may be used to enclose values inside expressions.  When
+the computer evaluates an expression that contains things in parentheses,
+it will always evaluate what is inside the parentheses first.  This lets
+you change Pascal's usual order for calculating things (e.g. multiplication
+before addition).
+
+Parentheses Examples:
+     3 + 4 * 5
+        {Will be 23, because multiplication first}
+     (3 + 4) * 5
+        {Will be 35, because addition first}
+|mFor more, choose
+|iDo nothing,nop
+|iList of Possible Expressions,Hpclass/value
+|p

@@ -1,0 +1,23 @@
+|23,72
+     The declarations of your program tell ALICE what names you will be
+using for various things in your program.  The declarations always come
+before the instructions in programs and subprograms.
+     A declaration placeholder may be filled in with any of the following
+keywords.
+
+          label           const           type
+          var             procedure       function
+          forward
+
+For further information on any of these, pick the appropriate selection
+below.
+|mFor more, choose
+|iDo nothing,nop
+|iLABEL declarations,Hpnode/labels
+|iCONST declarations,Hpnode/constant_dec
+|iTYPE declarations,Hpnode/type_declara
+|iVAR declarations,Hpnode/variable_dec
+|iPROCEDURE declarations,Hpnode/procedure
+|iFUNCTION declarations,Hpnode/function
+|iFORWARD declarations,Hpnode/forward_decl
+|p

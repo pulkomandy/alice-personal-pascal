@@ -1,0 +1,184 @@
+.ce
+User Interface Philosophy
+.pp
+The following goals were laid down in our design of the ALICE user interface.
+.np
+We strive in ALICE not to surprise the user.  Not doing what the user
+expects has been one of the greatest flaws in other LBEs.
+.np
+While ALICE is a teaching environment, and will be helping the student
+along, it should not be designed to get in the way of the more advanced
+student who needs less help.  Thus low-level help will be available
+by explicit request, and it will be obvious how to get it.  Help about
+mistakes that even experienced programmers make will be provided all the
+time, without being asked for.
+.np
+We try, wherever possible, to allow the user to type in a program much
+as it would be typed into a normal editor.  Thus to enter an WHILE statement,
+we use not a special ".w" macro as Cornell does, but rather the actual
+word "while", followed by some form of terminator.
+It should be possible to type in most of
+a program they way it would be typed to a normal line editor, one line
+at a time.   This will help students make the transition from ALICE to
+less sophisticated systems they may have to use in the real world.
+.np
+It should not be necessary to memorize a long list of commands and what
+keys to type to get them.
+.np
+Most actions should be consistent, so as not to provide too many surprises.
+Most commands will do the same thing everywhere it is possible to make this
+reasonable.
+.np
+Things that are done a great deal should be made easy to do.  In these areas
+it is not harmful to violate other rules, since the user will very quickly
+learn what is needed and integrate it into a subconcious action.  Things
+done a great deal are cursor motion, entering new statements and declarations,
+and simple editing of expressions.  Our special cases will be bound to
+"rapid action" keys that are easy to reach.
+.np
+For each exception made for high-use commands and actions, there should
+still be a general command that is consistent.  This way the user need not
+remember the special cases at first, and can deal with things at his or her
+own speed.
+.np
+In order to reduce the amount of command memorization, commands will be
+based on a "cross-product" basis.  Think of this as a "verb" and "object"
+system.  For example, there will be one way to mark out a section of the tree.
+This marking system will be usable with all commands that deal with a
+section of the tree.  Thus the user will not have to learn a whole series
+of commands to do things like "delete function" and "delete statement",
+but rather need only learn how to mark out areas like "functions" and
+"statements", and then learn things that can be done with marked areas
+like "delete" or "move".
+.np
+Rather than provide all sorts of annoying checkpoints that stop the
+user from doing dangerous actions, we will provide an "undo" feature that
+allows the user to step back in time, correcting errors made in reverse
+order.
+.pp
+Lets us now detail some of the special cases.
+.sh 1 "Cursor Motion"
+.pp
+The first, and perhaps most important part of the user interface is the
+way moving the cursor is handled.  The most common operations in
+editing are moving the cursor around and making small changes.  Thus
+the way the cursor moves is strongly realated to how the editor "feels"
+to the user.   If cursor movement is difficult, inconsistent or unnatural,
+this will quickly frustrate the user.  In good editors, movement of the
+cursor is done at an almost subconcious level, like touch-typing or shifting
+gears in a car.  If the user must think before and after each small
+movement of the cursor, subconcious control of the cursor will be impossible.
+.pp
+Original designs of TSEs followed the tree philosophy too far in dealing
+with the cursor.  They allowed the user to move the cursor only along tree
+lines, ie. up and down the tree, or to left and right siblings.  While this
+is good for showing the structure of the tree, it can get confusing.  In
+this case, the cursor is telling you something as you move it, rather than
+doing what it is told.  Most people can deal subconciously with little more
+than linear motion.
+.pp
+We have thus decided to allow both screen-based (linear) and tree-based
+cursor motion.  The primary mode, driven by the trackball and pointing
+arrows, will be screen-based.  Through use of special tables, we will map
+screen locations to tree locations.  Thus to get to any part of the tree
+desired, a user will be able to move the trackball cross-hairs
+FOOT-NOTE: cross-hairs is used as a generic term for pointing icons
+anywhere in the screen, and even beyond the top and bottom of the screen
+to move through the program, scrolling.  The arrow keys will have the same
+effect, although they will not be as nice to use.
+In order to show the tree nature of the program, however, we plan to investigate
+the feasibility of a special system that would draw a box around the currently
+marked node as the cursor zips around the screen.  This would not only show
+the tree stucture, but give more confidence in pointing since it would always
+be clear what node the cursor was on.  This would have to be very fast not
+to get in the way, however.
+.pp
+The other motions will be provided by commands linked to keys the same
+way that other editor functions are provided.  They might be linked to special
+shifted version of the arrow keys.  These keys would allow more sophisticated
+users to move about very quickly in the program assuming they knew where
+they wanted to go.
+.pp
+Some keys will perform a hybrid of cursor motion and input.  Most notable
+among these is the RETURN/ENTER (CR) key.
+.sh 2 "RETURN"
+.pp
+The use of this key was one of the most difficult questions to decide.
+There are many different implications one might decide to give it.  At first,
+it seems right to make this key mean "go to the next unfilled placeholder."
+This would allow users to just go from blank to blank, "filling in the blanks",
+so to speak, hitting CR after each one.  This is nice, but there are
+problems.  To work this out, we must consider what CR means to the user.
+.pp
+Most computer systems, including QNX, use the CR to mean, "I am done with this
+line of input.  Deal with it and let me type in the next."  Visually, CR is
+expected to move the cursor to the left side of the screen, and usually
+down one line as well.  This visual link is very important, for to do
+something else would surely surprise the user.  We feel that the CR key
+should be reasonably consistent, and always move the cursor down to the
+leftmost token on the next line of the program, if possible.  Thus
+the "go to the next placeholder" scheme could cause problems, as it would
+often result in a CR moving the cursor some number of spaces to the right
+on the same line!  We have decided to leave this to another key, namely TAB.
+.pp
+Moving the cursor is not enough for CR, however, since we must handle the
+idea of typing in the next piece of input.  We have decided to use CR as
+the means of inserting new lines of input into arbitrary lists of "line-size"
+things in the program.  By "large" things, we mean structures that
+genrally would be on one line in a program.
+We use the line here because we feel that
+CRs are strongly linked to the visual idea of lines.  The only two
+"line-size" things are statements and declarations.  Since most input will
+involve statements, the user can think of CR the way it is though of in
+a normal editor, ie. "I am done with this statement, let me type in
+another after it."  In declarations, the meaning is also the same as would
+be found in a normal editor, and it is, "I am done with this declaration,
+let me type in another."
+.pp
+It should be noted that CR will not be the normal key to generate new
+list items.  It is in fact, rather specialized in use, but from the outside
+it should appear consistent.  The user will feel it means "take me to the
+next line where I can do something, possibly making a new one if that makes
+sense."  A more general command will allow arbitrary expansion of lists.
+Most list cases will be handled so well by CR and context-related commands
+that there will be little use for it, though.
+.sh 1 "Expressions"
+.pp
+Expressions are a special case that every LBE seems to recognize.  Most
+expressions are simple, and even novices don't need the help of a TSE to
+type them in.  In fact most people feel so confident typing expressions
+that they would shun special input procedures.  In addition, expressions
+are usually written in infix notation, which does not suit the input
+style of ALICE, which is prefix based.  (By prefix based, we mean that one
+defines the top level of a stucture first, and then fills in the lower
+level parts.  This encourages top down design.)  ALICE will thus allow
+expressions to be typed in as regular text.
+.pp
+What this means is that whenever an expression is required, ALICE will
+switch into a special text input mode.  This will allow the user to just
+type in the expression as it would be typed to a normal system.  It
+will be possible to backspace and perform other minor editing functions.
+When the expression terminates, ALICE will parse it and build into into
+tree form.  Subsequently, it will be possible to edit the expression
+in tree form, which provides a much clearer representation of how the
+expression is contstructed and how it will be evaluated.  It will always
+be possible, however, to take any expression or sub expression and edit
+it as text again.  This should provide maximum convenience.  Studies have
+shown that most expressions are very simple, so this special case for
+expressions should seem quite natural anyway.
+.pp
+Error detection in expressions will have to be done after the expression
+has been fully typed in.  We believe this is what is desired, for we doubt
+users would wish to be informed of things like undeclared variables
+constantly while they type.  Thus one might type in such a variable, and
+then go back into the tree to change it.  This will be a simple operation.
+.pp
+Although text input mode will be the normal system for entering expressions,
+many people actually like to type in expressions in non-infix notation.
+While we can't provide the postfix or "reverse polish" notation used by
+HP calcualtors, we will allow expressions to be entered in prefix like
+other ALICE structures.  Consider entering something like "(a+b)*c".  This
+could be done with either "(a+b)*c" or "*+a<TAB>b<TAB>c" or even "*a+b<TAB>c".
+It is thought that while building an expression on the fly, one might wish
+to use prefix mode, since there is no worry about operator binding strength
+and other issues.  Full details of this input process are given in the spec.

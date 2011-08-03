@@ -1,0 +1,17 @@
+|13,73
+     An integer constant is just a number without a decimal point or expo-
+nent.  You can put a "+" or "-" sign in front of it if you want, but no
+space between the sign and the rest of the number.  You cannot put blanks
+or commas or anything else in the middle of the number -- just digits.
+     The computer cannot accept integers that are too large or small.  The
+largest possible integer is +32767 and the smallest is -32768.
+
+Valid Integer Constants Examples:
+     1   0   -1   +345   -678
+Invalid Integer Constant Examples:
+     1.0    - 2    4e5    1,000    1000000
+|mFor more, choose
+|iDo nothing,nop
+|iThe integer type,Hpsymbol/integer
+|iReal constants,Hpnode/real_constan
+|p

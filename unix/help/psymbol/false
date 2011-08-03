@@ -1,0 +1,9 @@
+|9,70
+     "False" is one of the two possible Boolean values (the other is
+"True").  For example, "False" is the result of A>B if A is NOT greater
+than B.
+|mFor more, choose
+|iDo nothing,nop
+|iTrue,Hpsymbol/true
+|iBoolean,Hpsymbol/boolean
+|p

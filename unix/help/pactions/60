@@ -1,0 +1,5 @@
+|5,74
+     When you select this, the cursor will be on the beginning of a
+subprogram or the program.  ALICE will create an empty placeholder of the
+same type as the third placeholder inside the block.  This means that ALICE
+will create another Statement placeholder inside the subprogram or program.

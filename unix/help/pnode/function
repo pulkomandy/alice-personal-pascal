@@ -1,0 +1,23 @@
+|24,72
+     A function subprogram is created with a declaration consisting of a
+function heading plus the declarations and instructions that make up the
+function.
+     The function heading gives the name of the function and the type of
+value the function returns.  It also gives the names and types of the
+parameters that the function uses.  There are several kinds of parameters
+-- additional help is available below.  A function may return any simple
+type of value, but not structured types like arrays, records, or files.
+
+Function Declaration Examples:
+     function square(x:real) : real;
+        {Takes a real parameter, returns a real value}
+     function max(i,j:integer) : integer;
+        {Takes two integer parameters, returns an integer value}
+     function StrLen(str:packed array [1..100] of char):integer;
+        {Takes a string parameter, returns an integer value}
+|mFor further, choose
+|iDo nothing,nop
+|iFunction calls,Hpnode/function_cal
+|iParameter types,Hpclass/parameter
+|iForward declarations,Hpnode/forward_decl
+|p

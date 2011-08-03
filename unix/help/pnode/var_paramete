@@ -1,0 +1,28 @@
+|23,73
+     A "var" parameter is a type of parameter that can be listed in the
+heading of a subprogram declaration.  To declare a "var" parameter, you
+must put the word "var" before the parameter's name and its type.
+     When the subprogram is called, the "var" parameter will be identified
+with the corresponding argument passed by the caller.  Anything that is
+done to the "var" parameter is also done to the corresponding argument --
+inside the subprogram, the parameter and the argument are the same things.
+     The argument that corresponds to a "var" parameter must be a variable
+of some type.
+
+Var Parameter Examples:
+  function getln(var line : packed array [1..80] of char) : integer;
+      {"line" is a var parameter}
+  procedure proc(i:integer; var c:char);
+      {"i" is a value parameter; "c" is a var parameter}
+   ...
+  length := getln(inline);
+  proc(1,c);   proc(i,line[i]);
+  proc(3+i,rec.cfld)
+  {value parameters can be many things}
+  {var parameters must be variables}
+|mFor more, choose
+|iDo nothing,nop
+|iValue parameters,Hpnode/parameter
+|iProcedure declarations,Hpnode/procedure
+|iFunction declarations,Hpnode/function
+|p

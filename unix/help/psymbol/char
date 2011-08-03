@@ -1,0 +1,13 @@
+|12,74
+     The "char" data type is a predefined type that consists of all the
+printable and non-printable characters in the ASCII character set.  This
+includes the upper and lower case letters, the digits, all the other
+characters on the terminal keyboard, and many other characters that do not
+have their own key.
+     A "char" constant is written as a single character inside single quote
+marks, as in 'a'.
+
+|mFor more, choose
+|iDo nothing,nop
+|iASCII,Hmisc/ascii
+|p

@@ -1,0 +1,11 @@
+|12,72
+Error encountered while saving program
+    ALICE encountered an error while trying to write your program into a
+    file.  Frequently, this happens because your disk is already full and
+    there is no more space available for writing.  Other causes might be
+    removing a floppy while you are writing to it or a damaged disk.
+|mFor more, choose
+|iDo nothing,nop
+|iSaving programs,Hcommand/save
+|iSaving programs as text,Hcommand/text
+|p

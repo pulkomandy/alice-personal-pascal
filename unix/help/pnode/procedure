@@ -1,0 +1,23 @@
+|23,73
+     A procedure declaration declares a procedure inside a Pascal program
+or subprogram.  The declaration consists of the procedure heading plus the
+declarations and instructions that make up the procedure.
+     The heading gives the name of the procedure, plus the names and types
+of the parameters that the procedure uses.  These can be either value
+parameters or "var" parameters.
+
+Procedure Declaration Examples:
+     procedure getline(var line : packed array [1..80] of char);
+         {Returns values in array "line"}
+     procedure StrInsert(var str1 : packed array [1..100] of char;
+                             str2 : packed array [1..100] of char;
+                             position : integer);
+         {Takes three arguments: one var string, one value string}
+         {one integer}
+|mFor more, choose
+|iDo nothing,nop
+|iProcedure calls,Hpnode/procedure_ca
+|iKinds of parameters,Hpclass/parameter
+|iForward declarations,Hpnode/forward_decl
+|iProcedures as parameters,Hpnode/procedure_pa
+|p

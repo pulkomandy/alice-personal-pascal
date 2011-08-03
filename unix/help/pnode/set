@@ -1,0 +1,18 @@
+|14,73
+     A set constant is written as a number of set elements inside square
+brackets.  The elements may be specified individually or as subranges.
+     The elements must all have the same type.  They may be characters,
+integers, or enumerated values.  The type of the set constant will be "set
+of T", where T is the type of the elements.  For example, if all the ele-
+ments are characters, the type of the set constant will be "set of char".
+     If a set is empty, you may expand it by typing "[" on the empty set.
+
+Set Constant Examples:
+     [1,2,3,4]   {Set of integers}
+     ['a'..'z']  {Set of characters}
+     [mon..fri]  {Set of days}
+|mFor more, choose
+|iDo nothing,nop
+|iThe SET type,Hpnode/set_type
+|iSet subranges,Hpnode/range_set
+|p

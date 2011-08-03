@@ -1,0 +1,272 @@
+
+233	"A runtime error has occured (see above).  Hit any key to continue
+266	"Bad suspension stack clearing immediate
+262	"Builtin menu too long
+120	"Can't edit a %s as text
+116	"Can't find '%s'
+263	"Can't find search start in out_line
+271	"Can't have %d kids\n
+225	"Can't insert any more text, line too long.
+69	"Can't open config file %s
+258	"Can't put a macro on key # %d!
+64	"Command macros must be completed with '\\n'
+239	"Declaration under node type %d not possible
+86	"Did not find child in parent in up_to_line
+193	"Error executing %s
+251	"Failed to allocate storage of %u bytes\n
+252	"Funny Control code %c in help file
+62	"Funny symbol type %d\n
+269	"Got l list code\n
+55	"Got to comment %x
+211	"Help on %s not available yet (%s%s)
+210	"Help on %s not available.  Check to see if Help files are on your disk
+256	"History list bad at start of redo
+254	"History list bad at start of undo
+194	"Hit SPACE to continue
+200	"Immediate mode execution
+70	"Internal error: UNIX signal %d
+221	"Internal error: mfree(%X), file %s line %d
+222	"Internal error: mfree(%x)
+242	"Invalid declaration token %d", tok);
+114	"No match for \"%s\" found
+115	"No previous thing to search for.
+209	"Not enough memory for help screen
+214	"Press the key you want to place the macro on:
+227	"Printing to file %s
+226	"Printing to file %s (sort of)
+198	"Program finished - hit SPACE to resume editing
+197	"Program is running
+231	"Saving to %s
+112	"Sorry, no saving of programs in this version
+259	"Stomp_Check fails, Tried to assign kid %d of list %x with %x when count is %d
+217	"Stomp_Check fails, thenode %x, ntype is %d, full kids %d
+199	"Superstep Execution
+208	"This will build %s '%s' structure
+260	"Tried to set kid %d of node %x with val %x
+215	"Type the macro expansion using \\ codes. See HELP on this command for details
+166	"Type tree of unknown symbol type %d
+255	"Unknown history code %d found in history list
+257	"Unknown history code %d found in history list
+84	"Unset type in comparison
+238	"You haven't saved workspace %s
+142	"assign`Types on := don't match
+220	"autosave`Automatic Save is engaged but there is no file name.
+87	"badasc`Can't open file %s
+25	"badbp`Breakpoints should only be put on statements
+34	"badchr`chr: can't convert %d to character
+202	"badcommand`Unknown command '%s'
+174	"badconst`An ordinal constant is expected here
+207	"baddir`can't cd to %s
+5	"baddot`Left side of . is not a record
+126	"baddot`dot (.) requires a record variable on the left
+67	"badformat`bad save format (%s)\n
+187	"badget`Can't have a %s placeholder here
+188	"badget`You can't put %s nodes onto a %s placeholder
+93	"badgo`A jump to label %s is not valid from here
+91	"badgo`Can't find the label %s
+11	"badhide`You must select at least a whole line for hiding
+24	"badimm`Can't enter immediate mode at this point
+124	"badindex`This index is not of the appropriate type
+74	"badmark`Nothing to go back to
+77	"badmark`mark '%c' has been deleted
+76	"badmark`mark '%c' hasn't been set
+75	"badmark`marks must be a letter
+147	"badprec`Output precision must be integer
+12	"badreveal`Not a hidden part of the program
+218	"badsavefile`can't open save file \"%s\"\n
+13	"badsellist`This command can't be applied to a list
+170	"badset`Set elements must be in the range 0..255
+23	"badspec`Can't make a specialty change to a '%s' node
+3	"badsub`Subranges are only allowed in sets
+145	"badsymbol`This isn't the right kind of symbol
+1	"badtok2`'%s' isn't valid here.  You could type '%s' if you did a delete
+2	"badtoken`The input '%s' is not valid at the cursor.  Try the HELP key
+148	"badwidth`Field width must be integer
+181	"badwork`Workspace %s does not exist
+97	"badwrite`Sorry, you may not 'write' a complex type'
+30	"badwrite`error writing file
+94	"bnum`Badly formed number %s on input
+230	"bnum`Sorry, '%s' isn't a valid number, please try again
+141	"boolop`Operands of AND/OR must be boolean
+60	"bounds`Array index %s out of bounds
+213	"bp`Breakpoint!
+212	"break`Break!
+6	"bug`BUG: appropriate list not found for comma
+89	"bug`BUG: subrange check on non subrange %x\n
+92	"bug`BUG:goto label not found or not in list
+173	"bug`Calc_size:Bad Declaration %d in typetree %x
+56	"bug`Got funny state/node %d
+85	"bug`Got funny state/node %d
+29	"can't open file \"%s\"
+122	"cantedit`Can't change a %s textually
+88	"cantexec`Can't be executed in immediate mode
+232	"cantopen`Can't open %s, file not saved
+111	"cantresume`Sorry, unable to continue running the program
+119	"caseconst`Constant isn't the same type as case value
+106	"caseelse`Too many elses in case
+139	"caseexpr`Case selector must be of ordinal type
+37	"catlong`StrConcat makes string too long to fit
+9	"cfunc`Too many arguments to C function
+52	"chg_decid`\"%s\" in use already
+78	"command line options
+118	"comp_dec: odd block %d
+8	"complex`Nasty Error - expression or program too complex
+241	"contok: funny constant token %d
+65	"conv`Failure converting \"%s\" into \"%s\"", name, name_ap);
+183	"copy`Can't copy onto the current workspace
+268	"cp not cursor in reuse
+246	"del_decl: can't find symtab entry %x to delete in %x
+245	"didn't find %s
+80	"divz`Floating point divide by zero
+81	"divzero`attempted to divide by zero
+185	"empty`Workspace %s is empty
+267	"ex_class fails 
+83	"execstub`Placeholders can't be executed
+155	"fewargs`Routine %s has too few arguments
+164	"fewargs`Too few arguments, should be at least %d
+143	"fileassign`Files can't be assigned
+249	"find_alice_cursor : Screen has no lines on it!!!
+248	"find_alice_cursor: Column %d out of window bounds
+247	"find_alice_cursor: Row %d outside of window bounds
+235	"fixquote can't find closing ^A
+182	"fragment`Can't edit code fragments (yet)
+51	"fulllist`Can't expand list any further
+160	"funcparam`This parameter must be the name of a function
+264	"funny type %d in do_pushing
+107	"funnycase`Help!  Funny node in case list
+261	"get_kidnum: Could not find %x in parent %x
+184	"get`You may only insert a code portion on a placehoder
+272	"growlist(%x) on full list
+10	"hideprogram`Can't hide the whole program
+150	"in2`IN: Types of set and member don't match
+154	"incompatset`Set types are not compatible
+45	"initrand`Random modulus must be greater than zero
+186	"inslist`You can't insert a list of things here
+140	"integerop`Operands of DIV/MOD must be integers
+63	"intovflow`integer %s overflow
+162	"iotype`I/O argument is not of the same type as given file
+32	"ln`Logarithm of number <= 0.0
+66	"loadmem`Not enough memory to load program
+203	"logging output to \"%s\"
+137	"loopbound`Finish is not of appropriate type
+136	"loopbound`Start not of appropriate type
+134	"loopvar`Loop counter must be a simple variable
+135	"loopvar`Loop variable must be of ordinal type
+216	"macro definition aborted
+48	"menu too long
+123	"needarray`Indexing requires an array
+21	"needblock`You may only raise a block statement
+22	"needblock`You may only raise a block statement
+133	"needbool`A Boolean (true/false) value is required here
+131	"needbool`Operand of NOT must be boolean
+175	"needconstname`This name is not a constant
+15	"needlist`Selected item must be an element in a list
+16	"needlist`Your selection must be an item in a list
+152	"neednumber`Operand must be integer or real
+125	"needpointer`Pointer ^ requires a pointer or file variable
+14	"needrange`You must select an item or range first - see SELECT command
+161	"needvar`Read parameter must be a variable
+156	"needvar`This parameter must be a variable
+82	"negmod`second operand of mod must be strictly positive
+47	"newout`New - out of memory
+61	"nil`Error - This pointer is NIL
+180	"nodebug`Debug window does not exist
+28	"nodecl`There is no declaration for this item
+234	"noerr`You have not had an error yet!
+50	"nolist`Cannot find a list to expand
+219	"nomac`Few macros defined. (Can't find %s) Press ESC to quit
+98	"nontext`Readln - text file required
+179	"noroom`Not enough room to set up program output window
+265	"not a symbol table!
+103	"noteof`Put/Write - Not at end of file
+95	"notread`READ/GET - file not reset for reading
+27	"notsusp`Program not currently suspended
+110	"notsusp`Your program is not currently in a suspended state
+4	"nottype`%s is not a type name, you can't put it here
+171	"nottype`%s must be a type name
+102	"notwrite`Put/Write - File not open for writing
+201	"noundo`Memory Recovered.  You can't UNDO past this point
+146	"nrprec`Precisions (2 colons) may only be applied to real numbers
+229	"numin`Input Error - Number too long
+99	"opf`Too many active files
+72	"opt`Invalid m#= option
+73	"opt`macro %d out of range
+96	"pasteof`READ/GET - tried to get past end of file
+36	"pred`pred of %s is beyond bounds
+7	"procmap`You can't turn this into a procedure call
+159	"procparam`This parameter must be a procedure
+49	"pruneall`You can't delete an entire program!
+46	"rand`You must call initrandom before using random
+177	"rangebounds`The two bounds of this range don't match
+178	"rangeorder`Range is in the wrong order
+163	"recmatch`Field name %s no longer matches the record
+54	"redo`Nothing to redo
+240	"reexpand: %x is not a list!\n
+138	"repeatbool`Looping condition requires boolean value
+100	"rfile`This file was not initialized with 'update'
+26	"runimm`Can't do that when experimenting in immediate mode
+104	"scrxy`ScrXY: Illegal screen query %d\n
+128	"setel`This set element doesn't match the first one
+127	"setord`Set elements must be of ordinal type
+58	"setrange`Invalid subset range %d to %d
+129	"setrange`Subranges (..) may only be placed in sets
+130	"setrange`Two ends of subrange are of differing types
+57	"setsize`Sorry, sets element %d not allowed
+33	"sqrt`Square root of negative number
+105	"stack`Runtime stack overflow! - out of memory
+20	"statonl`The selected item must be a list of statements
+237	"stomp`Previous contents of workspace %s deleted
+59	"stop`Stop! There is an error here
+68	"strange type %d in load_tree
+39	"strdelete`StrDelete: Attempt to delete beyond bounds string: Offset %d
+41	"stringbig`StrInsert: String too long
+40	"stringbound`StrInsert: Offset %d beyond the bounds of string %s
+38	"strvar`%s must be a string variable
+117	"sttype`Can't return a complex type from a function
+151	"stub`Error - program is not finished yet
+90	"subrange`Value %s is not in subrange bounds for this assignment
+42	"substrbound`SubStr: requested substring beyond bounds of string
+43	"substrfit`SubStr: Substring too long to fit in destination
+35	"succ`the value %s doesn't succ
+121	"syntax`Expression syntax error
+132	"syntax`Expression syntax error
+224	"syntax`expression syntax error
+236	"toolong`Line on screen too long
+18	"transmogrify attempted on %d node
+19	"transmogrify attempted to %d node
+270	"treeprint:Bad template char %d\n
+195	"turning on trace, file '%s'
+196	"turning on unbuffered trace, file '%s'
+168	"typ_bound:Funny node %d in typetree %x
+172	"tystub`Placeholder in type declaration
+144	"undef`Symbol '%s' has not been declared
+191	"undef`Symbol '%s' has not been declared
+108	"undefcase`Undefined case %s
+169	"undeft`Undefined type name
+53	"undo`Nothing to undo
+44	"unfinished`Pack and unpack not implemented
+204	"unfinished`Warning : No real numbers in this version
+17	"unfinished`We haven't imlemented %s yet
+109	"uninit`Attempt to use a variable that has not been assigned to!
+176	"varcon`Constant is not of the right type
+157	"varptype`Var actual parameter must be of identical type to the formal
+253	"whatChanged/proc at root
+244	"while reading /config/apstrings
+101	"wrfil`%s - can't open file %s
+149	"wrformat`Improper use of format specifier (colons)
+243	"wrong linelist kid
+223	LowMemMsg
+79	NoMemMsg
+158	argerror
+206	baddir
+153	bseterr
+250	esiErr
+189	fld_msg
+167	foref_str
+31	intout
+228	nomenumem
+71	opterstr
+113	rdmsg
+192	rdmsg
+165	too_many
+190	undstring

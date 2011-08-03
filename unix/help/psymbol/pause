@@ -1,0 +1,12 @@
+|13,73
+     When ALICE has "Debug On" and it encounters a call to the "pause"
+procedure, the effect is the same as if a breakpoint was triggered while
+running the program.  The program will stop and wait for run-time commands
+(e.g. going into immediate mode).
+     If ALICE has "Debug Off", the "pause" procedure has no effect.
+|mFor more, choose
+|iDo nothing,nop
+|iSet breakpoints,Hcommand/breakpoint
+|iDebug On,Hcommand/bugon
+|iDebug Off,Hcommand/bugoff
+|p

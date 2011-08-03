@@ -1,0 +1,33 @@
+|24,74
+     The "file" type is used when you want to read or write to a file.  You
+must declare a file variable with
+
+          var
+              Name : file of Type;
+
+where Name is the name of the file variable and Type is the type of
+information that is stored in the file.  You must also use "reset",
+"rewrite", or "append", to initialize the file variable and set up the
+associated file for reading or writing.  Once you have done this, you may
+use the reading or writing subprograms on the file.
+
+File Examples:
+     var
+         infile, outfile : file of integer;
+         i : integer;
+     begin
+     reset(infile,'file1');
+     rewrite(outfile,'file2');
+     read(infile,i);
+     write(outfile,i);
+|mFor more, choose
+|iDo nothing,nop
+|iThe "reset" procedure,Hpsymbol/reset
+|iThe "rewrite" procedure,Hpsymbol/rewrite
+|iThe "append" procedure,Hpsymbol/append
+|iThe "write" procedure,Hpsymbol/write
+|iThe "read" procedure,Hpsymbol/read
+|iThe "input" file,Hpsymbol/input
+|iThe "output" file,Hpsymbol/output
+|iThe "text" type,Hpsymbol/text
+|p

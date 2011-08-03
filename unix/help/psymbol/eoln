@@ -1,0 +1,30 @@
+|22,74
+     The "eoln" function tells you if you have reached the end of an input
+line of text.  The value returned by "eoln" is Boolean.  If this value is
+true, you have reached the end of the line and must do a "readln" before
+you can read a new line.  If it is false, you can read at least one more
+character from the line.
+     The argument of "eoln" is the file variable that is associated with
+the text file you are reading.  If you do not give an argument, "eoln" will
+check the "input" file variable (usually associated with input from the
+terminal).  The argument must be a file of the "text" type.
+     Calling "eoln" on "input" may cause the terminal to prompt for input
+if no reads have taken place yet.
+
+Eoln Examples:
+     for count := 1 to 80 do begin
+         if not(eoln) then begin
+             read(line[count]);
+             end;
+         else begin
+             readln;
+             end;
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iFiles,Hpnode/file_type
+|iBoolean values,Hpsymbol/boolean
+|iText,Hpsymbol/text
+|iRead,Hpsymbol/read
+|iReadln,Hpsymbol/readln
+|p

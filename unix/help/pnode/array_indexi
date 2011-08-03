@@ -1,0 +1,20 @@
+|15,73
+     The process of array indexing or subscripting is used to reference an
+element in an array.  Arrays uses indices or subscripts to number or label
+their elements.  The subscripts may have any scalar type; the type of the
+subscripts is given at the same time that the array type is declared.
+     To use a subscript, just enclose it in square brackets immediately
+after the name of the array.
+
+Array Indexing Examples:
+     var
+         iarr : array [1..10] of integer;
+         table : array [char] of char;
+     begin
+     iarr[3] := 0;
+     table['a'] := 'B';
+|mFor more, choose
+|iDo nothing,nop
+|iArrays,Hpnode/array
+|iScalar types,Hmisc/scalar
+|p

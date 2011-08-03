@@ -1,0 +1,11 @@
+|11,72
+You can't delete an entire program
+    You have issued a DELETE or CLIP command while the entire program is
+    selected (highlighted).  ALICE will not let you delete a program in
+    this way.  You may only highlight a portion of the program and delete
+    it.
+|mFor more, choose
+|iDo nothing,nop
+|iDelete,Hcommand/delete
+|iClip,Hcommand/clip
+|p

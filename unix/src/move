@@ -1,0 +1,8 @@
+Error: turning on trace, file 'move'
+my_scope(ab2a) returns 1
+mainloop: c_comp_decls(1, ab2a, 6f)
+my_scope(ab2a) returns 1
+Descend in block 6fab2a, isdirty is 1
+CheckAt=0, cursor=0
+mainloop, cursor abd6, ocursor 6f, srch_row 0, srch_real 0, look.=4
+back from hist_mark()

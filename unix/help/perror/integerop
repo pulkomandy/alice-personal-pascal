@@ -1,0 +1,17 @@
+|17,74
+Operands of DIV/MOD must be integers
+    You had an expression that had one of the forms
+
+          A div B
+          A mod B
+
+    but A or B (or both) were not integers.  You can only use "div" and
+    "mod" on integers.  A common cause of this problem is using "div" or
+    "mod" with expressions that give non-integer results.  For example,
+    (8/4 mod 2) will result in this error.  8/4 is a real number because it
+    uses real division.
+|mFor more, choose
+|iDo nothing,nop
+|iDIV,Hpnode/integer_divi
+|iMOD,Hpnode/modulus
+|p

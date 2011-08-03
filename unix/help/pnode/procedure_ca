@@ -1,0 +1,17 @@
+|13,66
+     A procedure call is an instruction calling a procedure to do a
+particular job.  To call a procedure, simply type the name of the
+procedure.  If the procedure takes arguments, put the arguments in
+parentheses immediately following the procedure name.
+
+Procedure Call Examples:
+     writeln(a,b,c);
+     reset(bookfile,'books');
+     SubStr(str1,4,2,str2);
+|mFor more, choose
+|iDo nothing,nop
+|iProcedure declarations,Hpnode/procedure
+|iValue parameters,Hpnode/parameter
+|iVar parameters,Hpnode/var_paramete
+|iProcedures as parameters,Hpnode/procedure_pa
+|p

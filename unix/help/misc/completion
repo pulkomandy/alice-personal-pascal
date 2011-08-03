@@ -1,0 +1,10 @@
+|10,72
+     The Symbol Completion feature of ALICE can save you a great deal of
+typing.  Whenever you are typing in the name of something (a variable, a
+subprogram, a type, etc.), type the first few characters, then press C-cedille
+ALICE will look through the list of all the names it knows and see which
+names begin with the characters you've typed.  If there is only one such
+name, it will finish off the name you're typing -- you don't have to type
+anything else.  If there are several names that begin in the same way,
+ALICE will give you a list of these names.  Choose the name you want from
+the list and ALICE will finish typing the name for you.

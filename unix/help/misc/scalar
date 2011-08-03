@@ -1,0 +1,22 @@
+|22,72
+     We use the term "scalar type" to refer to any of the following:
+
+          integer
+          char
+          boolean
+          enumerated type
+          subranges of the above
+
+Scalar types can be used for a variety of purposes.  For example, the
+subscripts for an array must have the scalar type.
+     Generally speaking, scalar types are types whose values you could
+list, in order.  This is why "real" isn't a scalar type, since you'd have
+difficulty listing all the possible real numbers.
+|mFor more, choose
+|iDo nothing,nop
+|iInteger,Hpsymbol/integer
+|iChar,Hpsymbol/char
+|iBoolean,Hpsymbol/boolean
+|iEnumerated types,Hpnode/enumerated_t
+|iSubranges,Hpnode/subrange
+|p

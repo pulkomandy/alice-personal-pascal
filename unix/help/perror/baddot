@@ -1,0 +1,18 @@
+|19,74
+dot (.) requires a record variable on the left
+    The "." is used for two things in Pascal -- it is used as a decimal
+    point in real numbers and it is used when you want to get at a field in
+    a record.  If you got this error message when you were trying to use
+    the dot as a decimal point, your mistake is that the thing before the
+    decimal point isn't a number.  Remember that real numbers need at least
+    one digit before and after the decimal point.  If you got this error
+    message when you were trying to get at a field in a record, the name
+    before the dot was not the name of a record type variable.  Check the
+    name that you typed, and check the declaration for that name; either
+    the name or the declaration has to be changed.  (Note that ALICE erases
+    what comes after the dot even if it was the thing before the dot that
+    was in error.  ALICE apologizes but it can't be helped.)
+|mFor more, choose
+|iDo nothing,nop
+|iFields inside records,Hpnode/field_use
+|p

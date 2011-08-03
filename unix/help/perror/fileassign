@@ -1,0 +1,9 @@
+|10,73
+Files can't be assigned
+    You cannot have a file variable on the left hand side of an assignment
+    statement.  Also, if you pass a file variable to a subprogram, it must
+    be passed as a VAR argument, not a value argument.
+|mFor more, choose
+|iDo nothing,nop
+|iFile variables,Hpnode/file_type
+|p

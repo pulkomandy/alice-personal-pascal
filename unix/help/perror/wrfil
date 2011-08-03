@@ -1,0 +1,17 @@
+|17,74
+Can't open file NAME
+    This message may be issued for a variety of reasons when you are trying
+    to use "rewrite", "reset", "append" or "update" to initialize a file
+    variable.  There are many possible causes.  The most straightforward
+    cause is that the file you named could not be found.  You may have
+    spelled the name wrong or the file may not be there for one reason or
+    another.  Another possible reason for this message is that you do not
+    have permissions on the specified file.  Finally, the file may be
+    damaged for some reason and it cannot be opened.
+|mFor more, choose
+|iDo nothing,nop
+|iReset,Hpsymbol/reset
+|iRewrite,Hpsymbol/rewrite
+|iAppend,Hpsymbol/append
+|iUpdate,Hpsymbol/update
+|p

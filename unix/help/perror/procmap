@@ -1,0 +1,17 @@
+|17,73
+You can't turn this into a procedure call
+    If you have an instruction of the form
+
+          undec := Value;
+
+    where "undec" is an undeclared simple variable (no subscripts, no
+    record field names) and Value is the usual empty placeholder, ALICE
+    will let you change the instruction into a procedure call of the form
+
+          undec(Value);
+
+    All you have to do is type an opening parenthesis "(" after the
+    variable name.  If you try to type the opening parenthesis and the
+    assignment isn't in this form, you'll get the error message you just
+    received.  Perhaps the name on the left was declared as a variable; or
+    the thing on the right was not an empty placeholder.

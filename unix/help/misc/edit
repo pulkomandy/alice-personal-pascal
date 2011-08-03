@@ -1,0 +1,19 @@
+|19,74
+Changing an expression:
+     Highlight the expression or part of the expression you want to edit,
+then issue the EDIT command by pressing CTRL-E or by choosing "Edit" from
+the Changes Menu.  This calls on the Simple Text Editor to edit the expres-
+sion.  Since EDIT calls the Simple Text Editor, you can only use it on
+expressions, string constants, and comments.
+     To add something to the expression, move the cursor to the appropriate
+position, then simply type in the new material.  To delete something, move
+the cursor to the end of the material you want to delete and backspace.
+You may also use the trackball to move the cursor back and forth in what
+you are typing, if you find you want to go back and make corrections.
+     When you have typed things in correctly, you have to show you are
+finished by moving off the expression with >>, <<, TAB, SHIFT-TAB, or
+ENTER.
+|mFor more, choose
+|iDo nothing,nop
+|iThe EDIT command,Hcommand/edit
+|p

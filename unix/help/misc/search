@@ -1,0 +1,19 @@
+|19,72
+Searching for a Particular Piece of Code:
+     To search for a particular piece of code, press CTRL-F.  ALICE will
+ask you to type in the string of characters you want to search for (e.g.
+a variable name).  Enter this string, then press ENTER.  The search will
+begin at the current position of the cursor and keep going to the end of
+the program.  If the thing you're looking for hasn't been found by that
+time, ALICE will "wrap around" to the beginning of your program and keep
+looking.
+     The next time you press CTRL-F, ALICE will show you what you were
+searching for the last time.  If you want to search for the same thing,
+just press ENTER; otherwise, enter the new string you want to search for,
+and THEN press ENTER.
+|mFor more, choose
+|iDo nothing,nop
+|iSearching backwards,Hcommand/rsearch
+|iSearching again,Hcommand/again
+|iWild cards,Hmisc/wild
+|p

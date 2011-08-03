@@ -1,0 +1,16 @@
+|11,73
+     A WHILE loop repeats a number of instructions until a given condition
+becomes false.  If the condition is false to begin with, the instructions
+will never be executed.
+
+while Examples:
+     i := 0;
+     while i <= 10 do begin
+         writeln(i,i*i,i*i*i);
+         i := i + 1;
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iRepeat Loops,Hpnode/repeat_loop
+|iBoolean values,Hpsymbol/boolean
+|p

@@ -1,0 +1,15 @@
+|10,73
+     The "chr" function takes an integer as an argument and returns the
+ASCII character that has the same bit representation as the integer.  This
+is the inverse of the "ord" function, which can be used to convert
+characters to integers.
+
+Chr Examples:
+     i := ord('a');
+     c := chr(i + 1);
+     writeln(c,' is the letter b.');
+|mFor more, choose
+|iDo nothing,nop
+|iOrd,Hpsymbol/ord
+|iChar,Hpsymbol/char
+|p

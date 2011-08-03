@@ -1,0 +1,17 @@
+|16,74
+     An addition operation adds two numbers or expressions.  You can only
+add numeric values (reals or integers).
+     If one or both of the things being added are "real", the result of the
+addition will be "real".  If both are integers, the result of the addition
+will be "integer".
+     The addition operator "+" is also used to obtain the union of two
+sets.  The two sets must have compatible base types.
+
+Valid Addition Examples:
+     3+5     3.1+2.2     4.4+2     a+2     ['a'..'z']+['A'..'Z']
+Invalid Addition Examples:
+     'a'+2     (b>c)+4.3     [1,2,3]+['a'..'c']
+|mFor more, choose
+|iDo nothing,nop
+|iSets,Hpnode/set_type
+|p

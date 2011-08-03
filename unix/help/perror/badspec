@@ -1,0 +1,15 @@
+|15,73
+Can't make a special change to this.
+(And variations of this message)
+    You have selected (highlighted) a part of your program, then issued a
+    command from the Special Changes Menu.  However, the command you tried
+    to use would not work on the code you highlighted.  To use a Special
+    Change command, you must highlight
+
+          -- a list of statements
+          -- a block of statements (between begin and end)
+          -- a commented-out block
+|mFor more, choose
+|iDo nothing,nop
+|iCommenting out blocks,Hcommand/comout
+|p

@@ -1,0 +1,29 @@
+|23,74
+     Anything that is written with "write" or "writeln" can have a field
+width added on the end.  This is a colon (:) and a positive integer that
+comes right after what you want to write out.  The integer tells the
+minimum number of characters that the writing procedure should use when
+writing out a value.  If the value doesn't need that many characters, the
+writing procedure will add blanks to "pad the value out" to the minimum
+width.
+     If you have something like "a:8" in a writing instruction and you want
+to add a precision on the end, you must edit the entire "a:8", not just the
+"8".
+     In the examples below, we use the letter 'b' to show where ALICE puts
+in blanks.
+
+Field Width Examples:
+     a := 1;
+     b := 2.0;
+     writeln(a,b);
+        output is
+     1 2.0
+     writeln(a:8,b:5);
+        output is
+     bbbbbbb1bb2.0
+|mFor more, choose
+|iDo nothing,nop
+|iThe "write" procedure,Hpsymbol/write
+|iThe "writeln" procedure,Hpsymbol/writeln
+|iPrecisions,Hpnode/precision
+|p

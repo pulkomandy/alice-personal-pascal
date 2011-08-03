@@ -1,0 +1,17 @@
+|18,74
+     The Boolean data type is a predefined enumerated type that is set up
+with type
+
+              Boolean = (false,true);
+
+All comparisons (=, <>, <, >, <=, >=) return Boolean values.  The operators
+"and" and "or" can be used to join two Boolean values together into one
+Boolean expression.  The "not" operator reverses the value of a Boolean
+expression (so that "true" becomes "false", and "false" becomes "true").
+|mFor more, choose
+|iDo nothing,nop
+|iand,Hpnode/and
+|ior,Hpnode/or
+|inot,Hpnode/not
+|iEnumerated Types,Hpnode/enumerated_t
+|p

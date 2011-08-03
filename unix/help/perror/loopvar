@@ -1,0 +1,11 @@
+|11,74
+Loop counter must be of ordinal type
+(And variations of this message)
+    The control variable that is used in a FOR statement can only be
+    integer, character, or an enumerated type -- it cannot be a real number
+    or a string or any other type.
+|mFor more, choose
+|iDo nothing,nop
+|iFOR loops,Hpnode/for_loop
+|iDOWNTO loops,Hpnode/reverse_for_
+|p

@@ -1,0 +1,30 @@
+|24,75
+     A Case-Instance placeholder appears inside a CASE statement.  It may
+be filled in with a case label or the keyword ELSE.
+     A case label is a scalar constant whose type matches the type of the
+variable that follows the keyword CASE at the beginning of the CASE state-
+ment.  If you enter such a constant, ALICE will lay out
+          C: begin
+             Statement
+             end;
+where C represents the constant you entered.  The Statement placeholder
+should be filled with statements to be executed if the variable that
+follows the keyword CASE matches the constant C.
+     If you enter ELSE, you get an ELSE clause.  This will be executed if
+the variable that follows the keyword CASE does not match any of the others.
+
+Case Instances Examples:
+     case t mod 3 of
+         0: writeln('Divisible
+		   by three');
+         else begin
+             writeln('Not
+	     divisible by three');
+         end;
+     end;
+|mFor more, choose
+|iDo nothing,nop
+|iCASE statements,Hpnode/case
+|iELSE clauses,Hpnode/case_else
+|iScalar constants,Hmisc/scalar
+|p

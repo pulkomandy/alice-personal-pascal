@@ -1,0 +1,27 @@
+|23,74
+     The record data type can be made up of many different "fields" of
+information.  Each field has its own name and type.  Field names can be the
+same as names outside the record, but you can't have two fields of the same
+name in the same record.
+     Records may have a fixed part and a variant part.  The fixed part
+appears in all records of a particular part.  The variant part may contain
+different information in different records.
+
+Record Examples:
+     type
+         book = record {Description of book}
+             title : packed array [1..40] of char;
+             case English : Boolean of
+             true : ( Canadian : Boolean );
+             false : ( language : packed array [1..20] of char);
+             end;
+     begin
+     book.title := 'The Three Musketeers';
+     book.English := false;
+     book.language := 'French';
+|mFor more, choose
+|iDo nothing,nop
+|iUsing record fields,Hpnode/field_use
+|iDeclaring record fields,Hpnode/record_field
+|iVariant parts,Hpnode/variant_reco
+|p

@@ -1,0 +1,19 @@
+|19,74
+     In Pascal, names are used to refer to variables, subprograms, data
+types, and constants that have been declared in the CONST section of a
+program or subprogram.  Names may consist of any number of letters, digits,
+or underscores (_), with no blanks in the middle.  The first character of
+a name may not be a digit.
+     The letters may be either upper case or lower case, but ALICE
+considers upper case letters to be the same as lower case.  Therefore,
+NAME, name, Name, and nAMe are all the same thing as far as ALICE is
+concerned.
+     Certain words cannot be used as names because they already have spe-
+cial meanings in Pascal.  These are known as "keywords".  Some examples of
+keywords are IF, VAR, BEGIN, and RECORD.  You will be given an error if you
+try to use a keyword as an ordinary name.
+
+Valid Name Examples:
+     hello     name     b2     veryverylongname
+Invalid Name Examples:
+     2b     bad.character     begin

@@ -1,0 +1,100 @@
+pclass/absolute_add	Absolute address class, adr : adr or ID
+pnode/absolute_var
+perror/badmem`Colon array index valid only with Mem array" ) ); 318,"badmem`Absolute memory references must be made with integers" ) );
+perror/fof`Can't have a file of files" ) );
+perror/erase`Erase - can't delete file %s"), fname );
+perror/rename`Rename of %s to %s failed"),
+perror/rob`Can't reference record %l (beyond 32767)"), loc );
+perror/dir`Can't create directory %s"), dname ); 323,"dir`Can't remove directory %s"), dname );
+perror/blockio`Block I/O routine must be performed on untyped file") );
+perror/toosmall`Structure too small to hold registers") );
+perror/baddir`GetDir: Invalid drive number") ) 
+pactions/69	/* record initializer */
+pactions/70	/* constant or ID on abs address */
+pactions/71	/* transmog to init */
+pactions/72	/* transmog to absolute */
+pcommand/compile
+psymbol/addr - xref address, ofs, seg, MakePointer, Ptr, "pointer"
+psymbol/anyfile - untyped file - xref pnode/file_type, blockread
+psymbol/aux - file, xref text
+psymbol/black - colour
+psymbol/blink - colour
+psymbol/blockread, xref anyfile, blockwrite
+psymbol/blockwrite, xref anyfile, blockread
+psymbol/blue - colour
+psymbol/brown - colour
+psymbol/bw40 - mode - xref textmode
+psymbol/bw80 - mode - xref textmode
+psymbol/c40 - mode - xref textmode
+psymbol/c80 - mode - xref textmode
+psymbol/chdir, xref getdir
+psymbol/component_si - generic
+psymbol/con - file - xref text
+psymbol/crtexit
+psymbol/crtinit
+psymbol/cseg - constant xref pnode/absolute_var, sseg, dseg
+psymbol/cyan - colour
+psymbol/darkgray - colour
+psymbol/dseg - constant, xref pnode/absolute_var, cseg, sseg
+psymbol/erase, xref assign, rename
+psymbol/err - file, xref text, inp, out
+psymbol/exit - xref pnode/goto
+psymbol/filepos - xref longfilepos, seek, filesize
+psymbol/filesize - xref seek, filepos, longfilesize, append
+psymbol/fillchar - xref move
+psymbol/flush - xref file type, assign, rewrite
+psymbol/getdir - xref chdir
+psymbol/green - colour
+psymbol/hi - xref lo, swap, integer
+psymbol/inp - file, xref text, out, err
+psymbol/intval - generic
+psymbol/lightblue - colour
+psymbol/lightcyan - colour
+psymbol/lightgray - colour
+psymbol/lightgreen - colour
+psymbol/lightmagenta - colour
+psymbol/lightred - colour
+psymbol/lo, xref high, swap, integer
+psymbol/longfileposi, xref filepos
+psymbol/longfilesize, xref filesize
+psymbol/longseek, xref seek
+psymbol/lst - file, xref text, file_type
+psymbol/magenta - colour
+psymbol/mark, xref release, new, dispose
+psymbol/mem, xref memw, pnode/absolute_var, var_to_mem, mem_to_var,peek,poke
+psymbol/memw, xref mem, pnode/absolute_var, var_to_mem, mem_to_var,peek,poke
+psymbol/mkdir, xref rmdir, getdir, chdir
+psymbol/mono - mode, xref textmode
+psymbol/move - xref fillchar, var_to_mem, mem_to_var
+psymbol/msdos - xref intr
+psymbol/nosound - xref sound
+psymbol/null
+psymbol/object - generic
+psymbol/ofs - xref address, seg, ptr
+psymbol/out - file, xref inp, err, text
+psymbol/paramcount - xref paramstr
+psymbol/paramstr - xref paramcount
+psymbol/pi - constant
+psymbol/port - xref portw
+psymbol/portw - xref port
+psymbol/ptr - xref rawpointer, addr, ofs, seg
+psymbol/randomize, xref initrandom, random
+psymbol/realval - generic
+psymbol/red - colour
+psymbol/release, xref mark, new, dispose
+psymbol/rename, xref erase, assign
+psymbol/rmdir, xref mkdir, chdir, getdir
+psymbol/seekeof, xref eof, text, seekeoln
+psymbol/seekeoln xref eoln, text, seekeof
+psymbol/seg, xref ofs, ptr, address
+psymbol/size - generic
+psymbol/sseg - constant, xref cseg, dseg, absolute_var
+psymbol/swap - xref lo, high
+psymbol/trm - file, xref con, text
+psymbol/typecode - generic
+psymbol/wherex, xref scrxy, wherey
+psymbol/wherey, xref scrxy, wherex
+psymbol/white - colour
+psymbol/yellow - colour
+psymbol/opendir - xref ReadDir, GetDir
+psymbol/readdir - xref OpenDir, GetDir

@@ -1,0 +1,23 @@
+|24,73
+     A Forward declaration is used to describe a subprogram and its argu-
+ments before the subprogram is actually defined.  For example, suppose
+procedure A calls function B but the definition of A comes before B in the
+program.  A conventional Pascal compiler would need to know the type of
+value returned by B and the type of arguments accepted by B, at the time
+that it was compiling A; otherwise, it would not be able to tell if A was
+using B correctly.
+     For this reason, conventional Pascal compilers have forward declara-
+tions.  This is a declaration giving the type of arguments for a routine,
+and the type of value returned by the routine (if it's a function).  Such
+a declaration looks like a normal routine declaration, but instead of the
+usual body of the routine, it just has the word "forward".
+     ALICE doesn't need this sort of thing, since it knows the names and
+forms of all routines in the program before the program runs.  However, if
+ALICE is writing out source code to be given to another compiler, it needs
+to know if it has to create a forward declaration.  To indicate this, type
+the keyword Forward on a Declaration placeholder, followed by the name of
+the routine for which a forward declaration is necessary.
+|mFor more, choose
+|iDo nothing,nop
+|iSaving files as text,Hcommand/text
+|p

@@ -1,0 +1,20 @@
+|14,72
+     A Case-Instance is part of a CASE statement.  It consists of one or
+more constants (called the case labels) and a number of instructions.  If
+the Value of the variable at the start of the CASE statement matches one
+of the constants that label the instructions, the instructions will be
+executed.  The constants must be of a scalar type, and have the same type
+as the CASE Value.
+
+Case Instances Examples:
+     case i of
+         1: answer := x;
+         2: answer := x*x;
+         3: answer := x*x*x;
+     end;
+|mFor more, choose
+|iDo nothing,nop
+|iCASE statements,Hpnode/case
+|iELSE clauses,Hpnode/case_else
+|iScalar types,Hmisc/scalar
+|p

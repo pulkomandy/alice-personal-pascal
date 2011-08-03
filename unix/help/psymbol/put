@@ -1,0 +1,31 @@
+|20,71
+     The "put" procedure is usually used to write an element to a file.
+The argument of "put" is the file variable of the file you want to write
+to.  If this argument is omitted, "put" will read "output".  The file
+variable must be initialized with "rewrite", "append", or "update".
+     When you call "put" on a file variable "f", ALICE will write the
+current contents of "f^" to the file.  The value of "f^" then becomes
+undefined.
+
+Put Examples:
+     var
+         f : file of integer;
+         i : integer;
+      ...
+     rewrite(f,'myfile');
+     for i := 1 to 50 do begin
+         f^ := i;
+         put(f);
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iGet,Hpsymbol/get
+|iRewrite,Hpsymbol/rewrite
+|iAppend,Hpsymbol/append
+|iUpdate,Hpsymbol/update
+|iOutput,Hpsymbol/output
+|iFiles,Hpnode/file_type
+|iEof,Hpsymbol/eof
+|iWrite,Hpsymbol/write
+|iIndirection,Hpnode/indirection
+|p

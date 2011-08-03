@@ -1,0 +1,19 @@
+|19,74
+Field name NAME no longer matches the record
+    This error occurs while you are editing your program.  You originally
+    had an expression of the form
+
+          record . field
+
+    You deleted the name of the original record and put in the name of a
+    different record.  The problem is that ALICE will not let you change
+    the record name unless you change the field name as well.  You must
+    delete the "field" name using the CLIP command and replace it with the
+    name of a field that is actually in the record.  Note that you will get
+    this message even if the two different records have fields with the
+    same name.
+|mFor more, choose
+|iDo nothing,nop
+|iUsing fields,Hpnode/field_use
+|iCLIP,Hcommand/clip
+|p

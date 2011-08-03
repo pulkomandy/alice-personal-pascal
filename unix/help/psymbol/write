@@ -1,0 +1,28 @@
+|21,74
+     The "write" procedure writes information to a file or to the terminal.
+If you are writing to a file, the first argument should be a file variable
+that has been set up with "rewrite".  If you are writing to the terminal,
+you can omit this argument or you can specify the file variable "output".
+     The other arguments of "write" are values that you want to write out.
+If you are writing to a text file, these values may be characters,
+integers, reals, strings, sets, or enumerated types.  If you are writing
+to any other kind of file, the values must have the same type as the file
+itself.  For example, if the file variable is declared as "file of
+integer", the arguments of "write" must be integer values.
+
+Write Examples:
+     write(filevar,x,y,z);
+     for i := 1 to StrLen(line) do begin
+         write(line[i]);
+         end;
+     writeln;
+     {Puts out new-line}
+|mFor more, choose
+|iDo nothing,nop
+|iWriteln,Hpsymbol/writeln
+|iFiles,Hpnode/file_type
+|iRewrite,Hpsymbol/rewrite
+|iAppend,Hpsymbol/append
+|iField widths,Hpnode/field_width
+|iPrecisions,Hpnode/precision
+|p

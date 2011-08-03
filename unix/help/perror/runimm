@@ -1,0 +1,7 @@
+|7,73
+Can't run programs now
+    When you started ALICE, you chose "Experiment in Immediate Mode" from
+    the Starting Menu.  Later on, you pressed the F1 key to run a program.
+    Since you are only working in immediate mode, there is no program for
+    ALICE to run.  If you want to run a program, quit ALICE and the next
+    time, do not choose the "Experiment" selection from the Starting Menu.

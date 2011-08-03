@@ -1,0 +1,20 @@
+|21,74
+     Various features (such as breakpoints and single-stepping) "suspend"
+programs in the middle of execution.  In other words, ALICE runs the
+program partway through and then stops.  The status line at the bottom of
+the screen tells you when you have a program suspended.
+     With the program stopped, you can perform a number of debugging opera-
+tions.  For example, you can ask for a TRACEBACK (see below for more
+information).  You can also go into immediate mode and print out the values
+of variables.
+     ALICE can often continue executing a suspended program from where it
+left off.  However, you cannot recontinue a program that stopped because
+of an error or a program that you have edited since it was suspended.
+     If you do not want to continue a suspended program, you must "sweep it
+away" with the POP command (found on the Run-Time Menu).  The status line
+will always tell you if you have any suspended programs still around.
+|mFor more, choose
+|iDo nothing,nop
+|iThe POP command,Hcommand/pop
+|iTracebacks,Hcommand/traceback
+|p

@@ -1,0 +1,47 @@
+ALICE Compiler
+
+The Alice compiler, do be delivered in Beta Test form by LGS by Sept 1,
+1986, shall have the following features:
+
+ o The ability to compile Alice Pascal programs (including extended Turbo
+   features) in memory.  This will be done on a procedure by procedure
+   basis with dynamic linking, so that changed routines may be compiled
+   individually for the fastest possible compile time.
+
+ o The ability to, upon request, compile these routines into intel format
+   object modules suitable for linking with the DOS linker.  This includes
+   the ability to call library routines prepared either with Alice Pascal,
+   assembler, or the Lattice and Microsoft C compilers
+
+ o A limited ability to combine interpretation of in-memory routines with
+   execution of compiled in-memory routines.
+
+ o Runtime libraries, both in "in memory" format and .OBJ format, to support
+   all ALICE and Turbo builtin procedures and functions
+
+ o Floating point support that detects the presence of an 8087 in a machine
+   and uses it if possible, emulating otherwise.  Turbo is currently
+   seriously lacking in this area
+
+ o The ability to use Turbo-Pascal style libraries during in-memory
+   compilation, providing these libraries operate according to the definitions
+   in the Turbo manual and do not perform special interactions with Turbo
+   Pascal or use Turbo format floating point numbers.
+
+ o Execution speed of compiled programs will be at a similar level to
+   Turbo Pascal
+
+ o There is no guarantee that .OBJ libraries prepared for C compilers will
+   be loadable into the in-memory compilation environment.  This will
+   be examined for later work.
+
+ o It is highly doubtful that the system will run on a 256K IBM-PC
+
+ o The compiler will support ISO level 0 Pascal to the extent that Alice
+   1.3 does
+
+ o The compiler will support "large model pointers" so that programs may
+   access all the memory of their machine
+
+ o The compiler will support "long calls" so that programs may contain
+   more than 64K of code - currently a major limitation of Turbo Pascal

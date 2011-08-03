@@ -1,0 +1,21 @@
+|17,73
+     The "dispose" procedure does away with a variable that was created by
+the "new" procedure.  "Dispose" either takes a pointer value argument
+(originally returned by "new"), or it takes a pointer and a list of tag
+field values.  The arguments for "dispose" must be identical to the argu-
+ments for "new" that originally created the object.
+     The current implementation of ALICE does not free up "disposed"
+memory.  This will be corrected in a future release.
+
+Dispose Examples:
+     type
+         rec = record ... end;
+     var
+         rptr = ^ rec;
+     begin
+     new( rptr );
+     dispose( rptr );
+|mFor more, choose
+|iDo nothing,nop
+|iNew,Hpsymbol/new
+|p

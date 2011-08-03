@@ -1,0 +1,5 @@
+|5,73
+Invalid m#= option
+    You tried an "m=" option on the ALICE command line, but it didn't have
+    the proper form.  Re-read the section of the ALICE user guide that
+    explains macros.

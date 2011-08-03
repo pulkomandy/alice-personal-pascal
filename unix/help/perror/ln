@@ -1,0 +1,4 @@
+|4,72
+Logarithm of number less than 0.0
+    Numbers that are zero or less do not have logarithms.  Therefore, you
+    can't use any Log function on such numbers.

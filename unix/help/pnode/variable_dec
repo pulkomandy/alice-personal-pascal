@@ -1,0 +1,18 @@
+|18,71
+     A Variable Declaration appears in the VAR section of a program or
+subprogram.  The declaration gives the name of one or more variables and
+tells what type of data the variable(s) will hold.  ALICE also requires
+that you provide a comment, describing what the variable(s) will be used
+for.
+
+VAR Declaration Examples:
+     var
+         i,j : integer ; { Index variables }
+         str : packed array[1..100] of char ; { Character string }
+         ptr : ^real; { Pointer to real value }
+|mFor more, choose
+|iDo nothing,nop
+|iNames,Hpclass/name
+|iComments,Hpnode/comment
+|iList of possible types,Hpclass/type
+|p

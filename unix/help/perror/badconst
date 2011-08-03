@@ -1,0 +1,9 @@
+|9,73
+An ordinal constant was expected here
+    Inside a type declaration, you used a real or string constant when you
+    should have used an integer, character, or enumerated value.  Change
+    the constant to one of the acceptable values.
+|mFor more, choose
+|iDo nothing,nop
+|iType declarations,Hpnode/type_declara
+|p

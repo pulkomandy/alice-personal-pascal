@@ -1,0 +1,18 @@
+|18,72
+Sorry, unable to continue running the program
+    You receive this message when you have a suspended program and you
+    attempt to continue execution of the program.  The message indicates
+    that ALICE cannot resume program execution.
+         The usual reason for this is that the program was suspended
+    because it had an error in it.  ALICE will not resume execution of a
+    program that has already been found to be incorrect.  The error may
+    also be given if you have changed something in the program since the
+    program was suspended.
+         The only thing you can do in this case is to sweep away the
+    suspended program using the POP command and start running the program
+    again.
+|mFor more, choose
+|iDo nothing,nop
+|iSuspended programs,Hmisc/susp_prog
+|iPOP,Hcommand/pop
+|p

@@ -1,0 +1,22 @@
+|23,74
+Runtime stack overflow - out of memory
+    The program ran out of memory while it was executing.  One common cause
+    of this is allocating an array that is too big to fit in the memory
+    that is currently available.  It may also happen if you have a lot of
+    recursion in your program.  Check the status line for the program to
+    see how many subprogram calls are currently stacked up.  If it's a high
+    number, consider using the TRACEBACK command to see what those
+    subprograms are.  It's possible you have an infinite recursion loop.
+         You can get more memory for your program through the RECOVER
+    command, or by saving your files, quitting ALICE, and starting back up
+    again with the line
+          alice s=6000
+    The "s=" option increases the amount of "stack" space for ALICE.  The
+    default value for stack space is 5000 bytes.  The above command line
+    gives 6000 bytes.  You can specify even more stack space for large
+    programs, by specifying a higher number than 6000.
+|mFor more, choose
+|iDo nothing,nop
+|iTRACEBACK,Hcommand/traceback
+|iRECOVER,Hcommand/recover
+|p

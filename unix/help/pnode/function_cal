@@ -1,0 +1,24 @@
+|20,74
+     A function call may be used in expressions to obtain the value of the
+function.  The type of value returned by the function must be appropriate
+in the expression that contains the function call.  For example, if a func-
+tion returns an integer value, you can only call the function in expres-
+sions where an integer value is legal.
+     To call a function in an expression, simply type the name of the func-
+tion.  If the function takes arguments, put the arguments in parentheses
+immediately following the function name.  If you do not enter any arguments
+for the function, ALICE will put in appropriate placeholders indicating
+what kind of arguments are necessary.  If you delete the argument list, you
+can get it back by moving the cursor to the function name and pressing "(".
+
+Function Call Examples:
+     x := sin(y);
+     if eoln then begin ...
+     while not eof(intfile) do begin ...
+|mFor more, choose
+|iDo nothing,nop
+|iFunction declarations,Hpnode/function
+|iFormal function parameters,Hpnode/function_par
+|iValue parameters,Hpnode/parameter
+|iVar parameters,Hpnode/var_paramete
+|p

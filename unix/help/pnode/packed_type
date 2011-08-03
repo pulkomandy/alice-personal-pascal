@@ -1,0 +1,23 @@
+|18,73
+     A packed array is an array that has been specially organized to take
+up as little memory space as possible.  The most important type of packed
+array is "packed array of char".  This type of array is also known as a
+string.  String constants such 'abc' have the type "packed array of char".
+     ALICE Pascal has a large number of features that help you work with
+strings.  For further information, see the User's Guide.
+     In ALICE Pascal, "packed" is actually ignored, since all character
+arrays are automatically packed one character to a byte.
+
+Packed Array Examples:
+     var
+         str : packed array [1..100] of char;
+     begin
+     str := 'String assignment';
+     if str = 'String Comparison' then begin...
+     i := StrLen(str);
+        {Built-in function}
+|mFor more, choose
+|iDo nothing,nop
+|iArray,Hpnode/array
+|iString constants,Hpnode/string_const
+|p

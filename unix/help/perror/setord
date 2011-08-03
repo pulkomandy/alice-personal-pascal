@@ -1,0 +1,6 @@
+|6,70
+Set elements must be of ordinal type
+    The elements of a set constant must be of an ordinal (scalar) type,
+    which means they can be integers, characters, enumerated types, or
+    subranges of these.  You cannot have a set of real numbers, for
+    example.

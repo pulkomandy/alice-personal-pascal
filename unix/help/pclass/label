@@ -1,0 +1,12 @@
+|13,74
+     A Label placeholder should be filled in with an integer constant that
+has no more than four digits.  Labels that appear in the instruction part
+of a program or subprogram should be declared in the LABEL declaration sec-
+tion of that program or subprogram.
+     Labels may be used to label statements or in a GOTO instruction.
+|mFor more, choose
+|iDo nothing,nop
+|iLabel declarations,Hpnode/labels
+|iLabelled statements,Hpnode/labeled_stat
+|iThe GOTO instruction,Hpnode/goto
+|p

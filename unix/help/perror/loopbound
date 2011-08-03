@@ -1,0 +1,13 @@
+|13,72
+Start/Finish not of appropriate type
+(And variations of this message)
+    In a FOR statement, the Start or Finish value wasn't the same type as
+    the control variable.  These two must have the same type.  Either
+    change the control variable (use a different variable or change the
+    declaration of the variable you have), or change the Start or Finish
+    value.
+|mFor more, choose
+|iDo nothing,nop
+|iFOR loops,Hpnode/for_loop
+|iDOWNTO loops,Hpnode/reverse_for_
+|p

@@ -1,0 +1,9 @@
+|17,74
+     A routine comment placeholder is included with every routine to
+encourage users to describe the purpose and nature of every program,
+procedure and function.  It is just like a regular comment, except hitting
+ENTER generates a new comment placeholder for multi-line comments.
+|mFor more, choose
+|iDo nothing,nop
+|iComments,Hpclass/comment
+|p

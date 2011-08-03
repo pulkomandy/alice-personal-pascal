@@ -1,0 +1,136 @@
+cc -g -I../h    -c main.c -o main.o
+main.c:473: warning: `center' was declared implicitly `extern' and later `static'
+main.c:301: warning: previous declaration of `center'
+main.c:484: warning: large integer implicitly truncated to unsigned type
+main.c:484: warning: large integer implicitly truncated to unsigned type
+main.c:484: warning: large integer implicitly truncated to unsigned type
+main.c:485: warning: large integer implicitly truncated to unsigned type
+main.c:485: warning: large integer implicitly truncated to unsigned type
+main.c:485: warning: large integer implicitly truncated to unsigned type
+main.c: In function `catchsigs':
+main.c:557: warning: passing arg 2 of `signal' from incompatible pointer type
+main.c:560: warning: passing arg 2 of `signal' from incompatible pointer type
+main.c:563: warning: passing arg 2 of `signal' from incompatible pointer type
+main.c:565: warning: passing arg 2 of `signal' from incompatible pointer type
+cc -g -I../h    -c treesubr.c -o treesubr.o
+cc -g -I../h    -c scan.c -o scan.o
+cc -g -I../h    -c subr.c -o subr.o
+cc -g -I../h    -c window.c -o window.o
+cc -g -I../h    -c workspace.c -o workspace.o
+cc -g -I../h    -c search.c -o search.o
+cc -g -I../h    -c pop.c -o pop.o
+cc -g -I../h    -c menu.c -o menu.o
+cc -g -I../h    -c menudat.c -o menudat.o
+cc -g -I../h    -c load.c -o load.o
+cc -g -I../h    -c save.c -o save.o
+cc -g -I../h    -c history.c -o history.o
+cc -g -I../h    -c mark.c -o mark.o
+cc -g -I../h    -c text.c -o text.o
+cc -g -I../h    -c text2.c -o text2.o
+cc -g -I../h    -c oledit.c -o oledit.o
+cc -g -I../h    -c ole.c -o ole.o
+cc -g -I../h    -c keyboard.c -o keyboard.o
+cc -g -I../h    -c expparse.c -o expparse.o
+cc -g -I../h    -c cmds2.c -o cmds2.o
+cc -g -I../h    -c help.c -o help.o
+cc -g -I../h    -c nullhelp.c -o nullhelp.o
+cc -g -I../h    -c alsym.c -o alsym.o
+alsym.c: In function `slookup':
+alsym.c:78: warning: comparison of distinct pointer types lacks a cast
+alsym.c: At top level:
+alsym.c:479: warning: `madd_table' was declared implicitly `extern' and later `static'
+alsym.c:461: warning: previous declaration of `madd_table'
+alsym.c:744: warning: static declaration for `next_symtab' follows non-static
+alsym.c:901: warning: static declaration for `my_symtab' follows non-static
+alsym.c:1005: warning: `sym_unlink' was declared implicitly `extern' and later `static'
+alsym.c:987: warning: previous declaration of `sym_unlink'
+alsym.c: In function `do_sym_swap':
+alsym.c:1157: warning: comparison between pointer and integer
+cc -g -I../h    -c treeprint.c -o treeprint.o
+treeprint.c:623: warning: `leng_check' was declared implicitly `extern' and later `static'
+treeprint.c:576: warning: previous declaration of `leng_check'
+treeprint.c:636: warning: `rvbufadd' was declared implicitly `extern' and later `static'
+treeprint.c:170: warning: previous declaration of `rvbufadd'
+treeprint.c:658: warning: `tab_it' was declared implicitly `extern' and later `static'
+treeprint.c:543: warning: previous declaration of `tab_it'
+cc -g -I../h    -c output.c -o output.o
+cc -g -I../h    -c outfuncs.c -o outfuncs.o
+cc -g -I../h    -c display.c -o display.o
+cc -g -I../h    -c dump.c -o dump.o
+dump.c:39: warning: `treedump' was declared implicitly `extern' and later `static'
+dump.c:24: warning: previous declaration of `treedump'
+dump.c:167: warning: `do_indent' was declared implicitly `extern' and later `static'
+dump.c:56: warning: previous declaration of `do_indent'
+dump.c:177: warning: `sym_dump' was declared implicitly `extern' and later `static'
+dump.c:86: warning: previous declaration of `sym_dump'
+cc -g -I../h    -c command.c -o command.o
+command.c:886: warning: `not_stop_here' was declared implicitly `extern' and later `static'
+command.c:130: warning: previous declaration of `not_stop_here'
+command.c:902: warning: `logon' was declared implicitly `extern' and later `static'
+command.c:620: warning: previous declaration of `logon'
+command.c:916: warning: `logoff' was declared implicitly `extern' and later `static'
+command.c:623: warning: previous declaration of `logoff'
+command.c:925: warning: `waitForSpace' was declared implicitly `extern' and later `static'
+command.c:218: warning: previous declaration of `waitForSpace'
+cc -g -I../h    -c action.c -o action.o
+cc -g -I../h    -c actrout.c -o actrout.o
+cc -g -I../h    -c actrout2.c -o actrout2.o
+cc -g -I../h    -c builtin.c -o builtin.o
+builtin.c:87: warning: initialization from incompatible pointer type
+builtin.c:87: warning: initialization from incompatible pointer type
+builtin.c:117: warning: initialization from incompatible pointer type
+builtin.c:368: warning: initialization from incompatible pointer type
+builtin.c:370: warning: initialization from incompatible pointer type
+builtin.c:372: warning: initialization from incompatible pointer type
+builtin.c:374: warning: initialization from incompatible pointer type
+builtin.c:772: warning: initialization makes integer from pointer without a cast
+cc -g -I../h    -c filename.c -o filename.o
+filename.c:140: warning: `buildFileMenu' was declared implicitly `extern' and later `static'
+filename.c:103: warning: previous declaration of `buildFileMenu'
+filename.c:317: warning: `addOptExt' was declared implicitly `extern' and later `static'
+filename.c:82: warning: previous declaration of `addOptExt'
+cc -g -I../h    -c mem.c -o mem.o
+mem.c:306: warning: `_treefree' was declared implicitly `extern' and later `static'
+mem.c:301: warning: previous declaration of `_treefree'
+cc -g -I../h    -c kids.c -o kids.o
+cc -g -I../h    -c mainloop.c -o mainloop.o
+cc -g -I../h    -c colour.c -o colour.o
+cc -g -I../h    -c trace.c -o trace.o
+cc -g -I../h    -c run2.c -o run2.o
+In file included from run2.c:9:
+../h/alice.h:10: warning: `TRUE' redefined
+/usr/include/curses.h:94: warning: this is the location of the previous definition
+../h/alice.h:11: warning: `FALSE' redefined
+/usr/include/curses.h:95: warning: this is the location of the previous definition
+cc -g -I../h    -c runfile.c -o runfile.o
+runfile.c:112: warning: `write_it' was declared implicitly `extern' and later `static'
+runfile.c:101: warning: previous declaration of `write_it'
+runfile.c:165: warning: `_write_it' was declared implicitly `extern' and later `static'
+runfile.c:150: warning: previous declaration of `_write_it'
+cc -g -I../h    -c types.c -o types.o
+cc -g -I../h    -c setup.c -o setup.o
+cc -g -I../h  -c interp.c
+cc -g -I../h    -c runtime.c -o runtime.o
+cc -g -I../h    -c typecheck.c -o typecheck.o
+typecheck.c:722: warning: static declaration for `ch_real_coerce' follows non-static
+typecheck.c:755: warning: static declaration for `check_numeric' follows non-static
+typecheck.c:785: warning: `str_coerce' was declared implicitly `extern' and later `static'
+typecheck.c:398: warning: previous declaration of `str_coerce'
+typecheck.c:848: warning: static declaration for `check_setop' follows non-static
+typecheck.c:889: warning: `assig_compat' was declared implicitly `extern' and later `static'
+typecheck.c:304: warning: previous declaration of `assig_compat'
+typecheck.c:1208: warning: static declaration for `recheck' follows non-static
+typecheck.c:1276: warning: `callcheck' was declared implicitly `extern' and later `static'
+typecheck.c:382: warning: previous declaration of `callcheck'
+cc -g -I../h    -c functions.c -o functions.o
+cc -g -I../h    -c cfunc.c -o cfunc.o
+cfunc.c:598: warning: static declaration for `do_cfunc' follows non-static
+cc -g -I../h    -c fullfuncs.c -o fullfuncs.o
+cc -g -I../h    -c classes.c -o classes.o
+cc -g -I../h    -c scan_decl.c -o scan_decl.o
+scan_decl.c: In function `paramStubs':
+scan_decl.c:150: warning: comparison of distinct pointer types lacks a cast
+cc -g -I../h    -c common.c -o common.o
+cc -g -I../h    -c load_nodes.c -o load_nodes.o
+cc -g -I../h    -c unix.c -o unix.o
+cc -g main.o treesubr.o scan.o subr.o window.o workspace.o search.o pop.o menu.o menudat.o load.o save.o history.o mark.o text.o text2.o oledit.o ole.o keyboard.o expparse.o cmds2.o help.o nullhelp.o alsym.o treeprint.o output.o outfuncs.o display.o dump.o command.o action.o actrout.o actrout2.o builtin.o filename.o mem.o kids.o mainloop.o colour.o trace.o run2.o runfile.o types.o setup.o interp.o runtime.o typecheck.o functions.o cfunc.o fullfuncs.o classes.o scan_decl.o common.o load_nodes.o unix.o -o alice -lncurses -lm

@@ -1,0 +1,26 @@
+|23,74
+     A function parameter appears in the heading of a subprogram declara-
+tion and stands for a function that is passed as an argument to the
+subprogram.  For example, you may have a subprogram that is designed to
+find the points where real-valued functions have the value 0.0.  When you
+call this subprogram, you pass it a real-valued function as an argument,
+and the subprogram finds where the function is zero.
+     When you pass a function to a subprogram, the declaration of the func-
+tion parameter in the subprogram's heading must be exactly the same as the
+declaration of the function argument in the caller.
+     A lot of built-in functions may NOT be passed as function arguments.
+For example, "abs" and "sqr" may not be passed as function arguments
+because they are defined in non-standard ways.
+
+Function Parameter Examples:
+     procedure zeroes( function func(arg:real):real );
+         ...
+     function f(x:real):real;
+         ...
+     zeroes(f);
+|mFor more, choose
+|iDo nothing,nop
+|iFunction declarations,Hpnode/function
+|iFunction calls,Hpnode/function_cal
+|iProcedure declarations,Hpnode/procedure
+|p

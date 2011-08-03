@@ -1,0 +1,17 @@
+|18,74
+     A multiplication operation multiplies two numbers or expressions.  You
+can only multiply numeric values (reals or integers).
+     If one or both of the things being multiplied are "real", the result
+of the multiplication will be "real".  If both are integers, the result of
+the multiplication will be "integer".
+     The multiplication operator "*" is also used to indicate set intersec-
+tion.  The base types of the two sets must be compatible.
+
+Valid Multiplication Examples:
+     2*3     4.8*1.2     3*4.2     a*b     [1..10]*[5..20]
+Invalid Multiplication Examples:
+     'a'*3    true*3.1     4*(c>d)     [1..10]*['a'..'z']
+|mFor more, choose
+|iDo nothing,nop
+|iSets,Hpnode/set
+|p

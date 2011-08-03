@@ -1,0 +1,14 @@
+|15,73
+StrInsert: String too long
+    In a call to the StrInsert procedure, you attempted to insert a string
+    that was too big to fit in the space provided.  For example, in
+
+          StrInsert(str1,str2,N);
+
+    the "packed array of char" called "str1" is not big enough to hold its
+    own elements plus the elements of "str2".  Either change the declara-
+    tion of "str1" to make it bigger, or make "str2" smaller somehow.
+|mFor more, choose
+|iDo nothing,nop
+|iStrInsert,Hpsymbol/strinsert
+|p

@@ -1,0 +1,241 @@
+Entry
+	Alice_Pascal [file] [options]
+	ap [file] [options]
+
+	filename is file in Alice Pascal internal format.
+	No file name gives blank pascal program
+	Options
+	+Ascii - file is ascii pascal program, call converter
+	+eXpert - user is expert alice user
+	+Novice - user is novice
+	Uses=n - how many times program has been used
+	Config=filename - file of user options and setup.
+	Map=<key>,"<string>" macro mapping
+
+	[we will think up some more]
+
+Alice reads in the file of user options.  This will be in a default place
+$HOME/sys/alice_profile - or somesuch.  Or can be specified with Config.
+If this file is not there, the user is set as a novice.  otherwise the
+novice/expert status is read from the file.  The file is a list of alice
+options, including setting the status and all key mappings.  Config=
+inside the file is like a source include.
+
+Then alice starts up.  First it prints the title page, then if the user
+is a novice, it asks if he wants to edit an old prog or start a new one.
+If they have been using the program for a while, it suggests they might
+want to be an expert.  If they say no, don't ask again.
+
+After this, program starts up displaying from line one.  Window is drawn,
+icons are laid out, status lines are marked.  Cursor is placed on the
+Comment in a new program, or where it was last in an old program.
+
+
+---------
+The Screen:
+
+We have your basic window.  Top line is reserved for error messages and
+may have a few "icons" (probably word icons - they take less room) on it.
+The bottom line is for user commands, and will have the right hand side
+devoted to some status information like how much memory left and the last
+part of the filename.  Perhaps one or two icons.  If they exist, they
+will be for "Clip", "Undo", "Run", "File", "Quit" and "Options"
+
+The rest of the screen is the pascal window.  The status and error lines
+will be divided from the screen by a thin line on the ICON.  Other machines
+may use reverse video.
+Sub windows get a top status line, but don't duplicate the bottom line
+I suspect.
+
+Structure of the tree - I will write this.
+
+Pointing and Cursor motion:
+The trackball controls the box cursor.  This is distinct from the block
+cursor.  the block cursor shows where the Alice cursor truly is.  The Alice
+cursor is the one that refers to the current tree node.  The arrow keys
+and trackball move the block cursor to point at things.  This can include
+icons, menus, or other nodes.  Pressing any other key that doesn't have
+a pointing meaning (arrows, POS, SEL etc.) moves the Alice cursor to the
+box cursor. (This will be an open box as per apl Quad I think)  This will
+not be possible in many positions, so we will beep and show an error
+"Can't move the cursor there"
+Other keys move the Alice cursor itself.  These are bound to commands that
+do tree realated movement.  They include "next placeholder", next/previous
+node, parent node, first child node.
+
+To sweep out an area, you hit the SEL key.  this will highlight the node
+with the Alice cursor (block) and all children of it.  You can then move
+the box cursor along through siblings of the selected node to sweep out
+an area, or move the Alice cursor through siblings or to the parent.
+these can be combined, but the final result must be a node or a list of
+sibling nodes.  When the sweeping is complete the sel key can be released
+and an action specified - see commands below.
+
+Movement of the cursor off the bottom or top will cause scrolling of the
+window, except at the top or bottom of the program where it hits a brick
+wall.
+
+Comments:
+--------
+Ideally, you would like to put a comment anywhere, but you can't in
+a structured system like Alice, they must be put where they fit in
+the structure.  Comments are required on declarations of programs, functions,
+procedures, vars, types and consts.  Line comments can be placed anywhere you
+could have a statement or declaration.  Comments are limited to one line
+long, but can occur in lists so this is not a problem.  Comments are edited
+with a simple line editor - see below.
+
+Entry rules
+-----------
+All commands are prefixed with the command character.  (this will be
+something you can type from a key.  Say "c-cedille" for now (C for command,
+I kinda like it.  Hitting this key puts you down on the command entry line
+(bottom) and puts a special cursor there.  You can type a command and
+hit return after it.  Backspacing is available.  Commands do everything but
+input the text items themselves.  Commands include "go to parent" and other
+cursor motions for the Alice cursor.  (none for the box cursor, I think,
+but perhaps)
+
+If you don't hit the command key, one of several things can happen.
+if the Alice cursor is on an empty placeholder, what is typed appears
+where the cursor is, typing over the placeholder.  typing proceeds until
+a token is entered.  this token is passed to the Alice input handler.  If it
+is a token that does something to the tree, like "IF", this is done and
+the appropriate part of the screen is redisplayed.  If it is an error, this
+is shown and the placeholder is restored.
+If the Alice cursor points to some filled in node, what is type shows
+up in the command area, with some indication (block style cursor vs. underline
+in command mode?) that we are in input.  Most inputs are not valid at
+this point anyway, but some are accepted as noise (THEN, BEGIN, END, DO -
+that sort) and some like ELSE actually do something in some contexts like
+within an IF.
+
+Anyway, all sets of keystrokes can be mapped to any key, including
+function keys, letters and the SHIFTs and CTRLs of them.  so in fact things
+like the "expand" command which expands lists are mapped to appropriate
+keys (ctrl-e in this case, probably)
+There will be a default set of macros with the system and the user can
+define them on the fly, on the command line or in the config file.
+System config files might also be a possible.
+Multiple letter macros can be defined too, but they must all begin with
+one special key, don't know which yet.  If it is dot, for example, you could
+bind "procedure " to ".p" if you wanted.
+
+
+The other way of entering commands is from a menu.  Moving the box cursor
+to and icon and hitting the ACTION key will cause a menu to pop up.  Several
+commands (linked to keys) will do the same, the "help" key being the most
+notable.  Menus like the "options menu" show all the major forms of
+input that can exist, and the input can actually be made from within
+the menu by pointing at it.  When a menu pops up the user can move the
+trackball until the appropriate item is highlighted, and then hit the action
+key.  All this as per the function "popup_menu" in the Icon Pgmrs ref. guide.
+
+A list of default key maps will be given later, after commands have been listed.
+
+Messages:
+---------
+Messages appear on the status line at the top, which is mostly dedicated to
+them.  Any error posts a message here.  Also when the cursor is moved to a
+node that has an error, the message is popped up here.  In this case we
+are limited to semantic errors and expression syntax errors.
+
+
+Expert vs. Novice modes
+--------------------
+If the user is an expert, error messages will be more terse.  Some may
+not appear at all, such as unrecognized command, which may only get a beep.
+Certain errors for novice users will pop up a menu with the error message
+and a list of choices.  In general when we know a user has not dealt with
+something before, we will be more handholding.  In the long term, we may
+keep a list of all kinds of individual features that have not been used
+before, and offer special help the first time.  +eXpert turns this off.
+
+The Commands
+------------
+Many commands can use ranges.  Ranges were explained above, but we can
+now give a more specific example.  Clip (or delete) is one such.  You mark
+a range, and issue the clip command, tied to the the "DEL" key.  bang
+it goes away into the buffer named "deleted" or somesuch.  A similar command
+"move", will require a named buffer.  In general commands that take arguments
+will prompt for them on the command line if they are not given them, so you
+can mave a key to "Cmove\n" and this will prompt "Workspace name?" on
+the command input line.
+
+Here we start listing commands.
+------------------------------
+
+Some commands only work on certain kinds of text.  Most of these are
+so specialized you would want to pick them with a menu.  Some like
+"else", which adds an else clause to an if, will be more common.  Others
+like "map_for_to_while" will be done from menus almost always.
+Some apply only in certain errors, like 
+"declare" which will make up a declaration for an undeclared variable.
+Of course help is very specific on the context, but it gets a whole
+section.
+
+Program Input
+-------------
+Empty placeholders are the easiest.  We are making up tables for this.
+some input things will be tied to keys too.  things like "function "
+and "procedure " might be there.  the user will define them too.
+Mostly these will be multi-letter macros. You could simulate the
+Cornell system to some degree with these.
+
+Expressions
+-----------
+If you start an expression with a token that is and identifier
+then you are in text expression mode.  You can type away unchecked
+by the editor until you type a token that would properly end the
+expression like a THEN or a command or whatever.  While in the experession
+you can perform simple text editing, moving the cursor left and right,
+inserting and deleting chars.  Whenever you go to an expression you can
+mark out a subtree of it with the SEL key and use the "edit" command to
+edit it like text.  This command will be bound to a key of some sort.
+The same can be done to comments.  In the case of the comment, the close
+brace or any command terminates.
+
+Semantic Checks
+---------------
+Whenever an expression is edited or input, a semantic check is done
+on the tree.  This checks for undeclared variables and inconsistant types.
+Since any type error involves the whole subtree it was found it, this
+must be highlighted.  The error message will just mention a type mismatch
+but asking for help will name the two types or give a better reason.
+In some cases, the reason will be simple enough to fit on the status line.
+Anyway, the user can fix the expression until the types are right.  Each
+edit prompts another check.
+
+When a declaration changes, we have a big problem.  Initially, we will
+type check the entire scope and see how long this is taking.  If it
+is very slow, we will have to keep lists for each variable showing where
+it is used, and use this list to only check trees where it is necessary.
+
+On the ICON, it will be possible to have a background process type checking
+the entire program, this will be looked into.  It might be a bit disconcerting,
+though, to get an error signal 10 seconds after you type something while
+you have gone off to do other things.  And there are all sorts of critical
+section problems here, so this is a very experimental idea.
+
+Undeclared variables are not checked for, but are rather in an undeclared
+variable table.  Changing a variable's name changes the name in all references,
+so you can't cause undeclared errors this way.  You can delete a declaration,
+and that will either cause references to point to a higher scope or the
+undeclared table.  That will require a check of the whole subscope of
+the declaration.  Some semantic checks are done at run time.
+
+Run Time
+--------
+I will describe how this works.
+We will check for array bounds, variant record type checks, crazy pointers
+and that sort of thing at run time.
+
+Debug modes will involve:
+	Cursor mapped to where execution is currenty going on.
+	Single step through non-hidden lines
+	Single step thought non-hidden lines on the screen only
+	Set a breakpoint at any node.
+	Set a breakpoint when a variable is read
+	Set a breakpoint when a variable is assigned to.
+	Set a printpoint (prints out, but doesn't stop) at any of the
+	above points.

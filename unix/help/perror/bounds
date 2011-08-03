@@ -1,0 +1,13 @@
+|14,74
+Array index out of bounds
+    While it was executing, your program tried to subscript an array with a
+    value that went outside the bounds set on the array's subscripts.  This
+    value could have been too low or too high.  ALICE will indicate the
+    statement where the error occurred.  Look at this statement and the
+    statements that surround it.  How did the subscript take on the value
+    it has?  How can you stop it from taking on this value?  Single-
+    stepping through the program will help determine where the bug is.
+|mFor more, choose
+|iDo nothing,nop
+|iGetting information while single-stepping,Hmisc/ssinfo
+|p

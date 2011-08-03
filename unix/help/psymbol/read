@@ -1,0 +1,30 @@
+|23,74
+     "read" reads information from a file or the terminal.  To read a file,
+the first argument should be a file variable that was set up with "reset".
+To read the terminal, you can omit this argument or specify "input".
+     The other arguments of "read" are variables that will receive informa-
+tion that is read in.  If you are reading a text file, these variables may
+hold characters, integers, reals, or strings.  If you are reading any other
+kind of file, the variables must have the same type as the file itself.
+For example, if the file variable is declared as "file of integer", the
+arguments must be integer variables.
+     Reading a character from a text file, "read" will read the next
+character on the line.  Reading a real or integer, "read" will skip over
+blanks then keep reading until it finds something that can't belong to the
+number.  Reading a string, "read" will read until the string is full or the
+end of line has been reached.
+
+Read Examples:
+     read(filevar,x,y,z);
+     for i := 1 to 80 do begin
+         if not eoln then begin
+             read(line[i]);
+             end;
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iReadln,Hpsymbol/readln
+|iReset,Hpsymbol/reset
+|iInput,Hpsymbol/input
+|iFiles,Hpnode/file_type
+|p

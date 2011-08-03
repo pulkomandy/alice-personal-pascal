@@ -1,0 +1,26 @@
+|20,73
+     The "pred" function is the partner of "succ".  "Pred" may be applied
+to any enumerated value, character, or integer.  If it is applied to an
+integer, the result is the integer minus 1.  If it is applied to a
+character, the result is the character that comes before the argument in
+the ASCII character set.
+     If it is applied to an enumerated value, the result is the value that
+comes before the argument in the list that set up the enumerated type.  If
+you try to apply "pred" to the first value in the list, you will receive
+an error, because nothing in the list precedes the value.
+
+Valid Pred Examples:
+     type
+         days = (sun,mon,tue,wed,thu,fri,sat);
+        ...
+     pred(mon) is equal to "sun"
+     pred('b') is equal to 'a'
+     pred(3) is equal to 2
+Invalid Pred Examples:
+     pred(sun)  {Nothing comes before "sun"}
+|mFor more, choose
+|iDo nothing,nop
+|iSucc,Hpsymbol/succ
+|iChar,Hpsymbol/char
+|iEnumerated types,Hpnode/enumerated_t
+|p

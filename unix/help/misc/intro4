@@ -1,0 +1,16 @@
+|16,74
+     Creating a program is just a matter of filling in the blanks.  To fill
+in an empty placeholder, you just move the cursor to the placeholder and
+type what should go in that spot.  (The cursor is the mark on the screen
+that shows where you're typing.)
+     Of course, this means you have to know how to move the cursor.  The
+easiest method is to roll the trackball.  Moving the trackball in a
+particular direction moves the cursor in the same direction.
+     Another way to move the cursor is to press the TAB key.  This moves
+the cursor forward a short distance.  If you press >>, the cursor will jump
+to the next empty placeholder in your program.  You can then fill in the
+placeholder with whatever is appropriate.
+|mDo you want more?
+|iYes,Hmisc/intro5
+|iNo,Hmisc/intro_exit
+|p

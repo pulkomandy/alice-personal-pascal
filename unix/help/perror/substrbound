@@ -1,0 +1,16 @@
+|16,73
+SubStr: requested substring beyond bounds of string
+    In a call to the SubStr procedure, the substring you tried to get went
+    past the end of the string.  For example, in
+
+          SubStr("abc",4,1,str2);
+
+    you try to obtain four characters from a string "abc" that only has
+    three characters in it.  Check the size of your second argument (the
+    number of characters you want to pick up) and the third argument (the
+    subscript of the first character to pick up).  One of these is likely
+    too big.
+|mFor more, choose
+|iDo nothing,nop
+|iSubStr,Hpsymbol/substr
+|p

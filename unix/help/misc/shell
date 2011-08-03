@@ -1,0 +1,8 @@
+|8,72
+Issuing a QNX Command:
+     If you want to execute a QNX command, type ^Z followed by the command
+you want to perform, then press ENTER.
+|mFor more, choose
+|iDo nothing,nop
+|iThe SHELL command,Hcommand/shell
+|p

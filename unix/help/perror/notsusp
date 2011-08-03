@@ -1,0 +1,9 @@
+|9,72
+Program not currently suspended
+(And variations of this message) You issued a command that dealt with
+    "suspended" programs, but you did not have a program suspended at the
+    time.
+|mFor more, choose
+|iDo nothing,nop
+|iSuspended programs,Hmisc/susp_prog
+|p

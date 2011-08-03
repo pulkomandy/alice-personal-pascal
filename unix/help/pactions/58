@@ -1,0 +1,8 @@
+|8,74
+     When you select this, the cursor will be on the beginning of a block
+(e.g. the first line of a WHILE loop or procedure declaration).  ALICE will
+create an empty placeholder of the same type as the first placeholder
+inside the block.  Thus, if you are at the beginning of a procedure
+declaration, ALICE will create another {Comment} placeholder.  If you are
+at the beginning of a WHILE loop, ALICE will create another Statement
+placeholder at the beginning of the block.

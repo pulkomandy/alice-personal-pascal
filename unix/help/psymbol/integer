@@ -1,0 +1,24 @@
+|19,74
+     The "integer" data type stands for numbers without a decimal point or
+exponent.  These numbers can be positive or negative or zero.
+     The computer cannot accept integers that are too large or small.  The
+largest possible integer is +32767 and the smallest is -32768.
+     Pascal lets you add (+), subtract (-), and multiply (*) integers.
+There are two types of division for integers: real division (/) divides two
+integers and gets a real number; integer division (div) divides two
+integers and gets an integer, by throwing away any remainder that is found.
+The "mod" operation is the partner of "div" -- it gives the remainder that
+results when two integers are divided.
+
+Integer Examples:
+     var
+         i, j, k : integer;
+     begin
+     i := -5;
+     j := i * 4;
+     k := i div j + i mod j;
+|mFor more, choose
+|iDo nothing,nop
+|iInteger constants,Hpnode/integer_cons
+|iInteger variables,Hpnode/variable_dec
+|p

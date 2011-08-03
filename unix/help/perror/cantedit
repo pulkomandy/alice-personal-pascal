@@ -1,0 +1,10 @@
+|11,73
+Can't change a SOMETHING textually
+    You tried to use the EDIT command on something that the command won't
+    work on.  EDIT only works on expressions, strings, declaration names,
+    and comments.  If you want to edit other kinds of code (like the start
+    of a WHILE statement), you have to use a different sort of command.
+|mFor more, choose
+|iDo nothing,nop
+|iEDIT,Hcommand/edit
+|p

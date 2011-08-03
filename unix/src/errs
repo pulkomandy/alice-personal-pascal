@@ -1,0 +1,118 @@
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c main.c
+main.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c treesubr.c
+treesubr.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c scan.c
+scan.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c subr.c
+subr.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c window.c
+window.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c workspace.c
+workspace.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c search.c
+search.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c pop.c
+pop.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c menu.c
+menu.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c menudat.c
+menudat.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c load.c
+load.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c save.c
+save.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c history.c
+history.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c mark.c
+mark.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c text.c
+text.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c text2.c
+text2.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c oledit.c
+oledit.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c ole.c
+ole.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c keyboard.c
+keyboard.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c expparse.c
+expparse.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c cmds2.c
+cmds2.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c help.c
+help.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c nullhelp.c
+nullhelp.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c alsym.c
+alsym.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c treeprint.c
+treeprint.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c output.c
+output.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c outfuncs.c
+outfuncs.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c display.c
+display.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c dump.c
+dump.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c command.c
+command.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c action.c
+action.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c actrout.c
+actrout.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c actrout2.c
+actrout2.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c builtin.c
+builtin.c
+builtin.c(81) : warning 49: 'initializing' : indirection to different types
+builtin.c(81) : warning 49: 'initializing' : indirection to different types
+builtin.c(111) : warning 49: 'initializing' : indirection to different types
+builtin.c(362) : warning 49: 'initializing' : indirection to different types
+builtin.c(364) : warning 49: 'initializing' : indirection to different types
+builtin.c(366) : warning 49: 'initializing' : indirection to different types
+builtin.c(368) : warning 49: 'initializing' : indirection to different types
+builtin.c(766) : warning 47: 'initializing' : different levels of indirection
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c filename.c
+filename.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c mem.c
+mem.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c kids.c
+kids.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c mainloop.c
+mainloop.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c trace.c
+trace.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c run2.c
+run2.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c runfile.c
+runfile.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c types.c
+types.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c setup.c
+setup.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c interp.c
+interp.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c runtime.c
+runtime.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c typecheck.c
+typecheck.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c functions.c
+functions.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c cfunc.c
+cfunc.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c fullfuncs.c
+fullfuncs.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c classes.c
+classes.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c scan_decl.c
+scan_decl.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c common.c
+common.c
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c load_nodes.c
+load_nodes.c
+load_nodes.c(224) : warning 47: '=' : different levels of indirection
+	cc -I../h -DPOINT32 -DTURBO -DFULL -c unix.c
+unix.c
+	cc  main.o treesubr.o scan.o subr.o  window.o workspace.o search.o  pop.o menu.o menudat.o  load.o save.o  history.o mark.o text.o text2.o oledit.o ole.o keyboard.o  expparse.o cmds2.o  help.o nullhelp.o alsym.o  treeprint.o output.o outfuncs.o display.o dump.o  command.o action.o actrout.o actrout2.o builtin.o filename.o  mem.o kids.o mainloop.o trace.o run2.o runfile.o types.o setup.o interp.o runtime.o  typecheck.o functions.o cfunc.o fullfuncs.o classes.o scan_decl.o common.o load_nodes.o unix.o -o alice -lcurses -ltermcap -lm

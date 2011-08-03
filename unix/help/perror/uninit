@@ -1,0 +1,18 @@
+|19,73
+Attempt to use a variable that has not been assigned to
+    All variables, no matter what type they are, must be given values
+    before they can be used.  For example, you can't use an expression
+    "i+2" unless "i" has been given a value.  Similarly, you cannot pass a
+    variable as an argument to a subprogram until it has been given a
+    value.
+         The way to give a value to a normal variable is to use an assign-
+    ment.  The same goes for a set variable, and elements in an array.
+    Pointers are given values with assignments or the "new" procedure.
+         When passing a record as an argument to a subprogram, some of the
+    fields in the record may be undefined.  However, you will get an error
+    if the subprogram tries to use those undefined fields.
+|mFor more, choose
+|iDo nothing,nop
+|iAssignment,Hpnode/assignment_s
+|iVariant records,Hpnode/variant_reco
+|p

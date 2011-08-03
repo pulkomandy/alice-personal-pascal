@@ -1,0 +1,23 @@
+|18,72
+     The "mod" operator is the partner of "div".
+
+          A mod B
+
+is the remainder you get when you divide A by B.  Both arguments must be
+integer values or expressions, and the result is an integer.
+     If an expression contains many different sorts of operations, "mod"
+operations will be carried out before additions and subtractions.  "/",
+"*", "div", and "mod" operations are carried out in the order they appear
+in the expression.
+
+mod Examples:
+     if (A mod 3) = 0 then begin
+         writeln('A is a multiple of 3.');
+         end;
+     (A div B) * B + (A mod B)
+        { Always equal to A }
+|mFor more, choose
+|iDo nothing,nop
+|iInteger division (div),Hpnode/integer_divi
+|iReal division (/),Hpnode/division
+|p

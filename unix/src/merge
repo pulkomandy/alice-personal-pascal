@@ -1,0 +1,238 @@
+Error: turning on trace, file 'merge'
+my_scope(ab74) returns 1
+mainloop: c_comp_decls(1, ab74, 6f)
+my_scope(ab74) returns 1
+Descend in block 6fab74, isdirty is 1
+CheckAt=0, cursor=0
+mainloop, cursor ac20, ocursor 6f, srch_row 0, srch_real 0, look.=4
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: dump
+
+dump of tree
+node=6fab74, type 2=pascal program: 
+flags 0, parent 5f61e4, kids: #0: 6fab9a, #1: 6fabb6, #2: 6fabde, #3: 6fac06, #4: 6fac2e, #5: 6fac48, #6: 0,
+  STUB at 6fab9a : Ignored Name
+  node=6fabb6, type 101=List: parent 6fab74
+      node=6fac64, type 1=comment: flags 0, parent 6fabb6, kids: #0: 6fac72,
+    comment text: input
+      node=6fac7a, type 1=comment: flags 0, parent 6fabb6, kids: #0: 6fac88,
+    comment text: output
+  node=6fabde, type 101=List: parent 6fab74
+      STUB at 6fabd0 : {Comment that says what the routine does}
+  node=6fac06, type 101=List: parent 6fab74
+      STUB at 6fabf8 : Declarations
+  node=6fac2e, type 101=List: parent 6fab74
+      STUB at 6fac20 : Statement
+CheckAt=0, cursor=0
+mainloop, cursor ac20, ocursor 6f, srch_row 0, srch_real 0, look.=4
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: merge xxx
+mmalloc(560) returns 6fb4a6
+mmalloc(140) returns 6fb6d8
+mmalloc(4) returns 6fb766
+mmalloc(36) returns 6fb76c
+New node, type 2(pascal program) at 6fb76c, 7 kids, 0 0
+mmalloc(12) returns 6fb792
+mmalloc(32) returns 6fb7a0
+mmalloc(2) returns 6fb7c2
+mmalloc(12) returns 6fb7c6
+New node, type 98(placeholder) at 6fb7c6, 1 kids, 0 0
+mmalloc(16) returns 6fb7d4
+mmalloc(12) returns 6fb7e6
+New node, type 1(comment) at 6fb7e6, 1 kids, 0 0
+mmalloc(6) returns 6fb7f4
+mmalloc(12) returns 6fb7fc
+New node, type 1(comment) at 6fb7fc, 1 kids, 0 0
+mmalloc(7) returns 6fb80a
+mmalloc(12) returns 6fb814
+mmalloc(12) returns 6fb822
+New node, type 98(placeholder) at 6fb822, 1 kids, 0 0
+mmalloc(12) returns 6fb830
+mmalloc(12) returns 6fb83e
+New node, type 6(declarations) at 6fb83e, 1 kids, 0 0
+mmalloc(12) returns 6fb84c
+mmalloc(20) returns 6fb85a
+New node, type 14(variable declaration) at 6fb85a, 3 kids, 0 0
+mmalloc(12) returns 6fb870
+slookup(Generic, nocreate, 6fac48, nomoan, 0)
+search_symtab(6fac48, Generic, 221, noredecls)
+returning NIL
+next_symtab(ac48)
+search_symtab(5f6236, Generic, 221, noredecls)
+returning, ptr=5f4814(Generic)
+mmalloc(12) returns 6fb87e
+New node, type 99(Symbol) at 6fb87e, 1 kids, 5f4814 0
+mmalloc(12) returns 6fb88c
+New node, type 98(placeholder) at 6fb88c, 1 kids, 0 0
+mmalloc(12) returns 6fb89a
+mmalloc(20) returns 6fb8a8
+New node, type 41(assignment statement) at 6fb8a8, 3 kids, 0 0
+mmalloc(20) returns 6fb8be
+New node, type 68(field use) at 6fb8be, 3 kids, 0 0
+mmalloc(12) returns 6fb8d4
+New node, type 99(Symbol) at 6fb8d4, 1 kids, 6fb7a0 0
+slookup(Intval, nocreate, 6fac48, nomoan, 0)
+search_symtab(6fac48, Intval, 142, noredecls)
+returning NIL
+next_symtab(ac48)
+search_symtab(5f6236, Intval, 142, noredecls)
+returning NIL
+next_symtab(6236)
+mmalloc(12) returns 6fb8e2
+New node, type 99(Symbol) at 6fb8e2, 1 kids, 5f6216 0
+mmalloc(12) returns 6fb8f0
+New node, type 98(placeholder) at 6fb8f0, 1 kids, 0 0
+
+dump of tree
+node=6fb76c, type 2=pascal program: 
+6fb7a0(a) - type 5 typetree 0, scope 0, size 0, offset/value c, flags 20
+flags 0, parent 0, kids: #0: 6fb7c6, #1: 6fb7d4, #2: 6fb814, #3: 6fb830, #4: 6fb89a, #5: 6fb792, #6: 0,
+  STUB at 6fb7c6 : Ignored Name
+  node=6fb7d4, type 101=List: parent 6fb76c
+      node=6fb7e6, type 1=comment: flags 0, parent 6fb7d4, kids: #0: 6fb7f4,
+    comment text: input
+      node=6fb7fc, type 1=comment: flags 0, parent 6fb7d4, kids: #0: 6fb80a,
+    comment text: output
+  node=6fb814, type 101=List: parent 6fb76c
+      STUB at 6fb822 : {Comment that says what the routine does}
+  node=6fb830, type 101=List: parent 6fb76c
+      node=6fb83e, type 6=declarations: flags 0, parent 6fb830, kids: #0: 6fb84c,
+      node=6fb84c, type 101=List: parent 6fb83e
+              node=6fb85a, type 14=variable declaration: flags 0, parent 6fb84c, kids: #0: 6fb870, #1: 6fb87e, #2: 6fb88c,
+          node=6fb870, type 101=List: parent 6fb85a
+                      node=6fb7a0, type 103=name: flags 20, parent 6fb870, kids:
+            declared symbol: a
+          node=6fb87e, type 99=Symbol: flags 0, parent 6fb85a, kids: #0: 5f4814,
+          symbol: Generic
+          STUB at 6fb88c : Comment
+  node=6fb89a, type 101=List: parent 6fb76c
+      node=6fb8a8, type 41=assignment statement: flags 0, parent 6fb89a, kids: #0: 6fb8be, #1: 6fb8f0, #2: 0,
+      node=6fb8be, type 68=field use: flags 0, parent 6fb8a8, kids: #0: 6fb8d4, #1: 6fb8e2, #2: 0,
+        node=6fb8d4, type 99=Symbol: flags 0, parent 6fb8be, kids: #0: 6fb7a0,
+        symbol: a
+        node=6fb8e2, type 99=Symbol: flags 0, parent 6fb8be, kids: #0: 5f6216,
+        symbol: Undefined
+      STUB at 6fb8f0 : Value
+mmalloc(12) returns 6fb8fe
+New node, type 98(placeholder) at 6fb8fe, 1 kids, 1b 6f0000
+growlist(6fabde), lcount=1, lacount=4
+growlist() returns abde, lcount=111, lacount=2
+myWS(b8fe) returns 6f
+myWS(b8fe) returns 6f
+if_sym_call(b8fe, 159b006f), ntype(np)=71
+if_sym_call(b822, 1333006f), ntype(np)=71
+myWS(b822) returns 6f
+mmalloc(12) returns 6fb90c
+New node, type 98(placeholder) at 6fb90c, 1 kids, 7 6f0000
+growlist(6fac06), lcount=1, lacount=4
+growlist() returns ac06, lcount=111, lacount=2
+myWS(b90c) returns 6f
+myWS(b90c) returns 6f
+if_sym_call(b90c, 159b006f), ntype(np)=71
+if_sym_call(b83e, 1333006f), ntype(np)=71
+if_sym_call(b84c, 1333006f), ntype(np)=71
+if_sym_call(b85a, 1333006f), ntype(np)=71
+if_sym_call(b870, 1333006f), ntype(np)=71
+if_sym_call(b7a0, 1333006f), ntype(np)=71
+add_decl(b7a0)
+my_symtab(b7a0), ntype=111
+next_symtab(b870)
+Found table at ab74 type pascal program
+slookup(a, nocreate, 6fac48, nomoan, 0)
+search_symtab(6fac48, a, 97, noredecls)
+returning NIL
+next_symtab(ac48)
+search_symtab(5f6236, a, 97, noredecls)
+returning NIL
+next_symtab(6236)
+old_decl=6216
+sym_link(b7a0, 6f)
+empty symtab
+if_sym_call(b87e, 1333006f), ntype(np)=71
+if_sym_call(b88c, 1333006f), ntype(np)=71
+myWS(b83e) returns 6f
+mmalloc(12) returns 6fb91a
+New node, type 98(placeholder) at 6fb91a, 1 kids, 13 6f0000
+growlist(6fac2e), lcount=1, lacount=4
+growlist() returns ac2e, lcount=111, lacount=2
+myWS(b91a) returns 6f
+myWS(b91a) returns 6f
+if_sym_call(b91a, 159b006f), ntype(np)=71
+if_sym_call(b8a8, 1333006f), ntype(np)=71
+myWS(b8a8) returns 6f
+Descend in block 6fab74, isdirty is 1
+Error: Symbol 'Undefined' has not been declared
+search_symtab(6fb8be, Undefined, 0, noredecls)
+returning NIL
+mfree(6fb4a6) frees 19852
+mfree(6fb6d8) frees 18870
+mfree(6fb766) frees 18592
+treefree(b8fe)
+freeing self
+mfree(6fb8fe) frees 18192
+treefree(b90c)
+freeing self
+mfree(6fb90c) frees 18178
+treefree(b91a)
+freeing self
+mfree(6fb91a) frees 18164
+Error: Symbol 'Undefined' has not been declared
+CheckAt=0, cursor=0
+mainloop: c_typecheck(b8a8, 0, 14)
+Error: Symbol 'Undefined' has not been declared
+search_symtab(6fb8be, Undefined, 0, noredecls)
+returning NIL
+mainloop, cursor b8e2, ocursor 6f, srch_row 0, srch_real 0, look.=4
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: dump
+
+dump of tree
+node=6fab74, type 2=pascal program: 
+6fb7a0(a) - type 5 typetree 5f45c8, scope 1, size 12, offset/value c, flags 20
+flags 10, parent 5f61e4, kids: #0: 6fab9a, #1: 6fabb6, #2: 6fabde, #3: 6fac06, #4: 6fac2e, #5: 6fac48, #6: c,
+  STUB at 6fab9a : Ignored Name
+  node=6fabb6, type 101=List: parent 6fab74
+      node=6fac64, type 1=comment: flags 0, parent 6fabb6, kids: #0: 6fac72,
+    comment text: input
+      node=6fac7a, type 1=comment: flags 0, parent 6fabb6, kids: #0: 6fac88,
+    comment text: output
+  node=6fabde, type 101=List: parent 6fab74
+      STUB at 6fb822 : {Comment that says what the routine does}
+      STUB at 6fabd0 : {Comment that says what the routine does}
+  node=6fac06, type 101=List: parent 6fab74
+      node=6fb83e, type 6=declarations: flags 0, parent 6fac06, kids: #0: 6fb84c,
+      node=6fb84c, type 101=List: parent 6fb83e
+              node=6fb85a, type 14=variable declaration: flags 0, parent 6fb84c, kids: #0: 6fb870, #1: 6fb87e, #2: 6fb88c,
+          node=6fb870, type 101=List: parent 6fb85a
+                      node=6fb7a0, type 103=name: flags 20, parent 6fb870, kids:
+            declared symbol: a
+          node=6fb87e, type 99=Symbol: flags 0, parent 6fb85a, kids: #0: 5f4814,
+          symbol: Generic
+          STUB at 6fb88c : Comment
+      STUB at 6fabf8 : Declarations
+  node=6fac2e, type 101=List: parent 6fab74
+      node=6fb8a8, type 41=assignment statement: flags 8, parent 6fac2e, kids: #0: 6fb8be, #1: 6fb8f0, #2: 0,
+      node=6fb8be, type 68=field use: flags 8, parent 6fb8a8, kids: #0: 6fb8d4, #1: 6fb8e2, #2: 0,
+        node=6fb8d4, type 99=Symbol: flags 0, parent 6fb8be, kids: #0: 6fb7a0,
+        symbol: a
+        node=6fb8e2, type 99=Symbol: flags 0, parent 6fb8be, kids: #0: 5f6216,
+        symbol: Undefined
+      STUB at 6fb8f0 : Value
+      STUB at 6fac20 : Statement
+CheckAt=0, cursor=0
+mainloop: c_typecheck(b8a8, 0, 14)
+Error: Symbol 'Undefined' has not been declared
+search_symtab(6fb8be, Undefined, 0, noredecls)
+returning NIL
+mainloop, cursor b8e2, ocursor 6f, srch_row 0, srch_real 0, look.=8
+back from hist_mark()
+mainloop: topcmd returns ?<97>? (97)
+
+Command: exit
+Error: You haven't saved workspace main

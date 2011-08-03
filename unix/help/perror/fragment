@@ -1,0 +1,15 @@
+|15,73
+Can't edit code fragments (yet)
+    You have used COPY or MOVE to put part of a program into a workspace,
+    then tried to edit that part of a program.  Right now, ALICE will only
+    let you edit entire programs, not program fragments.  You will have to
+    GET the fragment into a workspace that contains at least a PROGRAM
+    template.  Once you have done this, you can edit the fragment.
+         Note that later versions of ALICE will let you edit partial
+    programs.
+|mFor more, choose
+|iDo nothing,nop
+|iGET,Hcommand/get
+|iCOPY,Hcommand/copy
+|iMOVE,Hcommand/move
+|p

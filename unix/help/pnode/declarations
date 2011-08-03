@@ -1,0 +1,31 @@
+|23,74
+     The declaration sections of your program tell ALICE what names you
+will be using for various things in your program.  The declarations always
+come before the instructions in programs and subprograms.
+     LABEL declarations tell what integers you will be using for labels.
+CONST declarations assign names to constants.  TYPE declarations assign
+names to types.  VAR declarations tell ALICE the names of the variables you
+intend to use and the type of data each will hold.  PROCEDURE and FUNCTION
+declarations tell ALICE about the subprograms your program will use.  Each
+procedure and function can have its own set of declarations in addition to
+the declarations that apply to the whole program.
+     You may type a declaration keyword like "var" anywhere in the program.
+ALICE will move to the appropriate declaration section so you can add a new
+declaration.
+
+Declaration Examples:
+     label 1,2,3 ;
+     const pi = 3.14159 ;
+     type day = [sun,mon,tue,wed,thu,fri,sat];
+     var i : integer;
+     procedure go(i : integer; var a : char);
+     function sin(x : real) : real ;
+|mFor more, choose
+|iDo nothing,nop
+|iLabel declarations,Hpnode/labels
+|iConstant declarations,Hpnode/constant_dec
+|iType declarations,Hpnode/type_declara
+|iVariable declarations,Hpnode/variable_dec
+|iProcedure declarations,Hpnode/procedure
+|iFunction declarations,Hpnode/function
+|p

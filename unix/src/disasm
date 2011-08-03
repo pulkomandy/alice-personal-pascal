@@ -1,0 +1,35 @@
+From watmath!uunet!rosevax!lily!rosevax!umn-cs!ndsuvax!ncegeber Fri Sep 11 06:39:15 1987
+Received: from uunet.uucp by watmath; Fri, 11 Sep 87 06:25:54 EDT
+Received: from rosevax.UUCP by uunet.UU.NET (5.54/1.14) with UUCP 
+	id AA24201; Fri, 11 Sep 87 04:28:05 EDT
+Received: by rosevax.Rosemount.COM (5.51/smail2.5/07-29-87)
+	id AA24773; Fri, 11 Sep 87 03:25:49 CDT
+Received: by lily.UUCP (smail2.5)
+	id AA02474; 11 Sep 87 03:26:10 CDT (Fri)
+Received: by rosevax.Rosemount.COM (5.51/smail2.5/07-29-87)
+	id AA24252; Fri, 11 Sep 87 02:42:37 CDT
+Received: by umn-cs.cs.umn.edu (5.51/4.7)
+	id AA29872; Fri, 11 Sep 87 00:20:56 CDT
+Received: by ndsuvax.UUCP; Thu, 10 Sep 87 09:12:31 CDT
+Date: Thu, 10 Sep 87 09:12:31 CDT
+From: Roger Egeberg <watmath!uunet!umn-cs!ndsuvax!ncegeber>
+Message-Id: <8709101412.AA13552@ndsuvax.UUCP>
+To: ndsuvax!looking!brad
+Subject: Re: Symbolic Unassembler for the 8086 required
+In-Reply-To: <945@looking.UUCP>
+Organization: North Dakota State University  Fargo, ND
+
+There is an advertisement in the Sept 1987 issue of Dr. Dobb's Journal for 
+a disassembler called Master Key.  It claims the output is good enough to
+feed back in to Microsoft MASM.  A sample disassembly in the advertisement
+shows generated labels, some comments, and a cross-reference listing.
+
+The price is $79.95.  Their address/phone number is:
+
+   Sharpe Systems Corporation
+   2320 E Street
+   La Verne, CA 91750
+   (714) 596-0070
+
+I hope this is helpful to you!
+

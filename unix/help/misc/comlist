@@ -1,0 +1,23 @@
+|22,69
+                              ALICE Commands
+
+   again         autosave      block         breakpoint    bugoff
+   bugon         change        check         clear         clearfollow
+   clip          clrpoint      comhelp       comout        copy
+   cursor        debug         decl          delete        delmenu
+   edit          enclose       errhelp       execute       execws
+   exit          extend        filename      get           go
+   help          hide          immediate     insert        insmenu
+   io            lasterror     load          log           map
+   mark          merge         misc          mmenu         move
+   new           nolog         nop           pagedown      pageup
+   parent        phelp         pop           popback       raise
+   recover       redo          reveal        rsearch       run
+   runit         save          search        setfollow     shell
+   specialties   step          superstep     symbol        text
+   toklist       traceback     undo          ws            option
+   dos           view
+|mFor more, choose
+|iDo nothing,nop
+|iHelp about Commands,Hmisc/comhelp
+|p

@@ -1,0 +1,60 @@
+OBJS 	=		\
+	action.o	\
+	actrout.o	\
+	actrout2.o	\
+	alsym.o		\
+	builtin.o	\
+	cfunc.o		\
+	classes.o	\
+	cmds2.o		\
+	command.o	\
+	common.o	\
+	display.o	\
+	dump.o		\
+	esmem.o		\
+	expparse.o	\
+	filename.o	\
+	functions.o	\
+	help.o		\
+	helpfile.o	\
+	history.o	\
+	interp.o	\
+	keyboard.o	\
+	kids.o		\
+	load.o		\
+	main.o		\
+	mainloop.o	\
+	mark.o		\
+	mem.o		\
+	menu.o		\
+	menudat.o	\
+	nodes.o		\
+	nodes2.o	\
+	ole.o		\
+	oledit.o	\
+	outfuncs.o	\
+	output.o	\
+	pop.o		\
+	run2.o		\
+	runfile.o	\
+	runtime.o	\
+	save.o		\
+	scan.o		\
+	scan_decl.o	\
+	search.o	\
+	setup.o		\
+	subr.o		\
+	text.o		\
+	text2.o		\
+	treeprint.o	\
+	treesubr.o	\
+	typecheck.o	\
+	types.o		\
+	window.o	\
+	workspace.o
+
+.c.o:
+	ccpo $*
+
+/user_cmds/alice.bin: $(OBJS)
+	??

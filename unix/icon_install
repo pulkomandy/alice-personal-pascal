@@ -1,0 +1,46 @@
+type Installing Alice Pascal
+type
+chattr a=+c /user_cmds
+copy 2:/user_cmds/alice 1:/user_cmds/alice
+copy 2:/user_cmds/apin 1:/user_cmds/apin
+copy 2:/user_cmds/apout 1:/user_cmds/apout
+copy 2:/user_cmds/unpar 1:/user_cmds/unpar
+chattr a=+c /config
+copy 2:/config/farcall.slib 1:/config/farcall.slib
+copy 2:/config/alice.init 1:/config/alice.init
+type
+type Installing Alice Pascal help files
+type
+mkdir 1:/alice
+mkdir 1:/alice/help
+mkdir 1:/alice/help/command
+cd 1:/alice/help/command
+1:/user_cmds/unpar <2:/alice/packhelp/command
+mkdir 1:/alice/help/misc
+cd 1:/alice/help/misc
+1:/user_cmds/unpar <2:/alice/packhelp/misc
+mkdir 1:/alice/help/pactions
+cd 1:/alice/help/pactions
+1:/user_cmds/unpar <2:/alice/packhelp/pactions
+mkdir 1:/alice/help/perror
+cd 1:/alice/help/perror
+1:/user_cmds/unpar <2:/alice/packhelp/perror
+mkdir 1:/alice/help/pnode
+cd 1:/alice/help/pnode
+1:/user_cmds/unpar <2:/alice/packhelp/pnode
+mkdir 1:/alice/help/psymbol
+cd 1:/alice/help/psymbol
+1:/user_cmds/unpar <2:/alice/packhelp/psymbol
+mkdir 1:/alice/help/pclass
+cd 1:/alice/help/pclass
+1:/user_cmds/unpar <2:/alice/packhelp/pclass
+copy 2:/alice/packhelp/keys 2:/alice/help/misc/keys
+type
+type Installing Alice Pascal demo programs
+type
+mkdir /alice/demos
+backup -p 2:/alice/demos 1:/alice/demos +a
+copy 2:/alice/demos/sieve.ap 1:/alice/sieve.ap
+type
+type Install completed
+type

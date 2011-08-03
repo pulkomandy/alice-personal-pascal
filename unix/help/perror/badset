@@ -1,0 +1,15 @@
+|15,72
+Sets in ALICE Must Contain Ordinal Values in Range 0..255
+    The base type of a set may contain a maximum of 256 elements.
+    Moreover, the maximum ordinal value (from the "ord" function) in the
+    base type must be less than or equal to 255.  None of the elements of
+    the base type can be negative.  This means that "set of char" is all
+    right, but "set of integer" is invalid, as well as sets of subranges
+    like 0..1000 (upper limit is too high) and -2..2 (can't have nega-
+    tives).
+|mFor more, choose
+|iDo nothing,nop
+|iSet types,Hpnode/set_type
+|iSet constants,Hpnode/set
+|iThe ORD function,Hpsymbol/ord
+|p

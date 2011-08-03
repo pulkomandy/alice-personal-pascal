@@ -1,0 +1,29 @@
+|24,74
+     Type declarations appear in the TYPE section of a program or
+subprogram.  A declaration gives a name and a data type that will be
+associated with that name, as in
+
+          type
+              money = real; {Used for money sums}
+
+Once you have done this, the name becomes a new type that can be entered
+in any Type placeholder.  You can perform the same sort of operations on
+this new named type that you could perform on the type that you assigned
+to the name.  For example, you could perform the same operations on "money"
+that you could on "real" variables.
+
+Type Declaration Examples:
+     type
+         string = packed array [1..100] of char;
+         days = (sun,mon,tue,wed,thu,fri,sat);
+         person = record
+             name : string;
+             age : integer;
+             end;
+|mFor more, choose
+|iDo nothing,nop
+|iName,Hpclass/name
+|iComments,Hpnode/comment
+|iList of possible types,Hpclass/type
+|iDeclarations,Hpnode/declarations
+|p

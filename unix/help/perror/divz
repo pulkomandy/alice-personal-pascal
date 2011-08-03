@@ -1,0 +1,4 @@
+|4,74
+Floating point divide by zero
+    You attempted a real division with the "/" operator and tried to divide
+    by zero.

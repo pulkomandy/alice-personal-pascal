@@ -1,0 +1,6 @@
+|6,73
+Symbol in use already.
+    You attempted to change the name in a declaration into another name.
+    However, the new name you wanted to use is already being used for some
+    other symbol.  Choose a different name or change the name of the
+    existing symbol.

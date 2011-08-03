@@ -1,0 +1,14 @@
+|10,74
+     The <> operator decides if two things are not equal.  The things being
+compared must have the same type.
+     The result of <> is a Boolean (true/false) value.  It will be "true"
+if the things being compared are not equal, and "false" if they are equal.
+
+Inequality Examples:
+     if a <> b then begin ...
+     while (I div J) <> 0 do begin ...
+     if (c <> '+') and (c <> '-') then begin ...
+|mFor more, choose
+|iDo nothing,nop
+|iBoolean data,Hpsymbol/boolean
+|p

@@ -1,0 +1,39 @@
+
+
+DOBJECTS= main.o y.tab.o lex.o support.o extra.o lib.o builtin.o
+SRCOBJS= treesubr.o alsym.o save.o load_nodes.o load.o
+SAMEOBJS= dump.o kids.o classes.o
+OBJECTS= $(DOBJECTS) $(SRCOBJS) $(SAMEOBJS)
+
+
+THEFLAG = -LARGE -i -Ml -O -I/u/alice/h -DTURBO -DLARGE -DFULL -UFLOATING -DPARSER -DLOADABLE_TEMPLATES $(OPT)
+
+apin: $(OBJECTS) makefile
+	linkit
+
+builtin.o: builtin.c newbuilt.c turtbuilt.c
+	ccpo builtin
+
+treesubr.o: treesubr.c
+	upcco $<
+
+alsym.o: alsym.c
+	upcco $<
+
+save.o: save.c
+	upcco $<
+
+load_nodes.o: load_nodes.c
+	upcco $<
+
+load.o: load.c
+	upcco $<
+
+dump.o: dump.c
+	upcco $<
+
+kids.o: kids.c
+	upcco $<
+
+classes.o: classes.c
+	upcco $<

@@ -1,0 +1,12 @@
+|12,73
+     The HELP key does more than obtain help about commands on menus.  If
+you press HELP while you are editing your program, ALICE will offer you a
+Help Menu.  This offers help in many areas: explaining an error message;
+common operations in ALICE; information about Pascal; what commands are
+available in ALICE; and an indication of what sort of thing you can type
+at a particular point of the program.
+     Since this HELP facility is able to do so much, we'll let you use it
+to find out other things about ALICE.  When you have read all this on your
+screen, press the spacebar.  That will erase this description.  Then press
+HELP and choose the selection "Features of ALICE" to find out more about
+ALICE.

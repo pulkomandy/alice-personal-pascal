@@ -1,0 +1,11 @@
+|12,73
+A Boolean (true/false) value is required here
+(And variations of this message)
+    This message is used if the condition of a WHILE, IF, or UNTIL state-
+    ment is not a true/false value.  The condition must be a comparison, a
+    number of comparisons joined by "and" or "or", a NOT expression, or an
+    expression using things that are declared Boolean.
+|mFor more, choose
+|iDo nothing,nop
+|iBoolean values,Hpsymbol/boolean
+|p

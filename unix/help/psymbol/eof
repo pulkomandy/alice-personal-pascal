@@ -1,0 +1,25 @@
+|20,74
+     The "eof" function tells you if you have reached the end of a file.
+It is only useful with files that you are reading.
+     The value returned by "eof" is "Boolean".  If this value is true, you
+have reached the end of the file and you cannot read anything more.  If it
+is false, you can read at least one more piece of data from the file.
+     The argument of "eof" is the file variable that is associated with the
+file you are reading.  If you do not give an argument, "eof" will check the
+"input" file variable.
+     Calling "eof" on "input" may cause the terminal to prompt for input if
+no reads have taken place yet.
+
+Eof Examples:
+     var
+         intfile : file of integer;
+      ...
+     while not( eof(intfile) ) do begin
+         read(intfile,i);
+         ...
+         end;
+|mFor more, choose
+|iDo nothing,nop
+|iFiles,Hpnode/file_type
+|iBoolean values,Hpsymbol/boolean
+|p

@@ -1,0 +1,24 @@
+|18,74
+     The "Pointer" type is used for arbitrary memory pointers.  Values with
+this type may be assigned to any kind of normal pointer type.  "Nil" is an
+example of a "Pointer" value; it may be assigned to any other kind of
+pointer.
+     You may assign string constants to Pointer variables if you wish.  In
+this case, ALICE creates the string in memory and returns a pointer to
+where that string is stored.
+
+Pointer Examples:
+     var
+         p : Pointer;
+         i : integer;
+         ip : ^integer;
+       ...
+     p := MakePointer(i);
+     ip := p;
+     p := "Hello";
+|mFor more, choose
+|iDo nothing,nop
+|iThe MakePointer function,Hpsymbol/makepointer
+|iThe RawPointer function,Hpsymbol/rawpointer
+|iThe Nil Pointer,Hpnode/nil_pointer
+|p

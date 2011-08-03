@@ -1,0 +1,13 @@
+|13,74
+     The StrInsert procedure inserts a number of characters into a string.
+The first argument of StrInsert is a string variable.  The second is
+another string (either a variable or a constant).  The third is an integer,
+giving a subscript for the string variable.  The second argument string
+will be inserted into the first argument string, immediately before the
+subscripted position.
+
+StrInsert Examples:
+     str := 'Hi there!';
+     StrInsert(str,'xxxx',3);
+     writeln(str);
+         {Will write out "Hixxxx there!"}

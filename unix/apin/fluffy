@@ -1,0 +1,10 @@
+program {+ <<Ignored Name>>}(input, output);
+
+{+ <<Declarations>>}
+begin
+{+Class Statement}{+Hide}{+Revealed  This is hidden goop }
+for fred := 1 to 25 do begin
+	writeln(fred, fred*fred);
+    end;
+{+Hide end}
+end.

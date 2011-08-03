@@ -1,0 +1,6 @@
+|6,74
+Can't enter immediate mode at this point
+    This only happens when you have started up ALICE by choosing the
+    "Experiment in Immediate Mode" selection from the Starting Menu.  Later
+    on, you issued a command to enter Immediate Mode.  This message points
+    out that you were already in Immediate Mode.

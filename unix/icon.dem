@@ -1,0 +1,197 @@
+/c/
+Welcome to Alice Pascal  an entirely new way to program and a new way to
+learn programming.   Unlike other systems, Alice works with computer programs
+AS PROGRAMS, not as listings.  It's called a "syntax-directed editor"
+because it knows the syntax and rules of the Pascal language intimately.
+/p/cAlice starts up with a menu offering to write a new program, work on
+an old one, or get help about the system.  Alice is easy to learn, and
+can be fully used from menus so you don't have to remember a million new
+things.  We're going to now select "Edit a New Program."
+/p/c/s //
+What you see on the screen is what we call the "template" of a Pascal program.  All the structure has been filled out - you just have to "fill in the blanks"
+to get a working program.  This demonstration version will now start doing
+this, under your guidance.
+/p/cIn order to run this demo, Alice will fill in the keystrokes that would
+be typed to use the program.  So you can run things at your own pace, whenever
+it is time to press a key, Alice will tell you what key it's pressing and wait
+for you to hit any key.  When you do, it will be as though you had typed the
+selected key./
+/p/c/
+As an example, of Alice, we're going to enter a FOR loop by typing "for "
+where it says "Statement".  Hit the space bar and watch carefully:
+/k{for /
+/p/cThe system should now have displayed the "template" for the Pascal FOR loop,
+with four "blanks" to be filled in.  You'll note that Alice provided all the
+words, indentation and punctuation.  Alice always does this, and that means
+it's essentially impossible to have a syntax error!
+/p/cWe call these blanks "placeholders" and the cursor is now on a
+placeholder called "Variable" and that means a variable should be typed
+in here.  We'll enter one called count:
+/k{count /
+/p/cIn Pascal, every variable you use must be declared first.  Notice how
+Alice spotted that we hadn't declared "count" as soon as it was entered.
+Alice spots all such "semantic" errors as soon as they are typed in.
+We'll fix that error later.  In the meantime, lets fill in the rest.
+/p/cWe will make a simple loop from one to ten:
+/k{1	/
+Notice how Alice lets you move from placeholder to placeholder with keys like
+TAB - reducing keystrokes and errors.  Of course, you can use the trackball
+too /p/c/
+In addition, you can use the keywords of Pascal to move you around, if
+these are more familiar to you.
+/k{10 do /
+/p/cNow it is time to type in the statements in the FOR loop.  If you don't
+know Pascal well, here's where Alice can really help you.  Alice contains the
+most complete HELP system ever included with a programming tool.  All this
+help, and in fact all Alice features, can be gotten from a menu.
+/p/cWe will hit the important help key, and select the menu item called
+"What can I type now?" which lists all possible input at any given point.
+/k/h/d/d/d/d{ /
+(We're using arrow keys here, but naturally you would use the trackball.)
+/p/c You now see a menu including all the statements in Pascal.  We will pick
+an IF statement from this menu.
+/k/d/d{ / Now the IF statement has appeared, picked off a menu. 
+If you like you can write your entire program using menus for all but the
+variable declarations and constants. /p/c/
+Now that we have the IF, we'll see more of the help Alice has to offer:
+/k/h/d/d/d (Information about Pascal) { /
+This menu lists features of Pascal, and in particular the ones that are
+being used right now.  For help on FOR loops, just select and watch:
+/k{d//p/cHere's a screen that explains FOR loops, giving examples.  There is
+a similar screen for every part of the Pascal language, and they're all
+as easy to get to.  Each help screen is cross referenced to related topics,
+in this case, the variant of the FOR loop that goes backwards.
+We'll select "Do nothing" and go on editing. /p/s //
+/cWe didn't really want the if, so we'll use the full UNDO of Alice to get rid
+of it.  In fact, we can undo all we have done so far.  Let's go back to
+the very start with the UNDO key.
+/k{ //p/c/
+And now we will "undo our undo" with the REDO key
+/k{/
+All but the IF will now be back./p/c/
+It is time to declare "count".  Watch as we type the Pascal 'VAR'iable keyword
+and Alice figures out where that should go.
+/k{var count in/
+We're in the middle of typing "integer" and can now do something really
+amazing./
+/p/c/
+We're going to ask Alice to finish off this symbol for us just by hitting the
+"Symbol-Complete" key, marked "C-cedille" on the keypad.
+/k/i{ / - Alice saw the only type starting with "in" was
+"integer", and filled it in for us.  This works with the symbols you define,
+too, as you will soon see./p/c/
+We'll quickly fill in a comment:
+/k{Loop Counter	//d
+And now we are ready to complete our simple program
+/k{writeln(count,sqr(count),sqrt(c//
+/p/c/
+We'll ask to complete the symbol again.
+/k/i - this time we get a menu of all possible symbols that
+start with 'c', including "count."  We will pick it and go on.
+/k/d{ ))/ - The final ")" shows the writeln call is done.
+/p/c/
+If you aren't surprised at what Alice can do already, watch as Alice
+immediately runs your program at the touch of a key.
+/k/f1{ / - It's that simple!
+/p/c/
+Now we'll load in an existing program to show you more about the Alice
+system.  We're going to load "sieve.ap" which is a program that
+generates prime numbers using the "Sieve of Eratosthenes."  It's
+a popular test program used by many magazines./
+/p/c/
+/sload sieve.ap
+B//
+To show you a fancy debug feature we're going to turn on what we call
+"cursor following."  This will split the screen into two parts, one for
+editing and one for output.
+/k/f6{H//
+/p/c/
+Now we will run the program and see an amazing "motion picture" of the
+program in action.  The cursor will actually follow what the program is
+doing on the screen!
+/k/f1/p/c/
+Alice lets you do all sorts of other useful debugging stuff, too.  There's
+single stepping, tracebacks, breakpoints and an immediate mode that lets you
+examine and change variables.  It's all integrated right into the editor, so
+there are no delays or new commands to learn.  Alice really knows what your
+program is about, and this helps you debug./sbugoff
+//
+/p/c/
+Alice is geared to help you structure your program and to aid in top-down
+design.  To do this, it lets you "hide" unimportant parts of your program
+so that they don't get in the way of other work.  For example, in this
+program, the first few lines are an initialization loop.  We're going to
+"hide" that part of the program./
+/p/c/
+First we'll go to the start of the program:
+/k{begin /
+Now we'll "sweep out" the part of the program we want with the SELECT key
+/k/f:/d/
+/p/c/
+(Notice how Alice insists you select only a valid program element.  You can't
+have the FOR without the whole loop.)  Now we will HIDE this part...
+/k/f5{D/ - and it gets compressed to three dots ... and a comment.
+/k{Init loop//t/
+/p/c/
+To look at what's inside, we will ask the program to "reveal" it.
+/k/u/f5{E/ - and now you see it.  You can have hidden things within
+hidden things - structuring your program the way you want it.
+We'll continue to use this "sieve" program for our future editing examples./
+/p/c/
+The HELP you saw before was just a fraction of the over 500 help screens
+Alice has to help you learn Alice and Pascal.  For example, there's a help
+screen for every error message the system has.  Let's create an error:
+/k{
+count 1+'a';//p/c/
+Alice reports all type-mismatch and semantic errors, too.  For full details
+on what this one means we will use the HELP system.
+/k/h (selection H){H/  There's a screen like this for every message.
+You will notice the help is also cross referenced to several related topics,
+in case you need more information/
+/p/c/
+We'll ask about real numbers
+/k{C/ and get back to our program. /k{ /
+The help doesn't stop there.  You can get help on every command feature and
+menu selection in the Alice system.  There's help on every placeholder and
+language element in Pascal./
+/p/c/
+There's also help on every built-in procedure, function and predefined type
+of the Alice Pascal system.  This is also all supplemented by over 500 pages
+of written documentation, including a complete textbook that teaches you how
+to program from the ground up using the Alice system./
+/p/c/
+Now we're going to show you a few quick editing examples to display the true
+power of Alice editing.  Watch as one command changes an IF statement into
+a WHILE loop.
+/k/d/d/d/d/d/d/d/d/d/d/d/d/u/u/u/u/u/f:/f5{ID/
+/p/c/
+Notice how when we call up any procedure, we are prompted with the parameters:
+/k{
+substr /
+This happens for your own procedures too, and of course all the types are
+checked as you type in the arguments./
+/p/c/
+Alice is macro-driven and programmable (in Pascal, course) so you can
+customize it to suit your needs, giving you almost unlimited power.
+To conclude this demonstration, we'll go to another workspace (yes, you can
+edit several programs at once) and show you how many keystrokes (and errors)
+you can save using Alice to enter a simple program./
+/p/c
+/sws newprog
+/We're going to make a program that reads in a list of numbers and prints
+the average.
+/k{var total,how_many,valuetemp i//i{
+loopcounter i//i/t/t{write '//'how many numbers? '/{
+readln(h//i{
+to//i{ 0;for l//i{ 1//t{h//i{
+write('//'number '/{,lo//i{,'? '
+readln(va//i{
+to//i{ to//i{ + v//i/t/d{
+?'//'Total is'/{,to//i{,' //'Average is'/{,total div ho//i/t/
+/p/c/
+This concludes the demonstration.  You can now play with your demo version
+of Alice, which lets you do everything except save a program.  Have fun!
+(Refer to the startup menu for information on how to order your own copy
+of the system.)/p/c
+Bye-bye
+/p/c

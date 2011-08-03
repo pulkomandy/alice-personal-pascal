@@ -1,0 +1,13 @@
+|14,71
+Pointer  requires a pointer or file variable
+    You have written
+
+          name^
+
+    but the name wasn't the name of a pointer or a file variable.  The ^
+    operation can only be used on these two types of things.
+|mFor more, choose
+|iDo nothing,nop
+|iPointers,Hpnode/pointer_type
+|iFile variables,Hpnode/file_type
+|p

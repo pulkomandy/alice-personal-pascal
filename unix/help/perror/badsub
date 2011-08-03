@@ -1,0 +1,11 @@
+|11,73
+Subranges are only allowed in sets
+    You tried to use a subrange as a constant.  A subrange is something of
+    the form M..N where M and N are usually integers, as in 1..20.
+    Subranges are not constants (though they can be used in set constants,
+    as in [1..20,25]).
+|mFor more, choose
+|iDo nothing,nop
+|iSubranges,Hpnode/subrange
+|iSet constants,Hpnode/set
+|p
