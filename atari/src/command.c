@@ -5,7 +5,7 @@
 #include "command.h"
 #include "flags.h"
 #include "dbflags.h"
-#define CLIST(x)	64+x
+//#define CLIST(x)	64+x
 #include "keys.h"
 #include "typecodes.h"
 #include "token.h"
@@ -24,6 +24,8 @@
 #include "alrsc.h"
 extern long gl_menu;
 #endif
+
+#include "command.h"
 
 /*
  * Carry out a command from the user.  cmd is the token number typed
@@ -47,6 +49,9 @@ extern char trace_name[];
 
 extern int	error_present;
 	extern char tokentext[];
+	
+static waitForSpace();
+
 
 /*
  * Carry out the given built in command.  cmd is the command number

@@ -98,9 +98,9 @@ extern char 	*getSegString();
 #ifdef ES_TREE
 extern nodep	make_stub();
 #endif
-#ifdef LARGE
-extern pointer talloc();
-#endif
+//#ifdef LARGE
+//extern pointer talloc();
+//#endif
 
 #ifdef PARSER
 extern nodep	pushSymtabStack();

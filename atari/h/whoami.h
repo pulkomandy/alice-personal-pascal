@@ -2,7 +2,7 @@
 #ifndef WHOAMI_H
 
 #define WHOAMI_H
-#define defined(X)	(X)
+//#define defined(X)	(X)
 
 #define ECURSES		1
 #define	ATARI520ST	1

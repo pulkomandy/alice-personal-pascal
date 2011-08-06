@@ -59,9 +59,9 @@ OBJS= $(EOBJS) $(IOBJS) $(COBJS) $(GEMOBJS) $(OTHOBJS) $(LANG) $(INTERP)
 
 DEFINES = -DLARGE -DTURBO -DFULL -DTrace $(STUPID) -DOLMSG \
     	-DLOAD_ERRORS -DLOADABLE_TEMPLATES -DFLOATING \
-	-DASM_ICORE -DEMBEDDED_RCS
+	-DASM_ICORE -DEMBEDDED_RCS -DGEM
 
-CFLAGS=	$(DBG) -I\alice\h -O $(DEFINES) -f
+CFLAGS=	$(DBG) -I../h -I../../libmad/ -O $(DEFINES)
 
 # Compile it as a GEM application
 LFLAGS= -lcurses -laes -lvdi -lm -f

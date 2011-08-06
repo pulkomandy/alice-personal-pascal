@@ -708,7 +708,7 @@ A_BOLD|AC_RED,	  	/* error */
 A_BOLD|DEFC,		/* keywords */
 AC_BLACK,	       	/* variables */
 AC_BLACK,		/* named constants */
-AC_LBLACK,		/* comments */
+AC_BLACK,		/* comments */
 AC_BLACK,	        /* char constant */
 AC_BLACK,	        /* integer constant */
 AC_BLACK,	        /* real constant */

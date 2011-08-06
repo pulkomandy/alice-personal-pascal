@@ -6,6 +6,9 @@
  * Apparently some compilers generate not-so-good code if you ask for
  * too many registers, hence these defines.
  */
+ 
+ #pragma once
+ 
 #ifdef QNX
 # define	ireg1	register
 # define	ireg2

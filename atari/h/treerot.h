@@ -76,6 +76,7 @@ extern curspos cursend;		/* nonnull if sweeping out an area -    */
 
 #ifndef trace
 extern FILE *trace;		/* for debugging - use if non-null	*/
+#define dtrace trace
 #endif
 extern int md_level;		/* level of main tracing */
 extern int novice;		/* is the user a novice */

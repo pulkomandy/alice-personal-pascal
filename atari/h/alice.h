@@ -42,6 +42,8 @@
 #define void int
 #endif
 
+/* Decide what type of debug control file to load. */
+
 #ifdef MAP
 # include "mdebug.h"
 # define NOBFUNC
@@ -62,15 +64,21 @@
 #   ifndef FUNCTIONS
 #    ifdef ES_TREE
 #     define NOBFUNC
-#    endif ES
-#   endif FUNCTIONS
-#  endif SAI 
-# endif INTERP
-#endif MAP
+#    endif /* ES */
+#   endif /* FUNCTIONS */
+#  endif /*SAI */
+# endif /* INTERP */
+#endif /* MAP */
+
+/* Define alice types */
 
 #include "altypes.h"
+
+/* Define alice tunable parameters */
+
 #include "tune.h"
 
+/* external declarations for many functions used in editing */
 #ifndef NOFUNCS
 # include "functions.h"
 #endif
@@ -78,6 +86,8 @@
 #if defined(msdos)
 # define msdosGraphics
 #endif
+
+/* include the master macro file */
 
 #ifdef ES
 # include "esmacros.h"
@@ -90,5 +100,18 @@
 #  include "macros.h"
 # endif
 #endif
+
+/* general type definitions and function definitions */
 #include "node.h"
 #include "treerot.h"
+
+#define AC_BLACK    0
+#define AC_RED      0xFF0000
+#define AC_GREEN    0x00FF00
+#define AC_YELLOW   0xFFFF00
+#define AC_BLUE     0x0000FF
+#define AC_MAGENTA  0xFF00FF
+#define AC_CYAN     0x00FFFF
+#define AC_WHITE	0xFFFFFF
+#define AC_NORMAL	0
+

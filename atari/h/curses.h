@@ -30,7 +30,6 @@ typedef chtype *cbufptr;
 #define _KEYPAD     0x20
 #define _WRITTENTO  0x40
 
-#define AC_BLACK	0x0100
 #define BC_BLACK	0x01
 
 #define	A_UNDERLINE	0x1000

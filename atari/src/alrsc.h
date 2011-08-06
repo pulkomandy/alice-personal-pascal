@@ -1,1 +1,1 @@
-#include "c:\alice\rcs\alice.h"
+#include "alice.h"
