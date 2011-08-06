@@ -1,0 +1,283 @@
+#
+#  Configuration file for the Allegro library.
+#
+#  If you leave a parameter blank, Allegro will autodetect (ie. guess :-)
+#
+#  This file should be kept either in the same directory as your program,
+#  or in a location pointed to by the "ALLEGRO" environment variable.
+#
+#  On Unix, this file may also be stored as ~/.allegrorc or /etc/allegrorc.
+
+
+
+
+[system]
+
+# Unix system drivers:
+#
+#  XWIN     - XWindows
+#  LNXC     - Linux console
+
+system = XWIN
+
+
+
+# Keyboard mapping file (this can be a .cfg file on disk, or an object from
+# keyboard.dat). Currently available layouts are:
+#
+#  BE       - Belgium
+#  BR       - Brazil
+#  CH       - Swiss
+#  CZ       - Czech
+#  DE       - Germany
+#  DK       - Denmark
+#  DVORAK   - Dvorak
+#  ES       - Spain
+#  FI       - Finland
+#  FR       - France
+#  IT       - Italy
+#  NO       - Norway
+#  PT       - Portugal
+#  RU       - Russian
+#  SE       - Sweden
+#  SK       - Slovak
+#  UK       - United Kingdom
+#  US       - United States
+
+keyboard = UK
+
+
+
+# Language translation file (this can be a .cfg file on disk, or an 
+# object from language.dat). Currently available translations are:
+#
+#  BR       - Portuguese (Brazil)
+#  CZ       - Czech
+#  DE       - German
+#  DK       - Danish
+#  EN       - English
+#  ES       - Spanish
+#  FI       - Finnish
+#  FR       - French
+#  IT       - Italian
+#  NO       - Norwegian
+#  RU       - Russian
+#  SE       - Svenska
+#  SK       - Slovak
+
+language = EN
+
+
+
+# how long to take for menus to auto-open (time in msecs or -1 to disable)
+menu_opening_delay = -1
+
+
+
+
+[graphics]
+
+
+# Linux console graphics drivers:
+#
+#  FB       - fbcon device
+#  VBAF     - VBE/AF
+#  SVGA     - SVGAlib
+#  VGA      - Standard VGA
+#  MODX     - Mode-X
+#
+# X graphics drivers:
+#
+#  XWIN     - standard X Windows
+#  XWFS     - Fullscreen X Windows
+#  XDGA     - XFree86 Direct Graphics Access 1.0 (DGA)
+#  XDFS     - Fullscreen DGA 1.0 mode
+#  DGA2     - DGA 2.0 mode
+#  DGAS     - DGA 2.0 software only mode
+#
+# You can also specify different drivers for a particular mode or color
+# depth, eg. "gfx_card_640x480x16 = VBE3", "gfx_card_24bpp = VBE1", or
+# you can provide a number of alternative drivers, for example
+# "gfx_card1 = VGA", "gfx_card2 = MODX", etc.
+
+gfx_card = XWIN
+
+
+
+# DOS and Linux: where to look for the VBE/AF driver
+vbeaf_driver = 
+
+
+
+# Linux only: fbcon device file (see below for fbcon timing data)
+framebuffer = 
+
+
+
+
+# Linux/fbcon mode timings. Duplicate then fill in `X', `Y' and
+# the timings themselves. You can copy them from fb.modes directly -- the
+# first two figures on the geometry line are X and Y here, and the figures
+# on the timings line are the first fields here (up to `vsync_len')
+
+[fb_mode_XxY]
+pixclock = 
+left_margin = 
+right_margin = 
+upper_margin = 
+lower_margin = 
+hsync_len = 
+vsync_len = 
+vmode = 
+sync = 
+
+
+
+
+[mouse]
+
+#
+#  LPS2     - PS2 mouse
+#  LIPS     - PS2 mouse with Intellimouse extension
+#  MS       - Microsoft serial mouse
+#  IMS      - Microsoft serial mouse with Intellimouse extension
+#  GPMD     - GPM repeater data (Mouse Systems protocol)
+
+mouse = 
+
+
+
+# number of buttons (specifying this overrides autodetection)
+num_buttons = 
+
+
+
+# whether to emulate the third mouse button (yes or no)
+emulate_three = 
+
+
+
+# Linux only: name of the mouse device file (eg. /dev/mouse)
+mouse_device = /dev/mouse
+
+
+[sound]
+
+#
+# Unix digital sound drivers:
+#
+#  0        - none
+#  OSSD     - Open Sound System
+#  ESDD     - Enlightened Sound Daemon
+#  ALSA     - ALSA Sound System
+
+digi_card = OSSD
+
+
+# Linux music drivers:
+#
+#  0        - none
+#  OSSM     - Open Sound System
+#  DIGI     - DIGMID software wavetable
+#  AMID     - ALSA Sound System
+
+midi_card = DIGI
+
+
+
+# sound input drivers (same format as above, can usually be left blank)
+digi_input_card = 
+midi_input_card = 
+
+
+
+# how many voices to reserve for each driver
+digi_voices = 
+midi_voices = 
+
+
+
+# how loud? (range 0-255)
+digi_volume = 
+midi_volume = 
+
+
+
+# sample mixing quality (0=fastest, 1=full 16 bit precision, 2=interpolation)
+quality = 
+
+
+
+# toggling this between 0 and 1 reverses the left/right panning of samples
+flip_pan = 
+
+
+
+# DOS and Unix: sample output frequency (eg. 44100)
+sound_freq = 
+
+
+
+# Unix only: preferred number of bits (8 or 16)
+sound_bits = 
+
+
+
+# Unix only: stereo output (1 or 0)
+sound_stereo = 
+
+
+# Unix only: OSS device driver name (usually /dev/dsp or /dev/audio)
+oss_driver = 
+
+
+
+# Unix only: number of OSS driver fragments (buffers) and size of each buffer
+oss_numfrags = 
+oss_fragsize = 
+
+
+
+# Unix only: OSS MIDI device name (usually /dev/sequencer)
+oss_midi_driver = 
+
+
+
+# Unix only: OSS mixer device name (usually /dev/mixer)
+oss_mixer_driver = 
+
+
+
+# Unix only: name of the Enlightened Sound Daemon server
+esd_server = 
+
+
+
+# Unix only: card number and PCM device for the ALSA driver
+alsa_card = 
+alsa_pcmdevice = 
+
+
+
+# Unix only: size of ALSA driver fragments (buffers)
+alsa_numfrags = 
+
+
+# patch set for the DIGMID software wavetable driver
+patches = 
+
+
+
+
+[joystick]
+
+# Linux only: which axis number the throttle is located at
+throttle_axis = 
+
+# alternatively you can specify it for each joystick:
+#
+# throttle_axis_0 = 
+# throttle_axis_1 = 
+# ...
+
+[grabber]

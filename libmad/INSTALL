@@ -1,0 +1,45 @@
+If you are on Linux, just unzip the file in its own directory and type
+'make'. Errors, if any, and proof that I'm a sloppy programmer will pile
+up in .warn files.
+
+If you use a static version of Allegro, delete the '-lalleg_unsharable'
+from LIBS=	libmad.a -lalleg -lalleg_unsharable -L$(XLIBDIR)
+$(XLIBS) $(SLIBS). If you use the dynamic, as far as I can see, you can
+delete everything after it.
+
+If you're on Windos in DJGPP, rename makefile.dj2 to makefile and type
+'make'. The errors will go into .wrn files.
+
+If you're on Windows in Mingw32, rename makefile.mgw. You'll have to
+read the screen for any error messages.
+
+If you are confident you'll actually be using MAD, change the 'prefix='
+line to your own preference, then type 'make install'.
+
+Contents of the package:
+
+INSTALL
+Makefile
+makefile.dj2
+makefile.mgw
+adraw.c
+aes.h
+ainit.c
+amouse.c
+atos.c
+avmisc.c
+event.c
+form.c
+fseldos.c
+fsellin.c
+gtext.c
+madman.html
+madorcs.c
+madorcs.txt
+madrsc.h
+madrsr.c
+menu.c
+osbind.h
+resource.c
+vdi.h
+rsrc.o

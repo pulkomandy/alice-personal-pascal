@@ -1,0 +1,74 @@
+# MINGW32 makefile for libmad
+# Not suitable for teaching purposes
+# i.e. a mess
+
+# where make install puts madorcs.exe, libmad.a and headers
+# change the prefix to match your system
+prefix=	c:\devc
+BIN_DIR=	$(prefix)\bin
+LIB_DIR=	$(prefix)\lib
+HEAD_DIR=	$(prefix)\include
+
+CC=gcc
+CFLAGS= -g -mwindows
+LIBS= libmad.a -lalleg
+
+ORCS_FILES= madorcs.c madrsr.c
+
+MAD_CFILES=	adraw.c ainit.c amouse.c atos.c avmisc.c event.c form.c \
+	fseldos.c gtext.c menu.c resource.c
+
+OBJS = atos.o ainit.o avmisc.o adraw.o form.o gtext.o \
+	menu.o amouse.o resource.o event.o fseldos.o
+
+all: libmad.a madorcs
+
+libmad.a: $(MAD_FILES)
+	@echo compiling libmad.a
+	$(CC) -c $(MAD_CFILES)
+	ar rcs $@  $(OBJS)
+	@echo libmad.a built
+
+madorcs: $(ORCS_FILES)
+	@echo compiling madorcs
+	$(CC) $(CFLAGS) -c $(ORCS_FILES)
+	echo madorcs compiled, building...
+	$(CC) -o madorcs.exe $(CFLAGS) $(ORCS_FILES) rsrc.o $(LIBS)
+	copy /Y allegro.mgw allegro.cfg
+#	Uncomment the next 2 lines for a compressed executable
+#	echo madorcs built, compressing...
+#	upx --best madorcs.exe
+	echo madorcs done
+
+test:
+	madorcs
+
+install:
+	@echo installing madorcs in $(BIN_DIR)
+	copy /Y madorcs.exe $(BIN_DIR)
+	@echo installing libmad.a in $(LIB_DIR)
+	copy /Y libmad.a $(LIB_DIR)
+	@echo installing include-files in $(HEAD_DIR)
+	copy /Y osbind.h $(HEAD_DIR)
+	copy /Y aes.h $(HEAD_DIR)
+	copy /Y vdi.h $(HEAD_DIR)
+
+uninstall:
+	@echo uninstalling libmad.a in $(LIB_DIR)
+	del $(LIB_DIR)/libmad.a
+	@echo uninstalling madorcs in $(BIN_DIR)
+	del $(BIN_DIR)/madorcs.exe
+	@echo uninstalling include-files in $(HEAD_DIR)
+	del $(HEAD_DIR)/osbind.h 
+	del $(HEAD_DIR)/aes.h
+	del $(HEAD_DIR)/vdi.h
+
+clean:
+	del a*.o
+	del event.o
+	del gtext.o
+	del resource.o
+	del f*.o
+	del m*.o
+	del libmad.a
+	del madorcs.exe

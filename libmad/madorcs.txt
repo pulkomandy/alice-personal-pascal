@@ -1,0 +1,192 @@
+			MADoRCS Resource Construction Set Beta Manual 11/07/01
+
+Introduction
+
+	MAD resources are simplified versions of the GEM type. If you don't know
+what that means, look at the program; the menu and forms are held in a file
+called madrsr.rsr which was largely written using madorcs. Appendix B has a few
+more details.
+
+	There are some advantages in having the design of your interface largely
+decoupled from your programming, particularly if you are as bad at planning out
+things in advance as I am or decide later that your original program should
+have a few extra functions.
+
+	As well as an rsr-file, MADoRCS produces an h-file, which contains #defines
+for all the objects in the resource which the user will interface with, and is
+included in the source, and an hrd-file containing pretty much the same
+information in a more machine-convenient form. It can also produce an x-file
+which can be compiled and linked into a program in place of the rsr-file.
+
+	MADoRCS owes some of its resource and a lot of its ideas to Wercs, a
+popular ST resource editor.
+
+	This program is useless on its own, but a symbiotic part of the MAD
+library, which might be worth trying if you have an atavistic yearning for the
+GEM windowing system or are looking for a simple, fairly versatile library
+which works in Dos and Linux. In which case, report the bugs to
+odonnllb@indigo.ie.
+
+General Usage
+
+	The menu which appears at startup stays throughout, but most of the
+unusable options are disabled, shown as feint. So at startup, all you can do is
+find your version (click in the box under the fuji Atari logo), load a
+resource, begin a new one or quit. As you proceed, the available options will
+change; Appendix A gives a list of what the MAD-specific options mean.
+
+Resource Level
+
+	If you have any trees, they will be drawn as red or green boxes followed by
+a blue box used only for pasting convenience. If you left-click on one, you get
+a dialog box in which you can change the tree name, delete the tree, copy it,
+cut it(copy+delete), move it (copy+delete+paste) or edit it.
+
+	From the menu, you can find how many objects are in the resource (fuji),
+add a new menu or form, or select that you wish to paste in a collection of
+objects that has previously been cut or copied. To complete a paste operation
+you should click in the blue box.
+
+	Right clicking on a box goes straight to editing it.
+
+Tree Level
+
+	The dialog is drawn on the screen as it will appear in your program, but no
+object is selected, which gives a limited range of options.
+
+	The Objects menu lets you add Objects; it's available now because an Object
+is added as a child of whatever Object you select, rather than any Object
+previously selected.
+
+	If the Edit menu is enabled, there is something available for pasting.
+
+	The Misc menu lets you set up some general options for added or edited
+Objects:
+	Autosize: The size of text options in new or edited Objects will be set by
+the size of the text.
+	Autosnap: The position of new children within their parent will be aligned
+on an 8*8 grid.
+	Autohalf: A 4*4 grid is used.
+An Object can be selected:
+	Find Text: Find an Object in the current dialog with the entered text.
+	Find Name: Find an Object in the current dialog with the entered name.
+	Select Number: Select a particular Object in the current dialog.
+	Finally, the dialog can be tested with the Test option. Any text changes
+made during this process will be kept later. Clicking on a selectable Object
+will bring up a dialog with the name and text (if available) of the Object, its
+number and the options of testing again or exiting.
+
+Object Level
+
+	Objects are selected from the Misc menu as described above or by clicking
+on them. Right clicking brings up a dialog in which you can change the Object's
+name and, in text objects, the default text and the template. Holding the shift
+key while clicking selects the parent of the object clicked on, useful when the
+parent is totally covered.
+
+	The Edit menu in this mode will always let you cut, copy or delete the
+selected Object. The Paste option is only available if there is something to
+paste, and the Unhide option only if a child of the selected object is set to
+HIDETREE. Cutting and pasting in Menu Trees will resize the Tree automatically.
+
+	The Flags menu shows what flags are set, and they can be changed by
+clicking here; the result is usually visible.
+
+	The Misc menu now has Extras and Sort enabled. Extras does fine-tuning of
+the size and position of the Object within its parent, and gives some more
+useful information. Sort arranges the order of Objects in their containing box;
+it's a convenience for later programming using the Resource.
+
+	The Fill menu selects the background color for any Object but an IBox, so
+is usually enabled.
+
+	The Border menu is only available for Outlined Objects, and has the option
+of specifying whether the border is drawn at the edge or just outside the edge,
+as well as the border colors.
+
+	The Text menu includes the choice of which of the 3 standard fonts is to be
+used for the Object's text.
+
+	If the mouse button is held down in the selected Object, the Object can be
+moved, or if the arrow is at the bottom right corner, resized. This can cause
+problems about parentage; if the results are unwelcome, you can leave it, and
+the object will revert to its original location.
+Moving a menu item will shift the other items in its box instead. Moving a menu
+title carries the associated box of items with it.
+
+	When editing the text of an EText, valid input can be specified. The
+current options are '9', only numeric, 'H', hexadecimal, and 'X', alphanumeric.
+An SText has the additional option of a length for the actual text; this text
+space must be provided by the program which uses the resource.
+
+Appendix A: Some definitions
+
+Resource: A collection of Trees, used by a program for data input and display.
+
+Tree: A linked set of Objects. Trees are either Menus or Forms. A Tree on the
+screen is often called a Dialog.
+
+Object: A component of a Tree. Either one item of information or a box that
+groups several items together.
+
+Parent: An Object which is graphically under, hierarchically over and linked to 
+one or more other Objects.
+
+Child: An Object as regarded by its Parent.
+
+Block: A rectangular block used to connect together other objects that will
+appear on top of it and hide what lies underneath. For aesthetic reasons, the
+Parent item of an entire Form should be a Block.
+
+IBox: A notional block, which doesn't hide what's underneath. The Parent of a
+Menu is an IBox.
+
+Char: A single character.
+
+Text: A text string which doesn't usually change, such as a Menu item.
+
+Title: A text string used as a Menu header.
+
+FText: A formatted text string which isn't under user control.
+
+EText: A formatted text part of which can be edited by the keyboard.
+
+SText: An editable text which can be longer than the printing line. The
+directory and file lines in my file selector use STexts.
+
+Flags: These change some of the characteristics of an Object.
+	Selectable: A click on the Object will terminate the form_do routine and
+	return the Object's number.
+	Default: Pressing the Return key has the effect of clicking on this Object.
+	Disabled: To be ignored by all operations except drawing, and drawn feint.
+	Checked: With a check mark at the beginning of the text.
+	Outlined: The Object is drawn with a border.
+	Hidetree: The Object's children are neither accessible nor drawn.
+
+Appendix B: Resources for the Atari-impaired
+
+	Most programs at some time feel a desire to solicit the opinions of a human
+being; this involves giving the human some kind of clue about your needs and
+trying to restrict inappropriate responses. As humans are basically
+bureaucratic machines, the natural mode of this communication is the form, with
+simple explanations, spaces for text input and options to select.
+
+	This form can be created in 3 basic ways. It can be integral to the
+program, a set of hard coded instructions to draw boxes on various areas of the
+screen and to accept user responses when the mouse enters or clicks in these
+areas; it can be essentially an uber-program, executing snippets of user
+created code as its various pieces are exercised, or it can be where the truth
+lies, in between.
+
+	The GEM resource is a set of structures containing the instructions for
+drawing a form on the screen and for what user input is allowed in the various
+parts of that form. Because it is separated from its program, it can be drawn
+and edited by another program dedicated to this purpose, the Resource
+Construction Set, without either the hassle of recompiling the main program for
+cosmetic changes or added boxes, or programming how each bit of the data is
+going to be processed by the uber-program while losing sight of the overall
+flow.
+
+	When your resource looks as you want it, all your program needs to
+interface with it is a couple of routines which handle loading the resource,
+drawing the form and passing back what the user has done where.
