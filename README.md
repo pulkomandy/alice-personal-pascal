@@ -3,6 +3,8 @@ learning tool. Alice features smart auto completion, auto indenting, interpreted
 mode where you can type statements and run them immediately, and it also has a
 debugger.
 
+![Screenshot](Screenshots/grab0009.png)
+
 Alice Pascal was written for MS-DOS and Atari ST computers. The goal of this
 project is to make a port to Haiku, a more modern operating system. Here you
 will find the MS-DOS sources ported to run on UNIX systems (anything reasonably
